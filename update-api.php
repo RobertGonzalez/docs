@@ -65,8 +65,8 @@ foreach ($repositories as $name => $repo)
 
   echo '       Building: '.$name.PHP_EOL;
   echo '------------------------------------------------------'.PHP_EOL;
-  passthru("../DocBlox/bin/docblox.php parse -c $config_file -d $base_repo_path/$name -t $base_api_path/$name --title=\"Aura Project for PHP: $name\"");
-  passthru("../DocBlox/bin/docblox.php transform -s $base_api_path/$name/structure.xml -t $base_api_path/$name");
+  passthru("docblox parse -c $config_file -d $base_repo_path/$name -t $base_api_path/$name --title=\"Aura Project for PHP: $name\"");
+  passthru("docblox transform -s $base_api_path/$name/structure.xml -t $base_api_path/$name");
 }
 
 echo '[4/4] Generating custom index file in repositories/index.html' . PHP_EOL;

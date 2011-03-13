@@ -1,0 +1,149 @@
+<html xmlns="http://www.w3.org/1999/xhtml"><head><title>File</title><meta http-equiv="Content-Type" content="text/html; charset=utf-8"></meta><link rel="stylesheet" href="css/black-tie/jquery-ui-1.8.2.custom.css" type="text/css"></link><link rel="stylesheet" href="css/jquery.treeview.css" type="text/css"></link><link rel="stylesheet" href="css/default.css" type="text/css"></link><script type="text/javascript" src="js/jquery-1.4.2.min.js"></script><script type="text/javascript" src="js/jquery-ui-1.8.2.custom.min.js"></script><script type="text/javascript" src="js/jquery.treeview.js"></script></head><body><script type="text/javascript">
+          $(document).ready(function()
+          {
+            $(".treeview-docblox").treeview({
+              animated: 'fast'
+            });
+          });
+
+          function jq_escape(myid)
+          {
+            return '#' + myid.replace(/(#|\$|:|\.|\(|\))/g, '\\$1');
+          }
+
+          function applySearchHash()
+          {
+            hashes = document.location.hash.substr(1, document.location.hash.length);
+            if (hashes != "")
+            {
+              hashes = hashes.split('/');
+              $.each(hashes, function(index, hash)
+              {
+                node = $(jq_escape(hash));
+                switch (node[0].nodeName)
+                {
+                  case 'DIV':
+                    tabs = node.parents('.tabs');
+                    $(tabs[0]).tabs('select', '#' + hash)
+                    break;
+                  case 'A':
+                    window.scrollTo(0, node.offset().top);
+                    break;
+                }
+              });
+            }
+          }
+
+          jQuery(function()
+          {
+            jQuery(".tabs").tabs();
+            applySearchHash();
+          });
+        </script><div id="maincontainer"><div id="header"><div class="padder"></div></div><div id="content_container"><div id="content"><div class="padder"><h1 xmlns="">tests/MockAutoloadClass.php</h1>
+<h2 xmlns="">Classes</h2>
+<div xmlns="" id="MockAutoloadClass" class="class">
+<h3>MockAutoloadClass</h3>
+<div class="properties">
+<h1>Properties</h1>
+<label class="property-key">Extends</label><div class="property-value"> </div>
+<label class="property-key">Implements</label><div class="property-value"> 
+      </div>
+<label class="property-key">Abstract</label><div class="property-value">No 
+      </div>
+<label class="property-key">Final</label><div class="property-value">No 
+      </div>
+</div>
+<h4>Description</h4>
+<strong><em>No description is available</em></strong>
+</div></div></div></div><div id="menu"><div class="padder"><h1><img src="images/logo.png" alt=""></img></h1><div id="search-box"><script xmlns="" type="text/javascript">
+      $(function() {
+
+        var is_chrome = /chrome/.test( navigator.userAgent.toLowerCase() );
+        var is_local = /file:\/\//.test(document.location.href);
+        if (is_chrome && is_local)
+        {
+          // search is disabled on chrome with local files due to http://code.google.com/p/chromium/issues/detail?id=40787
+          return;
+        }
+
+        $("#search_box").show();
+        var search_index = {};
+        $.ajax({
+          url: "/search_index.xml",
+          dataType: ($.browser.msie) ? "text" : "xml",
+          error: function(data) {
+            alert('An error occurred using the search data');
+          },
+          success: function( data ) {
+            var xml;
+            if (typeof data == "string") {
+              xml = new ActiveXObject("Microsoft.XMLDOM");
+              xml.async = false;
+              xml.loadXML(data);
+            } else {
+              xml = data;
+            }
+
+            search_index = $("node", xml).map(function() {
+              type = $("type", this).text();
+              return {
+                value: $("value", this).text(),
+                label: '<img src="/images/icons/'+type+'.png" align="absmiddle">'+$("value", this).text(),
+                id: $("id", this).text(),
+              };
+            }).get();
+
+            $("#search_box").autocomplete({
+              source: search_index,
+              select: function(event, ui) {
+                // redirect to the documentation
+                $(location).attr('href', '/'+ui.item.id);
+                applySearchHash();
+              }
+            });
+          }
+        });
+      });
+    </script><input id="search_box" style="display: none"></input></div><h4>Documentation</h4><ul><li><a href="index.html">Class diagram</a></li><li><a href="markers.html">TODO / Markers</a></li></ul></div></div><div id="index"><div class="padder"><h1>Namespaces</h1><ul id="namespaces-" class="treeview-docblox">
+<li class="namespace closed">
+<div class="content"><span>aura</span></div>
+<ul><li class="namespace closed">
+<div class="content"><span>autoload</span></div>
+<ul>
+<li><div class="content">
+<span><a href="tests_LoaderTest.html#LoaderTest">LoaderTest</a></span><small>Test class for Loader.</small>
+</div></li>
+<li><div class="content">
+<span><a href="tests_MockAutoloadClass.html#MockAutoloadClass">MockAutoloadClass</a></span><small></small>
+</div></li>
+<li><div class="content">
+<span><a href="src_Loader.html#Loader">Loader</a></span><small>An SPL autoloader adhering to [PSR-0](http://groups.google.com/group/php-standards/web/psr-0-final-proposal).</small>
+</div></li>
+<li><div class="content">
+<span><a href="src_Exception.html#Exception">Exception</a></span><small>Generic package exception.</small>
+</div></li>
+<li><div class="content">
+<span><a href="src_Exception_NotFound.html#Exception_NotFound">Exception_NotFound</a></span><small>Indicates the Loader failed to find a class file.</small>
+</div></li>
+</ul>
+</li></ul>
+</li>
+<li class="namespace closed">
+<div class="content"><span>default</span></div>
+<ul></ul>
+</li>
+</ul><h1>Packages</h1><ul id="packages-" class="treeview-docblox"><li class="package closed">
+<div class="content"><span>aura.autoload</span></div>
+<ul id="packages_aura.autoload" class="treeview-docblox">
+<li class="closed"><div class="content">
+<span><a href="src_Loader.html#Loader">Loader</a></span><small>An SPL autoloader adhering to [PSR-0](http://groups.google.com/group/php-standards/web/psr-0-final-proposal).</small>
+</div></li>
+<li class="closed"><div class="content">
+<span><a href="src_Exception.html#Exception">Exception</a></span><small>Generic package exception.</small>
+</div></li>
+<li class="closed"><div class="content">
+<span><a href="src_Exception_NotFound.html#Exception_NotFound">Exception_NotFound</a></span><small>Indicates the Loader failed to find a class file.</small>
+</div></li>
+</ul>
+</li></ul>
+</div></div><div id="footer"><div class="padder"></div></div></div></body></html>

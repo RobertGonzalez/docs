@@ -1,0 +1,151 @@
+<html xmlns="http://www.w3.org/1999/xhtml"><head><title>Markers</title><meta http-equiv="Content-Type" content="text/html; charset=utf-8"></meta><link rel="stylesheet" href="css/black-tie/jquery-ui-1.8.2.custom.css" type="text/css"></link><link rel="stylesheet" href="css/jquery.treeview.css" type="text/css"></link><link rel="stylesheet" href="css/default.css" type="text/css"></link><script type="text/javascript" src="js/jquery-1.4.2.min.js"></script><script type="text/javascript" src="js/jquery-ui-1.8.2.custom.min.js"></script><script type="text/javascript" src="js/jquery.treeview.js"></script></head><body><script type="text/javascript">
+          $(document).ready(function()
+          {
+            $(".filetree").treeview({
+              animated: 'fast'
+            });
+          });
+
+          function jq_escape(myid)
+          {
+            return '#' + myid.replace(/(#|\$|:|\.|\(|\))/g, '\\$1');
+          }
+
+          function applySearchHash()
+          {
+            hashes = document.location.hash.substr(1, document.location.hash.length);
+            if (hashes != "")
+            {
+              hashes = hashes.split('/');
+              $.each(hashes, function(index, hash)
+              {
+                node = $(jq_escape(hash));
+                switch (node[0].nodeName)
+                {
+                  case 'DIV':
+                    tabs = node.parents('.tabs');
+                    $(tabs[0]).tabs('select', '#' + hash)
+                    break;
+                  case 'A':
+                    window.scrollTo(0, node.offset().top);
+                    break;
+                }
+              });
+            }
+          }
+
+          jQuery(function()
+          {
+            jQuery(".tabs").tabs();
+            applySearchHash();
+          });
+        </script><div id="maincontainer"><div id="header"><h1>Aura Project for PHP: aura.web</h1><img src="images/top-stopper.png"></img></div><ul xmlns="" id="menu">
+<li><a href="graph.html" target="content">Class diagram</a></li>
+<li><a href="markers.html" target="content">TODO / Markers</a></li>
+</ul>
+<div id="content_container"><div xmlns="" id="content"><div class="tabs">
+<ul>
+<li><a href="#todo">todo (
+            3
+            )</a></li>
+<li><a href="#fixme">fixme (
+            0
+            )</a></li>
+</ul>
+<div id="todo"><table>
+<tr>
+<th>Path</th>
+<th>Description</th>
+</tr>
+<tr>
+<td>src/Context.php:11</td>
+<td>Combine $_POST and $_FILES in getPost() by default, then add 
+getPostOnly() and getFilesOnly() ?  What about raw(), then, when files
+have been sent?  Call it getData() ?</td>
+</tr>
+<tr>
+<td>src/Context.php:11</td>
+<td>rename 'http' to 'header' or 'headers'?</td>
+</tr>
+<tr>
+<td>src/Csrf.php:28</td>
+<td>cli script to generate random keys</td>
+</tr>
+</table></div>
+<div id="fixme"><table><tr>
+<th>Path</th>
+<th>Description</th>
+</tr></table></div>
+</div></div></div><div id="index"><div class="padder"><script xmlns="" type="text/javascript">
+      $(function() {
+
+        var is_chrome = /chrome/.test( navigator.userAgent.toLowerCase() );
+        var is_local = /file:\/\//.test(document.location.href);
+        if (is_chrome && is_local)
+        {
+          // search is disabled on chrome with local files due to http://code.google.com/p/chromium/issues/detail?id=40787
+          return;
+        }
+
+        $("#search_box").show();
+        var search_index = {};
+        $.ajax({
+          url: "search_index.xml",
+          dataType: ($.browser.msie) ? "text" : "xml",
+          error: function(data) {
+            alert('An error occurred using the search data');
+          },
+          success: function( data ) {
+            var xml;
+            if (typeof data == "string") {
+              xml = new ActiveXObject("Microsoft.XMLDOM");
+              xml.async = false;
+              xml.loadXML(data);
+            } else {
+              xml = data;
+            }
+
+            search_index = $("node", xml).map(function() {
+              type = $("type", this).text();
+              return {
+                value: $("value", this).text(),
+                label: '<img src="images/icons/'+type+'.png" align="absmiddle">'+$("value", this).text(),
+                id: $("id", this).text(),
+              };
+            }).get();
+
+            $("#search_box").autocomplete({
+              source: search_index,
+              select: function(event, ui) {
+                // redirect to the documentation
+                parent.content.document.location = ''+ui.item.id;
+                applySearchHash();
+              }
+            });
+          }
+        });
+      });
+    </script><input id="search_box"></input><div class="section">
+<h1>Namespaces</h1>
+<ul id="namespaces-" class="filetree">
+<li class="closed">
+<span class="folder">aura</span><ul><li class="closed">
+<span class="folder">web</span><ul>
+<li><span class="file"><a href="src_Context.html#Context" target="content">Context</a><br><small>Collection point for information about the web environment.</small></span></li>
+<li><span class="file"><a href="src_Csrf.html#Csrf" target="content">Csrf</a><br><small>Generate and validate CSRF tokens.</small></span></li>
+<li><span class="file"><a href="src_Exception_Context.html#Exception_Context" target="content">Exception_Context</a><br><small></small></span></li>
+<li><span class="file"><a href="src_Exception_MalformedToken.html#Exception_MalformedToken" target="content">Exception_MalformedToken</a><br><small></small></span></li>
+</ul>
+</li></ul>
+</li>
+<li class="closed">
+<span class="folder">default</span><ul></ul>
+</li>
+</ul>
+</div><div class="section">
+<h1>Packages</h1>
+<ul id="packages-" class="filetree"><li class="closed">
+<span class="folder">aura.web</span><ul id="packages_aura.web" class=".filetree"><li class="closed"><span class="file"><a href="src_Context.html#Context" target="content">Context</a><br><small>Collection point for information about the web environment.</small></span></li></ul>
+</li></ul>
+</div>
+</div></div><div id="footer"><div class="padder"></div></div></div></body></html>

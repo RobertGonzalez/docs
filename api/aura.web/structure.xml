@@ -1,0 +1,650 @@
+<?xml version="1.0"?>
+<project version="0.8.8" title="Aura Project for PHP: aura.web">
+  <file path="config/default.php" hash="1300019250">
+    <function namespace="default" line="12">
+      <name>Closure</name>
+      <type>closure</type>
+    </function>
+  </file>
+  <file path="src.php" hash="1300019250">
+    <include type="Require Once" namespace="default" line="2">
+      <name>/src/Context.php</name>
+    </include>
+    <include type="Require Once" namespace="default" line="3">
+      <name>/src/Csrf.php</name>
+    </include>
+    <include type="Require Once" namespace="default" line="4">
+      <name>/src/Exception/Context.php</name>
+    </include>
+    <include type="Require Once" namespace="default" line="5">
+      <name>/src/Exception/InvalidTokenFormat.php</name>
+    </include>
+  </file>
+  <file path="src/Context.php" hash="1300019250">
+    <class final="false" abstract="false" line="24" namespace="aura\web">
+      <name>Context</name>
+      <extends/>
+      <full_name>aura\web\Context</full_name>
+      <docblock>
+        <description>Collection point for information about the web environment.</description>
+        <long-description/>
+        <tag name="package" line="11">aura.web</tag>
+        <tag name="todo" line="11">Combine $_POST and $_FILES in getPost() by default, then add 
+getPostOnly() and getFilesOnly() ?  What about raw(), then, when files
+have been sent?  Call it getData() ?</tag>
+        <tag name="todo" line="11">rename 'http' to 'header' or 'headers'?</tag>
+      </docblock>
+      <property final="false" static="false" visibility="protected" line="33">
+        <name>$get</name>
+        <default/>
+        <docblock>
+          <description>Imported $_GET values.</description>
+          <long-description/>
+          <tag name="var" type="array" variable="" line="26">array</tag>
+        </docblock>
+      </property>
+      <property final="false" static="false" visibility="protected" line="42">
+        <name>$post</name>
+        <default/>
+        <docblock>
+          <description>Imported $_POST values.</description>
+          <long-description/>
+          <tag name="var" type="array" variable="" line="35">array</tag>
+        </docblock>
+      </property>
+      <property final="false" static="false" visibility="protected" line="51">
+        <name>$server</name>
+        <default/>
+        <docblock>
+          <description>Imported $_SERVER values.</description>
+          <long-description/>
+          <tag name="var" type="array" variable="" line="44">array</tag>
+        </docblock>
+      </property>
+      <property final="false" static="false" visibility="protected" line="60">
+        <name>$cookie</name>
+        <default/>
+        <docblock>
+          <description>Imported $_COOKIE values.</description>
+          <long-description/>
+          <tag name="var" type="array" variable="" line="53">array</tag>
+        </docblock>
+      </property>
+      <property final="false" static="false" visibility="protected" line="69">
+        <name>$env</name>
+        <default/>
+        <docblock>
+          <description>Imported $_ENV values.</description>
+          <long-description/>
+          <tag name="var" type="array" variable="" line="62">array</tag>
+        </docblock>
+      </property>
+      <property final="false" static="false" visibility="protected" line="78">
+        <name>$files</name>
+        <default/>
+        <docblock>
+          <description>Imported $_FILES values.</description>
+          <long-description/>
+          <tag name="var" type="array" variable="" line="71">array</tag>
+        </docblock>
+      </property>
+      <property final="false" static="false" visibility="protected" line="90">
+        <name>$header</name>
+        <default/>
+        <docblock>
+          <description>Imported $_SERVER['HTTP_*'] values.</description>
+          <long-description>Header keys are normalized and lower-cased; keys and values are&lt;br/&gt;filtered for control characters.</long-description>
+          <tag name="var" type="array" variable="" line="80">array</tag>
+        </docblock>
+      </property>
+      <property final="false" static="false" visibility="protected" line="92">
+        <name>$accept</name>
+        <default/>
+      </property>
+      <property final="false" static="false" visibility="protected" line="101">
+        <name>$raw_input</name>
+        <default>false</default>
+        <docblock>
+          <description>The value of `php://input`.</description>
+          <long-description/>
+          <tag name="var" type="string" variable="" line="94">string</tag>
+        </docblock>
+      </property>
+      <property final="false" static="false" visibility="protected" line="110">
+        <name>$csrf</name>
+        <default/>
+        <docblock>
+          <description>A cross-site request forgery object.</description>
+          <long-description/>
+          <tag name="var" type="aura\web\Csrf" variable="" line="103">aura\web\Csrf</tag>
+        </docblock>
+      </property>
+      <method final="false" abstract="false" static="false" visibility="public" line="117">
+        <name>__construct</name>
+        <docblock>
+          <description>Constructor.</description>
+          <long-description/>
+        </docblock>
+        <argument line="118">
+          <name>$get</name>
+          <default/>
+          <type>array</type>
+        </argument>
+        <argument line="119">
+          <name>$post</name>
+          <default/>
+          <type>array</type>
+        </argument>
+        <argument line="120">
+          <name>$server</name>
+          <default/>
+          <type>array</type>
+        </argument>
+        <argument line="121">
+          <name>$cookie</name>
+          <default/>
+          <type>array</type>
+        </argument>
+        <argument line="122">
+          <name>$env</name>
+          <default/>
+          <type>array</type>
+        </argument>
+        <argument line="123">
+          <name>$files</name>
+          <default/>
+          <type>array</type>
+        </argument>
+        <argument line="124">
+          <name>$csrf</name>
+          <default>null</default>
+          <type>Csrf</type>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" line="151">
+        <name>__get</name>
+        <docblock>
+          <description>Magic get to make properties read-only.</description>
+          <long-description/>
+          <tag name="param" type="string" variable="$key" line="142">The property to read.</tag>
+          <tag name="return" type="mixed" line="142">The property value.</tag>
+        </docblock>
+        <argument line="151">
+          <name>$key</name>
+          <default/>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" line="171">
+        <name>isGet</name>
+        <docblock>
+          <description>Is this a GET request?</description>
+          <long-description/>
+          <tag name="return" type="boolean" line="164"/>
+        </docblock>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" line="183">
+        <name>isPost</name>
+        <docblock>
+          <description>Is this a POST request?</description>
+          <long-description/>
+          <tag name="return" type="boolean" line="176"/>
+        </docblock>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" line="195">
+        <name>isPut</name>
+        <docblock>
+          <description>Is this a PUT request?</description>
+          <long-description/>
+          <tag name="return" type="boolean" line="188"/>
+        </docblock>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" line="207">
+        <name>isDelete</name>
+        <docblock>
+          <description>Is this a DELETE request?</description>
+          <long-description/>
+          <tag name="return" type="boolean" line="200"/>
+        </docblock>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" line="219">
+        <name>isHead</name>
+        <docblock>
+          <description>Is this a HEAD request?</description>
+          <long-description/>
+          <tag name="return" type="boolean" line="212"/>
+        </docblock>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" line="231">
+        <name>isOptions</name>
+        <docblock>
+          <description>Is this an OPTIONS request?</description>
+          <long-description/>
+          <tag name="return" type="boolean" line="224"/>
+        </docblock>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" line="243">
+        <name>isXhr</name>
+        <docblock>
+          <description>Is this an XmlHttpRequest?</description>
+          <long-description/>
+          <tag name="return" type="boolean" line="236"/>
+        </docblock>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" line="261">
+        <name>isCsrf</name>
+        <docblock>
+          <description>Is the current request a cross-site forgery?</description>
+          <long-description>Note: if the key does not exist this method will return true.</long-description>
+          <tag name="throws" line="248">aura\web\Exception_Context If a CSRF library has not been provided.</tag>
+          <tag name="param" type="string" variable="$key" line="248">The name of the $_POST key containing the CSRF token.</tag>
+          <tag name="return" type="bool" line="248"/>
+        </docblock>
+        <argument line="261">
+          <name>$key</name>
+          <default>__csrf_token</default>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" line="284">
+        <name>isSsl</name>
+        <docblock>
+          <description>Is this an SSL request?</description>
+          <long-description/>
+          <tag name="return" type="boolean" line="277"/>
+        </docblock>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" line="303">
+        <name>getQuery</name>
+        <docblock>
+          <description>Retrieves an **unfiltered** value by key from the `$get` property,&lt;br/&gt;or an alternate default value if that key does not exist.</description>
+          <long-description/>
+          <tag name="param" type="string" variable="$key" line="290">The $get key to retrieve the value of.</tag>
+          <tag name="param" type="string" variable="$alt" line="290">The value to return if the key does not exist.</tag>
+          <tag name="return" type="mixed" line="290">The value of $get[$key], or the alternate default value.</tag>
+        </docblock>
+        <argument line="303">
+          <name>$key</name>
+          <default>null</default>
+          <type/>
+        </argument>
+        <argument line="303">
+          <name>$alt</name>
+          <default>null</default>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" line="321">
+        <name>getCookie</name>
+        <docblock>
+          <description>Retrieves an **unfiltered** value by key from the `$cookie` property,&lt;br/&gt;or an alternate default value if that key does not exist.</description>
+          <long-description/>
+          <tag name="param" type="string" variable="$key" line="308">The $cookie key to retrieve the value of.</tag>
+          <tag name="param" type="string" variable="$alt" line="308">The value to return if the key does not exist.</tag>
+          <tag name="param" type="bool" variable="" line="308">The value of $cookie[$key], or the alternate default value.</tag>
+        </docblock>
+        <argument line="321">
+          <name>$key</name>
+          <default>null</default>
+          <type/>
+        </argument>
+        <argument line="321">
+          <name>$alt</name>
+          <default>null</default>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" line="339">
+        <name>getEnv</name>
+        <docblock>
+          <description>Retrieves an **unfiltered** value by key from the `$env` property,&lt;br/&gt;or an alternate default value if that key does not exist.</description>
+          <long-description/>
+          <tag name="param" type="string" variable="$key" line="326">The $env key to retrieve the value of.</tag>
+          <tag name="param" type="string" variable="$alt" line="326">The value to return if the key does not exist.</tag>
+          <tag name="return" type="mixed" line="326">The value of $env[$key], or the alternate default value.</tag>
+        </docblock>
+        <argument line="339">
+          <name>$key</name>
+          <default>null</default>
+          <type/>
+        </argument>
+        <argument line="339">
+          <name>$alt</name>
+          <default>null</default>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" line="357">
+        <name>getServer</name>
+        <docblock>
+          <description>Retrieves an **unfiltered** value by key from the `$server` property,&lt;br/&gt;or an alternate default value if that key does not exist.</description>
+          <long-description/>
+          <tag name="param" type="string" variable="$key" line="344">The $server key to retrieve the value of.</tag>
+          <tag name="param" type="string" variable="$alt" line="344">The value to return if the key does not exist.</tag>
+          <tag name="return" type="mixed" line="344">The value of $server[$key], or the alternate default value.</tag>
+        </docblock>
+        <argument line="357">
+          <name>$key</name>
+          <default>null</default>
+          <type/>
+        </argument>
+        <argument line="357">
+          <name>$alt</name>
+          <default>null</default>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" line="383">
+        <name>getInput</name>
+        <docblock>
+          <description>Retrieves an **unfiltered** value from a user input.</description>
+          <long-description>A value by key from the `$post` *and* `$files` properties, or an &lt;br/&gt;alternate default value if that key does not exist in either location.&lt;br/&gt;Files takes precedence over post.&lt;br/&gt;&lt;br/&gt;If the key is null and the content type isn't `multipart/form-data` and &lt;br/&gt;`$post` and `$files` are empty, the raw data from the request body &lt;br/&gt;is returned.</long-description>
+          <tag name="param" type="string" variable="$key" line="362">The $post and $files key to retrieve the value of.</tag>
+          <tag name="param" type="string" variable="$alt" line="362">The value to return if the key does not exist in either $post or $files.</tag>
+          <tag name="return" type="mixed" line="362">The value of $post[$key] combined with $files[$key], or the raw request body, or the alternate default value.</tag>
+        </docblock>
+        <argument line="383">
+          <name>$key</name>
+          <default>null</default>
+          <type/>
+        </argument>
+        <argument line="383">
+          <name>$alt</name>
+          <default>null</default>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" line="473">
+        <name>getHeader</name>
+        <docblock>
+          <description>Retrieves an **unfiltered** value by key from the `$header` property,&lt;br/&gt;or an alternate default value if that key does not exist.</description>
+          <long-description/>
+          <tag name="param" type="string" variable="$key" line="460">The $http key to retrieve the value of.</tag>
+          <tag name="param" type="string" variable="$alt" line="460">The value to return if the key does not exist.</tag>
+          <tag name="return" type="mixed" line="460">The value of $header[$key], or the alternate default value.</tag>
+        </docblock>
+        <argument line="473">
+          <name>$key</name>
+          <default>null</default>
+          <type/>
+        </argument>
+        <argument line="473">
+          <name>$alt</name>
+          <default>null</default>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="protected" line="491">
+        <name>parseAccept</name>
+        <docblock>
+          <description>Parse a http[accept*] header and sort by the quality factor, the &lt;br/&gt;highest being first in the returned array. The returned data is &lt;br/&gt;unfiltered.</description>
+          <long-description/>
+          <tag name="param" type="string" variable="$header" line="478">The name of the accept header to parse.</tag>
+          <tag name="param" type="mixed" variable="$alt" line="478">The value to return if the key does not exist.</tag>
+          <tag name="return" type="array" line="478"/>
+        </docblock>
+        <argument line="491">
+          <name>$accept</name>
+          <default/>
+          <type/>
+        </argument>
+        <argument line="491">
+          <name>$alt</name>
+          <default>null</default>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" line="526">
+        <name>getAccept</name>
+        <docblock>
+          <description>Gets an `Accept` header.  If you want the content-type, ask for &lt;br/&gt;`'type'`; otherwise, if you want (e.g.) `'Accept-Language'`, ask for &lt;br/&gt;`'language'`.</description>
+          <long-description/>
+          <tag name="param" type="string" variable="$key" line="512">The `$accept` key to return; if null, returns the entire `$accept` property.</tag>
+          <tag name="param" type="mixed" variable="$alt" line="512">The value to return if the key does not exist.</tag>
+          <tag name="return" type="array" line="512"/>
+        </docblock>
+        <argument line="526">
+          <name>$key</name>
+          <default>null</default>
+          <type/>
+        </argument>
+        <argument line="526">
+          <name>$alt</name>
+          <default>null</default>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="protected" line="568">
+        <name>setupHeader</name>
+        <docblock>
+          <description>Setup the "fake" `$header` property.</description>
+          <long-description/>
+          <tag name="return" type="void" line="561"/>
+        </docblock>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="protected" line="610">
+        <name>rebuildFiles</name>
+        <docblock>
+          <description>Recursive method to rebuild $_FILES structure to be more like $_POST.</description>
+          <long-description/>
+          <tag name="param" type="array" variable="$src" line="597">The source $_FILES array, perhaps from a sub- element of that array/</tag>
+          <tag name="param" type="array" variable="" line="597">&amp;$tgt Where we will store the restructured data when we find it.</tag>
+          <tag name="return" type="void" line="597"/>
+        </docblock>
+        <argument line="610">
+          <name>$src</name>
+          <default/>
+          <type/>
+        </argument>
+        <argument line="610">
+          <name>$tgt</name>
+          <default/>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="protected" line="665">
+        <name>getValue</name>
+        <docblock>
+          <description>Common method to get a property value and return it.</description>
+          <long-description/>
+          <tag name="param" type="string" variable="$var" line="649">The property variable to fetch from: get, post, etc.</tag>
+          <tag name="param" type="string" variable="$key" line="649">The array key, if any, to get the value of.</tag>
+          <tag name="param" type="string" variable="$alt" line="649">The alternative default value to return if the requested key does not exist.</tag>
+          <tag name="return" type="mixed" line="649">The requested value, or the alternative default value.</tag>
+        </docblock>
+        <argument line="665">
+          <name>$var</name>
+          <default/>
+          <type/>
+        </argument>
+        <argument line="665">
+          <name>$key</name>
+          <default/>
+          <type/>
+        </argument>
+        <argument line="665">
+          <name>$alt</name>
+          <default/>
+          <type/>
+        </argument>
+      </method>
+    </class>
+  </file>
+  <file path="src/Csrf.php" hash="1300019250">
+    <class final="false" abstract="false" line="12" namespace="aura\web">
+      <name>Csrf</name>
+      <extends/>
+      <full_name>aura\web\Csrf</full_name>
+      <docblock>
+        <description>Generate and validate CSRF tokens.</description>
+        <long-description/>
+      </docblock>
+      <property final="false" static="false" visibility="protected" line="15">
+        <name>$secret_key</name>
+        <default/>
+        <docblock>
+          <description/>
+          <long-description/>
+          <tag name="var" type="aura\web\Project" variable="" line="14">aura\web\Project unique key.</tag>
+        </docblock>
+      </property>
+      <property final="false" static="false" visibility="protected" line="18">
+        <name>$user_id</name>
+        <default/>
+        <docblock>
+          <description/>
+          <long-description/>
+          <tag name="var" type="aura\web\Something" variable="" line="17">aura\web\Something unique to the user. NOT a password!</tag>
+        </docblock>
+      </property>
+      <property final="false" static="false" visibility="protected" line="21">
+        <name>$hash_algo</name>
+        <default/>
+        <docblock>
+          <description/>
+          <long-description/>
+          <tag name="var" type="aura\web\Hash" variable="" line="20">aura\web\Hash algorithm.</tag>
+        </docblock>
+      </property>
+      <property final="false" static="false" visibility="protected" line="24">
+        <name>$timeout</name>
+        <default/>
+        <docblock>
+          <description/>
+          <long-description/>
+          <tag name="var" type="aura\web\Time" variable="" line="23">aura\web\Time in seconds before a token expires.</tag>
+        </docblock>
+      </property>
+      <method final="false" abstract="false" static="false" visibility="public" line="48">
+        <name>__construct</name>
+        <docblock>
+          <description>NOTE: Each project should have a unique and random $secret_key.</description>
+          <long-description>The $user_id must be something unique to the user and does not change&lt;br/&gt;between requests. This allows the token to be linked to one user. &lt;br/&gt;The $user_id could be an email address or the primary key from the users &lt;br/&gt;table, anything unique to the user, except for passwords will do.</long-description>
+          <tag name="param" type="string" variable="$secret_key" line="28">Project unique key.</tag>
+          <tag name="param" type="mixed" variable="$user_id" line="28">Unique id for a user i.e. email address.</tag>
+          <tag name="param" type="integer" variable="$timeout" line="28">In seconds. Default is 30 minutes.</tag>
+          <tag name="param" type="string" variable="$hash_algo" line="28">Hashing algorithm for hash_hmac().</tag>
+          <tag name="todo" line="28">cli script to generate random keys</tag>
+        </docblock>
+        <argument line="48">
+          <name>$secret_key</name>
+          <default/>
+          <type/>
+        </argument>
+        <argument line="48">
+          <name>$user_id</name>
+          <default/>
+          <type/>
+        </argument>
+        <argument line="48">
+          <name>$timeout</name>
+          <default>1800</default>
+          <type/>
+        </argument>
+        <argument line="48">
+          <name>$hash_algo</name>
+          <default>sha1</default>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" line="67">
+        <name>__get</name>
+        <docblock>
+          <description>Magic get to provide access to the hash_algo and timeout variables.</description>
+          <long-description/>
+          <tag name="throws" line="56">\UnexpectedValueException</tag>
+          <tag name="param" type="string" variable="$key" line="56">The property to retrieve: hash_algo &amp; timeout.</tag>
+          <tag name="return" type="mixed" line="56"/>
+        </docblock>
+        <argument line="67">
+          <name>$key</name>
+          <default/>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" line="88">
+        <name>__set</name>
+        <docblock>
+          <description>Magic set to provide access to the secret_key, hash_algo and timeout &lt;br/&gt;variables.</description>
+          <long-description/>
+          <tag name="throws" line="76">\UnexpectedValueException</tag>
+          <tag name="param" type="string" variable="$key" line="76">The property to set: secret_key, hash_algo &amp; timeout.</tag>
+          <tag name="return" type="void" line="76"/>
+        </docblock>
+        <argument line="88">
+          <name>$key</name>
+          <default/>
+          <type/>
+        </argument>
+        <argument line="88">
+          <name>$value</name>
+          <default/>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" line="105">
+        <name>generateToken</name>
+        <docblock>
+          <description>Generate a CSRF token.</description>
+          <long-description/>
+          <tag name="return" type="string" line="98"/>
+        </docblock>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" line="136">
+        <name>isValidToken</name>
+        <docblock>
+          <description>Test if a token is valid and has not timed out.</description>
+          <long-description>If the incoming token is not propertly formated the exception &lt;br/&gt;aura\csrf\Exception_InvalidTokenFormat will be thrown.</long-description>
+          <tag name="throws" line="122">aura\csrf\Exception_InvalidTokenFormat</tag>
+          <tag name="param" type="string" variable="$incoming_token" line="122"/>
+          <tag name="return" type="boolean" line="122"/>
+        </docblock>
+        <argument line="136">
+          <name>$incoming_token</name>
+          <default/>
+          <type/>
+        </argument>
+      </method>
+    </class>
+  </file>
+  <file path="src/Exception/Context.php" hash="1300019250">
+    <class final="false" abstract="false" line="3" namespace="aura\web">
+      <name>Exception_Context</name>
+      <extends>\Exception</extends>
+      <full_name>aura\web\Exception_Context</full_name>
+    </class>
+  </file>
+  <file path="src/Exception/MalformedToken.php" hash="1300019250">
+    <class final="false" abstract="false" line="5" namespace="aura\web">
+      <name>Exception_MalformedToken</name>
+      <extends>\Exception</extends>
+      <full_name>aura\web\Exception_MalformedToken</full_name>
+      <method final="false" abstract="false" static="false" visibility="public" line="7">
+        <name>__construct</name>
+      </method>
+    </class>
+  </file>
+  <file path="scripts/instance.php" hash="1300019250">
+    <namespace-alias name="Csrf">aura\web\Csrf</namespace-alias>
+    <namespace-alias name="WebContext">aura\web\Context</namespace-alias>
+    <include type="Require" namespace="default" line="15">
+      <name>/src/Csrf.php</name>
+    </include>
+    <include type="Require" namespace="default" line="16">
+      <name>/src/Context.php</name>
+    </include>
+    <include type="Require" namespace="default" line="17">
+      <name>/src/Exception/InvalidTokenFormat.php</name>
+    </include>
+    <include type="Require" namespace="default" line="18">
+      <name>/src/Exception/Context.php</name>
+    </include>
+  </file>
+  <package name="aura.web"/>
+  <namespace name="aura">
+    <namespace name="web"/>
+  </namespace>
+  <namespace name="default"/>
+  <marker>todo</marker>
+  <marker>fixme</marker>
+</project>

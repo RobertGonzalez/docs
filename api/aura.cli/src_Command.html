@@ -1,0 +1,518 @@
+<html xmlns="http://www.w3.org/1999/xhtml"><head><title>File</title><meta http-equiv="Content-Type" content="text/html; charset=utf-8"></meta><link rel="stylesheet" href="css/black-tie/jquery-ui-1.8.2.custom.css" type="text/css"></link><link rel="stylesheet" href="css/jquery.treeview.css" type="text/css"></link><link rel="stylesheet" href="css/default.css" type="text/css"></link><script type="text/javascript" src="js/jquery-1.4.2.min.js"></script><script type="text/javascript" src="js/jquery-ui-1.8.2.custom.min.js"></script><script type="text/javascript" src="js/jquery.treeview.js"></script></head><body><script type="text/javascript">
+          $(document).ready(function()
+          {
+            $(".filetree").treeview({
+              animated: 'fast'
+            });
+          });
+
+          function jq_escape(myid)
+          {
+            return '#' + myid.replace(/(#|\$|:|\.|\(|\))/g, '\\$1');
+          }
+
+          function applySearchHash()
+          {
+            hashes = document.location.hash.substr(1, document.location.hash.length);
+            if (hashes != "")
+            {
+              hashes = hashes.split('/');
+              $.each(hashes, function(index, hash)
+              {
+                node = $(jq_escape(hash));
+                switch (node[0].nodeName)
+                {
+                  case 'DIV':
+                    tabs = node.parents('.tabs');
+                    $(tabs[0]).tabs('select', '#' + hash)
+                    break;
+                  case 'A':
+                    window.scrollTo(0, node.offset().top);
+                    break;
+                }
+              });
+            }
+          }
+
+          jQuery(function()
+          {
+            jQuery(".tabs").tabs();
+            applySearchHash();
+          });
+        </script><div id="maincontainer"><div id="header"><h1>Aura Project for PHP: aura.cli</h1><img src="images/top-stopper.png"></img></div><ul xmlns="" id="menu">
+<li><a href="graph.html" target="content">Class diagram</a></li>
+<li><a href="markers.html" target="content">TODO / Markers</a></li>
+</ul>
+<div id="content_container"><div xmlns="" id="content">
+<h1>src/Command.php</h1>
+<div class="file_menu">
+<a href="#includes">Includes</a> |
+      <a href="#functions">Functions</a> |
+      <a href="#constants">Constants</a> |
+      <a href="#classes">Classes</a> |
+      <a href="#interfaces">Interfaces</a>
+</div>
+<a name="classes"></a><h2>Classes</h2>
+<div id="Command" class="class">
+<h3>Command</h3>
+<div class="properties">
+<h1>Properties</h1>
+<label class="property-key">Extends</label><div class="property-value"> </div>
+<label class="property-key">Implements</label><div class="property-value"> 
+      </div>
+<label class="property-key">package</label><div class="property-value">
+<a title="aura.cli">aura.cli</a>
+             
+        </div>
+<label class="property-key">Abstract</label><div class="property-value">Yes 
+      </div>
+<label class="property-key">Final</label><div class="property-value">No 
+      </div>
+</div>
+<h4>Description</h4>
+<em>The CLI equivalent of a page-controller to perform a single action.</em><br><br><div id="methods_Command">
+<h4>Methods</h4>
+<a style="font-style: italic;" href="#Command::__construct()">__construct</a>,
+      <a style="font-style: italic;" href="#Command::action()">action</a>,
+      <a style="font-style: italic;" href="#Command::exec()">exec</a>,
+      <a style="font-style: italic;" href="#Command::isSkipAction()">isSkipAction</a>,
+      <a style="font-style: italic;" href="#Command::loadGetoptParams()">loadGetoptParams</a>,
+      <a style="font-style: italic;" href="#Command::postAction()">postAction</a>,
+      <a style="font-style: italic;" href="#Command::postExec()">postExec</a>,
+      <a style="font-style: italic;" href="#Command::preAction()">preAction</a>,
+      <a style="font-style: italic;" href="#Command::preExec()">preExec</a>,
+      <a style="font-style: italic;" href="#Command::skipAction()">skipAction</a>,
+      <div class="method">
+<a id="Command::__construct()"></a><h3>__construct<span class="nb-faded-text">(
+          <a href="src_Context.html">aura\cli\Context</a>
+             
+            $context,
+          <a href="src_Stdio.html">aura\cli\Stdio</a>
+             
+            $stdio,
+          <a href="src_Getopt.html">aura\cli\Getopt</a>
+             
+            $getopt,
+          aura\signal\Manager
+             
+            $signal,
+          
+          )
+        </span>
+        :
+        <span class="nb-faded-text">n/a</span>
+</h3>
+<h4>Description</h4>
+<em>Constructor.</em><br><h4>Arguments</h4>
+<table>
+<thead><tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+<th>Default</th>
+</tr></thead>
+<tbody>
+<tr>
+<td>$context</td>
+<td><a href="src_Context.html">aura\cli\Context</a></td>
+<td>The command-line context.</td>
+<td></td>
+</tr>
+<tr>
+<td>$stdio</td>
+<td><a href="src_Stdio.html">aura\cli\Stdio</a></td>
+<td>Standard input/output streams.</td>
+<td></td>
+</tr>
+<tr>
+<td>$getopt</td>
+<td><a href="src_Getopt.html">aura\cli\Getopt</a></td>
+<td>An options processor and reader.</td>
+<td></td>
+</tr>
+<tr>
+<td>$signal</td>
+<td>aura\signal\Manager</td>
+<td>A signal manager to send signals to.</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h4>Return value</h4>
+<table>
+<thead><tr>
+<th>Type</th>
+<th>Description</th>
+</tr></thead>
+<tbody><tr>
+<td>n/a</td>
+<td>n/a</td>
+</tr></tbody>
+</table>
+</div>
+<div class="method">
+<a id="Command::action()"></a><h3>action<span class="nb-faded-text">(
+          
+          )
+        </span>
+        :
+        <span class="nb-faded-text">void</span>
+</h3>
+<h4>Description</h4>
+<em>The main logic for the Command.</em><br><h4>Return value</h4>
+<table>
+<thead><tr>
+<th>Type</th>
+<th>Description</th>
+</tr></thead>
+<tbody><tr>
+<td>void</td>
+<td></td>
+</tr></tbody>
+</table>
+</div>
+<div class="method">
+<a id="Command::exec()"></a><h3>exec<span class="nb-faded-text">(
+          
+          )
+        </span>
+        :
+        <span class="nb-faded-text">void</span>
+</h3>
+<h4>Description</h4>
+<em>Executes the Command.  In order, it does these things:</em><br><small>- signals `'pre_exec'`<br/><br/>- signals `'pre_action'`<br/><br/>- is the action is not to be skipped, calls `action()` and signals <br/>  `'post_action'`<br/><br/>- signals `'post_exec'`<br/><br/>- resets the terminal to normal colors</small><br><h4>Return value</h4>
+<table>
+<thead><tr>
+<th>Type</th>
+<th>Description</th>
+</tr></thead>
+<tbody><tr>
+<td>void</td>
+<td></td>
+</tr></tbody>
+</table>
+<h4>Tags</h4>
+<table>
+<thead><tr>
+<th>Name</th>
+<th>Description</th>
+</tr></thead>
+<tbody>
+<tr>
+<td>signal</td>
+<td>'pre_exec'</td>
+</tr>
+<tr>
+<td>signal</td>
+<td>'pre_action'</td>
+</tr>
+<tr>
+<td>signal</td>
+<td>'post_action'</td>
+</tr>
+<tr>
+<td>signal</td>
+<td>'post_exec'</td>
+</tr>
+<tr>
+<td>see</td>
+<td>action()</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="method">
+<a id="Command::isSkipAction()"></a><h3>isSkipAction<span class="nb-faded-text">(
+          
+          )
+        </span>
+        :
+        <span class="nb-faded-text">bool</span>
+</h3>
+<h4>Description</h4>
+<em>Should the call to `action()` be skipped?</em><br><h4>Return value</h4>
+<table>
+<thead><tr>
+<th>Type</th>
+<th>Description</th>
+</tr></thead>
+<tbody><tr>
+<td>bool</td>
+<td></td>
+</tr></tbody>
+</table>
+</div>
+<div class="method">
+<a id="Command::loadGetoptParams()"></a><h3>loadGetoptParams<span class="nb-faded-text">(
+          
+          )
+        </span>
+        :
+        <span class="nb-faded-text">void</span>
+</h3>
+<h4>Description</h4>
+<em>Passes the Context arguments to `$getopt` and retains the numeric<br/>parameters in `$params`.</em><br><h4>Return value</h4>
+<table>
+<thead><tr>
+<th>Type</th>
+<th>Description</th>
+</tr></thead>
+<tbody><tr>
+<td>void</td>
+<td></td>
+</tr></tbody>
+</table>
+</div>
+<div class="method">
+<a id="Command::postAction()"></a><h3>postAction<span class="nb-faded-text">(
+          
+          )
+        </span>
+        :
+        <span class="nb-faded-text">mixed</span>
+</h3>
+<h4>Description</h4>
+<em>Runs after `action()` as part of the `'post_action'` signal.</em><br><h4>Return value</h4>
+<table>
+<thead><tr>
+<th>Type</th>
+<th>Description</th>
+</tr></thead>
+<tbody><tr>
+<td>mixed</td>
+<td></td>
+</tr></tbody>
+</table>
+</div>
+<div class="method">
+<a id="Command::postExec()"></a><h3>postExec<span class="nb-faded-text">(
+          
+          )
+        </span>
+        :
+        <span class="nb-faded-text">mixed</span>
+</h3>
+<h4>Description</h4>
+<em>Runs after `action()` as part of the `'post_exec'` signal.</em><br><h4>Return value</h4>
+<table>
+<thead><tr>
+<th>Type</th>
+<th>Description</th>
+</tr></thead>
+<tbody><tr>
+<td>mixed</td>
+<td></td>
+</tr></tbody>
+</table>
+</div>
+<div class="method">
+<a id="Command::preAction()"></a><h3>preAction<span class="nb-faded-text">(
+          
+          )
+        </span>
+        :
+        <span class="nb-faded-text">mixed</span>
+</h3>
+<h4>Description</h4>
+<em>Runs before `action()` as part of the `'pre_action'` signal.</em><br><h4>Return value</h4>
+<table>
+<thead><tr>
+<th>Type</th>
+<th>Description</th>
+</tr></thead>
+<tbody><tr>
+<td>mixed</td>
+<td></td>
+</tr></tbody>
+</table>
+</div>
+<div class="method">
+<a id="Command::preExec()"></a><h3>preExec<span class="nb-faded-text">(
+          
+          )
+        </span>
+        :
+        <span class="nb-faded-text">mixed</span>
+</h3>
+<h4>Description</h4>
+<em>Runs before `action()` as part of the `'pre_exec'` signal.</em><br><h4>Return value</h4>
+<table>
+<thead><tr>
+<th>Type</th>
+<th>Description</th>
+</tr></thead>
+<tbody><tr>
+<td>mixed</td>
+<td></td>
+</tr></tbody>
+</table>
+</div>
+<div class="method">
+<a id="Command::skipAction()"></a><h3>skipAction<span class="nb-faded-text">(
+          
+          )
+        </span>
+        :
+        <span class="nb-faded-text">void</span>
+</h3>
+<h4>Description</h4>
+<em>Stops `exec()` from calling `action()` if it has not already done so.</em><br><h4>Return value</h4>
+<table>
+<thead><tr>
+<th>Type</th>
+<th>Description</th>
+</tr></thead>
+<tbody><tr>
+<td>void</td>
+<td></td>
+</tr></tbody>
+</table>
+</div>
+</div>
+<div id="properties_Command">
+<h4>Properties</h4>
+<a href="#Command::%24getopt">$getopt</a>,
+      <a href="#Command::%24options">$options</a>,
+      <a href="#Command::%24options_strict">$options_strict</a>,
+      <a href="#Command::%24params">$params</a>,
+      <a href="#Command::%24skip_action">$skip_action</a>,
+      <div class="method">
+<a id="Command::$getopt"></a><h3>
+<span class="nb-faded-text">aura\cli\Getopt 
+          protected 
+          </span>$getopt</h3>
+<em>A Getopt object for the Command; retains the short and long options<br/>passed at the command line.</em><br><small></small><br><br>
+</div>
+<div class="method">
+<a id="Command::$options"></a><h3>
+<span class="nb-faded-text">array 
+          protected 
+          </span>$options</h3>
+<em>The option definitions for the Getopt object.</em><br><small></small><br><br>
+</div>
+<div class="method">
+<a id="Command::$options_strict"></a><h3>
+<span class="nb-faded-text">bool 
+          protected 
+          </span>$options_strict</h3>
+<em>Should Getopt be strict about how options are processed?  In strict<br/>mode, passing an undefined option will throw an exception; in<br/>non-strict, it will not.</em><br><small></small><br><br>
+</div>
+<div class="method">
+<a id="Command::$params"></a><h3>
+<span class="nb-faded-text">array 
+          protected 
+          </span>$params</h3>
+<em>The positional (numeric) arguments passed at the command line.</em><br><small></small><br><br>
+</div>
+<div class="method">
+<a id="Command::$skip_action"></a><h3>
+<span class="nb-faded-text">bool 
+          protected 
+          </span>$skip_action</h3>
+<em>When set to `true` before `action()` is called, the `action()` will not<br/>be called after all.</em><br><small></small><br><br>
+</div>
+</div>
+<div style="clear: both"></div>
+</div>
+</div></div><div id="index"><div class="padder"><script xmlns="" type="text/javascript">
+      $(function() {
+
+        var is_chrome = /chrome/.test( navigator.userAgent.toLowerCase() );
+        var is_local = /file:\/\//.test(document.location.href);
+        if (is_chrome && is_local)
+        {
+          // search is disabled on chrome with local files due to http://code.google.com/p/chromium/issues/detail?id=40787
+          return;
+        }
+
+        $("#search_box").show();
+        var search_index = {};
+        $.ajax({
+          url: "search_index.xml",
+          dataType: ($.browser.msie) ? "text" : "xml",
+          error: function(data) {
+            alert('An error occurred using the search data');
+          },
+          success: function( data ) {
+            var xml;
+            if (typeof data == "string") {
+              xml = new ActiveXObject("Microsoft.XMLDOM");
+              xml.async = false;
+              xml.loadXML(data);
+            } else {
+              xml = data;
+            }
+
+            search_index = $("node", xml).map(function() {
+              type = $("type", this).text();
+              return {
+                value: $("value", this).text(),
+                label: '<img src="images/icons/'+type+'.png" align="absmiddle">'+$("value", this).text(),
+                id: $("id", this).text(),
+              };
+            }).get();
+
+            $("#search_box").autocomplete({
+              source: search_index,
+              select: function(event, ui) {
+                // redirect to the documentation
+                parent.content.document.location = ''+ui.item.id;
+                applySearchHash();
+              }
+            });
+          }
+        });
+      });
+    </script><input id="search_box"></input><div class="section">
+<h1>Namespaces</h1>
+<ul id="namespaces-" class="filetree">
+<li class="closed">
+<span class="folder">aura</span><ul><li class="closed">
+<span class="folder">cli</span><ul>
+<li><span class="file"><a href="src_Context.html#Context" target="content">Context</a><br><small>Collection point for information about the command-line execution context.</small></span></li>
+<li><span class="file"><a href="src_Exception.html#Exception" target="content">Exception</a><br><small>Generic package exception.</small></span></li>
+<li><span class="file"><a href="src_Getopt.html#Getopt" target="content">Getopt</a><br><small>Retrieves and validates command-line options and parameter values.</small></span></li>
+<li><span class="file"><a href="src_Option.html#Option" target="content">Option</a><br><small>Defines a single command-line option.</small></span></li>
+<li><span class="file"><a href="src_Exception_OptionParam.html#Exception_OptionParam" target="content">Exception_OptionParam</a><br><small>The option &#39;param&#39; value needs a boolean or a null.</small></span></li>
+<li><span class="file"><a href="src_Exception_OptionName.html#Exception_OptionName" target="content">Exception_OptionName</a><br><small>Option objects need to be initialized with a name.</small></span></li>
+<li><span class="file"><a href="src_Exception_OptionNotDefined.html#Exception_OptionNotDefined" target="content">Exception_OptionNotDefined</a><br><small>Asked for an option that is not defined.</small></span></li>
+<li><span class="file"><a href="src_Exception_OptionNotMulti.html#Exception_OptionNotMulti" target="content">Exception_OptionNotMulti</a><br><small>The option does not allow multiple values.</small></span></li>
+<li><span class="file"><a href="src_Exception_OptionParamRejected.html#Exception_OptionParamRejected" target="content">Exception_OptionParamRejected</a><br><small>The option requires that no parameter be present.</small></span></li>
+<li><span class="file"><a href="src_Exception_OptionParamRequired.html#Exception_OptionParamRequired" target="content">Exception_OptionParamRequired</a><br><small>The option requires a non-blank parameter.</small></span></li>
+<li><span class="file"><a href="src_Exception_CommandFactory.html#Exception_CommandFactory" target="content">Exception_CommandFactory</a><br><small>Generic CommandFactory exception.</small></span></li>
+<li><span class="file"><a href="src_Command.html#Command" target="content">Command</a><br><small>The CLI equivalent of a page-controller to perform a single action.</small></span></li>
+<li><span class="file"><a href="src_Stdio.html#Stdio" target="content">Stdio</a><br><small>Provides a wrapper for standard input/output handles.</small></span></li>
+<li><span class="file"><a href="src_OptionFactory.html#OptionFactory" target="content">OptionFactory</a><br><small>A factory to create Option objects.</small></span></li>
+<li><span class="file"><a href="src_CommandFactory.html#CommandFactory" target="content">CommandFactory</a><br><small>A factory to create Command objects.</small></span></li>
+<li><span class="file"><a href="src_Vt100.html#Vt100" target="content">Vt100</a><br><small>Text formatting for VT100 terminals.</small></span></li>
+</ul>
+</li></ul>
+</li>
+<li class="closed">
+<span class="folder">default</span><ul></ul>
+</li>
+</ul>
+</div><div class="section">
+<h1>Packages</h1>
+<ul id="packages-" class="filetree"><li class="closed">
+<span class="folder">aura.cli</span><ul id="packages_aura.cli" class=".filetree">
+<li class="closed"><span class="file"><a href="src_Context.html#Context" target="content">Context</a><br><small>Collection point for information about the command-line execution context.</small></span></li>
+<li class="closed"><span class="file"><a href="src_Exception.html#Exception" target="content">Exception</a><br><small>Generic package exception.</small></span></li>
+<li class="closed"><span class="file"><a href="src_Getopt.html#Getopt" target="content">Getopt</a><br><small>Retrieves and validates command-line options and parameter values.</small></span></li>
+<li class="closed"><span class="file"><a href="src_Option.html#Option" target="content">Option</a><br><small>Defines a single command-line option.</small></span></li>
+<li class="closed"><span class="file"><a href="src_Exception_OptionParam.html#Exception_OptionParam" target="content">Exception_OptionParam</a><br><small>The option &#39;param&#39; value needs a boolean or a null.</small></span></li>
+<li class="closed"><span class="file"><a href="src_Exception_OptionName.html#Exception_OptionName" target="content">Exception_OptionName</a><br><small>Option objects need to be initialized with a name.</small></span></li>
+<li class="closed"><span class="file"><a href="src_Exception_OptionNotDefined.html#Exception_OptionNotDefined" target="content">Exception_OptionNotDefined</a><br><small>Asked for an option that is not defined.</small></span></li>
+<li class="closed"><span class="file"><a href="src_Exception_OptionNotMulti.html#Exception_OptionNotMulti" target="content">Exception_OptionNotMulti</a><br><small>The option does not allow multiple values.</small></span></li>
+<li class="closed"><span class="file"><a href="src_Exception_OptionParamRejected.html#Exception_OptionParamRejected" target="content">Exception_OptionParamRejected</a><br><small>The option requires that no parameter be present.</small></span></li>
+<li class="closed"><span class="file"><a href="src_Exception_OptionParamRequired.html#Exception_OptionParamRequired" target="content">Exception_OptionParamRequired</a><br><small>The option requires a non-blank parameter.</small></span></li>
+<li class="closed"><span class="file"><a href="src_Exception_CommandFactory.html#Exception_CommandFactory" target="content">Exception_CommandFactory</a><br><small>Generic CommandFactory exception.</small></span></li>
+<li class="closed"><span class="file"><a href="src_Command.html#Command" target="content">Command</a><br><small>The CLI equivalent of a page-controller to perform a single action.</small></span></li>
+<li class="closed"><span class="file"><a href="src_Stdio.html#Stdio" target="content">Stdio</a><br><small>Provides a wrapper for standard input/output handles.</small></span></li>
+<li class="closed"><span class="file"><a href="src_OptionFactory.html#OptionFactory" target="content">OptionFactory</a><br><small>A factory to create Option objects.</small></span></li>
+<li class="closed"><span class="file"><a href="src_CommandFactory.html#CommandFactory" target="content">CommandFactory</a><br><small>A factory to create Command objects.</small></span></li>
+<li class="closed"><span class="file"><a href="src_Vt100.html#Vt100" target="content">Vt100</a><br><small>Text formatting for VT100 terminals.</small></span></li>
+</ul>
+</li></ul>
+</div>
+</div></div><div id="footer"><div class="padder"></div></div></div></body></html>

@@ -1,0 +1,566 @@
+<html xmlns="http://www.w3.org/1999/xhtml"><head><title>File</title><meta http-equiv="Content-Type" content="text/html; charset=utf-8"></meta><link rel="stylesheet" href="css/black-tie/jquery-ui-1.8.2.custom.css" type="text/css"></link><link rel="stylesheet" href="css/jquery.treeview.css" type="text/css"></link><link rel="stylesheet" href="css/default.css" type="text/css"></link><script type="text/javascript" src="js/jquery-1.4.2.min.js"></script><script type="text/javascript" src="js/jquery-ui-1.8.2.custom.min.js"></script><script type="text/javascript" src="js/jquery.treeview.js"></script></head><body><script type="text/javascript">
+          $(document).ready(function()
+          {
+            $(".treeview-docblox").treeview({
+              animated: 'fast'
+            });
+          });
+
+          function jq_escape(myid)
+          {
+            return '#' + myid.replace(/(#|\$|:|\.|\(|\))/g, '\\$1');
+          }
+
+          function applySearchHash()
+          {
+            hashes = document.location.hash.substr(1, document.location.hash.length);
+            if (hashes != "")
+            {
+              hashes = hashes.split('/');
+              $.each(hashes, function(index, hash)
+              {
+                node = $(jq_escape(hash));
+                switch (node[0].nodeName)
+                {
+                  case 'DIV':
+                    tabs = node.parents('.tabs');
+                    $(tabs[0]).tabs('select', '#' + hash)
+                    break;
+                  case 'A':
+                    window.scrollTo(0, node.offset().top);
+                    break;
+                }
+              });
+            }
+          }
+
+          jQuery(function()
+          {
+            jQuery(".tabs").tabs();
+            applySearchHash();
+          });
+        </script><div id="maincontainer"><div id="header"><div class="padder"></div></div><div id="content_container"><div id="content"><div class="padder"><h1 xmlns="">tests/MapTest.php</h1>
+<h2 xmlns="">Classes</h2>
+<div xmlns="" id="MapTest" class="class">
+<h3>MapTest</h3>
+<div class="properties">
+<h1>Properties</h1>
+<label class="property-key">Extends</label><div class="property-value">\PHPUnit_Framework_TestCase </div>
+<label class="property-key">Implements</label><div class="property-value"> 
+      </div>
+<label class="property-key">Abstract</label><div class="property-value">No 
+      </div>
+<label class="property-key">Final</label><div class="property-value">No 
+      </div>
+</div>
+<h4>Description</h4>
+<em>Test class for Map.</em><br><br><div id="methods_MapTest">
+<h4>Methods</h4>
+<a style="font-style: italic;" href="#MapTest::setUp()">setUp</a>,
+      <a style="font-style: italic;" href="#MapTest::tearDown()">tearDown</a>,
+      <a style="font-style: italic;" href="#MapTest::testAddComplexRoute()">testAddComplexRoute</a>,
+      <a style="font-style: italic;" href="#MapTest::testAddNamedRoute()">testAddNamedRoute</a>,
+      <a style="font-style: italic;" href="#MapTest::testAddUnnamedRoute()">testAddUnnamedRoute</a>,
+      <a style="font-style: italic;" href="#MapTest::testAttachAtConstructionTime()">testAttachAtConstructionTime</a>,
+      <a style="font-style: italic;" href="#MapTest::testAttachNamedRestRoutesWithPrefixes()">testAttachNamedRestRoutesWithPrefixes</a>,
+      <a style="font-style: italic;" href="#MapTest::testAttachNamedRoutes()">testAttachNamedRoutes</a>,
+      <a style="font-style: italic;" href="#MapTest::testAttachNamedRoutesWithPrefixes()">testAttachNamedRoutesWithPrefixes</a>,
+      <a style="font-style: italic;" href="#MapTest::testAttachRoutesWithoutPathPrefix()">testAttachRoutesWithoutPathPrefix</a>,
+      <a style="font-style: italic;" href="#MapTest::testAttachUnnamedLongFormRoutes()">testAttachUnnamedLongFormRoutes</a>,
+      <a style="font-style: italic;" href="#MapTest::testAttachWithBadRouteSpec()">testAttachWithBadRouteSpec</a>,
+      <a style="font-style: italic;" href="#MapTest::testAttachWithoutRoutes()">testAttachWithoutRoutes</a>,
+      <a style="font-style: italic;" href="#MapTest::testGenerate()">testGenerate</a>,
+      <a style="font-style: italic;" href="#MapTest::testGenerateWhenMissing()">testGenerateWhenMissing</a>,
+      <a style="font-style: italic;" href="#MapTest::testGetAndSetRoutes()">testGetAndSetRoutes</a>,
+      <a style="font-style: italic;" href="#MapTest::testRunOutOfAttachedRoutesToMatch()">testRunOutOfAttachedRoutesToMatch</a>,
+      <div class="method">
+<a id="MapTest::setUp()"></a><h3>setUp<span class="nb-faded-text">(
+          
+          )
+        </span>
+        :
+        <span class="nb-faded-text">n/a</span>
+</h3>
+<h4>Description</h4>
+<em>Sets up the fixture, for example, opens a network connection.</em><br><small>This method is called before a test is executed.</small><br><h4>Return value</h4>
+<table>
+<thead><tr>
+<th>Type</th>
+<th>Description</th>
+</tr></thead>
+<tbody><tr>
+<td>n/a</td>
+<td>n/a</td>
+</tr></tbody>
+</table>
+</div>
+<div class="method">
+<a id="MapTest::tearDown()"></a><h3>tearDown<span class="nb-faded-text">(
+          
+          )
+        </span>
+        :
+        <span class="nb-faded-text">n/a</span>
+</h3>
+<h4>Description</h4>
+<em>Tears down the fixture, for example, closes a network connection.</em><br><small>This method is called after a test is executed.</small><br><h4>Return value</h4>
+<table>
+<thead><tr>
+<th>Type</th>
+<th>Description</th>
+</tr></thead>
+<tbody><tr>
+<td>n/a</td>
+<td>n/a</td>
+</tr></tbody>
+</table>
+</div>
+<div class="method">
+<a id="MapTest::testAddComplexRoute()"></a><h3>testAddComplexRoute<span class="nb-faded-text">(
+          
+          )
+        </span>
+        :
+        <span class="nb-faded-text">n/a</span>
+</h3>
+<h4>Return value</h4>
+<table>
+<thead><tr>
+<th>Type</th>
+<th>Description</th>
+</tr></thead>
+<tbody><tr>
+<td>n/a</td>
+<td>n/a</td>
+</tr></tbody>
+</table>
+</div>
+<div class="method">
+<a id="MapTest::testAddNamedRoute()"></a><h3>testAddNamedRoute<span class="nb-faded-text">(
+          
+          )
+        </span>
+        :
+        <span class="nb-faded-text">n/a</span>
+</h3>
+<h4>Return value</h4>
+<table>
+<thead><tr>
+<th>Type</th>
+<th>Description</th>
+</tr></thead>
+<tbody><tr>
+<td>n/a</td>
+<td>n/a</td>
+</tr></tbody>
+</table>
+</div>
+<div class="method">
+<a id="MapTest::testAddUnnamedRoute()"></a><h3>testAddUnnamedRoute<span class="nb-faded-text">(
+          
+          )
+        </span>
+        :
+        <span class="nb-faded-text">n/a</span>
+</h3>
+<h4>Return value</h4>
+<table>
+<thead><tr>
+<th>Type</th>
+<th>Description</th>
+</tr></thead>
+<tbody><tr>
+<td>n/a</td>
+<td>n/a</td>
+</tr></tbody>
+</table>
+</div>
+<div class="method">
+<a id="MapTest::testAttachAtConstructionTime()"></a><h3>testAttachAtConstructionTime<span class="nb-faded-text">(
+          
+          )
+        </span>
+        :
+        <span class="nb-faded-text">n/a</span>
+</h3>
+<h4>Return value</h4>
+<table>
+<thead><tr>
+<th>Type</th>
+<th>Description</th>
+</tr></thead>
+<tbody><tr>
+<td>n/a</td>
+<td>n/a</td>
+</tr></tbody>
+</table>
+</div>
+<div class="method">
+<a id="MapTest::testAttachNamedRestRoutesWithPrefixes()"></a><h3>testAttachNamedRestRoutesWithPrefixes<span class="nb-faded-text">(
+          
+          )
+        </span>
+        :
+        <span class="nb-faded-text">n/a</span>
+</h3>
+<h4>Return value</h4>
+<table>
+<thead><tr>
+<th>Type</th>
+<th>Description</th>
+</tr></thead>
+<tbody><tr>
+<td>n/a</td>
+<td>n/a</td>
+</tr></tbody>
+</table>
+</div>
+<div class="method">
+<a id="MapTest::testAttachNamedRoutes()"></a><h3>testAttachNamedRoutes<span class="nb-faded-text">(
+          
+          )
+        </span>
+        :
+        <span class="nb-faded-text">n/a</span>
+</h3>
+<h4>Return value</h4>
+<table>
+<thead><tr>
+<th>Type</th>
+<th>Description</th>
+</tr></thead>
+<tbody><tr>
+<td>n/a</td>
+<td>n/a</td>
+</tr></tbody>
+</table>
+</div>
+<div class="method">
+<a id="MapTest::testAttachNamedRoutesWithPrefixes()"></a><h3>testAttachNamedRoutesWithPrefixes<span class="nb-faded-text">(
+          
+          )
+        </span>
+        :
+        <span class="nb-faded-text">n/a</span>
+</h3>
+<h4>Return value</h4>
+<table>
+<thead><tr>
+<th>Type</th>
+<th>Description</th>
+</tr></thead>
+<tbody><tr>
+<td>n/a</td>
+<td>n/a</td>
+</tr></tbody>
+</table>
+</div>
+<div class="method">
+<a id="MapTest::testAttachRoutesWithoutPathPrefix()"></a><h3>testAttachRoutesWithoutPathPrefix<span class="nb-faded-text">(
+          
+          )
+        </span>
+        :
+        <span class="nb-faded-text">n/a</span>
+</h3>
+<h4>Return value</h4>
+<table>
+<thead><tr>
+<th>Type</th>
+<th>Description</th>
+</tr></thead>
+<tbody><tr>
+<td>n/a</td>
+<td>n/a</td>
+</tr></tbody>
+</table>
+</div>
+<div class="method">
+<a id="MapTest::testAttachUnnamedLongFormRoutes()"></a><h3>testAttachUnnamedLongFormRoutes<span class="nb-faded-text">(
+          
+          )
+        </span>
+        :
+        <span class="nb-faded-text">n/a</span>
+</h3>
+<h4>Return value</h4>
+<table>
+<thead><tr>
+<th>Type</th>
+<th>Description</th>
+</tr></thead>
+<tbody><tr>
+<td>n/a</td>
+<td>n/a</td>
+</tr></tbody>
+</table>
+</div>
+<div class="method">
+<a id="MapTest::testAttachWithBadRouteSpec()"></a><h3>testAttachWithBadRouteSpec<span class="nb-faded-text">(
+          
+          )
+        </span>
+        :
+        <span class="nb-faded-text">n/a</span>
+</h3>
+<h4>Return value</h4>
+<table>
+<thead><tr>
+<th>Type</th>
+<th>Description</th>
+</tr></thead>
+<tbody><tr>
+<td>n/a</td>
+<td>n/a</td>
+</tr></tbody>
+</table>
+<h4>Tags</h4>
+<table>
+<thead><tr>
+<th>Name</th>
+<th>Description</th>
+<th>Link</th>
+</tr></thead>
+<tbody><tr>
+<td>expectedException</td>
+<td>\aura\router\Exception</td>
+<td></td>
+</tr></tbody>
+</table>
+</div>
+<div class="method">
+<a id="MapTest::testAttachWithoutRoutes()"></a><h3>testAttachWithoutRoutes<span class="nb-faded-text">(
+          
+          )
+        </span>
+        :
+        <span class="nb-faded-text">n/a</span>
+</h3>
+<h4>Return value</h4>
+<table>
+<thead><tr>
+<th>Type</th>
+<th>Description</th>
+</tr></thead>
+<tbody><tr>
+<td>n/a</td>
+<td>n/a</td>
+</tr></tbody>
+</table>
+<h4>Tags</h4>
+<table>
+<thead><tr>
+<th>Name</th>
+<th>Description</th>
+<th>Link</th>
+</tr></thead>
+<tbody><tr>
+<td>expectedException</td>
+<td>\aura\router\Exception</td>
+<td></td>
+</tr></tbody>
+</table>
+</div>
+<div class="method">
+<a id="MapTest::testGenerate()"></a><h3>testGenerate<span class="nb-faded-text">(
+          
+          )
+        </span>
+        :
+        <span class="nb-faded-text">n/a</span>
+</h3>
+<h4>Return value</h4>
+<table>
+<thead><tr>
+<th>Type</th>
+<th>Description</th>
+</tr></thead>
+<tbody><tr>
+<td>n/a</td>
+<td>n/a</td>
+</tr></tbody>
+</table>
+<h4>Tags</h4>
+<table>
+<thead><tr>
+<th>Name</th>
+<th>Description</th>
+<th>Link</th>
+</tr></thead>
+<tbody><tr>
+<td>todo</td>
+<td>Implement testGenerate().</td>
+<td></td>
+</tr></tbody>
+</table>
+</div>
+<div class="method">
+<a id="MapTest::testGenerateWhenMissing()"></a><h3>testGenerateWhenMissing<span class="nb-faded-text">(
+          
+          )
+        </span>
+        :
+        <span class="nb-faded-text">n/a</span>
+</h3>
+<h4>Return value</h4>
+<table>
+<thead><tr>
+<th>Type</th>
+<th>Description</th>
+</tr></thead>
+<tbody><tr>
+<td>n/a</td>
+<td>n/a</td>
+</tr></tbody>
+</table>
+</div>
+<div class="method">
+<a id="MapTest::testGetAndSetRoutes()"></a><h3>testGetAndSetRoutes<span class="nb-faded-text">(
+          
+          )
+        </span>
+        :
+        <span class="nb-faded-text">n/a</span>
+</h3>
+<h4>Return value</h4>
+<table>
+<thead><tr>
+<th>Type</th>
+<th>Description</th>
+</tr></thead>
+<tbody><tr>
+<td>n/a</td>
+<td>n/a</td>
+</tr></tbody>
+</table>
+</div>
+<div class="method">
+<a id="MapTest::testRunOutOfAttachedRoutesToMatch()"></a><h3>testRunOutOfAttachedRoutesToMatch<span class="nb-faded-text">(
+          
+          )
+        </span>
+        :
+        <span class="nb-faded-text">n/a</span>
+</h3>
+<h4>Return value</h4>
+<table>
+<thead><tr>
+<th>Type</th>
+<th>Description</th>
+</tr></thead>
+<tbody><tr>
+<td>n/a</td>
+<td>n/a</td>
+</tr></tbody>
+</table>
+</div>
+</div>
+<div id="properties_MapTest">
+<h2>Properties</h2>
+<a href="#MapTest::%24map">$map</a>,
+      <div class="method">
+<a id="MapTest::$map"></a><h3>
+<span class="nb-faded-text">aura\router\Map 
+          protected 
+          </span>$map</h3>
+<em></em><br><small></small><br><br>
+</div>
+</div>
+</div></div></div></div><div id="menu"><div class="padder"><h1><img src="images/logo.png" alt=""></img></h1><div id="search-box"><script xmlns="" type="text/javascript">
+      $(function() {
+
+        var is_chrome = /chrome/.test( navigator.userAgent.toLowerCase() );
+        var is_local = /file:\/\//.test(document.location.href);
+        if (is_chrome && is_local)
+        {
+          // search is disabled on chrome with local files due to http://code.google.com/p/chromium/issues/detail?id=40787
+          return;
+        }
+
+        $("#search_box").show();
+        var search_index = {};
+        $.ajax({
+          url: "/search_index.xml",
+          dataType: ($.browser.msie) ? "text" : "xml",
+          error: function(data) {
+            alert('An error occurred using the search data');
+          },
+          success: function( data ) {
+            var xml;
+            if (typeof data == "string") {
+              xml = new ActiveXObject("Microsoft.XMLDOM");
+              xml.async = false;
+              xml.loadXML(data);
+            } else {
+              xml = data;
+            }
+
+            search_index = $("node", xml).map(function() {
+              type = $("type", this).text();
+              return {
+                value: $("value", this).text(),
+                label: '<img src="/images/icons/'+type+'.png" align="absmiddle">'+$("value", this).text(),
+                id: $("id", this).text(),
+              };
+            }).get();
+
+            $("#search_box").autocomplete({
+              source: search_index,
+              select: function(event, ui) {
+                // redirect to the documentation
+                $(location).attr('href', '/'+ui.item.id);
+                applySearchHash();
+              }
+            });
+          }
+        });
+      });
+    </script><input id="search_box" style="display: none"></input></div><h4>Documentation</h4><ul><li><a href="index.html">Class diagram</a></li><li><a href="markers.html">TODO / Markers</a></li></ul></div></div><div id="index"><div class="padder"><h1>Namespaces</h1><ul id="namespaces-" class="treeview-docblox">
+<li class="namespace closed">
+<div class="content"><span>aura</span></div>
+<ul><li class="namespace closed">
+<div class="content"><span>router</span></div>
+<ul>
+<li><div class="content">
+<span><a href="tests_MapTest.html#MapTest">MapTest</a></span><small>Test class for Map.</small>
+</div></li>
+<li><div class="content">
+<span><a href="tests_RouteTest.html#RouteTest">RouteTest</a></span><small>Test class for Route.</small>
+</div></li>
+<li><div class="content">
+<span><a href="src_RouteFactory.html#RouteFactory">RouteFactory</a></span><small>A factory to create Route objects.</small>
+</div></li>
+<li><div class="content">
+<span><a href="src_Exception.html#Exception">Exception</a></span><small>Package-specific exception.</small>
+</div></li>
+<li><div class="content">
+<span><a href="src_Route.html#Route">Route</a></span><small>Represents an individual route with a name, path, params, values, etc.</small>
+</div></li>
+<li><div class="content">
+<span><a href="src_Map.html#Map">Map</a></span><small>A collection point for URI routes.</small>
+</div></li>
+</ul>
+</li></ul>
+</li>
+<li class="namespace closed">
+<div class="content"><span>default</span></div>
+<ul></ul>
+</li>
+</ul><h1>Packages</h1><ul id="packages-" class="treeview-docblox"><li class="package closed">
+<div class="content"><span>aura.router</span></div>
+<ul id="packages_aura.router" class="treeview-docblox">
+<li class="closed"><div class="content">
+<span><a href="src_RouteFactory.html#RouteFactory">RouteFactory</a></span><small>A factory to create Route objects.</small>
+</div></li>
+<li class="closed"><div class="content">
+<span><a href="src_Exception.html#Exception">Exception</a></span><small>Package-specific exception.</small>
+</div></li>
+<li class="closed"><div class="content">
+<span><a href="src_Route.html#Route">Route</a></span><small>Represents an individual route with a name, path, params, values, etc.</small>
+</div></li>
+<li class="closed"><div class="content">
+<span><a href="src_Map.html#Map">Map</a></span><small>A collection point for URI routes.</small>
+</div></li>
+</ul>
+</li></ul>
+</div></div><div id="footer"><div class="padder"></div></div></div></body></html>

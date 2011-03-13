@@ -1,0 +1,449 @@
+<html xmlns="http://www.w3.org/1999/xhtml"><head><title>File</title><meta http-equiv="Content-Type" content="text/html; charset=utf-8"></meta><link rel="stylesheet" href="css/black-tie/jquery-ui-1.8.2.custom.css" type="text/css"></link><link rel="stylesheet" href="css/jquery.treeview.css" type="text/css"></link><link rel="stylesheet" href="css/default.css" type="text/css"></link><script type="text/javascript" src="js/jquery-1.4.2.min.js"></script><script type="text/javascript" src="js/jquery-ui-1.8.2.custom.min.js"></script><script type="text/javascript" src="js/jquery.treeview.js"></script></head><body><script type="text/javascript">
+          $(document).ready(function()
+          {
+            $(".filetree").treeview({
+              animated: 'fast'
+            });
+          });
+
+          function jq_escape(myid)
+          {
+            return '#' + myid.replace(/(#|\$|:|\.|\(|\))/g, '\\$1');
+          }
+
+          function applySearchHash()
+          {
+            hashes = document.location.hash.substr(1, document.location.hash.length);
+            if (hashes != "")
+            {
+              hashes = hashes.split('/');
+              $.each(hashes, function(index, hash)
+              {
+                node = $(jq_escape(hash));
+                switch (node[0].nodeName)
+                {
+                  case 'DIV':
+                    tabs = node.parents('.tabs');
+                    $(tabs[0]).tabs('select', '#' + hash)
+                    break;
+                  case 'A':
+                    window.scrollTo(0, node.offset().top);
+                    break;
+                }
+              });
+            }
+          }
+
+          jQuery(function()
+          {
+            jQuery(".tabs").tabs();
+            applySearchHash();
+          });
+        </script><div id="maincontainer"><div id="header"><h1>Aura Project for PHP: aura.web</h1><img src="images/top-stopper.png"></img></div><ul xmlns="" id="menu">
+<li><a href="graph.html" target="content">Class diagram</a></li>
+<li><a href="markers.html" target="content">TODO / Markers</a></li>
+</ul>
+<div id="content_container"><div xmlns="" id="content">
+<h1>src/Csrf.php</h1>
+<div class="file_menu">
+<a href="#includes">Includes</a> |
+      <a href="#functions">Functions</a> |
+      <a href="#constants">Constants</a> |
+      <a href="#classes">Classes</a> |
+      <a href="#interfaces">Interfaces</a>
+</div>
+<a name="classes"></a><h2>Classes</h2>
+<div id="Csrf" class="class">
+<h3>Csrf</h3>
+<div class="properties">
+<h1>Properties</h1>
+<label class="property-key">Extends</label><div class="property-value"> </div>
+<label class="property-key">Implements</label><div class="property-value"> 
+      </div>
+<label class="property-key">Abstract</label><div class="property-value">No 
+      </div>
+<label class="property-key">Final</label><div class="property-value">No 
+      </div>
+</div>
+<h4>Description</h4>
+<em>Generate and validate CSRF tokens.</em><br><br><div id="methods_Csrf">
+<h4>Methods</h4>
+<a style="font-style: italic;" href="#Csrf::__construct()">__construct</a>,
+      <a style="font-style: italic;" href="#Csrf::__get()">__get</a>,
+      <a style="font-style: italic;" href="#Csrf::__set()">__set</a>,
+      <a style="font-style: italic;" href="#Csrf::generateToken()">generateToken</a>,
+      <a style="font-style: italic;" href="#Csrf::isValidToken()">isValidToken</a>,
+      <div class="method">
+<a id="Csrf::__construct()"></a><h3>__construct<span class="nb-faded-text">(
+          string
+             
+            $secret_key,
+          mixed
+             
+            $user_id,
+          integer
+             
+            $timeout
+            = 1800,
+          string
+             
+            $hash_algo
+            = sha1,
+          
+          )
+        </span>
+        :
+        <span class="nb-faded-text">n/a</span>
+</h3>
+<h4>Description</h4>
+<em>NOTE: Each project should have a unique and random $secret_key.</em><br><small>The $user_id must be something unique to the user and does not change<br/>between requests. This allows the token to be linked to one user. <br/>The $user_id could be an email address or the primary key from the users <br/>table, anything unique to the user, except for passwords will do.</small><br><h4>Arguments</h4>
+<table>
+<thead><tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+<th>Default</th>
+</tr></thead>
+<tbody>
+<tr>
+<td>$secret_key</td>
+<td>string</td>
+<td>Project unique key.</td>
+<td></td>
+</tr>
+<tr>
+<td>$user_id</td>
+<td>mixed</td>
+<td>Unique id for a user i.e. email address.</td>
+<td></td>
+</tr>
+<tr>
+<td>$timeout</td>
+<td>integer</td>
+<td>In seconds. Default is 30 minutes.</td>
+<td>1800</td>
+</tr>
+<tr>
+<td>$hash_algo</td>
+<td>string</td>
+<td>Hashing algorithm for hash_hmac().</td>
+<td>sha1</td>
+</tr>
+</tbody>
+</table>
+<h4>Return value</h4>
+<table>
+<thead><tr>
+<th>Type</th>
+<th>Description</th>
+</tr></thead>
+<tbody><tr>
+<td>n/a</td>
+<td>n/a</td>
+</tr></tbody>
+</table>
+<h4>Tags</h4>
+<table>
+<thead><tr>
+<th>Name</th>
+<th>Description</th>
+</tr></thead>
+<tbody><tr>
+<td>todo</td>
+<td>cli script to generate random keys</td>
+</tr></tbody>
+</table>
+</div>
+<div class="method">
+<a id="Csrf::__get()"></a><h3>__get<span class="nb-faded-text">(
+          string
+             
+            $key,
+          
+          )
+        </span>
+        :
+        <span class="nb-faded-text">mixed</span>
+</h3>
+<h4>Description</h4>
+<em>Magic get to provide access to the hash_algo and timeout variables.</em><br><h4>Arguments</h4>
+<table>
+<thead><tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+<th>Default</th>
+</tr></thead>
+<tbody><tr>
+<td>$key</td>
+<td>string</td>
+<td>The property to retrieve: hash_algo & timeout.</td>
+<td></td>
+</tr></tbody>
+</table>
+<h4>Return value</h4>
+<table>
+<thead><tr>
+<th>Type</th>
+<th>Description</th>
+</tr></thead>
+<tbody><tr>
+<td>mixed</td>
+<td></td>
+</tr></tbody>
+</table>
+<h4>Tags</h4>
+<table>
+<thead><tr>
+<th>Name</th>
+<th>Description</th>
+</tr></thead>
+<tbody><tr>
+<td>throws</td>
+<td>\UnexpectedValueException</td>
+</tr></tbody>
+</table>
+</div>
+<div class="method">
+<a id="Csrf::__set()"></a><h3>__set<span class="nb-faded-text">(
+          string
+             
+            $key,
+          
+             
+            $value,
+          
+          )
+        </span>
+        :
+        <span class="nb-faded-text">void</span>
+</h3>
+<h4>Description</h4>
+<em>Magic set to provide access to the secret_key, hash_algo and timeout <br/>variables.</em><br><h4>Arguments</h4>
+<table>
+<thead><tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+<th>Default</th>
+</tr></thead>
+<tbody>
+<tr>
+<td>$key</td>
+<td>string</td>
+<td>The property to set: secret_key, hash_algo & timeout.</td>
+<td></td>
+</tr>
+<tr>
+<td>$value</td>
+<td>n/a</td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h4>Return value</h4>
+<table>
+<thead><tr>
+<th>Type</th>
+<th>Description</th>
+</tr></thead>
+<tbody><tr>
+<td>void</td>
+<td></td>
+</tr></tbody>
+</table>
+<h4>Tags</h4>
+<table>
+<thead><tr>
+<th>Name</th>
+<th>Description</th>
+</tr></thead>
+<tbody><tr>
+<td>throws</td>
+<td>\UnexpectedValueException</td>
+</tr></tbody>
+</table>
+</div>
+<div class="method">
+<a id="Csrf::generateToken()"></a><h3>generateToken<span class="nb-faded-text">(
+          
+          )
+        </span>
+        :
+        <span class="nb-faded-text">string</span>
+</h3>
+<h4>Description</h4>
+<em>Generate a CSRF token.</em><br><h4>Return value</h4>
+<table>
+<thead><tr>
+<th>Type</th>
+<th>Description</th>
+</tr></thead>
+<tbody><tr>
+<td>string</td>
+<td></td>
+</tr></tbody>
+</table>
+</div>
+<div class="method">
+<a id="Csrf::isValidToken()"></a><h3>isValidToken<span class="nb-faded-text">(
+          string
+             
+            $incoming_token,
+          
+          )
+        </span>
+        :
+        <span class="nb-faded-text">boolean</span>
+</h3>
+<h4>Description</h4>
+<em>Test if a token is valid and has not timed out.</em><br><small>If the incoming token is not propertly formated the exception <br/>aura\csrf\Exception_InvalidTokenFormat will be thrown.</small><br><h4>Arguments</h4>
+<table>
+<thead><tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+<th>Default</th>
+</tr></thead>
+<tbody><tr>
+<td>$incoming_token</td>
+<td>string</td>
+<td></td>
+<td></td>
+</tr></tbody>
+</table>
+<h4>Return value</h4>
+<table>
+<thead><tr>
+<th>Type</th>
+<th>Description</th>
+</tr></thead>
+<tbody><tr>
+<td>boolean</td>
+<td></td>
+</tr></tbody>
+</table>
+<h4>Tags</h4>
+<table>
+<thead><tr>
+<th>Name</th>
+<th>Description</th>
+</tr></thead>
+<tbody><tr>
+<td>throws</td>
+<td>aura\csrf\Exception_InvalidTokenFormat</td>
+</tr></tbody>
+</table>
+</div>
+</div>
+<div id="properties_Csrf">
+<h4>Properties</h4>
+<a href="#Csrf::%24hash_algo">$hash_algo</a>,
+      <a href="#Csrf::%24secret_key">$secret_key</a>,
+      <a href="#Csrf::%24timeout">$timeout</a>,
+      <a href="#Csrf::%24user_id">$user_id</a>,
+      <div class="method">
+<a id="Csrf::$hash_algo"></a><h3>
+<span class="nb-faded-text">aura\web\Hash 
+          protected 
+          </span>$hash_algo</h3>
+<em></em><br><small></small><br><br>
+</div>
+<div class="method">
+<a id="Csrf::$secret_key"></a><h3>
+<span class="nb-faded-text">aura\web\Project 
+          protected 
+          </span>$secret_key</h3>
+<em></em><br><small></small><br><br>
+</div>
+<div class="method">
+<a id="Csrf::$timeout"></a><h3>
+<span class="nb-faded-text">aura\web\Time 
+          protected 
+          </span>$timeout</h3>
+<em></em><br><small></small><br><br>
+</div>
+<div class="method">
+<a id="Csrf::$user_id"></a><h3>
+<span class="nb-faded-text">aura\web\Something 
+          protected 
+          </span>$user_id</h3>
+<em></em><br><small></small><br><br>
+</div>
+</div>
+<div style="clear: both"></div>
+</div>
+</div></div><div id="index"><div class="padder"><script xmlns="" type="text/javascript">
+      $(function() {
+
+        var is_chrome = /chrome/.test( navigator.userAgent.toLowerCase() );
+        var is_local = /file:\/\//.test(document.location.href);
+        if (is_chrome && is_local)
+        {
+          // search is disabled on chrome with local files due to http://code.google.com/p/chromium/issues/detail?id=40787
+          return;
+        }
+
+        $("#search_box").show();
+        var search_index = {};
+        $.ajax({
+          url: "search_index.xml",
+          dataType: ($.browser.msie) ? "text" : "xml",
+          error: function(data) {
+            alert('An error occurred using the search data');
+          },
+          success: function( data ) {
+            var xml;
+            if (typeof data == "string") {
+              xml = new ActiveXObject("Microsoft.XMLDOM");
+              xml.async = false;
+              xml.loadXML(data);
+            } else {
+              xml = data;
+            }
+
+            search_index = $("node", xml).map(function() {
+              type = $("type", this).text();
+              return {
+                value: $("value", this).text(),
+                label: '<img src="images/icons/'+type+'.png" align="absmiddle">'+$("value", this).text(),
+                id: $("id", this).text(),
+              };
+            }).get();
+
+            $("#search_box").autocomplete({
+              source: search_index,
+              select: function(event, ui) {
+                // redirect to the documentation
+                parent.content.document.location = ''+ui.item.id;
+                applySearchHash();
+              }
+            });
+          }
+        });
+      });
+    </script><input id="search_box"></input><div class="section">
+<h1>Namespaces</h1>
+<ul id="namespaces-" class="filetree">
+<li class="closed">
+<span class="folder">aura</span><ul><li class="closed">
+<span class="folder">web</span><ul>
+<li><span class="file"><a href="src_Context.html#Context" target="content">Context</a><br><small>Collection point for information about the web environment.</small></span></li>
+<li><span class="file"><a href="src_Csrf.html#Csrf" target="content">Csrf</a><br><small>Generate and validate CSRF tokens.</small></span></li>
+<li><span class="file"><a href="src_Exception_Context.html#Exception_Context" target="content">Exception_Context</a><br><small></small></span></li>
+<li><span class="file"><a href="src_Exception_MalformedToken.html#Exception_MalformedToken" target="content">Exception_MalformedToken</a><br><small></small></span></li>
+</ul>
+</li></ul>
+</li>
+<li class="closed">
+<span class="folder">default</span><ul></ul>
+</li>
+</ul>
+</div><div class="section">
+<h1>Packages</h1>
+<ul id="packages-" class="filetree"><li class="closed">
+<span class="folder">aura.web</span><ul id="packages_aura.web" class=".filetree"><li class="closed"><span class="file"><a href="src_Context.html#Context" target="content">Context</a><br><small>Collection point for information about the web environment.</small></span></li></ul>
+</li></ul>
+</div>
+</div></div><div id="footer"><div class="padder"></div></div></div></body></html>

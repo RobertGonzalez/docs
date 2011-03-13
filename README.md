@@ -1,7 +1,7 @@
 Manual and API documentation for Aura.
 ======================================
 
-Located in this repository is the official manual and API documentation.
+Located in this repository is the official manual and API documentation, which can be found at: [http://auraphp.github.com/docs/api](http://auraphp.github.com/docs/api).
 
 Updating the documentation
 --------------------------
@@ -36,3 +36,10 @@ The following applications are required in order to update the documentation; pl
 Once the `update-api` script has ran the following has been generated in the folder `api`:
 1. A sub-folder for each `aura.*` repository; This folder contains the full API documentation for that repository.
 2. The files `index.html` and `menu.html`; these files can be used to ease navigation between each repository's documentation.
+
+### Publishing
+To publish the documentation you will have to switch to the gh-pages branch, pull the changes from master and then push to the same branch on Github.
+
+    $ git checkout gh-pages
+    $ git pull . master
+    $ git push origin gh-pages

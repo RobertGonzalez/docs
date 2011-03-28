@@ -1,0 +1,162 @@
+<html xmlns="http://www.w3.org/1999/xhtml"><head><title>File</title><meta http-equiv="Content-Type" content="text/html; charset=utf-8"></meta><link rel="stylesheet" href="css/black-tie/jquery-ui-1.8.2.custom.css" type="text/css"></link><link rel="stylesheet" href="css/jquery.treeview.css" type="text/css"></link><link rel="stylesheet" href="css/default.css" type="text/css"></link><script type="text/javascript" src="js/jquery-1.4.2.min.js"></script><script type="text/javascript" src="js/jquery-ui-1.8.2.custom.min.js"></script><script type="text/javascript" src="js/jquery.cookie.js"></script><script type="text/javascript" src="js/jquery.treeview.js"></script></head><body><script type="text/javascript">
+          $(document).ready(function()
+          {
+            $(".filetree").treeview({
+              animated: "fast",
+              collapsed: true,
+              persist: "cookie"
+            });
+          });
+
+          function jq_escape(myid)
+          {
+            return '#' + myid.replace(/(#|\$|:|\.|\(|\))/g, '\\$1');
+          }
+
+          function applySearchHash()
+          {
+            hashes = document.location.hash.substr(1, document.location.hash.length);
+            if (hashes != "")
+            {
+              hashes = hashes.split('/');
+              $.each(hashes, function(index, hash)
+              {
+                node = $(jq_escape(hash));
+                switch (node[0].nodeName)
+                {
+                  case 'DIV':
+                    tabs = node.parents('.tabs');
+                    $(tabs[0]).tabs('select', '#' + hash)
+                    break;
+                  case 'A':
+                    window.scrollTo(0, node.offset().top);
+                    break;
+                }
+              });
+            }
+          }
+
+          jQuery(function()
+          {
+            jQuery(".tabs").tabs();
+            applySearchHash();
+          });
+        </script><div id="maincontainer"><div id="header"><h1>Aura Project for PHP: aura.http<img src="images/top-stopper.png"></img></h1></div><ul xmlns="" id="menu">
+<li><a href="graph.html">Class diagram</a></li>
+<li><a href="markers.html">TODO / Markers</a></li>
+</ul>
+<div id="content_container"><div xmlns="" id="content">
+<h1>src/Exception.php</h1>
+<div class="file_menu">
+<a href="#includes">Includes</a> |
+      <a href="#functions">Functions</a> |
+      <a href="#constants">Constants</a> |
+      <a href="#classes">Classes</a> |
+      <a href="#interfaces">Interfaces</a>
+</div>
+<a name="classes"></a><h2>Classes</h2>
+<div id="Exception" class="class">
+<h3>Exception</h3>
+<div class="properties">
+<h1>Properties</h1>
+<label class="property-key">Extends</label><div class="property-value">
+         </div>
+<label class="property-key">Implements</label><div class="property-value"> 
+      </div>
+<label class="property-key">Abstract</label><div class="property-value">No 
+      </div>
+<label class="property-key">Final</label><div class="property-value">No 
+      </div>
+</div>
+<h4>Description</h4>
+<strong><em>No description is available</em></strong><div style="clear: both"></div>
+</div>
+</div></div><div id="index"><div class="padder"><script xmlns="" type="text/javascript">
+      $(function() {
+
+        var is_chrome = /chrome/.test( navigator.userAgent.toLowerCase() );
+        var is_local = /file:\/\//.test(document.location.href);
+        if (is_chrome && is_local)
+        {
+          // search is disabled on chrome with local files due to http://code.google.com/p/chromium/issues/detail?id=40787
+          return;
+        }
+
+        $("#search_box").show();
+        var search_index = {};
+        $.ajax({
+          url: "search_index.xml",
+          dataType: ($.browser.msie) ? "text" : "xml",
+          error: function(data) {
+            alert('An error occurred using the search data');
+          },
+          success: function( data ) {
+            var xml;
+            if (typeof data == "string") {
+              xml = new ActiveXObject("Microsoft.XMLDOM");
+              xml.async = false;
+              xml.loadXML(data);
+            } else {
+              xml = data;
+            }
+
+            search_index = $("node", xml).map(function() {
+              type = $("type", this).text();
+              return {
+                value: $("value", this).text(),
+                label: '<img src="images/icons/'+type+'.png" align="absmiddle">'+$("value", this).text(),
+                id: $("id", this).text(),
+              };
+            }).get();
+
+            $("#search_box").autocomplete({
+              source: search_index,
+              select: function(event, ui) {
+                // redirect to the documentation
+                if ((parent) && (parent.content))
+                {
+                  parent.content.document.location = ''+ui.item.id;
+                }
+                else
+                {
+                  jQuery(document).location = ''+ui.item.id;
+                }
+                applySearchHash();
+              }
+            });
+          }
+        });
+      });
+    </script><input id="search_box"></input><div class="section">
+<h1>Namespaces</h1>
+<ul id="namespaces-" class="filetree">
+<li class="closed">
+<span class="folder">aura</span><ul><li class="closed">
+<span class="folder">http</span><ul>
+<li><span class="file"><a href="src_AbstractResponse.html#AbstractResponse">AbstractResponse</a><br><small>Functionality shared by Response and ResourceResponse.</small></span></li>
+<li><span class="file"><a href="src_Exception.html#Exception">Exception</a><br><small></small></span></li>
+<li><span class="file"><a href="src_Exception_HeadersSent.html#Exception_HeadersSent">Exception_HeadersSent</a><br><small></small></span></li>
+<li><span class="file"><a href="src_MimeUtility.html#MimeUtility">MimeUtility</a><br><small>MIME utility methods for mail messages and HTTP requests.</small></span></li>
+<li><span class="file"><a href="src_Response.html#Response">Response</a><br><small>Generic HTTP response object for sending headers, cookies, and content.</small></span></li>
+</ul>
+</li></ul>
+</li>
+<li class="closed">
+<span class="folder">default</span><ul></ul>
+</li>
+</ul>
+</div><div class="section">
+<h1>Packages</h1>
+<ul id="packages-" class="filetree">
+<li class="closed">
+<span class="folder">aura.mime</span><ul id="packages_aura.mime" class="filetree"><li class="closed"><span class="file"><a href="src_MimeUtility.html#MimeUtility">MimeUtility</a><br><small>MIME utility methods for mail messages and HTTP requests.</small></span></li></ul>
+</li>
+<li class="closed">
+<span class="folder">aura.web</span><ul id="packages_aura.web" class="filetree">
+<li class="closed"><span class="file"><a href="src_AbstractResponse.html#AbstractResponse">AbstractResponse</a><br><small>Functionality shared by Response and ResourceResponse.</small></span></li>
+<li class="closed"><span class="file"><a href="src_Response.html#Response">Response</a><br><small>Generic HTTP response object for sending headers, cookies, and content.</small></span></li>
+</ul>
+</li>
+</ul>
+</div>
+</div></div><div id="footer"><div class="padder"></div></div></div></body></html>

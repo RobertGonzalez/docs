@@ -1,0 +1,485 @@
+<html xmlns="http://www.w3.org/1999/xhtml"><head><title>File</title><meta http-equiv="Content-Type" content="text/html; charset=utf-8"></meta><link rel="stylesheet" href="css/black-tie/jquery-ui-1.8.2.custom.css" type="text/css"></link><link rel="stylesheet" href="css/jquery.treeview.css" type="text/css"></link><link rel="stylesheet" href="css/default.css" type="text/css"></link><script type="text/javascript" src="js/jquery-1.4.2.min.js"></script><script type="text/javascript" src="js/jquery-ui-1.8.2.custom.min.js"></script><script type="text/javascript" src="js/jquery.cookie.js"></script><script type="text/javascript" src="js/jquery.treeview.js"></script></head><body><script type="text/javascript">
+          $(document).ready(function()
+          {
+            $(".filetree").treeview({
+              animated: "fast",
+              collapsed: true,
+              persist: "cookie"
+            });
+          });
+
+          function jq_escape(myid)
+          {
+            return '#' + myid.replace(/(#|\$|:|\.|\(|\))/g, '\\$1');
+          }
+
+          function applySearchHash()
+          {
+            hashes = document.location.hash.substr(1, document.location.hash.length);
+            if (hashes != "")
+            {
+              hashes = hashes.split('/');
+              $.each(hashes, function(index, hash)
+              {
+                node = $(jq_escape(hash));
+                switch (node[0].nodeName)
+                {
+                  case 'DIV':
+                    tabs = node.parents('.tabs');
+                    $(tabs[0]).tabs('select', '#' + hash)
+                    break;
+                  case 'A':
+                    window.scrollTo(0, node.offset().top);
+                    break;
+                }
+              });
+            }
+          }
+
+          jQuery(function()
+          {
+            jQuery(".tabs").tabs();
+            applySearchHash();
+          });
+        </script><div id="maincontainer"><div id="header"><h1>Aura Project for PHP: aura.http<img src="images/top-stopper.png"></img></h1></div><ul xmlns="" id="menu">
+<li><a href="graph.html">Class diagram</a></li>
+<li><a href="markers.html">TODO / Markers</a></li>
+</ul>
+<div id="content_container"><div xmlns="" id="content">
+<h1>src/MimeUtility.php</h1>
+<div class="file_menu">
+<a href="#includes">Includes</a> |
+      <a href="#functions">Functions</a> |
+      <a href="#constants">Constants</a> |
+      <a href="#classes">Classes</a> |
+      <a href="#interfaces">Interfaces</a>
+</div>
+<a name="classes"></a><h2>Classes</h2>
+<div id="MimeUtility" class="class">
+<h3>MimeUtility</h3>
+<div class="properties">
+<h1>Properties</h1>
+<label class="property-key">Extends</label><div class="property-value">
+         </div>
+<label class="property-key">Implements</label><div class="property-value"> 
+      </div>
+<label class="property-key">author</label><div class="property-value">
+<a title=""></a>
+             
+        </div>
+<label class="property-key">package</label><div class="property-value">
+<a title=""></a>
+             
+        </div>
+<label class="property-key">Abstract</label><div class="property-value">No 
+      </div>
+<label class="property-key">Final</label><div class="property-value">No 
+      </div>
+</div>
+<h4>Description</h4>
+<em>MIME utility methods for mail messages and HTTP requests.</em><br>
+<br><div id="methods_MimeUtility">
+<h4>Methods</h4>
+<a style="font-style: italic;" href="#MimeUtility::encode()">encode</a>,
+      <a style="font-style: italic;" href="#MimeUtility::encodeBase64()">encodeBase64</a>,
+      <a style="font-style: italic;" href="#MimeUtility::headerLabel()">headerLabel</a>,
+      <a style="font-style: italic;" href="#MimeUtility::headerLine()">headerLine</a>,
+      <a style="font-style: italic;" href="#MimeUtility::headerValue()">headerValue</a>,
+      <div class="method">
+<a id="MimeUtility::encode()"></a><h3>encode<span class="nb-faded-text">(
+          string
+              |
+            $type,
+          string
+              |
+            $text,
+          
+          )
+        </span>
+        :
+        <span class="nb-faded-text">string</span>
+</h3>
+<h4>Description</h4>
+<em>Applies the requested encoding to a text string.</em><br><small>
+</small><br><h4>Arguments</h4>
+<table>
+<thead><tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+<th>Default</th>
+</tr></thead>
+<tbody>
+<tr>
+<td>$type</td>
+<td style="white-space: normal;">string |
+                </td>
+<td>The type of encoding to use; &#039;7bit&#039;, &#039;8bit&#039;, &#039;base64&#039;, or &#039;quoted-printable&#039;.</td>
+<td></td>
+</tr>
+<tr>
+<td>$text</td>
+<td style="white-space: normal;">string |
+                </td>
+<td>The text to encode.</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h4>Return value</h4>
+<table>
+<thead><tr>
+<th>Type</th>
+<th>Description</th>
+</tr></thead>
+<tbody><tr>
+<td>string</td>
+<td>The encoded text.</td>
+</tr></tbody>
+</table>
+<h4>Tags</h4>
+<table>
+<thead><tr>
+<th>Name</th>
+<th>Description</th>
+</tr></thead>
+<tbody><tr>
+<td>throws</td>
+<td>aura\mime\Exception Unknown mine type.</td>
+</tr></tbody>
+</table>
+</div>
+<div class="method">
+<a id="MimeUtility::encodeBase64()"></a><h3>encodeBase64<span class="nb-faded-text">(
+          string
+              |
+            $text,
+          
+          )
+        </span>
+        :
+        <span class="nb-faded-text">string</span>
+</h3>
+<h4>Description</h4>
+<em>Applies "base64" encoding to text.</em><br><small>
+</small><br><h4>Arguments</h4>
+<table>
+<thead><tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+<th>Default</th>
+</tr></thead>
+<tbody><tr>
+<td>$text</td>
+<td style="white-space: normal;">string |
+                </td>
+<td>The text to encode.</td>
+<td></td>
+</tr></tbody>
+</table>
+<h4>Return value</h4>
+<table>
+<thead><tr>
+<th>Type</th>
+<th>Description</th>
+</tr></thead>
+<tbody><tr>
+<td>string</td>
+<td>The encoded text.</td>
+</tr></tbody>
+</table>
+</div>
+<div class="method">
+<a id="MimeUtility::headerLabel()"></a><h3>headerLabel<span class="nb-faded-text">(
+          string
+              |
+            $label,
+          
+          )
+        </span>
+        :
+        <span class="nb-faded-text">string</span>
+</h3>
+<h4>Description</h4>
+<em>Sanitizes header labels by removing all characters besides [a-zA-z0-9_-].</em><br><small><p>Underscores are converted to dashes, and word case is normalized.</p>
+
+<p>Converts "foo \r bar_ baz-dib \n 9" to "Foobar-Baz-Dib9".</p>
+</small><br><h4>Arguments</h4>
+<table>
+<thead><tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+<th>Default</th>
+</tr></thead>
+<tbody><tr>
+<td>$label</td>
+<td style="white-space: normal;">string |
+                </td>
+<td>The header label to sanitize.</td>
+<td></td>
+</tr></tbody>
+</table>
+<h4>Return value</h4>
+<table>
+<thead><tr>
+<th>Type</th>
+<th>Description</th>
+</tr></thead>
+<tbody><tr>
+<td>string</td>
+<td>The sanitized header label.</td>
+</tr></tbody>
+</table>
+</div>
+<div class="method">
+<a id="MimeUtility::headerLine()"></a><h3>headerLine<span class="nb-faded-text">(
+          string
+              |
+            $label,
+          string
+              |
+            $value,
+          string
+              |
+            $charset
+            = utf-8,
+          
+          )
+        </span>
+        :
+        <span class="nb-faded-text">string</span>
+</h3>
+<h4>Description</h4>
+<em>Creates a header label/value line after sanitizing, encoding, and
+wrapping.</em><br><small>
+</small><br><h4>Arguments</h4>
+<table>
+<thead><tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+<th>Default</th>
+</tr></thead>
+<tbody>
+<tr>
+<td>$label</td>
+<td style="white-space: normal;">string |
+                </td>
+<td>The header label.</td>
+<td></td>
+</tr>
+<tr>
+<td>$value</td>
+<td style="white-space: normal;">string |
+                </td>
+<td>The header value.</td>
+<td></td>
+</tr>
+<tr>
+<td>$charset</td>
+<td style="white-space: normal;">string |
+                </td>
+<td>The character set to note when encoding.</td>
+<td>utf-8</td>
+</tr>
+</tbody>
+</table>
+<h4>Return value</h4>
+<table>
+<thead><tr>
+<th>Type</th>
+<th>Description</th>
+</tr></thead>
+<tbody><tr>
+<td>string</td>
+<td>The sanitized, encoded, and wrapped header-line. Note that there is no terminating linefeed.</td>
+</tr></tbody>
+</table>
+</div>
+<div class="method">
+<a id="MimeUtility::headerValue()"></a><h3>headerValue<span class="nb-faded-text">(
+          string
+              |
+            $label,
+          string
+              |
+            $value,
+          string
+              |
+            $charset
+            = utf-8,
+          
+          )
+        </span>
+        :
+        <span class="nb-faded-text">string</span>
+</h3>
+<h4>Description</h4>
+<em>Sanitizes a header value, then encodes and wraps as per RFC 2047.</em><br><small><p>Copied, with modifications, from the "mime.php" class in the
+<a href="http://pear.php.net/Mail_Mime">PEAR Mail_Mime</a> package (v 1.62).
+Takes the added step of "un-wrapping" the value (newline-and-space) and
+then removing all control characters (including newlines) before encoding
+and re-wrapping.</p>
+</small><br><h4>Arguments</h4>
+<table>
+<thead><tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+<th>Default</th>
+</tr></thead>
+<tbody>
+<tr>
+<td>$label</td>
+<td style="white-space: normal;">string |
+                </td>
+<td>The *sanitized* header label; needed for line length calculations.</td>
+<td></td>
+</tr>
+<tr>
+<td>$value</td>
+<td style="white-space: normal;">string |
+                </td>
+<td>The header value to encode.</td>
+<td></td>
+</tr>
+<tr>
+<td>$charset</td>
+<td style="white-space: normal;">string |
+                </td>
+<td>The character set to note when encoding.</td>
+<td>utf-8</td>
+</tr>
+</tbody>
+</table>
+<h4>Return value</h4>
+<table>
+<thead><tr>
+<th>Type</th>
+<th>Description</th>
+</tr></thead>
+<tbody><tr>
+<td>string</td>
+<td>The encoded header value.</td>
+</tr></tbody>
+</table>
+<h4>Tags</h4>
+<table>
+<thead><tr>
+<th>Name</th>
+<th>Description</th>
+</tr></thead>
+<tbody>
+<tr>
+<td>author</td>
+<td>Richard Heyes  &amp;lt;richard@phpguru.org&amp;gt;</td>
+</tr>
+<tr>
+<td>author</td>
+<td>Tomas V.V. Cox &amp;lt;cox@idecnet.com&amp;gt;</td>
+</tr>
+<tr>
+<td>author</td>
+<td>Cipriano Groenendal &amp;lt;cipri@php.net&amp;gt;</td>
+</tr>
+<tr>
+<td>author</td>
+<td>Sean Coates &amp;lt;sean@php.net&amp;gt;</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div style="clear: both"></div>
+</div>
+</div></div><div id="index"><div class="padder"><script xmlns="" type="text/javascript">
+      $(function() {
+
+        var is_chrome = /chrome/.test( navigator.userAgent.toLowerCase() );
+        var is_local = /file:\/\//.test(document.location.href);
+        if (is_chrome && is_local)
+        {
+          // search is disabled on chrome with local files due to http://code.google.com/p/chromium/issues/detail?id=40787
+          return;
+        }
+
+        $("#search_box").show();
+        var search_index = {};
+        $.ajax({
+          url: "search_index.xml",
+          dataType: ($.browser.msie) ? "text" : "xml",
+          error: function(data) {
+            alert('An error occurred using the search data');
+          },
+          success: function( data ) {
+            var xml;
+            if (typeof data == "string") {
+              xml = new ActiveXObject("Microsoft.XMLDOM");
+              xml.async = false;
+              xml.loadXML(data);
+            } else {
+              xml = data;
+            }
+
+            search_index = $("node", xml).map(function() {
+              type = $("type", this).text();
+              return {
+                value: $("value", this).text(),
+                label: '<img src="images/icons/'+type+'.png" align="absmiddle">'+$("value", this).text(),
+                id: $("id", this).text(),
+              };
+            }).get();
+
+            $("#search_box").autocomplete({
+              source: search_index,
+              select: function(event, ui) {
+                // redirect to the documentation
+                if ((parent) && (parent.content))
+                {
+                  parent.content.document.location = ''+ui.item.id;
+                }
+                else
+                {
+                  jQuery(document).location = ''+ui.item.id;
+                }
+                applySearchHash();
+              }
+            });
+          }
+        });
+      });
+    </script><input id="search_box"></input><div class="section">
+<h1>Namespaces</h1>
+<ul id="namespaces-" class="filetree">
+<li class="closed">
+<span class="folder">aura</span><ul><li class="closed">
+<span class="folder">http</span><ul>
+<li><span class="file"><a href="src_AbstractResponse.html#AbstractResponse">AbstractResponse</a><br><small>Functionality shared by Response and ResourceResponse.</small></span></li>
+<li><span class="file"><a href="src_Exception.html#Exception">Exception</a><br><small></small></span></li>
+<li><span class="file"><a href="src_Exception_HeadersSent.html#Exception_HeadersSent">Exception_HeadersSent</a><br><small></small></span></li>
+<li><span class="file"><a href="src_MimeUtility.html#MimeUtility">MimeUtility</a><br><small>MIME utility methods for mail messages and HTTP requests.</small></span></li>
+<li><span class="file"><a href="src_Response.html#Response">Response</a><br><small>Generic HTTP response object for sending headers, cookies, and content.</small></span></li>
+</ul>
+</li></ul>
+</li>
+<li class="closed">
+<span class="folder">default</span><ul></ul>
+</li>
+</ul>
+</div><div class="section">
+<h1>Packages</h1>
+<ul id="packages-" class="filetree">
+<li class="closed">
+<span class="folder">aura.mime</span><ul id="packages_aura.mime" class="filetree"><li class="closed"><span class="file"><a href="src_MimeUtility.html#MimeUtility">MimeUtility</a><br><small>MIME utility methods for mail messages and HTTP requests.</small></span></li></ul>
+</li>
+<li class="closed">
+<span class="folder">aura.web</span><ul id="packages_aura.web" class="filetree">
+<li class="closed"><span class="file"><a href="src_AbstractResponse.html#AbstractResponse">AbstractResponse</a><br><small>Functionality shared by Response and ResourceResponse.</small></span></li>
+<li class="closed"><span class="file"><a href="src_Response.html#Response">Response</a><br><small>Generic HTTP response object for sending headers, cookies, and content.</small></span></li>
+</ul>
+</li>
+</ul>
+</div>
+</div></div><div id="footer"><div class="padder"></div></div></div></body></html>

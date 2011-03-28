@@ -1,8 +1,10 @@
-<html xmlns="http://www.w3.org/1999/xhtml"><head><title>File</title><meta http-equiv="Content-Type" content="text/html; charset=utf-8"></meta><link rel="stylesheet" href="css/black-tie/jquery-ui-1.8.2.custom.css" type="text/css"></link><link rel="stylesheet" href="css/jquery.treeview.css" type="text/css"></link><link rel="stylesheet" href="css/default.css" type="text/css"></link><script type="text/javascript" src="js/jquery-1.4.2.min.js"></script><script type="text/javascript" src="js/jquery-ui-1.8.2.custom.min.js"></script><script type="text/javascript" src="js/jquery.treeview.js"></script></head><body><script type="text/javascript">
+<html xmlns="http://www.w3.org/1999/xhtml"><head><title>File</title><meta http-equiv="Content-Type" content="text/html; charset=utf-8"></meta><link rel="stylesheet" href="css/black-tie/jquery-ui-1.8.2.custom.css" type="text/css"></link><link rel="stylesheet" href="css/jquery.treeview.css" type="text/css"></link><link rel="stylesheet" href="css/default.css" type="text/css"></link><script type="text/javascript" src="js/jquery-1.4.2.min.js"></script><script type="text/javascript" src="js/jquery-ui-1.8.2.custom.min.js"></script><script type="text/javascript" src="js/jquery.cookie.js"></script><script type="text/javascript" src="js/jquery.treeview.js"></script></head><body><script type="text/javascript">
           $(document).ready(function()
           {
             $(".filetree").treeview({
-              animated: 'fast'
+              animated: "fast",
+              collapsed: true,
+              persist: "cookie"
             });
           });
 
@@ -57,11 +59,12 @@
 <h3>ConfigInterface</h3>
 <div class="properties">
 <h1>Properties</h1>
-<label class="property-key">Extends</label><div class="property-value"> </div>
+<label class="property-key">Extends</label><div class="property-value">
+         </div>
 <label class="property-key">Implements</label><div class="property-value"> 
       </div>
 <label class="property-key">package</label><div class="property-value">
-<a title="aura.di">aura.di</a>
+<a title=""></a>
              
         </div>
 <label class="property-key">Abstract</label><div class="property-value"> 
@@ -70,7 +73,8 @@
       </div>
 </div>
 <h4>Description</h4>
-<em>Retains and unifies class constructor parameter values with external values.</em><br><br><div id="methods_ConfigInterface">
+<em>Retains and unifies class constructor parameter values with external values.</em><br>
+<br><div id="methods_ConfigInterface">
 <h4>Methods</h4>
 <a style="font-style: italic;" href="#ConfigInterface::fetch()">fetch</a>,
       <a style="font-style: italic;" href="#ConfigInterface::getParams()">getParams</a>,
@@ -79,7 +83,7 @@
       <div class="method">
 <a id="ConfigInterface::fetch()"></a><h3>fetch<span class="nb-faded-text">(
           string
-             
+              |
             $class,
           
           )
@@ -88,7 +92,8 @@
         <span class="nb-faded-text">array</span>
 </h3>
 <h4>Description</h4>
-<em>Fetches the unified constructor values and external values.</em><br><h4>Arguments</h4>
+<em>Fetches the unified constructor values and external values.</em><br><small>
+</small><br><h4>Arguments</h4>
 <table>
 <thead><tr>
 <th>Name</th>
@@ -98,7 +103,8 @@
 </tr></thead>
 <tbody><tr>
 <td>$class</td>
-<td>string</td>
+<td style="white-space: normal;">string |
+                </td>
 <td>The class name to fetch values for.</td>
 <td></td>
 </tr></tbody>
@@ -124,7 +130,8 @@
         <span class="nb-faded-text">\ArrayObject</span>
 </h3>
 <h4>Description</h4>
-<em>Gets the $params property.</em><br><h4>Return value</h4>
+<em>Gets the $params property.</em><br><small>
+</small><br><h4>Return value</h4>
 <table>
 <thead><tr>
 <th>Type</th>
@@ -139,7 +146,7 @@
 <div class="method">
 <a id="ConfigInterface::getReflect()"></a><h3>getReflect<span class="nb-faded-text">(
           string
-             
+              |
             $class,
           
           )
@@ -148,7 +155,9 @@
         <span class="nb-faded-text">\ReflectionClass</span>
 </h3>
 <h4>Description</h4>
-<em>Gets a retained ReflectionClass; if not already retained, creates and<br/>retains one before returning it.</em><br><h4>Arguments</h4>
+<em>Gets a retained ReflectionClass; if not already retained, creates and
+retains one before returning it.</em><br><small>
+</small><br><h4>Arguments</h4>
 <table>
 <thead><tr>
 <th>Name</th>
@@ -158,7 +167,8 @@
 </tr></thead>
 <tbody><tr>
 <td>$class</td>
-<td>string</td>
+<td style="white-space: normal;">string |
+                </td>
 <td>The class to reflect on.</td>
 <td></td>
 </tr></tbody>
@@ -184,7 +194,8 @@
         <span class="nb-faded-text">\ArrayObject</span>
 </h3>
 <h4>Description</h4>
-<em>Gets the $setter property.</em><br><h4>Return value</h4>
+<em>Gets the $setter property.</em><br><small>
+</small><br><h4>Return value</h4>
 <table>
 <thead><tr>
 <th>Type</th>
@@ -241,7 +252,14 @@
               source: search_index,
               select: function(event, ui) {
                 // redirect to the documentation
-                parent.content.document.location = ''+ui.item.id;
+                if ((parent) && (parent.content))
+                {
+                  parent.content.document.location = ''+ui.item.id;
+                }
+                else
+                {
+                  jQuery(document).location = ''+ui.item.id;
+                }
                 applySearchHash();
               }
             });
@@ -250,34 +268,29 @@
       });
     </script><input id="search_box"></input><div class="section">
 <h1>Namespaces</h1>
-<ul id="namespaces-" class="filetree">
-<li class="closed">
+<ul id="namespaces-" class="filetree"><li class="closed">
 <span class="folder">aura</span><ul><li class="closed">
 <span class="folder">di</span><ul>
-<li><span class="file"><a href="src_ForgeInterface.html#ForgeInterface">ForgeInterface</a><br><small></small></span></li>
-<li><span class="file"><a href="src_Container.html#Container">Container</a><br><small>Dependency injection container.</small></span></li>
-<li><span class="file"><a href="src_Forge.html#Forge">Forge</a><br><small>Creates objects using reflection and the specified configuration values.</small></span></li>
-<li><span class="file"><a href="src_Exception.html#Exception">Exception</a><br><small></small></span></li>
-<li><span class="file"><a href="src_ConfigInterface.html#ConfigInterface">ConfigInterface</a><br><small>Retains and unifies class constructor parameter values with external values.</small></span></li>
 <li><span class="file"><a href="src_Config.html#Config">Config</a><br><small>Retains and unifies class constructor parameter values with external values.</small></span></li>
-<li><span class="file"><a href="src_Lazy.html#Lazy">Lazy</a><br><small>Wraps a closure specifically for the purpose of lazy-loading an object.</small></span></li>
+<li><span class="file"><a href="src_ConfigInterface.html#ConfigInterface">ConfigInterface</a><br><small>Retains and unifies class constructor parameter values with external values.</small></span></li>
+<li><span class="file"><a href="src_Container.html#Container">Container</a><br><small>Dependency injection container.</small></span></li>
+<li><span class="file"><a href="src_Exception.html#Exception">Exception</a><br><small></small></span></li>
 <li><span class="file"><a href="src_Exception_ServiceInvalid.html#Exception_ServiceInvalid">Exception_ServiceInvalid</a><br><small></small></span></li>
 <li><span class="file"><a href="src_Exception_ServiceNotFound.html#Exception_ServiceNotFound">Exception_ServiceNotFound</a><br><small></small></span></li>
+<li><span class="file"><a href="src_Forge.html#Forge">Forge</a><br><small>Creates objects using reflection and the specified configuration values.</small></span></li>
+<li><span class="file"><a href="src_ForgeInterface.html#ForgeInterface">ForgeInterface</a><br><small></small></span></li>
+<li><span class="file"><a href="src_Lazy.html#Lazy">Lazy</a><br><small>Wraps a closure specifically for the purpose of lazy-loading an object.</small></span></li>
 </ul>
 </li></ul>
-</li>
-<li class="closed">
-<span class="folder">default</span><ul></ul>
-</li>
-</ul>
+</li></ul>
 </div><div class="section">
 <h1>Packages</h1>
 <ul id="packages-" class="filetree"><li class="closed">
-<span class="folder">aura.di</span><ul id="packages_aura.di" class=".filetree">
+<span class="folder">aura.di</span><ul id="packages_aura.di" class="filetree">
+<li class="closed"><span class="file"><a href="src_Config.html#Config">Config</a><br><small>Retains and unifies class constructor parameter values with external values.</small></span></li>
+<li class="closed"><span class="file"><a href="src_ConfigInterface.html#ConfigInterface">ConfigInterface</a><br><small>Retains and unifies class constructor parameter values with external values.</small></span></li>
 <li class="closed"><span class="file"><a href="src_Container.html#Container">Container</a><br><small>Dependency injection container.</small></span></li>
 <li class="closed"><span class="file"><a href="src_Forge.html#Forge">Forge</a><br><small>Creates objects using reflection and the specified configuration values.</small></span></li>
-<li class="closed"><span class="file"><a href="src_ConfigInterface.html#ConfigInterface">ConfigInterface</a><br><small>Retains and unifies class constructor parameter values with external values.</small></span></li>
-<li class="closed"><span class="file"><a href="src_Config.html#Config">Config</a><br><small>Retains and unifies class constructor parameter values with external values.</small></span></li>
 <li class="closed"><span class="file"><a href="src_Lazy.html#Lazy">Lazy</a><br><small>Wraps a closure specifically for the purpose of lazy-loading an object.</small></span></li>
 </ul>
 </li></ul>

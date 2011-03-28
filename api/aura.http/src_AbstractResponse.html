@@ -1,0 +1,1090 @@
+<html xmlns="http://www.w3.org/1999/xhtml"><head><title>File</title><meta http-equiv="Content-Type" content="text/html; charset=utf-8"></meta><link rel="stylesheet" href="css/black-tie/jquery-ui-1.8.2.custom.css" type="text/css"></link><link rel="stylesheet" href="css/jquery.treeview.css" type="text/css"></link><link rel="stylesheet" href="css/default.css" type="text/css"></link><script type="text/javascript" src="js/jquery-1.4.2.min.js"></script><script type="text/javascript" src="js/jquery-ui-1.8.2.custom.min.js"></script><script type="text/javascript" src="js/jquery.cookie.js"></script><script type="text/javascript" src="js/jquery.treeview.js"></script></head><body><script type="text/javascript">
+          $(document).ready(function()
+          {
+            $(".filetree").treeview({
+              animated: "fast",
+              collapsed: true,
+              persist: "cookie"
+            });
+          });
+
+          function jq_escape(myid)
+          {
+            return '#' + myid.replace(/(#|\$|:|\.|\(|\))/g, '\\$1');
+          }
+
+          function applySearchHash()
+          {
+            hashes = document.location.hash.substr(1, document.location.hash.length);
+            if (hashes != "")
+            {
+              hashes = hashes.split('/');
+              $.each(hashes, function(index, hash)
+              {
+                node = $(jq_escape(hash));
+                switch (node[0].nodeName)
+                {
+                  case 'DIV':
+                    tabs = node.parents('.tabs');
+                    $(tabs[0]).tabs('select', '#' + hash)
+                    break;
+                  case 'A':
+                    window.scrollTo(0, node.offset().top);
+                    break;
+                }
+              });
+            }
+          }
+
+          jQuery(function()
+          {
+            jQuery(".tabs").tabs();
+            applySearchHash();
+          });
+        </script><div id="maincontainer"><div id="header"><h1>Aura Project for PHP: aura.http<img src="images/top-stopper.png"></img></h1></div><ul xmlns="" id="menu">
+<li><a href="graph.html">Class diagram</a></li>
+<li><a href="markers.html">TODO / Markers</a></li>
+</ul>
+<div id="content_container"><div xmlns="" id="content">
+<h1>src/AbstractResponse.php</h1>
+<div class="file_menu">
+<a href="#includes">Includes</a> |
+      <a href="#functions">Functions</a> |
+      <a href="#constants">Constants</a> |
+      <a href="#classes">Classes</a> |
+      <a href="#interfaces">Interfaces</a>
+</div>
+<a name="classes"></a><h2>Classes</h2>
+<div id="AbstractResponse" class="class">
+<h3>AbstractResponse</h3>
+<div class="properties">
+<h1>Properties</h1>
+<label class="property-key">Extends</label><div class="property-value">
+         </div>
+<label class="property-key">Implements</label><div class="property-value"> 
+      </div>
+<label class="property-key">package</label><div class="property-value">
+<a title=""></a>
+             
+        </div>
+<label class="property-key">Abstract</label><div class="property-value">Yes 
+      </div>
+<label class="property-key">Final</label><div class="property-value">No 
+      </div>
+</div>
+<h4>Description</h4>
+<em>Functionality shared by Response and ResourceResponse.</em><br>
+<br><div id="methods_AbstractResponse">
+<h4>Methods</h4>
+<a style="font-style: italic;" href="#AbstractResponse::__construct()">__construct</a>,
+      <a style="font-style: italic;" href="#AbstractResponse::__get()">__get</a>,
+      <a style="font-style: italic;" href="#AbstractResponse::__set()">__set</a>,
+      <a style="font-style: italic;" href="#AbstractResponse::getContent()">getContent</a>,
+      <a style="font-style: italic;" href="#AbstractResponse::getCookie()">getCookie</a>,
+      <a style="font-style: italic;" href="#AbstractResponse::getHeader()">getHeader</a>,
+      <a style="font-style: italic;" href="#AbstractResponse::getStatusCode()">getStatusCode</a>,
+      <a style="font-style: italic;" href="#AbstractResponse::getStatusText()">getStatusText</a>,
+      <a style="font-style: italic;" href="#AbstractResponse::getVersion()">getVersion</a>,
+      <a style="font-style: italic;" href="#AbstractResponse::setContent()">setContent</a>,
+      <a style="font-style: italic;" href="#AbstractResponse::setCookie()">setCookie</a>,
+      <a style="font-style: italic;" href="#AbstractResponse::setCookies()">setCookies</a>,
+      <a style="font-style: italic;" href="#AbstractResponse::setHeader()">setHeader</a>,
+      <a style="font-style: italic;" href="#AbstractResponse::setHeaders()">setHeaders</a>,
+      <a style="font-style: italic;" href="#AbstractResponse::setStatusCode()">setStatusCode</a>,
+      <a style="font-style: italic;" href="#AbstractResponse::setStatusText()">setStatusText</a>,
+      <a style="font-style: italic;" href="#AbstractResponse::setVersion()">setVersion</a>,
+      <div class="method">
+<a id="AbstractResponse::__construct()"></a><h3>__construct<span class="nb-faded-text">(
+          <a href="src_MimeUtility.html#aura%5Chttp%5CMimeUtility">aura\http\MimeUtility</a>
+              |
+            $mime_utility,
+          
+          )
+        </span>
+        :
+        <span class="nb-faded-text">n/a</span>
+</h3>
+<h4>Description</h4>
+<small>
+</small><br><h4>Arguments</h4>
+<table>
+<thead><tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+<th>Default</th>
+</tr></thead>
+<tbody><tr>
+<td>$mime_utility</td>
+<td style="white-space: normal;">
+<a href="src_MimeUtility.html#aura%5Chttp%5CMimeUtility">aura\http\MimeUtility</a> |
+                </td>
+<td></td>
+<td></td>
+</tr></tbody>
+</table>
+<h4>Return value</h4>
+<table>
+<thead><tr>
+<th>Type</th>
+<th>Description</th>
+</tr></thead>
+<tbody><tr>
+<td>n/a</td>
+<td>n/a</td>
+</tr></tbody>
+</table>
+</div>
+<div class="method">
+<a id="AbstractResponse::__get()"></a><h3>__get<span class="nb-faded-text">(
+          string
+              |
+            $key,
+          
+          )
+        </span>
+        :
+        <span class="nb-faded-text">mixed</span>
+</h3>
+<h4>Description</h4>
+<em>Magic get to make the properties content, header, version, status_code,
+status_text and cookie read-only.</em><br><small>
+</small><br><h4>Arguments</h4>
+<table>
+<thead><tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+<th>Default</th>
+</tr></thead>
+<tbody><tr>
+<td>$key</td>
+<td style="white-space: normal;">string |
+                </td>
+<td>The property to read.</td>
+<td></td>
+</tr></tbody>
+</table>
+<h4>Return value</h4>
+<table>
+<thead><tr>
+<th>Type</th>
+<th>Description</th>
+</tr></thead>
+<tbody><tr>
+<td>mixed</td>
+<td>The property value.</td>
+</tr></tbody>
+</table>
+<h4>Tags</h4>
+<table>
+<thead><tr>
+<th>Name</th>
+<th>Description</th>
+</tr></thead>
+<tbody><tr>
+<td>throws</td>
+<td>\UnexpectedValueException</td>
+</tr></tbody>
+</table>
+</div>
+<div class="method">
+<a id="AbstractResponse::__set()"></a><h3>__set<span class="nb-faded-text">(
+          string
+              |
+            $key,
+          mixed
+              |
+            $value,
+          
+          )
+        </span>
+        :
+        <span class="nb-faded-text">n/a</span>
+</h3>
+<h4>Description</h4>
+<em>Magic set to access the properties content, version, status_code
+and status_text. Headers and cookies must be set using their
+respective methods.</em><br><small>
+</small><br><h4>Arguments</h4>
+<table>
+<thead><tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+<th>Default</th>
+</tr></thead>
+<tbody>
+<tr>
+<td>$key</td>
+<td style="white-space: normal;">string |
+                </td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>$value</td>
+<td style="white-space: normal;">mixed |
+                </td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h4>Return value</h4>
+<table>
+<thead><tr>
+<th>Type</th>
+<th>Description</th>
+</tr></thead>
+<tbody><tr>
+<td>n/a</td>
+<td>n/a</td>
+</tr></tbody>
+</table>
+<h4>Tags</h4>
+<table>
+<thead><tr>
+<th>Name</th>
+<th>Description</th>
+</tr></thead>
+<tbody><tr>
+<td>throws</td>
+<td>\UnexpectedValueException</td>
+</tr></tbody>
+</table>
+</div>
+<div class="method">
+<a id="AbstractResponse::getContent()"></a><h3>getContent<span class="nb-faded-text">(
+          
+          )
+        </span>
+        :
+        <span class="nb-faded-text">string</span>
+</h3>
+<h4>Description</h4>
+<em>Gets the body content of the response.</em><br><small>
+</small><br><h4>Return value</h4>
+<table>
+<thead><tr>
+<th>Type</th>
+<th>Description</th>
+</tr></thead>
+<tbody><tr>
+<td>string</td>
+<td>The body content of the response.</td>
+</tr></tbody>
+</table>
+</div>
+<div class="method">
+<a id="AbstractResponse::getCookie()"></a><h3>getCookie<span class="nb-faded-text">(
+          string
+              |
+            $key,
+          
+          )
+        </span>
+        :
+        <span class="nb-faded-text">array|null</span>
+</h3>
+<h4>Description</h4>
+<em>Returns the value and options for a single cookie unless the `$key`
+is null then it returns the value and options for all cookies.</em><br><small>
+</small><br><h4>Arguments</h4>
+<table>
+<thead><tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+<th>Default</th>
+</tr></thead>
+<tbody><tr>
+<td>$key</td>
+<td style="white-space: normal;">string |
+                </td>
+<td>The cookie name. If null an array containing all the cookies will be returned.</td>
+<td></td>
+</tr></tbody>
+</table>
+<h4>Return value</h4>
+<table>
+<thead><tr>
+<th>Type</th>
+<th>Description</th>
+</tr></thead>
+<tbody><tr>
+<td>array|null</td>
+<td></td>
+</tr></tbody>
+</table>
+</div>
+<div class="method">
+<a id="AbstractResponse::getHeader()"></a><h3>getHeader<span class="nb-faded-text">(
+          string
+              |
+            $key,
+          
+          )
+        </span>
+        :
+        <span class="nb-faded-text">string|array|null</span>
+</h3>
+<h4>Description</h4>
+<em>Returns the value of a single header unless the `$key`
+is null then it returns all the headers and values.</em><br><small>
+</small><br><h4>Arguments</h4>
+<table>
+<thead><tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+<th>Default</th>
+</tr></thead>
+<tbody><tr>
+<td>$key</td>
+<td style="white-space: normal;">string |
+                </td>
+<td>The header name. If null an array containing all the headers will be returned.</td>
+<td></td>
+</tr></tbody>
+</table>
+<h4>Return value</h4>
+<table>
+<thead><tr>
+<th>Type</th>
+<th>Description</th>
+</tr></thead>
+<tbody><tr>
+<td>string|array|null</td>
+<td>A string if the header has only one value, or an array if the header has multiple values or `$key is null, or null if the header does not exist.</td>
+</tr></tbody>
+</table>
+</div>
+<div class="method">
+<a id="AbstractResponse::getStatusCode()"></a><h3>getStatusCode<span class="nb-faded-text">(
+          
+          )
+        </span>
+        :
+        <span class="nb-faded-text">int</span>
+</h3>
+<h4>Description</h4>
+<em>Returns the current status code.</em><br><small>
+</small><br><h4>Return value</h4>
+<table>
+<thead><tr>
+<th>Type</th>
+<th>Description</th>
+</tr></thead>
+<tbody><tr>
+<td>int</td>
+<td></td>
+</tr></tbody>
+</table>
+</div>
+<div class="method">
+<a id="AbstractResponse::getStatusText()"></a><h3>getStatusText<span class="nb-faded-text">(
+          
+          )
+        </span>
+        :
+        <span class="nb-faded-text">string</span>
+</h3>
+<h4>Description</h4>
+<em>Returns the current status text.</em><br><small>
+</small><br><h4>Return value</h4>
+<table>
+<thead><tr>
+<th>Type</th>
+<th>Description</th>
+</tr></thead>
+<tbody><tr>
+<td>string</td>
+<td></td>
+</tr></tbody>
+</table>
+</div>
+<div class="method">
+<a id="AbstractResponse::getVersion()"></a><h3>getVersion<span class="nb-faded-text">(
+          
+          )
+        </span>
+        :
+        <span class="nb-faded-text">string</span>
+</h3>
+<h4>Description</h4>
+<em>Returns the HTTP version for this response.</em><br><small>
+</small><br><h4>Return value</h4>
+<table>
+<thead><tr>
+<th>Type</th>
+<th>Description</th>
+</tr></thead>
+<tbody><tr>
+<td>string</td>
+<td></td>
+</tr></tbody>
+</table>
+</div>
+<div class="method">
+<a id="AbstractResponse::setContent()"></a><h3>setContent<span class="nb-faded-text">(
+          string
+              |
+            $content,
+          
+          )
+        </span>
+        :
+        <span class="nb-faded-text"><a href="src_Response.html#aura%5Chttp%5CResponse">aura\http\Response</a></span>
+</h3>
+<h4>Description</h4>
+<em>Sets the content of the response.</em><br><small>
+</small><br><h4>Arguments</h4>
+<table>
+<thead><tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+<th>Default</th>
+</tr></thead>
+<tbody><tr>
+<td>$content</td>
+<td style="white-space: normal;">string |
+                </td>
+<td>The body content of the response.</td>
+<td></td>
+</tr></tbody>
+</table>
+<h4>Return value</h4>
+<table>
+<thead><tr>
+<th>Type</th>
+<th>Description</th>
+</tr></thead>
+<tbody><tr>
+<td><a href="src_Response.html#aura%5Chttp%5CResponse">aura\http\Response</a></td>
+<td>This response object.</td>
+</tr></tbody>
+</table>
+</div>
+<div class="method">
+<a id="AbstractResponse::setCookie()"></a><h3>setCookie<span class="nb-faded-text">(
+          string
+              |
+            $name,
+          string
+              |
+            $val,
+          int
+              |
+            string
+              |
+            $expires
+            = 0,
+          string
+              |
+            $path,
+          string
+              |
+            $domain,
+          bool
+              |
+            $secure
+            = false,
+          bool
+              |
+            $httponly
+            = null,
+          
+          )
+        </span>
+        :
+        <span class="nb-faded-text"><a href="src_Response.html#aura%5Chttp%5CResponse">aura\http\Response</a></span>
+</h3>
+<h4>Description</h4>
+<em>Sets a cookie value in $this->cookies.</em><br><small>
+</small><br><h4>Arguments</h4>
+<table>
+<thead><tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+<th>Default</th>
+</tr></thead>
+<tbody>
+<tr>
+<td>$name</td>
+<td style="white-space: normal;">string |
+                </td>
+<td>The name of the cookie.</td>
+<td></td>
+</tr>
+<tr>
+<td>$val</td>
+<td style="white-space: normal;">string |
+                </td>
+<td>The value of the cookie.</td>
+<td></td>
+</tr>
+<tr>
+<td>$expires</td>
+<td style="white-space: normal;">int |
+                string |
+                </td>
+<td>The Unix timestamp after which the cookie expires. If non-numeric, the method uses strtotime() on the value.</td>
+<td>0</td>
+</tr>
+<tr>
+<td>$path</td>
+<td style="white-space: normal;">string |
+                </td>
+<td>The path on the server in which the cookie will be available on.</td>
+<td></td>
+</tr>
+<tr>
+<td>$domain</td>
+<td style="white-space: normal;">string |
+                </td>
+<td>The domain that the cookie is available on.</td>
+<td></td>
+</tr>
+<tr>
+<td>$secure</td>
+<td style="white-space: normal;">bool |
+                </td>
+<td>Indicates that the cookie should only be transmitted over a secure HTTPS connection.</td>
+<td>false</td>
+</tr>
+<tr>
+<td>$httponly</td>
+<td style="white-space: normal;">bool |
+                </td>
+<td>When true, the cookie will be made accessible only through the HTTP protocol. This means that the cookie won&#039;t be accessible by scripting languages, such as JavaScript.</td>
+<td>null</td>
+</tr>
+</tbody>
+</table>
+<h4>Return value</h4>
+<table>
+<thead><tr>
+<th>Type</th>
+<th>Description</th>
+</tr></thead>
+<tbody><tr>
+<td><a href="src_Response.html#aura%5Chttp%5CResponse">aura\http\Response</a></td>
+<td>This response object.</td>
+</tr></tbody>
+</table>
+<h4>Tags</h4>
+<table>
+<thead><tr>
+<th>Name</th>
+<th>Description</th>
+</tr></thead>
+<tbody><tr>
+<td>see</td>
+<td>[[php::setcookie() | ]]</td>
+</tr></tbody>
+</table>
+</div>
+<div class="method">
+<a id="AbstractResponse::setCookies()"></a><h3>setCookies<span class="nb-faded-text">(
+          array
+              |
+            $cookies,
+          
+          )
+        </span>
+        :
+        <span class="nb-faded-text"><a href="src_AbstractResponse.html#aura%5Chttp%5CAbstractResponse">aura\http\AbstractResponse</a></span>
+</h3>
+<h4>Description</h4>
+<em>Set multiple cookies.</em><br><small>
+</small><br><h4>Arguments</h4>
+<table>
+<thead><tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+<th>Default</th>
+</tr></thead>
+<tbody><tr>
+<td>$cookies</td>
+<td style="white-space: normal;">array |
+                </td>
+<td></td>
+<td></td>
+</tr></tbody>
+</table>
+<h4>Return value</h4>
+<table>
+<thead><tr>
+<th>Type</th>
+<th>Description</th>
+</tr></thead>
+<tbody><tr>
+<td><a href="src_AbstractResponse.html#aura%5Chttp%5CAbstractResponse">aura\http\AbstractResponse</a></td>
+<td></td>
+</tr></tbody>
+</table>
+<h4>Tags</h4>
+<table>
+<thead><tr>
+<th>Name</th>
+<th>Description</th>
+</tr></thead>
+<tbody><tr>
+<td>see</td>
+<td>setCookie()</td>
+</tr></tbody>
+</table>
+</div>
+<div class="method">
+<a id="AbstractResponse::setHeader()"></a><h3>setHeader<span class="nb-faded-text">(
+          string
+              |
+            $name,
+          string
+              |
+            $val,
+          bool
+              |
+            $replace
+            = true,
+          
+          )
+        </span>
+        :
+        <span class="nb-faded-text"><a href="src_Response.html#aura%5Chttp%5CResponse">aura\http\Response</a></span>
+</h3>
+<h4>Description</h4>
+<em>Sets a header value in $this->headers.</em><br><small><p>This method will not set 'HTTP' headers for response status codes; use
+the [[aura\http\Response::setStatusCode() | ]] and 
+[[aura\http\Response::setStatusText() | ]] methods instead.</p>
+</small><br><h4>Arguments</h4>
+<table>
+<thead><tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+<th>Default</th>
+</tr></thead>
+<tbody>
+<tr>
+<td>$name</td>
+<td style="white-space: normal;">string |
+                </td>
+<td>The header label, such as &quot;Content-Type&quot;.</td>
+<td></td>
+</tr>
+<tr>
+<td>$val</td>
+<td style="white-space: normal;">string |
+                </td>
+<td>The value for the header.</td>
+<td></td>
+</tr>
+<tr>
+<td>$replace</td>
+<td style="white-space: normal;">bool |
+                </td>
+<td>This header value should replace any previous values of the same key. When false, the same header key is sent multiple times with the different values.</td>
+<td>true</td>
+</tr>
+</tbody>
+</table>
+<h4>Return value</h4>
+<table>
+<thead><tr>
+<th>Type</th>
+<th>Description</th>
+</tr></thead>
+<tbody><tr>
+<td><a href="src_Response.html#aura%5Chttp%5CResponse">aura\http\Response</a></td>
+<td>This response object.</td>
+</tr></tbody>
+</table>
+<h4>Tags</h4>
+<table>
+<thead><tr>
+<th>Name</th>
+<th>Description</th>
+</tr></thead>
+<tbody>
+<tr>
+<td>throws</td>
+<td>\UnexpectedValueException When trying to set a &amp;#039;HTTP&amp;#039; header.</td>
+</tr>
+<tr>
+<td>see</td>
+<td>[[php::header() | ]]</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="method">
+<a id="AbstractResponse::setHeaders()"></a><h3>setHeaders<span class="nb-faded-text">(
+          array
+              |
+            $headers,
+          
+          )
+        </span>
+        :
+        <span class="nb-faded-text"><a href="src_AbstractResponse.html#aura%5Chttp%5CAbstractResponse">aura\http\AbstractResponse</a></span>
+</h3>
+<h4>Description</h4>
+<em>Set multiple headers.</em><br><small>
+</small><br><h4>Arguments</h4>
+<table>
+<thead><tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+<th>Default</th>
+</tr></thead>
+<tbody><tr>
+<td>$headers</td>
+<td style="white-space: normal;">array |
+                </td>
+<td></td>
+<td></td>
+</tr></tbody>
+</table>
+<h4>Return value</h4>
+<table>
+<thead><tr>
+<th>Type</th>
+<th>Description</th>
+</tr></thead>
+<tbody><tr>
+<td><a href="src_AbstractResponse.html#aura%5Chttp%5CAbstractResponse">aura\http\AbstractResponse</a></td>
+<td></td>
+</tr></tbody>
+</table>
+<h4>Tags</h4>
+<table>
+<thead><tr>
+<th>Name</th>
+<th>Description</th>
+</tr></thead>
+<tbody><tr>
+<td>see</td>
+<td>setHeader()</td>
+</tr></tbody>
+</table>
+</div>
+<div class="method">
+<a id="AbstractResponse::setStatusCode()"></a><h3>setStatusCode<span class="nb-faded-text">(
+          int
+              |
+            $code,
+          
+          )
+        </span>
+        :
+        <span class="nb-faded-text"><a href="src_Response.html#aura%5Chttp%5CResponse">aura\http\Response</a></span>
+</h3>
+<h4>Description</h4>
+<em>Sets the HTTP response status code.</em><br><small><p>Automatically resets the status text to the default for this code.</p>
+</small><br><h4>Arguments</h4>
+<table>
+<thead><tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+<th>Default</th>
+</tr></thead>
+<tbody><tr>
+<td>$code</td>
+<td style="white-space: normal;">int |
+                </td>
+<td>An HTTP status code, such as 200, 302, 404, etc.</td>
+<td></td>
+</tr></tbody>
+</table>
+<h4>Return value</h4>
+<table>
+<thead><tr>
+<th>Type</th>
+<th>Description</th>
+</tr></thead>
+<tbody><tr>
+<td><a href="src_Response.html#aura%5Chttp%5CResponse">aura\http\Response</a></td>
+<td>This response object.</td>
+</tr></tbody>
+</table>
+<h4>Tags</h4>
+<table>
+<thead><tr>
+<th>Name</th>
+<th>Description</th>
+</tr></thead>
+<tbody><tr>
+<td>throws</td>
+<td>\UnexpectedValueException when the status code is less than 100
+or greater than 599</td>
+</tr></tbody>
+</table>
+</div>
+<div class="method">
+<a id="AbstractResponse::setStatusText()"></a><h3>setStatusText<span class="nb-faded-text">(
+          string
+              |
+            $text,
+          
+          )
+        </span>
+        :
+        <span class="nb-faded-text"><a href="src_Response.html#aura%5Chttp%5CResponse">aura\http\Response</a></span>
+</h3>
+<h4>Description</h4>
+<em>Sets the HTTP response status text.</em><br><small>
+</small><br><h4>Arguments</h4>
+<table>
+<thead><tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+<th>Default</th>
+</tr></thead>
+<tbody><tr>
+<td>$text</td>
+<td style="white-space: normal;">string |
+                </td>
+<td>The status text; if empty, will set the text to the default for the current status code.</td>
+<td></td>
+</tr></tbody>
+</table>
+<h4>Return value</h4>
+<table>
+<thead><tr>
+<th>Type</th>
+<th>Description</th>
+</tr></thead>
+<tbody><tr>
+<td><a href="src_Response.html#aura%5Chttp%5CResponse">aura\http\Response</a></td>
+<td>This response object.</td>
+</tr></tbody>
+</table>
+</div>
+<div class="method">
+<a id="AbstractResponse::setVersion()"></a><h3>setVersion<span class="nb-faded-text">(
+          string
+              |
+            $version,
+          
+          )
+        </span>
+        :
+        <span class="nb-faded-text"><a href="src_Response.html#aura%5Chttp%5CResponse">aura\http\Response</a></span>
+</h3>
+<h4>Description</h4>
+<em>Sets the HTTP version to '1.0' or '1.1'. Must be a string.</em><br><small>
+</small><br><h4>Arguments</h4>
+<table>
+<thead><tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+<th>Default</th>
+</tr></thead>
+<tbody><tr>
+<td>$version</td>
+<td style="white-space: normal;">string |
+                </td>
+<td>The HTTP version to use for this response.</td>
+<td></td>
+</tr></tbody>
+</table>
+<h4>Return value</h4>
+<table>
+<thead><tr>
+<th>Type</th>
+<th>Description</th>
+</tr></thead>
+<tbody><tr>
+<td><a href="src_Response.html#aura%5Chttp%5CResponse">aura\http\Response</a></td>
+<td>This response object.</td>
+</tr></tbody>
+</table>
+<h4>Tags</h4>
+<table>
+<thead><tr>
+<th>Name</th>
+<th>Description</th>
+</tr></thead>
+<tbody><tr>
+<td>throws</td>
+<td>\UnexpectedValueException when the version number
+is not &amp;#039;1.0&amp;#039; or &amp;#039;1.1&amp;#039;.</td>
+</tr></tbody>
+</table>
+</div>
+</div>
+<div id="properties_AbstractResponse">
+<h4>Properties</h4>
+<a href="#AbstractResponse::%24content">$content</a>,
+      <a href="#AbstractResponse::%24cookies">$cookies</a>,
+      <a href="#AbstractResponse::%24default_status_text">$default_status_text</a>,
+      <a href="#AbstractResponse::%24headers">$headers</a>,
+      <a href="#AbstractResponse::%24mime_utility">$mime_utility</a>,
+      <a href="#AbstractResponse::%24status_code">$status_code</a>,
+      <a href="#AbstractResponse::%24status_text">$status_text</a>,
+      <a href="#AbstractResponse::%24version">$version</a>,
+      <div class="method">
+<a id="AbstractResponse::$content"></a><h3>
+<span class="nb-faded-text"> 
+          protected 
+          </span>$content</h3>
+<em>The response body content.</em><br><small>
+</small><br><br>
+</div>
+<div class="method">
+<a id="AbstractResponse::$cookies"></a><h3>
+<span class="nb-faded-text"> 
+          protected 
+          </span>$cookies</h3>
+<em>All cookies.</em><br><small>
+</small><br><br>
+</div>
+<div class="method">
+<a id="AbstractResponse::$default_status_text"></a><h3>
+<span class="nb-faded-text"> 
+          protected 
+          </span>$default_status_text</h3>
+<em>List of the default HTTP status text.</em><br><small>
+</small><br><br>
+</div>
+<div class="method">
+<a id="AbstractResponse::$headers"></a><h3>
+<span class="nb-faded-text"> 
+          protected 
+          </span>$headers</h3>
+<em>All headers except for cookies.</em><br><small>
+</small><br><br>
+</div>
+<div class="method">
+<a id="AbstractResponse::$mime_utility"></a><h3>
+<span class="nb-faded-text"> 
+          protected 
+          </span>$mime_utility</h3>
+<em>Mime utility.</em><br><small>
+</small><br><br>
+</div>
+<div class="method">
+<a id="AbstractResponse::$status_code"></a><h3>
+<span class="nb-faded-text"> 
+          protected 
+          </span>$status_code</h3>
+<em>The HTTP response status code.</em><br><small>
+</small><br><br>
+</div>
+<div class="method">
+<a id="AbstractResponse::$status_text"></a><h3>
+<span class="nb-faded-text"> 
+          protected 
+          </span>$status_text</h3>
+<em>The HTTP response status text.</em><br><small>
+</small><br><br>
+</div>
+<div class="method">
+<a id="AbstractResponse::$version"></a><h3>
+<span class="nb-faded-text"> 
+          protected 
+          </span>$version</h3>
+<em>The HTTP version.</em><br><small>
+</small><br><br>
+</div>
+</div>
+<div style="clear: both"></div>
+</div>
+</div></div><div id="index"><div class="padder"><script xmlns="" type="text/javascript">
+      $(function() {
+
+        var is_chrome = /chrome/.test( navigator.userAgent.toLowerCase() );
+        var is_local = /file:\/\//.test(document.location.href);
+        if (is_chrome && is_local)
+        {
+          // search is disabled on chrome with local files due to http://code.google.com/p/chromium/issues/detail?id=40787
+          return;
+        }
+
+        $("#search_box").show();
+        var search_index = {};
+        $.ajax({
+          url: "search_index.xml",
+          dataType: ($.browser.msie) ? "text" : "xml",
+          error: function(data) {
+            alert('An error occurred using the search data');
+          },
+          success: function( data ) {
+            var xml;
+            if (typeof data == "string") {
+              xml = new ActiveXObject("Microsoft.XMLDOM");
+              xml.async = false;
+              xml.loadXML(data);
+            } else {
+              xml = data;
+            }
+
+            search_index = $("node", xml).map(function() {
+              type = $("type", this).text();
+              return {
+                value: $("value", this).text(),
+                label: '<img src="images/icons/'+type+'.png" align="absmiddle">'+$("value", this).text(),
+                id: $("id", this).text(),
+              };
+            }).get();
+
+            $("#search_box").autocomplete({
+              source: search_index,
+              select: function(event, ui) {
+                // redirect to the documentation
+                if ((parent) && (parent.content))
+                {
+                  parent.content.document.location = ''+ui.item.id;
+                }
+                else
+                {
+                  jQuery(document).location = ''+ui.item.id;
+                }
+                applySearchHash();
+              }
+            });
+          }
+        });
+      });
+    </script><input id="search_box"></input><div class="section">
+<h1>Namespaces</h1>
+<ul id="namespaces-" class="filetree">
+<li class="closed">
+<span class="folder">aura</span><ul><li class="closed">
+<span class="folder">http</span><ul>
+<li><span class="file"><a href="src_AbstractResponse.html#AbstractResponse">AbstractResponse</a><br><small>Functionality shared by Response and ResourceResponse.</small></span></li>
+<li><span class="file"><a href="src_Exception.html#Exception">Exception</a><br><small></small></span></li>
+<li><span class="file"><a href="src_Exception_HeadersSent.html#Exception_HeadersSent">Exception_HeadersSent</a><br><small></small></span></li>
+<li><span class="file"><a href="src_MimeUtility.html#MimeUtility">MimeUtility</a><br><small>MIME utility methods for mail messages and HTTP requests.</small></span></li>
+<li><span class="file"><a href="src_Response.html#Response">Response</a><br><small>Generic HTTP response object for sending headers, cookies, and content.</small></span></li>
+</ul>
+</li></ul>
+</li>
+<li class="closed">
+<span class="folder">default</span><ul></ul>
+</li>
+</ul>
+</div><div class="section">
+<h1>Packages</h1>
+<ul id="packages-" class="filetree">
+<li class="closed">
+<span class="folder">aura.mime</span><ul id="packages_aura.mime" class="filetree"><li class="closed"><span class="file"><a href="src_MimeUtility.html#MimeUtility">MimeUtility</a><br><small>MIME utility methods for mail messages and HTTP requests.</small></span></li></ul>
+</li>
+<li class="closed">
+<span class="folder">aura.web</span><ul id="packages_aura.web" class="filetree">
+<li class="closed"><span class="file"><a href="src_AbstractResponse.html#AbstractResponse">AbstractResponse</a><br><small>Functionality shared by Response and ResourceResponse.</small></span></li>
+<li class="closed"><span class="file"><a href="src_Response.html#Response">Response</a><br><small>Generic HTTP response object for sending headers, cookies, and content.</small></span></li>
+</ul>
+</li>
+</ul>
+</div>
+</div></div><div id="footer"><div class="padder"></div></div></div></body></html>

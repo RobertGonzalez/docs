@@ -1,8 +1,10 @@
-<html xmlns="http://www.w3.org/1999/xhtml"><head><title>File</title><meta http-equiv="Content-Type" content="text/html; charset=utf-8"></meta><link rel="stylesheet" href="css/black-tie/jquery-ui-1.8.2.custom.css" type="text/css"></link><link rel="stylesheet" href="css/jquery.treeview.css" type="text/css"></link><link rel="stylesheet" href="css/default.css" type="text/css"></link><script type="text/javascript" src="js/jquery-1.4.2.min.js"></script><script type="text/javascript" src="js/jquery-ui-1.8.2.custom.min.js"></script><script type="text/javascript" src="js/jquery.treeview.js"></script></head><body><script type="text/javascript">
+<html xmlns="http://www.w3.org/1999/xhtml"><head><title>File</title><meta http-equiv="Content-Type" content="text/html; charset=utf-8"></meta><link rel="stylesheet" href="css/black-tie/jquery-ui-1.8.2.custom.css" type="text/css"></link><link rel="stylesheet" href="css/jquery.treeview.css" type="text/css"></link><link rel="stylesheet" href="css/default.css" type="text/css"></link><script type="text/javascript" src="js/jquery-1.4.2.min.js"></script><script type="text/javascript" src="js/jquery-ui-1.8.2.custom.min.js"></script><script type="text/javascript" src="js/jquery.cookie.js"></script><script type="text/javascript" src="js/jquery.treeview.js"></script></head><body><script type="text/javascript">
           $(document).ready(function()
           {
             $(".filetree").treeview({
-              animated: 'fast'
+              animated: "fast",
+              collapsed: true,
+              persist: "cookie"
             });
           });
 
@@ -57,11 +59,12 @@
 <h3>Option</h3>
 <div class="properties">
 <h1>Properties</h1>
-<label class="property-key">Extends</label><div class="property-value"> </div>
+<label class="property-key">Extends</label><div class="property-value">
+         </div>
 <label class="property-key">Implements</label><div class="property-value"> 
       </div>
 <label class="property-key">package</label><div class="property-value">
-<a title="aura.cli">aura.cli</a>
+<a title=""></a>
              
         </div>
 <label class="property-key">Abstract</label><div class="property-value">No 
@@ -70,7 +73,8 @@
       </div>
 </div>
 <h4>Description</h4>
-<em>Defines a single command-line option.</em><br><br><div id="methods_Option">
+<em>Defines a single command-line option.</em><br>
+<br><div id="methods_Option">
 <h4>Methods</h4>
 <a style="font-style: italic;" href="#Option::__construct()">__construct</a>,
       <a style="font-style: italic;" href="#Option::getDefault()">getDefault</a>,
@@ -85,29 +89,17 @@
       <a style="font-style: italic;" href="#Option::setValue()">setValue</a>,
       <div class="method">
 <a id="Option::__construct()"></a><h3>__construct<span class="nb-faded-text">(
-          
-             
-            $name
+          $name
             = null,
-          
-             
-            $long
+          $long
             = null,
-          
-             
-            $short
+          $short
             = null,
-          
-             
-            $param
+          $param
             = null,
-          
-             
-            $multi
+          $multi
             = null,
-          
-             
-            $default
+          $default
             = null,
           
           )
@@ -116,7 +108,8 @@
         <span class="nb-faded-text">void</span>
 </h3>
 <h4>Description</h4>
-<em>Initialized the object with an option definition array.</em><br><h4>Arguments</h4>
+<em>Initialized the object with an option definition array.</em><br><small>
+</small><br><h4>Arguments</h4>
 <table>
 <thead><tr>
 <th>Name</th>
@@ -127,37 +120,37 @@
 <tbody>
 <tr>
 <td>$name</td>
-<td>n/a</td>
+<td style="white-space: normal;">n/a</td>
 <td></td>
 <td>null</td>
 </tr>
 <tr>
 <td>$long</td>
-<td>n/a</td>
+<td style="white-space: normal;">n/a</td>
 <td></td>
 <td>null</td>
 </tr>
 <tr>
 <td>$short</td>
-<td>n/a</td>
+<td style="white-space: normal;">n/a</td>
 <td></td>
 <td>null</td>
 </tr>
 <tr>
 <td>$param</td>
-<td>n/a</td>
+<td style="white-space: normal;">n/a</td>
 <td></td>
 <td>null</td>
 </tr>
 <tr>
 <td>$multi</td>
-<td>n/a</td>
+<td style="white-space: normal;">n/a</td>
 <td></td>
 <td>null</td>
 </tr>
 <tr>
 <td>$default</td>
-<td>n/a</td>
+<td style="white-space: normal;">n/a</td>
 <td></td>
 <td>null</td>
 </tr>
@@ -184,7 +177,8 @@
         <span class="nb-faded-text">mixed</span>
 </h3>
 <h4>Description</h4>
-<em>Gets the default value of this option.</em><br><h4>Return value</h4>
+<em>Gets the default value of this option.</em><br><small>
+</small><br><h4>Return value</h4>
 <table>
 <thead><tr>
 <th>Type</th>
@@ -205,7 +199,8 @@
         <span class="nb-faded-text">string</span>
 </h3>
 <h4>Description</h4>
-<em>Gets the long name for this option.</em><br><h4>Return value</h4>
+<em>Gets the long name for this option.</em><br><small>
+</small><br><h4>Return value</h4>
 <table>
 <thead><tr>
 <th>Type</th>
@@ -226,7 +221,8 @@
         <span class="nb-faded-text">string</span>
 </h3>
 <h4>Description</h4>
-<em>Gets the property name for this option.</em><br><h4>Return value</h4>
+<em>Gets the property name for this option.</em><br><small>
+</small><br><h4>Return value</h4>
 <table>
 <thead><tr>
 <th>Type</th>
@@ -247,7 +243,8 @@
         <span class="nb-faded-text">string</span>
 </h3>
 <h4>Description</h4>
-<em>Gets the short name for this option.</em><br><h4>Return value</h4>
+<em>Gets the short name for this option.</em><br><small>
+</small><br><h4>Return value</h4>
 <table>
 <thead><tr>
 <th>Type</th>
@@ -268,7 +265,8 @@
         <span class="nb-faded-text">mixed</span>
 </h3>
 <h4>Description</h4>
-<em>Gets the option value.</em><br><h4>Return value</h4>
+<em>Gets the option value.</em><br><small>
+</small><br><h4>Return value</h4>
 <table>
 <thead><tr>
 <th>Type</th>
@@ -289,7 +287,8 @@
         <span class="nb-faded-text">bool</span>
 </h3>
 <h4>Description</h4>
-<em>Can this option be present multiple times?</em><br><h4>Return value</h4>
+<em>Can this option be present multiple times?</em><br><small>
+</small><br><h4>Return value</h4>
 <table>
 <thead><tr>
 <th>Type</th>
@@ -310,7 +309,8 @@
         <span class="nb-faded-text">bool</span>
 </h3>
 <h4>Description</h4>
-<em>Is a param value optional on this option?</em><br><h4>Return value</h4>
+<em>Is a param value optional on this option?</em><br><small>
+</small><br><h4>Return value</h4>
 <table>
 <thead><tr>
 <th>Type</th>
@@ -331,7 +331,8 @@
         <span class="nb-faded-text">bool</span>
 </h3>
 <h4>Description</h4>
-<em>Is a param value required *not* to be present on this option?</em><br><h4>Return value</h4>
+<em>Is a param value required *not* to be present on this option?</em><br><small>
+</small><br><h4>Return value</h4>
 <table>
 <thead><tr>
 <th>Type</th>
@@ -352,7 +353,8 @@
         <span class="nb-faded-text">bool</span>
 </h3>
 <h4>Description</h4>
-<em>Is a param value required to be present on this option?</em><br><h4>Return value</h4>
+<em>Is a param value required to be present on this option?</em><br><small>
+</small><br><h4>Return value</h4>
 <table>
 <thead><tr>
 <th>Type</th>
@@ -367,7 +369,7 @@
 <div class="method">
 <a id="Option::setValue()"></a><h3>setValue<span class="nb-faded-text">(
           mixed
-             
+              |
             $value,
           
           )
@@ -376,7 +378,8 @@
         <span class="nb-faded-text">void</span>
 </h3>
 <h4>Description</h4>
-<em>Sets the option value.</em><br><h4>Arguments</h4>
+<em>Sets the option value.</em><br><small>
+</small><br><h4>Arguments</h4>
 <table>
 <thead><tr>
 <th>Name</th>
@@ -386,7 +389,8 @@
 </tr></thead>
 <tbody><tr>
 <td>$value</td>
-<td>mixed</td>
+<td style="white-space: normal;">mixed |
+                </td>
 <td>The value to set.</td>
 <td></td>
 </tr></tbody>
@@ -415,52 +419,60 @@
       <a href="#Option::%24value">$value</a>,
       <div class="method">
 <a id="Option::$default"></a><h3>
-<span class="nb-faded-text">string 
+<span class="nb-faded-text"> 
           protected 
           </span>$default</h3>
-<em>The default value for the option param.</em><br><small></small><br><br>
+<em>The default value for the option param.</em><br><small>
+</small><br><br>
 </div>
 <div class="method">
 <a id="Option::$long"></a><h3>
-<span class="nb-faded-text">string 
+<span class="nb-faded-text"> 
           protected 
           </span>$long</h3>
-<em>The long name of the option.</em><br><small></small><br><br>
+<em>The long name of the option.</em><br><small>
+</small><br><br>
 </div>
 <div class="method">
 <a id="Option::$multi"></a><h3>
-<span class="nb-faded-text">bool 
+<span class="nb-faded-text"> 
           protected 
           </span>$multi</h3>
-<em>Can the option be specified multiple times?</em><br><small></small><br><br>
+<em>Can the option be specified multiple times?</em><br><small>
+</small><br><br>
 </div>
 <div class="method">
 <a id="Option::$name"></a><h3>
-<span class="nb-faded-text">string 
+<span class="nb-faded-text"> 
           protected 
           </span>$name</h3>
-<em>The property name of the option.</em><br><small></small><br><br>
+<em>The property name of the option.</em><br><small>
+</small><br><br>
 </div>
 <div class="method">
 <a id="Option::$param"></a><h3>
-<span class="nb-faded-text">string 
+<span class="nb-faded-text"> 
           protected 
           </span>$param</h3>
-<em>When the option is present, will a be parameter required, optional, or<br/>rejected (i.e., no param allowed) ?</em><br><small></small><br><br>
+<em>When the option is present, will a be parameter required, optional, or
+rejected (i.e., no param allowed) ?</em><br><small>
+</small><br><br>
 </div>
 <div class="method">
 <a id="Option::$short"></a><h3>
-<span class="nb-faded-text">string 
+<span class="nb-faded-text"> 
           protected 
           </span>$short</h3>
-<em>The short name of the option.</em><br><small></small><br><br>
+<em>The short name of the option.</em><br><small>
+</small><br><br>
 </div>
 <div class="method">
 <a id="Option::$value"></a><h3>
-<span class="nb-faded-text">string 
+<span class="nb-faded-text"> 
           protected 
           </span>$value</h3>
-<em>The option value as set from the command line.</em><br><small></small><br><br>
+<em>The option value as set from the command line.</em><br><small>
+</small><br><br>
 </div>
 </div>
 <div id="constants_Option">
@@ -471,7 +483,8 @@
         </span>PARAM_OPTIONAL<span class="nb-faded-text">
          = optional</span>
 </h3>
-<em>A parameter value may or may not be present on this option.</em><br><small></small><br><br>
+<em>A parameter value may or may not be present on this option.</em><br><small>
+</small><br><br>
 </div>
 <a id="Option::PARAM_REJECTED"></a><div class="constant">
 <h3>
@@ -479,7 +492,8 @@
         </span>PARAM_REJECTED<span class="nb-faded-text">
          = rejected</span>
 </h3>
-<em>Any parameter value on this option will be rejected.</em><br><small></small><br><br>
+<em>Any parameter value on this option will be rejected.</em><br><small>
+</small><br><br>
 </div>
 <a id="Option::PARAM_REQUIRED"></a><div class="constant">
 <h3>
@@ -487,7 +501,8 @@
         </span>PARAM_REQUIRED<span class="nb-faded-text">
          = required</span>
 </h3>
-<em>A parameter value is required to be present for this option.</em><br><small></small><br><br>
+<em>A parameter value is required to be present for this option.</em><br><small>
+</small><br><br>
 </div>
 </div>
 <div style="clear: both"></div>
@@ -534,7 +549,14 @@
               source: search_index,
               select: function(event, ui) {
                 // redirect to the documentation
-                parent.content.document.location = ''+ui.item.id;
+                if ((parent) && (parent.content))
+                {
+                  parent.content.document.location = ''+ui.item.id;
+                }
+                else
+                {
+                  jQuery(document).location = ''+ui.item.id;
+                }
                 applySearchHash();
               }
             });
@@ -547,21 +569,21 @@
 <li class="closed">
 <span class="folder">aura</span><ul><li class="closed">
 <span class="folder">cli</span><ul>
+<li><span class="file"><a href="src_Command.html#Command">Command</a><br><small>The CLI equivalent of a page-controller to perform a single action.</small></span></li>
+<li><span class="file"><a href="src_CommandFactory.html#CommandFactory">CommandFactory</a><br><small>A factory to create Command objects.</small></span></li>
 <li><span class="file"><a href="src_Context.html#Context">Context</a><br><small>Collection point for information about the command-line execution context.</small></span></li>
 <li><span class="file"><a href="src_Exception.html#Exception">Exception</a><br><small>Generic package exception.</small></span></li>
-<li><span class="file"><a href="src_Getopt.html#Getopt">Getopt</a><br><small>Retrieves and validates command-line options and parameter values.</small></span></li>
-<li><span class="file"><a href="src_Option.html#Option">Option</a><br><small>Defines a single command-line option.</small></span></li>
-<li><span class="file"><a href="src_Exception_OptionParam.html#Exception_OptionParam">Exception_OptionParam</a><br><small>The option &#39;param&#39; value needs a boolean or a null.</small></span></li>
+<li><span class="file"><a href="src_Exception_CommandFactory.html#Exception_CommandFactory">Exception_CommandFactory</a><br><small>Generic CommandFactory exception.</small></span></li>
 <li><span class="file"><a href="src_Exception_OptionName.html#Exception_OptionName">Exception_OptionName</a><br><small>Option objects need to be initialized with a name.</small></span></li>
 <li><span class="file"><a href="src_Exception_OptionNotDefined.html#Exception_OptionNotDefined">Exception_OptionNotDefined</a><br><small>Asked for an option that is not defined.</small></span></li>
 <li><span class="file"><a href="src_Exception_OptionNotMulti.html#Exception_OptionNotMulti">Exception_OptionNotMulti</a><br><small>The option does not allow multiple values.</small></span></li>
+<li><span class="file"><a href="src_Exception_OptionParam.html#Exception_OptionParam">Exception_OptionParam</a><br><small>The option &#39;param&#39; value needs a boolean or a null.</small></span></li>
 <li><span class="file"><a href="src_Exception_OptionParamRejected.html#Exception_OptionParamRejected">Exception_OptionParamRejected</a><br><small>The option requires that no parameter be present.</small></span></li>
 <li><span class="file"><a href="src_Exception_OptionParamRequired.html#Exception_OptionParamRequired">Exception_OptionParamRequired</a><br><small>The option requires a non-blank parameter.</small></span></li>
-<li><span class="file"><a href="src_Exception_CommandFactory.html#Exception_CommandFactory">Exception_CommandFactory</a><br><small>Generic CommandFactory exception.</small></span></li>
-<li><span class="file"><a href="src_Command.html#Command">Command</a><br><small>The CLI equivalent of a page-controller to perform a single action.</small></span></li>
-<li><span class="file"><a href="src_Stdio.html#Stdio">Stdio</a><br><small>Provides a wrapper for standard input/output handles.</small></span></li>
+<li><span class="file"><a href="src_Getopt.html#Getopt">Getopt</a><br><small>Retrieves and validates command-line options and parameter values.</small></span></li>
+<li><span class="file"><a href="src_Option.html#Option">Option</a><br><small>Defines a single command-line option.</small></span></li>
 <li><span class="file"><a href="src_OptionFactory.html#OptionFactory">OptionFactory</a><br><small>A factory to create Option objects.</small></span></li>
-<li><span class="file"><a href="src_CommandFactory.html#CommandFactory">CommandFactory</a><br><small>A factory to create Command objects.</small></span></li>
+<li><span class="file"><a href="src_Stdio.html#Stdio">Stdio</a><br><small>Provides a wrapper for standard input/output handles.</small></span></li>
 <li><span class="file"><a href="src_Vt100.html#Vt100">Vt100</a><br><small>Text formatting for VT100 terminals.</small></span></li>
 </ul>
 </li></ul>
@@ -573,22 +595,22 @@
 </div><div class="section">
 <h1>Packages</h1>
 <ul id="packages-" class="filetree"><li class="closed">
-<span class="folder">aura.cli</span><ul id="packages_aura.cli" class=".filetree">
+<span class="folder">aura.cli</span><ul id="packages_aura.cli" class="filetree">
+<li class="closed"><span class="file"><a href="src_Command.html#Command">Command</a><br><small>The CLI equivalent of a page-controller to perform a single action.</small></span></li>
+<li class="closed"><span class="file"><a href="src_CommandFactory.html#CommandFactory">CommandFactory</a><br><small>A factory to create Command objects.</small></span></li>
 <li class="closed"><span class="file"><a href="src_Context.html#Context">Context</a><br><small>Collection point for information about the command-line execution context.</small></span></li>
 <li class="closed"><span class="file"><a href="src_Exception.html#Exception">Exception</a><br><small>Generic package exception.</small></span></li>
-<li class="closed"><span class="file"><a href="src_Getopt.html#Getopt">Getopt</a><br><small>Retrieves and validates command-line options and parameter values.</small></span></li>
-<li class="closed"><span class="file"><a href="src_Option.html#Option">Option</a><br><small>Defines a single command-line option.</small></span></li>
-<li class="closed"><span class="file"><a href="src_Exception_OptionParam.html#Exception_OptionParam">Exception_OptionParam</a><br><small>The option &#39;param&#39; value needs a boolean or a null.</small></span></li>
+<li class="closed"><span class="file"><a href="src_Exception_CommandFactory.html#Exception_CommandFactory">Exception_CommandFactory</a><br><small>Generic CommandFactory exception.</small></span></li>
 <li class="closed"><span class="file"><a href="src_Exception_OptionName.html#Exception_OptionName">Exception_OptionName</a><br><small>Option objects need to be initialized with a name.</small></span></li>
 <li class="closed"><span class="file"><a href="src_Exception_OptionNotDefined.html#Exception_OptionNotDefined">Exception_OptionNotDefined</a><br><small>Asked for an option that is not defined.</small></span></li>
 <li class="closed"><span class="file"><a href="src_Exception_OptionNotMulti.html#Exception_OptionNotMulti">Exception_OptionNotMulti</a><br><small>The option does not allow multiple values.</small></span></li>
+<li class="closed"><span class="file"><a href="src_Exception_OptionParam.html#Exception_OptionParam">Exception_OptionParam</a><br><small>The option &#39;param&#39; value needs a boolean or a null.</small></span></li>
 <li class="closed"><span class="file"><a href="src_Exception_OptionParamRejected.html#Exception_OptionParamRejected">Exception_OptionParamRejected</a><br><small>The option requires that no parameter be present.</small></span></li>
 <li class="closed"><span class="file"><a href="src_Exception_OptionParamRequired.html#Exception_OptionParamRequired">Exception_OptionParamRequired</a><br><small>The option requires a non-blank parameter.</small></span></li>
-<li class="closed"><span class="file"><a href="src_Exception_CommandFactory.html#Exception_CommandFactory">Exception_CommandFactory</a><br><small>Generic CommandFactory exception.</small></span></li>
-<li class="closed"><span class="file"><a href="src_Command.html#Command">Command</a><br><small>The CLI equivalent of a page-controller to perform a single action.</small></span></li>
-<li class="closed"><span class="file"><a href="src_Stdio.html#Stdio">Stdio</a><br><small>Provides a wrapper for standard input/output handles.</small></span></li>
+<li class="closed"><span class="file"><a href="src_Getopt.html#Getopt">Getopt</a><br><small>Retrieves and validates command-line options and parameter values.</small></span></li>
+<li class="closed"><span class="file"><a href="src_Option.html#Option">Option</a><br><small>Defines a single command-line option.</small></span></li>
 <li class="closed"><span class="file"><a href="src_OptionFactory.html#OptionFactory">OptionFactory</a><br><small>A factory to create Option objects.</small></span></li>
-<li class="closed"><span class="file"><a href="src_CommandFactory.html#CommandFactory">CommandFactory</a><br><small>A factory to create Command objects.</small></span></li>
+<li class="closed"><span class="file"><a href="src_Stdio.html#Stdio">Stdio</a><br><small>Provides a wrapper for standard input/output handles.</small></span></li>
 <li class="closed"><span class="file"><a href="src_Vt100.html#Vt100">Vt100</a><br><small>Text formatting for VT100 terminals.</small></span></li>
 </ul>
 </li></ul>

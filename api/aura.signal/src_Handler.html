@@ -1,8 +1,10 @@
-<html xmlns="http://www.w3.org/1999/xhtml"><head><title>File</title><meta http-equiv="Content-Type" content="text/html; charset=utf-8"></meta><link rel="stylesheet" href="css/black-tie/jquery-ui-1.8.2.custom.css" type="text/css"></link><link rel="stylesheet" href="css/jquery.treeview.css" type="text/css"></link><link rel="stylesheet" href="css/default.css" type="text/css"></link><script type="text/javascript" src="js/jquery-1.4.2.min.js"></script><script type="text/javascript" src="js/jquery-ui-1.8.2.custom.min.js"></script><script type="text/javascript" src="js/jquery.treeview.js"></script></head><body><script type="text/javascript">
+<html xmlns="http://www.w3.org/1999/xhtml"><head><title>File</title><meta http-equiv="Content-Type" content="text/html; charset=utf-8"></meta><link rel="stylesheet" href="css/black-tie/jquery-ui-1.8.2.custom.css" type="text/css"></link><link rel="stylesheet" href="css/jquery.treeview.css" type="text/css"></link><link rel="stylesheet" href="css/default.css" type="text/css"></link><script type="text/javascript" src="js/jquery-1.4.2.min.js"></script><script type="text/javascript" src="js/jquery-ui-1.8.2.custom.min.js"></script><script type="text/javascript" src="js/jquery.cookie.js"></script><script type="text/javascript" src="js/jquery.treeview.js"></script></head><body><script type="text/javascript">
           $(document).ready(function()
           {
             $(".filetree").treeview({
-              animated: 'fast'
+              animated: "fast",
+              collapsed: true,
+              persist: "cookie"
             });
           });
 
@@ -57,11 +59,12 @@
 <h3>Handler</h3>
 <div class="properties">
 <h1>Properties</h1>
-<label class="property-key">Extends</label><div class="property-value"> </div>
+<label class="property-key">Extends</label><div class="property-value">
+         </div>
 <label class="property-key">Implements</label><div class="property-value"> 
       </div>
 <label class="property-key">package</label><div class="property-value">
-<a title="aura.signal">aura.signal</a>
+<a title=""></a>
              
         </div>
 <label class="property-key">Abstract</label><div class="property-value">No 
@@ -70,21 +73,24 @@
       </div>
 </div>
 <h4>Description</h4>
-<em>A signal Handler definition.</em><br><br><div id="methods_Handler">
+<em>A signal Handler definition.</em><br>
+<br><div id="methods_Handler">
 <h4>Methods</h4>
 <a style="font-style: italic;" href="#Handler::__construct()">__construct</a>,
       <a style="font-style: italic;" href="#Handler::__get()">__get</a>,
       <a style="font-style: italic;" href="#Handler::exec()">exec</a>,
       <div class="method">
 <a id="Handler::__construct()"></a><h3>__construct<span class="nb-faded-text">(
-          object|string
-             
+          object
+              |
+            string
+              |
             $sender,
           string
-             
+              |
             $signal,
           callback
-             
+              |
             $callback,
           
           )
@@ -93,7 +99,8 @@
         <span class="nb-faded-text">n/a</span>
 </h3>
 <h4>Description</h4>
-<em>Constructor.</em><br><h4>Arguments</h4>
+<em>Constructor.</em><br><small>
+</small><br><h4>Arguments</h4>
 <table>
 <thead><tr>
 <th>Name</th>
@@ -104,19 +111,23 @@
 <tbody>
 <tr>
 <td>$sender</td>
-<td>object|string</td>
+<td style="white-space: normal;">object |
+                string |
+                </td>
 <td>Handle signals from this sender.</td>
 <td></td>
 </tr>
 <tr>
 <td>$signal</td>
-<td>string</td>
+<td style="white-space: normal;">string |
+                </td>
 <td>Handle this specific signal.</td>
 <td></td>
 </tr>
 <tr>
 <td>$callback</td>
-<td>callback</td>
+<td style="white-space: normal;">callback |
+                </td>
 <td>Use this callback to handle the signal.</td>
 <td></td>
 </tr>
@@ -137,7 +148,7 @@
 <div class="method">
 <a id="Handler::__get()"></a><h3>__get<span class="nb-faded-text">(
           string
-             
+              |
             $key,
           
           )
@@ -146,7 +157,8 @@
         <span class="nb-faded-text">mixed</span>
 </h3>
 <h4>Description</h4>
-<em>Make properties available as magic read-only.</em><br><h4>Arguments</h4>
+<em>Make properties available as magic read-only.</em><br><small>
+</small><br><h4>Arguments</h4>
 <table>
 <thead><tr>
 <th>Name</th>
@@ -156,7 +168,8 @@
 </tr></thead>
 <tbody><tr>
 <td>$key</td>
-<td>string</td>
+<td style="white-space: normal;">string |
+                </td>
 <td>The property name.</td>
 <td></td>
 </tr></tbody>
@@ -176,13 +189,13 @@
 <div class="method">
 <a id="Handler::exec()"></a><h3>exec<span class="nb-faded-text">(
           object
-             
+              |
             $origin,
           string
-             
+              |
             $signal,
           array
-             
+              |
             $args,
           
           )
@@ -191,7 +204,10 @@
         <span class="nb-faded-text">null|array</span>
 </h3>
 <h4>Description</h4>
-<em>Execute the handler: if the originating object matches the required<br/>sender, and the signal matches the required signal, then run the <br/>callback and return the results.</em><br><h4>Arguments</h4>
+<em>Execute the handler: if the originating object matches the required
+sender, and the signal matches the required signal, then run the 
+callback and return the results.</em><br><small>
+</small><br><h4>Arguments</h4>
 <table>
 <thead><tr>
 <th>Name</th>
@@ -202,19 +218,22 @@
 <tbody>
 <tr>
 <td>$origin</td>
-<td>object</td>
+<td style="white-space: normal;">object |
+                </td>
 <td>The originating object that sent the signal.</td>
 <td></td>
 </tr>
 <tr>
 <td>$signal</td>
-<td>string</td>
+<td style="white-space: normal;">string |
+                </td>
 <td>The signal sent by the originating object.</td>
 <td></td>
 </tr>
 <tr>
 <td>$args</td>
-<td>array</td>
+<td style="white-space: normal;">array |
+                </td>
 <td>Arguments for the callback, which will be invoked if the sender and signal match this Handler.</td>
 <td></td>
 </tr>
@@ -240,24 +259,30 @@
       <a href="#Handler::%24signal">$signal</a>,
       <div class="method">
 <a id="Handler::$callback"></a><h3>
-<span class="nb-faded-text">callback 
+<span class="nb-faded-text"> 
           protected 
           </span>$callback</h3>
-<em>Use this callback to handle the signal.</em><br><small></small><br><br>
+<em>Use this callback to handle the signal.</em><br><small>
+</small><br><br>
 </div>
 <div class="method">
 <a id="Handler::$sender"></a><h3>
-<span class="nb-faded-text">object|string 
+<span class="nb-faded-text"> 
           protected 
           </span>$sender</h3>
-<em>Handle signals from this sender. This can be an object, in which case<br/>the Handler will match only signals from that object, or a class name,<br/>in which case the Handler will match signals from any instance of that<br/>class.</em><br><small></small><br><br>
+<em>Handle signals from this sender. This can be an object, in which case
+the Handler will match only signals from that object, or a class name,
+in which case the Handler will match signals from any instance of that
+class.</em><br><small>
+</small><br><br>
 </div>
 <div class="method">
 <a id="Handler::$signal"></a><h3>
-<span class="nb-faded-text">string 
+<span class="nb-faded-text"> 
           protected 
           </span>$signal</h3>
-<em>Handle this signal from the sender.</em><br><small></small><br><br>
+<em>Handle this signal from the sender.</em><br><small>
+</small><br><br>
 </div>
 </div>
 <div style="clear: both"></div>
@@ -304,7 +329,14 @@
               source: search_index,
               select: function(event, ui) {
                 // redirect to the documentation
-                parent.content.document.location = ''+ui.item.id;
+                if ((parent) && (parent.content))
+                {
+                  parent.content.document.location = ''+ui.item.id;
+                }
+                else
+                {
+                  jQuery(document).location = ''+ui.item.id;
+                }
                 applySearchHash();
               }
             });
@@ -317,10 +349,10 @@
 <li class="closed">
 <span class="folder">aura</span><ul><li class="closed">
 <span class="folder">signal</span><ul>
-<li><span class="file"><a href="src_Handler.html#Handler">Handler</a><br><small>A signal Handler definition.</small></span></li>
-<li><span class="file"><a href="src_Manager.html#Manager">Manager</a><br><small>Processes signals through to Handler objects.</small></span></li>
 <li><span class="file"><a href="src_Exception.html#Exception">Exception</a><br><small>Generic package exception.</small></span></li>
+<li><span class="file"><a href="src_Handler.html#Handler">Handler</a><br><small>A signal Handler definition.</small></span></li>
 <li><span class="file"><a href="src_HandlerFactory.html#HandlerFactory">HandlerFactory</a><br><small>A factory to create Handler objects.</small></span></li>
+<li><span class="file"><a href="src_Manager.html#Manager">Manager</a><br><small>Processes signals through to Handler objects.</small></span></li>
 <li><span class="file"><a href="src_Result.html#Result">Result</a><br><small>Represents a Result from a Handler.</small></span></li>
 <li><span class="file"><a href="src_ResultCollection.html#ResultCollection">ResultCollection</a><br><small>Represents a collection of Result objects.</small></span></li>
 <li><span class="file"><a href="src_ResultFactory.html#ResultFactory">ResultFactory</a><br><small>A factory to create Result objects.</small></span></li>
@@ -334,11 +366,11 @@
 </div><div class="section">
 <h1>Packages</h1>
 <ul id="packages-" class="filetree"><li class="closed">
-<span class="folder">aura.signal</span><ul id="packages_aura.signal" class=".filetree">
-<li class="closed"><span class="file"><a href="src_Handler.html#Handler">Handler</a><br><small>A signal Handler definition.</small></span></li>
-<li class="closed"><span class="file"><a href="src_Manager.html#Manager">Manager</a><br><small>Processes signals through to Handler objects.</small></span></li>
+<span class="folder">aura.signal</span><ul id="packages_aura.signal" class="filetree">
 <li class="closed"><span class="file"><a href="src_Exception.html#Exception">Exception</a><br><small>Generic package exception.</small></span></li>
+<li class="closed"><span class="file"><a href="src_Handler.html#Handler">Handler</a><br><small>A signal Handler definition.</small></span></li>
 <li class="closed"><span class="file"><a href="src_HandlerFactory.html#HandlerFactory">HandlerFactory</a><br><small>A factory to create Handler objects.</small></span></li>
+<li class="closed"><span class="file"><a href="src_Manager.html#Manager">Manager</a><br><small>Processes signals through to Handler objects.</small></span></li>
 <li class="closed"><span class="file"><a href="src_Result.html#Result">Result</a><br><small>Represents a Result from a Handler.</small></span></li>
 <li class="closed"><span class="file"><a href="src_ResultCollection.html#ResultCollection">ResultCollection</a><br><small>Represents a collection of Result objects.</small></span></li>
 <li class="closed"><span class="file"><a href="src_ResultFactory.html#ResultFactory">ResultFactory</a><br><small>A factory to create Result objects.</small></span></li>

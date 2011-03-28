@@ -1,8 +1,10 @@
-<html xmlns="http://www.w3.org/1999/xhtml"><head><title>File</title><meta http-equiv="Content-Type" content="text/html; charset=utf-8"></meta><link rel="stylesheet" href="css/black-tie/jquery-ui-1.8.2.custom.css" type="text/css"></link><link rel="stylesheet" href="css/jquery.treeview.css" type="text/css"></link><link rel="stylesheet" href="css/default.css" type="text/css"></link><script type="text/javascript" src="js/jquery-1.4.2.min.js"></script><script type="text/javascript" src="js/jquery-ui-1.8.2.custom.min.js"></script><script type="text/javascript" src="js/jquery.treeview.js"></script></head><body><script type="text/javascript">
+<html xmlns="http://www.w3.org/1999/xhtml"><head><title>File</title><meta http-equiv="Content-Type" content="text/html; charset=utf-8"></meta><link rel="stylesheet" href="css/black-tie/jquery-ui-1.8.2.custom.css" type="text/css"></link><link rel="stylesheet" href="css/jquery.treeview.css" type="text/css"></link><link rel="stylesheet" href="css/default.css" type="text/css"></link><script type="text/javascript" src="js/jquery-1.4.2.min.js"></script><script type="text/javascript" src="js/jquery-ui-1.8.2.custom.min.js"></script><script type="text/javascript" src="js/jquery.cookie.js"></script><script type="text/javascript" src="js/jquery.treeview.js"></script></head><body><script type="text/javascript">
           $(document).ready(function()
           {
             $(".filetree").treeview({
-              animated: 'fast'
+              animated: "fast",
+              collapsed: true,
+              persist: "cookie"
             });
           });
 
@@ -57,11 +59,12 @@
 <h3>Lazy</h3>
 <div class="properties">
 <h1>Properties</h1>
-<label class="property-key">Extends</label><div class="property-value"> </div>
+<label class="property-key">Extends</label><div class="property-value">
+         </div>
 <label class="property-key">Implements</label><div class="property-value"> 
       </div>
 <label class="property-key">package</label><div class="property-value">
-<a title="aura.di">aura.di</a>
+<a title=""></a>
              
         </div>
 <label class="property-key">Abstract</label><div class="property-value">No 
@@ -70,14 +73,15 @@
       </div>
 </div>
 <h4>Description</h4>
-<em>Wraps a closure specifically for the purpose of lazy-loading an object.</em><br><br><div id="methods_Lazy">
+<em>Wraps a closure specifically for the purpose of lazy-loading an object.</em><br>
+<br><div id="methods_Lazy">
 <h4>Methods</h4>
 <a style="font-style: italic;" href="#Lazy::__construct()">__construct</a>,
       <a style="font-style: italic;" href="#Lazy::__invoke()">__invoke</a>,
       <div class="method">
 <a id="Lazy::__construct()"></a><h3>__construct<span class="nb-faded-text">(
           \Closure
-             
+              |
             $closure,
           
           )
@@ -86,7 +90,8 @@
         <span class="nb-faded-text">void</span>
 </h3>
 <h4>Description</h4>
-<em>Constructor.</em><br><h4>Arguments</h4>
+<em>Constructor.</em><br><small>
+</small><br><h4>Arguments</h4>
 <table>
 <thead><tr>
 <th>Name</th>
@@ -96,7 +101,8 @@
 </tr></thead>
 <tbody><tr>
 <td>$closure</td>
-<td>\Closure</td>
+<td style="white-space: normal;">\Closure |
+                </td>
 <td>A closure that creates an object instance.</td>
 <td></td>
 </tr></tbody>
@@ -122,7 +128,8 @@
         <span class="nb-faded-text">object</span>
 </h3>
 <h4>Description</h4>
-<em>Invokes the closure to create the instance.</em><br><h4>Return value</h4>
+<em>Invokes the closure to create the instance.</em><br><small>
+</small><br><h4>Return value</h4>
 <table>
 <thead><tr>
 <th>Type</th>
@@ -140,10 +147,11 @@
 <a href="#Lazy::%24closure">$closure</a>,
       <div class="method">
 <a id="Lazy::$closure"></a><h3>
-<span class="nb-faded-text">\Closure 
+<span class="nb-faded-text"> 
           protected 
           </span>$closure</h3>
-<em>A closure that creates an object instance.</em><br><small></small><br><br>
+<em>A closure that creates an object instance.</em><br><small>
+</small><br><br>
 </div>
 </div>
 <div style="clear: both"></div>
@@ -190,7 +198,14 @@
               source: search_index,
               select: function(event, ui) {
                 // redirect to the documentation
-                parent.content.document.location = ''+ui.item.id;
+                if ((parent) && (parent.content))
+                {
+                  parent.content.document.location = ''+ui.item.id;
+                }
+                else
+                {
+                  jQuery(document).location = ''+ui.item.id;
+                }
                 applySearchHash();
               }
             });
@@ -199,34 +214,29 @@
       });
     </script><input id="search_box"></input><div class="section">
 <h1>Namespaces</h1>
-<ul id="namespaces-" class="filetree">
-<li class="closed">
+<ul id="namespaces-" class="filetree"><li class="closed">
 <span class="folder">aura</span><ul><li class="closed">
 <span class="folder">di</span><ul>
-<li><span class="file"><a href="src_ForgeInterface.html#ForgeInterface">ForgeInterface</a><br><small></small></span></li>
-<li><span class="file"><a href="src_Container.html#Container">Container</a><br><small>Dependency injection container.</small></span></li>
-<li><span class="file"><a href="src_Forge.html#Forge">Forge</a><br><small>Creates objects using reflection and the specified configuration values.</small></span></li>
-<li><span class="file"><a href="src_Exception.html#Exception">Exception</a><br><small></small></span></li>
-<li><span class="file"><a href="src_ConfigInterface.html#ConfigInterface">ConfigInterface</a><br><small>Retains and unifies class constructor parameter values with external values.</small></span></li>
 <li><span class="file"><a href="src_Config.html#Config">Config</a><br><small>Retains and unifies class constructor parameter values with external values.</small></span></li>
-<li><span class="file"><a href="src_Lazy.html#Lazy">Lazy</a><br><small>Wraps a closure specifically for the purpose of lazy-loading an object.</small></span></li>
+<li><span class="file"><a href="src_ConfigInterface.html#ConfigInterface">ConfigInterface</a><br><small>Retains and unifies class constructor parameter values with external values.</small></span></li>
+<li><span class="file"><a href="src_Container.html#Container">Container</a><br><small>Dependency injection container.</small></span></li>
+<li><span class="file"><a href="src_Exception.html#Exception">Exception</a><br><small></small></span></li>
 <li><span class="file"><a href="src_Exception_ServiceInvalid.html#Exception_ServiceInvalid">Exception_ServiceInvalid</a><br><small></small></span></li>
 <li><span class="file"><a href="src_Exception_ServiceNotFound.html#Exception_ServiceNotFound">Exception_ServiceNotFound</a><br><small></small></span></li>
+<li><span class="file"><a href="src_Forge.html#Forge">Forge</a><br><small>Creates objects using reflection and the specified configuration values.</small></span></li>
+<li><span class="file"><a href="src_ForgeInterface.html#ForgeInterface">ForgeInterface</a><br><small></small></span></li>
+<li><span class="file"><a href="src_Lazy.html#Lazy">Lazy</a><br><small>Wraps a closure specifically for the purpose of lazy-loading an object.</small></span></li>
 </ul>
 </li></ul>
-</li>
-<li class="closed">
-<span class="folder">default</span><ul></ul>
-</li>
-</ul>
+</li></ul>
 </div><div class="section">
 <h1>Packages</h1>
 <ul id="packages-" class="filetree"><li class="closed">
-<span class="folder">aura.di</span><ul id="packages_aura.di" class=".filetree">
+<span class="folder">aura.di</span><ul id="packages_aura.di" class="filetree">
+<li class="closed"><span class="file"><a href="src_Config.html#Config">Config</a><br><small>Retains and unifies class constructor parameter values with external values.</small></span></li>
+<li class="closed"><span class="file"><a href="src_ConfigInterface.html#ConfigInterface">ConfigInterface</a><br><small>Retains and unifies class constructor parameter values with external values.</small></span></li>
 <li class="closed"><span class="file"><a href="src_Container.html#Container">Container</a><br><small>Dependency injection container.</small></span></li>
 <li class="closed"><span class="file"><a href="src_Forge.html#Forge">Forge</a><br><small>Creates objects using reflection and the specified configuration values.</small></span></li>
-<li class="closed"><span class="file"><a href="src_ConfigInterface.html#ConfigInterface">ConfigInterface</a><br><small>Retains and unifies class constructor parameter values with external values.</small></span></li>
-<li class="closed"><span class="file"><a href="src_Config.html#Config">Config</a><br><small>Retains and unifies class constructor parameter values with external values.</small></span></li>
 <li class="closed"><span class="file"><a href="src_Lazy.html#Lazy">Lazy</a><br><small>Wraps a closure specifically for the purpose of lazy-loading an object.</small></span></li>
 </ul>
 </li></ul>

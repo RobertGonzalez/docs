@@ -1,0 +1,858 @@
+<?xml version="1.0"?>
+<project version="0.8.11" title="Aura Project for PHP: aura.http">
+  <file path="config/default.php" hash="80225eccc5bcbb4cebd268a6cc1caaa9">
+    <function namespace="default" line="17">
+      <name>Closure</name>
+      <type>closure</type>
+    </function>
+  </file>
+  <file path="src.php" hash="a19d9b6d2b21c457efdd2c5cf9c72a48">
+    <include type="Require Once" line="3">
+      <name>/src/MimeUtility.php</name>
+    </include>
+    <include type="Require Once" line="4">
+      <name>/src/AbstractResponse.php</name>
+    </include>
+    <include type="Require Once" line="5">
+      <name>/src/Response.php</name>
+    </include>
+    <include type="Require Once" line="6">
+      <name>/src/Exception.php</name>
+    </include>
+    <include type="Require Once" line="7">
+      <name>/src/Exception/HeadersSent.php</name>
+    </include>
+  </file>
+  <file path="src/Exception.php" hash="beaad652ec5b7baa4de583474cbb22c3">
+    <class final="false" abstract="false" line="6" namespace="aura\http">
+      <name>Exception</name>
+      <extends>\Exception</extends>
+      <full_name>aura\http\Exception</full_name>
+    </class>
+  </file>
+  <file path="src/AbstractResponse.php" hash="63406621de69d1b2570679200bf94c91">
+    <class final="false" abstract="true" line="18" namespace="aura\http">
+      <name>AbstractResponse</name>
+      <extends/>
+      <full_name>aura\http\AbstractResponse</full_name>
+      <docblock>
+        <description>Functionality shared by Response and ResourceResponse.</description>
+        <long-description>
+</long-description>
+        <tag name="package" description="aura.web" line="11"/>
+      </docblock>
+      <property final="false" static="false" visibility="protected" line="27">
+        <name>$content</name>
+        <default>null</default>
+        <docblock>
+          <description>The response body content.</description>
+          <long-description>
+</long-description>
+          <tag name="var" description="string" type="" variable="" line="20">
+            <type>aura\http\</type>
+          </tag>
+        </docblock>
+      </property>
+      <property final="false" static="false" visibility="protected" line="36">
+        <name>$headers</name>
+        <default>array</default>
+        <docblock>
+          <description>All headers except for cookies.</description>
+          <long-description>
+</long-description>
+          <tag name="var" description="array" type="" variable="" line="29">
+            <type>aura\http\</type>
+          </tag>
+        </docblock>
+      </property>
+      <property final="false" static="false" visibility="protected" line="45">
+        <name>$cookies</name>
+        <default>array</default>
+        <docblock>
+          <description>All cookies.</description>
+          <long-description>
+</long-description>
+          <tag name="var" description="array" type="" variable="" line="38">
+            <type>aura\http\</type>
+          </tag>
+        </docblock>
+      </property>
+      <property final="false" static="false" visibility="protected" line="54">
+        <name>$status_code</name>
+        <default>200</default>
+        <docblock>
+          <description>The HTTP response status code.</description>
+          <long-description>
+</long-description>
+          <tag name="var" description="int" type="" variable="" line="47">
+            <type>aura\http\</type>
+          </tag>
+        </docblock>
+      </property>
+      <property final="false" static="false" visibility="protected" line="63">
+        <name>$status_text</name>
+        <default>null</default>
+        <docblock>
+          <description>The HTTP response status text.</description>
+          <long-description>
+</long-description>
+          <tag name="var" description="string" type="" variable="" line="56">
+            <type>aura\http\</type>
+          </tag>
+        </docblock>
+      </property>
+      <property final="false" static="false" visibility="protected" line="72">
+        <name>$default_status_text</name>
+        <default>array</default>
+        <docblock>
+          <description>List of the default HTTP status text.</description>
+          <long-description>
+</long-description>
+          <tag name="var" description="array" type="" variable="" line="65">
+            <type>aura\http\</type>
+          </tag>
+        </docblock>
+      </property>
+      <property final="false" static="false" visibility="protected" line="126">
+        <name>$version</name>
+        <default>1.1</default>
+        <docblock>
+          <description>The HTTP version.</description>
+          <long-description>
+</long-description>
+          <tag name="var" description="string" type="" variable="" line="119">
+            <type>aura\http\</type>
+          </tag>
+        </docblock>
+      </property>
+      <property final="false" static="false" visibility="protected" line="135">
+        <name>$mime_utility</name>
+        <default/>
+        <docblock>
+          <description>Mime utility.</description>
+          <long-description>
+</long-description>
+          <tag name="var" description="aura\http\MimeUtility" type="" variable="" line="128">
+            <type>aura\http\</type>
+          </tag>
+        </docblock>
+      </property>
+      <method final="false" abstract="false" static="false" visibility="public" line="144">
+        <name>__construct</name>
+        <docblock>
+          <description/>
+          <long-description>
+</long-description>
+          <tag name="param" description="" type="aura\http\MimeUtility" variable="$mime_utility" line="139">
+            <type>aura\http\MimeUtility</type>
+          </tag>
+        </docblock>
+        <argument line="144">
+          <name>$mime_utility</name>
+          <default/>
+          <type>MimeUtility</type>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" line="161">
+        <name>__get</name>
+        <docblock>
+          <description>Magic get to make the properties content, header, version, status_code,
+status_text and cookie read-only.</description>
+          <long-description>
+</long-description>
+          <tag name="param" description="The property to read." type="string" variable="$key" line="149">
+            <type>string</type>
+          </tag>
+          <tag name="return" description="The property value." type="mixed" line="149">
+            <type>mixed</type>
+          </tag>
+          <tag name="throws" description="\UnexpectedValueException" line="149"/>
+        </docblock>
+        <argument line="161">
+          <name>$key</name>
+          <default/>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" line="192">
+        <name>__set</name>
+        <docblock>
+          <description>Magic set to access the properties content, version, status_code
+and status_text. Headers and cookies must be set using their
+respective methods.</description>
+          <long-description>
+</long-description>
+          <tag name="param" description="" type="string" variable="$key" line="179">
+            <type>string</type>
+          </tag>
+          <tag name="param" description="" type="mixed" variable="$value" line="179">
+            <type>mixed</type>
+          </tag>
+          <tag name="throws" description="\UnexpectedValueException" line="179"/>
+        </docblock>
+        <argument line="192">
+          <name>$key</name>
+          <default/>
+          <type/>
+        </argument>
+        <argument line="192">
+          <name>$value</name>
+          <default/>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" line="220">
+        <name>setVersion</name>
+        <docblock>
+          <description>Sets the HTTP version to '1.0' or '1.1'. Must be a string.</description>
+          <long-description>
+</long-description>
+          <tag name="param" description="The HTTP version to use for this response." type="string" variable="$version" line="208">
+            <type>string</type>
+          </tag>
+          <tag name="return" description="This response object." type="aura\http\Response" line="208">
+            <type>aura\http\Response</type>
+          </tag>
+          <tag name="throws" description="\UnexpectedValueException when the version number&#10;is not &amp;#039;1.0&amp;#039; or &amp;#039;1.1&amp;#039;." line="208"/>
+        </docblock>
+        <argument line="220">
+          <name>$version</name>
+          <default/>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" line="239">
+        <name>getVersion</name>
+        <docblock>
+          <description>Returns the HTTP version for this response.</description>
+          <long-description>
+</long-description>
+          <tag name="return" description="" type="string" line="232">
+            <type>string</type>
+          </tag>
+        </docblock>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" line="258">
+        <name>setStatusCode</name>
+        <docblock>
+          <description>Sets the HTTP response status code.</description>
+          <long-description>&lt;p&gt;Automatically resets the status text to the default for this code.&lt;/p&gt;
+</long-description>
+          <tag name="param" description="An HTTP status code, such as 200, 302, 404, etc." type="int" variable="$code" line="244">
+            <type>int</type>
+          </tag>
+          <tag name="return" description="This response object." type="aura\http\Response" line="244">
+            <type>aura\http\Response</type>
+          </tag>
+          <tag name="throws" description="\UnexpectedValueException when the status code is less than 100&#10;or greater than 599" line="244"/>
+        </docblock>
+        <argument line="258">
+          <name>$code</name>
+          <default/>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" line="281">
+        <name>setStatusText</name>
+        <docblock>
+          <description>Sets the HTTP response status text.</description>
+          <long-description>
+</long-description>
+          <tag name="param" description="The status text; if empty, will set the text to the default for the current status code." type="string" variable="$text" line="271">
+            <type>string</type>
+          </tag>
+          <tag name="return" description="This response object." type="aura\http\Response" line="271">
+            <type>aura\http\Response</type>
+          </tag>
+        </docblock>
+        <argument line="281">
+          <name>$text</name>
+          <default/>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" line="304">
+        <name>getStatusCode</name>
+        <docblock>
+          <description>Returns the current status code.</description>
+          <long-description>
+</long-description>
+          <tag name="return" description="" type="int" line="297">
+            <type>int</type>
+          </tag>
+        </docblock>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" line="316">
+        <name>getStatusText</name>
+        <docblock>
+          <description>Returns the current status text.</description>
+          <long-description>
+</long-description>
+          <tag name="return" description="" type="string" line="309">
+            <type>string</type>
+          </tag>
+        </docblock>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" line="344">
+        <name>setHeader</name>
+        <docblock>
+          <description>Sets a header value in $this-&gt;headers.</description>
+          <long-description>&lt;p&gt;This method will not set 'HTTP' headers for response status codes; use
+the [[aura\http\Response::setStatusCode() | ]] and 
+[[aura\http\Response::setStatusText() | ]] methods instead.&lt;/p&gt;
+</long-description>
+          <tag name="param" description="The header label, such as &amp;quot;Content-Type&amp;quot;." type="string" variable="$name" line="321">
+            <type>string</type>
+          </tag>
+          <tag name="param" description="The value for the header." type="string" variable="$val" line="321">
+            <type>string</type>
+          </tag>
+          <tag name="param" description="This header value should replace any previous values of the same key. When false, the same header key is sent multiple times with the different values." type="bool" variable="$replace" line="321">
+            <type>bool</type>
+          </tag>
+          <tag name="return" description="This response object." type="aura\http\Response" line="321">
+            <type>aura\http\Response</type>
+          </tag>
+          <tag name="throws" description="\UnexpectedValueException When trying to set a &amp;#039;HTTP&amp;#039; header." line="321"/>
+          <tag name="see" description="[[php::header() | ]]" line="321"/>
+        </docblock>
+        <argument line="344">
+          <name>$name</name>
+          <default/>
+          <type/>
+        </argument>
+        <argument line="344">
+          <name>$val</name>
+          <default/>
+          <type/>
+        </argument>
+        <argument line="344">
+          <name>$replace</name>
+          <default>true</default>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" line="381">
+        <name>setHeaders</name>
+        <docblock>
+          <description>Set multiple headers.</description>
+          <long-description>
+</long-description>
+          <tag name="param" description="" type="array" variable="$headers" line="370">
+            <type>array</type>
+          </tag>
+          <tag name="return" description="" type="aura\http\AbstractResponse" line="370">
+            <type>aura\http\AbstractResponse</type>
+          </tag>
+          <tag name="see" description="setHeader()" line="370"/>
+        </docblock>
+        <argument line="381">
+          <name>$headers</name>
+          <default/>
+          <type>array</type>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" line="412">
+        <name>getHeader</name>
+        <docblock>
+          <description>Returns the value of a single header unless the `$key`
+is null then it returns all the headers and values.</description>
+          <long-description>
+</long-description>
+          <tag name="param" description="The header name. If null an array containing all the headers will be returned." type="string" variable="$key" line="399">
+            <type>string</type>
+          </tag>
+          <tag name="return" description="A string if the header has only one value, or an array if the header has multiple values or `$key is null, or null if the header does not exist." type="string|array|null" line="399">
+            <type>string</type>
+            <type>array</type>
+            <type>null</type>
+          </tag>
+        </docblock>
+        <argument line="412">
+          <name>$key</name>
+          <default/>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" line="437">
+        <name>setContent</name>
+        <docblock>
+          <description>Sets the content of the response.</description>
+          <long-description>
+</long-description>
+          <tag name="param" description="The body content of the response." type="string" variable="$content" line="428">
+            <type>string</type>
+          </tag>
+          <tag name="return" description="This response object." type="aura\http\Response" line="428">
+            <type>aura\http\Response</type>
+          </tag>
+        </docblock>
+        <argument line="437">
+          <name>$content</name>
+          <default/>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" line="450">
+        <name>getContent</name>
+        <docblock>
+          <description>Gets the body content of the response.</description>
+          <long-description>
+</long-description>
+          <tag name="return" description="The body content of the response." type="string" line="443">
+            <type>string</type>
+          </tag>
+        </docblock>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" line="483">
+        <name>setCookie</name>
+        <docblock>
+          <description>Sets a cookie value in $this-&gt;cookies.</description>
+          <long-description>
+</long-description>
+          <tag name="param" description="The name of the cookie." type="string" variable="$name" line="455">
+            <type>string</type>
+          </tag>
+          <tag name="param" description="The value of the cookie." type="string" variable="$val" line="455">
+            <type>string</type>
+          </tag>
+          <tag name="param" description="The Unix timestamp after which the cookie expires. If non-numeric, the method uses strtotime() on the value." type="int|string" variable="$expires" line="455">
+            <type>int</type>
+            <type>string</type>
+          </tag>
+          <tag name="param" description="The path on the server in which the cookie will be available on." type="string" variable="$path" line="455">
+            <type>string</type>
+          </tag>
+          <tag name="param" description="The domain that the cookie is available on." type="string" variable="$domain" line="455">
+            <type>string</type>
+          </tag>
+          <tag name="param" description="Indicates that the cookie should only be transmitted over a secure HTTPS connection." type="bool" variable="$secure" line="455">
+            <type>bool</type>
+          </tag>
+          <tag name="param" description="When true, the cookie will be made accessible only through the HTTP protocol. This means that the cookie won&amp;#039;t be accessible by scripting languages, such as JavaScript." type="bool" variable="$httponly" line="455">
+            <type>bool</type>
+          </tag>
+          <tag name="return" description="This response object." type="aura\http\Response" line="455">
+            <type>aura\http\Response</type>
+          </tag>
+          <tag name="see" description="[[php::setcookie() | ]]" line="455"/>
+        </docblock>
+        <argument line="483">
+          <name>$name</name>
+          <default/>
+          <type/>
+        </argument>
+        <argument line="483">
+          <name>$val</name>
+          <default/>
+          <type/>
+        </argument>
+        <argument line="483">
+          <name>$expires</name>
+          <default>0</default>
+          <type/>
+        </argument>
+        <argument line="484">
+          <name>$path</name>
+          <default/>
+          <type/>
+        </argument>
+        <argument line="484">
+          <name>$domain</name>
+          <default/>
+          <type/>
+        </argument>
+        <argument line="484">
+          <name>$secure</name>
+          <default>false</default>
+          <type/>
+        </argument>
+        <argument line="484">
+          <name>$httponly</name>
+          <default>null</default>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" line="509">
+        <name>setCookies</name>
+        <docblock>
+          <description>Set multiple cookies.</description>
+          <long-description>
+</long-description>
+          <tag name="param" description="" type="array" variable="$cookies" line="498">
+            <type>array</type>
+          </tag>
+          <tag name="return" description="" type="aura\http\AbstractResponse" line="498">
+            <type>aura\http\AbstractResponse</type>
+          </tag>
+          <tag name="see" description="setCookie()" line="498"/>
+        </docblock>
+        <argument line="509">
+          <name>$cookies</name>
+          <default/>
+          <type>array</type>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" line="547">
+        <name>getCookie</name>
+        <docblock>
+          <description>Returns the value and options for a single cookie unless the `$key`
+is null then it returns the value and options for all cookies.</description>
+          <long-description>
+</long-description>
+          <tag name="param" description="The cookie name. If null an array containing all the cookies will be returned." type="string" variable="$key" line="536">
+            <type>string</type>
+          </tag>
+          <tag name="return" description="" type="array|null" line="536">
+            <type>array</type>
+            <type>null</type>
+          </tag>
+        </docblock>
+        <argument line="547">
+          <name>$key</name>
+          <default/>
+          <type/>
+        </argument>
+      </method>
+    </class>
+  </file>
+  <file path="src/MimeUtility.php" hash="3726322954eaa83946d677eff636de5b">
+    <class final="false" abstract="false" line="20" namespace="aura\http">
+      <name>MimeUtility</name>
+      <extends/>
+      <full_name>aura\http\MimeUtility</full_name>
+      <docblock>
+        <description>MIME utility methods for mail messages and HTTP requests.</description>
+        <long-description>
+</long-description>
+        <tag name="package" description="aura.mime" line="11"/>
+        <tag name="author" description="Paul M. Jones &amp;lt;pmjones@solarphp.com&amp;gt;" line="11"/>
+      </docblock>
+      <method final="false" abstract="false" static="false" visibility="public" line="37">
+        <name>headerLine</name>
+        <docblock>
+          <description>Creates a header label/value line after sanitizing, encoding, and
+wrapping.</description>
+          <long-description>
+</long-description>
+          <tag name="param" description="The header label." type="string" variable="$label" line="22">
+            <type>string</type>
+          </tag>
+          <tag name="param" description="The header value." type="string" variable="$value" line="22">
+            <type>string</type>
+          </tag>
+          <tag name="param" description="The character set to note when encoding." type="string" variable="$charset" line="22">
+            <type>string</type>
+          </tag>
+          <tag name="return" description="The sanitized, encoded, and wrapped header-line. Note that there is no terminating linefeed." type="string" line="22">
+            <type>string</type>
+          </tag>
+        </docblock>
+        <argument line="37">
+          <name>$label</name>
+          <default/>
+          <type/>
+        </argument>
+        <argument line="37">
+          <name>$value</name>
+          <default/>
+          <type/>
+        </argument>
+        <argument line="37">
+          <name>$charset</name>
+          <default>utf-8</default>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" line="57">
+        <name>headerLabel</name>
+        <docblock>
+          <description>Sanitizes header labels by removing all characters besides [a-zA-z0-9_-].</description>
+          <long-description>&lt;p&gt;Underscores are converted to dashes, and word case is normalized.&lt;/p&gt;
+
+&lt;p&gt;Converts "foo \r bar_ baz-dib \n 9" to "Foobar-Baz-Dib9".&lt;/p&gt;
+</long-description>
+          <tag name="param" description="The header label to sanitize." type="string" variable="$label" line="44">
+            <type>string</type>
+          </tag>
+          <tag name="return" description="The sanitized header label." type="string" line="44">
+            <type>string</type>
+          </tag>
+        </docblock>
+        <argument line="57">
+          <name>$label</name>
+          <default/>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" line="93">
+        <name>headerValue</name>
+        <docblock>
+          <description>Sanitizes a header value, then encodes and wraps as per RFC 2047.</description>
+          <long-description>&lt;p&gt;Copied, with modifications, from the "mime.php" class in the
+&lt;a href="http://pear.php.net/Mail_Mime"&gt;PEAR Mail_Mime&lt;/a&gt; package (v 1.62).
+Takes the added step of "un-wrapping" the value (newline-and-space) and
+then removing all control characters (including newlines) before encoding
+and re-wrapping.&lt;/p&gt;
+</long-description>
+          <tag name="author" description="Richard Heyes  &amp;lt;richard@phpguru.org&amp;gt;" line="65"/>
+          <tag name="author" description="Tomas V.V. Cox &amp;lt;cox@idecnet.com&amp;gt;" line="65"/>
+          <tag name="author" description="Cipriano Groenendal &amp;lt;cipri@php.net&amp;gt;" line="65"/>
+          <tag name="author" description="Sean Coates &amp;lt;sean@php.net&amp;gt;" line="65"/>
+          <tag name="param" description="The *sanitized* header label; needed for line length calculations." type="string" variable="$label" line="65">
+            <type>string</type>
+          </tag>
+          <tag name="param" description="The header value to encode." type="string" variable="$value" line="65">
+            <type>string</type>
+          </tag>
+          <tag name="param" description="The character set to note when encoding." type="string" variable="$charset" line="65">
+            <type>string</type>
+          </tag>
+          <tag name="return" description="The encoded header value." type="string" line="65">
+            <type>string</type>
+          </tag>
+        </docblock>
+        <argument line="93">
+          <name>$label</name>
+          <default/>
+          <type/>
+        </argument>
+        <argument line="93">
+          <name>$value</name>
+          <default/>
+          <type/>
+        </argument>
+        <argument line="93">
+          <name>$charset</name>
+          <default>utf-8</default>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" line="235">
+        <name>encodeBase64</name>
+        <docblock>
+          <description>Applies "base64" encoding to text.</description>
+          <long-description>
+</long-description>
+          <tag name="param" description="The text to encode." type="string" variable="$text" line="226">
+            <type>string</type>
+          </tag>
+          <tag name="return" description="The encoded text." type="string" line="226">
+            <type>string</type>
+          </tag>
+        </docblock>
+        <argument line="235">
+          <name>$text</name>
+          <default/>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" line="254">
+        <name>encode</name>
+        <docblock>
+          <description>Applies the requested encoding to a text string.</description>
+          <long-description>
+</long-description>
+          <tag name="param" description="The type of encoding to use; &amp;#039;7bit&amp;#039;, &amp;#039;8bit&amp;#039;, &amp;#039;base64&amp;#039;, or &amp;#039;quoted-printable&amp;#039;." type="string" variable="$type" line="240">
+            <type>string</type>
+          </tag>
+          <tag name="param" description="The text to encode." type="string" variable="$text" line="240">
+            <type>string</type>
+          </tag>
+          <tag name="return" description="The encoded text." type="string" line="240">
+            <type>string</type>
+          </tag>
+          <tag name="throws" description="aura\mime\Exception Unknown mine type." line="240"/>
+        </docblock>
+        <argument line="254">
+          <name>$type</name>
+          <default/>
+          <type/>
+        </argument>
+        <argument line="254">
+          <name>$text</name>
+          <default/>
+          <type/>
+        </argument>
+      </method>
+    </class>
+  </file>
+  <file path="src/Exception/HeadersSent.php" hash="41d435a393578b6f1adc2a545ac0f212">
+    <class final="false" abstract="false" line="5" namespace="aura\http">
+      <name>Exception_HeadersSent</name>
+      <extends>aura\http\Exception</extends>
+      <full_name>aura\http\Exception_HeadersSent</full_name>
+      <method final="false" abstract="false" static="false" visibility="public" line="7">
+        <name>__construct</name>
+        <argument line="7">
+          <name>$file</name>
+          <default/>
+          <type/>
+        </argument>
+        <argument line="7">
+          <name>$line</name>
+          <default/>
+          <type/>
+        </argument>
+      </method>
+    </class>
+  </file>
+  <file path="src/Response.php" hash="a76a2092c8d39fafde447cba926bedaa">
+    <class final="false" abstract="false" line="32" namespace="aura\http">
+      <name>Response</name>
+      <extends>aura\http\AbstractResponse</extends>
+      <full_name>aura\http\Response</full_name>
+      <docblock>
+        <description>Generic HTTP response object for sending headers, cookies, and content.</description>
+        <long-description>&lt;p&gt;This is a fluent class; the set() methods can be chained together like so:&lt;/p&gt;
+
+&lt;p&gt;{{code: php
+    $response-&gt;setStatusCode(404)
+             -&gt;setHeader('X-Foo', 'Bar')
+             -&gt;setCookie('baz', 'dib')
+             -&gt;setContent('Page not found.')
+             -&gt;display();
+}}&lt;/p&gt;
+</long-description>
+        <tag name="package" description="aura.web" line="11"/>
+        <tag name="author" description="Paul M. Jones &amp;lt;pmjones@solarphp.com&amp;gt;" line="11"/>
+        <tag name="todo" description="Add charset param so that headers get sent with right encoding?" line="11"/>
+      </docblock>
+      <property final="false" static="false" visibility="protected" line="41">
+        <name>$cookies_httponly</name>
+        <default>true</default>
+        <docblock>
+          <description>Whether or not cookies should default being sent by HTTP only.</description>
+          <long-description>
+</long-description>
+          <tag name="var" description="bool" type="" variable="" line="34">
+            <type>aura\http\</type>
+          </tag>
+        </docblock>
+      </property>
+      <method final="false" abstract="false" static="false" visibility="public" line="51">
+        <name>__toString</name>
+        <docblock>
+          <description>Sends all headers and cookies, then returns the body.</description>
+          <long-description>
+</long-description>
+          <tag name="return" description="" type="string" line="44">
+            <type>string</type>
+          </tag>
+        </docblock>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" line="74">
+        <name>setCookiesHttponly</name>
+        <docblock>
+          <description>By default, should cookies be sent by HTTP only?</description>
+          <long-description>
+</long-description>
+          <tag name="param" description="True to send by HTTP only, false to send by any method." type="bool" variable="$flag" line="64">
+            <type>bool</type>
+          </tag>
+          <tag name="return" description="This response object." type="aura\http\Response" line="64">
+            <type>aura\http\Response</type>
+          </tag>
+        </docblock>
+        <argument line="74">
+          <name>$flag</name>
+          <default/>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" line="100">
+        <name>setNoCache</name>
+        <docblock>
+          <description>Should the response disable HTTP caching?</description>
+          <long-description>&lt;p&gt;When true, the response will send these headers:&lt;/p&gt;
+
+&lt;p&gt;{{code:
+    Pragma: no-cache
+    Cache-Control: no-store, no-cache, must-revalidate
+    Cache-Control: post-check=0, pre-check=0
+    Expires: 1
+}}&lt;/p&gt;
+</long-description>
+          <tag name="param" description="When true, disable browser caching. Default is true." type="bool" variable="$flag" line="80">
+            <type>bool</type>
+          </tag>
+          <tag name="see" description="redirectNoCache()" line="80"/>
+          <tag name="return" description="" type="void" line="80">
+            <type>void</type>
+          </tag>
+        </docblock>
+        <argument line="100">
+          <name>$flag</name>
+          <default>true</default>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" line="125">
+        <name>display</name>
+        <docblock>
+          <description>Sends all headers and cookies, then prints the response content.</description>
+          <long-description>
+</long-description>
+          <tag name="return" description="" type="void" line="118">
+            <type>void</type>
+          </tag>
+        </docblock>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" line="146">
+        <name>redirect</name>
+        <docblock>
+          <description>Issues an immediate "Location" redirect.  Use instead of display()
+to perform a redirect.  You should die() or exit() after calling this.</description>
+          <long-description>
+</long-description>
+          <tag name="param" description="The URI to redirect." type="string" variable="$href" line="131">
+            <type>string</type>
+          </tag>
+          <tag name="param" description="The HTTP status code to redirect with; default is &amp;#039;302 Found&amp;#039;." type="int|string" variable="$code" line="131">
+            <type>int</type>
+            <type>string</type>
+          </tag>
+          <tag name="return" description="" type="void" line="131">
+            <type>void</type>
+          </tag>
+          <tag name="throws" description="aura\http\Exception Missing or incomplete URI." line="131"/>
+        </docblock>
+        <argument line="146">
+          <name>$href</name>
+          <default/>
+          <type/>
+        </argument>
+        <argument line="146">
+          <name>$code</name>
+          <default>302</default>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="protected" line="187">
+        <name>sendHeaders</name>
+        <docblock>
+          <description>Sends all headers and cookies.</description>
+          <long-description>
+</long-description>
+          <tag name="return" description="" type="void" line="177">
+            <type>void</type>
+          </tag>
+          <tag name="throws" description="aura\http\Exception_HeadersSent if headers have&#10;already been sent." line="177"/>
+        </docblock>
+      </method>
+    </class>
+  </file>
+  <file path="scripts/instance.php" hash="663c7a35a4b5b4194250fa3d511aff9a">
+    <include type="Require" line="4">
+      <name>Unknown</name>
+    </include>
+  </file>
+  <package name="aura.web"/>
+  <package name="aura.mime"/>
+  <namespace name="aura">
+    <namespace name="http"/>
+  </namespace>
+  <namespace name="default"/>
+  <marker>todo</marker>
+  <marker>fixme</marker>
+</project>

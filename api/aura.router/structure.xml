@@ -1,55 +1,65 @@
 <?xml version="1.0"?>
-<project version="0.8.8" title="Aura Project for PHP: aura.router">
-  <file path="config/default.php" hash="1300019240">
+<project version="0.8.11" title="Aura Project for PHP: aura.router">
+  <file path="config/default.php" hash="d2f83a8340ae9e675f9c8a81015bccad">
     <function namespace="default" line="5">
       <name>Closure</name>
       <type>closure</type>
       <docblock>
         <description>Dependency services.</description>
-        <long-description/>
+        <long-description>
+</long-description>
       </docblock>
     </function>
   </file>
-  <file path="src.php" hash="1300019240">
-    <include type="Require" namespace="default" line="2">
+  <file path="src.php" hash="5f8f1f5cf600f96b73ff2a7b6d20473e">
+    <include type="Require" line="2">
       <name>/src/Exception.php</name>
     </include>
-    <include type="Require" namespace="default" line="3">
+    <include type="Require" line="3">
       <name>/src/Map.php</name>
     </include>
-    <include type="Require" namespace="default" line="4">
+    <include type="Require" line="4">
       <name>/src/Route.php</name>
     </include>
-    <include type="Require" namespace="default" line="5">
+    <include type="Require" line="5">
       <name>/src/RouteFactory.php</name>
     </include>
   </file>
-  <file path="src/RouteFactory.php" hash="1300019240">
+  <file path="src/RouteFactory.php" hash="129863cbdbf5df2b9365e4768b4f5be9">
     <class final="false" abstract="false" line="18" namespace="aura\router">
       <name>RouteFactory</name>
       <extends/>
       <full_name>aura\router\RouteFactory</full_name>
       <docblock>
         <description>A factory to create Route objects.</description>
-        <long-description/>
-        <tag name="package" line="11">aura.router</tag>
+        <long-description>
+</long-description>
+        <tag name="package" description="aura.router" line="11"/>
       </docblock>
       <property final="false" static="false" visibility="protected" line="27">
         <name>$params</name>
         <default>array</default>
         <docblock>
           <description>An array of default parameters for Route objects.</description>
-          <long-description/>
-          <tag name="var" type="array" variable="" line="20">array</tag>
+          <long-description>
+</long-description>
+          <tag name="var" description="array" type="" variable="" line="20">
+            <type>aura\router\</type>
+          </tag>
         </docblock>
       </property>
       <method final="false" abstract="false" static="false" visibility="public" line="51">
         <name>newInstance</name>
         <docblock>
           <description>Returns a new Route instance.</description>
-          <long-description/>
-          <tag name="param" type="array" variable="$params" line="41">An array of key-value pairs corresponding to the Route parameters.</tag>
-          <tag name="return" type="aura\router\Route" line="41"/>
+          <long-description>
+</long-description>
+          <tag name="param" description="An array of key-value pairs corresponding to the Route parameters." type="array" variable="$params" line="41">
+            <type>array</type>
+          </tag>
+          <tag name="return" description="" type="aura\router\Route" line="41">
+            <type>aura\router\Route</type>
+          </tag>
         </docblock>
         <argument line="51">
           <name>$params</name>
@@ -59,35 +69,41 @@
       </method>
     </class>
   </file>
-  <file path="src/Exception.php" hash="1300019240">
+  <file path="src/Exception.php" hash="5983f4c3b10bcccf656496b357a89beb">
     <class final="false" abstract="false" line="18" namespace="aura\router">
       <name>Exception</name>
       <extends>\Exception</extends>
       <full_name>aura\router\Exception</full_name>
       <docblock>
         <description>Package-specific exception.</description>
-        <long-description/>
-        <tag name="package" line="11">aura.router</tag>
+        <long-description>
+</long-description>
+        <tag name="package" description="aura.router" line="11"/>
       </docblock>
     </class>
   </file>
-  <file path="src/Route.php" hash="1300019240">
+  <file path="src/Route.php" hash="19f49010dd20def09637ce1d9071c4b3">
     <class final="false" abstract="false" line="21" namespace="aura\router">
       <name>Route</name>
       <extends/>
       <full_name>aura\router\Route</full_name>
       <docblock>
         <description>Represents an individual route with a name, path, params, values, etc.</description>
-        <long-description>In general, you should never need to instantiate a Route directly. Use the&lt;br/&gt;RouteFactory instead, or the Map.</long-description>
-        <tag name="package" line="11">aura.router</tag>
+        <long-description>&lt;p&gt;In general, you should never need to instantiate a Route directly. Use the
+RouteFactory instead, or the Map.&lt;/p&gt;
+</long-description>
+        <tag name="package" description="aura.router" line="11"/>
       </docblock>
       <property final="false" static="false" visibility="protected" line="30">
         <name>$name</name>
         <default/>
         <docblock>
           <description>The name for this Route.</description>
-          <long-description/>
-          <tag name="var" type="string" variable="" line="23">string</tag>
+          <long-description>
+</long-description>
+          <tag name="var" description="string" type="" variable="" line="23">
+            <type>aura\router\</type>
+          </tag>
         </docblock>
       </property>
       <property final="false" static="false" visibility="protected" line="39">
@@ -95,8 +111,11 @@
         <default/>
         <docblock>
           <description>The path for this Route with param tokens.</description>
-          <long-description/>
-          <tag name="var" type="string" variable="" line="32">string</tag>
+          <long-description>
+</long-description>
+          <tag name="var" description="string" type="" variable="" line="32">
+            <type>aura\router\</type>
+          </tag>
         </docblock>
       </property>
       <property final="false" static="false" visibility="protected" line="48">
@@ -104,64 +123,100 @@
         <default>array</default>
         <docblock>
           <description>A map of param tokens to their regex subpatterns.</description>
-          <long-description/>
-          <tag name="var" type="array" variable="" line="41">array</tag>
+          <long-description>
+</long-description>
+          <tag name="var" description="array" type="" variable="" line="41">
+            <type>aura\router\</type>
+          </tag>
         </docblock>
       </property>
       <property final="false" static="false" visibility="protected" line="59">
         <name>$values</name>
         <default>array</default>
         <docblock>
-          <description>A map of param tokens to their default values; if this Route is&lt;br/&gt;matched, these will retain the corresponding values from the param &lt;br/&gt;tokens in the matching path.</description>
-          <long-description/>
-          <tag name="var" type="array" variable="" line="50">array</tag>
+          <description>A map of param tokens to their default values; if this Route is
+matched, these will retain the corresponding values from the param 
+tokens in the matching path.</description>
+          <long-description>
+</long-description>
+          <tag name="var" description="array" type="" variable="" line="50">
+            <type>aura\router\</type>
+          </tag>
         </docblock>
       </property>
       <property final="false" static="false" visibility="protected" line="69">
         <name>$method</name>
         <default>array</default>
         <docblock>
-          <description>The `REQUEST_METHOD` value must match one of the methods in this array;&lt;br/&gt;method; e.g., `'GET'` or `array('POST', 'DELETE')`.</description>
-          <long-description/>
-          <tag name="var" type="array" variable="" line="61">array</tag>
+          <description>The `REQUEST_METHOD` value must match one of the methods in this array;
+method; e.g., `'GET'` or `array('POST', 'DELETE')`.</description>
+          <long-description>
+</long-description>
+          <tag name="var" description="array" type="" variable="" line="61">
+            <type>aura\router\</type>
+          </tag>
         </docblock>
       </property>
       <property final="false" static="false" visibility="protected" line="80">
         <name>$secure</name>
         <default>null</default>
         <docblock>
-          <description>When true, the `HTTPS` value must be `on`, or the `SERVER_PORT` must be&lt;br/&gt;443.  When false, neither of those values may be present.  When null, &lt;br/&gt;it is ignored.</description>
-          <long-description/>
-          <tag name="var" type="bool" variable="" line="71">bool</tag>
+          <description>When true, the `HTTPS` value must be `on`, or the `SERVER_PORT` must be
+443.  When false, neither of those values may be present.  When null, 
+it is ignored.</description>
+          <long-description>
+</long-description>
+          <tag name="var" description="bool" type="" variable="" line="71">
+            <type>aura\router\</type>
+          </tag>
         </docblock>
       </property>
       <property final="false" static="false" visibility="protected" line="96">
         <name>$is_match</name>
         <default/>
         <docblock>
-          <description>A callback or closure to provide custom matching logic against the &lt;br/&gt;server values and matched params from this Route. The signature must be &lt;br/&gt;`function(array $server, \ArrayObject $matches)` and must return a &lt;br/&gt;boolean: true to accept this Route match, or false to deny the match. &lt;br/&gt;Note that this allows a wide range of manipulations, and further allows &lt;br/&gt;the developer to modify the matched params as needed.</description>
-          <long-description/>
-          <tag name="var" type="callback|\Closure" variable="" line="82">callback|\Closure</tag>
-          <tag name="see" line="82">isMatch()</tag>
+          <description>A callback or closure to provide custom matching logic against the 
+server values and matched params from this Route. The signature must be 
+`function(array $server, \ArrayObject $matches)` and must return a 
+boolean: true to accept this Route match, or false to deny the match. 
+Note that this allows a wide range of manipulations, and further allows 
+the developer to modify the matched params as needed.</description>
+          <long-description>
+</long-description>
+          <tag name="var" description="callback|\Closure" type="" variable="" line="82">
+            <type>aura\router\</type>
+          </tag>
+          <tag name="see" description="isMatch()" line="82"/>
         </docblock>
       </property>
       <property final="false" static="false" visibility="protected" line="111">
         <name>$generate</name>
         <default/>
         <docblock>
-          <description>A callback or closure to modify path-generation values. The signature &lt;br/&gt;must be `function($route, array $data)`; its return value is an array &lt;br/&gt;of data to be used in the path. The `$route` is this Route object, and &lt;br/&gt;`$data` is the set of key-value pairs to be interpolated into the path&lt;br/&gt;as provided by the caller.</description>
-          <long-description/>
-          <tag name="var" type="callback|\Closure" variable="" line="98">callback|\Closure</tag>
-          <tag name="see" line="98">generate()</tag>
+          <description>A callback or closure to modify path-generation values. The signature 
+must be `function($route, array $data)`; its return value is an array 
+of data to be used in the path. The `$route` is this Route object, and 
+`$data` is the set of key-value pairs to be interpolated into the path
+as provided by the caller.</description>
+          <long-description>
+</long-description>
+          <tag name="var" description="callback|\Closure" type="" variable="" line="98">
+            <type>aura\router\</type>
+          </tag>
+          <tag name="see" description="generate()" line="98"/>
         </docblock>
       </property>
       <property final="false" static="false" visibility="protected" line="121">
         <name>$routable</name>
         <default/>
         <docblock>
-          <description>If routable, this route should be used in matching.  If not, it should&lt;br/&gt;be used only to generate a path.</description>
-          <long-description/>
-          <tag name="var" type="bool" variable="" line="113">bool</tag>
+          <description>If routable, this route should be used in matching.  If not, it should
+be used only to generate a path.</description>
+          <long-description>
+</long-description>
+          <tag name="var" description="bool" type="" variable="" line="113">
+            <type>aura\router\</type>
+          </tag>
         </docblock>
       </property>
       <property final="false" static="false" visibility="protected" line="130">
@@ -169,8 +224,11 @@
         <default/>
         <docblock>
           <description>A prefix for the Route name, generally from attached route groups.</description>
-          <long-description/>
-          <tag name="var" type="string" variable="" line="123">string</tag>
+          <long-description>
+</long-description>
+          <tag name="var" description="string" type="" variable="" line="123">
+            <type>aura\router\</type>
+          </tag>
         </docblock>
       </property>
       <property final="false" static="false" visibility="protected" line="139">
@@ -178,17 +236,24 @@
         <default/>
         <docblock>
           <description>A prefix for the Route path, generally from attached route groups.</description>
-          <long-description/>
-          <tag name="var" type="string" variable="" line="132">string</tag>
+          <long-description>
+</long-description>
+          <tag name="var" description="string" type="" variable="" line="132">
+            <type>aura\router\</type>
+          </tag>
         </docblock>
       </property>
       <property final="false" static="false" visibility="protected" line="149">
         <name>$regex</name>
         <default/>
         <docblock>
-          <description>The $path property converted to a regular expression, using the $params&lt;br/&gt;subpatterns.</description>
-          <long-description/>
-          <tag name="var" type="string" variable="" line="141">string</tag>
+          <description>The $path property converted to a regular expression, using the $params
+subpatterns.</description>
+          <long-description>
+</long-description>
+          <tag name="var" description="string" type="" variable="" line="141">
+            <type>aura\router\</type>
+          </tag>
         </docblock>
       </property>
       <property final="false" static="false" visibility="protected" line="160">
@@ -196,28 +261,59 @@
         <default/>
         <docblock>
           <description>All param matches found in the path during the `isMatch()` process.</description>
-          <long-description/>
-          <tag name="var" type="string" variable="" line="151">string</tag>
-          <tag name="see" line="151">isMatch()</tag>
+          <long-description>
+</long-description>
+          <tag name="var" description="string" type="" variable="" line="151">
+            <type>aura\router\</type>
+          </tag>
+          <tag name="see" description="isMatch()" line="151"/>
         </docblock>
       </property>
       <method final="false" abstract="false" static="false" visibility="public" line="193">
         <name>__construct</name>
         <docblock>
           <description>Constructor.</description>
-          <long-description/>
-          <tag name="param" type="string" variable="$name" line="162">The name for this Route.</tag>
-          <tag name="param" type="string" variable="$path" line="162">The path for this Route with param token placeholders.</tag>
-          <tag name="param" type="array" variable="$params" line="162">Map of param tokens to regex subpatterns.</tag>
-          <tag name="param" type="array" variable="$values" line="162">Default values for params.</tag>
-          <tag name="param" type="string|array" variable="$method" line="162">The server REQUUEST_METHOD must be one of these values.</tag>
-          <tag name="param" type="bool" variable="$secure" line="162">If true, the server must indicate an HTTPS request.</tag>
-          <tag name="param" type="bool" variable="$routable" line="162">If true, this Route can be matched; if not, it can be used only to generate a path.</tag>
-          <tag name="param" type="callback|\Closure" variable="$is_match" line="162">A custom callback or closure to evaluate the route.</tag>
-          <tag name="param" type="callback|\Closure" variable="$generate" line="162">A custom callback or closure to generate a path.</tag>
-          <tag name="param" type="string" variable="$name_prefix" line="162">A prefix for the name.</tag>
-          <tag name="param" type="string" variable="$path_prefix" line="162">A prefix for the path.</tag>
-          <tag name="return" type="aura\router\Route" line="162"/>
+          <long-description>
+</long-description>
+          <tag name="param" description="The name for this Route." type="string" variable="$name" line="162">
+            <type>string</type>
+          </tag>
+          <tag name="param" description="The path for this Route with param token placeholders." type="string" variable="$path" line="162">
+            <type>string</type>
+          </tag>
+          <tag name="param" description="Map of param tokens to regex subpatterns." type="array" variable="$params" line="162">
+            <type>array</type>
+          </tag>
+          <tag name="param" description="Default values for params." type="array" variable="$values" line="162">
+            <type>array</type>
+          </tag>
+          <tag name="param" description="The server REQUUEST_METHOD must be one of these values." type="string|array" variable="$method" line="162">
+            <type>string</type>
+            <type>array</type>
+          </tag>
+          <tag name="param" description="If true, the server must indicate an HTTPS request." type="bool" variable="$secure" line="162">
+            <type>bool</type>
+          </tag>
+          <tag name="param" description="If true, this Route can be matched; if not, it can be used only to generate a path." type="bool" variable="$routable" line="162">
+            <type>bool</type>
+          </tag>
+          <tag name="param" description="A custom callback or closure to evaluate the route." type="callback|\Closure" variable="$is_match" line="162">
+            <type>callback</type>
+            <type>\Closure</type>
+          </tag>
+          <tag name="param" description="A custom callback or closure to generate a path." type="callback|\Closure" variable="$generate" line="162">
+            <type>callback</type>
+            <type>\Closure</type>
+          </tag>
+          <tag name="param" description="A prefix for the name." type="string" variable="$name_prefix" line="162">
+            <type>string</type>
+          </tag>
+          <tag name="param" description="A prefix for the path." type="string" variable="$path_prefix" line="162">
+            <type>string</type>
+          </tag>
+          <tag name="return" description="" type="aura\router\Route" line="162">
+            <type>aura\router\Route</type>
+          </tag>
         </docblock>
         <argument line="194">
           <name>$name</name>
@@ -279,9 +375,14 @@
         <name>__get</name>
         <docblock>
           <description>Magic read-only for all properties.</description>
-          <long-description/>
-          <tag name="param" type="string" variable="$key" line="235">The property to read from.</tag>
-          <tag name="return" type="mixed" line="235"/>
+          <long-description>
+</long-description>
+          <tag name="param" description="The property to read from." type="string" variable="$key" line="235">
+            <type>string</type>
+          </tag>
+          <tag name="return" description="" type="mixed" line="235">
+            <type>mixed</type>
+          </tag>
         </docblock>
         <argument line="244">
           <name>$key</name>
@@ -292,11 +393,19 @@
       <method final="false" abstract="false" static="false" visibility="public" line="262">
         <name>isMatch</name>
         <docblock>
-          <description>Checks if a given path and server values are a match for this&lt;br/&gt;Route.</description>
-          <long-description/>
-          <tag name="param" type="string" variable="$path" line="249">The path to check against this Route.</tag>
-          <tag name="param" type="array" variable="$server" line="249">A copy of $_SERVER so that this Route can check against the server values.</tag>
-          <tag name="return" type="bool" line="249"/>
+          <description>Checks if a given path and server values are a match for this
+Route.</description>
+          <long-description>
+</long-description>
+          <tag name="param" description="The path to check against this Route." type="string" variable="$path" line="249">
+            <type>string</type>
+          </tag>
+          <tag name="param" description="A copy of $_SERVER so that this Route can check against the server values." type="array" variable="$server" line="249">
+            <type>array</type>
+          </tag>
+          <tag name="return" description="" type="bool" line="249">
+            <type>bool</type>
+          </tag>
         </docblock>
         <argument line="262">
           <name>$path</name>
@@ -313,9 +422,14 @@
         <name>generate</name>
         <docblock>
           <description>Gets the path for this Route with data replacements for param tokens.</description>
-          <long-description/>
-          <tag name="param" type="mixed" variable="$data" line="288">An array of key-value pairs to interpolate into the param tokens in the path for this Route. Keys that do not map to params are discarded; param tokens that have no mapped key are left in place.</tag>
-          <tag name="return" type="string" line="288"/>
+          <long-description>
+</long-description>
+          <tag name="param" description="An array of key-value pairs to interpolate into the param tokens in the path for this Route. Keys that do not map to params are discarded; param tokens that have no mapped key are left in place." type="mixed" variable="$data" line="288">
+            <type>mixed</type>
+          </tag>
+          <tag name="return" description="" type="string" line="288">
+            <type>string</type>
+          </tag>
         </docblock>
         <argument line="300">
           <name>$data</name>
@@ -327,17 +441,25 @@
         <name>setRegex</name>
         <docblock>
           <description>Sets the regular expression for this Route based on its params.</description>
-          <long-description/>
-          <tag name="return" type="void" line="323"/>
+          <long-description>
+</long-description>
+          <tag name="return" description="" type="void" line="323">
+            <type>void</type>
+          </tag>
         </docblock>
       </method>
       <method final="false" abstract="false" static="false" visibility="protected" line="377">
         <name>isMethodMatch</name>
         <docblock>
           <description>Checks that the Route `$method` matches the corresponding server value.</description>
-          <long-description/>
-          <tag name="param" type="array" variable="$server" line="368">A copy of $_SERVER.</tag>
-          <tag name="return" type="bool" line="368">True on a match, false if not.</tag>
+          <long-description>
+</long-description>
+          <tag name="param" description="A copy of $_SERVER." type="array" variable="$server" line="368">
+            <type>array</type>
+          </tag>
+          <tag name="return" description="True on a match, false if not." type="bool" line="368">
+            <type>bool</type>
+          </tag>
         </docblock>
         <argument line="377">
           <name>$server</name>
@@ -349,9 +471,14 @@
         <name>isSecureMatch</name>
         <docblock>
           <description>Checks that the Route `$secure` matches the corresponding server values.</description>
-          <long-description/>
-          <tag name="param" type="array" variable="$server" line="390">A copy of $_SERVER.</tag>
-          <tag name="return" type="bool" line="390">True on a match, false if not.</tag>
+          <long-description>
+</long-description>
+          <tag name="param" description="A copy of $_SERVER." type="array" variable="$server" line="390">
+            <type>array</type>
+          </tag>
+          <tag name="return" description="True on a match, false if not." type="bool" line="390">
+            <type>bool</type>
+          </tag>
         </docblock>
         <argument line="399">
           <name>$server</name>
@@ -362,10 +489,16 @@
       <method final="false" abstract="false" static="false" visibility="protected" line="428">
         <name>isCustomMatch</name>
         <docblock>
-          <description>Checks that the custom Route `$is_match` closure returns true, given &lt;br/&gt;the server values.</description>
-          <long-description/>
-          <tag name="param" type="array" variable="$server" line="418">A copy of $_SERVER.</tag>
-          <tag name="return" type="bool" line="418">True on a match, false if not.</tag>
+          <description>Checks that the custom Route `$is_match` closure returns true, given 
+the server values.</description>
+          <long-description>
+</long-description>
+          <tag name="param" description="A copy of $_SERVER." type="array" variable="$server" line="418">
+            <type>array</type>
+          </tag>
+          <tag name="return" description="True on a match, false if not." type="bool" line="418">
+            <type>bool</type>
+          </tag>
         </docblock>
         <argument line="428">
           <name>$server</name>
@@ -375,23 +508,27 @@
       </method>
     </class>
   </file>
-  <file path="src/Map.php" hash="1300019240">
+  <file path="src/Map.php" hash="5a1e87c207b09ed746fa857d0515ce6e">
     <class final="false" abstract="false" line="18" namespace="aura\router">
       <name>Map</name>
       <extends/>
       <full_name>aura\router\Map</full_name>
       <docblock>
         <description>A collection point for URI routes.</description>
-        <long-description/>
-        <tag name="package" line="11">aura.router</tag>
+        <long-description>
+</long-description>
+        <tag name="package" description="aura.router" line="11"/>
       </docblock>
       <property final="false" static="false" visibility="protected" line="27">
         <name>$attach_common</name>
         <default>null</default>
         <docblock>
           <description>Currently processing this attached common route information.</description>
-          <long-description/>
-          <tag name="var" type="array" variable="" line="20">array</tag>
+          <long-description>
+</long-description>
+          <tag name="var" description="array" type="" variable="" line="20">
+            <type>aura\router\</type>
+          </tag>
         </docblock>
       </property>
       <property final="false" static="false" visibility="protected" line="36">
@@ -399,8 +536,11 @@
         <default>null</default>
         <docblock>
           <description>Currently processing these attached routes.</description>
-          <long-description/>
-          <tag name="var" type="array" variable="" line="29">array</tag>
+          <long-description>
+</long-description>
+          <tag name="var" description="array" type="" variable="" line="29">
+            <type>aura\router\</type>
+          </tag>
         </docblock>
       </property>
       <property final="false" static="false" visibility="protected" line="45">
@@ -408,8 +548,11 @@
         <default>array</default>
         <docblock>
           <description>Route definitions; these will be converted into objects.</description>
-          <long-description/>
-          <tag name="var" type="array" variable="" line="38">array</tag>
+          <long-description>
+</long-description>
+          <tag name="var" description="array" type="" variable="" line="38">
+            <type>aura\router\</type>
+          </tag>
         </docblock>
       </property>
       <property final="false" static="false" visibility="protected" line="54">
@@ -417,8 +560,11 @@
         <default/>
         <docblock>
           <description>A RouteFactory for creating route objects.</description>
-          <long-description/>
-          <tag name="var" type="aura\router\RouteFactory" variable="" line="47">aura\router\RouteFactory</tag>
+          <long-description>
+</long-description>
+          <tag name="var" description="RouteFactory" type="" variable="" line="47">
+            <type>aura\router\</type>
+          </tag>
         </docblock>
       </property>
       <property final="false" static="false" visibility="protected" line="63">
@@ -426,17 +572,25 @@
         <default>array</default>
         <docblock>
           <description>Route objects created from the definitons.</description>
-          <long-description/>
-          <tag name="var" type="array" variable="" line="56">array</tag>
+          <long-description>
+</long-description>
+          <tag name="var" description="array" type="" variable="" line="56">
+            <type>aura\router\</type>
+          </tag>
         </docblock>
       </property>
       <method final="false" abstract="false" static="false" visibility="public" line="75">
         <name>__construct</name>
         <docblock>
           <description>Constructor.</description>
-          <long-description/>
-          <tag name="param" type="aura\router\RouteFactory" variable="$factory" line="65">A factory for creating route objects.</tag>
-          <tag name="param" type="array" variable="$attach" line="65">A series of route definitions to be attached to the router.</tag>
+          <long-description>
+</long-description>
+          <tag name="param" description="A factory for creating route objects." type="aura\router\RouteFactory" variable="$factory" line="65">
+            <type>aura\router\RouteFactory</type>
+          </tag>
+          <tag name="param" description="A series of route definitions to be attached to the router." type="array" variable="$attach" line="65">
+            <type>array</type>
+          </tag>
         </docblock>
         <argument line="76">
           <name>$factory</name>
@@ -453,11 +607,20 @@
         <name>add</name>
         <docblock>
           <description>Adds a single route definition to the stack.</description>
-          <long-description/>
-          <tag name="param" type="string" variable="$name" line="85">The route name for `generate()` lookups.</tag>
-          <tag name="param" type="string" variable="$path" line="85">The route path.</tag>
-          <tag name="param" type="array" variable="$spec" line="85">The rest of the route definition, with keys for `params`, `values`, etc.</tag>
-          <tag name="return" type="void" line="85"/>
+          <long-description>
+</long-description>
+          <tag name="param" description="The route name for `generate()` lookups." type="string" variable="$name" line="85">
+            <type>string</type>
+          </tag>
+          <tag name="param" description="The route path." type="string" variable="$path" line="85">
+            <type>string</type>
+          </tag>
+          <tag name="param" description="The rest of the route definition, with keys for `params`, `values`, etc." type="array" variable="$spec" line="85">
+            <type>array</type>
+          </tag>
+          <tag name="return" description="" type="void" line="85">
+            <type>void</type>
+          </tag>
         </docblock>
         <argument line="99">
           <name>$name</name>
@@ -479,10 +642,17 @@
         <name>attach</name>
         <docblock>
           <description>Attaches several routes at once to a specific path prefix.</description>
-          <long-description/>
-          <tag name="param" type="string" variable="$path_prefix" line="116">The path that the routes should be attached to.</tag>
-          <tag name="param" type="array" variable="$spec" line="116">An array of common route information, with an additional `routes` key to define the routes themselves.</tag>
-          <tag name="return" type="void" line="116"/>
+          <long-description>
+</long-description>
+          <tag name="param" description="The path that the routes should be attached to." type="string" variable="$path_prefix" line="116">
+            <type>string</type>
+          </tag>
+          <tag name="param" description="An array of common route information, with an additional `routes` key to define the routes themselves." type="array" variable="$spec" line="116">
+            <type>array</type>
+          </tag>
+          <tag name="return" description="" type="void" line="116">
+            <type>void</type>
+          </tag>
         </docblock>
         <argument line="129">
           <name>$path_prefix</name>
@@ -499,10 +669,18 @@
         <name>match</name>
         <docblock>
           <description>Gets a route that matches a given path and other server conditions.</description>
-          <long-description/>
-          <tag name="param" type="string" variable="$path" line="144">The path to match against.</tag>
-          <tag name="param" type="array" variable="$server" line="144">An array copy of $_SERVER.</tag>
-          <tag name="return" type="aura\router\Route|aura\router\false" line="144">Returns a Route object when it finds a match, or boolean false if there is no match.</tag>
+          <long-description>
+</long-description>
+          <tag name="param" description="The path to match against." type="string" variable="$path" line="144">
+            <type>string</type>
+          </tag>
+          <tag name="param" description="An array copy of $_SERVER." type="array" variable="$server" line="144">
+            <type>array</type>
+          </tag>
+          <tag name="return" description="Returns a Route object when it finds a match, or boolean false if there is no match." type="aura\router\Route|aura\router\false" line="144">
+            <type>aura\router\Route</type>
+            <type>aura\router\false</type>
+          </tag>
         </docblock>
         <argument line="156">
           <name>$path</name>
@@ -518,11 +696,20 @@
       <method final="false" abstract="false" static="false" visibility="public" line="191">
         <name>generate</name>
         <docblock>
-          <description>Looks up a route by name, and interpolates data into it to return&lt;br/&gt;a URI path.</description>
-          <long-description/>
-          <tag name="param" type="string" variable="$name" line="177">The route name to look up.</tag>
-          <tag name="param" type="array" variable="$data" line="177">The data to inpterolate into the URI; data keys map to param tokens in the path.</tag>
-          <tag name="return" type="string|aura\router\false" line="177">A URI path string if the route name is found, or boolean false if not.</tag>
+          <description>Looks up a route by name, and interpolates data into it to return
+a URI path.</description>
+          <long-description>
+</long-description>
+          <tag name="param" description="The route name to look up." type="string" variable="$name" line="177">
+            <type>string</type>
+          </tag>
+          <tag name="param" description="The data to inpterolate into the URI; data keys map to param tokens in the path." type="array" variable="$data" line="177">
+            <type>array</type>
+          </tag>
+          <tag name="return" description="A URI path string if the route name is found, or boolean false if not." type="string|aura\router\false" line="177">
+            <type>string</type>
+            <type>aura\router\false</type>
+          </tag>
         </docblock>
         <argument line="191">
           <name>$name</name>
@@ -539,9 +726,14 @@
         <name>setRoutes</name>
         <docblock>
           <description>Reset the map to use an array of Route objects.</description>
-          <long-description/>
-          <tag name="param" type="array" variable="$routes" line="210">Use this array of route objects, likely generated from `getRoutes()`.</tag>
-          <tag name="return" type="void" line="210"/>
+          <long-description>
+</long-description>
+          <tag name="param" description="Use this array of route objects, likely generated from `getRoutes()`." type="array" variable="$routes" line="210">
+            <type>array</type>
+          </tag>
+          <tag name="return" description="" type="void" line="210">
+            <type>void</type>
+          </tag>
         </docblock>
         <argument line="220">
           <name>$routes</name>
@@ -552,39 +744,54 @@
       <method final="false" abstract="false" static="false" visibility="public" line="236">
         <name>getRoutes</name>
         <docblock>
-          <description>Get the array of Route objects in this map, likely for caching and&lt;br/&gt;re-setting via `setRoutes()`.</description>
-          <long-description/>
-          <tag name="return" type="array" line="228"/>
+          <description>Get the array of Route objects in this map, likely for caching and
+re-setting via `setRoutes()`.</description>
+          <long-description>
+</long-description>
+          <tag name="return" description="" type="array" line="228">
+            <type>array</type>
+          </tag>
         </docblock>
       </method>
       <method final="false" abstract="false" static="false" visibility="protected" line="254">
         <name>createNextRoute</name>
         <docblock>
-          <description>Gets the next Route object in the stack, converting definitions to &lt;br/&gt;Route objects as needed.</description>
-          <long-description/>
-          <tag name="return" type="aura\router\Route|aura\router\false" line="245">A Route object, or boolean false at the end of the stack.</tag>
+          <description>Gets the next Route object in the stack, converting definitions to 
+Route objects as needed.</description>
+          <long-description>
+</long-description>
+          <tag name="return" description="A Route object, or boolean false at the end of the stack." type="aura\router\Route|aura\router\false" line="245">
+            <type>aura\router\Route</type>
+            <type>aura\router\false</type>
+          </tag>
         </docblock>
       </method>
       <method final="false" abstract="false" static="false" visibility="protected" line="289">
         <name>getNextDefinition</name>
         <docblock>
           <description>Gets the next route definition from the stack.</description>
-          <long-description/>
-          <tag name="return" type="array" line="282">A route definition.</tag>
+          <long-description>
+</long-description>
+          <tag name="return" description="A route definition." type="array" line="282">
+            <type>array</type>
+          </tag>
         </docblock>
       </method>
       <method final="false" abstract="false" static="false" visibility="protected" line="321">
         <name>getNextAttach</name>
         <docblock>
           <description>Gets the next attached route definition.</description>
-          <long-description/>
-          <tag name="return" type="array" line="314">A route definition.</tag>
+          <long-description>
+</long-description>
+          <tag name="return" description="A route definition." type="array" line="314">
+            <type>array</type>
+          </tag>
         </docblock>
       </method>
     </class>
   </file>
-  <file path="scripts/instance.php" hash="1300019240">
-    <include type="Require Once" namespace="aura\router" line="3">
+  <file path="scripts/instance.php" hash="83e5df50d5a9592d07e64fc3cfcdb062">
+    <include type="Require Once" line="3">
       <name>/src.php</name>
     </include>
   </file>

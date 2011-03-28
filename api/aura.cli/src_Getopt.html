@@ -1,8 +1,10 @@
-<html xmlns="http://www.w3.org/1999/xhtml"><head><title>File</title><meta http-equiv="Content-Type" content="text/html; charset=utf-8"></meta><link rel="stylesheet" href="css/black-tie/jquery-ui-1.8.2.custom.css" type="text/css"></link><link rel="stylesheet" href="css/jquery.treeview.css" type="text/css"></link><link rel="stylesheet" href="css/default.css" type="text/css"></link><script type="text/javascript" src="js/jquery-1.4.2.min.js"></script><script type="text/javascript" src="js/jquery-ui-1.8.2.custom.min.js"></script><script type="text/javascript" src="js/jquery.treeview.js"></script></head><body><script type="text/javascript">
+<html xmlns="http://www.w3.org/1999/xhtml"><head><title>File</title><meta http-equiv="Content-Type" content="text/html; charset=utf-8"></meta><link rel="stylesheet" href="css/black-tie/jquery-ui-1.8.2.custom.css" type="text/css"></link><link rel="stylesheet" href="css/jquery.treeview.css" type="text/css"></link><link rel="stylesheet" href="css/default.css" type="text/css"></link><script type="text/javascript" src="js/jquery-1.4.2.min.js"></script><script type="text/javascript" src="js/jquery-ui-1.8.2.custom.min.js"></script><script type="text/javascript" src="js/jquery.cookie.js"></script><script type="text/javascript" src="js/jquery.treeview.js"></script></head><body><script type="text/javascript">
           $(document).ready(function()
           {
             $(".filetree").treeview({
-              animated: 'fast'
+              animated: "fast",
+              collapsed: true,
+              persist: "cookie"
             });
           });
 
@@ -57,11 +59,12 @@
 <h3>Getopt</h3>
 <div class="properties">
 <h1>Properties</h1>
-<label class="property-key">Extends</label><div class="property-value"> </div>
+<label class="property-key">Extends</label><div class="property-value">
+         </div>
 <label class="property-key">Implements</label><div class="property-value"> 
       </div>
 <label class="property-key">package</label><div class="property-value">
-<a title="aura.cli">aura.cli</a>
+<a title=""></a>
              
         </div>
 <label class="property-key">Abstract</label><div class="property-value">No 
@@ -70,7 +73,8 @@
       </div>
 </div>
 <h4>Description</h4>
-<em>Retrieves and validates command-line options and parameter values.</em><br><br><div id="methods_Getopt">
+<em>Retrieves and validates command-line options and parameter values.</em><br>
+<br><div id="methods_Getopt">
 <h4>Methods</h4>
 <a style="font-style: italic;" href="#Getopt::__construct()">__construct</a>,
       <a style="font-style: italic;" href="#Getopt::__get()">__get</a>,
@@ -88,8 +92,8 @@
       <a style="font-style: italic;" href="#Getopt::loadShortCluster()">loadShortCluster</a>,
       <div class="method">
 <a id="Getopt::__construct()"></a><h3>__construct<span class="nb-faded-text">(
-          <a href="src_OptionFactory.html">aura\cli\OptionFactory</a>
-             
+          <a href="src_OptionFactory.html#aura%5Ccli%5COptionFactory">aura\cli\OptionFactory</a>
+              |
             $option_factory,
           
           )
@@ -98,7 +102,8 @@
         <span class="nb-faded-text">n/a</span>
 </h3>
 <h4>Description</h4>
-<em>Constructor.</em><br><h4>Arguments</h4>
+<em>Constructor.</em><br><small>
+</small><br><h4>Arguments</h4>
 <table>
 <thead><tr>
 <th>Name</th>
@@ -108,7 +113,9 @@
 </tr></thead>
 <tbody><tr>
 <td>$option_factory</td>
-<td><a href="src_OptionFactory.html">aura\cli\OptionFactory</a></td>
+<td style="white-space: normal;">
+<a href="src_OptionFactory.html#aura%5Ccli%5COptionFactory">aura\cli\OptionFactory</a> |
+                </td>
 <td>A factory for Option objects.</td>
 <td></td>
 </tr></tbody>
@@ -128,7 +135,7 @@
 <div class="method">
 <a id="Getopt::__get()"></a><h3>__get<span class="nb-faded-text">(
           string
-             
+              |
             $key,
           
           )
@@ -137,7 +144,8 @@
         <span class="nb-faded-text">mixed</span>
 </h3>
 <h4>Description</h4>
-<em>Make Option values available as magic readonly properties.</em><br><h4>Arguments</h4>
+<em>Make Option values available as magic readonly properties.</em><br><small>
+</small><br><h4>Arguments</h4>
 <table>
 <thead><tr>
 <th>Name</th>
@@ -147,7 +155,8 @@
 </tr></thead>
 <tbody><tr>
 <td>$key</td>
-<td>string</td>
+<td style="white-space: normal;">string |
+                </td>
 <td>The option name.</td>
 <td></td>
 </tr></tbody>
@@ -166,17 +175,16 @@
 </div>
 <div class="method">
 <a id="Getopt::getLongOption()"></a><h3>getLongOption<span class="nb-faded-text">(
-          
-             
-            $long,
+          $long,
           
           )
         </span>
         :
-        <span class="nb-faded-text"><a href="src_Option.html">aura\cli\Option</a></span>
+        <span class="nb-faded-text"><a href="src_Option.html#aura%5Ccli%5COption">aura\cli\Option</a></span>
 </h3>
 <h4>Description</h4>
-<em>Returns a single Option definition object by its long-format name.</em><br><h4>Arguments</h4>
+<em>Returns a single Option definition object by its long-format name.</em><br><small>
+</small><br><h4>Arguments</h4>
 <table>
 <thead><tr>
 <th>Name</th>
@@ -186,7 +194,7 @@
 </tr></thead>
 <tbody><tr>
 <td>$long</td>
-<td>n/a</td>
+<td style="white-space: normal;">n/a</td>
 <td></td>
 <td></td>
 </tr></tbody>
@@ -198,7 +206,7 @@
 <th>Description</th>
 </tr></thead>
 <tbody><tr>
-<td><a href="src_Option.html">aura\cli\Option</a></td>
+<td><a href="src_Option.html#aura%5Ccli%5COption">aura\cli\Option</a></td>
 <td></td>
 </tr></tbody>
 </table>
@@ -210,23 +218,22 @@
 </tr></thead>
 <tbody><tr>
 <td>var</td>
-<td>aura\cli\The long-format name of the option.</td>
+<td>The long-format name of the option.</td>
 </tr></tbody>
 </table>
 </div>
 <div class="method">
 <a id="Getopt::getOption()"></a><h3>getOption<span class="nb-faded-text">(
-          
-             
-            $prop,
+          $prop,
           
           )
         </span>
         :
-        <span class="nb-faded-text"><a href="src_Option.html">aura\cli\Option</a></span>
+        <span class="nb-faded-text"><a href="src_Option.html#aura%5Ccli%5COption">aura\cli\Option</a></span>
 </h3>
 <h4>Description</h4>
-<em>Returns a single Option definition object by its property name.</em><br><h4>Arguments</h4>
+<em>Returns a single Option definition object by its property name.</em><br><small>
+</small><br><h4>Arguments</h4>
 <table>
 <thead><tr>
 <th>Name</th>
@@ -236,7 +243,7 @@
 </tr></thead>
 <tbody><tr>
 <td>$prop</td>
-<td>n/a</td>
+<td style="white-space: normal;">n/a</td>
 <td></td>
 <td></td>
 </tr></tbody>
@@ -248,7 +255,7 @@
 <th>Description</th>
 </tr></thead>
 <tbody><tr>
-<td><a href="src_Option.html">aura\cli\Option</a></td>
+<td><a href="src_Option.html#aura%5Ccli%5COption">aura\cli\Option</a></td>
 <td></td>
 </tr></tbody>
 </table>
@@ -260,14 +267,14 @@
 </tr></thead>
 <tbody><tr>
 <td>var</td>
-<td>aura\cli\The property name of the option.</td>
+<td>The property name of the option.</td>
 </tr></tbody>
 </table>
 </div>
 <div class="method">
 <a id="Getopt::getOptionValue()"></a><h3>getOptionValue<span class="nb-faded-text">(
           string
-             
+              |
             $name,
           
           )
@@ -276,7 +283,8 @@
         <span class="nb-faded-text">mixed</span>
 </h3>
 <h4>Description</h4>
-<em>Returns the value of a single Option by name.</em><br><h4>Arguments</h4>
+<em>Returns the value of a single Option by name.</em><br><small>
+</small><br><h4>Arguments</h4>
 <table>
 <thead><tr>
 <th>Name</th>
@@ -286,7 +294,8 @@
 </tr></thead>
 <tbody><tr>
 <td>$name</td>
-<td>string</td>
+<td style="white-space: normal;">string |
+                </td>
 <td>The option name to get a value for.</td>
 <td></td>
 </tr></tbody>
@@ -312,7 +321,8 @@
         <span class="nb-faded-text">array</span>
 </h3>
 <h4>Description</h4>
-<em>Returns an array of all Option names and their values.</em><br><h4>Return value</h4>
+<em>Returns an array of all Option names and their values.</em><br><small>
+</small><br><h4>Return value</h4>
 <table>
 <thead><tr>
 <th>Type</th>
@@ -333,7 +343,8 @@
         <span class="nb-faded-text">array</span>
 </h3>
 <h4>Description</h4>
-<em>Returns all the Option definition objects.</em><br><h4>Return value</h4>
+<em>Returns all the Option definition objects.</em><br><small>
+</small><br><h4>Return value</h4>
 <table>
 <thead><tr>
 <th>Type</th>
@@ -354,7 +365,8 @@
         <span class="nb-faded-text">array</span>
 </h3>
 <h4>Description</h4>
-<em>Returns an array of all numeric parameters.</em><br><h4>Return value</h4>
+<em>Returns an array of all numeric parameters.</em><br><small>
+</small><br><h4>Return value</h4>
 <table>
 <thead><tr>
 <th>Type</th>
@@ -368,17 +380,16 @@
 </div>
 <div class="method">
 <a id="Getopt::getShortOption()"></a><h3>getShortOption<span class="nb-faded-text">(
-          
-             
-            $char,
+          $char,
           
           )
         </span>
         :
-        <span class="nb-faded-text"><a href="src_Option.html">aura\cli\Option</a></span>
+        <span class="nb-faded-text"><a href="src_Option.html#aura%5Ccli%5COption">aura\cli\Option</a></span>
 </h3>
 <h4>Description</h4>
-<em>Returns a single Option definition object by its short-format name.</em><br><h4>Arguments</h4>
+<em>Returns a single Option definition object by its short-format name.</em><br><small>
+</small><br><h4>Arguments</h4>
 <table>
 <thead><tr>
 <th>Name</th>
@@ -388,7 +399,7 @@
 </tr></thead>
 <tbody><tr>
 <td>$char</td>
-<td>n/a</td>
+<td style="white-space: normal;">n/a</td>
 <td></td>
 <td></td>
 </tr></tbody>
@@ -400,7 +411,7 @@
 <th>Description</th>
 </tr></thead>
 <tbody><tr>
-<td><a href="src_Option.html">aura\cli\Option</a></td>
+<td><a href="src_Option.html#aura%5Ccli%5COption">aura\cli\Option</a></td>
 <td></td>
 </tr></tbody>
 </table>
@@ -412,17 +423,17 @@
 </tr></thead>
 <tbody><tr>
 <td>var</td>
-<td>aura\cli\The long-format name of the option.</td>
+<td>The long-format name of the option.</td>
 </tr></tbody>
 </table>
 </div>
 <div class="method">
 <a id="Getopt::init()"></a><h3>init<span class="nb-faded-text">(
           array
-             
+              |
             $opts,
           bool
-             
+              |
             $strict
             = self,
           
@@ -432,7 +443,8 @@
         <span class="nb-faded-text">void</span>
 </h3>
 <h4>Description</h4>
-<em>Initializes the instance with option definitions.</em><br><h4>Arguments</h4>
+<em>Initializes the instance with option definitions.</em><br><small>
+</small><br><h4>Arguments</h4>
 <table>
 <thead><tr>
 <th>Name</th>
@@ -443,13 +455,15 @@
 <tbody>
 <tr>
 <td>$opts</td>
-<td>array</td>
+<td style="white-space: normal;">array |
+                </td>
 <td>An array of key-value pairs where the key is the option name and the value is the option spec.</td>
 <td></td>
 </tr>
 <tr>
 <td>$strict</td>
-<td>bool</td>
+<td style="white-space: normal;">bool |
+                </td>
 <td>Initialize in strict (true) or non-strict (false) mode?</td>
 <td>self</td>
 </tr>
@@ -470,7 +484,7 @@
 <div class="method">
 <a id="Getopt::load()"></a><h3>load<span class="nb-faded-text">(
           array
-             
+              |
             $argv,
           
           )
@@ -479,7 +493,10 @@
         <span class="nb-faded-text">void</span>
 </h3>
 <h4>Description</h4>
-<em>Loads Option values from an argument array, placing option values<br/>in the defined Option objects and placing non-option params in a <br/>`$params` variable.</em><br><h4>Arguments</h4>
+<em>Loads Option values from an argument array, placing option values
+in the defined Option objects and placing non-option params in a 
+`$params` variable.</em><br><small>
+</small><br><h4>Arguments</h4>
 <table>
 <thead><tr>
 <th>Name</th>
@@ -489,8 +506,9 @@
 </tr></thead>
 <tbody><tr>
 <td>$argv</td>
-<td>array</td>
-<td>An argument array, typically from $_SERVER['argv'].</td>
+<td style="white-space: normal;">array |
+                </td>
+<td>An argument array, typically from $_SERVER[&#039;argv&#039;].</td>
 <td></td>
 </tr></tbody>
 </table>
@@ -509,7 +527,7 @@
 <div class="method">
 <a id="Getopt::loadLong()"></a><h3>loadLong<span class="nb-faded-text">(
           string
-             
+              |
             $spec,
           
           )
@@ -518,7 +536,8 @@
         <span class="nb-faded-text">void</span>
 </h3>
 <h4>Description</h4>
-<em>Parses a long-form option.</em><br><h4>Arguments</h4>
+<em>Parses a long-form option.</em><br><small>
+</small><br><h4>Arguments</h4>
 <table>
 <thead><tr>
 <th>Name</th>
@@ -528,8 +547,9 @@
 </tr></thead>
 <tbody><tr>
 <td>$spec</td>
-<td>string</td>
-<td>The `$argv` element, e.g. "--foo" or "--bar=baz".</td>
+<td style="white-space: normal;">string |
+                </td>
+<td>The `$argv` element, e.g. &quot;--foo&quot; or &quot;--bar=baz&quot;.</td>
 <td></td>
 </tr></tbody>
 </table>
@@ -547,9 +567,7 @@
 </div>
 <div class="method">
 <a id="Getopt::loadShort()"></a><h3>loadShort<span class="nb-faded-text">(
-          
-             
-            $spec,
+          $spec,
           
           )
         </span>
@@ -557,7 +575,8 @@
         <span class="nb-faded-text">void</span>
 </h3>
 <h4>Description</h4>
-<em>Parses a short-form option (or cluster of options).</em><br><h4>Arguments</h4>
+<em>Parses a short-form option (or cluster of options).</em><br><small>
+</small><br><h4>Arguments</h4>
 <table>
 <thead><tr>
 <th>Name</th>
@@ -567,7 +586,7 @@
 </tr></thead>
 <tbody><tr>
 <td>$spec</td>
-<td>n/a</td>
+<td style="white-space: normal;">n/a</td>
 <td></td>
 <td></td>
 </tr></tbody>
@@ -587,7 +606,7 @@
 <div class="method">
 <a id="Getopt::loadShortCluster()"></a><h3>loadShortCluster<span class="nb-faded-text">(
           string
-             
+              |
             $spec,
           
           )
@@ -596,7 +615,8 @@
         <span class="nb-faded-text">void</span>
 </h3>
 <h4>Description</h4>
-<em>Parses a cluster of short options.</em><br><h4>Arguments</h4>
+<em>Parses a cluster of short options.</em><br><small>
+</small><br><h4>Arguments</h4>
 <table>
 <thead><tr>
 <th>Name</th>
@@ -606,8 +626,9 @@
 </tr></thead>
 <tbody><tr>
 <td>$spec</td>
-<td>string</td>
-<td>The short-option cluster (e.g. "-abcd").</td>
+<td style="white-space: normal;">string |
+                </td>
+<td>The short-option cluster (e.g. &quot;-abcd&quot;).</td>
 <td></td>
 </tr></tbody>
 </table>
@@ -635,28 +656,32 @@
 <span class="nb-faded-text"> 
           protected 
           </span>$argv</h3>
-<em>The incoming arguments, typically from $_SERVER['argv'].</em><br><small></small><br><br>
+<em>The incoming arguments, typically from $_SERVER['argv'].</em><br><small>
+</small><br><br>
 </div>
 <div class="method">
 <a id="Getopt::$option_factory"></a><h3>
-<span class="nb-faded-text">aura\cli\OptionFactory 
+<span class="nb-faded-text"> 
           protected 
           </span>$option_factory</h3>
-<em>A factory to create Option objects.</em><br><small></small><br><br>
+<em>A factory to create Option objects.</em><br><small>
+</small><br><br>
 </div>
 <div class="method">
 <a id="Getopt::$options"></a><h3>
-<span class="nb-faded-text">array 
+<span class="nb-faded-text"> 
           protected 
           </span>$options</h3>
-<em>Definitions for recognized options.</em><br><small></small><br><br>
+<em>Definitions for recognized options.</em><br><small>
+</small><br><br>
 </div>
 <div class="method">
 <a id="Getopt::$params"></a><h3>
-<span class="nb-faded-text">array 
+<span class="nb-faded-text"> 
           protected 
           </span>$params</h3>
-<em>Remaining non-option params after loading option values.</em><br><small></small><br><br>
+<em>Remaining non-option params after loading option values.</em><br><small>
+</small><br><br>
 </div>
 </div>
 <div id="constants_Getopt">
@@ -667,7 +692,8 @@
         </span>NON_STRICT<span class="nb-faded-text">
          = false</span>
 </h3>
-<em>Do not throw exceptions when undefined options are passed.</em><br><small></small><br><br>
+<em>Do not throw exceptions when undefined options are passed.</em><br><small>
+</small><br><br>
 </div>
 <a id="Getopt::STRICT"></a><div class="constant">
 <h3>
@@ -675,7 +701,8 @@
         </span>STRICT<span class="nb-faded-text">
          = true</span>
 </h3>
-<em>If an option is passed that is not defined, throw an exception.</em><br><small></small><br><br>
+<em>If an option is passed that is not defined, throw an exception.</em><br><small>
+</small><br><br>
 </div>
 </div>
 <div style="clear: both"></div>
@@ -722,7 +749,14 @@
               source: search_index,
               select: function(event, ui) {
                 // redirect to the documentation
-                parent.content.document.location = ''+ui.item.id;
+                if ((parent) && (parent.content))
+                {
+                  parent.content.document.location = ''+ui.item.id;
+                }
+                else
+                {
+                  jQuery(document).location = ''+ui.item.id;
+                }
                 applySearchHash();
               }
             });
@@ -735,21 +769,21 @@
 <li class="closed">
 <span class="folder">aura</span><ul><li class="closed">
 <span class="folder">cli</span><ul>
+<li><span class="file"><a href="src_Command.html#Command">Command</a><br><small>The CLI equivalent of a page-controller to perform a single action.</small></span></li>
+<li><span class="file"><a href="src_CommandFactory.html#CommandFactory">CommandFactory</a><br><small>A factory to create Command objects.</small></span></li>
 <li><span class="file"><a href="src_Context.html#Context">Context</a><br><small>Collection point for information about the command-line execution context.</small></span></li>
 <li><span class="file"><a href="src_Exception.html#Exception">Exception</a><br><small>Generic package exception.</small></span></li>
-<li><span class="file"><a href="src_Getopt.html#Getopt">Getopt</a><br><small>Retrieves and validates command-line options and parameter values.</small></span></li>
-<li><span class="file"><a href="src_Option.html#Option">Option</a><br><small>Defines a single command-line option.</small></span></li>
-<li><span class="file"><a href="src_Exception_OptionParam.html#Exception_OptionParam">Exception_OptionParam</a><br><small>The option &#39;param&#39; value needs a boolean or a null.</small></span></li>
+<li><span class="file"><a href="src_Exception_CommandFactory.html#Exception_CommandFactory">Exception_CommandFactory</a><br><small>Generic CommandFactory exception.</small></span></li>
 <li><span class="file"><a href="src_Exception_OptionName.html#Exception_OptionName">Exception_OptionName</a><br><small>Option objects need to be initialized with a name.</small></span></li>
 <li><span class="file"><a href="src_Exception_OptionNotDefined.html#Exception_OptionNotDefined">Exception_OptionNotDefined</a><br><small>Asked for an option that is not defined.</small></span></li>
 <li><span class="file"><a href="src_Exception_OptionNotMulti.html#Exception_OptionNotMulti">Exception_OptionNotMulti</a><br><small>The option does not allow multiple values.</small></span></li>
+<li><span class="file"><a href="src_Exception_OptionParam.html#Exception_OptionParam">Exception_OptionParam</a><br><small>The option &#39;param&#39; value needs a boolean or a null.</small></span></li>
 <li><span class="file"><a href="src_Exception_OptionParamRejected.html#Exception_OptionParamRejected">Exception_OptionParamRejected</a><br><small>The option requires that no parameter be present.</small></span></li>
 <li><span class="file"><a href="src_Exception_OptionParamRequired.html#Exception_OptionParamRequired">Exception_OptionParamRequired</a><br><small>The option requires a non-blank parameter.</small></span></li>
-<li><span class="file"><a href="src_Exception_CommandFactory.html#Exception_CommandFactory">Exception_CommandFactory</a><br><small>Generic CommandFactory exception.</small></span></li>
-<li><span class="file"><a href="src_Command.html#Command">Command</a><br><small>The CLI equivalent of a page-controller to perform a single action.</small></span></li>
-<li><span class="file"><a href="src_Stdio.html#Stdio">Stdio</a><br><small>Provides a wrapper for standard input/output handles.</small></span></li>
+<li><span class="file"><a href="src_Getopt.html#Getopt">Getopt</a><br><small>Retrieves and validates command-line options and parameter values.</small></span></li>
+<li><span class="file"><a href="src_Option.html#Option">Option</a><br><small>Defines a single command-line option.</small></span></li>
 <li><span class="file"><a href="src_OptionFactory.html#OptionFactory">OptionFactory</a><br><small>A factory to create Option objects.</small></span></li>
-<li><span class="file"><a href="src_CommandFactory.html#CommandFactory">CommandFactory</a><br><small>A factory to create Command objects.</small></span></li>
+<li><span class="file"><a href="src_Stdio.html#Stdio">Stdio</a><br><small>Provides a wrapper for standard input/output handles.</small></span></li>
 <li><span class="file"><a href="src_Vt100.html#Vt100">Vt100</a><br><small>Text formatting for VT100 terminals.</small></span></li>
 </ul>
 </li></ul>
@@ -761,22 +795,22 @@
 </div><div class="section">
 <h1>Packages</h1>
 <ul id="packages-" class="filetree"><li class="closed">
-<span class="folder">aura.cli</span><ul id="packages_aura.cli" class=".filetree">
+<span class="folder">aura.cli</span><ul id="packages_aura.cli" class="filetree">
+<li class="closed"><span class="file"><a href="src_Command.html#Command">Command</a><br><small>The CLI equivalent of a page-controller to perform a single action.</small></span></li>
+<li class="closed"><span class="file"><a href="src_CommandFactory.html#CommandFactory">CommandFactory</a><br><small>A factory to create Command objects.</small></span></li>
 <li class="closed"><span class="file"><a href="src_Context.html#Context">Context</a><br><small>Collection point for information about the command-line execution context.</small></span></li>
 <li class="closed"><span class="file"><a href="src_Exception.html#Exception">Exception</a><br><small>Generic package exception.</small></span></li>
-<li class="closed"><span class="file"><a href="src_Getopt.html#Getopt">Getopt</a><br><small>Retrieves and validates command-line options and parameter values.</small></span></li>
-<li class="closed"><span class="file"><a href="src_Option.html#Option">Option</a><br><small>Defines a single command-line option.</small></span></li>
-<li class="closed"><span class="file"><a href="src_Exception_OptionParam.html#Exception_OptionParam">Exception_OptionParam</a><br><small>The option &#39;param&#39; value needs a boolean or a null.</small></span></li>
+<li class="closed"><span class="file"><a href="src_Exception_CommandFactory.html#Exception_CommandFactory">Exception_CommandFactory</a><br><small>Generic CommandFactory exception.</small></span></li>
 <li class="closed"><span class="file"><a href="src_Exception_OptionName.html#Exception_OptionName">Exception_OptionName</a><br><small>Option objects need to be initialized with a name.</small></span></li>
 <li class="closed"><span class="file"><a href="src_Exception_OptionNotDefined.html#Exception_OptionNotDefined">Exception_OptionNotDefined</a><br><small>Asked for an option that is not defined.</small></span></li>
 <li class="closed"><span class="file"><a href="src_Exception_OptionNotMulti.html#Exception_OptionNotMulti">Exception_OptionNotMulti</a><br><small>The option does not allow multiple values.</small></span></li>
+<li class="closed"><span class="file"><a href="src_Exception_OptionParam.html#Exception_OptionParam">Exception_OptionParam</a><br><small>The option &#39;param&#39; value needs a boolean or a null.</small></span></li>
 <li class="closed"><span class="file"><a href="src_Exception_OptionParamRejected.html#Exception_OptionParamRejected">Exception_OptionParamRejected</a><br><small>The option requires that no parameter be present.</small></span></li>
 <li class="closed"><span class="file"><a href="src_Exception_OptionParamRequired.html#Exception_OptionParamRequired">Exception_OptionParamRequired</a><br><small>The option requires a non-blank parameter.</small></span></li>
-<li class="closed"><span class="file"><a href="src_Exception_CommandFactory.html#Exception_CommandFactory">Exception_CommandFactory</a><br><small>Generic CommandFactory exception.</small></span></li>
-<li class="closed"><span class="file"><a href="src_Command.html#Command">Command</a><br><small>The CLI equivalent of a page-controller to perform a single action.</small></span></li>
-<li class="closed"><span class="file"><a href="src_Stdio.html#Stdio">Stdio</a><br><small>Provides a wrapper for standard input/output handles.</small></span></li>
+<li class="closed"><span class="file"><a href="src_Getopt.html#Getopt">Getopt</a><br><small>Retrieves and validates command-line options and parameter values.</small></span></li>
+<li class="closed"><span class="file"><a href="src_Option.html#Option">Option</a><br><small>Defines a single command-line option.</small></span></li>
 <li class="closed"><span class="file"><a href="src_OptionFactory.html#OptionFactory">OptionFactory</a><br><small>A factory to create Option objects.</small></span></li>
-<li class="closed"><span class="file"><a href="src_CommandFactory.html#CommandFactory">CommandFactory</a><br><small>A factory to create Command objects.</small></span></li>
+<li class="closed"><span class="file"><a href="src_Stdio.html#Stdio">Stdio</a><br><small>Provides a wrapper for standard input/output handles.</small></span></li>
 <li class="closed"><span class="file"><a href="src_Vt100.html#Vt100">Vt100</a><br><small>Text formatting for VT100 terminals.</small></span></li>
 </ul>
 </li></ul>

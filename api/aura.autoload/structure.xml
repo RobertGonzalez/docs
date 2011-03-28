@@ -1,33 +1,38 @@
 <?xml version="1.0"?>
-<project version="0.8.8" title="Aura Project for PHP: aura.autoload">
-  <file path="src.php" hash="1300019248">
-    <include type="Require Once" namespace="default" line="2">
+<project version="0.8.11" title="Aura Project for PHP: aura.autoload">
+  <file path="src.php" hash="2abaa332700a53ea314f163815cbfb9d">
+    <include type="Require Once" line="2">
       <name>/src/Loader.php</name>
     </include>
-    <include type="Require Once" namespace="default" line="3">
+    <include type="Require Once" line="3">
       <name>/src/Exception.php</name>
     </include>
-    <include type="Require Once" namespace="default" line="4">
+    <include type="Require Once" line="4">
       <name>/src/Exception/NotFound.php</name>
     </include>
   </file>
-  <file path="src/Loader.php" hash="1300019248">
+  <file path="src/Loader.php" hash="fb4d65966cd6cb7305c674b035e8f26b">
     <class final="false" abstract="false" line="18" namespace="aura\autoload">
       <name>Loader</name>
       <extends/>
       <full_name>aura\autoload\Loader</full_name>
       <docblock>
         <description>An SPL autoloader adhering to [PSR-0](http://groups.google.com/group/php-standards/web/psr-0-final-proposal).</description>
-        <long-description/>
-        <tag name="package" line="11">aura.autoload</tag>
+        <long-description>
+</long-description>
+        <tag name="package" description="aura.autoload" line="11"/>
       </docblock>
       <property final="false" static="false" visibility="protected" line="28">
         <name>$loaded</name>
         <default>array</default>
         <docblock>
-          <description>Classes and interfaces loaded by the autoloader; the key is the class&lt;br/&gt;name and the value is the file name.</description>
-          <long-description/>
-          <tag name="var" type="array" variable="" line="20">array</tag>
+          <description>Classes and interfaces loaded by the autoloader; the key is the class
+name and the value is the file name.</description>
+          <long-description>
+</long-description>
+          <tag name="var" description="array" type="" variable="" line="20">
+            <type>aura\autoload\</type>
+          </tag>
         </docblock>
       </property>
       <property final="false" static="false" visibility="protected" line="37">
@@ -35,8 +40,11 @@
         <default>array</default>
         <docblock>
           <description>A map of class name prefixes to directory names.</description>
-          <long-description/>
-          <tag name="var" type="array" variable="" line="30">array</tag>
+          <long-description>
+</long-description>
+          <tag name="var" description="array" type="" variable="" line="30">
+            <type>aura\autoload\</type>
+          </tag>
         </docblock>
       </property>
       <property final="false" static="false" visibility="protected" line="46">
@@ -44,27 +52,42 @@
         <default>array</default>
         <docblock>
           <description>A map of exact class names to their file paths.</description>
-          <long-description/>
-          <tag name="var" type="array" variable="" line="39">array</tag>
+          <long-description>
+</long-description>
+          <tag name="var" description="array" type="" variable="" line="39">
+            <type>aura\autoload\</type>
+          </tag>
         </docblock>
       </property>
       <method final="false" abstract="false" static="false" visibility="public" line="59">
         <name>register</name>
         <docblock>
           <description>Registers this autoloader with SPL.</description>
-          <long-description/>
-          <tag name="param" type="string" variable="$config_mode" line="48">The config mode of the Aura environment. In 'test' mode, the autoloader looks for classes in the package tests directories.</tag>
-          <tag name="return" type="void" line="48"/>
+          <long-description>
+</long-description>
+          <tag name="param" description="The config mode of the Aura environment. In &amp;#039;test&amp;#039; mode, the autoloader looks for classes in the package tests directories." type="string" variable="$config_mode" line="48">
+            <type>string</type>
+          </tag>
+          <tag name="return" description="" type="void" line="48">
+            <type>void</type>
+          </tag>
         </docblock>
       </method>
       <method final="false" abstract="false" static="false" visibility="public" line="77">
         <name>addPrefix</name>
         <docblock>
           <description>Adds a directory path for a class name prefix.</description>
-          <long-description/>
-          <tag name="param" type="string" variable="$name" line="64">The class name prefix, e.g. 'aura\framework\\' or 'Zend_'.</tag>
-          <tag name="param" type="string" variable="$path" line="64">The absolute path leading to the classes for that prefix, e.g. '/path/to/system/package/aura.framework-dev/src'.</tag>
-          <tag name="return" type="void" line="64"/>
+          <long-description>
+</long-description>
+          <tag name="param" description="The class name prefix, e.g. &amp;#039;aura\framework\\&amp;#039; or &amp;#039;Zend_&amp;#039;." type="string" variable="$name" line="64">
+            <type>string</type>
+          </tag>
+          <tag name="param" description="The absolute path leading to the classes for that prefix, e.g. &amp;#039;/path/to/system/package/aura.framework-dev/src&amp;#039;." type="string" variable="$path" line="64">
+            <type>string</type>
+          </tag>
+          <tag name="return" description="" type="void" line="64">
+            <type>void</type>
+          </tag>
         </docblock>
         <argument line="77">
           <name>$name</name>
@@ -81,18 +104,28 @@
         <name>getPrefixes</name>
         <docblock>
           <description>Returns the list of all class name prefixes and their paths.</description>
-          <long-description/>
-          <tag name="return" type="array" line="82"/>
+          <long-description>
+</long-description>
+          <tag name="return" description="" type="array" line="82">
+            <type>array</type>
+          </tag>
         </docblock>
       </method>
       <method final="false" abstract="false" static="false" visibility="public" line="105">
         <name>addClass</name>
         <docblock>
           <description>Adds a file path for an exact class name.</description>
-          <long-description/>
-          <tag name="param" type="string" variable="$name" line="94">The exact class name.</tag>
-          <tag name="param" type="string" variable="$path" line="94">The file path to that class.</tag>
-          <tag name="return" type="void" line="94"/>
+          <long-description>
+</long-description>
+          <tag name="param" description="The exact class name." type="string" variable="$name" line="94">
+            <type>string</type>
+          </tag>
+          <tag name="param" description="The file path to that class." type="string" variable="$path" line="94">
+            <type>string</type>
+          </tag>
+          <tag name="return" description="" type="void" line="94">
+            <type>void</type>
+          </tag>
         </docblock>
         <argument line="105">
           <name>$name</name>
@@ -109,19 +142,27 @@
         <name>getClasses</name>
         <docblock>
           <description>Returns the list of exact class names and their paths.</description>
-          <long-description/>
-          <tag name="return" type="array" line="110"/>
+          <long-description>
+</long-description>
+          <tag name="return" description="" type="array" line="110">
+            <type>array</type>
+          </tag>
         </docblock>
       </method>
       <method final="false" abstract="false" static="false" visibility="public" line="135">
         <name>load</name>
         <docblock>
-          <description>Loads a class or interface using the class name prefix and path,&lt;br/&gt;falling back to the include-path if not found.</description>
-          <long-description/>
-          <tag name="param" type="string" variable="$class" line="122">The class or interface to load.</tag>
-          <tag name="return" type="void" line="122"/>
-          <tag name="throws" line="122">Exception_NotFound when the file for the class or 
-interface is not found.</tag>
+          <description>Loads a class or interface using the class name prefix and path,
+falling back to the include-path if not found.</description>
+          <long-description>
+</long-description>
+          <tag name="param" description="The class or interface to load." type="string" variable="$class" line="122">
+            <type>string</type>
+          </tag>
+          <tag name="return" description="" type="void" line="122">
+            <type>void</type>
+          </tag>
+          <tag name="throws" description="Exception_NotFound when the file for the class or &#10;interface is not found." line="122"/>
         </docblock>
         <argument line="135">
           <name>$class</name>
@@ -133,17 +174,25 @@ interface is not found.</tag>
         <name>getLoaded</name>
         <docblock>
           <description>Returns the list of classes and interfaces loaded by the autoloader.</description>
-          <long-description/>
-          <tag name="return" type="array" line="181">An array of key-value pairs where the key is the class or interface name and the value is the file name.</tag>
+          <long-description>
+</long-description>
+          <tag name="return" description="An array of key-value pairs where the key is the class or interface name and the value is the file name." type="array" line="181">
+            <type>array</type>
+          </tag>
         </docblock>
       </method>
       <method final="false" abstract="false" static="false" visibility="public" line="203">
         <name>classToFile</name>
         <docblock>
           <description>PSR-0 compliant class-to-file inflector.</description>
-          <long-description/>
-          <tag name="param" type="string" variable="$spec" line="194">The name of the class or interface to load.</tag>
-          <tag name="return" type="string" line="194">The filename version of the class or interface.</tag>
+          <long-description>
+</long-description>
+          <tag name="param" description="The name of the class or interface to load." type="string" variable="$spec" line="194">
+            <type>string</type>
+          </tag>
+          <tag name="return" description="The filename version of the class or interface." type="string" line="194">
+            <type>string</type>
+          </tag>
         </docblock>
         <argument line="203">
           <name>$spec</name>
@@ -155,10 +204,17 @@ interface is not found.</tag>
         <name>loadClassFile</name>
         <docblock>
           <description>Loads a class file, and retains a mapping for it in `$loaded`.</description>
-          <long-description/>
-          <tag name="param" type="string" variable="$class" line="230">The class to load.</tag>
-          <tag name="param" type="string" variable="$file" line="230">The file where the class resides.</tag>
-          <tag name="return" type="void" line="230"/>
+          <long-description>
+</long-description>
+          <tag name="param" description="The class to load." type="string" variable="$class" line="230">
+            <type>string</type>
+          </tag>
+          <tag name="param" description="The file where the class resides." type="string" variable="$file" line="230">
+            <type>string</type>
+          </tag>
+          <tag name="return" description="" type="void" line="230">
+            <type>void</type>
+          </tag>
         </docblock>
         <argument line="241">
           <name>$class</name>
@@ -173,32 +229,34 @@ interface is not found.</tag>
       </method>
     </class>
   </file>
-  <file path="src/Exception.php" hash="1300019248">
+  <file path="src/Exception.php" hash="818831b0b05040fc17174d695ae988e5">
     <class final="false" abstract="false" line="18" namespace="aura\autoload">
       <name>Exception</name>
       <extends>\Exception</extends>
       <full_name>aura\autoload\Exception</full_name>
       <docblock>
         <description>Generic package exception.</description>
-        <long-description/>
-        <tag name="package" line="11">aura.autoload</tag>
+        <long-description>
+</long-description>
+        <tag name="package" description="aura.autoload" line="11"/>
       </docblock>
     </class>
   </file>
-  <file path="src/Exception/NotFound.php" hash="1300019248">
+  <file path="src/Exception/NotFound.php" hash="323d5bfc23b0fc2cb2a6ebebeb5c333b">
     <class final="false" abstract="false" line="18" namespace="aura\autoload">
       <name>Exception_NotFound</name>
-      <extends>Exception</extends>
+      <extends>aura\autoload\Exception</extends>
       <full_name>aura\autoload\Exception_NotFound</full_name>
       <docblock>
         <description>Indicates the Loader failed to find a class file.</description>
-        <long-description/>
-        <tag name="package" line="11">aura.autoload</tag>
+        <long-description>
+</long-description>
+        <tag name="package" description="aura.autoload" line="11"/>
       </docblock>
     </class>
   </file>
-  <file path="scripts/instance.php" hash="1300019248">
-    <include type="Require Once" namespace="aura\autoload" line="3">
+  <file path="scripts/instance.php" hash="2bd7363f67cc210dcd279d333635d859">
+    <include type="Require Once" line="3">
       <name>/src.php</name>
     </include>
   </file>
@@ -206,7 +264,6 @@ interface is not found.</tag>
   <namespace name="aura">
     <namespace name="autoload"/>
   </namespace>
-  <namespace name="default"/>
   <marker>todo</marker>
   <marker>fixme</marker>
 </project>

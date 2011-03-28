@@ -1,8 +1,10 @@
-<html xmlns="http://www.w3.org/1999/xhtml"><head><title>File</title><meta http-equiv="Content-Type" content="text/html; charset=utf-8"></meta><link rel="stylesheet" href="css/black-tie/jquery-ui-1.8.2.custom.css" type="text/css"></link><link rel="stylesheet" href="css/jquery.treeview.css" type="text/css"></link><link rel="stylesheet" href="css/default.css" type="text/css"></link><script type="text/javascript" src="js/jquery-1.4.2.min.js"></script><script type="text/javascript" src="js/jquery-ui-1.8.2.custom.min.js"></script><script type="text/javascript" src="js/jquery.treeview.js"></script></head><body><script type="text/javascript">
+<html xmlns="http://www.w3.org/1999/xhtml"><head><title>File</title><meta http-equiv="Content-Type" content="text/html; charset=utf-8"></meta><link rel="stylesheet" href="css/black-tie/jquery-ui-1.8.2.custom.css" type="text/css"></link><link rel="stylesheet" href="css/jquery.treeview.css" type="text/css"></link><link rel="stylesheet" href="css/default.css" type="text/css"></link><script type="text/javascript" src="js/jquery-1.4.2.min.js"></script><script type="text/javascript" src="js/jquery-ui-1.8.2.custom.min.js"></script><script type="text/javascript" src="js/jquery.cookie.js"></script><script type="text/javascript" src="js/jquery.treeview.js"></script></head><body><script type="text/javascript">
           $(document).ready(function()
           {
             $(".filetree").treeview({
-              animated: 'fast'
+              animated: "fast",
+              collapsed: true,
+              persist: "cookie"
             });
           });
 
@@ -57,11 +59,12 @@
 <h3>Map</h3>
 <div class="properties">
 <h1>Properties</h1>
-<label class="property-key">Extends</label><div class="property-value"> </div>
+<label class="property-key">Extends</label><div class="property-value">
+         </div>
 <label class="property-key">Implements</label><div class="property-value"> 
       </div>
 <label class="property-key">package</label><div class="property-value">
-<a title="aura.router">aura.router</a>
+<a title=""></a>
              
         </div>
 <label class="property-key">Abstract</label><div class="property-value">No 
@@ -70,7 +73,8 @@
       </div>
 </div>
 <h4>Description</h4>
-<em>A collection point for URI routes.</em><br><br><div id="methods_Map">
+<em>A collection point for URI routes.</em><br>
+<br><div id="methods_Map">
 <h4>Methods</h4>
 <a style="font-style: italic;" href="#Map::__construct()">__construct</a>,
       <a style="font-style: italic;" href="#Map::add()">add</a>,
@@ -84,11 +88,11 @@
       <a style="font-style: italic;" href="#Map::setRoutes()">setRoutes</a>,
       <div class="method">
 <a id="Map::__construct()"></a><h3>__construct<span class="nb-faded-text">(
-          <a href="src_RouteFactory.html">aura\router\RouteFactory</a>
-             
+          <a href="src_RouteFactory.html#aura%5Crouter%5CRouteFactory">aura\router\RouteFactory</a>
+              |
             $factory,
           array
-             
+              |
             $attach
             = null,
           
@@ -98,7 +102,8 @@
         <span class="nb-faded-text">n/a</span>
 </h3>
 <h4>Description</h4>
-<em>Constructor.</em><br><h4>Arguments</h4>
+<em>Constructor.</em><br><small>
+</small><br><h4>Arguments</h4>
 <table>
 <thead><tr>
 <th>Name</th>
@@ -109,13 +114,16 @@
 <tbody>
 <tr>
 <td>$factory</td>
-<td><a href="src_RouteFactory.html">aura\router\RouteFactory</a></td>
+<td style="white-space: normal;">
+<a href="src_RouteFactory.html#aura%5Crouter%5CRouteFactory">aura\router\RouteFactory</a> |
+                </td>
 <td>A factory for creating route objects.</td>
 <td></td>
 </tr>
 <tr>
 <td>$attach</td>
-<td>array</td>
+<td style="white-space: normal;">array |
+                </td>
 <td>A series of route definitions to be attached to the router.</td>
 <td>null</td>
 </tr>
@@ -136,13 +144,13 @@
 <div class="method">
 <a id="Map::add()"></a><h3>add<span class="nb-faded-text">(
           string
-             
+              |
             $name,
           string
-             
+              |
             $path,
           array
-             
+              |
             $spec
             = null,
           
@@ -152,7 +160,8 @@
         <span class="nb-faded-text">void</span>
 </h3>
 <h4>Description</h4>
-<em>Adds a single route definition to the stack.</em><br><h4>Arguments</h4>
+<em>Adds a single route definition to the stack.</em><br><small>
+</small><br><h4>Arguments</h4>
 <table>
 <thead><tr>
 <th>Name</th>
@@ -163,19 +172,22 @@
 <tbody>
 <tr>
 <td>$name</td>
-<td>string</td>
+<td style="white-space: normal;">string |
+                </td>
 <td>The route name for `generate()` lookups.</td>
 <td></td>
 </tr>
 <tr>
 <td>$path</td>
-<td>string</td>
+<td style="white-space: normal;">string |
+                </td>
 <td>The route path.</td>
 <td></td>
 </tr>
 <tr>
 <td>$spec</td>
-<td>array</td>
+<td style="white-space: normal;">array |
+                </td>
 <td>The rest of the route definition, with keys for `params`, `values`, etc.</td>
 <td>null</td>
 </tr>
@@ -196,10 +208,10 @@
 <div class="method">
 <a id="Map::attach()"></a><h3>attach<span class="nb-faded-text">(
           string
-             
+              |
             $path_prefix,
           array
-             
+              |
             $spec,
           
           )
@@ -208,7 +220,8 @@
         <span class="nb-faded-text">void</span>
 </h3>
 <h4>Description</h4>
-<em>Attaches several routes at once to a specific path prefix.</em><br><h4>Arguments</h4>
+<em>Attaches several routes at once to a specific path prefix.</em><br><small>
+</small><br><h4>Arguments</h4>
 <table>
 <thead><tr>
 <th>Name</th>
@@ -219,13 +232,15 @@
 <tbody>
 <tr>
 <td>$path_prefix</td>
-<td>string</td>
+<td style="white-space: normal;">string |
+                </td>
 <td>The path that the routes should be attached to.</td>
 <td></td>
 </tr>
 <tr>
 <td>$spec</td>
-<td>array</td>
+<td style="white-space: normal;">array |
+                </td>
 <td>An array of common route information, with an additional `routes` key to define the routes themselves.</td>
 <td></td>
 </tr>
@@ -252,7 +267,9 @@
         <span class="nb-faded-text">aura\router\Route|aura\router\false</span>
 </h3>
 <h4>Description</h4>
-<em>Gets the next Route object in the stack, converting definitions to <br/>Route objects as needed.</em><br><h4>Return value</h4>
+<em>Gets the next Route object in the stack, converting definitions to 
+Route objects as needed.</em><br><small>
+</small><br><h4>Return value</h4>
 <table>
 <thead><tr>
 <th>Type</th>
@@ -267,10 +284,10 @@
 <div class="method">
 <a id="Map::generate()"></a><h3>generate<span class="nb-faded-text">(
           string
-             
+              |
             $name,
           array
-             
+              |
             $data
             = null,
           
@@ -280,7 +297,9 @@
         <span class="nb-faded-text">string|aura\router\false</span>
 </h3>
 <h4>Description</h4>
-<em>Looks up a route by name, and interpolates data into it to return<br/>a URI path.</em><br><h4>Arguments</h4>
+<em>Looks up a route by name, and interpolates data into it to return
+a URI path.</em><br><small>
+</small><br><h4>Arguments</h4>
 <table>
 <thead><tr>
 <th>Name</th>
@@ -291,13 +310,15 @@
 <tbody>
 <tr>
 <td>$name</td>
-<td>string</td>
+<td style="white-space: normal;">string |
+                </td>
 <td>The route name to look up.</td>
 <td></td>
 </tr>
 <tr>
 <td>$data</td>
-<td>array</td>
+<td style="white-space: normal;">array |
+                </td>
 <td>The data to inpterolate into the URI; data keys map to param tokens in the path.</td>
 <td>null</td>
 </tr>
@@ -324,7 +345,8 @@
         <span class="nb-faded-text">array</span>
 </h3>
 <h4>Description</h4>
-<em>Gets the next attached route definition.</em><br><h4>Return value</h4>
+<em>Gets the next attached route definition.</em><br><small>
+</small><br><h4>Return value</h4>
 <table>
 <thead><tr>
 <th>Type</th>
@@ -345,7 +367,8 @@
         <span class="nb-faded-text">array</span>
 </h3>
 <h4>Description</h4>
-<em>Gets the next route definition from the stack.</em><br><h4>Return value</h4>
+<em>Gets the next route definition from the stack.</em><br><small>
+</small><br><h4>Return value</h4>
 <table>
 <thead><tr>
 <th>Type</th>
@@ -366,7 +389,9 @@
         <span class="nb-faded-text">array</span>
 </h3>
 <h4>Description</h4>
-<em>Get the array of Route objects in this map, likely for caching and<br/>re-setting via `setRoutes()`.</em><br><h4>Return value</h4>
+<em>Get the array of Route objects in this map, likely for caching and
+re-setting via `setRoutes()`.</em><br><small>
+</small><br><h4>Return value</h4>
 <table>
 <thead><tr>
 <th>Type</th>
@@ -381,10 +406,10 @@
 <div class="method">
 <a id="Map::match()"></a><h3>match<span class="nb-faded-text">(
           string
-             
+              |
             $path,
           array
-             
+              |
             $server
             = null,
           
@@ -394,7 +419,8 @@
         <span class="nb-faded-text">aura\router\Route|aura\router\false</span>
 </h3>
 <h4>Description</h4>
-<em>Gets a route that matches a given path and other server conditions.</em><br><h4>Arguments</h4>
+<em>Gets a route that matches a given path and other server conditions.</em><br><small>
+</small><br><h4>Arguments</h4>
 <table>
 <thead><tr>
 <th>Name</th>
@@ -405,13 +431,15 @@
 <tbody>
 <tr>
 <td>$path</td>
-<td>string</td>
+<td style="white-space: normal;">string |
+                </td>
 <td>The path to match against.</td>
 <td></td>
 </tr>
 <tr>
 <td>$server</td>
-<td>array</td>
+<td style="white-space: normal;">array |
+                </td>
 <td>An array copy of $_SERVER.</td>
 <td>null</td>
 </tr>
@@ -432,7 +460,7 @@
 <div class="method">
 <a id="Map::setRoutes()"></a><h3>setRoutes<span class="nb-faded-text">(
           array
-             
+              |
             $routes,
           
           )
@@ -441,7 +469,8 @@
         <span class="nb-faded-text">void</span>
 </h3>
 <h4>Description</h4>
-<em>Reset the map to use an array of Route objects.</em><br><h4>Arguments</h4>
+<em>Reset the map to use an array of Route objects.</em><br><small>
+</small><br><h4>Arguments</h4>
 <table>
 <thead><tr>
 <th>Name</th>
@@ -451,7 +480,8 @@
 </tr></thead>
 <tbody><tr>
 <td>$routes</td>
-<td>array</td>
+<td style="white-space: normal;">array |
+                </td>
 <td>Use this array of route objects, likely generated from `getRoutes()`.</td>
 <td></td>
 </tr></tbody>
@@ -478,38 +508,43 @@
       <a href="#Map::%24routes">$routes</a>,
       <div class="method">
 <a id="Map::$attach_common"></a><h3>
-<span class="nb-faded-text">array 
+<span class="nb-faded-text"> 
           protected 
           </span>$attach_common</h3>
-<em>Currently processing this attached common route information.</em><br><small></small><br><br>
+<em>Currently processing this attached common route information.</em><br><small>
+</small><br><br>
 </div>
 <div class="method">
 <a id="Map::$attach_routes"></a><h3>
-<span class="nb-faded-text">array 
+<span class="nb-faded-text"> 
           protected 
           </span>$attach_routes</h3>
-<em>Currently processing these attached routes.</em><br><small></small><br><br>
+<em>Currently processing these attached routes.</em><br><small>
+</small><br><br>
 </div>
 <div class="method">
 <a id="Map::$definitions"></a><h3>
-<span class="nb-faded-text">array 
+<span class="nb-faded-text"> 
           protected 
           </span>$definitions</h3>
-<em>Route definitions; these will be converted into objects.</em><br><small></small><br><br>
+<em>Route definitions; these will be converted into objects.</em><br><small>
+</small><br><br>
 </div>
 <div class="method">
 <a id="Map::$factory"></a><h3>
-<span class="nb-faded-text">aura\router\RouteFactory 
+<span class="nb-faded-text"> 
           protected 
           </span>$factory</h3>
-<em>A RouteFactory for creating route objects.</em><br><small></small><br><br>
+<em>A RouteFactory for creating route objects.</em><br><small>
+</small><br><br>
 </div>
 <div class="method">
 <a id="Map::$routes"></a><h3>
-<span class="nb-faded-text">array 
+<span class="nb-faded-text"> 
           protected 
           </span>$routes</h3>
-<em>Route objects created from the definitons.</em><br><small></small><br><br>
+<em>Route objects created from the definitons.</em><br><small>
+</small><br><br>
 </div>
 </div>
 <div style="clear: both"></div>
@@ -556,7 +591,14 @@
               source: search_index,
               select: function(event, ui) {
                 // redirect to the documentation
-                parent.content.document.location = ''+ui.item.id;
+                if ((parent) && (parent.content))
+                {
+                  parent.content.document.location = ''+ui.item.id;
+                }
+                else
+                {
+                  jQuery(document).location = ''+ui.item.id;
+                }
                 applySearchHash();
               }
             });
@@ -569,10 +611,10 @@
 <li class="closed">
 <span class="folder">aura</span><ul><li class="closed">
 <span class="folder">router</span><ul>
-<li><span class="file"><a href="src_RouteFactory.html#RouteFactory">RouteFactory</a><br><small>A factory to create Route objects.</small></span></li>
 <li><span class="file"><a href="src_Exception.html#Exception">Exception</a><br><small>Package-specific exception.</small></span></li>
-<li><span class="file"><a href="src_Route.html#Route">Route</a><br><small>Represents an individual route with a name, path, params, values, etc.</small></span></li>
 <li><span class="file"><a href="src_Map.html#Map">Map</a><br><small>A collection point for URI routes.</small></span></li>
+<li><span class="file"><a href="src_Route.html#Route">Route</a><br><small>Represents an individual route with a name, path, params, values, etc.</small></span></li>
+<li><span class="file"><a href="src_RouteFactory.html#RouteFactory">RouteFactory</a><br><small>A factory to create Route objects.</small></span></li>
 </ul>
 </li></ul>
 </li>
@@ -583,11 +625,11 @@
 </div><div class="section">
 <h1>Packages</h1>
 <ul id="packages-" class="filetree"><li class="closed">
-<span class="folder">aura.router</span><ul id="packages_aura.router" class=".filetree">
-<li class="closed"><span class="file"><a href="src_RouteFactory.html#RouteFactory">RouteFactory</a><br><small>A factory to create Route objects.</small></span></li>
+<span class="folder">aura.router</span><ul id="packages_aura.router" class="filetree">
 <li class="closed"><span class="file"><a href="src_Exception.html#Exception">Exception</a><br><small>Package-specific exception.</small></span></li>
-<li class="closed"><span class="file"><a href="src_Route.html#Route">Route</a><br><small>Represents an individual route with a name, path, params, values, etc.</small></span></li>
 <li class="closed"><span class="file"><a href="src_Map.html#Map">Map</a><br><small>A collection point for URI routes.</small></span></li>
+<li class="closed"><span class="file"><a href="src_Route.html#Route">Route</a><br><small>Represents an individual route with a name, path, params, values, etc.</small></span></li>
+<li class="closed"><span class="file"><a href="src_RouteFactory.html#RouteFactory">RouteFactory</a><br><small>A factory to create Route objects.</small></span></li>
 </ul>
 </li></ul>
 </div>

@@ -1,8 +1,10 @@
-<html xmlns="http://www.w3.org/1999/xhtml"><head><title>File</title><meta http-equiv="Content-Type" content="text/html; charset=utf-8"></meta><link rel="stylesheet" href="css/black-tie/jquery-ui-1.8.2.custom.css" type="text/css"></link><link rel="stylesheet" href="css/jquery.treeview.css" type="text/css"></link><link rel="stylesheet" href="css/default.css" type="text/css"></link><script type="text/javascript" src="js/jquery-1.4.2.min.js"></script><script type="text/javascript" src="js/jquery-ui-1.8.2.custom.min.js"></script><script type="text/javascript" src="js/jquery.treeview.js"></script></head><body><script type="text/javascript">
+<html xmlns="http://www.w3.org/1999/xhtml"><head><title>File</title><meta http-equiv="Content-Type" content="text/html; charset=utf-8"></meta><link rel="stylesheet" href="css/black-tie/jquery-ui-1.8.2.custom.css" type="text/css"></link><link rel="stylesheet" href="css/jquery.treeview.css" type="text/css"></link><link rel="stylesheet" href="css/default.css" type="text/css"></link><script type="text/javascript" src="js/jquery-1.4.2.min.js"></script><script type="text/javascript" src="js/jquery-ui-1.8.2.custom.min.js"></script><script type="text/javascript" src="js/jquery.cookie.js"></script><script type="text/javascript" src="js/jquery.treeview.js"></script></head><body><script type="text/javascript">
           $(document).ready(function()
           {
             $(".filetree").treeview({
-              animated: 'fast'
+              animated: "fast",
+              collapsed: true,
+              persist: "cookie"
             });
           });
 
@@ -57,11 +59,12 @@
 <h3>HandlerFactory</h3>
 <div class="properties">
 <h1>Properties</h1>
-<label class="property-key">Extends</label><div class="property-value"> </div>
+<label class="property-key">Extends</label><div class="property-value">
+         </div>
 <label class="property-key">Implements</label><div class="property-value"> 
       </div>
 <label class="property-key">package</label><div class="property-value">
-<a title="aura.signal">aura.signal</a>
+<a title=""></a>
              
         </div>
 <label class="property-key">Abstract</label><div class="property-value">No 
@@ -70,22 +73,24 @@
       </div>
 </div>
 <h4>Description</h4>
-<em>A factory to create Handler objects.</em><br><br><div id="methods_HandlerFactory">
+<em>A factory to create Handler objects.</em><br>
+<br><div id="methods_HandlerFactory">
 <h4>Methods</h4>
 <a style="font-style: italic;" href="#HandlerFactory::newInstance()">newInstance</a>,
       <div class="method">
 <a id="HandlerFactory::newInstance()"></a><h3>newInstance<span class="nb-faded-text">(
           array
-             
+              |
             $params,
           
           )
         </span>
         :
-        <span class="nb-faded-text"><a href="src_Handler.html">aura\signal\Handler</a></span>
+        <span class="nb-faded-text"><a href="src_Handler.html#aura%5Csignal%5CHandler">aura\signal\Handler</a></span>
 </h3>
 <h4>Description</h4>
-<em>Creates and returns a new Handler object.</em><br><h4>Arguments</h4>
+<em>Creates and returns a new Handler object.</em><br><small>
+</small><br><h4>Arguments</h4>
 <table>
 <thead><tr>
 <th>Name</th>
@@ -95,7 +100,8 @@
 </tr></thead>
 <tbody><tr>
 <td>$params</td>
-<td>array</td>
+<td style="white-space: normal;">array |
+                </td>
 <td>An array of key-value pairs corresponding to Handler constructor params.</td>
 <td></td>
 </tr></tbody>
@@ -107,7 +113,7 @@
 <th>Description</th>
 </tr></thead>
 <tbody><tr>
-<td><a href="src_Handler.html">aura\signal\Handler</a></td>
+<td><a href="src_Handler.html#aura%5Csignal%5CHandler">aura\signal\Handler</a></td>
 <td></td>
 </tr></tbody>
 </table>
@@ -118,10 +124,11 @@
 <a href="#HandlerFactory::%24params">$params</a>,
       <div class="method">
 <a id="HandlerFactory::$params"></a><h3>
-<span class="nb-faded-text">array 
+<span class="nb-faded-text"> 
           protected 
           </span>$params</h3>
-<em>An array of default parameters for Handler objects.</em><br><small></small><br><br>
+<em>An array of default parameters for Handler objects.</em><br><small>
+</small><br><br>
 </div>
 </div>
 <div style="clear: both"></div>
@@ -168,7 +175,14 @@
               source: search_index,
               select: function(event, ui) {
                 // redirect to the documentation
-                parent.content.document.location = ''+ui.item.id;
+                if ((parent) && (parent.content))
+                {
+                  parent.content.document.location = ''+ui.item.id;
+                }
+                else
+                {
+                  jQuery(document).location = ''+ui.item.id;
+                }
                 applySearchHash();
               }
             });
@@ -181,10 +195,10 @@
 <li class="closed">
 <span class="folder">aura</span><ul><li class="closed">
 <span class="folder">signal</span><ul>
-<li><span class="file"><a href="src_Handler.html#Handler">Handler</a><br><small>A signal Handler definition.</small></span></li>
-<li><span class="file"><a href="src_Manager.html#Manager">Manager</a><br><small>Processes signals through to Handler objects.</small></span></li>
 <li><span class="file"><a href="src_Exception.html#Exception">Exception</a><br><small>Generic package exception.</small></span></li>
+<li><span class="file"><a href="src_Handler.html#Handler">Handler</a><br><small>A signal Handler definition.</small></span></li>
 <li><span class="file"><a href="src_HandlerFactory.html#HandlerFactory">HandlerFactory</a><br><small>A factory to create Handler objects.</small></span></li>
+<li><span class="file"><a href="src_Manager.html#Manager">Manager</a><br><small>Processes signals through to Handler objects.</small></span></li>
 <li><span class="file"><a href="src_Result.html#Result">Result</a><br><small>Represents a Result from a Handler.</small></span></li>
 <li><span class="file"><a href="src_ResultCollection.html#ResultCollection">ResultCollection</a><br><small>Represents a collection of Result objects.</small></span></li>
 <li><span class="file"><a href="src_ResultFactory.html#ResultFactory">ResultFactory</a><br><small>A factory to create Result objects.</small></span></li>
@@ -198,11 +212,11 @@
 </div><div class="section">
 <h1>Packages</h1>
 <ul id="packages-" class="filetree"><li class="closed">
-<span class="folder">aura.signal</span><ul id="packages_aura.signal" class=".filetree">
-<li class="closed"><span class="file"><a href="src_Handler.html#Handler">Handler</a><br><small>A signal Handler definition.</small></span></li>
-<li class="closed"><span class="file"><a href="src_Manager.html#Manager">Manager</a><br><small>Processes signals through to Handler objects.</small></span></li>
+<span class="folder">aura.signal</span><ul id="packages_aura.signal" class="filetree">
 <li class="closed"><span class="file"><a href="src_Exception.html#Exception">Exception</a><br><small>Generic package exception.</small></span></li>
+<li class="closed"><span class="file"><a href="src_Handler.html#Handler">Handler</a><br><small>A signal Handler definition.</small></span></li>
 <li class="closed"><span class="file"><a href="src_HandlerFactory.html#HandlerFactory">HandlerFactory</a><br><small>A factory to create Handler objects.</small></span></li>
+<li class="closed"><span class="file"><a href="src_Manager.html#Manager">Manager</a><br><small>Processes signals through to Handler objects.</small></span></li>
 <li class="closed"><span class="file"><a href="src_Result.html#Result">Result</a><br><small>Represents a Result from a Handler.</small></span></li>
 <li class="closed"><span class="file"><a href="src_ResultCollection.html#ResultCollection">ResultCollection</a><br><small>Represents a collection of Result objects.</small></span></li>
 <li class="closed"><span class="file"><a href="src_ResultFactory.html#ResultFactory">ResultFactory</a><br><small>A factory to create Result objects.</small></span></li>

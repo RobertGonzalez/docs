@@ -1,8 +1,10 @@
-<html xmlns="http://www.w3.org/1999/xhtml"><head><title>File</title><meta http-equiv="Content-Type" content="text/html; charset=utf-8"></meta><link rel="stylesheet" href="css/black-tie/jquery-ui-1.8.2.custom.css" type="text/css"></link><link rel="stylesheet" href="css/jquery.treeview.css" type="text/css"></link><link rel="stylesheet" href="css/default.css" type="text/css"></link><script type="text/javascript" src="js/jquery-1.4.2.min.js"></script><script type="text/javascript" src="js/jquery-ui-1.8.2.custom.min.js"></script><script type="text/javascript" src="js/jquery.treeview.js"></script></head><body><script type="text/javascript">
+<html xmlns="http://www.w3.org/1999/xhtml"><head><title>File</title><meta http-equiv="Content-Type" content="text/html; charset=utf-8"></meta><link rel="stylesheet" href="css/black-tie/jquery-ui-1.8.2.custom.css" type="text/css"></link><link rel="stylesheet" href="css/jquery.treeview.css" type="text/css"></link><link rel="stylesheet" href="css/default.css" type="text/css"></link><script type="text/javascript" src="js/jquery-1.4.2.min.js"></script><script type="text/javascript" src="js/jquery-ui-1.8.2.custom.min.js"></script><script type="text/javascript" src="js/jquery.cookie.js"></script><script type="text/javascript" src="js/jquery.treeview.js"></script></head><body><script type="text/javascript">
           $(document).ready(function()
           {
             $(".filetree").treeview({
-              animated: 'fast'
+              animated: "fast",
+              collapsed: true,
+              persist: "cookie"
             });
           });
 
@@ -57,11 +59,12 @@
 <h3>ResultCollection</h3>
 <div class="properties">
 <h1>Properties</h1>
-<label class="property-key">Extends</label><div class="property-value">\ArrayObject </div>
+<label class="property-key">Extends</label><div class="property-value">
+         </div>
 <label class="property-key">Implements</label><div class="property-value"> 
       </div>
 <label class="property-key">package</label><div class="property-value">
-<a title="aura.signal">aura.signal</a>
+<a title=""></a>
              
         </div>
 <label class="property-key">Abstract</label><div class="property-value">No 
@@ -70,7 +73,8 @@
       </div>
 </div>
 <h4>Description</h4>
-<em>Represents a collection of Result objects.</em><br><br><div id="methods_ResultCollection">
+<em>Represents a collection of Result objects.</em><br>
+<br><div id="methods_ResultCollection">
 <h4>Methods</h4>
 <a style="font-style: italic;" href="#ResultCollection::getLast()">getLast</a>,
       <a style="font-style: italic;" href="#ResultCollection::isStopped()">isStopped</a>,
@@ -80,17 +84,18 @@
           )
         </span>
         :
-        <span class="nb-faded-text"><a href="src_Result.html">aura\signal\Result</a></span>
+        <span class="nb-faded-text"><a href="src_Result.html#aura%5Csignal%5CResult">aura\signal\Result</a></span>
 </h3>
 <h4>Description</h4>
-<em>Returns the last Result in the collection.</em><br><h4>Return value</h4>
+<em>Returns the last Result in the collection.</em><br><small>
+</small><br><h4>Return value</h4>
 <table>
 <thead><tr>
 <th>Type</th>
 <th>Description</th>
 </tr></thead>
 <tbody><tr>
-<td><a href="src_Result.html">aura\signal\Result</a></td>
+<td><a href="src_Result.html#aura%5Csignal%5CResult">aura\signal\Result</a></td>
 <td></td>
 </tr></tbody>
 </table>
@@ -104,7 +109,8 @@
         <span class="nb-faded-text">bool</span>
 </h3>
 <h4>Description</h4>
-<em>Tells if the ResultCollection was stopped during processing.</em><br><h4>Return value</h4>
+<em>Tells if the ResultCollection was stopped during processing.</em><br><small>
+</small><br><h4>Return value</h4>
 <table>
 <thead><tr>
 <th>Type</th>
@@ -161,7 +167,14 @@
               source: search_index,
               select: function(event, ui) {
                 // redirect to the documentation
-                parent.content.document.location = ''+ui.item.id;
+                if ((parent) && (parent.content))
+                {
+                  parent.content.document.location = ''+ui.item.id;
+                }
+                else
+                {
+                  jQuery(document).location = ''+ui.item.id;
+                }
                 applySearchHash();
               }
             });
@@ -174,10 +187,10 @@
 <li class="closed">
 <span class="folder">aura</span><ul><li class="closed">
 <span class="folder">signal</span><ul>
-<li><span class="file"><a href="src_Handler.html#Handler">Handler</a><br><small>A signal Handler definition.</small></span></li>
-<li><span class="file"><a href="src_Manager.html#Manager">Manager</a><br><small>Processes signals through to Handler objects.</small></span></li>
 <li><span class="file"><a href="src_Exception.html#Exception">Exception</a><br><small>Generic package exception.</small></span></li>
+<li><span class="file"><a href="src_Handler.html#Handler">Handler</a><br><small>A signal Handler definition.</small></span></li>
 <li><span class="file"><a href="src_HandlerFactory.html#HandlerFactory">HandlerFactory</a><br><small>A factory to create Handler objects.</small></span></li>
+<li><span class="file"><a href="src_Manager.html#Manager">Manager</a><br><small>Processes signals through to Handler objects.</small></span></li>
 <li><span class="file"><a href="src_Result.html#Result">Result</a><br><small>Represents a Result from a Handler.</small></span></li>
 <li><span class="file"><a href="src_ResultCollection.html#ResultCollection">ResultCollection</a><br><small>Represents a collection of Result objects.</small></span></li>
 <li><span class="file"><a href="src_ResultFactory.html#ResultFactory">ResultFactory</a><br><small>A factory to create Result objects.</small></span></li>
@@ -191,11 +204,11 @@
 </div><div class="section">
 <h1>Packages</h1>
 <ul id="packages-" class="filetree"><li class="closed">
-<span class="folder">aura.signal</span><ul id="packages_aura.signal" class=".filetree">
-<li class="closed"><span class="file"><a href="src_Handler.html#Handler">Handler</a><br><small>A signal Handler definition.</small></span></li>
-<li class="closed"><span class="file"><a href="src_Manager.html#Manager">Manager</a><br><small>Processes signals through to Handler objects.</small></span></li>
+<span class="folder">aura.signal</span><ul id="packages_aura.signal" class="filetree">
 <li class="closed"><span class="file"><a href="src_Exception.html#Exception">Exception</a><br><small>Generic package exception.</small></span></li>
+<li class="closed"><span class="file"><a href="src_Handler.html#Handler">Handler</a><br><small>A signal Handler definition.</small></span></li>
 <li class="closed"><span class="file"><a href="src_HandlerFactory.html#HandlerFactory">HandlerFactory</a><br><small>A factory to create Handler objects.</small></span></li>
+<li class="closed"><span class="file"><a href="src_Manager.html#Manager">Manager</a><br><small>Processes signals through to Handler objects.</small></span></li>
 <li class="closed"><span class="file"><a href="src_Result.html#Result">Result</a><br><small>Represents a Result from a Handler.</small></span></li>
 <li class="closed"><span class="file"><a href="src_ResultCollection.html#ResultCollection">ResultCollection</a><br><small>Represents a collection of Result objects.</small></span></li>
 <li class="closed"><span class="file"><a href="src_ResultFactory.html#ResultFactory">ResultFactory</a><br><small>A factory to create Result objects.</small></span></li>

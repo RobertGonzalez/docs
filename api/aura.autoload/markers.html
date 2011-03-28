@@ -1,8 +1,10 @@
-<html xmlns="http://www.w3.org/1999/xhtml"><head><title>Markers</title><meta http-equiv="Content-Type" content="text/html; charset=utf-8"></meta><link rel="stylesheet" href="css/black-tie/jquery-ui-1.8.2.custom.css" type="text/css"></link><link rel="stylesheet" href="css/jquery.treeview.css" type="text/css"></link><link rel="stylesheet" href="css/default.css" type="text/css"></link><script type="text/javascript" src="js/jquery-1.4.2.min.js"></script><script type="text/javascript" src="js/jquery-ui-1.8.2.custom.min.js"></script><script type="text/javascript" src="js/jquery.treeview.js"></script></head><body><script type="text/javascript">
+<html xmlns="http://www.w3.org/1999/xhtml"><head><title>Markers</title><meta http-equiv="Content-Type" content="text/html; charset=utf-8"></meta><link rel="stylesheet" href="css/black-tie/jquery-ui-1.8.2.custom.css" type="text/css"></link><link rel="stylesheet" href="css/jquery.treeview.css" type="text/css"></link><link rel="stylesheet" href="css/default.css" type="text/css"></link><script type="text/javascript" src="js/jquery-1.4.2.min.js"></script><script type="text/javascript" src="js/jquery-ui-1.8.2.custom.min.js"></script><script type="text/javascript" src="js/jquery.cookie.js"></script><script type="text/javascript" src="js/jquery.treeview.js"></script></head><body><script type="text/javascript">
           $(document).ready(function()
           {
             $(".filetree").treeview({
-              animated: 'fast'
+              animated: "fast",
+              collapsed: true,
+              persist: "cookie"
             });
           });
 
@@ -102,7 +104,14 @@
               source: search_index,
               select: function(event, ui) {
                 // redirect to the documentation
-                parent.content.document.location = ''+ui.item.id;
+                if ((parent) && (parent.content))
+                {
+                  parent.content.document.location = ''+ui.item.id;
+                }
+                else
+                {
+                  jQuery(document).location = ''+ui.item.id;
+                }
                 applySearchHash();
               }
             });
@@ -111,27 +120,22 @@
       });
     </script><input id="search_box"></input><div class="section">
 <h1>Namespaces</h1>
-<ul id="namespaces-" class="filetree">
-<li class="closed">
+<ul id="namespaces-" class="filetree"><li class="closed">
 <span class="folder">aura</span><ul><li class="closed">
 <span class="folder">autoload</span><ul>
-<li><span class="file"><a href="src_Loader.html#Loader">Loader</a><br><small>An SPL autoloader adhering to [PSR-0](http://groups.google.com/group/php-standards/web/psr-0-final-proposal).</small></span></li>
 <li><span class="file"><a href="src_Exception.html#Exception">Exception</a><br><small>Generic package exception.</small></span></li>
 <li><span class="file"><a href="src_Exception_NotFound.html#Exception_NotFound">Exception_NotFound</a><br><small>Indicates the Loader failed to find a class file.</small></span></li>
+<li><span class="file"><a href="src_Loader.html#Loader">Loader</a><br><small>An SPL autoloader adhering to [PSR-0](http://groups.google.com/group/php-standards/web/psr-0-final-proposal).</small></span></li>
 </ul>
 </li></ul>
-</li>
-<li class="closed">
-<span class="folder">default</span><ul></ul>
-</li>
-</ul>
+</li></ul>
 </div><div class="section">
 <h1>Packages</h1>
 <ul id="packages-" class="filetree"><li class="closed">
-<span class="folder">aura.autoload</span><ul id="packages_aura.autoload" class=".filetree">
-<li class="closed"><span class="file"><a href="src_Loader.html#Loader">Loader</a><br><small>An SPL autoloader adhering to [PSR-0](http://groups.google.com/group/php-standards/web/psr-0-final-proposal).</small></span></li>
+<span class="folder">aura.autoload</span><ul id="packages_aura.autoload" class="filetree">
 <li class="closed"><span class="file"><a href="src_Exception.html#Exception">Exception</a><br><small>Generic package exception.</small></span></li>
 <li class="closed"><span class="file"><a href="src_Exception_NotFound.html#Exception_NotFound">Exception_NotFound</a><br><small>Indicates the Loader failed to find a class file.</small></span></li>
+<li class="closed"><span class="file"><a href="src_Loader.html#Loader">Loader</a><br><small>An SPL autoloader adhering to [PSR-0](http://groups.google.com/group/php-standards/web/psr-0-final-proposal).</small></span></li>
 </ul>
 </li></ul>
 </div>

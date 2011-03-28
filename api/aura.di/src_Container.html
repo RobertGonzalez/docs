@@ -1,8 +1,10 @@
-<html xmlns="http://www.w3.org/1999/xhtml"><head><title>File</title><meta http-equiv="Content-Type" content="text/html; charset=utf-8"></meta><link rel="stylesheet" href="css/black-tie/jquery-ui-1.8.2.custom.css" type="text/css"></link><link rel="stylesheet" href="css/jquery.treeview.css" type="text/css"></link><link rel="stylesheet" href="css/default.css" type="text/css"></link><script type="text/javascript" src="js/jquery-1.4.2.min.js"></script><script type="text/javascript" src="js/jquery-ui-1.8.2.custom.min.js"></script><script type="text/javascript" src="js/jquery.treeview.js"></script></head><body><script type="text/javascript">
+<html xmlns="http://www.w3.org/1999/xhtml"><head><title>File</title><meta http-equiv="Content-Type" content="text/html; charset=utf-8"></meta><link rel="stylesheet" href="css/black-tie/jquery-ui-1.8.2.custom.css" type="text/css"></link><link rel="stylesheet" href="css/jquery.treeview.css" type="text/css"></link><link rel="stylesheet" href="css/default.css" type="text/css"></link><script type="text/javascript" src="js/jquery-1.4.2.min.js"></script><script type="text/javascript" src="js/jquery-ui-1.8.2.custom.min.js"></script><script type="text/javascript" src="js/jquery.cookie.js"></script><script type="text/javascript" src="js/jquery.treeview.js"></script></head><body><script type="text/javascript">
           $(document).ready(function()
           {
             $(".filetree").treeview({
-              animated: 'fast'
+              animated: "fast",
+              collapsed: true,
+              persist: "cookie"
             });
           });
 
@@ -57,11 +59,12 @@
 <h3>Container</h3>
 <div class="properties">
 <h1>Properties</h1>
-<label class="property-key">Extends</label><div class="property-value"> </div>
+<label class="property-key">Extends</label><div class="property-value">
+         </div>
 <label class="property-key">Implements</label><div class="property-value"> 
       </div>
 <label class="property-key">package</label><div class="property-value">
-<a title="aura.di">aura.di</a>
+<a title=""></a>
              
         </div>
 <label class="property-key">Abstract</label><div class="property-value">No 
@@ -70,7 +73,8 @@
       </div>
 </div>
 <h4>Description</h4>
-<em>Dependency injection container.</em><br><br><div id="methods_Container">
+<em>Dependency injection container.</em><br>
+<br><div id="methods_Container">
 <h4>Methods</h4>
 <a style="font-style: italic;" href="#Container::__construct()">__construct</a>,
       <a style="font-style: italic;" href="#Container::__get()">__get</a>,
@@ -84,8 +88,8 @@
       <a style="font-style: italic;" href="#Container::set()">set</a>,
       <div class="method">
 <a id="Container::__construct()"></a><h3>__construct<span class="nb-faded-text">(
-          <a href="src_ForgeInterface.html">aura\di\ForgeInterface</a>
-             
+          <a href="src_ForgeInterface.html#aura%5Cdi%5CForgeInterface">aura\di\ForgeInterface</a>
+              |
             $forge,
           
           )
@@ -94,7 +98,8 @@
         <span class="nb-faded-text">n/a</span>
 </h3>
 <h4>Description</h4>
-<em>Constructor.</em><br><h4>Arguments</h4>
+<em>Constructor.</em><br><small>
+</small><br><h4>Arguments</h4>
 <table>
 <thead><tr>
 <th>Name</th>
@@ -104,7 +109,9 @@
 </tr></thead>
 <tbody><tr>
 <td>$forge</td>
-<td><a href="src_ForgeInterface.html">aura\di\ForgeInterface</a></td>
+<td style="white-space: normal;">
+<a href="src_ForgeInterface.html#aura%5Cdi%5CForgeInterface">aura\di\ForgeInterface</a> |
+                </td>
 <td>A forge for creating objects using keyword parameter configuration.</td>
 <td></td>
 </tr></tbody>
@@ -124,7 +131,7 @@
 <div class="method">
 <a id="Container::__get()"></a><h3>__get<span class="nb-faded-text">(
           string
-             
+              |
             $key,
           
           )
@@ -133,7 +140,9 @@
         <span class="nb-faded-text">mixed</span>
 </h3>
 <h4>Description</h4>
-<em>Magic get to provide access to the Forge and the Config::$external <br/>objects.</em><br><h4>Arguments</h4>
+<em>Magic get to provide access to the Forge and the Config::$external 
+objects.</em><br><small>
+</small><br><h4>Arguments</h4>
 <table>
 <thead><tr>
 <th>Name</th>
@@ -143,8 +152,9 @@
 </tr></thead>
 <tbody><tr>
 <td>$key</td>
-<td>string</td>
-<td>The property to retrieve ('forge' or 'config').</td>
+<td style="white-space: normal;">string |
+                </td>
+<td>The property to retrieve (&#039;forge&#039; or &#039;config&#039;).</td>
 <td></td>
 </tr></tbody>
 </table>
@@ -163,7 +173,7 @@
 <div class="method">
 <a id="Container::get()"></a><h3>get<span class="nb-faded-text">(
           string
-             
+              |
             $key,
           
           )
@@ -172,7 +182,8 @@
         <span class="nb-faded-text">object</span>
 </h3>
 <h4>Description</h4>
-<em>Gets a service object by key, lazy-loading it as needed.</em><br><h4>Arguments</h4>
+<em>Gets a service object by key, lazy-loading it as needed.</em><br><small>
+</small><br><h4>Arguments</h4>
 <table>
 <thead><tr>
 <th>Name</th>
@@ -182,7 +193,8 @@
 </tr></thead>
 <tbody><tr>
 <td>$key</td>
-<td>string</td>
+<td style="white-space: normal;">string |
+                </td>
 <td>The service to get.</td>
 <td></td>
 </tr></tbody>
@@ -220,7 +232,8 @@ does not exist.</td>
         <span class="nb-faded-text">array</span>
 </h3>
 <h4>Description</h4>
-<em>Gets the Forge object used for creating new instances.</em><br><h4>Return value</h4>
+<em>Gets the Forge object used for creating new instances.</em><br><small>
+</small><br><h4>Return value</h4>
 <table>
 <thead><tr>
 <th>Type</th>
@@ -241,7 +254,8 @@ does not exist.</td>
         <span class="nb-faded-text">array</span>
 </h3>
 <h4>Description</h4>
-<em>Gets the list of services provided.</em><br><h4>Return value</h4>
+<em>Gets the list of services provided.</em><br><small>
+</small><br><h4>Return value</h4>
 <table>
 <thead><tr>
 <th>Type</th>
@@ -256,7 +270,7 @@ does not exist.</td>
 <div class="method">
 <a id="Container::has()"></a><h3>has<span class="nb-faded-text">(
           string
-             
+              |
             $key,
           
           )
@@ -265,7 +279,8 @@ does not exist.</td>
         <span class="nb-faded-text">bool</span>
 </h3>
 <h4>Description</h4>
-<em>Does a particular service exist?</em><br><h4>Arguments</h4>
+<em>Does a particular service exist?</em><br><small>
+</small><br><h4>Arguments</h4>
 <table>
 <thead><tr>
 <th>Name</th>
@@ -275,7 +290,8 @@ does not exist.</td>
 </tr></thead>
 <tbody><tr>
 <td>$key</td>
-<td>string</td>
+<td style="white-space: normal;">string |
+                </td>
 <td>The service key to look up.</td>
 <td></td>
 </tr></tbody>
@@ -295,16 +311,25 @@ does not exist.</td>
 <div class="method">
 <a id="Container::lazyGet()"></a><h3>lazyGet<span class="nb-faded-text">(
           string
-             
+              |
             $key,
           
           )
         </span>
         :
-        <span class="nb-faded-text"><a href="src_Lazy.html">aura\di\Lazy</a></span>
+        <span class="nb-faded-text"><a href="src_Lazy.html#aura%5Cdi%5CLazy">aura\di\Lazy</a></span>
 </h3>
 <h4>Description</h4>
-<em>Returns a Lazy that gets a service. This allows you to replace the<br/>following idiom ...</em><br><small>$di->params['ClassName']['param_name'] = new Lazy(function() use ($di)) {<br/>         return $di->get('service');<br/>     }<br/><br/>... with the following:<br/><br/>     $di->params['ClassName']['param_name'] = $di->lazyGet('service');</small><br><h4>Arguments</h4>
+<em>Returns a Lazy that gets a service. This allows you to replace the
+following idiom ...</em><br><small><p>$di->params['ClassName']['param_name'] = new Lazy(function() use ($di)) {
+         return $di->get('service');
+     }</p>
+
+<p>... with the following:</p>
+
+<pre><code> $di-&gt;params['ClassName']['param_name'] = $di-&gt;lazyGet('service');
+</code></pre>
+</small><br><h4>Arguments</h4>
 <table>
 <thead><tr>
 <th>Name</th>
@@ -314,7 +339,8 @@ does not exist.</td>
 </tr></thead>
 <tbody><tr>
 <td>$key</td>
-<td>string</td>
+<td style="white-space: normal;">string |
+                </td>
 <td>The service name; it does not need to exist yet.</td>
 <td></td>
 </tr></tbody>
@@ -326,7 +352,7 @@ does not exist.</td>
 <th>Description</th>
 </tr></thead>
 <tbody><tr>
-<td><a href="src_Lazy.html">aura\di\Lazy</a></td>
+<td><a href="src_Lazy.html#aura%5Cdi%5CLazy">aura\di\Lazy</a></td>
 <td>A lazy-load object that gets the named service.</td>
 </tr></tbody>
 </table>
@@ -334,20 +360,29 @@ does not exist.</td>
 <div class="method">
 <a id="Container::lazyNew()"></a><h3>lazyNew<span class="nb-faded-text">(
           string
-             
+              |
             $class,
           array
-             
+              |
             $params
             = null,
           
           )
         </span>
         :
-        <span class="nb-faded-text"><a href="src_Lazy.html">aura\di\Lazy</a></span>
+        <span class="nb-faded-text"><a href="src_Lazy.html#aura%5Cdi%5CLazy">aura\di\Lazy</a></span>
 </h3>
 <h4>Description</h4>
-<em>Returns a Lazy that creates a new instance. This allows you to replace<br/>the following idiom:</em><br><small>$di->params['ClassName']['param_name'] = Lazy(function() use ($di)) {<br/>         return $di->newInstance('OtherClass', array(...));<br/>     }<br/><br/>... with the following:<br/><br/>     $di->params['ClassName']['param_name'] = $di->lazyNew('OtherClass', array(...));</small><br><h4>Arguments</h4>
+<em>Returns a Lazy that creates a new instance. This allows you to replace
+the following idiom:</em><br><small><p>$di->params['ClassName']['param_name'] = Lazy(function() use ($di)) {
+         return $di->newInstance('OtherClass', array(...));
+     }</p>
+
+<p>... with the following:</p>
+
+<pre><code> $di-&gt;params['ClassName']['param_name'] = $di-&gt;lazyNew('OtherClass', array(...));
+</code></pre>
+</small><br><h4>Arguments</h4>
 <table>
 <thead><tr>
 <th>Name</th>
@@ -358,13 +393,15 @@ does not exist.</td>
 <tbody>
 <tr>
 <td>$class</td>
-<td>string</td>
+<td style="white-space: normal;">string |
+                </td>
 <td>The type of class of instantiate.</td>
 <td></td>
 </tr>
 <tr>
 <td>$params</td>
-<td>array</td>
+<td style="white-space: normal;">array |
+                </td>
 <td>Override parameters for the instance.</td>
 <td>null</td>
 </tr>
@@ -377,7 +414,7 @@ does not exist.</td>
 <th>Description</th>
 </tr></thead>
 <tbody><tr>
-<td><a href="src_Lazy.html">aura\di\Lazy</a></td>
+<td><a href="src_Lazy.html#aura%5Cdi%5CLazy">aura\di\Lazy</a></td>
 <td>A lazy-load object that creates the new instance.</td>
 </tr></tbody>
 </table>
@@ -385,10 +422,10 @@ does not exist.</td>
 <div class="method">
 <a id="Container::newInstance()"></a><h3>newInstance<span class="nb-faded-text">(
           string
-             
+              |
             $class,
           array
-             
+              |
             $params
             = null,
           
@@ -398,7 +435,9 @@ does not exist.</td>
         <span class="nb-faded-text">object</span>
 </h3>
 <h4>Description</h4>
-<em>Returns a new instance of the specified class, optionally <br/>with additional override parameters.</em><br><h4>Arguments</h4>
+<em>Returns a new instance of the specified class, optionally 
+with additional override parameters.</em><br><small>
+</small><br><h4>Arguments</h4>
 <table>
 <thead><tr>
 <th>Name</th>
@@ -409,13 +448,15 @@ does not exist.</td>
 <tbody>
 <tr>
 <td>$class</td>
-<td>string</td>
+<td style="white-space: normal;">string |
+                </td>
 <td>The type of class of instantiate.</td>
 <td></td>
 </tr>
 <tr>
 <td>$params</td>
-<td>array</td>
+<td style="white-space: normal;">array |
+                </td>
 <td>Override parameters for the instance.</td>
 <td>null</td>
 </tr>
@@ -436,10 +477,10 @@ does not exist.</td>
 <div class="method">
 <a id="Container::set()"></a><h3>set<span class="nb-faded-text">(
           string
-             
+              |
             $key,
           object
-             
+              |
             $val,
           
           )
@@ -448,7 +489,9 @@ does not exist.</td>
         <span class="nb-faded-text">n/a</span>
 </h3>
 <h4>Description</h4>
-<em>Sets a service object by name.</em><br><small>If you set a service as a closure, it is automatically treated as a <br/>Lazy.</small><br><h4>Arguments</h4>
+<em>Sets a service object by name.</em><br><small><p>If you set a service as a closure, it is automatically treated as a 
+Lazy.</p>
+</small><br><h4>Arguments</h4>
 <table>
 <thead><tr>
 <th>Name</th>
@@ -459,13 +502,15 @@ does not exist.</td>
 <tbody>
 <tr>
 <td>$key</td>
-<td>string</td>
+<td style="white-space: normal;">string |
+                </td>
 <td>The service key.</td>
 <td></td>
 </tr>
 <tr>
 <td>$val</td>
-<td>object</td>
+<td style="white-space: normal;">object |
+                </td>
 <td>The service object; if a Closure, is treated as a Lazy.</td>
 <td></td>
 </tr>
@@ -492,31 +537,37 @@ does not exist.</td>
       <a href="#Container::%24setter">$setter</a>,
       <div class="method">
 <a id="Container::$forge"></a><h3>
-<span class="nb-faded-text">array 
+<span class="nb-faded-text"> 
           protected 
           </span>$forge</h3>
-<em>A Forge object to create classes through reflection.</em><br><small></small><br><br>
+<em>A Forge object to create classes through reflection.</em><br><small>
+</small><br><br>
 </div>
 <div class="method">
 <a id="Container::$params"></a><h3>
-<span class="nb-faded-text">\ArrayObject 
+<span class="nb-faded-text"> 
           protected 
           </span>$params</h3>
-<em>A convenient reference to the Config::$params object, which itself<br/>is contained by the Forge object.</em><br><small></small><br><br>
+<em>A convenient reference to the Config::$params object, which itself
+is contained by the Forge object.</em><br><small>
+</small><br><br>
 </div>
 <div class="method">
 <a id="Container::$service"></a><h3>
-<span class="nb-faded-text">array 
+<span class="nb-faded-text"> 
           protected 
           </span>$service</h3>
-<em>Retains named services.</em><br><small></small><br><br>
+<em>Retains named services.</em><br><small>
+</small><br><br>
 </div>
 <div class="method">
 <a id="Container::$setter"></a><h3>
-<span class="nb-faded-text">\ArrayObject 
+<span class="nb-faded-text"> 
           protected 
           </span>$setter</h3>
-<em>A convenient reference to the Config::$setter object, which itself<br/>is contained by the Forge object.</em><br><small></small><br><br>
+<em>A convenient reference to the Config::$setter object, which itself
+is contained by the Forge object.</em><br><small>
+</small><br><br>
 </div>
 </div>
 <div style="clear: both"></div>
@@ -563,7 +614,14 @@ does not exist.</td>
               source: search_index,
               select: function(event, ui) {
                 // redirect to the documentation
-                parent.content.document.location = ''+ui.item.id;
+                if ((parent) && (parent.content))
+                {
+                  parent.content.document.location = ''+ui.item.id;
+                }
+                else
+                {
+                  jQuery(document).location = ''+ui.item.id;
+                }
                 applySearchHash();
               }
             });
@@ -572,34 +630,29 @@ does not exist.</td>
       });
     </script><input id="search_box"></input><div class="section">
 <h1>Namespaces</h1>
-<ul id="namespaces-" class="filetree">
-<li class="closed">
+<ul id="namespaces-" class="filetree"><li class="closed">
 <span class="folder">aura</span><ul><li class="closed">
 <span class="folder">di</span><ul>
-<li><span class="file"><a href="src_ForgeInterface.html#ForgeInterface">ForgeInterface</a><br><small></small></span></li>
-<li><span class="file"><a href="src_Container.html#Container">Container</a><br><small>Dependency injection container.</small></span></li>
-<li><span class="file"><a href="src_Forge.html#Forge">Forge</a><br><small>Creates objects using reflection and the specified configuration values.</small></span></li>
-<li><span class="file"><a href="src_Exception.html#Exception">Exception</a><br><small></small></span></li>
-<li><span class="file"><a href="src_ConfigInterface.html#ConfigInterface">ConfigInterface</a><br><small>Retains and unifies class constructor parameter values with external values.</small></span></li>
 <li><span class="file"><a href="src_Config.html#Config">Config</a><br><small>Retains and unifies class constructor parameter values with external values.</small></span></li>
-<li><span class="file"><a href="src_Lazy.html#Lazy">Lazy</a><br><small>Wraps a closure specifically for the purpose of lazy-loading an object.</small></span></li>
+<li><span class="file"><a href="src_ConfigInterface.html#ConfigInterface">ConfigInterface</a><br><small>Retains and unifies class constructor parameter values with external values.</small></span></li>
+<li><span class="file"><a href="src_Container.html#Container">Container</a><br><small>Dependency injection container.</small></span></li>
+<li><span class="file"><a href="src_Exception.html#Exception">Exception</a><br><small></small></span></li>
 <li><span class="file"><a href="src_Exception_ServiceInvalid.html#Exception_ServiceInvalid">Exception_ServiceInvalid</a><br><small></small></span></li>
 <li><span class="file"><a href="src_Exception_ServiceNotFound.html#Exception_ServiceNotFound">Exception_ServiceNotFound</a><br><small></small></span></li>
+<li><span class="file"><a href="src_Forge.html#Forge">Forge</a><br><small>Creates objects using reflection and the specified configuration values.</small></span></li>
+<li><span class="file"><a href="src_ForgeInterface.html#ForgeInterface">ForgeInterface</a><br><small></small></span></li>
+<li><span class="file"><a href="src_Lazy.html#Lazy">Lazy</a><br><small>Wraps a closure specifically for the purpose of lazy-loading an object.</small></span></li>
 </ul>
 </li></ul>
-</li>
-<li class="closed">
-<span class="folder">default</span><ul></ul>
-</li>
-</ul>
+</li></ul>
 </div><div class="section">
 <h1>Packages</h1>
 <ul id="packages-" class="filetree"><li class="closed">
-<span class="folder">aura.di</span><ul id="packages_aura.di" class=".filetree">
+<span class="folder">aura.di</span><ul id="packages_aura.di" class="filetree">
+<li class="closed"><span class="file"><a href="src_Config.html#Config">Config</a><br><small>Retains and unifies class constructor parameter values with external values.</small></span></li>
+<li class="closed"><span class="file"><a href="src_ConfigInterface.html#ConfigInterface">ConfigInterface</a><br><small>Retains and unifies class constructor parameter values with external values.</small></span></li>
 <li class="closed"><span class="file"><a href="src_Container.html#Container">Container</a><br><small>Dependency injection container.</small></span></li>
 <li class="closed"><span class="file"><a href="src_Forge.html#Forge">Forge</a><br><small>Creates objects using reflection and the specified configuration values.</small></span></li>
-<li class="closed"><span class="file"><a href="src_ConfigInterface.html#ConfigInterface">ConfigInterface</a><br><small>Retains and unifies class constructor parameter values with external values.</small></span></li>
-<li class="closed"><span class="file"><a href="src_Config.html#Config">Config</a><br><small>Retains and unifies class constructor parameter values with external values.</small></span></li>
 <li class="closed"><span class="file"><a href="src_Lazy.html#Lazy">Lazy</a><br><small>Wraps a closure specifically for the purpose of lazy-loading an object.</small></span></li>
 </ul>
 </li></ul>

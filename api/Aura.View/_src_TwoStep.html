@@ -1,0 +1,713 @@
+<html xmlns="http://www.w3.org/1999/xhtml"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Aura Project for PHP: Aura.View</title><link rel="stylesheet" href="css/black-tie/jquery-ui-1.8.2.custom.css" type="text/css"></link><link rel="stylesheet" href="css/jquery.treeview.css" type="text/css"></link><link rel="stylesheet" href="css/theme.css" type="text/css"></link><script type="text/javascript" src="js/jquery-1.4.2.min.js"></script><script type="text/javascript" src="js/jquery-ui-1.8.2.custom.min.js"></script><script type="text/javascript" src="js/jquery.cookie.js"></script><script type="text/javascript" src="js/jquery.treeview.js"></script><script type="text/javascript">
+            $(document).ready(function() {
+                $(".filetree").treeview({
+                    collapsed: true,
+                    persist: "cookie"
+                });
+
+                $("#accordion").accordion({
+                    collapsible: true,
+                    autoHeight:  false,
+                    fillSpace:   true
+                });
+
+                $(".tabs").tabs();
+            });
+        </script></head><body><div xmlns="" id="content">
+<script>
+      $(document).ready(function() {
+        $('dl.function-info, dl.constant-info, dl.property-info').prev().css('cursor', 'pointer');
+        $('dl.function-info, dl.constant-info, dl.property-info').prev().click(function() {
+          if ($(this).next().is(':hidden'))
+          {
+            $(this).children('img')[0].src = 'images/arrow_down.gif';
+          } else
+          {
+            $(this).children('img')[0].src = 'images/arrow_right.gif';
+          }
+          $(this).next().slideToggle();
+        });
+      $('dl.function-info, dl.constant-info, dl.property-info').hide();
+      $('dl.function-info img, dl.constant-info img, dl.property-info img').show();
+      });
+    </script><a name="top"></a><h1 class="file">src/TwoStep.php</h1>
+<div class="file_menu">
+<a href="#classes">Classes</a> </div>
+<dl class="file-info">
+<dt>Classes</dt>
+<dd><a class="class" href="#%5CAura%5CView%5CTwoStep">TwoStep</a></dd>
+</dl>
+<a name="classes"></a><a id="\Aura\View\TwoStep"></a><h2 class="class">\Aura\View\TwoStep<div class="to-top"><a href="#top">jump to top</a></div>
+</h2>
+<div class="class">
+<dl class="class-info">
+<dt>package</dt>
+<dd>Aura.View</dd>
+<dt>Properties</dt>
+<dd><a class="property protected" href="#%5CAura%5CView%5CTwoStep::%24view_name">$view_name</a></dd>
+<dd><a class="property protected" href="#%5CAura%5CView%5CTwoStep::%24view_data">$view_data</a></dd>
+<dd><a class="property protected" href="#%5CAura%5CView%5CTwoStep::%24view_paths">$view_paths</a></dd>
+<dd><a class="property protected" href="#%5CAura%5CView%5CTwoStep::%24layout_name">$layout_name</a></dd>
+<dd><a class="property protected" href="#%5CAura%5CView%5CTwoStep::%24layout_data">$layout_data</a></dd>
+<dd><a class="property protected" href="#%5CAura%5CView%5CTwoStep::%24layout_paths">$layout_paths</a></dd>
+<dd><a class="property protected" href="#%5CAura%5CView%5CTwoStep::%24layout_content_var">$layout_content_var</a></dd>
+<dd><a class="property protected" href="#%5CAura%5CView%5CTwoStep::%24template">$template</a></dd>
+<dt>Methods</dt>
+<dd><a class="method public" href="#%5CAura%5CView%5CTwoStep::__construct()">__construct</a></dd>
+<dd><a class="method public" href="#%5CAura%5CView%5CTwoStep::setViewName()">setViewName</a></dd>
+<dd><a class="method public" href="#%5CAura%5CView%5CTwoStep::setViewData()">setViewData</a></dd>
+<dd><a class="method public" href="#%5CAura%5CView%5CTwoStep::setViewPaths()">setViewPaths</a></dd>
+<dd><a class="method public" href="#%5CAura%5CView%5CTwoStep::addViewPath()">addViewPath</a></dd>
+<dd><a class="method public" href="#%5CAura%5CView%5CTwoStep::setLayoutName()">setLayoutName</a></dd>
+<dd><a class="method public" href="#%5CAura%5CView%5CTwoStep::setLayoutData()">setLayoutData</a></dd>
+<dd><a class="method public" href="#%5CAura%5CView%5CTwoStep::setLayoutPaths()">setLayoutPaths</a></dd>
+<dd><a class="method public" href="#%5CAura%5CView%5CTwoStep::addLayoutPath()">addLayoutPath</a></dd>
+<dd><a class="method public" href="#%5CAura%5CView%5CTwoStep::setLayoutContentVar()">setLayoutContentVar</a></dd>
+<dd><a class="method public" href="#%5CAura%5CView%5CTwoStep::render()">render</a></dd>
+</dl>
+<h3>Description</h3>
+<p class="short-description">Provides a Two Step View pattern implementation; this allows for an
+inner "view" and and outer "layout" as commonly used by web apps.</p>
+<div class="long-description">
+</div>
+<h3>Properties</h3>
+<div>
+<a id="\Aura\View\TwoStep::$layout_content_var"></a><h4 class="property protected">$layout_content_var<div class="to-top"><a href="#%5CAura%5CView%5CTwoStep">jump to class</a></div>
+</h4>
+<div class="property">
+<code>\string <span class="highlight">$layout_content_var</span> = 'layout_content'</code><p class="short-description">The name of the variable in the outer layout template that should be
+replaced with the output of the inner view template.</p>
+<div class="long-description">
+</div>
+<div class="api-section">
+<h4 class="info">
+<img src="images/arrow_right.gif"> Details</h4>
+<dl class="property-info">
+<dt></dt>
+<dd>\string<br><em></em>
+</dd>
+<dt>visibility</dt>
+<dd>protected</dd>
+<dt>default</dt>
+<dd>layout_content</dd>
+<dt>final</dt>
+<dd>false</dd>
+<dt>static</dt>
+<dd>false</dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+<a id="\Aura\View\TwoStep::$layout_data"></a><h4 class="property protected">$layout_data<div class="to-top"><a href="#%5CAura%5CView%5CTwoStep">jump to class</a></div>
+</h4>
+<div class="property">
+<code>\array <span class="highlight">$layout_data</span> = 'array'</code><p class="short-description">The data for the outer layout template.</p>
+<div class="long-description">
+</div>
+<div class="api-section">
+<h4 class="info">
+<img src="images/arrow_right.gif"> Details</h4>
+<dl class="property-info">
+<dt></dt>
+<dd>\array<br><em></em>
+</dd>
+<dt>visibility</dt>
+<dd>protected</dd>
+<dt>default</dt>
+<dd>array</dd>
+<dt>final</dt>
+<dd>false</dd>
+<dt>static</dt>
+<dd>false</dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+<a id="\Aura\View\TwoStep::$layout_name"></a><h4 class="property protected">$layout_name<div class="to-top"><a href="#%5CAura%5CView%5CTwoStep">jump to class</a></div>
+</h4>
+<div class="property">
+<code>\string <span class="highlight">$layout_name</span> = ''</code><p class="short-description">The name of the outer layout template.</p>
+<div class="long-description">
+</div>
+<div class="api-section">
+<h4 class="info">
+<img src="images/arrow_right.gif"> Details</h4>
+<dl class="property-info">
+<dt></dt>
+<dd>\string<br><em></em>
+</dd>
+<dt>visibility</dt>
+<dd>protected</dd>
+<dt>default</dt>
+<dd></dd>
+<dt>final</dt>
+<dd>false</dd>
+<dt>static</dt>
+<dd>false</dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+<a id="\Aura\View\TwoStep::$layout_paths"></a><h4 class="property protected">$layout_paths<div class="to-top"><a href="#%5CAura%5CView%5CTwoStep">jump to class</a></div>
+</h4>
+<div class="property">
+<code>\array <span class="highlight">$layout_paths</span> = 'array'</code><p class="short-description">The paths to search when finding the outer layout template.</p>
+<div class="long-description">
+</div>
+<div class="api-section">
+<h4 class="info">
+<img src="images/arrow_right.gif"> Details</h4>
+<dl class="property-info">
+<dt></dt>
+<dd>\array<br><em></em>
+</dd>
+<dt>visibility</dt>
+<dd>protected</dd>
+<dt>default</dt>
+<dd>array</dd>
+<dt>final</dt>
+<dd>false</dd>
+<dt>static</dt>
+<dd>false</dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+<a id="\Aura\View\TwoStep::$template"></a><h4 class="property protected">$template<div class="to-top"><a href="#%5CAura%5CView%5CTwoStep">jump to class</a></div>
+</h4>
+<div class="property">
+<code><a href="_src_Template.html#%5CAura%5CView%5CTemplate">\Aura\View\Template</a> <span class="highlight">$template</span> = ''</code><p class="short-description">The Template object to be used when rendering the inner view and outer
+layout.</p>
+<div class="long-description">
+</div>
+<div class="api-section">
+<h4 class="info">
+<img src="images/arrow_right.gif"> Details</h4>
+<dl class="property-info">
+<dt></dt>
+<dd>
+<a href="_src_Template.html#%5CAura%5CView%5CTemplate">\Aura\View\Template</a><br><em></em>
+</dd>
+<dt>visibility</dt>
+<dd>protected</dd>
+<dt>default</dt>
+<dd></dd>
+<dt>final</dt>
+<dd>false</dd>
+<dt>static</dt>
+<dd>false</dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+<a id="\Aura\View\TwoStep::$view_data"></a><h4 class="property protected">$view_data<div class="to-top"><a href="#%5CAura%5CView%5CTwoStep">jump to class</a></div>
+</h4>
+<div class="property">
+<code>\array <span class="highlight">$view_data</span> = 'array'</code><p class="short-description">The data for the inner view template.</p>
+<div class="long-description">
+</div>
+<div class="api-section">
+<h4 class="info">
+<img src="images/arrow_right.gif"> Details</h4>
+<dl class="property-info">
+<dt></dt>
+<dd>\array<br><em></em>
+</dd>
+<dt>visibility</dt>
+<dd>protected</dd>
+<dt>default</dt>
+<dd>array</dd>
+<dt>final</dt>
+<dd>false</dd>
+<dt>static</dt>
+<dd>false</dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+<a id="\Aura\View\TwoStep::$view_name"></a><h4 class="property protected">$view_name<div class="to-top"><a href="#%5CAura%5CView%5CTwoStep">jump to class</a></div>
+</h4>
+<div class="property">
+<code>\string <span class="highlight">$view_name</span> = ''</code><p class="short-description">The name of the inner view template.</p>
+<div class="long-description">
+</div>
+<div class="api-section">
+<h4 class="info">
+<img src="images/arrow_right.gif"> Details</h4>
+<dl class="property-info">
+<dt></dt>
+<dd>\string<br><em></em>
+</dd>
+<dt>visibility</dt>
+<dd>protected</dd>
+<dt>default</dt>
+<dd></dd>
+<dt>final</dt>
+<dd>false</dd>
+<dt>static</dt>
+<dd>false</dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+<a id="\Aura\View\TwoStep::$view_paths"></a><h4 class="property protected">$view_paths<div class="to-top"><a href="#%5CAura%5CView%5CTwoStep">jump to class</a></div>
+</h4>
+<div class="property">
+<code>\array <span class="highlight">$view_paths</span> = 'array'</code><p class="short-description">The paths to search when finding the inner view template.</p>
+<div class="long-description">
+</div>
+<div class="api-section">
+<h4 class="info">
+<img src="images/arrow_right.gif"> Details</h4>
+<dl class="property-info">
+<dt></dt>
+<dd>\array<br><em></em>
+</dd>
+<dt>visibility</dt>
+<dd>protected</dd>
+<dt>default</dt>
+<dd>array</dd>
+<dt>final</dt>
+<dd>false</dd>
+<dt>static</dt>
+<dd>false</dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+</div>
+<h3>Methods</h3>
+<div>
+<a id="\Aura\View\TwoStep::__construct()"></a><h4 class="method public">__construct<div class="to-top"><a href="#TwoStep">jump to class</a></div>
+</h4>
+<div class="method">
+<code><span class="highlight">__construct</span><span class="nb-faded-text">(
+          <a href="_src_Template.html#%5CAura%5CView%5CTemplate">\Aura\View\Template</a> $template
+          )
+        </span>
+        :
+        </code><p class="short-description">Constructor.</p>
+<div class="long-description">
+</div>
+<div class="api-section">
+<h5 class="arguments">Arguments</h5>
+<dl class="argument-info">
+<dt>$template</dt>
+<dd>\Aura\View\Template<br><em>The Template object to be used when rendering the inner view and outer layout.</em>
+</dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h5 class="info">
+<img src="images/arrow_right.gif"> Details</h5>
+<dl class="function-info">
+<dt>visibility</dt>
+<dd>public</dd>
+<dt>final</dt>
+<dd>false</dd>
+<dt>static</dt>
+<dd>false</dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+<a id="\Aura\View\TwoStep::addLayoutPath()"></a><h4 class="method public">addLayoutPath<div class="to-top"><a href="#TwoStep">jump to class</a></div>
+</h4>
+<div class="method">
+<code><span class="highlight">addLayoutPath</span><span class="nb-faded-text">(
+           $path
+          )
+        </span>
+        :
+        </code><div class="api-section">
+<h5 class="arguments">Arguments</h5>
+<dl class="argument-info">
+<dt>$path</dt>
+<dd><em></em></dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h5 class="info">
+<img src="images/arrow_right.gif"> Details</h5>
+<dl class="function-info">
+<dt>visibility</dt>
+<dd>public</dd>
+<dt>final</dt>
+<dd>false</dd>
+<dt>static</dt>
+<dd>false</dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+<a id="\Aura\View\TwoStep::addViewPath()"></a><h4 class="method public">addViewPath<div class="to-top"><a href="#TwoStep">jump to class</a></div>
+</h4>
+<div class="method">
+<code><span class="highlight">addViewPath</span><span class="nb-faded-text">(
+           $path
+          )
+        </span>
+        :
+        </code><div class="api-section">
+<h5 class="arguments">Arguments</h5>
+<dl class="argument-info">
+<dt>$path</dt>
+<dd><em></em></dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h5 class="info">
+<img src="images/arrow_right.gif"> Details</h5>
+<dl class="function-info">
+<dt>visibility</dt>
+<dd>public</dd>
+<dt>final</dt>
+<dd>false</dd>
+<dt>static</dt>
+<dd>false</dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+<a id="\Aura\View\TwoStep::render()"></a><h4 class="method public">render<div class="to-top"><a href="#TwoStep">jump to class</a></div>
+</h4>
+<div class="method">
+<code><span class="highlight">render</span><span class="nb-faded-text">(
+          
+          )
+        </span>
+        :
+        \string</code><p class="short-description">Renders the inner view and outer layout templates and returns the
+resulting output.</p>
+<div class="long-description">
+</div>
+<div class="api-section">
+<h5 class="output">Output</h5>
+<dl class="return-info">
+<dt>\string</dt>
+<dd><em>The rendered two-step view results.</em></dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h5 class="info">
+<img src="images/arrow_right.gif"> Details</h5>
+<dl class="function-info">
+<dt>visibility</dt>
+<dd>public</dd>
+<dt>final</dt>
+<dd>false</dd>
+<dt>static</dt>
+<dd>false</dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+<a id="\Aura\View\TwoStep::setLayoutContentVar()"></a><h4 class="method public">setLayoutContentVar<div class="to-top"><a href="#TwoStep">jump to class</a></div>
+</h4>
+<div class="method">
+<code><span class="highlight">setLayoutContentVar</span><span class="nb-faded-text">(
+          \string $layout_content_var
+          )
+        </span>
+        :
+        \void</code><p class="short-description">Sets the name of the variable in the outer layout template that should
+be replaced with the output of the inner view template.</p>
+<div class="long-description">
+</div>
+<div class="api-section">
+<h5 class="arguments">Arguments</h5>
+<dl class="argument-info">
+<dt>$layout_content_var</dt>
+<dd>\string<br><em></em>
+</dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h5 class="output">Output</h5>
+<dl class="return-info">
+<dt>\void</dt>
+<dd><em></em></dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h5 class="info">
+<img src="images/arrow_right.gif"> Details</h5>
+<dl class="function-info">
+<dt>visibility</dt>
+<dd>public</dd>
+<dt>final</dt>
+<dd>false</dd>
+<dt>static</dt>
+<dd>false</dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+<a id="\Aura\View\TwoStep::setLayoutData()"></a><h4 class="method public">setLayoutData<div class="to-top"><a href="#TwoStep">jump to class</a></div>
+</h4>
+<div class="method">
+<code><span class="highlight">setLayoutData</span><span class="nb-faded-text">(
+          \array $layout_data
+          )
+        </span>
+        :
+        \void</code><p class="short-description">Sets the data for the outer layout template.</p>
+<div class="long-description">
+</div>
+<div class="api-section">
+<h5 class="arguments">Arguments</h5>
+<dl class="argument-info">
+<dt>$layout_data</dt>
+<dd>\array<br><em>The data for the outer layout template.</em>
+</dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h5 class="output">Output</h5>
+<dl class="return-info">
+<dt>\void</dt>
+<dd><em></em></dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h5 class="info">
+<img src="images/arrow_right.gif"> Details</h5>
+<dl class="function-info">
+<dt>visibility</dt>
+<dd>public</dd>
+<dt>final</dt>
+<dd>false</dd>
+<dt>static</dt>
+<dd>false</dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+<a id="\Aura\View\TwoStep::setLayoutName()"></a><h4 class="method public">setLayoutName<div class="to-top"><a href="#TwoStep">jump to class</a></div>
+</h4>
+<div class="method">
+<code><span class="highlight">setLayoutName</span><span class="nb-faded-text">(
+          \string $layout_name
+          )
+        </span>
+        :
+        \void</code><p class="short-description">Sets the name of the outer layout template.</p>
+<div class="long-description">
+</div>
+<div class="api-section">
+<h5 class="arguments">Arguments</h5>
+<dl class="argument-info">
+<dt>$layout_name</dt>
+<dd>\string<br><em>The name of the outer layout template.</em>
+</dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h5 class="output">Output</h5>
+<dl class="return-info">
+<dt>\void</dt>
+<dd><em></em></dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h5 class="info">
+<img src="images/arrow_right.gif"> Details</h5>
+<dl class="function-info">
+<dt>visibility</dt>
+<dd>public</dd>
+<dt>final</dt>
+<dd>false</dd>
+<dt>static</dt>
+<dd>false</dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+<a id="\Aura\View\TwoStep::setLayoutPaths()"></a><h4 class="method public">setLayoutPaths<div class="to-top"><a href="#TwoStep">jump to class</a></div>
+</h4>
+<div class="method">
+<code><span class="highlight">setLayoutPaths</span><span class="nb-faded-text">(
+          \string $layout_paths
+              =
+              array
+          )
+        </span>
+        :
+        \void</code><p class="short-description">Sets the paths to search when finding the outer layout template.</p>
+<div class="long-description">
+</div>
+<div class="api-section">
+<h5 class="arguments">Arguments</h5>
+<dl class="argument-info">
+<dt>$layout_paths</dt>
+<dd>\string<br><em>The paths to search when finding the outer layout template.</em>
+</dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h5 class="output">Output</h5>
+<dl class="return-info">
+<dt>\void</dt>
+<dd><em></em></dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h5 class="info">
+<img src="images/arrow_right.gif"> Details</h5>
+<dl class="function-info">
+<dt>visibility</dt>
+<dd>public</dd>
+<dt>final</dt>
+<dd>false</dd>
+<dt>static</dt>
+<dd>false</dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+<a id="\Aura\View\TwoStep::setViewData()"></a><h4 class="method public">setViewData<div class="to-top"><a href="#TwoStep">jump to class</a></div>
+</h4>
+<div class="method">
+<code><span class="highlight">setViewData</span><span class="nb-faded-text">(
+          \array $view_data
+          )
+        </span>
+        :
+        \void</code><p class="short-description">Sets the data for the inner view template.</p>
+<div class="long-description">
+</div>
+<div class="api-section">
+<h5 class="arguments">Arguments</h5>
+<dl class="argument-info">
+<dt>$view_data</dt>
+<dd>\array<br><em>The data for the inner view template.</em>
+</dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h5 class="output">Output</h5>
+<dl class="return-info">
+<dt>\void</dt>
+<dd><em></em></dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h5 class="info">
+<img src="images/arrow_right.gif"> Details</h5>
+<dl class="function-info">
+<dt>visibility</dt>
+<dd>public</dd>
+<dt>final</dt>
+<dd>false</dd>
+<dt>static</dt>
+<dd>false</dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+<a id="\Aura\View\TwoStep::setViewName()"></a><h4 class="method public">setViewName<div class="to-top"><a href="#TwoStep">jump to class</a></div>
+</h4>
+<div class="method">
+<code><span class="highlight">setViewName</span><span class="nb-faded-text">(
+          \string $view_name
+          )
+        </span>
+        :
+        \void</code><p class="short-description">Sets the name of the inner view template.</p>
+<div class="long-description">
+</div>
+<div class="api-section">
+<h5 class="arguments">Arguments</h5>
+<dl class="argument-info">
+<dt>$view_name</dt>
+<dd>\string<br><em>The name of the inner view template.</em>
+</dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h5 class="output">Output</h5>
+<dl class="return-info">
+<dt>\void</dt>
+<dd><em></em></dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h5 class="info">
+<img src="images/arrow_right.gif"> Details</h5>
+<dl class="function-info">
+<dt>visibility</dt>
+<dd>public</dd>
+<dt>final</dt>
+<dd>false</dd>
+<dt>static</dt>
+<dd>false</dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+<a id="\Aura\View\TwoStep::setViewPaths()"></a><h4 class="method public">setViewPaths<div class="to-top"><a href="#TwoStep">jump to class</a></div>
+</h4>
+<div class="method">
+<code><span class="highlight">setViewPaths</span><span class="nb-faded-text">(
+          \string $view_paths
+              =
+              array
+          )
+        </span>
+        :
+        \void</code><p class="short-description">Sets the paths to search when finding the inner view template.</p>
+<div class="long-description">
+</div>
+<div class="api-section">
+<h5 class="arguments">Arguments</h5>
+<dl class="argument-info">
+<dt>$view_paths</dt>
+<dd>\string<br><em>The paths to search when finding the inner view template.</em>
+</dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h5 class="output">Output</h5>
+<dl class="return-info">
+<dt>\void</dt>
+<dd><em></em></dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h5 class="info">
+<img src="images/arrow_right.gif"> Details</h5>
+<dl class="function-info">
+<dt>visibility</dt>
+<dd>public</dd>
+<dt>final</dt>
+<dd>false</dd>
+<dt>static</dt>
+<dd>false</dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<small xmlns="" class="footer">Documentation was generated by <a href="http://docblox-project.org">DocBlox 0.11.2</a>.
+    </small></body></html>

@@ -1,0 +1,295 @@
+<?xml version="1.0"?>
+<project version="0.11.2" title="Aura Project for PHP: Aura.Autoload">
+  <file path="src/Exception/AlreadyLoaded.php" hash="7e3cab95b603b3c2af2c0fcc9759aa48">
+    <class final="false" abstract="false" line="18" namespace="Aura\Autoload\Exception">
+      <name>AlreadyLoaded</name>
+      <extends>\Aura\Autoload\Exception</extends>
+      <full_name>\Aura\Autoload\Exception\AlreadyLoaded</full_name>
+      <docblock>
+        <description>Indicates a class has already been loaded.</description>
+        <long-description>
+</long-description>
+        <tag name="package" description="Aura.Autoload" line="11"/>
+      </docblock>
+    </class>
+  </file>
+  <file path="src/Exception/NotFound.php" hash="721d933ab441ac8683fe52dd87d9f6a1">
+    <class final="false" abstract="false" line="18" namespace="Aura\Autoload\Exception">
+      <name>NotFound</name>
+      <extends>\Aura\Autoload\Exception</extends>
+      <full_name>\Aura\Autoload\Exception\NotFound</full_name>
+      <docblock>
+        <description>Indicates the Loader failed to find a class file.</description>
+        <long-description>
+</long-description>
+        <tag name="package" description="Aura.Autoload" line="11"/>
+      </docblock>
+    </class>
+  </file>
+  <file path="src/Exception.php" hash="eb49f0026d17f9266c6d255329b881a4">
+    <class final="false" abstract="false" line="18" namespace="Aura\Autoload">
+      <name>Exception</name>
+      <extends>\Exception</extends>
+      <full_name>\Aura\Autoload\Exception</full_name>
+      <docblock>
+        <description>Generic package exception.</description>
+        <long-description>
+</long-description>
+        <tag name="package" description="Aura.Autoload" line="11"/>
+      </docblock>
+    </class>
+  </file>
+  <file path="src/Loader.php" hash="085b2e6953749abf87f679309f7a8ea0">
+    <class final="false" abstract="false" line="18" namespace="Aura\Autoload">
+      <name>Loader</name>
+      <extends/>
+      <full_name>\Aura\Autoload\Loader</full_name>
+      <docblock>
+        <description>An SPL autoloader adhering to [PSR-0](http://groups.google.com/group/php-standards/web/psr-0-final-proposal).</description>
+        <long-description>
+</long-description>
+        <tag name="package" description="Aura.Autoload" line="11"/>
+      </docblock>
+      <property final="false" static="false" visibility="protected" line="28">
+        <name>$loaded</name>
+        <default>array</default>
+        <docblock>
+          <description>Classes and interfaces loaded by the autoloader; the key is the class
+name and the value is the file name.</description>
+          <long-description>
+</long-description>
+          <tag name="var" description="" type="\array" line="20">
+            <type by_reference="false">\array</type>
+          </tag>
+        </docblock>
+      </property>
+      <property final="false" static="false" visibility="protected" line="37">
+        <name>$prefixes</name>
+        <default>array</default>
+        <docblock>
+          <description>A map of class name prefixes to directory names.</description>
+          <long-description>
+</long-description>
+          <tag name="var" description="" type="\array" line="30">
+            <type by_reference="false">\array</type>
+          </tag>
+        </docblock>
+      </property>
+      <property final="false" static="false" visibility="protected" line="46">
+        <name>$classes</name>
+        <default>array</default>
+        <docblock>
+          <description>A map of exact class names to their file paths.</description>
+          <long-description>
+</long-description>
+          <tag name="var" description="" type="\array" line="39">
+            <type by_reference="false">\array</type>
+          </tag>
+        </docblock>
+      </property>
+      <property final="false" static="false" visibility="protected" line="55">
+        <name>$dirs</name>
+        <default>array</default>
+        <docblock>
+          <description>The directories containing a particular class and its parents.</description>
+          <long-description>
+</long-description>
+          <tag name="var" description="" type="\array" line="48">
+            <type by_reference="false">\array</type>
+          </tag>
+        </docblock>
+      </property>
+      <method final="false" abstract="false" static="false" visibility="public" line="68">
+        <name>register</name>
+        <docblock>
+          <description>Registers this autoloader with SPL.</description>
+          <long-description>
+</long-description>
+          <tag name="param" description="The config mode of the Aura environment. In &amp;#039;test&amp;#039; mode, the autoloader looks for classes in the package tests directories." type="\string" variable="$config_mode" line="57">
+            <type by_reference="false">\string</type>
+          </tag>
+          <tag name="return" description="" type="\void" line="57">
+            <type by_reference="false">\void</type>
+          </tag>
+        </docblock>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" line="86">
+        <name>addPrefix</name>
+        <docblock>
+          <description>Adds a directory path for a class name prefix.</description>
+          <long-description>
+</long-description>
+          <tag name="param" description="The class name prefix, e.g. &amp;#039;Aura\Framework\\&amp;#039; or &amp;#039;Zend_&amp;#039;." type="\string" variable="$name" line="73">
+            <type by_reference="false">\string</type>
+          </tag>
+          <tag name="param" description="The absolute path leading to the classes for that prefix, e.g. &amp;#039;/path/to/system/package/Aura.Framework-dev/src&amp;#039;." type="\string" variable="$path" line="73">
+            <type by_reference="false">\string</type>
+          </tag>
+          <tag name="return" description="" type="\void" line="73">
+            <type by_reference="false">\void</type>
+          </tag>
+        </docblock>
+        <argument line="86">
+          <name>$name</name>
+          <default/>
+          <type/>
+        </argument>
+        <argument line="86">
+          <name>$path</name>
+          <default/>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" line="98">
+        <name>getPrefixes</name>
+        <docblock>
+          <description>Returns the list of all class name prefixes and their paths.</description>
+          <long-description>
+</long-description>
+          <tag name="return" description="" type="\array" line="91">
+            <type by_reference="false">\array</type>
+          </tag>
+        </docblock>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" line="114">
+        <name>addClass</name>
+        <docblock>
+          <description>Adds a file path for an exact class name.</description>
+          <long-description>
+</long-description>
+          <tag name="param" description="The exact class name." type="\string" variable="$name" line="103">
+            <type by_reference="false">\string</type>
+          </tag>
+          <tag name="param" description="The file path to that class." type="\string" variable="$path" line="103">
+            <type by_reference="false">\string</type>
+          </tag>
+          <tag name="return" description="" type="\void" line="103">
+            <type by_reference="false">\void</type>
+          </tag>
+        </docblock>
+        <argument line="114">
+          <name>$name</name>
+          <default/>
+          <type/>
+        </argument>
+        <argument line="114">
+          <name>$path</name>
+          <default/>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" line="126">
+        <name>getClasses</name>
+        <docblock>
+          <description>Returns the list of exact class names and their paths.</description>
+          <long-description>
+</long-description>
+          <tag name="return" description="" type="\array" line="119">
+            <type by_reference="false">\array</type>
+          </tag>
+        </docblock>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" line="139">
+        <name>getLoaded</name>
+        <docblock>
+          <description>Returns the list of classes and interfaces loaded by the autoloader.</description>
+          <long-description>
+</long-description>
+          <tag name="return" description="An array of key-value pairs where the key is the class or interface name and the value is the file name." type="\array" line="131">
+            <type by_reference="false">\array</type>
+          </tag>
+        </docblock>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" line="157">
+        <name>load</name>
+        <docblock>
+          <description>Loads a class or interface using the class name prefix and path,
+falling back to the include-path if not found.</description>
+          <long-description>
+</long-description>
+          <tag name="param" description="The class or interface to load." type="\string" variable="$class" line="144">
+            <type by_reference="false">\string</type>
+          </tag>
+          <tag name="return" description="" type="\void" line="144">
+            <type by_reference="false">\void</type>
+          </tag>
+          <tag name="throws" description="when the file for the class or interface is not found." type="\Exception\NotFound" line="144">
+            <type by_reference="false">\Exception\NotFound</type>
+          </tag>
+        </docblock>
+        <argument line="157">
+          <name>$class</name>
+          <default/>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" line="181">
+        <name>find</name>
+        <docblock>
+          <description>Finds the path to a class or interface using the prefixes and
+include-path.</description>
+          <long-description>
+</long-description>
+          <tag name="param" description="The class or interface to find." type="\string" variable="$class" line="171">
+            <type by_reference="false">\string</type>
+          </tag>
+          <tag name="return" description="absolute path to the class or interface." type="\Aura\Autoload\The" line="171">
+            <type by_reference="false">\Aura\Autoload\The</type>
+          </tag>
+        </docblock>
+        <argument line="181">
+          <name>$class</name>
+          <default/>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" line="235">
+        <name>findDir</name>
+        <argument line="235">
+          <name>$spec</name>
+          <default/>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" line="303">
+        <name>classToFile</name>
+        <docblock>
+          <description>PSR-0 compliant class-to-file inflector.</description>
+          <long-description>
+</long-description>
+          <tag name="param" description="The name of the class or interface to load." type="\string" variable="$spec" line="294">
+            <type by_reference="false">\string</type>
+          </tag>
+          <tag name="return" description="The filename version of the class or interface." type="\string" line="294">
+            <type by_reference="false">\string</type>
+          </tag>
+        </docblock>
+        <argument line="303">
+          <name>$spec</name>
+          <default/>
+          <type/>
+        </argument>
+      </method>
+    </class>
+  </file>
+  <file path="src.php" hash="2abaa332700a53ea314f163815cbfb9d">
+    <include type="Require Once" line="2">
+      <name>/src/Loader.php</name>
+    </include>
+    <include type="Require Once" line="3">
+      <name>/src/Exception.php</name>
+    </include>
+    <include type="Require Once" line="4">
+      <name>/src/Exception/NotFound.php</name>
+    </include>
+  </file>
+  <package name=""/>
+  <package name="Aura.Autoload"/>
+  <namespace name="Aura">
+    <namespace name="Autoload">
+      <namespace name="Exception"/>
+    </namespace>
+  </namespace>
+  <marker>todo</marker>
+  <marker>fixme</marker>
+</project>

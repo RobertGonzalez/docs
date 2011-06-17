@@ -1,0 +1,610 @@
+<html xmlns="http://www.w3.org/1999/xhtml"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Aura Project for PHP: Aura.Router</title><link rel="stylesheet" href="css/black-tie/jquery-ui-1.8.2.custom.css" type="text/css"></link><link rel="stylesheet" href="css/jquery.treeview.css" type="text/css"></link><link rel="stylesheet" href="css/theme.css" type="text/css"></link><script type="text/javascript" src="js/jquery-1.4.2.min.js"></script><script type="text/javascript" src="js/jquery-ui-1.8.2.custom.min.js"></script><script type="text/javascript" src="js/jquery.cookie.js"></script><script type="text/javascript" src="js/jquery.treeview.js"></script><script type="text/javascript">
+            $(document).ready(function() {
+                $(".filetree").treeview({
+                    collapsed: true,
+                    persist: "cookie"
+                });
+
+                $("#accordion").accordion({
+                    collapsible: true,
+                    autoHeight:  false,
+                    fillSpace:   true
+                });
+
+                $(".tabs").tabs();
+            });
+        </script></head><body><div xmlns="" id="content">
+<script>
+      $(document).ready(function() {
+        $('dl.function-info, dl.constant-info, dl.property-info').prev().css('cursor', 'pointer');
+        $('dl.function-info, dl.constant-info, dl.property-info').prev().click(function() {
+          if ($(this).next().is(':hidden'))
+          {
+            $(this).children('img')[0].src = 'images/arrow_down.gif';
+          } else
+          {
+            $(this).children('img')[0].src = 'images/arrow_right.gif';
+          }
+          $(this).next().slideToggle();
+        });
+      $('dl.function-info, dl.constant-info, dl.property-info').hide();
+      $('dl.function-info img, dl.constant-info img, dl.property-info img').show();
+      });
+    </script><a name="top"></a><h1 class="file">src/Map.php</h1>
+<div class="file_menu">
+<a href="#classes">Classes</a> </div>
+<dl class="file-info">
+<dt>Classes</dt>
+<dd><a class="class" href="#%5CAura%5CRouter%5CMap">Map</a></dd>
+</dl>
+<a name="classes"></a><a id="\Aura\Router\Map"></a><h2 class="class">\Aura\Router\Map<div class="to-top"><a href="#top">jump to top</a></div>
+</h2>
+<div class="class">
+<dl class="class-info">
+<dt>package</dt>
+<dd>Aura.Router</dd>
+<dt>Properties</dt>
+<dd><a class="property protected" href="#%5CAura%5CRouter%5CMap::%24attach_common">$attach_common</a></dd>
+<dd><a class="property protected" href="#%5CAura%5CRouter%5CMap::%24attach_routes">$attach_routes</a></dd>
+<dd><a class="property protected" href="#%5CAura%5CRouter%5CMap::%24definitions">$definitions</a></dd>
+<dd><a class="property protected" href="#%5CAura%5CRouter%5CMap::%24route_factory">$route_factory</a></dd>
+<dd><a class="property protected" href="#%5CAura%5CRouter%5CMap::%24routes">$routes</a></dd>
+<dt>Methods</dt>
+<dd><a class="method public" href="#%5CAura%5CRouter%5CMap::__construct()">__construct</a></dd>
+<dd><a class="method public" href="#%5CAura%5CRouter%5CMap::add()">add</a></dd>
+<dd><a class="method public" href="#%5CAura%5CRouter%5CMap::attach()">attach</a></dd>
+<dd><a class="method public" href="#%5CAura%5CRouter%5CMap::match()">match</a></dd>
+<dd><a class="method public" href="#%5CAura%5CRouter%5CMap::generate()">generate</a></dd>
+<dd><a class="method public" href="#%5CAura%5CRouter%5CMap::setRoutes()">setRoutes</a></dd>
+<dd><a class="method public" href="#%5CAura%5CRouter%5CMap::getRoutes()">getRoutes</a></dd>
+<dd><a class="method protected" href="#%5CAura%5CRouter%5CMap::createNextRoute()">createNextRoute</a></dd>
+<dd><a class="method protected" href="#%5CAura%5CRouter%5CMap::getNextDefinition()">getNextDefinition</a></dd>
+<dd><a class="method protected" href="#%5CAura%5CRouter%5CMap::getNextAttach()">getNextAttach</a></dd>
+</dl>
+<h3>Description</h3>
+<p class="short-description">A collection point for URI routes.</p>
+<div class="long-description">
+</div>
+<h3>Properties</h3>
+<div>
+<a id="\Aura\Router\Map::$attach_common"></a><h4 class="property protected">$attach_common<div class="to-top"><a href="#%5CAura%5CRouter%5CMap">jump to class</a></div>
+</h4>
+<div class="property">
+<code>\array <span class="highlight">$attach_common</span> = 'null'</code><p class="short-description">Currently processing this attached common route information.</p>
+<div class="long-description">
+</div>
+<div class="api-section">
+<h4 class="info">
+<img src="images/arrow_right.gif"> Details</h4>
+<dl class="property-info">
+<dt></dt>
+<dd>\array<br><em></em>
+</dd>
+<dt>visibility</dt>
+<dd>protected</dd>
+<dt>default</dt>
+<dd>null</dd>
+<dt>final</dt>
+<dd>false</dd>
+<dt>static</dt>
+<dd>false</dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+<a id="\Aura\Router\Map::$attach_routes"></a><h4 class="property protected">$attach_routes<div class="to-top"><a href="#%5CAura%5CRouter%5CMap">jump to class</a></div>
+</h4>
+<div class="property">
+<code>\array <span class="highlight">$attach_routes</span> = 'null'</code><p class="short-description">Currently processing these attached routes.</p>
+<div class="long-description">
+</div>
+<div class="api-section">
+<h4 class="info">
+<img src="images/arrow_right.gif"> Details</h4>
+<dl class="property-info">
+<dt></dt>
+<dd>\array<br><em></em>
+</dd>
+<dt>visibility</dt>
+<dd>protected</dd>
+<dt>default</dt>
+<dd>null</dd>
+<dt>final</dt>
+<dd>false</dd>
+<dt>static</dt>
+<dd>false</dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+<a id="\Aura\Router\Map::$definitions"></a><h4 class="property protected">$definitions<div class="to-top"><a href="#%5CAura%5CRouter%5CMap">jump to class</a></div>
+</h4>
+<div class="property">
+<code>\array <span class="highlight">$definitions</span> = 'array'</code><p class="short-description">Route definitions; these will be converted into objects.</p>
+<div class="long-description">
+</div>
+<div class="api-section">
+<h4 class="info">
+<img src="images/arrow_right.gif"> Details</h4>
+<dl class="property-info">
+<dt></dt>
+<dd>\array<br><em></em>
+</dd>
+<dt>visibility</dt>
+<dd>protected</dd>
+<dt>default</dt>
+<dd>array</dd>
+<dt>final</dt>
+<dd>false</dd>
+<dt>static</dt>
+<dd>false</dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+<a id="\Aura\Router\Map::$route_factory"></a><h4 class="property protected">$route_factory<div class="to-top"><a href="#%5CAura%5CRouter%5CMap">jump to class</a></div>
+</h4>
+<div class="property">
+<code><a href="_src_RouteFactory.html#%5CAura%5CRouter%5CRouteFactory">\Aura\Router\RouteFactory</a> <span class="highlight">$route_factory</span> = ''</code><p class="short-description">A RouteFactory for creating route objects.</p>
+<div class="long-description">
+</div>
+<div class="api-section">
+<h4 class="info">
+<img src="images/arrow_right.gif"> Details</h4>
+<dl class="property-info">
+<dt></dt>
+<dd>
+<a href="_src_RouteFactory.html#%5CAura%5CRouter%5CRouteFactory">\Aura\Router\RouteFactory</a><br><em></em>
+</dd>
+<dt>visibility</dt>
+<dd>protected</dd>
+<dt>default</dt>
+<dd></dd>
+<dt>final</dt>
+<dd>false</dd>
+<dt>static</dt>
+<dd>false</dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+<a id="\Aura\Router\Map::$routes"></a><h4 class="property protected">$routes<div class="to-top"><a href="#%5CAura%5CRouter%5CMap">jump to class</a></div>
+</h4>
+<div class="property">
+<code>\array <span class="highlight">$routes</span> = 'array'</code><p class="short-description">Route objects created from the definitons.</p>
+<div class="long-description">
+</div>
+<div class="api-section">
+<h4 class="info">
+<img src="images/arrow_right.gif"> Details</h4>
+<dl class="property-info">
+<dt></dt>
+<dd>\array<br><em></em>
+</dd>
+<dt>visibility</dt>
+<dd>protected</dd>
+<dt>default</dt>
+<dd>array</dd>
+<dt>final</dt>
+<dd>false</dd>
+<dt>static</dt>
+<dd>false</dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+</div>
+<h3>Methods</h3>
+<div>
+<a id="\Aura\Router\Map::__construct()"></a><h4 class="method public">__construct<div class="to-top"><a href="#Map">jump to class</a></div>
+</h4>
+<div class="method">
+<code><span class="highlight">__construct</span><span class="nb-faded-text">(
+           $route_factory, \array $attach
+              =
+              null
+          )
+        </span>
+        :
+        </code><p class="short-description">Constructor.</p>
+<div class="long-description">
+</div>
+<div class="api-section">
+<h5 class="arguments">Arguments</h5>
+<dl class="argument-info">
+<dt>$route_factory</dt>
+<dd><em></em></dd>
+<dt>$attach</dt>
+<dd>\array<br><em>A series of route definitions to be attached to the router.</em>
+</dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h5 class="info">
+<img src="images/arrow_right.gif"> Details</h5>
+<dl class="function-info">
+<dt>visibility</dt>
+<dd>public</dd>
+<dt>final</dt>
+<dd>false</dd>
+<dt>static</dt>
+<dd>false</dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+<a id="\Aura\Router\Map::add()"></a><h4 class="method public">add<div class="to-top"><a href="#Map">jump to class</a></div>
+</h4>
+<div class="method">
+<code><span class="highlight">add</span><span class="nb-faded-text">(
+          \string $name, \string $path, \array $spec
+              =
+              null
+          )
+        </span>
+        :
+        \void</code><p class="short-description">Adds a single route definition to the stack.</p>
+<div class="long-description">
+</div>
+<div class="api-section">
+<h5 class="arguments">Arguments</h5>
+<dl class="argument-info">
+<dt>$name</dt>
+<dd>\string<br><em>The route name for `generate()` lookups.</em>
+</dd>
+<dt>$path</dt>
+<dd>\string<br><em>The route path.</em>
+</dd>
+<dt>$spec</dt>
+<dd>\array<br><em>The rest of the route definition, with keys for `params`, `values`, etc.</em>
+</dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h5 class="output">Output</h5>
+<dl class="return-info">
+<dt>\void</dt>
+<dd><em></em></dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h5 class="info">
+<img src="images/arrow_right.gif"> Details</h5>
+<dl class="function-info">
+<dt>visibility</dt>
+<dd>public</dd>
+<dt>final</dt>
+<dd>false</dd>
+<dt>static</dt>
+<dd>false</dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+<a id="\Aura\Router\Map::attach()"></a><h4 class="method public">attach<div class="to-top"><a href="#Map">jump to class</a></div>
+</h4>
+<div class="method">
+<code><span class="highlight">attach</span><span class="nb-faded-text">(
+          \string $path_prefix, \array $spec
+          )
+        </span>
+        :
+        \void</code><p class="short-description">Attaches several routes at once to a specific path prefix.</p>
+<div class="long-description">
+</div>
+<div class="api-section">
+<h5 class="arguments">Arguments</h5>
+<dl class="argument-info">
+<dt>$path_prefix</dt>
+<dd>\string<br><em>The path that the routes should be attached to.</em>
+</dd>
+<dt>$spec</dt>
+<dd>\array<br><em>An array of common route information, with an additional `routes` key to define the routes themselves.</em>
+</dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h5 class="output">Output</h5>
+<dl class="return-info">
+<dt>\void</dt>
+<dd><em></em></dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h5 class="info">
+<img src="images/arrow_right.gif"> Details</h5>
+<dl class="function-info">
+<dt>visibility</dt>
+<dd>public</dd>
+<dt>final</dt>
+<dd>false</dd>
+<dt>static</dt>
+<dd>false</dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+<a id="\Aura\Router\Map::createNextRoute()"></a><h4 class="method protected">createNextRoute<div class="to-top"><a href="#Map">jump to class</a></div>
+</h4>
+<div class="method">
+<code><span class="highlight">createNextRoute</span><span class="nb-faded-text">(
+          
+          )
+        </span>
+        :
+        <a href="_src_Route.html#%5CAura%5CRouter%5CRoute">\Aura\Router\Route</a>|\Aura\Router\false</code><p class="short-description">Gets the next Route object in the stack, converting definitions to
+Route objects as needed.</p>
+<div class="long-description">
+</div>
+<div class="api-section">
+<h5 class="output">Output</h5>
+<dl class="return-info">
+<dt>
+<a href="_src_Route.html#%5CAura%5CRouter%5CRoute">\Aura\Router\Route</a>|\Aura\Router\false</dt>
+<dd><em>A Route object, or boolean false at the end of the stack.</em></dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h5 class="info">
+<img src="images/arrow_right.gif"> Details</h5>
+<dl class="function-info">
+<dt>visibility</dt>
+<dd>protected</dd>
+<dt>final</dt>
+<dd>false</dd>
+<dt>static</dt>
+<dd>false</dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+<a id="\Aura\Router\Map::generate()"></a><h4 class="method public">generate<div class="to-top"><a href="#Map">jump to class</a></div>
+</h4>
+<div class="method">
+<code><span class="highlight">generate</span><span class="nb-faded-text">(
+          \string $name, \array $data
+              =
+              null
+          )
+        </span>
+        :
+        \string|\Aura\Router\false</code><p class="short-description">Looks up a route by name, and interpolates data into it to return
+a URI path.</p>
+<div class="long-description">
+</div>
+<div class="api-section">
+<h5 class="arguments">Arguments</h5>
+<dl class="argument-info">
+<dt>$name</dt>
+<dd>\string<br><em>The route name to look up.</em>
+</dd>
+<dt>$data</dt>
+<dd>\array<br><em>The data to inpterolate into the URI; data keys map to param tokens in the path.</em>
+</dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h5 class="output">Output</h5>
+<dl class="return-info">
+<dt>\string|\Aura\Router\false</dt>
+<dd><em>A URI path string if the route name is found, or boolean false if not.</em></dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h5 class="info">
+<img src="images/arrow_right.gif"> Details</h5>
+<dl class="function-info">
+<dt>visibility</dt>
+<dd>public</dd>
+<dt>final</dt>
+<dd>false</dd>
+<dt>static</dt>
+<dd>false</dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+<a id="\Aura\Router\Map::getNextAttach()"></a><h4 class="method protected">getNextAttach<div class="to-top"><a href="#Map">jump to class</a></div>
+</h4>
+<div class="method">
+<code><span class="highlight">getNextAttach</span><span class="nb-faded-text">(
+          
+          )
+        </span>
+        :
+        \array</code><p class="short-description">Gets the next attached route definition.</p>
+<div class="long-description">
+</div>
+<div class="api-section">
+<h5 class="output">Output</h5>
+<dl class="return-info">
+<dt>\array</dt>
+<dd><em>A route definition.</em></dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h5 class="info">
+<img src="images/arrow_right.gif"> Details</h5>
+<dl class="function-info">
+<dt>visibility</dt>
+<dd>protected</dd>
+<dt>final</dt>
+<dd>false</dd>
+<dt>static</dt>
+<dd>false</dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+<a id="\Aura\Router\Map::getNextDefinition()"></a><h4 class="method protected">getNextDefinition<div class="to-top"><a href="#Map">jump to class</a></div>
+</h4>
+<div class="method">
+<code><span class="highlight">getNextDefinition</span><span class="nb-faded-text">(
+          
+          )
+        </span>
+        :
+        \array</code><p class="short-description">Gets the next route definition from the stack.</p>
+<div class="long-description">
+</div>
+<div class="api-section">
+<h5 class="output">Output</h5>
+<dl class="return-info">
+<dt>\array</dt>
+<dd><em>A route definition.</em></dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h5 class="info">
+<img src="images/arrow_right.gif"> Details</h5>
+<dl class="function-info">
+<dt>visibility</dt>
+<dd>protected</dd>
+<dt>final</dt>
+<dd>false</dd>
+<dt>static</dt>
+<dd>false</dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+<a id="\Aura\Router\Map::getRoutes()"></a><h4 class="method public">getRoutes<div class="to-top"><a href="#Map">jump to class</a></div>
+</h4>
+<div class="method">
+<code><span class="highlight">getRoutes</span><span class="nb-faded-text">(
+          
+          )
+        </span>
+        :
+        \array</code><p class="short-description">Get the array of Route objects in this map, likely for caching and
+re-setting via `setRoutes()`.</p>
+<div class="long-description">
+</div>
+<div class="api-section">
+<h5 class="output">Output</h5>
+<dl class="return-info">
+<dt>\array</dt>
+<dd><em></em></dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h5 class="info">
+<img src="images/arrow_right.gif"> Details</h5>
+<dl class="function-info">
+<dt>visibility</dt>
+<dd>public</dd>
+<dt>final</dt>
+<dd>false</dd>
+<dt>static</dt>
+<dd>false</dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+<a id="\Aura\Router\Map::match()"></a><h4 class="method public">match<div class="to-top"><a href="#Map">jump to class</a></div>
+</h4>
+<div class="method">
+<code><span class="highlight">match</span><span class="nb-faded-text">(
+          \string $path, \array $server
+              =
+              null
+          )
+        </span>
+        :
+        <a href="_src_Route.html#%5CAura%5CRouter%5CRoute">\Aura\Router\Route</a>|\Aura\Router\false</code><p class="short-description">Gets a route that matches a given path and other server conditions.</p>
+<div class="long-description">
+</div>
+<div class="api-section">
+<h5 class="arguments">Arguments</h5>
+<dl class="argument-info">
+<dt>$path</dt>
+<dd>\string<br><em>The path to match against.</em>
+</dd>
+<dt>$server</dt>
+<dd>\array<br><em>An array copy of $_SERVER.</em>
+</dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h5 class="output">Output</h5>
+<dl class="return-info">
+<dt>
+<a href="_src_Route.html#%5CAura%5CRouter%5CRoute">\Aura\Router\Route</a>|\Aura\Router\false</dt>
+<dd><em>Returns a Route object when it finds a match, or boolean false if there is no match.</em></dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h5 class="info">
+<img src="images/arrow_right.gif"> Details</h5>
+<dl class="function-info">
+<dt>visibility</dt>
+<dd>public</dd>
+<dt>final</dt>
+<dd>false</dd>
+<dt>static</dt>
+<dd>false</dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+<a id="\Aura\Router\Map::setRoutes()"></a><h4 class="method public">setRoutes<div class="to-top"><a href="#Map">jump to class</a></div>
+</h4>
+<div class="method">
+<code><span class="highlight">setRoutes</span><span class="nb-faded-text">(
+          \array $routes
+          )
+        </span>
+        :
+        \void</code><p class="short-description">Reset the map to use an array of Route objects.</p>
+<div class="long-description">
+</div>
+<div class="api-section">
+<h5 class="arguments">Arguments</h5>
+<dl class="argument-info">
+<dt>$routes</dt>
+<dd>\array<br><em>Use this array of route objects, likely generated from `getRoutes()`.</em>
+</dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h5 class="output">Output</h5>
+<dl class="return-info">
+<dt>\void</dt>
+<dd><em></em></dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h5 class="info">
+<img src="images/arrow_right.gif"> Details</h5>
+<dl class="function-info">
+<dt>visibility</dt>
+<dd>public</dd>
+<dt>final</dt>
+<dd>false</dd>
+<dt>static</dt>
+<dd>false</dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<small xmlns="" class="footer">Documentation was generated by <a href="http://docblox-project.org">DocBlox 0.11.2</a>.
+    </small></body></html>

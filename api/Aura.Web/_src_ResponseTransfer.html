@@ -1,0 +1,2499 @@
+<html xmlns="http://www.w3.org/1999/xhtml"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Aura Project for PHP: Aura.Web</title><link rel="stylesheet" href="css/black-tie/jquery-ui-1.8.2.custom.css" type="text/css"></link><link rel="stylesheet" href="css/jquery.treeview.css" type="text/css"></link><link rel="stylesheet" href="css/theme.css" type="text/css"></link><script type="text/javascript" src="js/jquery-1.4.2.min.js"></script><script type="text/javascript" src="js/jquery-ui-1.8.2.custom.min.js"></script><script type="text/javascript" src="js/jquery.cookie.js"></script><script type="text/javascript" src="js/jquery.treeview.js"></script><script type="text/javascript">
+            $(document).ready(function() {
+                $(".filetree").treeview({
+                    collapsed: true,
+                    persist: "cookie"
+                });
+
+                $("#accordion").accordion({
+                    collapsible: true,
+                    autoHeight:  false,
+                    fillSpace:   true
+                });
+
+                $(".tabs").tabs();
+            });
+        </script></head><body><div xmlns="" id="content">
+<script>
+      $(document).ready(function() {
+        $('dl.function-info, dl.constant-info, dl.property-info').prev().css('cursor', 'pointer');
+        $('dl.function-info, dl.constant-info, dl.property-info').prev().click(function() {
+          if ($(this).next().is(':hidden'))
+          {
+            $(this).children('img')[0].src = 'images/arrow_down.gif';
+          } else
+          {
+            $(this).children('img')[0].src = 'images/arrow_right.gif';
+          }
+          $(this).next().slideToggle();
+        });
+      $('dl.function-info, dl.constant-info, dl.property-info').hide();
+      $('dl.function-info img, dl.constant-info img, dl.property-info img').show();
+      });
+    </script><a name="top"></a><h1 class="file">src/ResponseTransfer.php</h1>
+<div class="file_menu">
+<a href="#classes">Classes</a> </div>
+<dl class="file-info">
+<dt>Classes</dt>
+<dd><a class="class" href="#%5CAura%5CWeb%5CResponseTransfer">ResponseTransfer</a></dd>
+</dl>
+<a name="classes"></a><a id="\Aura\Web\ResponseTransfer"></a><h2 class="class">\Aura\Web\ResponseTransfer<div class="to-top"><a href="#top">jump to top</a></div>
+</h2>
+<div class="class">
+<dl class="class-info">
+<dt>package</dt>
+<dd>Aura.Web</dd>
+<dt>Properties</dt>
+<dd><a class="property protected" href="#%5CAura%5CWeb%5CResponseTransfer::%24cache">$cache</a></dd>
+<dd><a class="property protected" href="#%5CAura%5CWeb%5CResponseTransfer::%24content">$content</a></dd>
+<dd><a class="property protected" href="#%5CAura%5CWeb%5CResponseTransfer::%24content_type">$content_type</a></dd>
+<dd><a class="property protected" href="#%5CAura%5CWeb%5CResponseTransfer::%24cookies">$cookies</a></dd>
+<dd><a class="property protected" href="#%5CAura%5CWeb%5CResponseTransfer::%24cookies_httponly">$cookies_httponly</a></dd>
+<dd><a class="property protected" href="#%5CAura%5CWeb%5CResponseTransfer::%24format">$format</a></dd>
+<dd><a class="property protected" href="#%5CAura%5CWeb%5CResponseTransfer::%24headers">$headers</a></dd>
+<dd><a class="property protected" href="#%5CAura%5CWeb%5CResponseTransfer::%24redirect">$redirect</a></dd>
+<dd><a class="property protected" href="#%5CAura%5CWeb%5CResponseTransfer::%24status_code">$status_code</a></dd>
+<dd><a class="property protected" href="#%5CAura%5CWeb%5CResponseTransfer::%24status_text">$status_text</a></dd>
+<dd><a class="property protected" href="#%5CAura%5CWeb%5CResponseTransfer::%24version">$version</a></dd>
+<dd><a class="property protected" href="#%5CAura%5CWeb%5CResponseTransfer::%24layout">$layout</a></dd>
+<dd><a class="property protected" href="#%5CAura%5CWeb%5CResponseTransfer::%24layout_content_var">$layout_content_var</a></dd>
+<dd><a class="property protected" href="#%5CAura%5CWeb%5CResponseTransfer::%24layout_data">$layout_data</a></dd>
+<dd><a class="property protected" href="#%5CAura%5CWeb%5CResponseTransfer::%24layout_stack">$layout_stack</a></dd>
+<dd><a class="property protected" href="#%5CAura%5CWeb%5CResponseTransfer::%24view">$view</a></dd>
+<dd><a class="property protected" href="#%5CAura%5CWeb%5CResponseTransfer::%24view_data">$view_data</a></dd>
+<dd><a class="property protected" href="#%5CAura%5CWeb%5CResponseTransfer::%24view_stack">$view_stack</a></dd>
+<dd><a class="property protected" href="#%5CAura%5CWeb%5CResponseTransfer::%24format_type">$format_type</a></dd>
+<dt>Methods</dt>
+<dd><a class="method public" href="#%5CAura%5CWeb%5CResponseTransfer::__construct()">__construct</a></dd>
+<dd><a class="method public" href="#%5CAura%5CWeb%5CResponseTransfer::__get()">__get</a></dd>
+<dd><a class="method public" href="#%5CAura%5CWeb%5CResponseTransfer::setCache()">setCache</a></dd>
+<dd><a class="method public" href="#%5CAura%5CWeb%5CResponseTransfer::getCache()">getCache</a></dd>
+<dd><a class="method public" href="#%5CAura%5CWeb%5CResponseTransfer::setContent()">setContent</a></dd>
+<dd><a class="method public" href="#%5CAura%5CWeb%5CResponseTransfer::getContent()">getContent</a></dd>
+<dd><a class="method public" href="#%5CAura%5CWeb%5CResponseTransfer::setContentType()">setContentType</a></dd>
+<dd><a class="method public" href="#%5CAura%5CWeb%5CResponseTransfer::getContentType()">getContentType</a></dd>
+<dd><a class="method public" href="#%5CAura%5CWeb%5CResponseTransfer::setCookie()">setCookie</a></dd>
+<dd><a class="method public" href="#%5CAura%5CWeb%5CResponseTransfer::getCookie()">getCookie</a></dd>
+<dd><a class="method public" href="#%5CAura%5CWeb%5CResponseTransfer::getCookies()">getCookies</a></dd>
+<dd><a class="method public" href="#%5CAura%5CWeb%5CResponseTransfer::setCookiesHttponly()">setCookiesHttponly</a></dd>
+<dd><a class="method public" href="#%5CAura%5CWeb%5CResponseTransfer::setHeader()">setHeader</a></dd>
+<dd><a class="method public" href="#%5CAura%5CWeb%5CResponseTransfer::addHeader()">addHeader</a></dd>
+<dd><a class="method public" href="#%5CAura%5CWeb%5CResponseTransfer::getHeader()">getHeader</a></dd>
+<dd><a class="method public" href="#%5CAura%5CWeb%5CResponseTransfer::getHeaders()">getHeaders</a></dd>
+<dd><a class="method public" href="#%5CAura%5CWeb%5CResponseTransfer::setRedirect()">setRedirect</a></dd>
+<dd><a class="method public" href="#%5CAura%5CWeb%5CResponseTransfer::setRedirectAfterPost()">setRedirectAfterPost</a></dd>
+<dd><a class="method public" href="#%5CAura%5CWeb%5CResponseTransfer::isRedirect()">isRedirect</a></dd>
+<dd><a class="method public" href="#%5CAura%5CWeb%5CResponseTransfer::getRedirect()">getRedirect</a></dd>
+<dd><a class="method public" href="#%5CAura%5CWeb%5CResponseTransfer::setStatusCode()">setStatusCode</a></dd>
+<dd><a class="method public" href="#%5CAura%5CWeb%5CResponseTransfer::getStatusCode()">getStatusCode</a></dd>
+<dd><a class="method public" href="#%5CAura%5CWeb%5CResponseTransfer::setStatusText()">setStatusText</a></dd>
+<dd><a class="method public" href="#%5CAura%5CWeb%5CResponseTransfer::getStatusText()">getStatusText</a></dd>
+<dd><a class="method public" href="#%5CAura%5CWeb%5CResponseTransfer::setVersion()">setVersion</a></dd>
+<dd><a class="method public" href="#%5CAura%5CWeb%5CResponseTransfer::getVersion()">getVersion</a></dd>
+<dd><a class="method public" href="#%5CAura%5CWeb%5CResponseTransfer::setView()">setView</a></dd>
+<dd><a class="method public" href="#%5CAura%5CWeb%5CResponseTransfer::getView()">getView</a></dd>
+<dd><a class="method public" href="#%5CAura%5CWeb%5CResponseTransfer::setViewData()">setViewData</a></dd>
+<dd><a class="method public" href="#%5CAura%5CWeb%5CResponseTransfer::getViewData()">getViewData</a></dd>
+<dd><a class="method public" href="#%5CAura%5CWeb%5CResponseTransfer::addViewStack()">addViewStack</a></dd>
+<dd><a class="method public" href="#%5CAura%5CWeb%5CResponseTransfer::getViewStack()">getViewStack</a></dd>
+<dd><a class="method public" href="#%5CAura%5CWeb%5CResponseTransfer::setLayout()">setLayout</a></dd>
+<dd><a class="method public" href="#%5CAura%5CWeb%5CResponseTransfer::getLayout()">getLayout</a></dd>
+<dd><a class="method public" href="#%5CAura%5CWeb%5CResponseTransfer::setLayoutData()">setLayoutData</a></dd>
+<dd><a class="method public" href="#%5CAura%5CWeb%5CResponseTransfer::getLayoutData()">getLayoutData</a></dd>
+<dd><a class="method public" href="#%5CAura%5CWeb%5CResponseTransfer::addLayoutStack()">addLayoutStack</a></dd>
+<dd><a class="method public" href="#%5CAura%5CWeb%5CResponseTransfer::getLayoutStack()">getLayoutStack</a></dd>
+<dd><a class="method public" href="#%5CAura%5CWeb%5CResponseTransfer::setLayoutContentVar()">setLayoutContentVar</a></dd>
+<dd><a class="method public" href="#%5CAura%5CWeb%5CResponseTransfer::getLayoutContentVar()">getLayoutContentVar</a></dd>
+<dd><a class="method public" href="#%5CAura%5CWeb%5CResponseTransfer::setFormat()">setFormat</a></dd>
+<dd><a class="method public" href="#%5CAura%5CWeb%5CResponseTransfer::getFormat()">getFormat</a></dd>
+<dd><a class="method public" href="#%5CAura%5CWeb%5CResponseTransfer::negotiateContentType()">negotiateContentType</a></dd>
+<dd><a class="method public" href="#%5CAura%5CWeb%5CResponseTransfer::matchView()">matchView</a></dd>
+<dd><a class="method public" href="#%5CAura%5CWeb%5CResponseTransfer::matchLayout()">matchLayout</a></dd>
+<dd><a class="method protected" href="#%5CAura%5CWeb%5CResponseTransfer::match()">match</a></dd>
+<dd><a class="method protected" href="#%5CAura%5CWeb%5CResponseTransfer::headerLabel()">headerLabel</a></dd>
+<dd><a class="method protected" href="#%5CAura%5CWeb%5CResponseTransfer::headerValue()">headerValue</a></dd>
+</dl>
+<h3>Description</h3>
+<p class="short-description">Retains information about the controller results for transfer to an actual
+HTTP response object.</p>
+<div class="long-description">
+</div>
+<h3>Properties</h3>
+<div>
+<a id="\Aura\Web\ResponseTransfer::$cache"></a><h4 class="property protected">$cache<div class="to-top"><a href="#%5CAura%5CWeb%5CResponseTransfer">jump to class</a></div>
+</h4>
+<div class="property">
+<code>\bool <span class="highlight">$cache</span> = 'null'</code><p class="short-description">Should the response disable browser caching?</p>
+<div class="long-description"><p>When <code>false</code>, the <code>getHeaders()</code> method will set these headers in its
+return value (note that they are not added to <code>$headers</code> directly):</p>
+
+<p>{{code:
+    Pragma: no-cache
+    Cache-Control: no-store, no-cache, must-revalidate
+    Cache-Control: post-check=0, pre-check=0
+    Expires: 1
+}}</p>
+
+<p>When true or null, the <code>getHeaders()</code> method will make no changes to
+the existing headers.</p>
+</div>
+<div class="api-section">
+<h4 class="info">
+<img src="images/arrow_right.gif"> Details</h4>
+<dl class="property-info">
+<dt></dt>
+<dd>\bool<br><em></em>
+</dd>
+<dt>visibility</dt>
+<dd>protected</dd>
+<dt>default</dt>
+<dd>null</dd>
+<dt>final</dt>
+<dd>false</dd>
+<dt>static</dt>
+<dd>false</dd>
+<dt>see</dt>
+<dd>setCache()</dd>
+<dt>see</dt>
+<dd>setRedirectAfterPost()</dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+<a id="\Aura\Web\ResponseTransfer::$content"></a><h4 class="property protected">$content<div class="to-top"><a href="#%5CAura%5CWeb%5CResponseTransfer">jump to class</a></div>
+</h4>
+<div class="property">
+<code>\string <span class="highlight">$content</span> = 'null'</code><p class="short-description">The response body content.</p>
+<div class="long-description">
+</div>
+<div class="api-section">
+<h4 class="info">
+<img src="images/arrow_right.gif"> Details</h4>
+<dl class="property-info">
+<dt></dt>
+<dd>\string<br><em></em>
+</dd>
+<dt>visibility</dt>
+<dd>protected</dd>
+<dt>default</dt>
+<dd>null</dd>
+<dt>final</dt>
+<dd>false</dd>
+<dt>static</dt>
+<dd>false</dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+<a id="\Aura\Web\ResponseTransfer::$content_type"></a><h4 class="property protected">$content_type<div class="to-top"><a href="#%5CAura%5CWeb%5CResponseTransfer">jump to class</a></div>
+</h4>
+<div class="property">
+<code>\string <span class="highlight">$content_type</span> = ''</code><p class="short-description">The Content-Type of the response.</p>
+<div class="long-description">
+</div>
+<div class="api-section">
+<h4 class="info">
+<img src="images/arrow_right.gif"> Details</h4>
+<dl class="property-info">
+<dt></dt>
+<dd>\string<br><em></em>
+</dd>
+<dt>visibility</dt>
+<dd>protected</dd>
+<dt>default</dt>
+<dd></dd>
+<dt>final</dt>
+<dd>false</dd>
+<dt>static</dt>
+<dd>false</dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+<a id="\Aura\Web\ResponseTransfer::$cookies"></a><h4 class="property protected">$cookies<div class="to-top"><a href="#%5CAura%5CWeb%5CResponseTransfer">jump to class</a></div>
+</h4>
+<div class="property">
+<code>\array <span class="highlight">$cookies</span> = 'array'</code><p class="short-description">The response cookies.</p>
+<div class="long-description">
+</div>
+<div class="api-section">
+<h4 class="info">
+<img src="images/arrow_right.gif"> Details</h4>
+<dl class="property-info">
+<dt></dt>
+<dd>\array<br><em></em>
+</dd>
+<dt>visibility</dt>
+<dd>protected</dd>
+<dt>default</dt>
+<dd>array</dd>
+<dt>final</dt>
+<dd>false</dd>
+<dt>static</dt>
+<dd>false</dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+<a id="\Aura\Web\ResponseTransfer::$cookies_httponly"></a><h4 class="property protected">$cookies_httponly<div class="to-top"><a href="#%5CAura%5CWeb%5CResponseTransfer">jump to class</a></div>
+</h4>
+<div class="property">
+<code>\bool <span class="highlight">$cookies_httponly</span> = 'true'</code><p class="short-description">Whether or not cookies should default to being sent by HTTP only.</p>
+<div class="long-description">
+</div>
+<div class="api-section">
+<h4 class="info">
+<img src="images/arrow_right.gif"> Details</h4>
+<dl class="property-info">
+<dt></dt>
+<dd>\bool<br><em></em>
+</dd>
+<dt>visibility</dt>
+<dd>protected</dd>
+<dt>default</dt>
+<dd>true</dd>
+<dt>final</dt>
+<dd>false</dd>
+<dt>static</dt>
+<dd>false</dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+<a id="\Aura\Web\ResponseTransfer::$format"></a><h4 class="property protected">$format<div class="to-top"><a href="#%5CAura%5CWeb%5CResponseTransfer">jump to class</a></div>
+</h4>
+<div class="property">
+<code>\bool <span class="highlight">$format</span> = ''</code><p class="short-description">The filename .format extension used to determine the content-type.</p>
+<div class="long-description">
+</div>
+<div class="api-section">
+<h4 class="info">
+<img src="images/arrow_right.gif"> Details</h4>
+<dl class="property-info">
+<dt></dt>
+<dd>\bool<br><em></em>
+</dd>
+<dt>visibility</dt>
+<dd>protected</dd>
+<dt>default</dt>
+<dd></dd>
+<dt>final</dt>
+<dd>false</dd>
+<dt>static</dt>
+<dd>false</dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+<a id="\Aura\Web\ResponseTransfer::$format_type"></a><h4 class="property protected">$format_type<div class="to-top"><a href="#%5CAura%5CWeb%5CResponseTransfer">jump to class</a></div>
+</h4>
+<div class="property">
+<code>\array <span class="highlight">$format_type</span> = 'array'</code><p class="short-description">An array of `.format` extensions to Content-Type mappings.</p>
+<div class="long-description">
+</div>
+<div class="api-section">
+<h4 class="info">
+<img src="images/arrow_right.gif"> Details</h4>
+<dl class="property-info">
+<dt></dt>
+<dd>\array<br><em></em>
+</dd>
+<dt>visibility</dt>
+<dd>protected</dd>
+<dt>default</dt>
+<dd>array</dd>
+<dt>final</dt>
+<dd>false</dd>
+<dt>static</dt>
+<dd>false</dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+<a id="\Aura\Web\ResponseTransfer::$headers"></a><h4 class="property protected">$headers<div class="to-top"><a href="#%5CAura%5CWeb%5CResponseTransfer">jump to class</a></div>
+</h4>
+<div class="property">
+<code>\array <span class="highlight">$headers</span> = 'array'</code><p class="short-description">The response headers (less the cookies).</p>
+<div class="long-description">
+</div>
+<div class="api-section">
+<h4 class="info">
+<img src="images/arrow_right.gif"> Details</h4>
+<dl class="property-info">
+<dt></dt>
+<dd>\array<br><em></em>
+</dd>
+<dt>visibility</dt>
+<dd>protected</dd>
+<dt>default</dt>
+<dd>array</dd>
+<dt>final</dt>
+<dd>false</dd>
+<dt>static</dt>
+<dd>false</dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+<a id="\Aura\Web\ResponseTransfer::$layout"></a><h4 class="property protected">$layout<div class="to-top"><a href="#%5CAura%5CWeb%5CResponseTransfer">jump to class</a></div>
+</h4>
+<div class="property">
+<code>\mixed <span class="highlight">$layout</span> = ''</code><p class="short-description">The outer layout template for use in a 2-step view.</p>
+<div class="long-description">
+</div>
+<div class="api-section">
+<h4 class="info">
+<img src="images/arrow_right.gif"> Details</h4>
+<dl class="property-info">
+<dt></dt>
+<dd>\mixed<br><em></em>
+</dd>
+<dt>visibility</dt>
+<dd>protected</dd>
+<dt>default</dt>
+<dd></dd>
+<dt>final</dt>
+<dd>false</dd>
+<dt>static</dt>
+<dd>false</dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+<a id="\Aura\Web\ResponseTransfer::$layout_content_var"></a><h4 class="property protected">$layout_content_var<div class="to-top"><a href="#%5CAura%5CWeb%5CResponseTransfer">jump to class</a></div>
+</h4>
+<div class="property">
+<code>\string <span class="highlight">$layout_content_var</span> = 'layout_content'</code><p class="short-description">The name of the content variable in the layout template.</p>
+<div class="long-description">
+</div>
+<div class="api-section">
+<h4 class="info">
+<img src="images/arrow_right.gif"> Details</h4>
+<dl class="property-info">
+<dt></dt>
+<dd>\string<br><em></em>
+</dd>
+<dt>visibility</dt>
+<dd>protected</dd>
+<dt>default</dt>
+<dd>layout_content</dd>
+<dt>final</dt>
+<dd>false</dd>
+<dt>static</dt>
+<dd>false</dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+<a id="\Aura\Web\ResponseTransfer::$layout_data"></a><h4 class="property protected">$layout_data<div class="to-top"><a href="#%5CAura%5CWeb%5CResponseTransfer">jump to class</a></div>
+</h4>
+<div class="property">
+<code>\ArrayObject <span class="highlight">$layout_data</span> = ''</code><p class="short-description">Data for the layout.</p>
+<div class="long-description">
+</div>
+<div class="api-section">
+<h4 class="info">
+<img src="images/arrow_right.gif"> Details</h4>
+<dl class="property-info">
+<dt></dt>
+<dd>\ArrayObject<br><em></em>
+</dd>
+<dt>visibility</dt>
+<dd>protected</dd>
+<dt>default</dt>
+<dd></dd>
+<dt>final</dt>
+<dd>false</dd>
+<dt>static</dt>
+<dd>false</dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+<a id="\Aura\Web\ResponseTransfer::$layout_stack"></a><h4 class="property protected">$layout_stack<div class="to-top"><a href="#%5CAura%5CWeb%5CResponseTransfer">jump to class</a></div>
+</h4>
+<div class="property">
+<code>\array <span class="highlight">$layout_stack</span> = 'array'</code><p class="short-description">Stack to search for layout templates.</p>
+<div class="long-description">
+</div>
+<div class="api-section">
+<h4 class="info">
+<img src="images/arrow_right.gif"> Details</h4>
+<dl class="property-info">
+<dt></dt>
+<dd>\array<br><em></em>
+</dd>
+<dt>visibility</dt>
+<dd>protected</dd>
+<dt>default</dt>
+<dd>array</dd>
+<dt>final</dt>
+<dd>false</dd>
+<dt>static</dt>
+<dd>false</dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+<a id="\Aura\Web\ResponseTransfer::$redirect"></a><h4 class="property protected">$redirect<div class="to-top"><a href="#%5CAura%5CWeb%5CResponseTransfer">jump to class</a></div>
+</h4>
+<div class="property">
+<code>\string <span class="highlight">$redirect</span> = ''</code><p class="short-description">Redirect to this location.</p>
+<div class="long-description">
+</div>
+<div class="api-section">
+<h4 class="info">
+<img src="images/arrow_right.gif"> Details</h4>
+<dl class="property-info">
+<dt></dt>
+<dd>\string<br><em></em>
+</dd>
+<dt>visibility</dt>
+<dd>protected</dd>
+<dt>default</dt>
+<dd></dd>
+<dt>final</dt>
+<dd>false</dd>
+<dt>static</dt>
+<dd>false</dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+<a id="\Aura\Web\ResponseTransfer::$status_code"></a><h4 class="property protected">$status_code<div class="to-top"><a href="#%5CAura%5CWeb%5CResponseTransfer">jump to class</a></div>
+</h4>
+<div class="property">
+<code>\int <span class="highlight">$status_code</span> = '200'</code><p class="short-description">The response status code.</p>
+<div class="long-description">
+</div>
+<div class="api-section">
+<h4 class="info">
+<img src="images/arrow_right.gif"> Details</h4>
+<dl class="property-info">
+<dt></dt>
+<dd>\int<br><em></em>
+</dd>
+<dt>visibility</dt>
+<dd>protected</dd>
+<dt>default</dt>
+<dd>200</dd>
+<dt>final</dt>
+<dd>false</dd>
+<dt>static</dt>
+<dd>false</dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+<a id="\Aura\Web\ResponseTransfer::$status_text"></a><h4 class="property protected">$status_text<div class="to-top"><a href="#%5CAura%5CWeb%5CResponseTransfer">jump to class</a></div>
+</h4>
+<div class="property">
+<code>\int <span class="highlight">$status_text</span> = 'null'</code><p class="short-description">The response status text.</p>
+<div class="long-description">
+</div>
+<div class="api-section">
+<h4 class="info">
+<img src="images/arrow_right.gif"> Details</h4>
+<dl class="property-info">
+<dt></dt>
+<dd>\int<br><em></em>
+</dd>
+<dt>visibility</dt>
+<dd>protected</dd>
+<dt>default</dt>
+<dd>null</dd>
+<dt>final</dt>
+<dd>false</dd>
+<dt>static</dt>
+<dd>false</dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+<a id="\Aura\Web\ResponseTransfer::$version"></a><h4 class="property protected">$version<div class="to-top"><a href="#%5CAura%5CWeb%5CResponseTransfer">jump to class</a></div>
+</h4>
+<div class="property">
+<code>\string <span class="highlight">$version</span> = '1.1'</code><p class="short-description">The HTTP version to send as.</p>
+<div class="long-description">
+</div>
+<div class="api-section">
+<h4 class="info">
+<img src="images/arrow_right.gif"> Details</h4>
+<dl class="property-info">
+<dt></dt>
+<dd>\string<br><em></em>
+</dd>
+<dt>visibility</dt>
+<dd>protected</dd>
+<dt>default</dt>
+<dd>1.1</dd>
+<dt>final</dt>
+<dd>false</dd>
+<dt>static</dt>
+<dd>false</dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+<a id="\Aura\Web\ResponseTransfer::$view"></a><h4 class="property protected">$view<div class="to-top"><a href="#%5CAura%5CWeb%5CResponseTransfer">jump to class</a></div>
+</h4>
+<div class="property">
+<code>\string|\array <span class="highlight">$view</span> = ''</code><p class="short-description">The inner view template options for use in a 2-step view.</p>
+<div class="long-description">
+</div>
+<div class="api-section">
+<h4 class="info">
+<img src="images/arrow_right.gif"> Details</h4>
+<dl class="property-info">
+<dt></dt>
+<dd>\string|\array<br><em></em>
+</dd>
+<dt>visibility</dt>
+<dd>protected</dd>
+<dt>default</dt>
+<dd></dd>
+<dt>final</dt>
+<dd>false</dd>
+<dt>static</dt>
+<dd>false</dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+<a id="\Aura\Web\ResponseTransfer::$view_data"></a><h4 class="property protected">$view_data<div class="to-top"><a href="#%5CAura%5CWeb%5CResponseTransfer">jump to class</a></div>
+</h4>
+<div class="property">
+<code>\ArrayObject <span class="highlight">$view_data</span> = ''</code><p class="short-description">Data for the view.</p>
+<div class="long-description">
+</div>
+<div class="api-section">
+<h4 class="info">
+<img src="images/arrow_right.gif"> Details</h4>
+<dl class="property-info">
+<dt></dt>
+<dd>\ArrayObject<br><em></em>
+</dd>
+<dt>visibility</dt>
+<dd>protected</dd>
+<dt>default</dt>
+<dd></dd>
+<dt>final</dt>
+<dd>false</dd>
+<dt>static</dt>
+<dd>false</dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+<a id="\Aura\Web\ResponseTransfer::$view_stack"></a><h4 class="property protected">$view_stack<div class="to-top"><a href="#%5CAura%5CWeb%5CResponseTransfer">jump to class</a></div>
+</h4>
+<div class="property">
+<code>\array <span class="highlight">$view_stack</span> = 'array'</code><p class="short-description">Stack to search for view templates.</p>
+<div class="long-description">
+</div>
+<div class="api-section">
+<h4 class="info">
+<img src="images/arrow_right.gif"> Details</h4>
+<dl class="property-info">
+<dt></dt>
+<dd>\array<br><em></em>
+</dd>
+<dt>visibility</dt>
+<dd>protected</dd>
+<dt>default</dt>
+<dd>array</dd>
+<dt>final</dt>
+<dd>false</dd>
+<dt>static</dt>
+<dd>false</dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+</div>
+<h3>Methods</h3>
+<div>
+<a id="\Aura\Web\ResponseTransfer::__construct()"></a><h4 class="method public">__construct<div class="to-top"><a href="#ResponseTransfer">jump to class</a></div>
+</h4>
+<div class="method">
+<code><span class="highlight">__construct</span><span class="nb-faded-text">(
+          \array $format_type
+              =
+              array
+          )
+        </span>
+        :
+        </code><p class="short-description">Constructor.</p>
+<div class="long-description">
+</div>
+<div class="api-section">
+<h5 class="arguments">Arguments</h5>
+<dl class="argument-info">
+<dt>$format_type</dt>
+<dd>\array<br><em>Additional or override `.format` to Content-Type mappings.</em>
+</dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h5 class="info">
+<img src="images/arrow_right.gif"> Details</h5>
+<dl class="function-info">
+<dt>visibility</dt>
+<dd>public</dd>
+<dt>final</dt>
+<dd>false</dd>
+<dt>static</dt>
+<dd>false</dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+<a id="\Aura\Web\ResponseTransfer::__get()"></a><h4 class="method public">__get<div class="to-top"><a href="#ResponseTransfer">jump to class</a></div>
+</h4>
+<div class="method">
+<code><span class="highlight">__get</span><span class="nb-faded-text">(
+          \string $key
+          )
+        </span>
+        :
+        \mixed</code><p class="short-description">Magic read to provide access to $view_data and $layout_data properties.</p>
+<div class="long-description">
+</div>
+<div class="api-section">
+<h5 class="arguments">Arguments</h5>
+<dl class="argument-info">
+<dt>$key</dt>
+<dd>\string<br><em>The property name.</em>
+</dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h5 class="output">Output</h5>
+<dl class="return-info">
+<dt>\mixed</dt>
+<dd><em>The property value.</em></dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h5 class="info">
+<img src="images/arrow_right.gif"> Details</h5>
+<dl class="function-info">
+<dt>visibility</dt>
+<dd>public</dd>
+<dt>final</dt>
+<dd>false</dd>
+<dt>static</dt>
+<dd>false</dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+<a id="\Aura\Web\ResponseTransfer::addHeader()"></a><h4 class="method public">addHeader<div class="to-top"><a href="#ResponseTransfer">jump to class</a></div>
+</h4>
+<div class="method">
+<code><span class="highlight">addHeader</span><span class="nb-faded-text">(
+          \string $key, \string $val
+          )
+        </span>
+        :
+        \void</code><p class="short-description">Adds to a header value in $this-&gt;headers.</p>
+<div class="long-description">
+</div>
+<div class="api-section">
+<h5 class="arguments">Arguments</h5>
+<dl class="argument-info">
+<dt>$key</dt>
+<dd>\string<br><em>The header label, such as &amp;quot;Content-Type&amp;quot;.</em>
+</dd>
+<dt>$val</dt>
+<dd>\string<br><em>The value for the header.</em>
+</dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h5 class="output">Output</h5>
+<dl class="return-info">
+<dt>\void</dt>
+<dd><em></em></dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h5 class="info">
+<img src="images/arrow_right.gif"> Details</h5>
+<dl class="function-info">
+<dt>visibility</dt>
+<dd>public</dd>
+<dt>final</dt>
+<dd>false</dd>
+<dt>static</dt>
+<dd>false</dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+<a id="\Aura\Web\ResponseTransfer::addLayoutStack()"></a><h4 class="method public">addLayoutStack<div class="to-top"><a href="#ResponseTransfer">jump to class</a></div>
+</h4>
+<div class="method">
+<code><span class="highlight">addLayoutStack</span><span class="nb-faded-text">(
+           $spec,  $subdir
+              =
+              layout
+          )
+        </span>
+        :
+        \void</code><p class="short-description">Adds a class name and subdirectory for the outer layout template finder.</p>
+<div class="long-description">
+</div>
+<div class="api-section">
+<h5 class="arguments">Arguments</h5>
+<dl class="argument-info">
+<dt>$spec</dt>
+<dd><em></em></dd>
+<dt>$subdir</dt>
+<dd><em></em></dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h5 class="output">Output</h5>
+<dl class="return-info">
+<dt>\void</dt>
+<dd><em></em></dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h5 class="info">
+<img src="images/arrow_right.gif"> Details</h5>
+<dl class="function-info">
+<dt>visibility</dt>
+<dd>public</dd>
+<dt>final</dt>
+<dd>false</dd>
+<dt>static</dt>
+<dd>false</dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+<a id="\Aura\Web\ResponseTransfer::addViewStack()"></a><h4 class="method public">addViewStack<div class="to-top"><a href="#ResponseTransfer">jump to class</a></div>
+</h4>
+<div class="method">
+<code><span class="highlight">addViewStack</span><span class="nb-faded-text">(
+           $spec,  $subdir
+              =
+              view
+          )
+        </span>
+        :
+        \void</code><p class="short-description">Adds a class name and subdirectory for the inner view template finder.</p>
+<div class="long-description">
+</div>
+<div class="api-section">
+<h5 class="arguments">Arguments</h5>
+<dl class="argument-info">
+<dt>$spec</dt>
+<dd><em></em></dd>
+<dt>$subdir</dt>
+<dd><em></em></dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h5 class="output">Output</h5>
+<dl class="return-info">
+<dt>\void</dt>
+<dd><em></em></dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h5 class="info">
+<img src="images/arrow_right.gif"> Details</h5>
+<dl class="function-info">
+<dt>visibility</dt>
+<dd>public</dd>
+<dt>final</dt>
+<dd>false</dd>
+<dt>static</dt>
+<dd>false</dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+<a id="\Aura\Web\ResponseTransfer::getCache()"></a><h4 class="method public">getCache<div class="to-top"><a href="#ResponseTransfer">jump to class</a></div>
+</h4>
+<div class="method">
+<code><span class="highlight">getCache</span><span class="nb-faded-text">(
+          
+          )
+        </span>
+        :
+        \mixed</code><p class="short-description">Is caching turned off?</p>
+<div class="long-description">
+</div>
+<div class="api-section">
+<h5 class="output">Output</h5>
+<dl class="return-info">
+<dt>\mixed</dt>
+<dd><em>Note that this is a ternary: true, false, or null.</em></dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h5 class="info">
+<img src="images/arrow_right.gif"> Details</h5>
+<dl class="function-info">
+<dt>visibility</dt>
+<dd>public</dd>
+<dt>final</dt>
+<dd>false</dd>
+<dt>static</dt>
+<dd>false</dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+<a id="\Aura\Web\ResponseTransfer::getContent()"></a><h4 class="method public">getContent<div class="to-top"><a href="#ResponseTransfer">jump to class</a></div>
+</h4>
+<div class="method">
+<code><span class="highlight">getContent</span><span class="nb-faded-text">(
+          
+          )
+        </span>
+        :
+        \string</code><p class="short-description">Gets the content of the response.</p>
+<div class="long-description">
+</div>
+<div class="api-section">
+<h5 class="output">Output</h5>
+<dl class="return-info">
+<dt>\string</dt>
+<dd><em>The body content of the response.</em></dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h5 class="info">
+<img src="images/arrow_right.gif"> Details</h5>
+<dl class="function-info">
+<dt>visibility</dt>
+<dd>public</dd>
+<dt>final</dt>
+<dd>false</dd>
+<dt>static</dt>
+<dd>false</dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+<a id="\Aura\Web\ResponseTransfer::getContentType()"></a><h4 class="method public">getContentType<div class="to-top"><a href="#ResponseTransfer">jump to class</a></div>
+</h4>
+<div class="method">
+<code><span class="highlight">getContentType</span><span class="nb-faded-text">(
+          
+          )
+        </span>
+        :
+        \string</code><p class="short-description">Gets the Content-Type of the response.</p>
+<div class="long-description">
+</div>
+<div class="api-section">
+<h5 class="output">Output</h5>
+<dl class="return-info">
+<dt>\string</dt>
+<dd><em>The Content-Type of the response.</em></dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h5 class="info">
+<img src="images/arrow_right.gif"> Details</h5>
+<dl class="function-info">
+<dt>visibility</dt>
+<dd>public</dd>
+<dt>final</dt>
+<dd>false</dd>
+<dt>static</dt>
+<dd>false</dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+<a id="\Aura\Web\ResponseTransfer::getCookie()"></a><h4 class="method public">getCookie<div class="to-top"><a href="#ResponseTransfer">jump to class</a></div>
+</h4>
+<div class="method">
+<code><span class="highlight">getCookie</span><span class="nb-faded-text">(
+          \string $name
+          )
+        </span>
+        :
+        \array</code><p class="short-description">Gets one cookie for the response.</p>
+<div class="long-description">
+</div>
+<div class="api-section">
+<h5 class="arguments">Arguments</h5>
+<dl class="argument-info">
+<dt>$name</dt>
+<dd>\string<br><em>The cookie name.</em>
+</dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h5 class="output">Output</h5>
+<dl class="return-info">
+<dt>\array</dt>
+<dd><em>A cookie descriptor.</em></dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h5 class="info">
+<img src="images/arrow_right.gif"> Details</h5>
+<dl class="function-info">
+<dt>visibility</dt>
+<dd>public</dd>
+<dt>final</dt>
+<dd>false</dd>
+<dt>static</dt>
+<dd>false</dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+<a id="\Aura\Web\ResponseTransfer::getCookies()"></a><h4 class="method public">getCookies<div class="to-top"><a href="#ResponseTransfer">jump to class</a></div>
+</h4>
+<div class="method">
+<code><span class="highlight">getCookies</span><span class="nb-faded-text">(
+          
+          )
+        </span>
+        :
+        \array</code><p class="short-description">Gets all cookies for the response.</p>
+<div class="long-description">
+</div>
+<div class="api-section">
+<h5 class="output">Output</h5>
+<dl class="return-info">
+<dt>\array</dt>
+<dd><em>A sequential array of cookie descriptors.</em></dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h5 class="info">
+<img src="images/arrow_right.gif"> Details</h5>
+<dl class="function-info">
+<dt>visibility</dt>
+<dd>public</dd>
+<dt>final</dt>
+<dd>false</dd>
+<dt>static</dt>
+<dd>false</dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+<a id="\Aura\Web\ResponseTransfer::getFormat()"></a><h4 class="method public">getFormat<div class="to-top"><a href="#ResponseTransfer">jump to class</a></div>
+</h4>
+<div class="method">
+<code><span class="highlight">getFormat</span><span class="nb-faded-text">(
+          
+          )
+        </span>
+        :
+        \string</code><p class="short-description">Returns the output format extension.</p>
+<div class="long-description">
+</div>
+<div class="api-section">
+<h5 class="output">Output</h5>
+<dl class="return-info">
+<dt>\string</dt>
+<dd><em></em></dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h5 class="info">
+<img src="images/arrow_right.gif"> Details</h5>
+<dl class="function-info">
+<dt>visibility</dt>
+<dd>public</dd>
+<dt>final</dt>
+<dd>false</dd>
+<dt>static</dt>
+<dd>false</dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+<a id="\Aura\Web\ResponseTransfer::getHeader()"></a><h4 class="method public">getHeader<div class="to-top"><a href="#ResponseTransfer">jump to class</a></div>
+</h4>
+<div class="method">
+<code><span class="highlight">getHeader</span><span class="nb-faded-text">(
+          \string $key
+          )
+        </span>
+        :
+        \string|\array</code><p class="short-description">Returns the value of a single header.</p>
+<div class="long-description">
+</div>
+<div class="api-section">
+<h5 class="arguments">Arguments</h5>
+<dl class="argument-info">
+<dt>$key</dt>
+<dd>\string<br><em>The header name.</em>
+</dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h5 class="output">Output</h5>
+<dl class="return-info">
+<dt>\string|\array</dt>
+<dd><em>A string if the header has only one value, or an array if the header has multiple values, or null if the header does not exist.</em></dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h5 class="info">
+<img src="images/arrow_right.gif"> Details</h5>
+<dl class="function-info">
+<dt>visibility</dt>
+<dd>public</dd>
+<dt>final</dt>
+<dd>false</dd>
+<dt>static</dt>
+<dd>false</dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+<a id="\Aura\Web\ResponseTransfer::getHeaders()"></a><h4 class="method public">getHeaders<div class="to-top"><a href="#ResponseTransfer">jump to class</a></div>
+</h4>
+<div class="method">
+<code><span class="highlight">getHeaders</span><span class="nb-faded-text">(
+          
+          )
+        </span>
+        :
+        \array</code><p class="short-description">Returns the array of all headers to be sent with the response.</p>
+<div class="long-description">
+</div>
+<div class="api-section">
+<h5 class="output">Output</h5>
+<dl class="return-info">
+<dt>\array</dt>
+<dd><em></em></dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h5 class="info">
+<img src="images/arrow_right.gif"> Details</h5>
+<dl class="function-info">
+<dt>visibility</dt>
+<dd>public</dd>
+<dt>final</dt>
+<dd>false</dd>
+<dt>static</dt>
+<dd>false</dd>
+<dt>todo</dt>
+<dd>Add case for cache === true (hm, or cache === array).</dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+<a id="\Aura\Web\ResponseTransfer::getLayout()"></a><h4 class="method public">getLayout<div class="to-top"><a href="#ResponseTransfer">jump to class</a></div>
+</h4>
+<div class="method">
+<code><span class="highlight">getLayout</span><span class="nb-faded-text">(
+          
+          )
+        </span>
+        :
+        \mixed</code><p class="short-description">Returns the outer layout template for a two-step layout.</p>
+<div class="long-description">
+</div>
+<div class="api-section">
+<h5 class="output">Output</h5>
+<dl class="return-info">
+<dt>\mixed</dt>
+<dd><em>The outer layout template.</em></dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h5 class="info">
+<img src="images/arrow_right.gif"> Details</h5>
+<dl class="function-info">
+<dt>visibility</dt>
+<dd>public</dd>
+<dt>final</dt>
+<dd>false</dd>
+<dt>static</dt>
+<dd>false</dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+<a id="\Aura\Web\ResponseTransfer::getLayoutContentVar()"></a><h4 class="method public">getLayoutContentVar<div class="to-top"><a href="#ResponseTransfer">jump to class</a></div>
+</h4>
+<div class="method">
+<code><span class="highlight">getLayoutContentVar</span><span class="nb-faded-text">(
+          
+          )
+        </span>
+        :
+        </code><div class="api-section">
+<h5 class="info">
+<img src="images/arrow_right.gif"> Details</h5>
+<dl class="function-info">
+<dt>visibility</dt>
+<dd>public</dd>
+<dt>final</dt>
+<dd>false</dd>
+<dt>static</dt>
+<dd>false</dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+<a id="\Aura\Web\ResponseTransfer::getLayoutData()"></a><h4 class="method public">getLayoutData<div class="to-top"><a href="#ResponseTransfer">jump to class</a></div>
+</h4>
+<div class="method">
+<code><span class="highlight">getLayoutData</span><span class="nb-faded-text">(
+          
+          )
+        </span>
+        :
+        \array</code><p class="short-description">Returns the data for the outer layout template.</p>
+<div class="long-description">
+</div>
+<div class="api-section">
+<h5 class="output">Output</h5>
+<dl class="return-info">
+<dt>\array</dt>
+<dd><em>The outer layout template data.</em></dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h5 class="info">
+<img src="images/arrow_right.gif"> Details</h5>
+<dl class="function-info">
+<dt>visibility</dt>
+<dd>public</dd>
+<dt>final</dt>
+<dd>false</dd>
+<dt>static</dt>
+<dd>false</dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+<a id="\Aura\Web\ResponseTransfer::getLayoutStack()"></a><h4 class="method public">getLayoutStack<div class="to-top"><a href="#ResponseTransfer">jump to class</a></div>
+</h4>
+<div class="method">
+<code><span class="highlight">getLayoutStack</span><span class="nb-faded-text">(
+          
+          )
+        </span>
+        :
+        \array</code><p class="short-description">Returns the stack for the outer layout template finder.</p>
+<div class="long-description">
+</div>
+<div class="api-section">
+<h5 class="output">Output</h5>
+<dl class="return-info">
+<dt>\array</dt>
+<dd><em>The outer layout template finder stack.</em></dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h5 class="info">
+<img src="images/arrow_right.gif"> Details</h5>
+<dl class="function-info">
+<dt>visibility</dt>
+<dd>public</dd>
+<dt>final</dt>
+<dd>false</dd>
+<dt>static</dt>
+<dd>false</dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+<a id="\Aura\Web\ResponseTransfer::getRedirect()"></a><h4 class="method public">getRedirect<div class="to-top"><a href="#ResponseTransfer">jump to class</a></div>
+</h4>
+<div class="method">
+<code><span class="highlight">getRedirect</span><span class="nb-faded-text">(
+          
+          )
+        </span>
+        :
+        \string</code><p class="short-description">Returns the redirect location, if any.</p>
+<div class="long-description">
+</div>
+<div class="api-section">
+<h5 class="output">Output</h5>
+<dl class="return-info">
+<dt>\string</dt>
+<dd><em></em></dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h5 class="info">
+<img src="images/arrow_right.gif"> Details</h5>
+<dl class="function-info">
+<dt>visibility</dt>
+<dd>public</dd>
+<dt>final</dt>
+<dd>false</dd>
+<dt>static</dt>
+<dd>false</dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+<a id="\Aura\Web\ResponseTransfer::getStatusCode()"></a><h4 class="method public">getStatusCode<div class="to-top"><a href="#ResponseTransfer">jump to class</a></div>
+</h4>
+<div class="method">
+<code><span class="highlight">getStatusCode</span><span class="nb-faded-text">(
+          
+          )
+        </span>
+        :
+        \int</code><p class="short-description">Returns the HTTP status code for the response.</p>
+<div class="long-description">
+</div>
+<div class="api-section">
+<h5 class="output">Output</h5>
+<dl class="return-info">
+<dt>\int</dt>
+<dd><em></em></dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h5 class="info">
+<img src="images/arrow_right.gif"> Details</h5>
+<dl class="function-info">
+<dt>visibility</dt>
+<dd>public</dd>
+<dt>final</dt>
+<dd>false</dd>
+<dt>static</dt>
+<dd>false</dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+<a id="\Aura\Web\ResponseTransfer::getStatusText()"></a><h4 class="method public">getStatusText<div class="to-top"><a href="#ResponseTransfer">jump to class</a></div>
+</h4>
+<div class="method">
+<code><span class="highlight">getStatusText</span><span class="nb-faded-text">(
+          
+          )
+        </span>
+        :
+        \string</code><p class="short-description">Returns the HTTP status text for the response.</p>
+<div class="long-description">
+</div>
+<div class="api-section">
+<h5 class="output">Output</h5>
+<dl class="return-info">
+<dt>\string</dt>
+<dd><em></em></dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h5 class="info">
+<img src="images/arrow_right.gif"> Details</h5>
+<dl class="function-info">
+<dt>visibility</dt>
+<dd>public</dd>
+<dt>final</dt>
+<dd>false</dd>
+<dt>static</dt>
+<dd>false</dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+<a id="\Aura\Web\ResponseTransfer::getVersion()"></a><h4 class="method public">getVersion<div class="to-top"><a href="#ResponseTransfer">jump to class</a></div>
+</h4>
+<div class="method">
+<code><span class="highlight">getVersion</span><span class="nb-faded-text">(
+          
+          )
+        </span>
+        :
+        \string</code><p class="short-description">Returns the HTTP version for the response.</p>
+<div class="long-description">
+</div>
+<div class="api-section">
+<h5 class="output">Output</h5>
+<dl class="return-info">
+<dt>\string</dt>
+<dd><em></em></dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h5 class="info">
+<img src="images/arrow_right.gif"> Details</h5>
+<dl class="function-info">
+<dt>visibility</dt>
+<dd>public</dd>
+<dt>final</dt>
+<dd>false</dd>
+<dt>static</dt>
+<dd>false</dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+<a id="\Aura\Web\ResponseTransfer::getView()"></a><h4 class="method public">getView<div class="to-top"><a href="#ResponseTransfer">jump to class</a></div>
+</h4>
+<div class="method">
+<code><span class="highlight">getView</span><span class="nb-faded-text">(
+          
+          )
+        </span>
+        :
+        \mixed</code><p class="short-description">Returns the inner view template for a two-step view.</p>
+<div class="long-description">
+</div>
+<div class="api-section">
+<h5 class="output">Output</h5>
+<dl class="return-info">
+<dt>\mixed</dt>
+<dd><em>The inner view template.</em></dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h5 class="info">
+<img src="images/arrow_right.gif"> Details</h5>
+<dl class="function-info">
+<dt>visibility</dt>
+<dd>public</dd>
+<dt>final</dt>
+<dd>false</dd>
+<dt>static</dt>
+<dd>false</dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+<a id="\Aura\Web\ResponseTransfer::getViewData()"></a><h4 class="method public">getViewData<div class="to-top"><a href="#ResponseTransfer">jump to class</a></div>
+</h4>
+<div class="method">
+<code><span class="highlight">getViewData</span><span class="nb-faded-text">(
+          
+          )
+        </span>
+        :
+        \array</code><p class="short-description">Returns the data for the inner view template.</p>
+<div class="long-description">
+</div>
+<div class="api-section">
+<h5 class="output">Output</h5>
+<dl class="return-info">
+<dt>\array</dt>
+<dd><em>The inner view template data.</em></dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h5 class="info">
+<img src="images/arrow_right.gif"> Details</h5>
+<dl class="function-info">
+<dt>visibility</dt>
+<dd>public</dd>
+<dt>final</dt>
+<dd>false</dd>
+<dt>static</dt>
+<dd>false</dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+<a id="\Aura\Web\ResponseTransfer::getViewStack()"></a><h4 class="method public">getViewStack<div class="to-top"><a href="#ResponseTransfer">jump to class</a></div>
+</h4>
+<div class="method">
+<code><span class="highlight">getViewStack</span><span class="nb-faded-text">(
+          
+          )
+        </span>
+        :
+        \array</code><p class="short-description">Returns the stack for the inner view template finder.</p>
+<div class="long-description">
+</div>
+<div class="api-section">
+<h5 class="output">Output</h5>
+<dl class="return-info">
+<dt>\array</dt>
+<dd><em>The inner view template finder stack.</em></dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h5 class="info">
+<img src="images/arrow_right.gif"> Details</h5>
+<dl class="function-info">
+<dt>visibility</dt>
+<dd>public</dd>
+<dt>final</dt>
+<dd>false</dd>
+<dt>static</dt>
+<dd>false</dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+<a id="\Aura\Web\ResponseTransfer::headerLabel()"></a><h4 class="method protected">headerLabel<div class="to-top"><a href="#ResponseTransfer">jump to class</a></div>
+</h4>
+<div class="method">
+<code><span class="highlight">headerLabel</span><span class="nb-faded-text">(
+          \string $label
+          )
+        </span>
+        :
+        \string</code><p class="short-description">Normalizes and sanitizes a header label.</p>
+<div class="long-description">
+</div>
+<div class="api-section">
+<h5 class="arguments">Arguments</h5>
+<dl class="argument-info">
+<dt>$label</dt>
+<dd>\string<br><em>The header label to be sanitized.</em>
+</dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h5 class="output">Output</h5>
+<dl class="return-info">
+<dt>\string</dt>
+<dd><em>The sanitized header label.</em></dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h5 class="info">
+<img src="images/arrow_right.gif"> Details</h5>
+<dl class="function-info">
+<dt>visibility</dt>
+<dd>protected</dd>
+<dt>final</dt>
+<dd>false</dd>
+<dt>static</dt>
+<dd>false</dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+<a id="\Aura\Web\ResponseTransfer::headerValue()"></a><h4 class="method protected">headerValue<div class="to-top"><a href="#ResponseTransfer">jump to class</a></div>
+</h4>
+<div class="method">
+<code><span class="highlight">headerValue</span><span class="nb-faded-text">(
+           $value
+          )
+        </span>
+        :
+        \string</code><p class="short-description">Sanitizes a header value.</p>
+<div class="long-description">
+</div>
+<div class="api-section">
+<h5 class="arguments">Arguments</h5>
+<dl class="argument-info">
+<dt>$value</dt>
+<dd><em></em></dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h5 class="output">Output</h5>
+<dl class="return-info">
+<dt>\string</dt>
+<dd><em>The sanitized header value.</em></dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h5 class="info">
+<img src="images/arrow_right.gif"> Details</h5>
+<dl class="function-info">
+<dt>visibility</dt>
+<dd>protected</dd>
+<dt>final</dt>
+<dd>false</dd>
+<dt>static</dt>
+<dd>false</dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+<a id="\Aura\Web\ResponseTransfer::isRedirect()"></a><h4 class="method public">isRedirect<div class="to-top"><a href="#ResponseTransfer">jump to class</a></div>
+</h4>
+<div class="method">
+<code><span class="highlight">isRedirect</span><span class="nb-faded-text">(
+          
+          )
+        </span>
+        :
+        \bool</code><p class="short-description">Is the response set to issue a redirect?</p>
+<div class="long-description">
+</div>
+<div class="api-section">
+<h5 class="output">Output</h5>
+<dl class="return-info">
+<dt>\bool</dt>
+<dd><em></em></dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h5 class="info">
+<img src="images/arrow_right.gif"> Details</h5>
+<dl class="function-info">
+<dt>visibility</dt>
+<dd>public</dd>
+<dt>final</dt>
+<dd>false</dd>
+<dt>static</dt>
+<dd>false</dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+<a id="\Aura\Web\ResponseTransfer::match()"></a><h4 class="method protected">match<div class="to-top"><a href="#ResponseTransfer">jump to class</a></div>
+</h4>
+<div class="method">
+<code><span class="highlight">match</span><span class="nb-faded-text">(
+          \mixed $spec
+          )
+        </span>
+        :
+        \mixed</code><p class="short-description">Support method for matching views and layouts.</p>
+<div class="long-description">
+</div>
+<div class="api-section">
+<h5 class="arguments">Arguments</h5>
+<dl class="argument-info">
+<dt>$spec</dt>
+<dd>\mixed<br><em>The $view or $layout specification.</em>
+</dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h5 class="output">Output</h5>
+<dl class="return-info">
+<dt>\mixed</dt>
+<dd><em>The matching view or layout.</em></dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h5 class="info">
+<img src="images/arrow_right.gif"> Details</h5>
+<dl class="function-info">
+<dt>visibility</dt>
+<dd>protected</dd>
+<dt>final</dt>
+<dd>false</dd>
+<dt>static</dt>
+<dd>false</dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+<a id="\Aura\Web\ResponseTransfer::matchLayout()"></a><h4 class="method public">matchLayout<div class="to-top"><a href="#ResponseTransfer">jump to class</a></div>
+</h4>
+<div class="method">
+<code><span class="highlight">matchLayout</span><span class="nb-faded-text">(
+          
+          )
+        </span>
+        :
+        \string</code><p class="short-description">Compares the layout map against the content-type and returns the
+matching layout specification.</p>
+<div class="long-description">
+</div>
+<div class="api-section">
+<h5 class="output">Output</h5>
+<dl class="return-info">
+<dt>\string</dt>
+<dd><em></em></dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h5 class="info">
+<img src="images/arrow_right.gif"> Details</h5>
+<dl class="function-info">
+<dt>visibility</dt>
+<dd>public</dd>
+<dt>final</dt>
+<dd>false</dd>
+<dt>static</dt>
+<dd>false</dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+<a id="\Aura\Web\ResponseTransfer::matchView()"></a><h4 class="method public">matchView<div class="to-top"><a href="#ResponseTransfer">jump to class</a></div>
+</h4>
+<div class="method">
+<code><span class="highlight">matchView</span><span class="nb-faded-text">(
+          
+          )
+        </span>
+        :
+        \string</code><p class="short-description">Compares the view map against the content-type and returns the
+matching view specification.</p>
+<div class="long-description">
+</div>
+<div class="api-section">
+<h5 class="output">Output</h5>
+<dl class="return-info">
+<dt>\string</dt>
+<dd><em></em></dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h5 class="info">
+<img src="images/arrow_right.gif"> Details</h5>
+<dl class="function-info">
+<dt>visibility</dt>
+<dd>public</dd>
+<dt>final</dt>
+<dd>false</dd>
+<dt>static</dt>
+<dd>false</dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+<a id="\Aura\Web\ResponseTransfer::negotiateContentType()"></a><h4 class="method public">negotiateContentType<div class="to-top"><a href="#ResponseTransfer">jump to class</a></div>
+</h4>
+<div class="method">
+<code><span class="highlight">negotiateContentType</span><span class="nb-faded-text">(
+          \array $accept
+              =
+              array
+          )
+        </span>
+        :
+        \void</code><p class="short-description">Negotiates, and then sets, the response Content-Type by checking
+an array of acceptable types against the format extension, then
+against the view type map, and finally against the layout type map.</p>
+<div class="long-description">
+</div>
+<div class="api-section">
+<h5 class="arguments">Arguments</h5>
+<dl class="argument-info">
+<dt>$accept</dt>
+<dd>\array<br><em>An array of acceptable types.</em>
+</dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h5 class="output">Output</h5>
+<dl class="return-info">
+<dt>\void</dt>
+<dd><em></em></dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h5 class="info">
+<img src="images/arrow_right.gif"> Details</h5>
+<dl class="function-info">
+<dt>visibility</dt>
+<dd>public</dd>
+<dt>final</dt>
+<dd>false</dd>
+<dt>static</dt>
+<dd>false</dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+<a id="\Aura\Web\ResponseTransfer::setCache()"></a><h4 class="method public">setCache<div class="to-top"><a href="#ResponseTransfer">jump to class</a></div>
+</h4>
+<div class="method">
+<code><span class="highlight">setCache</span><span class="nb-faded-text">(
+          \bool $flag
+          )
+        </span>
+        :
+        \void</code><p class="short-description">Should the response disable HTTP caching?</p>
+<div class="long-description"><p>When <code>false</code>, the <code>getHeaders()</code> method will add these headers:</p>
+
+<pre><code>Pragma: no-cache
+Cache-Control: no-store, no-cache, must-revalidate
+Cache-Control: post-check=0, pre-check=0
+Expires: 1
+</code></pre>
+</div>
+<div class="api-section">
+<h5 class="arguments">Arguments</h5>
+<dl class="argument-info">
+<dt>$flag</dt>
+<dd>\bool<br><em>When true, disable browser caching.</em>
+</dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h5 class="output">Output</h5>
+<dl class="return-info">
+<dt>\void</dt>
+<dd><em></em></dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h5 class="info">
+<img src="images/arrow_right.gif"> Details</h5>
+<dl class="function-info">
+<dt>visibility</dt>
+<dd>public</dd>
+<dt>final</dt>
+<dd>false</dd>
+<dt>static</dt>
+<dd>false</dd>
+<dt>see</dt>
+<dd>redirectPost()</dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+<a id="\Aura\Web\ResponseTransfer::setContent()"></a><h4 class="method public">setContent<div class="to-top"><a href="#ResponseTransfer">jump to class</a></div>
+</h4>
+<div class="method">
+<code><span class="highlight">setContent</span><span class="nb-faded-text">(
+          \string $content
+          )
+        </span>
+        :
+        \void</code><p class="short-description">Sets the content of the response.</p>
+<div class="long-description">
+</div>
+<div class="api-section">
+<h5 class="arguments">Arguments</h5>
+<dl class="argument-info">
+<dt>$content</dt>
+<dd>\string<br><em>The body content of the response.</em>
+</dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h5 class="output">Output</h5>
+<dl class="return-info">
+<dt>\void</dt>
+<dd><em></em></dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h5 class="info">
+<img src="images/arrow_right.gif"> Details</h5>
+<dl class="function-info">
+<dt>visibility</dt>
+<dd>public</dd>
+<dt>final</dt>
+<dd>false</dd>
+<dt>static</dt>
+<dd>false</dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+<a id="\Aura\Web\ResponseTransfer::setContentType()"></a><h4 class="method public">setContentType<div class="to-top"><a href="#ResponseTransfer">jump to class</a></div>
+</h4>
+<div class="method">
+<code><span class="highlight">setContentType</span><span class="nb-faded-text">(
+          \string $type
+          )
+        </span>
+        :
+        \void</code><p class="short-description">Sets the Content-Type of the response.</p>
+<div class="long-description">
+</div>
+<div class="api-section">
+<h5 class="arguments">Arguments</h5>
+<dl class="argument-info">
+<dt>$type</dt>
+<dd>\string<br><em>The Content-Type of the response.</em>
+</dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h5 class="output">Output</h5>
+<dl class="return-info">
+<dt>\void</dt>
+<dd><em></em></dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h5 class="info">
+<img src="images/arrow_right.gif"> Details</h5>
+<dl class="function-info">
+<dt>visibility</dt>
+<dd>public</dd>
+<dt>final</dt>
+<dd>false</dd>
+<dt>static</dt>
+<dd>false</dd>
+<dt>see</dt>
+<dd>negotiateContentType()</dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+<a id="\Aura\Web\ResponseTransfer::setCookie()"></a><h4 class="method public">setCookie<div class="to-top"><a href="#ResponseTransfer">jump to class</a></div>
+</h4>
+<div class="method">
+<code><span class="highlight">setCookie</span><span class="nb-faded-text">(
+          \string $name, \string $value, \int|\string $expire
+              =
+              0, \string $path, \string $domain, \bool $secure
+              =
+              false, \bool $httponly
+              =
+              null
+          )
+        </span>
+        :
+        \void</code><p class="short-description">Sets a cookie value in `$cookies`.</p>
+<div class="long-description">
+</div>
+<div class="api-section">
+<h5 class="arguments">Arguments</h5>
+<dl class="argument-info">
+<dt>$name</dt>
+<dd>\string<br><em>The name of the cookie.</em>
+</dd>
+<dt>$value</dt>
+<dd>\string<br><em>The value of the cookie.</em>
+</dd>
+<dt>$expire</dt>
+<dd>\int\string<br><em>The Unix timestamp after which the cookie expires. If non-numeric, the method uses strtotime() on the value.</em>
+</dd>
+<dt>$path</dt>
+<dd>\string<br><em>The path on the server in which the cookie will be available on.</em>
+</dd>
+<dt>$domain</dt>
+<dd>\string<br><em>The domain that the cookie is available on.</em>
+</dd>
+<dt>$secure</dt>
+<dd>\bool<br><em>Indicates that the cookie should only be transmitted over a secure HTTPS connection.</em>
+</dd>
+<dt>$httponly</dt>
+<dd>\bool<br><em>When true, the cookie will be made accessible only through the HTTP protocol. This means that the cookie won&amp;#039;t be accessible by scripting languages, such as JavaScript.</em>
+</dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h5 class="output">Output</h5>
+<dl class="return-info">
+<dt>\void</dt>
+<dd><em></em></dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h5 class="info">
+<img src="images/arrow_right.gif"> Details</h5>
+<dl class="function-info">
+<dt>visibility</dt>
+<dd>public</dd>
+<dt>final</dt>
+<dd>false</dd>
+<dt>static</dt>
+<dd>false</dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+<a id="\Aura\Web\ResponseTransfer::setCookiesHttponly()"></a><h4 class="method public">setCookiesHttponly<div class="to-top"><a href="#ResponseTransfer">jump to class</a></div>
+</h4>
+<div class="method">
+<code><span class="highlight">setCookiesHttponly</span><span class="nb-faded-text">(
+          \bool $flag
+          )
+        </span>
+        :
+        \void</code><p class="short-description">By default, should cookies be sent by HTTP only?</p>
+<div class="long-description">
+</div>
+<div class="api-section">
+<h5 class="arguments">Arguments</h5>
+<dl class="argument-info">
+<dt>$flag</dt>
+<dd>\bool<br><em>True to send by HTTP only, false to send by any method.</em>
+</dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h5 class="output">Output</h5>
+<dl class="return-info">
+<dt>\void</dt>
+<dd><em></em></dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h5 class="info">
+<img src="images/arrow_right.gif"> Details</h5>
+<dl class="function-info">
+<dt>visibility</dt>
+<dd>public</dd>
+<dt>final</dt>
+<dd>false</dd>
+<dt>static</dt>
+<dd>false</dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+<a id="\Aura\Web\ResponseTransfer::setFormat()"></a><h4 class="method public">setFormat<div class="to-top"><a href="#ResponseTransfer">jump to class</a></div>
+</h4>
+<div class="method">
+<code><span class="highlight">setFormat</span><span class="nb-faded-text">(
+          \string $format
+          )
+        </span>
+        :
+        \void</code><p class="short-description">Sets the output format extension.</p>
+<div class="long-description">
+</div>
+<div class="api-section">
+<h5 class="arguments">Arguments</h5>
+<dl class="argument-info">
+<dt>$format</dt>
+<dd>\string<br><em></em>
+</dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h5 class="output">Output</h5>
+<dl class="return-info">
+<dt>\void</dt>
+<dd><em></em></dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h5 class="info">
+<img src="images/arrow_right.gif"> Details</h5>
+<dl class="function-info">
+<dt>visibility</dt>
+<dd>public</dd>
+<dt>final</dt>
+<dd>false</dd>
+<dt>static</dt>
+<dd>false</dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+<a id="\Aura\Web\ResponseTransfer::setHeader()"></a><h4 class="method public">setHeader<div class="to-top"><a href="#ResponseTransfer">jump to class</a></div>
+</h4>
+<div class="method">
+<code><span class="highlight">setHeader</span><span class="nb-faded-text">(
+          \string $key, \string $val,  $replace
+              =
+              true
+          )
+        </span>
+        :
+        \void</code><p class="short-description">Sets a header value in `$headers`.</p>
+<div class="long-description">
+</div>
+<div class="api-section">
+<h5 class="arguments">Arguments</h5>
+<dl class="argument-info">
+<dt>$key</dt>
+<dd>\string<br><em>The header label.</em>
+</dd>
+<dt>$val</dt>
+<dd>\string<br><em>The value for the header.</em>
+</dd>
+<dt>$replace</dt>
+<dd><em></em></dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h5 class="output">Output</h5>
+<dl class="return-info">
+<dt>\void</dt>
+<dd><em></em></dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h5 class="info">
+<img src="images/arrow_right.gif"> Details</h5>
+<dl class="function-info">
+<dt>visibility</dt>
+<dd>public</dd>
+<dt>final</dt>
+<dd>false</dd>
+<dt>static</dt>
+<dd>false</dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+<a id="\Aura\Web\ResponseTransfer::setLayout()"></a><h4 class="method public">setLayout<div class="to-top"><a href="#ResponseTransfer">jump to class</a></div>
+</h4>
+<div class="method">
+<code><span class="highlight">setLayout</span><span class="nb-faded-text">(
+          \mixed $layout
+          )
+        </span>
+        :
+        \void</code><p class="short-description">Sets the outer layout template for a two-step layout.</p>
+<div class="long-description">
+</div>
+<div class="api-section">
+<h5 class="arguments">Arguments</h5>
+<dl class="argument-info">
+<dt>$layout</dt>
+<dd>\mixed<br><em>The outer layout template.</em>
+</dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h5 class="output">Output</h5>
+<dl class="return-info">
+<dt>\void</dt>
+<dd><em></em></dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h5 class="info">
+<img src="images/arrow_right.gif"> Details</h5>
+<dl class="function-info">
+<dt>visibility</dt>
+<dd>public</dd>
+<dt>final</dt>
+<dd>false</dd>
+<dt>static</dt>
+<dd>false</dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+<a id="\Aura\Web\ResponseTransfer::setLayoutContentVar()"></a><h4 class="method public">setLayoutContentVar<div class="to-top"><a href="#ResponseTransfer">jump to class</a></div>
+</h4>
+<div class="method">
+<code><span class="highlight">setLayoutContentVar</span><span class="nb-faded-text">(
+           $layout_content_var
+          )
+        </span>
+        :
+        </code><div class="api-section">
+<h5 class="arguments">Arguments</h5>
+<dl class="argument-info">
+<dt>$layout_content_var</dt>
+<dd><em></em></dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h5 class="info">
+<img src="images/arrow_right.gif"> Details</h5>
+<dl class="function-info">
+<dt>visibility</dt>
+<dd>public</dd>
+<dt>final</dt>
+<dd>false</dd>
+<dt>static</dt>
+<dd>false</dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+<a id="\Aura\Web\ResponseTransfer::setLayoutData()"></a><h4 class="method public">setLayoutData<div class="to-top"><a href="#ResponseTransfer">jump to class</a></div>
+</h4>
+<div class="method">
+<code><span class="highlight">setLayoutData</span><span class="nb-faded-text">(
+          \array $layout_data
+          )
+        </span>
+        :
+        \void</code><p class="short-description">Sets the data for the outer layout template.</p>
+<div class="long-description">
+</div>
+<div class="api-section">
+<h5 class="arguments">Arguments</h5>
+<dl class="argument-info">
+<dt>$layout_data</dt>
+<dd>\array<br><em>The outer layout template data.</em>
+</dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h5 class="output">Output</h5>
+<dl class="return-info">
+<dt>\void</dt>
+<dd><em></em></dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h5 class="info">
+<img src="images/arrow_right.gif"> Details</h5>
+<dl class="function-info">
+<dt>visibility</dt>
+<dd>public</dd>
+<dt>final</dt>
+<dd>false</dd>
+<dt>static</dt>
+<dd>false</dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+<a id="\Aura\Web\ResponseTransfer::setRedirect()"></a><h4 class="method public">setRedirect<div class="to-top"><a href="#ResponseTransfer">jump to class</a></div>
+</h4>
+<div class="method">
+<code><span class="highlight">setRedirect</span><span class="nb-faded-text">(
+          \string $uri, \int $code
+              =
+              302, \string $text
+              =
+              Found
+          )
+        </span>
+        :
+        \void</code><p class="short-description">Set a location that the response should redirect to, along with a
+a status code and status text.</p>
+<div class="long-description">
+</div>
+<div class="api-section">
+<h5 class="arguments">Arguments</h5>
+<dl class="argument-info">
+<dt>$uri</dt>
+<dd>\string<br><em>The URI to redirect to.</em>
+</dd>
+<dt>$code</dt>
+<dd>\int<br><em>The HTTP status code to redirect with; default is `302`.</em>
+</dd>
+<dt>$text</dt>
+<dd>\string<br><em>The HTTP status text; default is `&amp;#039;Found&amp;#039;`.</em>
+</dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h5 class="output">Output</h5>
+<dl class="return-info">
+<dt>\void</dt>
+<dd><em></em></dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h5 class="info">
+<img src="images/arrow_right.gif"> Details</h5>
+<dl class="function-info">
+<dt>visibility</dt>
+<dd>public</dd>
+<dt>final</dt>
+<dd>false</dd>
+<dt>static</dt>
+<dd>false</dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+<a id="\Aura\Web\ResponseTransfer::setRedirectAfterPost()"></a><h4 class="method public">setRedirectAfterPost<div class="to-top"><a href="#ResponseTransfer">jump to class</a></div>
+</h4>
+<div class="method">
+<code><span class="highlight">setRedirectAfterPost</span><span class="nb-faded-text">(
+          \string $uri, \int|\string $code
+              =
+              303, \string $text
+              =
+              See Other
+          )
+        </span>
+        :
+        \void</code><p class="short-description">Set a location that the response should redirect to, along with a
+a status code and status text, *and* sets caching to false.</p>
+<div class="long-description">
+</div>
+<div class="api-section">
+<h5 class="arguments">Arguments</h5>
+<dl class="argument-info">
+<dt>$uri</dt>
+<dd>\string<br><em>The URI to redirect to.</em>
+</dd>
+<dt>$code</dt>
+<dd>\int\string<br><em>The HTTP status code to redirect with; default is `303`.</em>
+</dd>
+<dt>$text</dt>
+<dd>\string<br><em>The HTTP status text; default is `&amp;#039;See Other&amp;#039;`.</em>
+</dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h5 class="output">Output</h5>
+<dl class="return-info">
+<dt>\void</dt>
+<dd><em></em></dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h5 class="info">
+<img src="images/arrow_right.gif"> Details</h5>
+<dl class="function-info">
+<dt>visibility</dt>
+<dd>public</dd>
+<dt>final</dt>
+<dd>false</dd>
+<dt>static</dt>
+<dd>false</dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+<a id="\Aura\Web\ResponseTransfer::setStatusCode()"></a><h4 class="method public">setStatusCode<div class="to-top"><a href="#ResponseTransfer">jump to class</a></div>
+</h4>
+<div class="method">
+<code><span class="highlight">setStatusCode</span><span class="nb-faded-text">(
+          \int $code
+          )
+        </span>
+        :
+        </code><p class="short-description">Sets the HTTP status code to for the response.</p>
+<div class="long-description"><p>Automatically resets the status text to null.</p>
+</div>
+<div class="api-section">
+<h5 class="arguments">Arguments</h5>
+<dl class="argument-info">
+<dt>$code</dt>
+<dd>\int<br><em>An HTTP status code, such as 200, 302, 404, etc.</em>
+</dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h5 class="info">
+<img src="images/arrow_right.gif"> Details</h5>
+<dl class="function-info">
+<dt>visibility</dt>
+<dd>public</dd>
+<dt>final</dt>
+<dd>false</dd>
+<dt>static</dt>
+<dd>false</dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+<a id="\Aura\Web\ResponseTransfer::setStatusText()"></a><h4 class="method public">setStatusText<div class="to-top"><a href="#ResponseTransfer">jump to class</a></div>
+</h4>
+<div class="method">
+<code><span class="highlight">setStatusText</span><span class="nb-faded-text">(
+          \string $text
+          )
+        </span>
+        :
+        \void</code><p class="short-description">Sets the HTTP status text for the response.</p>
+<div class="long-description">
+</div>
+<div class="api-section">
+<h5 class="arguments">Arguments</h5>
+<dl class="argument-info">
+<dt>$text</dt>
+<dd>\string<br><em>The status text.</em>
+</dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h5 class="output">Output</h5>
+<dl class="return-info">
+<dt>\void</dt>
+<dd><em></em></dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h5 class="info">
+<img src="images/arrow_right.gif"> Details</h5>
+<dl class="function-info">
+<dt>visibility</dt>
+<dd>public</dd>
+<dt>final</dt>
+<dd>false</dd>
+<dt>static</dt>
+<dd>false</dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+<a id="\Aura\Web\ResponseTransfer::setVersion()"></a><h4 class="method public">setVersion<div class="to-top"><a href="#ResponseTransfer">jump to class</a></div>
+</h4>
+<div class="method">
+<code><span class="highlight">setVersion</span><span class="nb-faded-text">(
+          \string $version
+          )
+        </span>
+        :
+        \void</code><p class="short-description">Sets the HTTP version for the response to '1.0' or '1.1'.</p>
+<div class="long-description">
+</div>
+<div class="api-section">
+<h5 class="arguments">Arguments</h5>
+<dl class="argument-info">
+<dt>$version</dt>
+<dd>\string<br><em>The HTTP version to use for this response.</em>
+</dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h5 class="output">Output</h5>
+<dl class="return-info">
+<dt>\void</dt>
+<dd><em></em></dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h5 class="info">
+<img src="images/arrow_right.gif"> Details</h5>
+<dl class="function-info">
+<dt>visibility</dt>
+<dd>public</dd>
+<dt>final</dt>
+<dd>false</dd>
+<dt>static</dt>
+<dd>false</dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+<a id="\Aura\Web\ResponseTransfer::setView()"></a><h4 class="method public">setView<div class="to-top"><a href="#ResponseTransfer">jump to class</a></div>
+</h4>
+<div class="method">
+<code><span class="highlight">setView</span><span class="nb-faded-text">(
+          \mixed $view
+          )
+        </span>
+        :
+        \void</code><p class="short-description">Sets the inner view template for a two-step view.</p>
+<div class="long-description">
+</div>
+<div class="api-section">
+<h5 class="arguments">Arguments</h5>
+<dl class="argument-info">
+<dt>$view</dt>
+<dd>\mixed<br><em>The inner view template.</em>
+</dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h5 class="output">Output</h5>
+<dl class="return-info">
+<dt>\void</dt>
+<dd><em></em></dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h5 class="info">
+<img src="images/arrow_right.gif"> Details</h5>
+<dl class="function-info">
+<dt>visibility</dt>
+<dd>public</dd>
+<dt>final</dt>
+<dd>false</dd>
+<dt>static</dt>
+<dd>false</dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+<a id="\Aura\Web\ResponseTransfer::setViewData()"></a><h4 class="method public">setViewData<div class="to-top"><a href="#ResponseTransfer">jump to class</a></div>
+</h4>
+<div class="method">
+<code><span class="highlight">setViewData</span><span class="nb-faded-text">(
+          \array $view_data
+          )
+        </span>
+        :
+        \void</code><p class="short-description">Sets the data for the inner view template.</p>
+<div class="long-description">
+</div>
+<div class="api-section">
+<h5 class="arguments">Arguments</h5>
+<dl class="argument-info">
+<dt>$view_data</dt>
+<dd>\array<br><em>The inner view template data.</em>
+</dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h5 class="output">Output</h5>
+<dl class="return-info">
+<dt>\void</dt>
+<dd><em></em></dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h5 class="info">
+<img src="images/arrow_right.gif"> Details</h5>
+<dl class="function-info">
+<dt>visibility</dt>
+<dd>public</dd>
+<dt>final</dt>
+<dd>false</dd>
+<dt>static</dt>
+<dd>false</dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<small xmlns="" class="footer">Documentation was generated by <a href="http://docblox-project.org">DocBlox 0.11.2</a>.
+    </small></body></html>

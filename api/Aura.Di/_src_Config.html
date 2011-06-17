@@ -1,0 +1,421 @@
+<html xmlns="http://www.w3.org/1999/xhtml"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Aura Project for PHP: Aura.Di</title><link rel="stylesheet" href="css/black-tie/jquery-ui-1.8.2.custom.css" type="text/css"></link><link rel="stylesheet" href="css/jquery.treeview.css" type="text/css"></link><link rel="stylesheet" href="css/theme.css" type="text/css"></link><script type="text/javascript" src="js/jquery-1.4.2.min.js"></script><script type="text/javascript" src="js/jquery-ui-1.8.2.custom.min.js"></script><script type="text/javascript" src="js/jquery.cookie.js"></script><script type="text/javascript" src="js/jquery.treeview.js"></script><script type="text/javascript">
+            $(document).ready(function() {
+                $(".filetree").treeview({
+                    collapsed: true,
+                    persist: "cookie"
+                });
+
+                $("#accordion").accordion({
+                    collapsible: true,
+                    autoHeight:  false,
+                    fillSpace:   true
+                });
+
+                $(".tabs").tabs();
+            });
+        </script></head><body><div xmlns="" id="content">
+<script>
+      $(document).ready(function() {
+        $('dl.function-info, dl.constant-info, dl.property-info').prev().css('cursor', 'pointer');
+        $('dl.function-info, dl.constant-info, dl.property-info').prev().click(function() {
+          if ($(this).next().is(':hidden'))
+          {
+            $(this).children('img')[0].src = 'images/arrow_down.gif';
+          } else
+          {
+            $(this).children('img')[0].src = 'images/arrow_right.gif';
+          }
+          $(this).next().slideToggle();
+        });
+      $('dl.function-info, dl.constant-info, dl.property-info').hide();
+      $('dl.function-info img, dl.constant-info img, dl.property-info img').show();
+      });
+    </script><a name="top"></a><h1 class="file">src/Config.php</h1>
+<div class="file_menu">
+<a href="#classes">Classes</a> </div>
+<dl class="file-info">
+<dt>Classes</dt>
+<dd><a class="class" href="#%5CAura%5CDi%5CConfig">Config</a></dd>
+</dl>
+<a name="classes"></a><a id="\Aura\Di\Config"></a><h2 class="class">\Aura\Di\Config<div class="to-top"><a href="#top">jump to top</a></div>
+</h2>
+<div class="class">
+<dl class="class-info">
+<dt>Implements</dt>
+<dd><a href="_src_ConfigInterface.html#%5CAura%5CDi%5CConfigInterface">\Aura\Di\ConfigInterface</a></dd>
+<dt>package</dt>
+<dd>Aura.Di</dd>
+<dt>Properties</dt>
+<dd><a class="property protected" href="#%5CAura%5CDi%5CConfig::%24params">$params</a></dd>
+<dd><a class="property protected" href="#%5CAura%5CDi%5CConfig::%24reflect">$reflect</a></dd>
+<dd><a class="property protected" href="#%5CAura%5CDi%5CConfig::%24setter">$setter</a></dd>
+<dd><a class="property protected" href="#%5CAura%5CDi%5CConfig::%24unified">$unified</a></dd>
+<dt>Methods</dt>
+<dd><a class="method public" href="#%5CAura%5CDi%5CConfig::__construct()">__construct</a></dd>
+<dd><a class="method public" href="#%5CAura%5CDi%5CConfig::__clone()">__clone</a></dd>
+<dd><a class="method protected" href="#%5CAura%5CDi%5CConfig::reset()">reset</a></dd>
+<dd><a class="method public" href="#%5CAura%5CDi%5CConfig::getParams()">getParams</a></dd>
+<dd><a class="method public" href="#%5CAura%5CDi%5CConfig::getSetter()">getSetter</a></dd>
+<dd><a class="method public" href="#%5CAura%5CDi%5CConfig::getReflect()">getReflect</a></dd>
+<dd><a class="method public" href="#%5CAura%5CDi%5CConfig::fetch()">fetch</a></dd>
+</dl>
+<h3>Description</h3>
+<p class="short-description">Retains and unifies class configurations.</p>
+<div class="long-description">
+</div>
+<h3>Properties</h3>
+<div>
+<a id="\Aura\Di\Config::$params"></a><h4 class="property protected">$params<div class="to-top"><a href="#%5CAura%5CDi%5CConfig">jump to class</a></div>
+</h4>
+<div class="property">
+<code>\ArrayObject <span class="highlight">$params</span> = ''</code><p class="short-description">Constructor params from external configuration in the form
+`$params[$class][$name] = $value`.</p>
+<div class="long-description">
+</div>
+<div class="api-section">
+<h4 class="info">
+<img src="images/arrow_right.gif"> Details</h4>
+<dl class="property-info">
+<dt></dt>
+<dd>\ArrayObject<br><em></em>
+</dd>
+<dt>visibility</dt>
+<dd>protected</dd>
+<dt>default</dt>
+<dd></dd>
+<dt>final</dt>
+<dd>false</dd>
+<dt>static</dt>
+<dd>false</dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+<a id="\Aura\Di\Config::$reflect"></a><h4 class="property protected">$reflect<div class="to-top"><a href="#%5CAura%5CDi%5CConfig">jump to class</a></div>
+</h4>
+<div class="property">
+<code>\array <span class="highlight">$reflect</span> = 'array'</code><p class="short-description">An array of retained ReflectionClass instances; this is as much for
+the Forge as it is for Config.</p>
+<div class="long-description">
+</div>
+<div class="api-section">
+<h4 class="info">
+<img src="images/arrow_right.gif"> Details</h4>
+<dl class="property-info">
+<dt></dt>
+<dd>\array<br><em></em>
+</dd>
+<dt>visibility</dt>
+<dd>protected</dd>
+<dt>default</dt>
+<dd>array</dd>
+<dt>final</dt>
+<dd>false</dd>
+<dt>static</dt>
+<dd>false</dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+<a id="\Aura\Di\Config::$setter"></a><h4 class="property protected">$setter<div class="to-top"><a href="#%5CAura%5CDi%5CConfig">jump to class</a></div>
+</h4>
+<div class="property">
+<code>\ArrayObject <span class="highlight">$setter</span> = ''</code><p class="short-description">Setter definitions in the form of `$setter[$class][$method] = $value`.</p>
+<div class="long-description">
+</div>
+<div class="api-section">
+<h4 class="info">
+<img src="images/arrow_right.gif"> Details</h4>
+<dl class="property-info">
+<dt></dt>
+<dd>\ArrayObject<br><em></em>
+</dd>
+<dt>visibility</dt>
+<dd>protected</dd>
+<dt>default</dt>
+<dd></dd>
+<dt>final</dt>
+<dd>false</dd>
+<dt>static</dt>
+<dd>false</dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+<a id="\Aura\Di\Config::$unified"></a><h4 class="property protected">$unified<div class="to-top"><a href="#%5CAura%5CDi%5CConfig">jump to class</a></div>
+</h4>
+<div class="property">
+<code>\array <span class="highlight">$unified</span> = 'array'</code><p class="short-description">Constructor params and setter definitions, unified across class
+defaults, inheritance hierarchies, and external configurations.</p>
+<div class="long-description">
+</div>
+<div class="api-section">
+<h4 class="info">
+<img src="images/arrow_right.gif"> Details</h4>
+<dl class="property-info">
+<dt></dt>
+<dd>\array<br><em></em>
+</dd>
+<dt>visibility</dt>
+<dd>protected</dd>
+<dt>default</dt>
+<dd>array</dd>
+<dt>final</dt>
+<dd>false</dd>
+<dt>static</dt>
+<dd>false</dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+</div>
+<h3>Methods</h3>
+<div>
+<a id="\Aura\Di\Config::__clone()"></a><h4 class="method public">__clone<div class="to-top"><a href="#Config">jump to class</a></div>
+</h4>
+<div class="method">
+<code><span class="highlight">__clone</span><span class="nb-faded-text">(
+          
+          )
+        </span>
+        :
+        \void</code><p class="short-description">When cloning this object, reset the params and setter values (but
+leave the reflection values in place).</p>
+<div class="long-description">
+</div>
+<div class="api-section">
+<h5 class="output">Output</h5>
+<dl class="return-info">
+<dt>\void</dt>
+<dd><em></em></dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h5 class="info">
+<img src="images/arrow_right.gif"> Details</h5>
+<dl class="function-info">
+<dt>visibility</dt>
+<dd>public</dd>
+<dt>final</dt>
+<dd>false</dd>
+<dt>static</dt>
+<dd>false</dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+<a id="\Aura\Di\Config::__construct()"></a><h4 class="method public">__construct<div class="to-top"><a href="#Config">jump to class</a></div>
+</h4>
+<div class="method">
+<code><span class="highlight">__construct</span><span class="nb-faded-text">(
+          
+          )
+        </span>
+        :
+        </code><p class="short-description">Constructor.</p>
+<div class="long-description">
+</div>
+<div class="api-section">
+<h5 class="info">
+<img src="images/arrow_right.gif"> Details</h5>
+<dl class="function-info">
+<dt>visibility</dt>
+<dd>public</dd>
+<dt>final</dt>
+<dd>false</dd>
+<dt>static</dt>
+<dd>false</dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+<a id="\Aura\Di\Config::fetch()"></a><h4 class="method public">fetch<div class="to-top"><a href="#Config">jump to class</a></div>
+</h4>
+<div class="method">
+<code><span class="highlight">fetch</span><span class="nb-faded-text">(
+          \string $class
+          )
+        </span>
+        :
+        \array</code><p class="short-description">Fetches the unified constructor params and setter values for a class.</p>
+<div class="long-description">
+</div>
+<div class="api-section">
+<h5 class="arguments">Arguments</h5>
+<dl class="argument-info">
+<dt>$class</dt>
+<dd>\string<br><em>The class name to fetch values for.</em>
+</dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h5 class="output">Output</h5>
+<dl class="return-info">
+<dt>\array</dt>
+<dd><em>An array with two elements; 0 is the constructor values for the class, and 1 is the setter methods and values for the class.</em></dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h5 class="info">
+<img src="images/arrow_right.gif"> Details</h5>
+<dl class="function-info">
+<dt>visibility</dt>
+<dd>public</dd>
+<dt>final</dt>
+<dd>false</dd>
+<dt>static</dt>
+<dd>false</dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+<a id="\Aura\Di\Config::getParams()"></a><h4 class="method public">getParams<div class="to-top"><a href="#Config">jump to class</a></div>
+</h4>
+<div class="method">
+<code><span class="highlight">getParams</span><span class="nb-faded-text">(
+          
+          )
+        </span>
+        :
+        \ArrayObject</code><p class="short-description">Gets the $params property.</p>
+<div class="long-description">
+</div>
+<div class="api-section">
+<h5 class="output">Output</h5>
+<dl class="return-info">
+<dt>\ArrayObject</dt>
+<dd><em></em></dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h5 class="info">
+<img src="images/arrow_right.gif"> Details</h5>
+<dl class="function-info">
+<dt>visibility</dt>
+<dd>public</dd>
+<dt>final</dt>
+<dd>false</dd>
+<dt>static</dt>
+<dd>false</dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+<a id="\Aura\Di\Config::getReflect()"></a><h4 class="method public">getReflect<div class="to-top"><a href="#Config">jump to class</a></div>
+</h4>
+<div class="method">
+<code><span class="highlight">getReflect</span><span class="nb-faded-text">(
+          \string $class
+          )
+        </span>
+        :
+        \ReflectionClass</code><p class="short-description">Returns a \ReflectionClass for a named class.</p>
+<div class="long-description">
+</div>
+<div class="api-section">
+<h5 class="arguments">Arguments</h5>
+<dl class="argument-info">
+<dt>$class</dt>
+<dd>\string<br><em>The class to reflect on.</em>
+</dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h5 class="output">Output</h5>
+<dl class="return-info">
+<dt>\ReflectionClass</dt>
+<dd><em></em></dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h5 class="info">
+<img src="images/arrow_right.gif"> Details</h5>
+<dl class="function-info">
+<dt>visibility</dt>
+<dd>public</dd>
+<dt>final</dt>
+<dd>false</dd>
+<dt>static</dt>
+<dd>false</dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+<a id="\Aura\Di\Config::getSetter()"></a><h4 class="method public">getSetter<div class="to-top"><a href="#Config">jump to class</a></div>
+</h4>
+<div class="method">
+<code><span class="highlight">getSetter</span><span class="nb-faded-text">(
+          
+          )
+        </span>
+        :
+        \ArrayObject</code><p class="short-description">Gets the $setter property.</p>
+<div class="long-description">
+</div>
+<div class="api-section">
+<h5 class="output">Output</h5>
+<dl class="return-info">
+<dt>\ArrayObject</dt>
+<dd><em></em></dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h5 class="info">
+<img src="images/arrow_right.gif"> Details</h5>
+<dl class="function-info">
+<dt>visibility</dt>
+<dd>public</dd>
+<dt>final</dt>
+<dd>false</dd>
+<dt>static</dt>
+<dd>false</dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+<a id="\Aura\Di\Config::reset()"></a><h4 class="method protected">reset<div class="to-top"><a href="#Config">jump to class</a></div>
+</h4>
+<div class="method">
+<code><span class="highlight">reset</span><span class="nb-faded-text">(
+          
+          )
+        </span>
+        :
+        \void</code><p class="short-description">Resets the params and setter values.</p>
+<div class="long-description">
+</div>
+<div class="api-section">
+<h5 class="output">Output</h5>
+<dl class="return-info">
+<dt>\void</dt>
+<dd><em></em></dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h5 class="info">
+<img src="images/arrow_right.gif"> Details</h5>
+<dl class="function-info">
+<dt>visibility</dt>
+<dd>protected</dd>
+<dt>final</dt>
+<dd>false</dd>
+<dt>static</dt>
+<dd>false</dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<small xmlns="" class="footer">Documentation was generated by <a href="http://docblox-project.org">DocBlox 0.11.2</a>.
+    </small></body></html>

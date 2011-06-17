@@ -1,0 +1,217 @@
+<html xmlns="http://www.w3.org/1999/xhtml"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Aura Project for PHP: Aura.Http</title><link rel="stylesheet" href="css/black-tie/jquery-ui-1.8.2.custom.css" type="text/css"></link><link rel="stylesheet" href="css/jquery.treeview.css" type="text/css"></link><link rel="stylesheet" href="css/theme.css" type="text/css"></link><script type="text/javascript" src="js/jquery-1.4.2.min.js"></script><script type="text/javascript" src="js/jquery-ui-1.8.2.custom.min.js"></script><script type="text/javascript" src="js/jquery.cookie.js"></script><script type="text/javascript" src="js/jquery.treeview.js"></script><script type="text/javascript">
+            $(document).ready(function() {
+                $(".filetree").treeview({
+                    collapsed: true,
+                    persist: "cookie"
+                });
+
+                $("#accordion").accordion({
+                    collapsible: true,
+                    autoHeight:  false,
+                    fillSpace:   true
+                });
+
+                $(".tabs").tabs();
+            });
+        </script></head><body><div xmlns="" id="content">
+<script>
+      $(document).ready(function() {
+        $('dl.function-info, dl.constant-info, dl.property-info').prev().css('cursor', 'pointer');
+        $('dl.function-info, dl.constant-info, dl.property-info').prev().click(function() {
+          if ($(this).next().is(':hidden'))
+          {
+            $(this).children('img')[0].src = 'images/arrow_down.gif';
+          } else
+          {
+            $(this).children('img')[0].src = 'images/arrow_right.gif';
+          }
+          $(this).next().slideToggle();
+        });
+      $('dl.function-info, dl.constant-info, dl.property-info').hide();
+      $('dl.function-info img, dl.constant-info img, dl.property-info img').show();
+      });
+    </script><a name="top"></a><h1 class="file">src/Cookies.php</h1>
+<div class="file_menu">
+<a href="#classes">Classes</a> </div>
+<dl class="file-info">
+<dt>Classes</dt>
+<dd><a class="class" href="#%5CAura%5CHttp%5CCookies">Cookies</a></dd>
+</dl>
+<a name="classes"></a><a id="\Aura\Http\Cookies"></a><h2 class="class">\Aura\Http\Cookies<div class="to-top"><a href="#top">jump to top</a></div>
+</h2>
+<div class="class">
+<dl class="class-info">
+<dt>package</dt>
+<dd>Aura.Http</dd>
+<dt>Properties</dt>
+<dd><a class="property protected" href="#%5CAura%5CHttp%5CCookies::%24list">$list</a></dd>
+<dd><a class="property protected" href="#%5CAura%5CHttp%5CCookies::%24base">$base</a></dd>
+<dt>Methods</dt>
+<dd><a class="method public" href="#%5CAura%5CHttp%5CCookies::set()">set</a></dd>
+<dd><a class="method public" href="#%5CAura%5CHttp%5CCookies::getAll()">getAll</a></dd>
+<dd><a class="method public" href="#%5CAura%5CHttp%5CCookies::setAll()">setAll</a></dd>
+<dd><a class="method public" href="#%5CAura%5CHttp%5CCookies::send()">send</a></dd>
+</dl>
+<h3>Description</h3>
+<p class="short-description">Collection of non-cookie HTTP headers.</p>
+<div class="long-description">
+</div>
+<h3>Properties</h3>
+<div>
+<a id="\Aura\Http\Cookies::$base"></a><h4 class="property protected">$base<div class="to-top"><a href="#%5CAura%5CHttp%5CCookies">jump to class</a></div>
+</h4>
+<div class="property">
+<code> <span class="highlight">$base</span> = 'array'</code><div class="api-section">
+<h4 class="info">
+<img src="images/arrow_right.gif"> Details</h4>
+<dl class="property-info">
+<dt>visibility</dt>
+<dd>protected</dd>
+<dt>default</dt>
+<dd>array</dd>
+<dt>final</dt>
+<dd>false</dd>
+<dt>static</dt>
+<dd>false</dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+<a id="\Aura\Http\Cookies::$list"></a><h4 class="property protected">$list<div class="to-top"><a href="#%5CAura%5CHttp%5CCookies">jump to class</a></div>
+</h4>
+<div class="property">
+<code> <span class="highlight">$list</span> = 'array'</code><div class="api-section">
+<h4 class="info">
+<img src="images/arrow_right.gif"> Details</h4>
+<dl class="property-info">
+<dt>visibility</dt>
+<dd>protected</dd>
+<dt>default</dt>
+<dd>array</dd>
+<dt>final</dt>
+<dd>false</dd>
+<dt>static</dt>
+<dd>false</dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+</div>
+<h3>Methods</h3>
+<div>
+<a id="\Aura\Http\Cookies::getAll()"></a><h4 class="method public">getAll<div class="to-top"><a href="#Cookies">jump to class</a></div>
+</h4>
+<div class="method">
+<code><span class="highlight">getAll</span><span class="nb-faded-text">(
+          
+          )
+        </span>
+        :
+        </code><div class="api-section">
+<h5 class="info">
+<img src="images/arrow_right.gif"> Details</h5>
+<dl class="function-info">
+<dt>visibility</dt>
+<dd>public</dd>
+<dt>final</dt>
+<dd>false</dd>
+<dt>static</dt>
+<dd>false</dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+<a id="\Aura\Http\Cookies::send()"></a><h4 class="method public">send<div class="to-top"><a href="#Cookies">jump to class</a></div>
+</h4>
+<div class="method">
+<code><span class="highlight">send</span><span class="nb-faded-text">(
+          
+          )
+        </span>
+        :
+        </code><div class="api-section">
+<h5 class="info">
+<img src="images/arrow_right.gif"> Details</h5>
+<dl class="function-info">
+<dt>visibility</dt>
+<dd>public</dd>
+<dt>final</dt>
+<dd>false</dd>
+<dt>static</dt>
+<dd>false</dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+<a id="\Aura\Http\Cookies::set()"></a><h4 class="method public">set<div class="to-top"><a href="#Cookies">jump to class</a></div>
+</h4>
+<div class="method">
+<code><span class="highlight">set</span><span class="nb-faded-text">(
+           $name,  $info
+              =
+              array
+          )
+        </span>
+        :
+        </code><div class="api-section">
+<h5 class="arguments">Arguments</h5>
+<dl class="argument-info">
+<dt>$name</dt>
+<dd><em></em></dd>
+<dt>$info</dt>
+<dd><em></em></dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h5 class="info">
+<img src="images/arrow_right.gif"> Details</h5>
+<dl class="function-info">
+<dt>visibility</dt>
+<dd>public</dd>
+<dt>final</dt>
+<dd>false</dd>
+<dt>static</dt>
+<dd>false</dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+<a id="\Aura\Http\Cookies::setAll()"></a><h4 class="method public">setAll<div class="to-top"><a href="#Cookies">jump to class</a></div>
+</h4>
+<div class="method">
+<code><span class="highlight">setAll</span><span class="nb-faded-text">(
+           $cookies
+              =
+              array
+          )
+        </span>
+        :
+        </code><div class="api-section">
+<h5 class="arguments">Arguments</h5>
+<dl class="argument-info">
+<dt>$cookies</dt>
+<dd><em></em></dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h5 class="info">
+<img src="images/arrow_right.gif"> Details</h5>
+<dl class="function-info">
+<dt>visibility</dt>
+<dd>public</dd>
+<dt>final</dt>
+<dd>false</dd>
+<dt>static</dt>
+<dd>false</dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<small xmlns="" class="footer">Documentation was generated by <a href="http://docblox-project.org">DocBlox 0.11.2</a>.
+    </small></body></html>

@@ -8,7 +8,7 @@
  */
 namespace aura\docs;
 
-// get all repositories starting with 'aura.'
+// get all repositories starting with 'Aura.'
 echo '[1/4] Retrieving the list of repositories to parse from Github.'.PHP_EOL;
 $repositories = array();
 
@@ -16,13 +16,14 @@ $repositories = array();
 $repositories_source = json_decode(file_get_contents('http://github.com/api/v2/json/repos/show/auraphp'));
 foreach($repositories_source->repositories as $repo)
 {
-  if (substr($repo->name, 0, 5) != 'aura.')
+  if (substr($repo->name, 0, 5) != 'Aura.')
   {
     continue;
   }
 
   $repositories[$repo->name] = $repo->url;
 }
+ksort($repositories);
 
 echo '[2/4] Pulling all repositories.' . PHP_EOL;
 
@@ -75,11 +76,11 @@ file_put_contents($base_api_path.DIRECTORY_SEPARATOR.'index.html', <<<HTML
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Frameset//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-frameset.dtd">
 <html>
   <head>
-    <title>Aura project for PHP</title>
+    <title>Aura Project for PHP</title>
   </head>
   <frameset rows="30, *">
     <frame src="menu.html" scrolling="no" noresize="yes" frameborder="0">
-    <frame src="aura.autoload/index.html" name="api_frame_content" frameborder="0">
+    <frame src="Aura.Autoload/index.html" name="api_frame_content" frameborder="0">
   </frameset>
 </html>
 HTML

@@ -6,6 +6,8 @@
 -->
 <docblox>
   <ignore>
+    <item>*/config/*</item>
+    <item>*/scripts/*</item>
     <item>*/tests/*</item>
   </ignore>
 </docblox>

@@ -1,0 +1,579 @@
+<html xmlns="http://www.w3.org/1999/xhtml"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Aura Project for PHP: Aura.Web</title><link rel="stylesheet" href="css/black-tie/jquery-ui-1.8.2.custom.css" type="text/css"></link><link rel="stylesheet" href="css/jquery.treeview.css" type="text/css"></link><link rel="stylesheet" href="css/theme.css" type="text/css"></link><script type="text/javascript" src="js/jquery-1.4.2.min.js"></script><script type="text/javascript" src="js/jquery-ui-1.8.2.custom.min.js"></script><script type="text/javascript" src="js/jquery.cookie.js"></script><script type="text/javascript" src="js/jquery.treeview.js"></script><script type="text/javascript">
+            $(document).ready(function() {
+                $(".filetree").treeview({
+                    collapsed: true,
+                    persist: "cookie"
+                });
+
+                $("#accordion").accordion({
+                    collapsible: true,
+                    autoHeight:  false,
+                    fillSpace:   true
+                });
+
+                $(".tabs").tabs();
+            });
+        </script></head><body><div xmlns="" id="content">
+<script>
+      $(document).ready(function() {
+        $('dl.function-info, dl.constant-info, dl.property-info').prev().css('cursor', 'pointer');
+        $('dl.function-info, dl.constant-info, dl.property-info').prev().click(function() {
+          if ($(this).next().is(':hidden'))
+          {
+            $(this).children('img')[0].src = 'images/arrow_down.gif';
+          } else
+          {
+            $(this).children('img')[0].src = 'images/arrow_right.gif';
+          }
+          $(this).next().slideToggle();
+        });
+      $('dl.function-info, dl.constant-info, dl.property-info').hide();
+      $('dl.function-info img, dl.constant-info img, dl.property-info img').show();
+      });
+    </script><a name="top"></a><h1 class="file">src/Page.php</h1>
+<div class="file_menu">
+<a href="#classes">Classes</a> </div>
+<dl class="file-info">
+<dt>Classes</dt>
+<dd><a class="class" href="#%5CAura%5CWeb%5CPage">Page</a></dd>
+</dl>
+<a name="classes"></a><a id="\Aura\Web\Page"></a><h2 class="class">\Aura\Web\Page<div class="to-top"><a href="#top">jump to top</a></div>
+</h2>
+<div class="class">
+<dl class="class-info">
+<dt>package</dt>
+<dd>Aura.Web</dd>
+<dt>Properties</dt>
+<dd><a class="property protected" href="#%5CAura%5CWeb%5CPage::%24context">$context</a></dd>
+<dd><a class="property protected" href="#%5CAura%5CWeb%5CPage::%24response">$response</a></dd>
+<dd><a class="property protected" href="#%5CAura%5CWeb%5CPage::%24signal">$signal</a></dd>
+<dd><a class="property protected" href="#%5CAura%5CWeb%5CPage::%24params">$params</a></dd>
+<dd><a class="property protected" href="#%5CAura%5CWeb%5CPage::%24action">$action</a></dd>
+<dd><a class="property protected" href="#%5CAura%5CWeb%5CPage::%24skip_action">$skip_action</a></dd>
+<dt>Methods</dt>
+<dd><a class="method public" href="#%5CAura%5CWeb%5CPage::__construct()">__construct</a></dd>
+<dd><a class="method public" href="#%5CAura%5CWeb%5CPage::exec()">exec</a></dd>
+<dd><a class="method public" href="#%5CAura%5CWeb%5CPage::skipAction()">skipAction</a></dd>
+<dd><a class="method public" href="#%5CAura%5CWeb%5CPage::isSkipAction()">isSkipAction</a></dd>
+<dd><a class="method public" href="#%5CAura%5CWeb%5CPage::preExec()">preExec</a></dd>
+<dd><a class="method public" href="#%5CAura%5CWeb%5CPage::preAction()">preAction</a></dd>
+<dd><a class="method public" href="#%5CAura%5CWeb%5CPage::postAction()">postAction</a></dd>
+<dd><a class="method public" href="#%5CAura%5CWeb%5CPage::postExec()">postExec</a></dd>
+<dd><a class="method protected" href="#%5CAura%5CWeb%5CPage::invokeMethod()">invokeMethod</a></dd>
+</dl>
+<h3>Description</h3>
+<p class="short-description">A page controller.</p>
+<div class="long-description"><p>public function actionBrowse()
+     {
+         // blah blah blah</p>
+
+<pre><code>     // now set the view
+     $this-&gt;response-&gt;view = array(
+         'text/html' =&gt; 'index',
+         // closure always takes one param, the response transfer object
+         'application/json' =&gt; function($response) {
+             $response-&gt;layout = null;
+             return json_encode($response-&gt;view_data-&gt;list);
+         },
+         'application/xml' =&gt; 'default.xml',
+     );
+ }
+</code></pre>
+</div>
+<h3>Properties</h3>
+<div>
+<a id="\Aura\Web\Page::$action"></a><h4 class="property protected">$action<div class="to-top"><a href="#%5CAura%5CWeb%5CPage">jump to class</a></div>
+</h4>
+<div class="property">
+<code>\string <span class="highlight">$action</span> = ''</code><p class="short-description">The action to perform.</p>
+<div class="long-description">
+</div>
+<div class="api-section">
+<h4 class="info">
+<img src="images/arrow_right.gif"> Details</h4>
+<dl class="property-info">
+<dt></dt>
+<dd>\string<br><em></em>
+</dd>
+<dt>visibility</dt>
+<dd>protected</dd>
+<dt>default</dt>
+<dd></dd>
+<dt>final</dt>
+<dd>false</dd>
+<dt>static</dt>
+<dd>false</dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+<a id="\Aura\Web\Page::$context"></a><h4 class="property protected">$context<div class="to-top"><a href="#%5CAura%5CWeb%5CPage">jump to class</a></div>
+</h4>
+<div class="property">
+<code><a href="_src_Context.html#%5CAura%5CWeb%5CContext">\Aura\Web\Context</a> <span class="highlight">$context</span> = ''</code><p class="short-description">The context of the request environment.</p>
+<div class="long-description">
+</div>
+<div class="api-section">
+<h4 class="info">
+<img src="images/arrow_right.gif"> Details</h4>
+<dl class="property-info">
+<dt></dt>
+<dd>
+<a href="_src_Context.html#%5CAura%5CWeb%5CContext">\Aura\Web\Context</a><br><em></em>
+</dd>
+<dt>visibility</dt>
+<dd>protected</dd>
+<dt>default</dt>
+<dd></dd>
+<dt>final</dt>
+<dd>false</dd>
+<dt>static</dt>
+<dd>false</dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+<a id="\Aura\Web\Page::$params"></a><h4 class="property protected">$params<div class="to-top"><a href="#%5CAura%5CWeb%5CPage">jump to class</a></div>
+</h4>
+<div class="property">
+<code>\ArrayObject <span class="highlight">$params</span> = ''</code><p class="short-description">Path-info parameters from the route.</p>
+<div class="long-description">
+</div>
+<div class="api-section">
+<h4 class="info">
+<img src="images/arrow_right.gif"> Details</h4>
+<dl class="property-info">
+<dt></dt>
+<dd>\ArrayObject<br><em></em>
+</dd>
+<dt>visibility</dt>
+<dd>protected</dd>
+<dt>default</dt>
+<dd></dd>
+<dt>final</dt>
+<dd>false</dd>
+<dt>static</dt>
+<dd>false</dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+<a id="\Aura\Web\Page::$response"></a><h4 class="property protected">$response<div class="to-top"><a href="#%5CAura%5CWeb%5CPage">jump to class</a></div>
+</h4>
+<div class="property">
+<code><a href="_src_ResponseTransfer.html#%5CAura%5CWeb%5CResponseTransfer">\Aura\Web\ResponseTransfer</a> <span class="highlight">$response</span> = ''</code><p class="short-description">A data transfer object for the eventual HTTP response.</p>
+<div class="long-description">
+</div>
+<div class="api-section">
+<h4 class="info">
+<img src="images/arrow_right.gif"> Details</h4>
+<dl class="property-info">
+<dt></dt>
+<dd>
+<a href="_src_ResponseTransfer.html#%5CAura%5CWeb%5CResponseTransfer">\Aura\Web\ResponseTransfer</a><br><em></em>
+</dd>
+<dt>visibility</dt>
+<dd>protected</dd>
+<dt>default</dt>
+<dd></dd>
+<dt>final</dt>
+<dd>false</dd>
+<dt>static</dt>
+<dd>false</dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+<a id="\Aura\Web\Page::$signal"></a><h4 class="property protected">$signal<div class="to-top"><a href="#%5CAura%5CWeb%5CPage">jump to class</a></div>
+</h4>
+<div class="property">
+<code>\Aura\Signal\Manager <span class="highlight">$signal</span> = ''</code><p class="short-description">A signal manager.</p>
+<div class="long-description">
+</div>
+<div class="api-section">
+<h4 class="info">
+<img src="images/arrow_right.gif"> Details</h4>
+<dl class="property-info">
+<dt></dt>
+<dd>\Aura\Signal\Manager<br><em></em>
+</dd>
+<dt>visibility</dt>
+<dd>protected</dd>
+<dt>default</dt>
+<dd></dd>
+<dt>final</dt>
+<dd>false</dd>
+<dt>static</dt>
+<dd>false</dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+<a id="\Aura\Web\Page::$skip_action"></a><h4 class="property protected">$skip_action<div class="to-top"><a href="#%5CAura%5CWeb%5CPage">jump to class</a></div>
+</h4>
+<div class="property">
+<code>\bool <span class="highlight">$skip_action</span> = 'false'</code><p class="short-description">When set to `true` before `action()` is called, the `action()` will not
+be called after all.</p>
+<div class="long-description">
+</div>
+<div class="api-section">
+<h4 class="info">
+<img src="images/arrow_right.gif"> Details</h4>
+<dl class="property-info">
+<dt></dt>
+<dd>\bool<br><em></em>
+</dd>
+<dt>visibility</dt>
+<dd>protected</dd>
+<dt>default</dt>
+<dd>false</dd>
+<dt>final</dt>
+<dd>false</dd>
+<dt>static</dt>
+<dd>false</dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+</div>
+<h3>Methods</h3>
+<div>
+<a id="\Aura\Web\Page::__construct()"></a><h4 class="method public">__construct<div class="to-top"><a href="#Page">jump to class</a></div>
+</h4>
+<div class="method">
+<code><span class="highlight">__construct</span><span class="nb-faded-text">(
+          <a href="_src_Context.html#%5CAura%5CWeb%5CContext">\Aura\Web\Context</a> $context,  $signal,  $response,  $params
+              =
+              array
+          )
+        </span>
+        :
+        </code><p class="short-description">Constructor.</p>
+<div class="long-description">
+</div>
+<div class="api-section">
+<h5 class="arguments">Arguments</h5>
+<dl class="argument-info">
+<dt>$context</dt>
+<dd>\Aura\Web\Context<br><em>The request environment.</em>
+</dd>
+<dt>$signal</dt>
+<dd><em></em></dd>
+<dt>$response</dt>
+<dd><em></em></dd>
+<dt>$params</dt>
+<dd><em></em></dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h5 class="info">
+<img src="images/arrow_right.gif"> Details</h5>
+<dl class="function-info">
+<dt>visibility</dt>
+<dd>public</dd>
+<dt>final</dt>
+<dd>false</dd>
+<dt>static</dt>
+<dd>false</dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+<a id="\Aura\Web\Page::exec()"></a><h4 class="method public">exec<div class="to-top"><a href="#Page">jump to class</a></div>
+</h4>
+<div class="method">
+<code><span class="highlight">exec</span><span class="nb-faded-text">(
+          
+          )
+        </span>
+        :
+        \void</code><p class="short-description">Executes the Page action.  In order, it does these things:</p>
+<div class="long-description"><ul>
+<li><p>signals <code>'pre_exec'</code></p></li>
+<li><p>is the action is not to be skipped ...</p>
+
+<ul>
+<li><p>signals <code>'pre_action'</code></p></li>
+<li><p>calls <code>invokeMethod()</code> to run the action</p></li>
+<li><p>signals <code>'post_action'</code></p></li>
+</ul></li>
+<li><p>signals <code>'post_exec'</code></p></li>
+</ul>
+</div>
+<div class="api-section">
+<h5 class="output">Output</h5>
+<dl class="return-info">
+<dt>\void</dt>
+<dd><em></em></dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h5 class="info">
+<img src="images/arrow_right.gif"> Details</h5>
+<dl class="function-info">
+<dt>visibility</dt>
+<dd>public</dd>
+<dt>final</dt>
+<dd>false</dd>
+<dt>static</dt>
+<dd>false</dd>
+<dt>signal</dt>
+<dd>&#039;pre_exec&#039;</dd>
+<dt>signal</dt>
+<dd>&#039;pre_action&#039;</dd>
+<dt>signal</dt>
+<dd>&#039;post_action&#039;</dd>
+<dt>signal</dt>
+<dd>&#039;post_exec&#039;</dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+<a id="\Aura\Web\Page::invokeMethod()"></a><h4 class="method protected">invokeMethod<div class="to-top"><a href="#Page">jump to class</a></div>
+</h4>
+<div class="method">
+<code><span class="highlight">invokeMethod</span><span class="nb-faded-text">(
+          \string $name
+          )
+        </span>
+        :
+        \mixed</code><p class="short-description">Invokes a method by name, matching method params to `$this-&gt;params`.</p>
+<div class="long-description">
+</div>
+<div class="api-section">
+<h5 class="arguments">Arguments</h5>
+<dl class="argument-info">
+<dt>$name</dt>
+<dd>\string<br><em>The method name to execute, typcially an action.</em>
+</dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h5 class="output">Output</h5>
+<dl class="return-info">
+<dt>\mixed</dt>
+<dd><em>The return from the executed method.</em></dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h5 class="info">
+<img src="images/arrow_right.gif"> Details</h5>
+<dl class="function-info">
+<dt>visibility</dt>
+<dd>protected</dd>
+<dt>final</dt>
+<dd>false</dd>
+<dt>static</dt>
+<dd>false</dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+<a id="\Aura\Web\Page::isSkipAction()"></a><h4 class="method public">isSkipAction<div class="to-top"><a href="#Page">jump to class</a></div>
+</h4>
+<div class="method">
+<code><span class="highlight">isSkipAction</span><span class="nb-faded-text">(
+          
+          )
+        </span>
+        :
+        \bool</code><p class="short-description">Should the call to `action()` be skipped?</p>
+<div class="long-description">
+</div>
+<div class="api-section">
+<h5 class="output">Output</h5>
+<dl class="return-info">
+<dt>\bool</dt>
+<dd><em></em></dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h5 class="info">
+<img src="images/arrow_right.gif"> Details</h5>
+<dl class="function-info">
+<dt>visibility</dt>
+<dd>public</dd>
+<dt>final</dt>
+<dd>false</dd>
+<dt>static</dt>
+<dd>false</dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+<a id="\Aura\Web\Page::postAction()"></a><h4 class="method public">postAction<div class="to-top"><a href="#Page">jump to class</a></div>
+</h4>
+<div class="method">
+<code><span class="highlight">postAction</span><span class="nb-faded-text">(
+          
+          )
+        </span>
+        :
+        \mixed</code><p class="short-description">Runs after `action()` as part of the `'post_action'` signal.</p>
+<div class="long-description">
+</div>
+<div class="api-section">
+<h5 class="output">Output</h5>
+<dl class="return-info">
+<dt>\mixed</dt>
+<dd><em></em></dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h5 class="info">
+<img src="images/arrow_right.gif"> Details</h5>
+<dl class="function-info">
+<dt>visibility</dt>
+<dd>public</dd>
+<dt>final</dt>
+<dd>false</dd>
+<dt>static</dt>
+<dd>false</dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+<a id="\Aura\Web\Page::postExec()"></a><h4 class="method public">postExec<div class="to-top"><a href="#Page">jump to class</a></div>
+</h4>
+<div class="method">
+<code><span class="highlight">postExec</span><span class="nb-faded-text">(
+          
+          )
+        </span>
+        :
+        \mixed</code><p class="short-description">Runs after `action()` as part of the `'post_exec'` signal.</p>
+<div class="long-description">
+</div>
+<div class="api-section">
+<h5 class="output">Output</h5>
+<dl class="return-info">
+<dt>\mixed</dt>
+<dd><em></em></dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h5 class="info">
+<img src="images/arrow_right.gif"> Details</h5>
+<dl class="function-info">
+<dt>visibility</dt>
+<dd>public</dd>
+<dt>final</dt>
+<dd>false</dd>
+<dt>static</dt>
+<dd>false</dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+<a id="\Aura\Web\Page::preAction()"></a><h4 class="method public">preAction<div class="to-top"><a href="#Page">jump to class</a></div>
+</h4>
+<div class="method">
+<code><span class="highlight">preAction</span><span class="nb-faded-text">(
+          
+          )
+        </span>
+        :
+        \mixed</code><p class="short-description">Runs before `action()` as part of the `'pre_action'` signal.</p>
+<div class="long-description">
+</div>
+<div class="api-section">
+<h5 class="output">Output</h5>
+<dl class="return-info">
+<dt>\mixed</dt>
+<dd><em></em></dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h5 class="info">
+<img src="images/arrow_right.gif"> Details</h5>
+<dl class="function-info">
+<dt>visibility</dt>
+<dd>public</dd>
+<dt>final</dt>
+<dd>false</dd>
+<dt>static</dt>
+<dd>false</dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+<a id="\Aura\Web\Page::preExec()"></a><h4 class="method public">preExec<div class="to-top"><a href="#Page">jump to class</a></div>
+</h4>
+<div class="method">
+<code><span class="highlight">preExec</span><span class="nb-faded-text">(
+          
+          )
+        </span>
+        :
+        \mixed</code><p class="short-description">Runs before `action()` as part of the `'pre_exec'` signal.</p>
+<div class="long-description">
+</div>
+<div class="api-section">
+<h5 class="output">Output</h5>
+<dl class="return-info">
+<dt>\mixed</dt>
+<dd><em></em></dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h5 class="info">
+<img src="images/arrow_right.gif"> Details</h5>
+<dl class="function-info">
+<dt>visibility</dt>
+<dd>public</dd>
+<dt>final</dt>
+<dd>false</dd>
+<dt>static</dt>
+<dd>false</dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+<a id="\Aura\Web\Page::skipAction()"></a><h4 class="method public">skipAction<div class="to-top"><a href="#Page">jump to class</a></div>
+</h4>
+<div class="method">
+<code><span class="highlight">skipAction</span><span class="nb-faded-text">(
+          
+          )
+        </span>
+        :
+        \void</code><p class="short-description">Stops `exec()` from calling `action()` if it has not already done so.</p>
+<div class="long-description">
+</div>
+<div class="api-section">
+<h5 class="output">Output</h5>
+<dl class="return-info">
+<dt>\void</dt>
+<dd><em></em></dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h5 class="info">
+<img src="images/arrow_right.gif"> Details</h5>
+<dl class="function-info">
+<dt>visibility</dt>
+<dd>public</dd>
+<dt>final</dt>
+<dd>false</dd>
+<dt>static</dt>
+<dd>false</dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<small xmlns="" class="footer">Documentation was generated by <a href="http://docblox-project.org">DocBlox 0.11.2</a>.
+    </small></body></html>

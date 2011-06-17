@@ -1,0 +1,356 @@
+<html xmlns="http://www.w3.org/1999/xhtml"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Aura Project for PHP: Aura.View</title><link rel="stylesheet" href="css/black-tie/jquery-ui-1.8.2.custom.css" type="text/css"></link><link rel="stylesheet" href="css/jquery.treeview.css" type="text/css"></link><link rel="stylesheet" href="css/theme.css" type="text/css"></link><script type="text/javascript" src="js/jquery-1.4.2.min.js"></script><script type="text/javascript" src="js/jquery-ui-1.8.2.custom.min.js"></script><script type="text/javascript" src="js/jquery.cookie.js"></script><script type="text/javascript" src="js/jquery.treeview.js"></script><script type="text/javascript">
+            $(document).ready(function() {
+                $(".filetree").treeview({
+                    collapsed: true,
+                    persist: "cookie"
+                });
+
+                $("#accordion").accordion({
+                    collapsible: true,
+                    autoHeight:  false,
+                    fillSpace:   true
+                });
+
+                $(".tabs").tabs();
+            });
+        </script></head><body><div xmlns="" id="content">
+<script>
+      $(document).ready(function() {
+        $('dl.function-info, dl.constant-info, dl.property-info').prev().css('cursor', 'pointer');
+        $('dl.function-info, dl.constant-info, dl.property-info').prev().click(function() {
+          if ($(this).next().is(':hidden'))
+          {
+            $(this).children('img')[0].src = 'images/arrow_down.gif';
+          } else
+          {
+            $(this).children('img')[0].src = 'images/arrow_right.gif';
+          }
+          $(this).next().slideToggle();
+        });
+      $('dl.function-info, dl.constant-info, dl.property-info').hide();
+      $('dl.function-info img, dl.constant-info img, dl.property-info img').show();
+      });
+    </script><a name="top"></a><h1 class="file">src/Helper/AbstractHelper.php</h1>
+<div class="file_menu">
+<a href="#classes">Classes</a> </div>
+<dl class="file-info">
+<dt>Classes</dt>
+<dd><a class="class" href="#%5CAura%5CView%5CHelper%5CAbstractHelper">AbstractHelper</a></dd>
+</dl>
+<a name="classes"></a><a id="\Aura\View\Helper\AbstractHelper"></a><h2 class="class">\Aura\View\Helper\AbstractHelper<div class="to-top"><a href="#top">jump to top</a></div>
+</h2>
+<div class="class">
+<dl class="class-info">
+<dt>package</dt>
+<dd>Aura.View</dd>
+<dt>Properties</dt>
+<dd><a class="property protected" href="#%5CAura%5CView%5CHelper%5CAbstractHelper::%24escape_charset">$escape_charset</a></dd>
+<dd><a class="property protected" href="#%5CAura%5CView%5CHelper%5CAbstractHelper::%24escape_quotes">$escape_quotes</a></dd>
+<dd><a class="property protected" href="#%5CAura%5CView%5CHelper%5CAbstractHelper::%24indent">$indent</a></dd>
+<dt>Methods</dt>
+<dd><a class="method public" href="#%5CAura%5CView%5CHelper%5CAbstractHelper::setEscapeCharset()">setEscapeCharset</a></dd>
+<dd><a class="method public" href="#%5CAura%5CView%5CHelper%5CAbstractHelper::setEscapeQuotes()">setEscapeQuotes</a></dd>
+<dd><a class="method public" href="#%5CAura%5CView%5CHelper%5CAbstractHelper::setIndent()">setIndent</a></dd>
+<dd><a class="method protected" href="#%5CAura%5CView%5CHelper%5CAbstractHelper::escape()">escape</a></dd>
+<dd><a class="method protected" href="#%5CAura%5CView%5CHelper%5CAbstractHelper::attribs()">attribs</a></dd>
+</dl>
+<h3>Description</h3>
+<p class="short-description">Abstract helper base class.</p>
+<div class="long-description">
+</div>
+<h3>Properties</h3>
+<div>
+<a id="\Aura\View\Helper\AbstractHelper::$escape_charset"></a><h4 class="property protected">$escape_charset<div class="to-top"><a href="#%5CAura%5CView%5CHelper%5CAbstractHelper">jump to class</a></div>
+</h4>
+<div class="property">
+<code>\string <span class="highlight">$escape_charset</span> = 'UTF-8'</code><p class="short-description">The character set to use when escaping.</p>
+<div class="long-description">
+</div>
+<div class="api-section">
+<h4 class="info">
+<img src="images/arrow_right.gif"> Details</h4>
+<dl class="property-info">
+<dt></dt>
+<dd>\string<br><em></em>
+</dd>
+<dt>visibility</dt>
+<dd>protected</dd>
+<dt>default</dt>
+<dd>UTF-8</dd>
+<dt>final</dt>
+<dd>false</dd>
+<dt>static</dt>
+<dd>false</dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+<a id="\Aura\View\Helper\AbstractHelper::$escape_quotes"></a><h4 class="property protected">$escape_quotes<div class="to-top"><a href="#%5CAura%5CView%5CHelper%5CAbstractHelper">jump to class</a></div>
+</h4>
+<div class="property">
+<code>\int <span class="highlight">$escape_quotes</span> = 'ENT_QUOTES'</code><p class="short-description">The quote style to use when escaping.</p>
+<div class="long-description">
+</div>
+<div class="api-section">
+<h4 class="info">
+<img src="images/arrow_right.gif"> Details</h4>
+<dl class="property-info">
+<dt></dt>
+<dd>\int<br><em></em>
+</dd>
+<dt>visibility</dt>
+<dd>protected</dd>
+<dt>default</dt>
+<dd>ENT_QUOTES</dd>
+<dt>final</dt>
+<dd>false</dd>
+<dt>static</dt>
+<dd>false</dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+<a id="\Aura\View\Helper\AbstractHelper::$indent"></a><h4 class="property protected">$indent<div class="to-top"><a href="#%5CAura%5CView%5CHelper%5CAbstractHelper">jump to class</a></div>
+</h4>
+<div class="property">
+<code>\string <span class="highlight">$indent</span> = '    '</code><p class="short-description">Use this as one level of indentation for output.</p>
+<div class="long-description">
+</div>
+<div class="api-section">
+<h4 class="info">
+<img src="images/arrow_right.gif"> Details</h4>
+<dl class="property-info">
+<dt></dt>
+<dd>\string<br><em></em>
+</dd>
+<dt>visibility</dt>
+<dd>protected</dd>
+<dt>default</dt>
+<dd>    </dd>
+<dt>final</dt>
+<dd>false</dd>
+<dt>static</dt>
+<dd>false</dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+</div>
+<h3>Methods</h3>
+<div>
+<a id="\Aura\View\Helper\AbstractHelper::attribs()"></a><h4 class="method protected">attribs<div class="to-top"><a href="#AbstractHelper">jump to class</a></div>
+</h4>
+<div class="method">
+<code><span class="highlight">attribs</span><span class="nb-faded-text">(
+          \array $attribs
+          )
+        </span>
+        :
+        \string</code><p class="short-description">Converts an associative array to an escaped attribute string.</p>
+<div class="long-description">
+</div>
+<div class="api-section">
+<h5 class="arguments">Arguments</h5>
+<dl class="argument-info">
+<dt>$attribs</dt>
+<dd>\array<br><em>From this array, each key-value pair is converted to an attribute name and value.</em>
+</dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h5 class="output">Output</h5>
+<dl class="return-info">
+<dt>\string</dt>
+<dd><em>The escaped attributes string.</em></dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h5 class="info">
+<img src="images/arrow_right.gif"> Details</h5>
+<dl class="function-info">
+<dt>visibility</dt>
+<dd>protected</dd>
+<dt>final</dt>
+<dd>false</dd>
+<dt>static</dt>
+<dd>false</dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+<a id="\Aura\View\Helper\AbstractHelper::escape()"></a><h4 class="method protected">escape<div class="to-top"><a href="#AbstractHelper">jump to class</a></div>
+</h4>
+<div class="method">
+<code><span class="highlight">escape</span><span class="nb-faded-text">(
+          \Aura\View\Helper\scalar $value
+          )
+        </span>
+        :
+        \string</code><p class="short-description">Escapes values intended for output.</p>
+<div class="long-description">
+</div>
+<div class="api-section">
+<h5 class="arguments">Arguments</h5>
+<dl class="argument-info">
+<dt>$value</dt>
+<dd>\Aura\View\Helper\scalar<br><em>The value to escape.</em>
+</dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h5 class="output">Output</h5>
+<dl class="return-info">
+<dt>\string</dt>
+<dd><em>The escaped value.</em></dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h5 class="info">
+<img src="images/arrow_right.gif"> Details</h5>
+<dl class="function-info">
+<dt>visibility</dt>
+<dd>protected</dd>
+<dt>final</dt>
+<dd>false</dd>
+<dt>static</dt>
+<dd>false</dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+<a id="\Aura\View\Helper\AbstractHelper::setEscapeCharset()"></a><h4 class="method public">setEscapeCharset<div class="to-top"><a href="#AbstractHelper">jump to class</a></div>
+</h4>
+<div class="method">
+<code><span class="highlight">setEscapeCharset</span><span class="nb-faded-text">(
+          \string $charset
+          )
+        </span>
+        :
+        \void</code><p class="short-description">Sets the character set to use when escaping.</p>
+<div class="long-description">
+</div>
+<div class="api-section">
+<h5 class="arguments">Arguments</h5>
+<dl class="argument-info">
+<dt>$charset</dt>
+<dd>\string<br><em>The character set, e.g. &amp;#039;UTF-8&amp;#039;.</em>
+</dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h5 class="output">Output</h5>
+<dl class="return-info">
+<dt>\void</dt>
+<dd><em></em></dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h5 class="info">
+<img src="images/arrow_right.gif"> Details</h5>
+<dl class="function-info">
+<dt>visibility</dt>
+<dd>public</dd>
+<dt>final</dt>
+<dd>false</dd>
+<dt>static</dt>
+<dd>false</dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+<a id="\Aura\View\Helper\AbstractHelper::setEscapeQuotes()"></a><h4 class="method public">setEscapeQuotes<div class="to-top"><a href="#AbstractHelper">jump to class</a></div>
+</h4>
+<div class="method">
+<code><span class="highlight">setEscapeQuotes</span><span class="nb-faded-text">(
+          \int $quotes
+          )
+        </span>
+        :
+        \void</code><p class="short-description">Sets the quote style to use when escaping.</p>
+<div class="long-description">
+</div>
+<div class="api-section">
+<h5 class="arguments">Arguments</h5>
+<dl class="argument-info">
+<dt>$quotes</dt>
+<dd>\int<br><em>The quote style constant, e.g. `ENT_QUOTES`.</em>
+</dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h5 class="output">Output</h5>
+<dl class="return-info">
+<dt>\void</dt>
+<dd><em></em></dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h5 class="info">
+<img src="images/arrow_right.gif"> Details</h5>
+<dl class="function-info">
+<dt>visibility</dt>
+<dd>public</dd>
+<dt>final</dt>
+<dd>false</dd>
+<dt>static</dt>
+<dd>false</dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+<a id="\Aura\View\Helper\AbstractHelper::setIndent()"></a><h4 class="method public">setIndent<div class="to-top"><a href="#AbstractHelper">jump to class</a></div>
+</h4>
+<div class="method">
+<code><span class="highlight">setIndent</span><span class="nb-faded-text">(
+          \string $indent
+          )
+        </span>
+        :
+        \void</code><p class="short-description">Sets the string to use for one level of indentation.</p>
+<div class="long-description">
+</div>
+<div class="api-section">
+<h5 class="arguments">Arguments</h5>
+<dl class="argument-info">
+<dt>$indent</dt>
+<dd>\string<br><em>The indent string.</em>
+</dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h5 class="output">Output</h5>
+<dl class="return-info">
+<dt>\void</dt>
+<dd><em></em></dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h5 class="info">
+<img src="images/arrow_right.gif"> Details</h5>
+<dl class="function-info">
+<dt>visibility</dt>
+<dd>public</dd>
+<dt>final</dt>
+<dd>false</dd>
+<dt>static</dt>
+<dd>false</dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<small xmlns="" class="footer">Documentation was generated by <a href="http://docblox-project.org">DocBlox 0.11.2</a>.
+    </small></body></html>

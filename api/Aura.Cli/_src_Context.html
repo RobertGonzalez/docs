@@ -1,0 +1,457 @@
+<html xmlns="http://www.w3.org/1999/xhtml"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Aura Project for PHP: Aura.Cli</title><link rel="stylesheet" href="css/black-tie/jquery-ui-1.8.2.custom.css" type="text/css"></link><link rel="stylesheet" href="css/jquery.treeview.css" type="text/css"></link><link rel="stylesheet" href="css/theme.css" type="text/css"></link><script type="text/javascript" src="js/jquery-1.4.2.min.js"></script><script type="text/javascript" src="js/jquery-ui-1.8.2.custom.min.js"></script><script type="text/javascript" src="js/jquery.cookie.js"></script><script type="text/javascript" src="js/jquery.treeview.js"></script><script type="text/javascript">
+            $(document).ready(function() {
+                $(".filetree").treeview({
+                    collapsed: true,
+                    persist: "cookie"
+                });
+
+                $("#accordion").accordion({
+                    collapsible: true,
+                    autoHeight:  false,
+                    fillSpace:   true
+                });
+
+                $(".tabs").tabs();
+            });
+        </script></head><body><div xmlns="" id="content">
+<script>
+      $(document).ready(function() {
+        $('dl.function-info, dl.constant-info, dl.property-info').prev().css('cursor', 'pointer');
+        $('dl.function-info, dl.constant-info, dl.property-info').prev().click(function() {
+          if ($(this).next().is(':hidden'))
+          {
+            $(this).children('img')[0].src = 'images/arrow_down.gif';
+          } else
+          {
+            $(this).children('img')[0].src = 'images/arrow_right.gif';
+          }
+          $(this).next().slideToggle();
+        });
+      $('dl.function-info, dl.constant-info, dl.property-info').hide();
+      $('dl.function-info img, dl.constant-info img, dl.property-info img').show();
+      });
+    </script><a name="top"></a><h1 class="file">src/Context.php</h1>
+<div class="file_menu">
+<a href="#classes">Classes</a> </div>
+<dl class="file-info">
+<dt>Classes</dt>
+<dd><a class="class" href="#%5CAura%5CCli%5CContext">Context</a></dd>
+</dl>
+<a name="classes"></a><a id="\Aura\Cli\Context"></a><h2 class="class">\Aura\Cli\Context<div class="to-top"><a href="#top">jump to top</a></div>
+</h2>
+<div class="class">
+<dl class="class-info">
+<dt>package</dt>
+<dd>Aura.Cli</dd>
+<dt>Properties</dt>
+<dd><a class="property protected" href="#%5CAura%5CCli%5CContext::%24argv">$argv</a></dd>
+<dd><a class="property protected" href="#%5CAura%5CCli%5CContext::%24env">$env</a></dd>
+<dd><a class="property protected" href="#%5CAura%5CCli%5CContext::%24server">$server</a></dd>
+<dt>Methods</dt>
+<dd><a class="method public" href="#%5CAura%5CCli%5CContext::__construct()">__construct</a></dd>
+<dd><a class="method public" href="#%5CAura%5CCli%5CContext::getEnv()">getEnv</a></dd>
+<dd><a class="method public" href="#%5CAura%5CCli%5CContext::getServer()">getServer</a></dd>
+<dd><a class="method public" href="#%5CAura%5CCli%5CContext::getArgv()">getArgv</a></dd>
+<dd><a class="method public" href="#%5CAura%5CCli%5CContext::shiftArgv()">shiftArgv</a></dd>
+<dd><a class="method protected" href="#%5CAura%5CCli%5CContext::setArgv()">setArgv</a></dd>
+<dd><a class="method protected" href="#%5CAura%5CCli%5CContext::getValue()">getValue</a></dd>
+</dl>
+<h3>Description</h3>
+<p class="short-description">Collection point for information about the command-line execution context.</p>
+<div class="long-description">
+</div>
+<h3>Properties</h3>
+<div>
+<a id="\Aura\Cli\Context::$argv"></a><h4 class="property protected">$argv<div class="to-top"><a href="#%5CAura%5CCli%5CContext">jump to class</a></div>
+</h4>
+<div class="property">
+<code>\array <span class="highlight">$argv</span> = ''</code><p class="short-description">Values taken from $_SERVER['argv'].</p>
+<div class="long-description">
+</div>
+<div class="api-section">
+<h4 class="info">
+<img src="images/arrow_right.gif"> Details</h4>
+<dl class="property-info">
+<dt></dt>
+<dd>\array<br><em></em>
+</dd>
+<dt>visibility</dt>
+<dd>protected</dd>
+<dt>default</dt>
+<dd></dd>
+<dt>final</dt>
+<dd>false</dd>
+<dt>static</dt>
+<dd>false</dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+<a id="\Aura\Cli\Context::$env"></a><h4 class="property protected">$env<div class="to-top"><a href="#%5CAura%5CCli%5CContext">jump to class</a></div>
+</h4>
+<div class="property">
+<code>\array <span class="highlight">$env</span> = ''</code><p class="short-description">Imported $_ENV values.</p>
+<div class="long-description">
+</div>
+<div class="api-section">
+<h4 class="info">
+<img src="images/arrow_right.gif"> Details</h4>
+<dl class="property-info">
+<dt></dt>
+<dd>\array<br><em></em>
+</dd>
+<dt>visibility</dt>
+<dd>protected</dd>
+<dt>default</dt>
+<dd></dd>
+<dt>final</dt>
+<dd>false</dd>
+<dt>static</dt>
+<dd>false</dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+<a id="\Aura\Cli\Context::$server"></a><h4 class="property protected">$server<div class="to-top"><a href="#%5CAura%5CCli%5CContext">jump to class</a></div>
+</h4>
+<div class="property">
+<code>\array <span class="highlight">$server</span> = ''</code><p class="short-description">Imported $_SERVER values.</p>
+<div class="long-description">
+</div>
+<div class="api-section">
+<h4 class="info">
+<img src="images/arrow_right.gif"> Details</h4>
+<dl class="property-info">
+<dt></dt>
+<dd>\array<br><em></em>
+</dd>
+<dt>visibility</dt>
+<dd>protected</dd>
+<dt>default</dt>
+<dd></dd>
+<dt>final</dt>
+<dd>false</dd>
+<dt>static</dt>
+<dd>false</dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+</div>
+<h3>Methods</h3>
+<div>
+<a id="\Aura\Cli\Context::__construct()"></a><h4 class="method public">__construct<div class="to-top"><a href="#Context">jump to class</a></div>
+</h4>
+<div class="method">
+<code><span class="highlight">__construct</span><span class="nb-faded-text">(
+          
+          )
+        </span>
+        :
+        \void</code><p class="short-description">Constructor.</p>
+<div class="long-description">
+</div>
+<div class="api-section">
+<h5 class="output">Output</h5>
+<dl class="return-info">
+<dt>\void</dt>
+<dd><em></em></dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h5 class="info">
+<img src="images/arrow_right.gif"> Details</h5>
+<dl class="function-info">
+<dt>visibility</dt>
+<dd>public</dd>
+<dt>final</dt>
+<dd>false</dd>
+<dt>static</dt>
+<dd>false</dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+<a id="\Aura\Cli\Context::getArgv()"></a><h4 class="method public">getArgv<div class="to-top"><a href="#Context">jump to class</a></div>
+</h4>
+<div class="method">
+<code><span class="highlight">getArgv</span><span class="nb-faded-text">(
+          \int $key
+              =
+              null, \string $alt
+              =
+              null
+          )
+        </span>
+        :
+        \mixed</code><p class="short-description">Retrieves an **unfiltered** value by position from the `$argv`
+property, or an alternate default value if that position does not
+exist.</p>
+<div class="long-description">
+</div>
+<div class="api-section">
+<h5 class="arguments">Arguments</h5>
+<dl class="argument-info">
+<dt>$key</dt>
+<dd>\int<br><em>The `$argv` positional key to retrieve the value of.</em>
+</dd>
+<dt>$alt</dt>
+<dd>\string<br><em>The value to return if the key does not exist.</em>
+</dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h5 class="output">Output</h5>
+<dl class="return-info">
+<dt>\mixed</dt>
+<dd><em>The value of $server[$key], or the alternate default value.</em></dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h5 class="info">
+<img src="images/arrow_right.gif"> Details</h5>
+<dl class="function-info">
+<dt>visibility</dt>
+<dd>public</dd>
+<dt>final</dt>
+<dd>false</dd>
+<dt>static</dt>
+<dd>false</dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+<a id="\Aura\Cli\Context::getEnv()"></a><h4 class="method public">getEnv<div class="to-top"><a href="#Context">jump to class</a></div>
+</h4>
+<div class="method">
+<code><span class="highlight">getEnv</span><span class="nb-faded-text">(
+          \string $key
+              =
+              null, \string $alt
+              =
+              null
+          )
+        </span>
+        :
+        \mixed</code><p class="short-description">Retrieves an **unfiltered** value by key from the $env property, or an
+alternate default value if that key does not exist.</p>
+<div class="long-description">
+</div>
+<div class="api-section">
+<h5 class="arguments">Arguments</h5>
+<dl class="argument-info">
+<dt>$key</dt>
+<dd>\string<br><em>The $env key to retrieve the value of.</em>
+</dd>
+<dt>$alt</dt>
+<dd>\string<br><em>The value to return if the key does not exist.</em>
+</dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h5 class="output">Output</h5>
+<dl class="return-info">
+<dt>\mixed</dt>
+<dd><em>The value of $env[$key], or the alternate default value.</em></dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h5 class="info">
+<img src="images/arrow_right.gif"> Details</h5>
+<dl class="function-info">
+<dt>visibility</dt>
+<dd>public</dd>
+<dt>final</dt>
+<dd>false</dd>
+<dt>static</dt>
+<dd>false</dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+<a id="\Aura\Cli\Context::getServer()"></a><h4 class="method public">getServer<div class="to-top"><a href="#Context">jump to class</a></div>
+</h4>
+<div class="method">
+<code><span class="highlight">getServer</span><span class="nb-faded-text">(
+          \string $key
+              =
+              null, \string $alt
+              =
+              null
+          )
+        </span>
+        :
+        \mixed</code><p class="short-description">Retrieves an **unfiltered** value by key from the $server property, or
+an alternate default value if that key does not exist.</p>
+<div class="long-description">
+</div>
+<div class="api-section">
+<h5 class="arguments">Arguments</h5>
+<dl class="argument-info">
+<dt>$key</dt>
+<dd>\string<br><em>The $server key to retrieve the value of.</em>
+</dd>
+<dt>$alt</dt>
+<dd>\string<br><em>The value to return if the key does not exist.</em>
+</dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h5 class="output">Output</h5>
+<dl class="return-info">
+<dt>\mixed</dt>
+<dd><em>The value of $server[$key], or the alternate default value.</em></dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h5 class="info">
+<img src="images/arrow_right.gif"> Details</h5>
+<dl class="function-info">
+<dt>visibility</dt>
+<dd>public</dd>
+<dt>final</dt>
+<dd>false</dd>
+<dt>static</dt>
+<dd>false</dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+<a id="\Aura\Cli\Context::getValue()"></a><h4 class="method protected">getValue<div class="to-top"><a href="#Context">jump to class</a></div>
+</h4>
+<div class="method">
+<code><span class="highlight">getValue</span><span class="nb-faded-text">(
+          \string $var, \string $key, \string $alt
+          )
+        </span>
+        :
+        \mixed</code><p class="short-description">Common method to get a property value and return it.</p>
+<div class="long-description">
+</div>
+<div class="api-section">
+<h5 class="arguments">Arguments</h5>
+<dl class="argument-info">
+<dt>$var</dt>
+<dd>\string<br><em>The property variable to fetch from: get, post, etc.</em>
+</dd>
+<dt>$key</dt>
+<dd>\string<br><em>The array key in that property, if any, to get the value of.</em>
+</dd>
+<dt>$alt</dt>
+<dd>\string<br><em>The alternative default value to return if the requested key does not exist.</em>
+</dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h5 class="output">Output</h5>
+<dl class="return-info">
+<dt>\mixed</dt>
+<dd><em>The requested value, or the alternative default value.</em></dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h5 class="info">
+<img src="images/arrow_right.gif"> Details</h5>
+<dl class="function-info">
+<dt>visibility</dt>
+<dd>protected</dd>
+<dt>final</dt>
+<dd>false</dd>
+<dt>static</dt>
+<dd>false</dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+<a id="\Aura\Cli\Context::setArgv()"></a><h4 class="method protected">setArgv<div class="to-top"><a href="#Context">jump to class</a></div>
+</h4>
+<div class="method">
+<code><span class="highlight">setArgv</span><span class="nb-faded-text">(
+          \array $argv
+          )
+        </span>
+        :
+        \void</code><p class="short-description">Sets the `$argv` property.</p>
+<div class="long-description">
+</div>
+<div class="api-section">
+<h5 class="arguments">Arguments</h5>
+<dl class="argument-info">
+<dt>$argv</dt>
+<dd>\array<br><em>The new value of `$argv`.</em>
+</dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h5 class="output">Output</h5>
+<dl class="return-info">
+<dt>\void</dt>
+<dd><em></em></dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h5 class="info">
+<img src="images/arrow_right.gif"> Details</h5>
+<dl class="function-info">
+<dt>visibility</dt>
+<dd>protected</dd>
+<dt>final</dt>
+<dd>false</dd>
+<dt>static</dt>
+<dd>false</dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+<a id="\Aura\Cli\Context::shiftArgv()"></a><h4 class="method public">shiftArgv<div class="to-top"><a href="#Context">jump to class</a></div>
+</h4>
+<div class="method">
+<code><span class="highlight">shiftArgv</span><span class="nb-faded-text">(
+          
+          )
+        </span>
+        :
+        \mixed</code><p class="short-description">Shifts the first value off the `$argv` property and returns it. Note
+that this modifies the `$argv` property; if you need the original,
+unmodified arguments, call `server('argv')`.</p>
+<div class="long-description">
+</div>
+<div class="api-section">
+<h5 class="output">Output</h5>
+<dl class="return-info">
+<dt>\mixed</dt>
+<dd><em>The value shifted off the beginning of the `$argv` property.</em></dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h5 class="info">
+<img src="images/arrow_right.gif"> Details</h5>
+<dl class="function-info">
+<dt>visibility</dt>
+<dd>public</dd>
+<dt>final</dt>
+<dd>false</dd>
+<dt>static</dt>
+<dd>false</dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<small xmlns="" class="footer">Documentation was generated by <a href="http://docblox-project.org">DocBlox 0.11.2</a>.
+    </small></body></html>

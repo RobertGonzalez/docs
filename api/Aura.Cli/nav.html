@@ -1,0 +1,125 @@
+<html xmlns="http://www.w3.org/1999/xhtml"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Aura Project for PHP: Aura.Cli</title><link rel="stylesheet" href="css/black-tie/jquery-ui-1.8.2.custom.css" type="text/css"></link><link rel="stylesheet" href="css/jquery.treeview.css" type="text/css"></link><link rel="stylesheet" href="css/theme.css" type="text/css"></link><script type="text/javascript" src="js/jquery-1.4.2.min.js"></script><script type="text/javascript" src="js/jquery-ui-1.8.2.custom.min.js"></script><script type="text/javascript" src="js/jquery.cookie.js"></script><script type="text/javascript" src="js/jquery.treeview.js"></script><script type="text/javascript">
+            $(document).ready(function() {
+                $(".filetree").treeview({
+                    collapsed: true,
+                    persist: "cookie"
+                });
+
+                $("#accordion").accordion({
+                    collapsible: true,
+                    autoHeight:  false,
+                    fillSpace:   true
+                });
+
+                $(".tabs").tabs();
+            });
+        </script></head><body><div xmlns="" id="accordion">
+<h1><a href="#">Namespaces</a></h1>
+<div style="padding: 0px;"><ul id="namespaces-" class="filetree"><li class="closed">
+<span class="folder">Aura</span><ul><li class="closed">
+<span class="folder">Cli</span><ul>
+<li class="closed">
+<span class="folder">Exception</span><ul>
+<li><span class="class"><a href="_src_Exception_CommandFactory.html#%5CAura%5CCli%5CException%5CCommandFactory" target="content">CommandFactory<br><small>Generic CommandFactory exception.</small></a></span></li>
+<li><span class="class"><a href="_src_Exception_OptionName.html#%5CAura%5CCli%5CException%5COptionName" target="content">OptionName<br><small>Option objects need to be initialized with a name.</small></a></span></li>
+<li><span class="class"><a href="_src_Exception_OptionNotDefined.html#%5CAura%5CCli%5CException%5COptionNotDefined" target="content">OptionNotDefined<br><small>Asked for an option that is not defined.</small></a></span></li>
+<li><span class="class"><a href="_src_Exception_OptionNotMulti.html#%5CAura%5CCli%5CException%5COptionNotMulti" target="content">OptionNotMulti<br><small>The option does not allow multiple values.</small></a></span></li>
+<li><span class="class"><a href="_src_Exception_OptionParam.html#%5CAura%5CCli%5CException%5COptionParam" target="content">OptionParam<br><small>The option 'param' value needs a boolean or a null.</small></a></span></li>
+<li><span class="class"><a href="_src_Exception_OptionParamRejected.html#%5CAura%5CCli%5CException%5COptionParamRejected" target="content">OptionParamRejected<br><small>The option requires that no parameter be present.</small></a></span></li>
+<li><span class="class"><a href="_src_Exception_OptionParamRequired.html#%5CAura%5CCli%5CException%5COptionParamRequired" target="content">OptionParamRequired<br><small>The option requires a non-blank parameter.</small></a></span></li>
+</ul>
+</li>
+<li><span class="class"><a href="_src_Command.html#%5CAura%5CCli%5CCommand" target="content">Command<br><small>The CLI equivalent of a page-controller to perform a single action.</small></a></span></li>
+<li><span class="class"><a href="_src_CommandFactory.html#%5CAura%5CCli%5CCommandFactory" target="content">CommandFactory<br><small>A factory to create Command objects.</small></a></span></li>
+<li><span class="class"><a href="_src_Context.html#%5CAura%5CCli%5CContext" target="content">Context<br><small>Collection point for information about the command-line execution context.</small></a></span></li>
+<li><span class="class"><a href="_src_Exception.html#%5CAura%5CCli%5CException" target="content">Exception<br><small>Generic package exception.</small></a></span></li>
+<li><span class="class"><a href="_src_Getopt.html#%5CAura%5CCli%5CGetopt" target="content">Getopt<br><small>Retrieves and validates command-line options and parameter values.</small></a></span></li>
+<li><span class="class"><a href="_src_Option.html#%5CAura%5CCli%5COption" target="content">Option<br><small>Defines a single command-line option.</small></a></span></li>
+<li><span class="class"><a href="_src_OptionFactory.html#%5CAura%5CCli%5COptionFactory" target="content">OptionFactory<br><small>A factory to create Option objects.</small></a></span></li>
+<li><span class="class"><a href="_src_Stdio.html#%5CAura%5CCli%5CStdio" target="content">Stdio<br><small>Provides a wrapper for standard input/output handles.</small></a></span></li>
+<li><span class="class"><a href="_src_Vt100.html#%5CAura%5CCli%5CVt100" target="content">Vt100<br><small>Text formatting for VT100 terminals.</small></a></span></li>
+</ul>
+</li></ul>
+</li></ul></div>
+<h1><a href="#">Packages</a></h1>
+<div style="padding: 0px;"><ul id="packages-" class="filetree">
+<li class="closed">
+<span class="folder">Default</span><ul id="packages_" class="filetree"></ul>
+</li>
+<li class="closed">
+<span class="folder">Aura.Cli</span><ul id="packages_Aura.Cli" class="filetree">
+<li class="closed"><span class="class"><a href="_src_Command.html#%5CAura%5CCli%5CCommand" target="content">Command<br><small>The CLI equivalent of a page-controller to perform a single action.</small></a></span></li>
+<li class="closed"><span class="class"><a href="_src_CommandFactory.html#%5CAura%5CCli%5CCommandFactory" target="content">CommandFactory<br><small>A factory to create Command objects.</small></a></span></li>
+<li class="closed"><span class="class"><a href="_src_Exception_CommandFactory.html#%5CAura%5CCli%5CException%5CCommandFactory" target="content">CommandFactory<br><small>Generic CommandFactory exception.</small></a></span></li>
+<li class="closed"><span class="class"><a href="_src_Context.html#%5CAura%5CCli%5CContext" target="content">Context<br><small>Collection point for information about the command-line execution context.</small></a></span></li>
+<li class="closed"><span class="class"><a href="_src_Exception.html#%5CAura%5CCli%5CException" target="content">Exception<br><small>Generic package exception.</small></a></span></li>
+<li class="closed"><span class="class"><a href="_src_Getopt.html#%5CAura%5CCli%5CGetopt" target="content">Getopt<br><small>Retrieves and validates command-line options and parameter values.</small></a></span></li>
+<li class="closed"><span class="class"><a href="_src_Option.html#%5CAura%5CCli%5COption" target="content">Option<br><small>Defines a single command-line option.</small></a></span></li>
+<li class="closed"><span class="class"><a href="_src_OptionFactory.html#%5CAura%5CCli%5COptionFactory" target="content">OptionFactory<br><small>A factory to create Option objects.</small></a></span></li>
+<li class="closed"><span class="class"><a href="_src_Exception_OptionName.html#%5CAura%5CCli%5CException%5COptionName" target="content">OptionName<br><small>Option objects need to be initialized with a name.</small></a></span></li>
+<li class="closed"><span class="class"><a href="_src_Exception_OptionNotDefined.html#%5CAura%5CCli%5CException%5COptionNotDefined" target="content">OptionNotDefined<br><small>Asked for an option that is not defined.</small></a></span></li>
+<li class="closed"><span class="class"><a href="_src_Exception_OptionNotMulti.html#%5CAura%5CCli%5CException%5COptionNotMulti" target="content">OptionNotMulti<br><small>The option does not allow multiple values.</small></a></span></li>
+<li class="closed"><span class="class"><a href="_src_Exception_OptionParam.html#%5CAura%5CCli%5CException%5COptionParam" target="content">OptionParam<br><small>The option 'param' value needs a boolean or a null.</small></a></span></li>
+<li class="closed"><span class="class"><a href="_src_Exception_OptionParamRejected.html#%5CAura%5CCli%5CException%5COptionParamRejected" target="content">OptionParamRejected<br><small>The option requires that no parameter be present.</small></a></span></li>
+<li class="closed"><span class="class"><a href="_src_Exception_OptionParamRequired.html#%5CAura%5CCli%5CException%5COptionParamRequired" target="content">OptionParamRequired<br><small>The option requires a non-blank parameter.</small></a></span></li>
+<li class="closed"><span class="class"><a href="_src_Stdio.html#%5CAura%5CCli%5CStdio" target="content">Stdio<br><small>Provides a wrapper for standard input/output handles.</small></a></span></li>
+<li class="closed"><span class="class"><a href="_src_Vt100.html#%5CAura%5CCli%5CVt100" target="content">Vt100<br><small>Text formatting for VT100 terminals.</small></a></span></li>
+</ul>
+</li>
+</ul></div>
+<h1><a href="#">Files</a></h1>
+<div style="padding: 0px;"><ul id="files-" class="filetree">
+<li class="closed">
+<span class="file"><a href="_src.html" target="content">src.php</a></span><ul id="files_47db0bef3d5c90299442b8d54981c556" class="filetree"></ul>
+</li>
+<li class="closed">
+<span class="file"><a href="_src_Command.html" target="content">src/Command.php</a></span><ul id="files_0ede86b69f5240b21fa39f8ed8ad94be" class="filetree"><li><span class="class"><a href="_src_Command.html#%5CAura%5CCli%5CCommand" target="content">Command<br><small>The CLI equivalent of a page-controller to perform a single action.</small></a></span></li></ul>
+</li>
+<li class="closed">
+<span class="file"><a href="_src_CommandFactory.html" target="content">src/CommandFactory.php</a></span><ul id="files_d6748f93fbcf788c999478260f17fdf8" class="filetree"><li><span class="class"><a href="_src_CommandFactory.html#%5CAura%5CCli%5CCommandFactory" target="content">CommandFactory<br><small>A factory to create Command objects.</small></a></span></li></ul>
+</li>
+<li class="closed">
+<span class="file"><a href="_src_Context.html" target="content">src/Context.php</a></span><ul id="files_f8d4674ca76e78eccefeedbb4be2887f" class="filetree"><li><span class="class"><a href="_src_Context.html#%5CAura%5CCli%5CContext" target="content">Context<br><small>Collection point for information about the command-line execution context.</small></a></span></li></ul>
+</li>
+<li class="closed">
+<span class="file"><a href="_src_Exception.html" target="content">src/Exception.php</a></span><ul id="files_4de9a8b9a240b55fa6090483bd65518a" class="filetree"><li><span class="class"><a href="_src_Exception.html#%5CAura%5CCli%5CException" target="content">Exception<br><small>Generic package exception.</small></a></span></li></ul>
+</li>
+<li class="closed">
+<span class="file"><a href="_src_Exception_CommandFactory.html" target="content">src/Exception/CommandFactory.php</a></span><ul id="files_cd93aef974cf65f860bf3cbd27223fab" class="filetree"><li><span class="class"><a href="_src_Exception_CommandFactory.html#%5CAura%5CCli%5CException%5CCommandFactory" target="content">CommandFactory<br><small>Generic CommandFactory exception.</small></a></span></li></ul>
+</li>
+<li class="closed">
+<span class="file"><a href="_src_Exception_OptionName.html" target="content">src/Exception/OptionName.php</a></span><ul id="files_e1bae6ed494a950c57478bf5190d1dff" class="filetree"><li><span class="class"><a href="_src_Exception_OptionName.html#%5CAura%5CCli%5CException%5COptionName" target="content">OptionName<br><small>Option objects need to be initialized with a name.</small></a></span></li></ul>
+</li>
+<li class="closed">
+<span class="file"><a href="_src_Exception_OptionNotDefined.html" target="content">src/Exception/OptionNotDefined.php</a></span><ul id="files_1a58e08aae160caf18bd001b0cbfd520" class="filetree"><li><span class="class"><a href="_src_Exception_OptionNotDefined.html#%5CAura%5CCli%5CException%5COptionNotDefined" target="content">OptionNotDefined<br><small>Asked for an option that is not defined.</small></a></span></li></ul>
+</li>
+<li class="closed">
+<span class="file"><a href="_src_Exception_OptionNotMulti.html" target="content">src/Exception/OptionNotMulti.php</a></span><ul id="files_79cadc0afd13eae5f8450f504f8b0fc4" class="filetree"><li><span class="class"><a href="_src_Exception_OptionNotMulti.html#%5CAura%5CCli%5CException%5COptionNotMulti" target="content">OptionNotMulti<br><small>The option does not allow multiple values.</small></a></span></li></ul>
+</li>
+<li class="closed">
+<span class="file"><a href="_src_Exception_OptionParam.html" target="content">src/Exception/OptionParam.php</a></span><ul id="files_bce28cd00e7d16802bff5d084e99e12b" class="filetree"><li><span class="class"><a href="_src_Exception_OptionParam.html#%5CAura%5CCli%5CException%5COptionParam" target="content">OptionParam<br><small>The option 'param' value needs a boolean or a null.</small></a></span></li></ul>
+</li>
+<li class="closed">
+<span class="file"><a href="_src_Exception_OptionParamRejected.html" target="content">src/Exception/OptionParamRejected.php</a></span><ul id="files_7aa37df0f38f25ffa6196373d5ed3fb7" class="filetree"><li><span class="class"><a href="_src_Exception_OptionParamRejected.html#%5CAura%5CCli%5CException%5COptionParamRejected" target="content">OptionParamRejected<br><small>The option requires that no parameter be present.</small></a></span></li></ul>
+</li>
+<li class="closed">
+<span class="file"><a href="_src_Exception_OptionParamRequired.html" target="content">src/Exception/OptionParamRequired.php</a></span><ul id="files_d5675290c9c8eee3b967112a6771c0d4" class="filetree"><li><span class="class"><a href="_src_Exception_OptionParamRequired.html#%5CAura%5CCli%5CException%5COptionParamRequired" target="content">OptionParamRequired<br><small>The option requires a non-blank parameter.</small></a></span></li></ul>
+</li>
+<li class="closed">
+<span class="file"><a href="_src_Getopt.html" target="content">src/Getopt.php</a></span><ul id="files_fc43a1c353ddab3ed87bbc72d7a73e37" class="filetree"><li><span class="class"><a href="_src_Getopt.html#%5CAura%5CCli%5CGetopt" target="content">Getopt<br><small>Retrieves and validates command-line options and parameter values.</small></a></span></li></ul>
+</li>
+<li class="closed">
+<span class="file"><a href="_src_Option.html" target="content">src/Option.php</a></span><ul id="files_be4ea719caa218bc3483de090a62b354" class="filetree"><li><span class="class"><a href="_src_Option.html#%5CAura%5CCli%5COption" target="content">Option<br><small>Defines a single command-line option.</small></a></span></li></ul>
+</li>
+<li class="closed">
+<span class="file"><a href="_src_OptionFactory.html" target="content">src/OptionFactory.php</a></span><ul id="files_a454e839009a36d2bfe359f1c7ae6c07" class="filetree"><li><span class="class"><a href="_src_OptionFactory.html#%5CAura%5CCli%5COptionFactory" target="content">OptionFactory<br><small>A factory to create Option objects.</small></a></span></li></ul>
+</li>
+<li class="closed">
+<span class="file"><a href="_src_Stdio.html" target="content">src/Stdio.php</a></span><ul id="files_982031e3d0f4cbeda84d2e826fee39de" class="filetree"><li><span class="class"><a href="_src_Stdio.html#%5CAura%5CCli%5CStdio" target="content">Stdio<br><small>Provides a wrapper for standard input/output handles.</small></a></span></li></ul>
+</li>
+<li class="closed">
+<span class="file"><a href="_src_Vt100.html" target="content">src/Vt100.php</a></span><ul id="files_b2b327d2ad2511595645205a6e96aef3" class="filetree"><li><span class="class"><a href="_src_Vt100.html#%5CAura%5CCli%5CVt100" target="content">Vt100<br><small>Text formatting for VT100 terminals.</small></a></span></li></ul>
+</li>
+</ul></div>
+</div></body></html>

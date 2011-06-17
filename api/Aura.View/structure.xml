@@ -1,0 +1,1784 @@
+<?xml version="1.0"?>
+<project version="0.11.2" title="Aura Project for PHP: Aura.View">
+  <file path="src/AbstractTemplate.php" hash="085c84048b1c4f523c2b848d8859e4a9">
+    <namespace-alias name="Container">Aura\Di\Container</namespace-alias>
+    <class final="false" abstract="true" line="21" namespace="Aura\View">
+      <name>AbstractTemplate</name>
+      <extends/>
+      <full_name>\Aura\View\AbstractTemplate</full_name>
+      <docblock>
+        <description>Provides an abstract TemplateView pattern implementation. We use an
+abstract so that the extended "real" Template class does not have access
+to the private support properties herein.</description>
+        <long-description>
+</long-description>
+        <tag name="package" description="Aura.View" line="12"/>
+      </docblock>
+      <property final="false" static="false" visibility="private" line="30">
+        <name>$_finder</name>
+        <default/>
+        <docblock>
+          <description>View "finder" (to find views in a path stack).</description>
+          <long-description>
+</long-description>
+          <tag name="var" description="" type="\Aura\View\Finder" line="23">
+            <type by_reference="false">\Aura\View\Finder</type>
+          </tag>
+        </docblock>
+      </property>
+      <property final="false" static="false" visibility="private" line="39">
+        <name>$_data</name>
+        <default>array</default>
+        <docblock>
+          <description>Data assigned to the template.</description>
+          <long-description>
+</long-description>
+          <tag name="var" description="" type="\array" line="32">
+            <type by_reference="false">\array</type>
+          </tag>
+        </docblock>
+      </property>
+      <property final="false" static="false" visibility="private" line="49">
+        <name>$_helper_container</name>
+        <default/>
+        <docblock>
+          <description>A Container for helper objects, so that repeated calls to the same
+helper use the same object.</description>
+          <long-description>
+</long-description>
+          <tag name="var" description="" type="\Aura\Di\Container" line="41">
+            <type by_reference="false">\Aura\Di\Container</type>
+          </tag>
+        </docblock>
+      </property>
+      <method final="false" abstract="false" static="false" visibility="public" line="61">
+        <name>__construct</name>
+        <docblock>
+          <description>Constructor.</description>
+          <long-description>
+</long-description>
+          <tag name="param" description="A template finder." type="\Aura\View\Finder" variable="$finder" line="51">
+            <type by_reference="false">\Aura\View\Finder</type>
+          </tag>
+          <tag name="param" description="A container for helpers attached to this template." type="\Aura\View\HelperRegistry" variable="$helper_container" line="51">
+            <type by_reference="false">\Aura\View\HelperRegistry</type>
+          </tag>
+        </docblock>
+        <argument line="62">
+          <name>$finder</name>
+          <default/>
+          <type>Finder</type>
+        </argument>
+        <argument line="63">
+          <name>$helper_container</name>
+          <default/>
+          <type>Container</type>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" line="78">
+        <name>__get</name>
+        <docblock>
+          <description>Magic read access to template data.</description>
+          <long-description>
+</long-description>
+          <tag name="param" description="The template variable name." type="\string" variable="$key" line="69">
+            <type by_reference="false">\string</type>
+          </tag>
+          <tag name="return" description="" type="\mixed" line="69">
+            <type by_reference="false">\mixed</type>
+          </tag>
+        </docblock>
+        <argument line="78">
+          <name>$key</name>
+          <default/>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" line="94">
+        <name>__set</name>
+        <docblock>
+          <description>Magic write access to template data.</description>
+          <long-description>
+</long-description>
+          <tag name="param" description="The template variable name." type="\string" variable="$key" line="83">
+            <type by_reference="false">\string</type>
+          </tag>
+          <tag name="param" description="The template variable value." type="\string" variable="$val" line="83">
+            <type by_reference="false">\string</type>
+          </tag>
+          <tag name="return" description="" type="\mixed" line="83">
+            <type by_reference="false">\mixed</type>
+          </tag>
+        </docblock>
+        <argument line="94">
+          <name>$key</name>
+          <default/>
+          <type/>
+        </argument>
+        <argument line="94">
+          <name>$val</name>
+          <default/>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" line="108">
+        <name>__isset</name>
+        <docblock>
+          <description>Magic isset() checks on template data.</description>
+          <long-description>
+</long-description>
+          <tag name="param" description="The template variable name." type="\string" variable="$key" line="99">
+            <type by_reference="false">\string</type>
+          </tag>
+          <tag name="return" description="" type="\bool" line="99">
+            <type by_reference="false">\bool</type>
+          </tag>
+        </docblock>
+        <argument line="108">
+          <name>$key</name>
+          <default/>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" line="122">
+        <name>__unset</name>
+        <docblock>
+          <description>Magic unset() for template data.</description>
+          <long-description>
+</long-description>
+          <tag name="param" description="The template variable name." type="\string" variable="$key" line="113">
+            <type by_reference="false">\string</type>
+          </tag>
+          <tag name="return" description="" type="\void" line="113">
+            <type by_reference="false">\void</type>
+          </tag>
+        </docblock>
+        <argument line="122">
+          <name>$key</name>
+          <default/>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" line="138">
+        <name>__call</name>
+        <docblock>
+          <description>Magic call to provide shared helpers as template methods.</description>
+          <long-description>
+</long-description>
+          <tag name="param" description="The helper name." type="\string" variable="$name" line="127">
+            <type by_reference="false">\string</type>
+          </tag>
+          <tag name="param" description="The arguments to pass to the helper." type="\array" variable="$args" line="127">
+            <type by_reference="false">\array</type>
+          </tag>
+          <tag name="return" description="" type="\void" line="127">
+            <type by_reference="false">\void</type>
+          </tag>
+        </docblock>
+        <argument line="138">
+          <name>$name</name>
+          <default/>
+          <type/>
+        </argument>
+        <argument line="138">
+          <name>$args</name>
+          <default/>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" line="153">
+        <name>setPaths</name>
+        <docblock>
+          <description>Sets the search paths for templates; paths are searched in FIFO order.</description>
+          <long-description>
+</long-description>
+          <tag name="param" description="An array of directory paths where templates are." type="\array" variable="$paths" line="144">
+            <type by_reference="false">\array</type>
+          </tag>
+          <tag name="return" description="" type="\void" line="144">
+            <type by_reference="false">\void</type>
+          </tag>
+        </docblock>
+        <argument line="153">
+          <name>$paths</name>
+          <default>array</default>
+          <type>array</type>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" line="168">
+        <name>addData</name>
+        <docblock>
+          <description>Merges new data with the existing template data.</description>
+          <long-description>
+</long-description>
+          <tag name="param" description="An array of key-value pairs where the keys are template variable names, and the values are the variable values." type="\array" variable="$data" line="158">
+            <type by_reference="false">\array</type>
+          </tag>
+          <tag name="return" description="" type="\void" line="158">
+            <type by_reference="false">\void</type>
+          </tag>
+        </docblock>
+        <argument line="168">
+          <name>$data</name>
+          <default>array</default>
+          <type>array</type>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" line="184">
+        <name>setData</name>
+        <docblock>
+          <description>Replaces all template data at once; this will remove all previous
+data.</description>
+          <long-description>
+</long-description>
+          <tag name="param" description="An array of key-value pairs where the keys are template variable names, and the values are the variable values." type="\array" variable="$data" line="173">
+            <type by_reference="false">\array</type>
+          </tag>
+          <tag name="return" description="" type="\void" line="173">
+            <type by_reference="false">\void</type>
+          </tag>
+        </docblock>
+        <argument line="184">
+          <name>$data</name>
+          <default>array</default>
+          <type>array</type>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" line="197">
+        <name>getData</name>
+        <docblock>
+          <description>Gets all template variables.</description>
+          <long-description>
+</long-description>
+          <tag name="return" description="An array of key-value pairs where the keys are template variable names, and the values are the variable values." type="\array" line="189">
+            <type by_reference="false">\array</type>
+          </tag>
+        </docblock>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" line="209">
+        <name>getHelperContainer</name>
+        <docblock>
+          <description>Returns the helper Container object.</description>
+          <long-description>
+</long-description>
+          <tag name="return" description="" type="\Aura\Di\Container" line="202">
+            <type by_reference="false">\Aura\Di\Container</type>
+          </tag>
+        </docblock>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" line="224">
+        <name>find</name>
+        <docblock>
+          <description>Returns the path to the requested template script; searches through
+$this-&gt;paths to find the first matching template.</description>
+          <long-description>
+</long-description>
+          <tag name="param" description="The template name to look for in the template path." type="\string" variable="$name" line="214">
+            <type by_reference="false">\string</type>
+          </tag>
+          <tag name="return" description="The full path to the template script." type="\string" line="214">
+            <type by_reference="false">\string</type>
+          </tag>
+        </docblock>
+        <argument line="224">
+          <name>$name</name>
+          <default/>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" line="248">
+        <name>getFinder</name>
+        <docblock>
+          <description>Returns the Finder object.</description>
+          <long-description>
+</long-description>
+          <tag name="return" description="" type="\Aura\View\Finder" line="241">
+            <type by_reference="false">\Aura\View\Finder</type>
+          </tag>
+        </docblock>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" line="262">
+        <name>getHelper</name>
+        <docblock>
+          <description>Retrieves a shared helper from the helper container.</description>
+          <long-description>
+</long-description>
+          <tag name="param" description="The helper to retrieve." type="\string" variable="$name" line="253">
+            <type by_reference="false">\string</type>
+          </tag>
+          <tag name="return" description="" type="\mixed" line="253">
+            <type by_reference="false">\mixed</type>
+          </tag>
+        </docblock>
+        <argument line="262">
+          <name>$name</name>
+          <default/>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="true" static="false" visibility="public" line="282">
+        <name>fetch</name>
+        <docblock>
+          <description>Fetches the output from a template.</description>
+          <long-description>
+</long-description>
+          <tag name="param" description="The template name to use." type="\string" variable="$name" line="271">
+            <type by_reference="false">\string</type>
+          </tag>
+          <tag name="param" description="Variables to extract into the local scope." type="\array" variable="$vars" line="271">
+            <type by_reference="false">\array</type>
+          </tag>
+          <tag name="return" description="" type="\string" line="271">
+            <type by_reference="false">\string</type>
+          </tag>
+        </docblock>
+        <argument line="282">
+          <name>$name</name>
+          <default/>
+          <type/>
+        </argument>
+        <argument line="282">
+          <name>$vars</name>
+          <default>array</default>
+          <type>array</type>
+        </argument>
+      </method>
+    </class>
+  </file>
+  <file path="src/Exception/HelperNotMapped.php" hash="f6214ec5b4356a88c69e9ada6bdbc892">
+    <class final="false" abstract="false" line="3" namespace="Aura\View\Exception">
+      <name>HelperNotMapped</name>
+      <extends>\Aura\View\Exception</extends>
+      <full_name>\Aura\View\Exception\HelperNotMapped</full_name>
+    </class>
+  </file>
+  <file path="src/Exception/TemplateNotFound.php" hash="502c444b8c26aec993b57bd5a8d66d76">
+    <class final="false" abstract="false" line="3" namespace="Aura\View\Exception">
+      <name>TemplateNotFound</name>
+      <extends>\Aura\View\Exception</extends>
+      <full_name>\Aura\View\Exception\TemplateNotFound</full_name>
+    </class>
+  </file>
+  <file path="src/Exception.php" hash="8f9b456f914498e14fc834e8f80d4f84">
+    <class final="false" abstract="false" line="3" namespace="Aura\View">
+      <name>Exception</name>
+      <extends>\Exception</extends>
+      <full_name>\Aura\View\Exception</full_name>
+    </class>
+  </file>
+  <file path="src/Finder.php" hash="405d8d31ec4c704fc91d6a8f3fbc7035">
+    <class final="false" abstract="false" line="18" namespace="Aura\View">
+      <name>Finder</name>
+      <extends/>
+      <full_name>\Aura\View\Finder</full_name>
+      <docblock>
+        <description>Finds files in user-defined path hierarchies.</description>
+        <long-description>
+</long-description>
+        <tag name="package" description="Aura.View" line="11"/>
+      </docblock>
+      <property final="false" static="false" visibility="protected" line="27">
+        <name>$paths</name>
+        <default>array</default>
+        <docblock>
+          <description>The stack of paths.</description>
+          <long-description>
+</long-description>
+          <tag name="var" description="" type="\array" line="20">
+            <type by_reference="false">\array</type>
+          </tag>
+        </docblock>
+      </property>
+      <property final="false" static="false" visibility="protected" line="37">
+        <name>$found</name>
+        <default>array</default>
+        <docblock>
+          <description>A cache of found files, so we do not need to search the path stack
+for a particular file more than once.</description>
+          <long-description>
+</long-description>
+          <tag name="var" description="" type="\array" line="29">
+            <type by_reference="false">\array</type>
+          </tag>
+        </docblock>
+      </property>
+      <method final="false" abstract="false" static="false" visibility="public" line="46">
+        <name>__construct</name>
+        <docblock>
+          <description>Constructor.</description>
+          <long-description>
+</long-description>
+          <tag name="param" description="The default path stack for this Finder." type="\array" variable="$paths" line="39">
+            <type by_reference="false">\array</type>
+          </tag>
+        </docblock>
+        <argument line="46">
+          <name>$paths</name>
+          <default>array</default>
+          <type>array</type>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" line="58">
+        <name>getPaths</name>
+        <docblock>
+          <description>Gets a copy of the current path stack.</description>
+          <long-description>
+</long-description>
+          <tag name="return" description="" type="\array" line="51">
+            <type by_reference="false">\array</type>
+          </tag>
+        </docblock>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" line="80">
+        <name>prepend</name>
+        <docblock>
+          <description>Adds one path to the top of the path stack.</description>
+          <long-description>&lt;p&gt;{{code: php
+    $finder-&gt;prepend('/path/1');
+    $finder-&gt;prepend('/path/2');
+    $finder-&gt;prepend('/path/3');
+    // $finder-&gt;getPaths() reveals that the directory search order will be
+    // '/path/3/', '/path/2/', '/path/1/'.
+}}&lt;/p&gt;
+</long-description>
+          <tag name="param" description="The directories to add to the paths." type="\array|\string" variable="$path" line="63">
+            <type by_reference="false">\array</type>
+            <type by_reference="false">\string</type>
+          </tag>
+          <tag name="return" description="" type="\void" line="63">
+            <type by_reference="false">\void</type>
+          </tag>
+        </docblock>
+        <argument line="80">
+          <name>$path</name>
+          <default/>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" line="103">
+        <name>append</name>
+        <docblock>
+          <description>Adds one path to the end of the path stack.</description>
+          <long-description>&lt;p&gt;{{code: php
+    $finder-&gt;append('/path/1');
+    $finder-&gt;append('/path/2');
+    $finder-&gt;append('/path/3');
+    // $finder-&gt;getPaths() reveals that the directory search order will be
+    // '/path/1/', '/path/2/', '/path/3/'.
+}}&lt;/p&gt;
+</long-description>
+          <tag name="param" description="The directories to add to the paths." type="\array|\string" variable="$path" line="86">
+            <type by_reference="false">\array</type>
+            <type by_reference="false">\string</type>
+          </tag>
+          <tag name="return" description="" type="\void" line="86">
+            <type by_reference="false">\void</type>
+          </tag>
+        </docblock>
+        <argument line="103">
+          <name>$path</name>
+          <default/>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" line="128">
+        <name>setPaths</name>
+        <docblock>
+          <description>Sets the paths directly.</description>
+          <long-description>&lt;p&gt;{{code: php
+     $finder-&gt;setPaths(array(
+         '/path/1',
+         '/path/2',
+         '/path/3',
+     ));
+     // $finder-&gt;getPaths() reveals that the search order will be
+     // '/path/1', '/path/2', '/path/3'.
+}}&lt;/p&gt;
+</long-description>
+          <tag name="param" description="The directories to add to the paths." type="\array|\string" variable="$path" line="109">
+            <type by_reference="false">\array</type>
+            <type by_reference="false">\string</type>
+          </tag>
+          <tag name="return" description="" type="\void" line="109">
+            <type by_reference="false">\void</type>
+          </tag>
+        </docblock>
+        <argument line="128">
+          <name>$paths</name>
+          <default/>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" line="155">
+        <name>find</name>
+        <docblock>
+          <description>Finds a file in the paths.</description>
+          <long-description>&lt;p&gt;{{code: php
+    $finder-&gt;append('/path/1');
+    $finder-&gt;append('/path/2');
+    $finder-&gt;append('/path/3');&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;$file = $finder-&amp;gt;find('file.php');
+// $file is now the first instance of 'file.php' found from the
+// assigned paths, looking first for '/path/3/file.php', then for
+// '/path/2/file.php', then finally for '/path/1/file.php'.
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;}}&lt;/p&gt;
+</long-description>
+          <tag name="param" description="The file to find using the assigned paths." type="\string" variable="$file" line="134">
+            <type by_reference="false">\string</type>
+          </tag>
+          <tag name="return" description="The absolute path to the file, or false if not found using the paths." type="\mixed" line="134">
+            <type by_reference="false">\mixed</type>
+          </tag>
+        </docblock>
+        <argument line="155">
+          <name>$file</name>
+          <default/>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="protected" line="192">
+        <name>fileExists</name>
+        <docblock>
+          <description>Checks to see if a file exists at a particular location.</description>
+          <long-description>
+</long-description>
+          <tag name="param" description="The file to find." type="\string" variable="$file" line="182">
+            <type by_reference="false">\string</type>
+          </tag>
+          <tag name="return" description="The absolute path to the file, or false if not found." type="\mixed" line="182">
+            <type by_reference="false">\mixed</type>
+          </tag>
+        </docblock>
+        <argument line="192">
+          <name>$file</name>
+          <default/>
+          <type/>
+        </argument>
+      </method>
+    </class>
+  </file>
+  <file path="src/Helper/AbstractHelper.php" hash="c9260ee8ec1a0a578087f3b17ec62204">
+    <class final="false" abstract="true" line="18" namespace="Aura\View\Helper">
+      <name>AbstractHelper</name>
+      <extends/>
+      <full_name>\Aura\View\Helper\AbstractHelper</full_name>
+      <docblock>
+        <description>Abstract helper base class.</description>
+        <long-description>
+</long-description>
+        <tag name="package" description="Aura.View" line="11"/>
+      </docblock>
+      <property final="false" static="false" visibility="protected" line="27">
+        <name>$escape_charset</name>
+        <default>UTF-8</default>
+        <docblock>
+          <description>The character set to use when escaping.</description>
+          <long-description>
+</long-description>
+          <tag name="var" description="" type="\string" line="20">
+            <type by_reference="false">\string</type>
+          </tag>
+        </docblock>
+      </property>
+      <property final="false" static="false" visibility="protected" line="36">
+        <name>$escape_quotes</name>
+        <default>ENT_QUOTES</default>
+        <docblock>
+          <description>The quote style to use when escaping.</description>
+          <long-description>
+</long-description>
+          <tag name="var" description="" type="\int" line="29">
+            <type by_reference="false">\int</type>
+          </tag>
+        </docblock>
+      </property>
+      <property final="false" static="false" visibility="protected" line="45">
+        <name>$indent</name>
+        <default>    </default>
+        <docblock>
+          <description>Use this as one level of indentation for output.</description>
+          <long-description>
+</long-description>
+          <tag name="var" description="" type="\string" line="38">
+            <type by_reference="false">\string</type>
+          </tag>
+        </docblock>
+      </property>
+      <method final="false" abstract="false" static="false" visibility="public" line="56">
+        <name>setEscapeCharset</name>
+        <docblock>
+          <description>Sets the character set to use when escaping.</description>
+          <long-description>
+</long-description>
+          <tag name="param" description="The character set, e.g. &amp;#039;UTF-8&amp;#039;." type="\string" variable="$charset" line="47">
+            <type by_reference="false">\string</type>
+          </tag>
+          <tag name="return" description="" type="\void" line="47">
+            <type by_reference="false">\void</type>
+          </tag>
+        </docblock>
+        <argument line="56">
+          <name>$charset</name>
+          <default/>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" line="70">
+        <name>setEscapeQuotes</name>
+        <docblock>
+          <description>Sets the quote style to use when escaping.</description>
+          <long-description>
+</long-description>
+          <tag name="param" description="The quote style constant, e.g. `ENT_QUOTES`." type="\int" variable="$quotes" line="61">
+            <type by_reference="false">\int</type>
+          </tag>
+          <tag name="return" description="" type="\void" line="61">
+            <type by_reference="false">\void</type>
+          </tag>
+        </docblock>
+        <argument line="70">
+          <name>$quotes</name>
+          <default/>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" line="84">
+        <name>setIndent</name>
+        <docblock>
+          <description>Sets the string to use for one level of indentation.</description>
+          <long-description>
+</long-description>
+          <tag name="param" description="The indent string." type="\string" variable="$indent" line="75">
+            <type by_reference="false">\string</type>
+          </tag>
+          <tag name="return" description="" type="\void" line="75">
+            <type by_reference="false">\void</type>
+          </tag>
+        </docblock>
+        <argument line="84">
+          <name>$indent</name>
+          <default/>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="protected" line="98">
+        <name>escape</name>
+        <docblock>
+          <description>Escapes values intended for output.</description>
+          <long-description>
+</long-description>
+          <tag name="param" description="The value to escape." type="\Aura\View\Helper\scalar" variable="$value" line="89">
+            <type by_reference="false">\Aura\View\Helper\scalar</type>
+          </tag>
+          <tag name="return" description="The escaped value." type="\string" line="89">
+            <type by_reference="false">\string</type>
+          </tag>
+        </docblock>
+        <argument line="98">
+          <name>$value</name>
+          <default/>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="protected" line="117">
+        <name>attribs</name>
+        <docblock>
+          <description>Converts an associative array to an escaped attribute string.</description>
+          <long-description>
+</long-description>
+          <tag name="param" description="From this array, each key-value pair is converted to an attribute name and value." type="\array" variable="$attribs" line="107">
+            <type by_reference="false">\array</type>
+          </tag>
+          <tag name="return" description="The escaped attributes string." type="\string" line="107">
+            <type by_reference="false">\string</type>
+          </tag>
+        </docblock>
+        <argument line="117">
+          <name>$attribs</name>
+          <default/>
+          <type>array</type>
+        </argument>
+      </method>
+    </class>
+  </file>
+  <file path="src/Helper/Anchor.php" hash="8ba0ca6f05253a6542b8e374e2c028e1">
+    <class final="false" abstract="false" line="18" namespace="Aura\View\Helper">
+      <name>Anchor</name>
+      <extends>\Aura\View\Helper\AbstractHelper</extends>
+      <full_name>\Aura\View\Helper\Anchor</full_name>
+      <docblock>
+        <description>Helper to generate `&lt;a ... /&gt;` tags.</description>
+        <long-description>
+</long-description>
+        <tag name="package" description="Aura.View" line="11"/>
+      </docblock>
+      <method final="false" abstract="false" static="false" visibility="public" line="33">
+        <name>__invoke</name>
+        <docblock>
+          <description>Returns an anchor tag with the anchor text escaped.</description>
+          <long-description>
+</long-description>
+          <tag name="param" description="The anchor href specification." type="\string" variable="$href" line="20">
+            <type by_reference="false">\string</type>
+          </tag>
+          <tag name="param" description="The text for the anchor." type="\string" variable="$text" line="20">
+            <type by_reference="false">\string</type>
+          </tag>
+          <tag name="param" description="Attributes for the anchor." type="\array" variable="$attribs" line="20">
+            <type by_reference="false">\array</type>
+          </tag>
+          <tag name="return" description="" type="\string" line="20">
+            <type by_reference="false">\string</type>
+          </tag>
+        </docblock>
+        <argument line="33">
+          <name>$href</name>
+          <default/>
+          <type/>
+        </argument>
+        <argument line="33">
+          <name>$text</name>
+          <default/>
+          <type/>
+        </argument>
+        <argument line="33">
+          <name>$attribs</name>
+          <default>array</default>
+          <type>array</type>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" line="54">
+        <name>raw</name>
+        <docblock>
+          <description>Returns an anchor tag but does not escape the text; suitable for
+wrapping an anchor around other HTML, such as an image.</description>
+          <long-description>
+</long-description>
+          <tag name="param" description="The anchor href specification." type="\string" variable="$href" line="40">
+            <type by_reference="false">\string</type>
+          </tag>
+          <tag name="param" description="The text for the anchor." type="\string" variable="$text" line="40">
+            <type by_reference="false">\string</type>
+          </tag>
+          <tag name="param" description="Attributes for the anchor." type="\array" variable="$attribs" line="40">
+            <type by_reference="false">\array</type>
+          </tag>
+          <tag name="return" description="" type="\string" line="40">
+            <type by_reference="false">\string</type>
+          </tag>
+        </docblock>
+        <argument line="54">
+          <name>$href</name>
+          <default/>
+          <type/>
+        </argument>
+        <argument line="54">
+          <name>$text</name>
+          <default/>
+          <type/>
+        </argument>
+        <argument line="54">
+          <name>$attribs</name>
+          <default>array</default>
+          <type>array</type>
+        </argument>
+      </method>
+    </class>
+  </file>
+  <file path="src/Helper/Attribs.php" hash="89e8350d92303bf372235008509c5fd8">
+    <class final="false" abstract="false" line="18" namespace="Aura\View\Helper">
+      <name>Attribs</name>
+      <extends>\Aura\View\Helper\AbstractHelper</extends>
+      <full_name>\Aura\View\Helper\Attribs</full_name>
+      <docblock>
+        <description>Helper to escape attributes.</description>
+        <long-description>
+</long-description>
+        <tag name="package" description="Aura.View" line="11"/>
+      </docblock>
+      <method final="false" abstract="false" static="false" visibility="public" line="30">
+        <name>__invoke</name>
+        <docblock>
+          <description>Converts an associative array to an escaped attribute string.</description>
+          <long-description>
+</long-description>
+          <tag name="param" description="From this array, each key-value pair is converted to an attribute name and value." type="\array" variable="$attribs" line="20">
+            <type by_reference="false">\array</type>
+          </tag>
+          <tag name="return" description="The escaped attributes string." type="\string" line="20">
+            <type by_reference="false">\string</type>
+          </tag>
+        </docblock>
+        <argument line="30">
+          <name>$attribs</name>
+          <default/>
+          <type>array</type>
+        </argument>
+      </method>
+    </class>
+  </file>
+  <file path="src/Helper/Base.php" hash="652de66a8b416c5d6ffc7028d0253dd4">
+    <class final="false" abstract="false" line="18" namespace="Aura\View\Helper">
+      <name>Base</name>
+      <extends>\Aura\View\Helper\AbstractHelper</extends>
+      <full_name>\Aura\View\Helper\Base</full_name>
+      <docblock>
+        <description>Helper to generate `&lt;base ... /&gt;` tags.</description>
+        <long-description>
+</long-description>
+        <tag name="package" description="Aura.View" line="11"/>
+      </docblock>
+      <method final="false" abstract="false" static="false" visibility="public" line="29">
+        <name>__invoke</name>
+        <docblock>
+          <description>Returns a `&lt;base ... /&gt;` tag.</description>
+          <long-description>
+</long-description>
+          <tag name="param" description="The base href." type="\string" variable="$href" line="20">
+            <type by_reference="false">\string</type>
+          </tag>
+          <tag name="return" description="The `&amp;lt;base ... /&amp;gt;` tag." type="\string" line="20">
+            <type by_reference="false">\string</type>
+          </tag>
+        </docblock>
+        <argument line="29">
+          <name>$href</name>
+          <default/>
+          <type/>
+        </argument>
+      </method>
+    </class>
+  </file>
+  <file path="src/Helper/Datetime.php" hash="944f281a6e803ed76c04816edfcac97e">
+    <class final="false" abstract="false" line="20" namespace="Aura\View\Helper">
+      <name>Datetime</name>
+      <extends>\Aura\View\Helper\AbstractHelper</extends>
+      <full_name>\Aura\View\Helper\Datetime</full_name>
+      <docblock>
+        <description>Helper for a formatted timestamp using date() format codes.</description>
+        <long-description>&lt;p&gt;Default format is "Y-m-d H:i:s".&lt;/p&gt;
+</long-description>
+        <tag name="package" description="Aura.View" line="11"/>
+      </docblock>
+      <property final="false" static="false" visibility="protected" line="23">
+        <name>$format</name>
+        <default>array</default>
+      </property>
+      <method final="false" abstract="false" static="false" visibility="public" line="30">
+        <name>__construct</name>
+        <argument line="30">
+          <name>$format</name>
+          <default>array</default>
+          <type>array</type>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" line="47">
+        <name>__invoke</name>
+        <docblock>
+          <description>Outputs a formatted timestamp using date() format codes.</description>
+          <long-description>
+</long-description>
+          <tag name="param" description="Any date-time string suitable for strtotime()." type="\string" variable="$spec" line="35">
+            <type by_reference="false">\string</type>
+          </tag>
+          <tag name="param" description="An optional custom date() formatting string." type="\string" variable="$format" line="35">
+            <type by_reference="false">\string</type>
+          </tag>
+          <tag name="return" description="The formatted date string." type="\string" line="35">
+            <type by_reference="false">\string</type>
+          </tag>
+        </docblock>
+        <argument line="47">
+          <name>$spec</name>
+          <default/>
+          <type/>
+        </argument>
+        <argument line="47">
+          <name>$format</name>
+          <default>default</default>
+          <type/>
+        </argument>
+      </method>
+    </class>
+  </file>
+  <file path="src/Helper/Escape.php" hash="ab620fc4836d7b579dac935942cbad53">
+    <class final="false" abstract="false" line="3" namespace="Aura\View\Helper">
+      <name>Escape</name>
+      <extends>\Aura\View\Helper\AbstractHelper</extends>
+      <full_name>\Aura\View\Helper\Escape</full_name>
+      <method final="false" abstract="false" static="false" visibility="public" line="5">
+        <name>__invoke</name>
+        <argument line="5">
+          <name>$text</name>
+          <default/>
+          <type/>
+        </argument>
+      </method>
+    </class>
+  </file>
+  <file path="src/Helper/Image.php" hash="01f1b617f73fda3c0477697934cb36b5">
+    <namespace-alias name="Helper">Aura\View\Helper</namespace-alias>
+    <class final="false" abstract="false" line="11" namespace="Aura\View\Helper">
+      <name>Image</name>
+      <extends>\Aura\View\Helper\AbstractHelper</extends>
+      <full_name>\Aura\View\Helper\Image</full_name>
+      <docblock>
+        <description>Helper to generate an &lt;img ... /&gt; tag.</description>
+        <long-description>
+</long-description>
+      </docblock>
+      <method final="false" abstract="false" static="false" visibility="public" line="29">
+        <name>__invoke</name>
+        <docblock>
+          <description>Returns an &lt;img ... /&gt; tag.</description>
+          <long-description>&lt;p&gt;If an "alt" attribute is not specified, will add it from the
+image [[php::basename() | ]].&lt;/p&gt;
+</long-description>
+          <tag name="param" description="The href to the image source." type="\string" variable="$src" line="13">
+            <type by_reference="false">\string</type>
+          </tag>
+          <tag name="param" description="Additional attributes for the tag." type="\array" variable="$attribs" line="13">
+            <type by_reference="false">\array</type>
+          </tag>
+          <tag name="return" description="An &amp;lt;img ... /&amp;gt; tag." type="\string" line="13">
+            <type by_reference="false">\string</type>
+          </tag>
+          <tag name="todo" description="Add automated height/width calculation?" line="13"/>
+        </docblock>
+        <argument line="29">
+          <name>$src</name>
+          <default/>
+          <type/>
+        </argument>
+        <argument line="29">
+          <name>$attribs</name>
+          <default>array</default>
+          <type/>
+        </argument>
+      </method>
+    </class>
+  </file>
+  <file path="src/Helper/Links.php" hash="7eb4f49a5bacfa8af335352a29036d7e">
+    <namespace-alias name="Helper">Aura\View\Helper</namespace-alias>
+    <class final="false" abstract="false" line="10" namespace="Aura\View\Helper">
+      <name>Links</name>
+      <extends>\Aura\View\Helper\AbstractHelper</extends>
+      <full_name>\Aura\View\Helper\Links</full_name>
+      <docblock>
+        <description>Helper for a stack of &lt;link ... /&gt; tags.</description>
+        <long-description>
+</long-description>
+      </docblock>
+      <property final="false" static="false" visibility="protected" line="12">
+        <name>$links</name>
+        <default>array</default>
+      </property>
+      <method final="false" abstract="false" static="false" visibility="public" line="21">
+        <name>__invoke</name>
+        <docblock>
+          <description>Returns the helper so you can call methods on it.</description>
+          <long-description>
+</long-description>
+          <tag name="return" description="" type="\Aura\View\Helper\$this" line="14">
+            <type by_reference="false">\Aura\View\Helper\$this</type>
+          </tag>
+        </docblock>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" line="35">
+        <name>add</name>
+        <docblock>
+          <description>Adda a &lt;link ... /&gt; tag to the stack.</description>
+          <long-description>
+</long-description>
+          <tag name="param" description="Attributes for the &amp;lt;link&amp;gt; tag." type="\array" variable="$attribs" line="26">
+            <type by_reference="false">\array</type>
+          </tag>
+          <tag name="return" description="" type="\void" line="26">
+            <type by_reference="false">\void</type>
+          </tag>
+        </docblock>
+        <argument line="35">
+          <name>$attribs</name>
+          <default>array</default>
+          <type>array</type>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" line="48">
+        <name>get</name>
+        <docblock>
+          <description>Returns the stack of &lt;link ... /&gt; tags as a single block.</description>
+          <long-description>
+</long-description>
+          <tag name="return" description="The &amp;lt;link ... /&amp;gt; tags." type="\string" line="41">
+            <type by_reference="false">\string</type>
+          </tag>
+        </docblock>
+      </method>
+    </class>
+  </file>
+  <file path="src/Helper/Metas.php" hash="9c6c81a80a7b86c4618352f4918e11ca">
+    <namespace-alias name="Helper">Aura\View\Helper</namespace-alias>
+    <class final="false" abstract="false" line="10" namespace="Aura\View\Helper">
+      <name>Metas</name>
+      <extends>\Aura\View\Helper\AbstractHelper</extends>
+      <full_name>\Aura\View\Helper\Metas</full_name>
+      <docblock>
+        <description>Helper for a stack of &lt;meta ... /&gt; tags.</description>
+        <long-description>
+</long-description>
+      </docblock>
+      <property final="false" static="false" visibility="protected" line="12">
+        <name>$metas</name>
+        <default>array</default>
+      </property>
+      <method final="false" abstract="false" static="false" visibility="public" line="21">
+        <name>__invoke</name>
+        <docblock>
+          <description>Returns the helper so you can call methods on it.</description>
+          <long-description>
+</long-description>
+          <tag name="return" description="" type="\Aura\View\Helper\$this" line="14">
+            <type by_reference="false">\Aura\View\Helper\$this</type>
+          </tag>
+        </docblock>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" line="35">
+        <name>add</name>
+        <docblock>
+          <description>Returns a &lt;meta ... /&gt; tag.</description>
+          <long-description>
+</long-description>
+          <tag name="param" description="Attributes for the &amp;lt;link&amp;gt; tag." type="\array" variable="$attribs" line="26">
+            <type by_reference="false">\array</type>
+          </tag>
+          <tag name="return" description="" type="\void" line="26">
+            <type by_reference="false">\void</type>
+          </tag>
+        </docblock>
+        <argument line="35">
+          <name>$attribs</name>
+          <default>array</default>
+          <type>array</type>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" line="52">
+        <name>addHttp</name>
+        <docblock>
+          <description>Returns a &lt;meta http-equiv="" content="" /&gt; tag.</description>
+          <long-description>
+</long-description>
+          <tag name="param" description="The http-equiv type." type="\string" variable="$http_equiv" line="41">
+            <type by_reference="false">\string</type>
+          </tag>
+          <tag name="param" description="The content value." type="\string" variable="$content" line="41">
+            <type by_reference="false">\string</type>
+          </tag>
+          <tag name="return" description="" type="\void" line="41">
+            <type by_reference="false">\void</type>
+          </tag>
+        </docblock>
+        <argument line="52">
+          <name>$http_equiv</name>
+          <default/>
+          <type/>
+        </argument>
+        <argument line="52">
+          <name>$content</name>
+          <default/>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" line="71">
+        <name>addName</name>
+        <docblock>
+          <description>Returns a &lt;meta name="" content="" /&gt; tag.</description>
+          <long-description>
+</long-description>
+          <tag name="param" description="The name value." type="\string" variable="$name" line="60">
+            <type by_reference="false">\string</type>
+          </tag>
+          <tag name="param" description="The content value." type="\string" variable="$content" line="60">
+            <type by_reference="false">\string</type>
+          </tag>
+          <tag name="return" description="" type="\void" line="60">
+            <type by_reference="false">\void</type>
+          </tag>
+        </docblock>
+        <argument line="71">
+          <name>$name</name>
+          <default/>
+          <type/>
+        </argument>
+        <argument line="71">
+          <name>$content</name>
+          <default/>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" line="86">
+        <name>get</name>
+        <docblock>
+          <description>Returns the stack of &lt;meta ... /&gt; tags as a single block.</description>
+          <long-description>
+</long-description>
+          <tag name="return" description="The &amp;lt;meta ... /&amp;gt; tags." type="\string" line="79">
+            <type by_reference="false">\string</type>
+          </tag>
+        </docblock>
+      </method>
+    </class>
+  </file>
+  <file path="src/Helper/Scripts.php" hash="a1afdf13aa329f4fef26e1bb44ff14cb">
+    <namespace-alias name="Helper">Aura\View\Helper</namespace-alias>
+    <class final="false" abstract="false" line="10" namespace="Aura\View\Helper">
+      <name>Scripts</name>
+      <extends>\Aura\View\Helper\AbstractHelper</extends>
+      <full_name>\Aura\View\Helper\Scripts</full_name>
+      <docblock>
+        <description>Helper for a stack of &lt;script&gt; tags.</description>
+        <long-description>
+</long-description>
+      </docblock>
+      <property final="false" static="false" visibility="protected" line="12">
+        <name>$scripts</name>
+        <default>array</default>
+      </property>
+      <method final="false" abstract="false" static="false" visibility="public" line="21">
+        <name>__invoke</name>
+        <docblock>
+          <description>Returns the helper so you can call methods on it.</description>
+          <long-description>
+</long-description>
+          <tag name="return" description="" type="\Aura\View\Helper\$this" line="14">
+            <type by_reference="false">\Aura\View\Helper\$this</type>
+          </tag>
+        </docblock>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" line="37">
+        <name>add</name>
+        <docblock>
+          <description>Adds a &lt;script&gt; tag to the stack.</description>
+          <long-description>
+</long-description>
+          <tag name="param" description="The source href for the script." type="\string" variable="$src" line="26">
+            <type by_reference="false">\string</type>
+          </tag>
+          <tag name="param" description="Additional attributes for the &amp;lt;script&amp;gt; tag." type="\array" variable="$attribs" line="26">
+            <type by_reference="false">\array</type>
+          </tag>
+          <tag name="return" description="" type="\void" line="26">
+            <type by_reference="false">\void</type>
+          </tag>
+        </docblock>
+        <argument line="37">
+          <name>$src</name>
+          <default/>
+          <type/>
+        </argument>
+        <argument line="37">
+          <name>$pos</name>
+          <default>100</default>
+          <type/>
+        </argument>
+        <argument line="37">
+          <name>$attribs</name>
+          <default>array</default>
+          <type>array</type>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" line="57">
+        <name>get</name>
+        <docblock>
+          <description>Returns the stack of &lt;script&gt; tags as a single block.</description>
+          <long-description>
+</long-description>
+          <tag name="return" description="The &amp;lt;script&amp;gt; tags." type="\string" line="50">
+            <type by_reference="false">\string</type>
+          </tag>
+        </docblock>
+      </method>
+    </class>
+  </file>
+  <file path="src/Helper/Styles.php" hash="cb0f6c430342ec19bd617e9fa03b57d5">
+    <namespace-alias name="Helper">Aura\View\Helper</namespace-alias>
+    <class final="false" abstract="false" line="10" namespace="Aura\View\Helper">
+      <name>Styles</name>
+      <extends>\Aura\View\Helper\AbstractHelper</extends>
+      <full_name>\Aura\View\Helper\Styles</full_name>
+      <docblock>
+        <description>Helper for &lt;link rel="stylesheet" ... /&gt; tags.</description>
+        <long-description>
+</long-description>
+      </docblock>
+      <property final="false" static="false" visibility="protected" line="12">
+        <name>$styles</name>
+        <default>array</default>
+      </property>
+      <method final="false" abstract="false" static="false" visibility="public" line="21">
+        <name>__invoke</name>
+        <docblock>
+          <description>Returns the helper so you can call methods on it.</description>
+          <long-description>
+</long-description>
+          <tag name="return" description="" type="\Aura\View\Helper\$this" line="14">
+            <type by_reference="false">\Aura\View\Helper\$this</type>
+          </tag>
+        </docblock>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" line="37">
+        <name>add</name>
+        <docblock>
+          <description>Adds a &lt;link rel="stylesheet" ... /&gt; tag to the stack.</description>
+          <long-description>
+</long-description>
+          <tag name="param" description="The source href for the stylesheet." type="\string" variable="$href" line="26">
+            <type by_reference="false">\string</type>
+          </tag>
+          <tag name="param" description="Additional attributes for the &amp;lt;link&amp;gt; tag." type="\array" variable="$attribs" line="26">
+            <type by_reference="false">\array</type>
+          </tag>
+          <tag name="return" description="" type="\void" line="26">
+            <type by_reference="false">\void</type>
+          </tag>
+        </docblock>
+        <argument line="37">
+          <name>$href</name>
+          <default/>
+          <type/>
+        </argument>
+        <argument line="37">
+          <name>$pos</name>
+          <default>100</default>
+          <type/>
+        </argument>
+        <argument line="37">
+          <name>$attribs</name>
+          <default>array</default>
+          <type>array</type>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" line="73">
+        <name>get</name>
+        <docblock>
+          <description>Returns the stack of &lt;link rel="stylesheet" ... /&gt; tags as a single
+block.</description>
+          <long-description>
+</long-description>
+          <tag name="return" description="The &amp;lt;link rel=&amp;quot;stylesheet&amp;quot; ... /&amp;gt; tags." type="\string" line="65">
+            <type by_reference="false">\string</type>
+          </tag>
+        </docblock>
+      </method>
+    </class>
+  </file>
+  <file path="src/Helper/Title.php" hash="7fe3526eae4280fbc3d05a0feecad482">
+    <namespace-alias name="Helper">Aura\View\Helper</namespace-alias>
+    <class final="false" abstract="false" line="5" namespace="Aura\View\Helper">
+      <name>Title</name>
+      <extends>\Aura\View\Helper\AbstractHelper</extends>
+      <full_name>\Aura\View\Helper\Title</full_name>
+      <property final="false" static="false" visibility="protected" line="14">
+        <name>$title</name>
+        <default>null</default>
+        <docblock>
+          <description>The &lt;title&gt; value.</description>
+          <long-description>
+</long-description>
+          <tag name="var" description="" type="\string" line="7">
+            <type by_reference="false">\string</type>
+          </tag>
+        </docblock>
+      </property>
+      <method final="false" abstract="false" static="false" visibility="public" line="23">
+        <name>__invoke</name>
+        <docblock>
+          <description>Returns the helper so you can call methods on it.</description>
+          <long-description>
+</long-description>
+          <tag name="return" description="" type="\Aura\View\Helper\$this" line="16">
+            <type by_reference="false">\Aura\View\Helper\$this</type>
+          </tag>
+        </docblock>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" line="37">
+        <name>set</name>
+        <docblock>
+          <description>Sets the &lt;title&gt; string.</description>
+          <long-description>
+</long-description>
+          <tag name="param" description="The title string." type="\string" variable="$title" line="28">
+            <type by_reference="false">\string</type>
+          </tag>
+          <tag name="return" description="" type="\void" line="28">
+            <type by_reference="false">\void</type>
+          </tag>
+        </docblock>
+        <argument line="37">
+          <name>$title</name>
+          <default/>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" line="51">
+        <name>append</name>
+        <docblock>
+          <description>Appends to the end of the current &lt;title&gt; string.</description>
+          <long-description>
+</long-description>
+          <tag name="param" description="The string to be appended to the title." type="\string" variable="$text" line="42">
+            <type by_reference="false">\string</type>
+          </tag>
+          <tag name="return" description="" type="\void" line="42">
+            <type by_reference="false">\void</type>
+          </tag>
+        </docblock>
+        <argument line="51">
+          <name>$text</name>
+          <default/>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" line="65">
+        <name>prepend</name>
+        <docblock>
+          <description>Prepends to the beginning of the current &lt;title&gt; string.</description>
+          <long-description>
+</long-description>
+          <tag name="param" description="The string to be appended to the title." type="\string" variable="$text" line="56">
+            <type by_reference="false">\string</type>
+          </tag>
+          <tag name="return" description="" type="\void" line="56">
+            <type by_reference="false">\void</type>
+          </tag>
+        </docblock>
+        <argument line="65">
+          <name>$text</name>
+          <default/>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" line="77">
+        <name>get</name>
+        <docblock>
+          <description>Returns the current title string (escaped).</description>
+          <long-description>
+</long-description>
+          <tag name="return" description="The current title string." type="\string" line="70">
+            <type by_reference="false">\string</type>
+          </tag>
+        </docblock>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" line="93">
+        <name>getRaw</name>
+        <docblock>
+          <description>Returns the current title string **unescaped**.</description>
+          <long-description>
+</long-description>
+          <tag name="return" description="" type="\void" line="86">
+            <type by_reference="false">\void</type>
+          </tag>
+        </docblock>
+      </method>
+    </class>
+  </file>
+  <file path="src/Template.php" hash="86e5757b0f4eedf3d536541aeb839126">
+    <class final="false" abstract="false" line="19" namespace="Aura\View">
+      <name>Template</name>
+      <extends>\Aura\View\AbstractTemplate</extends>
+      <full_name>\Aura\View\Template</full_name>
+      <docblock>
+        <description>Provides a concrete Template View pattern implementation; it does not
+have access to the private support properties of the parent abstract.</description>
+        <long-description>
+</long-description>
+        <tag name="package" description="Aura.View" line="11"/>
+      </docblock>
+      <method final="false" abstract="false" static="false" visibility="public" line="32">
+        <name>fetch</name>
+        <docblock>
+          <description>Fetches the output from a template.</description>
+          <long-description>
+</long-description>
+          <tag name="param" description="The template name to use." type="\string" variable="$__name__" line="21">
+            <type by_reference="false">\string</type>
+          </tag>
+          <tag name="param" description="Variables to extract into the local scope." type="\array" variable="$__vars__" line="21">
+            <type by_reference="false">\array</type>
+          </tag>
+          <tag name="return" description="" type="\string" line="21">
+            <type by_reference="false">\string</type>
+          </tag>
+        </docblock>
+        <argument line="32">
+          <name>$__name__</name>
+          <default/>
+          <type/>
+        </argument>
+        <argument line="32">
+          <name>$__vars__</name>
+          <default>array</default>
+          <type>array</type>
+        </argument>
+      </method>
+    </class>
+  </file>
+  <file path="src/TwoStep.php" hash="4d15afdc4b03f6431a9c67c41e5c82d5">
+    <class final="false" abstract="false" line="19" namespace="Aura\View">
+      <name>TwoStep</name>
+      <extends/>
+      <full_name>\Aura\View\TwoStep</full_name>
+      <docblock>
+        <description>Provides a Two Step View pattern implementation; this allows for an
+inner "view" and and outer "layout" as commonly used by web apps.</description>
+        <long-description>
+</long-description>
+        <tag name="package" description="Aura.View" line="11"/>
+      </docblock>
+      <property final="false" static="false" visibility="protected" line="28">
+        <name>$view_name</name>
+        <default/>
+        <docblock>
+          <description>The name of the inner view template.</description>
+          <long-description>
+</long-description>
+          <tag name="var" description="" type="\string" line="21">
+            <type by_reference="false">\string</type>
+          </tag>
+        </docblock>
+      </property>
+      <property final="false" static="false" visibility="protected" line="37">
+        <name>$view_data</name>
+        <default>array</default>
+        <docblock>
+          <description>The data for the inner view template.</description>
+          <long-description>
+</long-description>
+          <tag name="var" description="" type="\array" line="30">
+            <type by_reference="false">\array</type>
+          </tag>
+        </docblock>
+      </property>
+      <property final="false" static="false" visibility="protected" line="46">
+        <name>$view_paths</name>
+        <default>array</default>
+        <docblock>
+          <description>The paths to search when finding the inner view template.</description>
+          <long-description>
+</long-description>
+          <tag name="var" description="" type="\array" line="39">
+            <type by_reference="false">\array</type>
+          </tag>
+        </docblock>
+      </property>
+      <property final="false" static="false" visibility="protected" line="55">
+        <name>$layout_name</name>
+        <default/>
+        <docblock>
+          <description>The name of the outer layout template.</description>
+          <long-description>
+</long-description>
+          <tag name="var" description="" type="\string" line="48">
+            <type by_reference="false">\string</type>
+          </tag>
+        </docblock>
+      </property>
+      <property final="false" static="false" visibility="protected" line="64">
+        <name>$layout_data</name>
+        <default>array</default>
+        <docblock>
+          <description>The data for the outer layout template.</description>
+          <long-description>
+</long-description>
+          <tag name="var" description="" type="\array" line="57">
+            <type by_reference="false">\array</type>
+          </tag>
+        </docblock>
+      </property>
+      <property final="false" static="false" visibility="protected" line="73">
+        <name>$layout_paths</name>
+        <default>array</default>
+        <docblock>
+          <description>The paths to search when finding the outer layout template.</description>
+          <long-description>
+</long-description>
+          <tag name="var" description="" type="\array" line="66">
+            <type by_reference="false">\array</type>
+          </tag>
+        </docblock>
+      </property>
+      <property final="false" static="false" visibility="protected" line="83">
+        <name>$layout_content_var</name>
+        <default>layout_content</default>
+        <docblock>
+          <description>The name of the variable in the outer layout template that should be
+replaced with the output of the inner view template.</description>
+          <long-description>
+</long-description>
+          <tag name="var" description="" type="\string" line="75">
+            <type by_reference="false">\string</type>
+          </tag>
+        </docblock>
+      </property>
+      <property final="false" static="false" visibility="protected" line="93">
+        <name>$template</name>
+        <default/>
+        <docblock>
+          <description>The Template object to be used when rendering the inner view and outer
+layout.</description>
+          <long-description>
+</long-description>
+          <tag name="var" description="" type="\Aura\View\Template" line="85">
+            <type by_reference="false">\Aura\View\Template</type>
+          </tag>
+        </docblock>
+      </property>
+      <method final="false" abstract="false" static="false" visibility="public" line="103">
+        <name>__construct</name>
+        <docblock>
+          <description>Constructor.</description>
+          <long-description>
+</long-description>
+          <tag name="param" description="The Template object to be used when rendering the inner view and outer layout." type="\Aura\View\Template" variable="$template" line="95">
+            <type by_reference="false">\Aura\View\Template</type>
+          </tag>
+        </docblock>
+        <argument line="103">
+          <name>$template</name>
+          <default/>
+          <type>Template</type>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" line="117">
+        <name>setViewName</name>
+        <docblock>
+          <description>Sets the name of the inner view template.</description>
+          <long-description>
+</long-description>
+          <tag name="param" description="The name of the inner view template." type="\string" variable="$view_name" line="108">
+            <type by_reference="false">\string</type>
+          </tag>
+          <tag name="return" description="" type="\void" line="108">
+            <type by_reference="false">\void</type>
+          </tag>
+        </docblock>
+        <argument line="117">
+          <name>$view_name</name>
+          <default/>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" line="131">
+        <name>setViewData</name>
+        <docblock>
+          <description>Sets the data for the inner view template.</description>
+          <long-description>
+</long-description>
+          <tag name="param" description="The data for the inner view template." type="\array" variable="$view_data" line="122">
+            <type by_reference="false">\array</type>
+          </tag>
+          <tag name="return" description="" type="\void" line="122">
+            <type by_reference="false">\void</type>
+          </tag>
+        </docblock>
+        <argument line="131">
+          <name>$view_data</name>
+          <default/>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" line="146">
+        <name>setViewPaths</name>
+        <docblock>
+          <description>Sets the paths to search when finding the inner view template.</description>
+          <long-description>
+</long-description>
+          <tag name="param" description="The paths to search when finding the inner view template." type="\string" variable="$view_paths" line="136">
+            <type by_reference="false">\string</type>
+          </tag>
+          <tag name="return" description="" type="\void" line="136">
+            <type by_reference="false">\void</type>
+          </tag>
+        </docblock>
+        <argument line="146">
+          <name>$view_paths</name>
+          <default>array</default>
+          <type>array</type>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" line="151">
+        <name>addViewPath</name>
+        <argument line="151">
+          <name>$path</name>
+          <default/>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" line="165">
+        <name>setLayoutName</name>
+        <docblock>
+          <description>Sets the name of the outer layout template.</description>
+          <long-description>
+</long-description>
+          <tag name="param" description="The name of the outer layout template." type="\string" variable="$layout_name" line="156">
+            <type by_reference="false">\string</type>
+          </tag>
+          <tag name="return" description="" type="\void" line="156">
+            <type by_reference="false">\void</type>
+          </tag>
+        </docblock>
+        <argument line="165">
+          <name>$layout_name</name>
+          <default/>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" line="179">
+        <name>setLayoutData</name>
+        <docblock>
+          <description>Sets the data for the outer layout template.</description>
+          <long-description>
+</long-description>
+          <tag name="param" description="The data for the outer layout template." type="\array" variable="$layout_data" line="170">
+            <type by_reference="false">\array</type>
+          </tag>
+          <tag name="return" description="" type="\void" line="170">
+            <type by_reference="false">\void</type>
+          </tag>
+        </docblock>
+        <argument line="179">
+          <name>$layout_data</name>
+          <default/>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" line="194">
+        <name>setLayoutPaths</name>
+        <docblock>
+          <description>Sets the paths to search when finding the outer layout template.</description>
+          <long-description>
+</long-description>
+          <tag name="param" description="The paths to search when finding the outer layout template." type="\string" variable="$layout_paths" line="184">
+            <type by_reference="false">\string</type>
+          </tag>
+          <tag name="return" description="" type="\void" line="184">
+            <type by_reference="false">\void</type>
+          </tag>
+        </docblock>
+        <argument line="194">
+          <name>$layout_paths</name>
+          <default>array</default>
+          <type>array</type>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" line="199">
+        <name>addLayoutPath</name>
+        <argument line="199">
+          <name>$path</name>
+          <default/>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" line="214">
+        <name>setLayoutContentVar</name>
+        <docblock>
+          <description>Sets the name of the variable in the outer layout template that should
+be replaced with the output of the inner view template.</description>
+          <long-description>
+</long-description>
+          <tag name="param" description="" type="\string" variable="$layout_content_var" line="204">
+            <type by_reference="false">\string</type>
+          </tag>
+          <tag name="return" description="" type="\void" line="204">
+            <type by_reference="false">\void</type>
+          </tag>
+        </docblock>
+        <argument line="214">
+          <name>$layout_content_var</name>
+          <default/>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" line="227">
+        <name>render</name>
+        <docblock>
+          <description>Renders the inner view and outer layout templates and returns the
+resulting output.</description>
+          <long-description>
+</long-description>
+          <tag name="return" description="The rendered two-step view results." type="\string" line="219">
+            <type by_reference="false">\string</type>
+          </tag>
+        </docblock>
+      </method>
+    </class>
+  </file>
+  <file path="src.php" hash="aedb85dae938d5437d72c6d38e14c857">
+    <include type="Require Once" line="2">
+      <name>/src/AbstractTemplate.php</name>
+    </include>
+    <include type="Require Once" line="3">
+      <name>/src/Exception.php</name>
+    </include>
+    <include type="Require Once" line="4">
+      <name>/src/Exception/TemplateNotFound.php</name>
+    </include>
+    <include type="Require Once" line="5">
+      <name>/src/Finder.php</name>
+    </include>
+    <include type="Require Once" line="6">
+      <name>/src/Template.php</name>
+    </include>
+    <include type="Require Once" line="7">
+      <name>/src/TwoStep.php</name>
+    </include>
+    <include type="Require Once" line="8">
+      <name>/src/helper/AbstractHelper.php</name>
+    </include>
+    <include type="Require Once" line="9">
+      <name>/src/helper/Anchor.php</name>
+    </include>
+    <include type="Require Once" line="10">
+      <name>/src/helper/Attribs.php</name>
+    </include>
+    <include type="Require Once" line="11">
+      <name>/src/helper/Base.php</name>
+    </include>
+    <include type="Require Once" line="12">
+      <name>/src/helper/Datetime.php</name>
+    </include>
+    <include type="Require Once" line="13">
+      <name>/src/helper/Escape.php</name>
+    </include>
+    <include type="Require Once" line="14">
+      <name>/src/helper/Image.php</name>
+    </include>
+    <include type="Require Once" line="15">
+      <name>/src/helper/Links.php</name>
+    </include>
+    <include type="Require Once" line="16">
+      <name>/src/helper/Metas.php</name>
+    </include>
+    <include type="Require Once" line="17">
+      <name>/src/helper/Scripts.php</name>
+    </include>
+    <include type="Require Once" line="18">
+      <name>/src/helper/Styles.php</name>
+    </include>
+    <include type="Require Once" line="19">
+      <name>/src/helper/Title.php</name>
+    </include>
+  </file>
+  <package name=""/>
+  <package name="Aura.View"/>
+  <namespace name="Aura">
+    <namespace name="View">
+      <namespace name="Exception"/>
+      <namespace name="Helper"/>
+    </namespace>
+  </namespace>
+  <marker>todo</marker>
+  <marker>fixme</marker>
+</project>

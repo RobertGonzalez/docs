@@ -1,0 +1,555 @@
+<html xmlns="http://www.w3.org/1999/xhtml"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Aura Project for PHP: Aura.Cli</title><link rel="stylesheet" href="css/black-tie/jquery-ui-1.8.2.custom.css" type="text/css"></link><link rel="stylesheet" href="css/jquery.treeview.css" type="text/css"></link><link rel="stylesheet" href="css/theme.css" type="text/css"></link><script type="text/javascript" src="js/jquery-1.4.2.min.js"></script><script type="text/javascript" src="js/jquery-ui-1.8.2.custom.min.js"></script><script type="text/javascript" src="js/jquery.cookie.js"></script><script type="text/javascript" src="js/jquery.treeview.js"></script><script type="text/javascript">
+            $(document).ready(function() {
+                $(".filetree").treeview({
+                    collapsed: true,
+                    persist: "cookie"
+                });
+
+                $("#accordion").accordion({
+                    collapsible: true,
+                    autoHeight:  false,
+                    fillSpace:   true
+                });
+
+                $(".tabs").tabs();
+            });
+        </script></head><body><div xmlns="" id="content">
+<script>
+      $(document).ready(function() {
+        $('dl.function-info, dl.constant-info, dl.property-info').prev().css('cursor', 'pointer');
+        $('dl.function-info, dl.constant-info, dl.property-info').prev().click(function() {
+          if ($(this).next().is(':hidden'))
+          {
+            $(this).children('img')[0].src = 'images/arrow_down.gif';
+          } else
+          {
+            $(this).children('img')[0].src = 'images/arrow_right.gif';
+          }
+          $(this).next().slideToggle();
+        });
+      $('dl.function-info, dl.constant-info, dl.property-info').hide();
+      $('dl.function-info img, dl.constant-info img, dl.property-info img').show();
+      });
+    </script><a name="top"></a><h1 class="file">src/Stdio.php</h1>
+<div class="file_menu">
+<a href="#classes">Classes</a> </div>
+<dl class="file-info">
+<dt>Classes</dt>
+<dd><a class="class" href="#%5CAura%5CCli%5CStdio">Stdio</a></dd>
+</dl>
+<a name="classes"></a><a id="\Aura\Cli\Stdio"></a><h2 class="class">\Aura\Cli\Stdio<div class="to-top"><a href="#top">jump to top</a></div>
+</h2>
+<div class="class">
+<dl class="class-info">
+<dt>package</dt>
+<dd>Aura.Cli</dd>
+<dt>Properties</dt>
+<dd><a class="property protected" href="#%5CAura%5CCli%5CStdio::%24stdin">$stdin</a></dd>
+<dd><a class="property protected" href="#%5CAura%5CCli%5CStdio::%24stdout">$stdout</a></dd>
+<dd><a class="property protected" href="#%5CAura%5CCli%5CStdio::%24stderr">$stderr</a></dd>
+<dd><a class="property protected" href="#%5CAura%5CCli%5CStdio::%24vt100">$vt100</a></dd>
+<dt>Methods</dt>
+<dd><a class="method public" href="#%5CAura%5CCli%5CStdio::__construct()">__construct</a></dd>
+<dd><a class="method public" href="#%5CAura%5CCli%5CStdio::getStdin()">getStdin</a></dd>
+<dd><a class="method public" href="#%5CAura%5CCli%5CStdio::getStdout()">getStdout</a></dd>
+<dd><a class="method public" href="#%5CAura%5CCli%5CStdio::getStderr()">getStderr</a></dd>
+<dd><a class="method public" href="#%5CAura%5CCli%5CStdio::in()">in</a></dd>
+<dd><a class="method public" href="#%5CAura%5CCli%5CStdio::inln()">inln</a></dd>
+<dd><a class="method public" href="#%5CAura%5CCli%5CStdio::out()">out</a></dd>
+<dd><a class="method public" href="#%5CAura%5CCli%5CStdio::outln()">outln</a></dd>
+<dd><a class="method public" href="#%5CAura%5CCli%5CStdio::err()">err</a></dd>
+<dd><a class="method public" href="#%5CAura%5CCli%5CStdio::errln()">errln</a></dd>
+</dl>
+<h3>Description</h3>
+<p class="short-description">Provides a wrapper for standard input/output handles.</p>
+<div class="long-description">
+</div>
+<h3>Properties</h3>
+<div>
+<a id="\Aura\Cli\Stdio::$stderr"></a><h4 class="property protected">$stderr<div class="to-top"><a href="#%5CAura%5CCli%5CStdio">jump to class</a></div>
+</h4>
+<div class="property">
+<code>\resource <span class="highlight">$stderr</span> = ''</code><p class="short-description">A handle for standard error.</p>
+<div class="long-description">
+</div>
+<div class="api-section">
+<h4 class="info">
+<img src="images/arrow_right.gif"> Details</h4>
+<dl class="property-info">
+<dt></dt>
+<dd>\resource<br><em></em>
+</dd>
+<dt>visibility</dt>
+<dd>protected</dd>
+<dt>default</dt>
+<dd></dd>
+<dt>final</dt>
+<dd>false</dd>
+<dt>static</dt>
+<dd>false</dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+<a id="\Aura\Cli\Stdio::$stdin"></a><h4 class="property protected">$stdin<div class="to-top"><a href="#%5CAura%5CCli%5CStdio">jump to class</a></div>
+</h4>
+<div class="property">
+<code>\resource <span class="highlight">$stdin</span> = ''</code><p class="short-description">A handle for standard input.</p>
+<div class="long-description">
+</div>
+<div class="api-section">
+<h4 class="info">
+<img src="images/arrow_right.gif"> Details</h4>
+<dl class="property-info">
+<dt></dt>
+<dd>\resource<br><em></em>
+</dd>
+<dt>visibility</dt>
+<dd>protected</dd>
+<dt>default</dt>
+<dd></dd>
+<dt>final</dt>
+<dd>false</dd>
+<dt>static</dt>
+<dd>false</dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+<a id="\Aura\Cli\Stdio::$stdout"></a><h4 class="property protected">$stdout<div class="to-top"><a href="#%5CAura%5CCli%5CStdio">jump to class</a></div>
+</h4>
+<div class="property">
+<code>\resource <span class="highlight">$stdout</span> = ''</code><p class="short-description">A handle for standard output.</p>
+<div class="long-description">
+</div>
+<div class="api-section">
+<h4 class="info">
+<img src="images/arrow_right.gif"> Details</h4>
+<dl class="property-info">
+<dt></dt>
+<dd>\resource<br><em></em>
+</dd>
+<dt>visibility</dt>
+<dd>protected</dd>
+<dt>default</dt>
+<dd></dd>
+<dt>final</dt>
+<dd>false</dd>
+<dt>static</dt>
+<dd>false</dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+<a id="\Aura\Cli\Stdio::$vt100"></a><h4 class="property protected">$vt100<div class="to-top"><a href="#%5CAura%5CCli%5CStdio">jump to class</a></div>
+</h4>
+<div class="property">
+<code><a href="_src_Vt100.html#%5CAura%5CCli%5CVt100">\Aura\Cli\Vt100</a> <span class="highlight">$vt100</span> = ''</code><p class="short-description">A Vt100 object to format output.</p>
+<div class="long-description">
+</div>
+<div class="api-section">
+<h4 class="info">
+<img src="images/arrow_right.gif"> Details</h4>
+<dl class="property-info">
+<dt></dt>
+<dd>
+<a href="_src_Vt100.html#%5CAura%5CCli%5CVt100">\Aura\Cli\Vt100</a><br><em></em>
+</dd>
+<dt>visibility</dt>
+<dd>protected</dd>
+<dt>default</dt>
+<dd></dd>
+<dt>final</dt>
+<dd>false</dd>
+<dt>static</dt>
+<dd>false</dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+</div>
+<h3>Methods</h3>
+<div>
+<a id="\Aura\Cli\Stdio::__construct()"></a><h4 class="method public">__construct<div class="to-top"><a href="#Stdio">jump to class</a></div>
+</h4>
+<div class="method">
+<code><span class="highlight">__construct</span><span class="nb-faded-text">(
+          \resource $stdin, \resource $stdout, \resource $stderr,  $vt100
+          )
+        </span>
+        :
+        </code><p class="short-description">Constructor.</p>
+<div class="long-description">
+</div>
+<div class="api-section">
+<h5 class="arguments">Arguments</h5>
+<dl class="argument-info">
+<dt>$stdin</dt>
+<dd>\resource<br><em>A handle for standard input.</em>
+</dd>
+<dt>$stdout</dt>
+<dd>\resource<br><em>A handle for standard output.</em>
+</dd>
+<dt>$stderr</dt>
+<dd>\resource<br><em>A handle for standard error.</em>
+</dd>
+<dt>$vt100</dt>
+<dd><em></em></dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h5 class="info">
+<img src="images/arrow_right.gif"> Details</h5>
+<dl class="function-info">
+<dt>visibility</dt>
+<dd>public</dd>
+<dt>final</dt>
+<dd>false</dd>
+<dt>static</dt>
+<dd>false</dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+<a id="\Aura\Cli\Stdio::err()"></a><h4 class="method public">err<div class="to-top"><a href="#Stdio">jump to class</a></div>
+</h4>
+<div class="method">
+<code><span class="highlight">err</span><span class="nb-faded-text">(
+          \string $string
+              =
+              null
+          )
+        </span>
+        :
+        \void</code><p class="short-description">Prints text to standard error via the Vt100 formatter **without**
+a trailing newline.</p>
+<div class="long-description">
+</div>
+<div class="api-section">
+<h5 class="arguments">Arguments</h5>
+<dl class="argument-info">
+<dt>$string</dt>
+<dd>\string<br><em>The text to print to standard error.</em>
+</dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h5 class="output">Output</h5>
+<dl class="return-info">
+<dt>\void</dt>
+<dd><em></em></dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h5 class="info">
+<img src="images/arrow_right.gif"> Details</h5>
+<dl class="function-info">
+<dt>visibility</dt>
+<dd>public</dd>
+<dt>final</dt>
+<dd>false</dd>
+<dt>static</dt>
+<dd>false</dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+<a id="\Aura\Cli\Stdio::errln()"></a><h4 class="method public">errln<div class="to-top"><a href="#Stdio">jump to class</a></div>
+</h4>
+<div class="method">
+<code><span class="highlight">errln</span><span class="nb-faded-text">(
+          \string $string
+              =
+              null
+          )
+        </span>
+        :
+        \void</code><p class="short-description">Prints text to standard error via the Vt100 formatter **without**
+a trailing newline.</p>
+<div class="long-description">
+</div>
+<div class="api-section">
+<h5 class="arguments">Arguments</h5>
+<dl class="argument-info">
+<dt>$string</dt>
+<dd>\string<br><em>The text to print to standard error.</em>
+</dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h5 class="output">Output</h5>
+<dl class="return-info">
+<dt>\void</dt>
+<dd><em></em></dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h5 class="info">
+<img src="images/arrow_right.gif"> Details</h5>
+<dl class="function-info">
+<dt>visibility</dt>
+<dd>public</dd>
+<dt>final</dt>
+<dd>false</dd>
+<dt>static</dt>
+<dd>false</dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+<a id="\Aura\Cli\Stdio::getStderr()"></a><h4 class="method public">getStderr<div class="to-top"><a href="#Stdio">jump to class</a></div>
+</h4>
+<div class="method">
+<code><span class="highlight">getStderr</span><span class="nb-faded-text">(
+          
+          )
+        </span>
+        :
+        \resource</code><p class="short-description">Returns the standard error handle.</p>
+<div class="long-description">
+</div>
+<div class="api-section">
+<h5 class="output">Output</h5>
+<dl class="return-info">
+<dt>\resource</dt>
+<dd><em></em></dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h5 class="info">
+<img src="images/arrow_right.gif"> Details</h5>
+<dl class="function-info">
+<dt>visibility</dt>
+<dd>public</dd>
+<dt>final</dt>
+<dd>false</dd>
+<dt>static</dt>
+<dd>false</dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+<a id="\Aura\Cli\Stdio::getStdin()"></a><h4 class="method public">getStdin<div class="to-top"><a href="#Stdio">jump to class</a></div>
+</h4>
+<div class="method">
+<code><span class="highlight">getStdin</span><span class="nb-faded-text">(
+          
+          )
+        </span>
+        :
+        \resource</code><p class="short-description">Returns the standard input handle.</p>
+<div class="long-description">
+</div>
+<div class="api-section">
+<h5 class="output">Output</h5>
+<dl class="return-info">
+<dt>\resource</dt>
+<dd><em></em></dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h5 class="info">
+<img src="images/arrow_right.gif"> Details</h5>
+<dl class="function-info">
+<dt>visibility</dt>
+<dd>public</dd>
+<dt>final</dt>
+<dd>false</dd>
+<dt>static</dt>
+<dd>false</dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+<a id="\Aura\Cli\Stdio::getStdout()"></a><h4 class="method public">getStdout<div class="to-top"><a href="#Stdio">jump to class</a></div>
+</h4>
+<div class="method">
+<code><span class="highlight">getStdout</span><span class="nb-faded-text">(
+          
+          )
+        </span>
+        :
+        \resource</code><p class="short-description">Returns the standard output handle.</p>
+<div class="long-description">
+</div>
+<div class="api-section">
+<h5 class="output">Output</h5>
+<dl class="return-info">
+<dt>\resource</dt>
+<dd><em></em></dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h5 class="info">
+<img src="images/arrow_right.gif"> Details</h5>
+<dl class="function-info">
+<dt>visibility</dt>
+<dd>public</dd>
+<dt>final</dt>
+<dd>false</dd>
+<dt>static</dt>
+<dd>false</dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+<a id="\Aura\Cli\Stdio::in()"></a><h4 class="method public">in<div class="to-top"><a href="#Stdio">jump to class</a></div>
+</h4>
+<div class="method">
+<code><span class="highlight">in</span><span class="nb-faded-text">(
+          
+          )
+        </span>
+        :
+        \void</code><p class="short-description">Gets user input from the command line, optionally after sending a
+prompt to standard output.</p>
+<div class="long-description">
+</div>
+<div class="api-section">
+<h5 class="output">Output</h5>
+<dl class="return-info">
+<dt>\void</dt>
+<dd><em></em></dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h5 class="info">
+<img src="images/arrow_right.gif"> Details</h5>
+<dl class="function-info">
+<dt>visibility</dt>
+<dd>public</dd>
+<dt>final</dt>
+<dd>false</dd>
+<dt>static</dt>
+<dd>false</dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+<a id="\Aura\Cli\Stdio::inln()"></a><h4 class="method public">inln<div class="to-top"><a href="#Stdio">jump to class</a></div>
+</h4>
+<div class="method">
+<code><span class="highlight">inln</span><span class="nb-faded-text">(
+          
+          )
+        </span>
+        :
+        </code><div class="api-section">
+<h5 class="info">
+<img src="images/arrow_right.gif"> Details</h5>
+<dl class="function-info">
+<dt>visibility</dt>
+<dd>public</dd>
+<dt>final</dt>
+<dd>false</dd>
+<dt>static</dt>
+<dd>false</dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+<a id="\Aura\Cli\Stdio::out()"></a><h4 class="method public">out<div class="to-top"><a href="#Stdio">jump to class</a></div>
+</h4>
+<div class="method">
+<code><span class="highlight">out</span><span class="nb-faded-text">(
+          \string $string
+              =
+              null
+          )
+        </span>
+        :
+        \void</code><p class="short-description">Prints text to standard output via the Vt100 formatter **without**
+a trailing newline.</p>
+<div class="long-description">
+</div>
+<div class="api-section">
+<h5 class="arguments">Arguments</h5>
+<dl class="argument-info">
+<dt>$string</dt>
+<dd>\string<br><em>The text to print to standard output.</em>
+</dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h5 class="output">Output</h5>
+<dl class="return-info">
+<dt>\void</dt>
+<dd><em></em></dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h5 class="info">
+<img src="images/arrow_right.gif"> Details</h5>
+<dl class="function-info">
+<dt>visibility</dt>
+<dd>public</dd>
+<dt>final</dt>
+<dd>false</dd>
+<dt>static</dt>
+<dd>false</dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+<a id="\Aura\Cli\Stdio::outln()"></a><h4 class="method public">outln<div class="to-top"><a href="#Stdio">jump to class</a></div>
+</h4>
+<div class="method">
+<code><span class="highlight">outln</span><span class="nb-faded-text">(
+          \string $string
+              =
+              null
+          )
+        </span>
+        :
+        \void</code><p class="short-description">Prints text to standard output via the Vt100 formatter **with**
+a trailing newline.</p>
+<div class="long-description">
+</div>
+<div class="api-section">
+<h5 class="arguments">Arguments</h5>
+<dl class="argument-info">
+<dt>$string</dt>
+<dd>\string<br><em>The text to print to standard output.</em>
+</dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h5 class="output">Output</h5>
+<dl class="return-info">
+<dt>\void</dt>
+<dd><em></em></dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h5 class="info">
+<img src="images/arrow_right.gif"> Details</h5>
+<dl class="function-info">
+<dt>visibility</dt>
+<dd>public</dd>
+<dt>final</dt>
+<dd>false</dd>
+<dt>static</dt>
+<dd>false</dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<small xmlns="" class="footer">Documentation was generated by <a href="http://docblox-project.org">DocBlox 0.11.2</a>.
+    </small></body></html>

@@ -1,0 +1,337 @@
+<html xmlns="http://www.w3.org/1999/xhtml"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Aura Project for PHP: Aura.Di</title><link rel="stylesheet" href="css/black-tie/jquery-ui-1.8.2.custom.css" type="text/css"></link><link rel="stylesheet" href="css/jquery.treeview.css" type="text/css"></link><link rel="stylesheet" href="css/theme.css" type="text/css"></link><script type="text/javascript" src="js/jquery-1.4.2.min.js"></script><script type="text/javascript" src="js/jquery-ui-1.8.2.custom.min.js"></script><script type="text/javascript" src="js/jquery.cookie.js"></script><script type="text/javascript" src="js/jquery.treeview.js"></script><script type="text/javascript">
+            $(document).ready(function() {
+                $(".filetree").treeview({
+                    collapsed: true,
+                    persist: "cookie"
+                });
+
+                $("#accordion").accordion({
+                    collapsible: true,
+                    autoHeight:  false,
+                    fillSpace:   true
+                });
+
+                $(".tabs").tabs();
+            });
+        </script></head><body><div xmlns="" id="content">
+<script>
+      $(document).ready(function() {
+        $('dl.function-info, dl.constant-info, dl.property-info').prev().css('cursor', 'pointer');
+        $('dl.function-info, dl.constant-info, dl.property-info').prev().click(function() {
+          if ($(this).next().is(':hidden'))
+          {
+            $(this).children('img')[0].src = 'images/arrow_down.gif';
+          } else
+          {
+            $(this).children('img')[0].src = 'images/arrow_right.gif';
+          }
+          $(this).next().slideToggle();
+        });
+      $('dl.function-info, dl.constant-info, dl.property-info').hide();
+      $('dl.function-info img, dl.constant-info img, dl.property-info img').show();
+      });
+    </script><a name="top"></a><h1 class="file">src/Manager.php</h1>
+<div class="file_menu">
+<a href="#classes">Classes</a> </div>
+<dl class="file-info">
+<dt>Classes</dt>
+<dd><a class="class" href="#%5CAura%5CDi%5CManager">Manager</a></dd>
+</dl>
+<a name="classes"></a><a id="\Aura\Di\Manager"></a><h2 class="class">\Aura\Di\Manager<div class="to-top"><a href="#top">jump to top</a></div>
+</h2>
+<div class="class">
+<dl class="class-info">
+<dt>Extends from</dt>
+<dd><a href="_src_Container.html#%5CAura%5CDi%5CContainer">\Aura\Di\Container</a></dd>
+<dt>package</dt>
+<dd>Aura.Di</dd>
+<dt>Properties</dt>
+<dd><a class="property protected" href="#%5CAura%5CDi%5CManager::%24containers">$containers</a></dd>
+<dt>Methods</dt>
+<dd><a class="method public" href="#%5CAura%5CDi%5CManager::lock()">lock</a></dd>
+<dd><a class="method public" href="#%5CAura%5CDi%5CManager::newContainer()">newContainer</a></dd>
+<dd><a class="method public" href="#%5CAura%5CDi%5CManager::getContainer()">getContainer</a></dd>
+<dd><a class="method public" href="#%5CAura%5CDi%5CManager::getContainers()">getContainers</a></dd>
+<dd><a class="method public" href="#%5CAura%5CDi%5CManager::cloneContainer()">cloneContainer</a></dd>
+<dd><a class="method public" href="#%5CAura%5CDi%5CManager::lazyCloneContainer()">lazyCloneContainer</a></dd>
+</dl>
+<h3>Description</h3>
+<p class="short-description">Manager for multiple DI containers; the Manager is itself the main
+container, and it provides access to sub-containers.</p>
+<div class="long-description">
+</div>
+<h3>Properties</h3>
+<div>
+<a id="\Aura\Di\Manager::$containers"></a><h4 class="property protected">$containers<div class="to-top"><a href="#%5CAura%5CDi%5CManager">jump to class</a></div>
+</h4>
+<div class="property">
+<code>\array <span class="highlight">$containers</span> = 'array'</code><p class="short-description">Sub-container definitions.</p>
+<div class="long-description">
+</div>
+<div class="api-section">
+<h4 class="info">
+<img src="images/arrow_right.gif"> Details</h4>
+<dl class="property-info">
+<dt></dt>
+<dd>\array<br><em></em>
+</dd>
+<dt>visibility</dt>
+<dd>protected</dd>
+<dt>default</dt>
+<dd>array</dd>
+<dt>final</dt>
+<dd>false</dd>
+<dt>static</dt>
+<dd>false</dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+</div>
+<h3>Methods</h3>
+<div>
+<a id="\Aura\Di\Manager::cloneContainer()"></a><h4 class="method public">cloneContainer<div class="to-top"><a href="#Manager">jump to class</a></div>
+</h4>
+<div class="method">
+<code><span class="highlight">cloneContainer</span><span class="nb-faded-text">(
+           $name
+          )
+        </span>
+        :
+        <a href="_src_Container.html#%5CAura%5CDi%5CContainer">\Aura\Di\Container</a></code><p class="short-description">Returns a clone of a sub-container.  The clone will have all the
+configuration and service definitions of the origin container, but it
+will not have any of the service objects.  Calling get() will create
+new services that are independent and separate from the origin
+container services.</p>
+<div class="long-description">
+</div>
+<div class="api-section">
+<h5 class="arguments">Arguments</h5>
+<dl class="argument-info">
+<dt>$name</dt>
+<dd><em></em></dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h5 class="output">Output</h5>
+<dl class="return-info">
+<dt><a href="_src_Container.html#%5CAura%5CDi%5CContainer">\Aura\Di\Container</a></dt>
+<dd><em>A clone of the named sub-container.</em></dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h5 class="info">
+<img src="images/arrow_right.gif"> Details</h5>
+<dl class="function-info">
+<dt>visibility</dt>
+<dd>public</dd>
+<dt>final</dt>
+<dd>false</dd>
+<dt>static</dt>
+<dd>false</dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+<a id="\Aura\Di\Manager::getContainer()"></a><h4 class="method public">getContainer<div class="to-top"><a href="#Manager">jump to class</a></div>
+</h4>
+<div class="method">
+<code><span class="highlight">getContainer</span><span class="nb-faded-text">(
+          \string $name
+          )
+        </span>
+        :
+        <a href="_src_Container.html#%5CAura%5CDi%5CContainer">\Aura\Di\Container</a></code><p class="short-description">Gets a sub-container by name.</p>
+<div class="long-description">
+</div>
+<div class="api-section">
+<h5 class="arguments">Arguments</h5>
+<dl class="argument-info">
+<dt>$name</dt>
+<dd>\string<br><em>The sub-container name.</em>
+</dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h5 class="output">Output</h5>
+<dl class="return-info">
+<dt><a href="_src_Container.html#%5CAura%5CDi%5CContainer">\Aura\Di\Container</a></dt>
+<dd><em>The sub-container.</em></dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h5 class="info">
+<img src="images/arrow_right.gif"> Details</h5>
+<dl class="function-info">
+<dt>visibility</dt>
+<dd>public</dd>
+<dt>final</dt>
+<dd>false</dd>
+<dt>static</dt>
+<dd>false</dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+<a id="\Aura\Di\Manager::getContainers()"></a><h4 class="method public">getContainers<div class="to-top"><a href="#Manager">jump to class</a></div>
+</h4>
+<div class="method">
+<code><span class="highlight">getContainers</span><span class="nb-faded-text">(
+          
+          )
+        </span>
+        :
+        \array</code><p class="short-description">Gets the names of all sub-containers.</p>
+<div class="long-description">
+</div>
+<div class="api-section">
+<h5 class="output">Output</h5>
+<dl class="return-info">
+<dt>\array</dt>
+<dd><em>The names of all sub-containers.</em></dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h5 class="info">
+<img src="images/arrow_right.gif"> Details</h5>
+<dl class="function-info">
+<dt>visibility</dt>
+<dd>public</dd>
+<dt>final</dt>
+<dd>false</dd>
+<dt>static</dt>
+<dd>false</dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+<a id="\Aura\Di\Manager::lazyCloneContainer()"></a><h4 class="method public">lazyCloneContainer<div class="to-top"><a href="#Manager">jump to class</a></div>
+</h4>
+<div class="method">
+<code><span class="highlight">lazyCloneContainer</span><span class="nb-faded-text">(
+           $name
+          )
+        </span>
+        :
+        <a href="_src_Lazy.html#%5CAura%5CDi%5CLazy">\Aura\Di\Lazy</a></code><p class="short-description">Returns a Lazy that, when invoked, will return sub-container clone</p>
+<div class="long-description">
+</div>
+<div class="api-section">
+<h5 class="arguments">Arguments</h5>
+<dl class="argument-info">
+<dt>$name</dt>
+<dd><em></em></dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h5 class="output">Output</h5>
+<dl class="return-info">
+<dt><a href="_src_Lazy.html#%5CAura%5CDi%5CLazy">\Aura\Di\Lazy</a></dt>
+<dd><em></em></dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h5 class="info">
+<img src="images/arrow_right.gif"> Details</h5>
+<dl class="function-info">
+<dt>visibility</dt>
+<dd>public</dd>
+<dt>final</dt>
+<dd>false</dd>
+<dt>static</dt>
+<dd>false</dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+<a id="\Aura\Di\Manager::lock()"></a><h4 class="method public">lock<div class="to-top"><a href="#Manager">jump to class</a></div>
+</h4>
+<div class="method">
+<code><span class="highlight">lock</span><span class="nb-faded-text">(
+          
+          )
+        </span>
+        :
+        \void</code><p class="short-description">Locks the main container and all sub-containers; once locked, they
+cannot be unlocked.</p>
+<div class="long-description">
+</div>
+<div class="api-section">
+<h5 class="output">Output</h5>
+<dl class="return-info">
+<dt>\void</dt>
+<dd><em></em></dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h5 class="info">
+<img src="images/arrow_right.gif"> Details</h5>
+<dl class="function-info">
+<dt>visibility</dt>
+<dd>public</dd>
+<dt>final</dt>
+<dd>false</dd>
+<dt>static</dt>
+<dd>false</dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+<a id="\Aura\Di\Manager::newContainer()"></a><h4 class="method public">newContainer<div class="to-top"><a href="#Manager">jump to class</a></div>
+</h4>
+<div class="method">
+<code><span class="highlight">newContainer</span><span class="nb-faded-text">(
+          \string $name
+          )
+        </span>
+        :
+        <a href="_src_Container.html#%5CAura%5CDi%5CContainer">\Aura\Di\Container</a></code><p class="short-description">Creates and retains a new sub-container.  The new container does not
+inherit configuration from the main container in any way; you will have
+to add params, setters, etc. on the new container.</p>
+<div class="long-description">
+</div>
+<div class="api-section">
+<h5 class="arguments">Arguments</h5>
+<dl class="argument-info">
+<dt>$name</dt>
+<dd>\string<br><em>The sub-container name.</em>
+</dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h5 class="output">Output</h5>
+<dl class="return-info">
+<dt><a href="_src_Container.html#%5CAura%5CDi%5CContainer">\Aura\Di\Container</a></dt>
+<dd><em>The new sub-container.</em></dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h5 class="info">
+<img src="images/arrow_right.gif"> Details</h5>
+<dl class="function-info">
+<dt>visibility</dt>
+<dd>public</dd>
+<dt>final</dt>
+<dd>false</dd>
+<dt>static</dt>
+<dd>false</dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<small xmlns="" class="footer">Documentation was generated by <a href="http://docblox-project.org">DocBlox 0.11.2</a>.
+    </small></body></html>

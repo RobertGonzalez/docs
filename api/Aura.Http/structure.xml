@@ -1,80 +1,5 @@
 <?xml version="1.0"?>
-<project version="0.11.2" title="Aura Project for PHP: Aura.Http">
-  <file path="src/Cookies.php" hash="46d6bc3990e451a2e7b5f6f5a188d17a">
-    <class final="false" abstract="false" line="18" namespace="Aura\Http">
-      <name>Cookies</name>
-      <extends/>
-      <full_name>\Aura\Http\Cookies</full_name>
-      <docblock>
-        <description>Collection of non-cookie HTTP headers.</description>
-        <long-description>
-</long-description>
-        <tag name="package" description="Aura.Http" line="11"/>
-      </docblock>
-      <property final="false" static="false" visibility="protected" line="20">
-        <name>$list</name>
-        <default>array</default>
-      </property>
-      <property final="false" static="false" visibility="protected" line="23">
-        <name>$base</name>
-        <default>array</default>
-      </property>
-      <method final="false" abstract="false" static="false" visibility="public" line="32">
-        <name>set</name>
-        <argument line="32">
-          <name>$name</name>
-          <default/>
-          <type/>
-        </argument>
-        <argument line="32">
-          <name>$info</name>
-          <default>array</default>
-          <type>array</type>
-        </argument>
-      </method>
-      <method final="false" abstract="false" static="false" visibility="public" line="41">
-        <name>getAll</name>
-      </method>
-      <method final="false" abstract="false" static="false" visibility="public" line="46">
-        <name>setAll</name>
-        <argument line="46">
-          <name>$cookies</name>
-          <default>array</default>
-          <type>array</type>
-        </argument>
-      </method>
-      <method final="false" abstract="false" static="false" visibility="public" line="54">
-        <name>send</name>
-      </method>
-    </class>
-  </file>
-  <file path="src/Exception/HeadersSent.php" hash="6a3651147370f87bfda5591af3d8c389">
-    <class final="false" abstract="false" line="5" namespace="Aura\Http\Exception">
-      <name>HeadersSent</name>
-      <extends>\Aura\Http\Exception</extends>
-      <full_name>\Aura\Http\Exception\HeadersSent</full_name>
-      <method final="false" abstract="false" static="false" visibility="public" line="7">
-        <name>__construct</name>
-        <argument line="7">
-          <name>$file</name>
-          <default/>
-          <type/>
-        </argument>
-        <argument line="7">
-          <name>$line</name>
-          <default/>
-          <type/>
-        </argument>
-      </method>
-    </class>
-  </file>
-  <file path="src/Exception.php" hash="62e33aa65c754a672914499b6c21ac85">
-    <class final="false" abstract="false" line="6" namespace="Aura\Http">
-      <name>Exception</name>
-      <extends>\Exception</extends>
-      <full_name>\Aura\Http\Exception</full_name>
-    </class>
-  </file>
+<project version="0.13.1" title="Aura Project for PHP: Aura.Http">
   <file path="src/Headers.php" hash="7881bb8d762ed32e335fcef6092ae60f">
     <class final="false" abstract="false" line="18" namespace="Aura\Http">
       <name>Headers</name>
@@ -138,15 +63,35 @@
 
 &lt;p&gt;Converts "foo \r bar_ baz-dib \n 9" to "Foobar-Baz-Dib9".&lt;/p&gt;
 </long-description>
-          <tag name="param" description="The header label to sanitize." type="\string" variable="$label" line="58">
-            <type by_reference="false">\string</type>
+          <tag name="param" description="The header label to sanitize." type="string" variable="$label" line="58">
+            <type by_reference="false">string</type>
           </tag>
-          <tag name="return" description="The sanitized header label." type="\string" line="58">
-            <type by_reference="false">\string</type>
+          <tag name="return" description="The sanitized header label." type="string" line="58">
+            <type by_reference="false">string</type>
           </tag>
         </docblock>
         <argument line="71">
           <name>$label</name>
+          <default/>
+          <type/>
+        </argument>
+      </method>
+    </class>
+  </file>
+  <file path="src/Exception/HeadersSent.php" hash="6a3651147370f87bfda5591af3d8c389">
+    <class final="false" abstract="false" line="5" namespace="Aura\Http\Exception">
+      <name>HeadersSent</name>
+      <extends>\Aura\Http\Exception</extends>
+      <full_name>\Aura\Http\Exception\HeadersSent</full_name>
+      <method final="false" abstract="false" static="false" visibility="public" line="7">
+        <name>__construct</name>
+        <argument line="7">
+          <name>$file</name>
+          <default/>
+          <type/>
+        </argument>
+        <argument line="7">
+          <name>$line</name>
           <default/>
           <type/>
         </argument>
@@ -185,8 +130,8 @@
           <description>List of the HTTP status text default values.</description>
           <long-description>
 </long-description>
-          <tag name="var" description="" type="\array" line="15">
-            <type by_reference="false">\array</type>
+          <tag name="var" description="" type="array" line="15">
+            <type by_reference="false">array</type>
           </tag>
         </docblock>
       </property>
@@ -238,11 +183,11 @@
           <description>Sets the content of the response.</description>
           <long-description>
 </long-description>
-          <tag name="param" description="The body content of the response." type="\string" variable="$content" line="137">
-            <type by_reference="false">\string</type>
+          <tag name="param" description="The body content of the response." type="string" variable="$content" line="137">
+            <type by_reference="false">string</type>
           </tag>
-          <tag name="return" description="" type="\void" line="137">
-            <type by_reference="false">\void</type>
+          <tag name="return" description="" type="void" line="137">
+            <type by_reference="false">void</type>
           </tag>
           <tag name="todo" description="Make this stream-aware so it can stream out resources (e.g., file&#10;handles)." line="137"/>
         </docblock>
@@ -258,8 +203,8 @@
           <description>Gets the content of the response.</description>
           <long-description>
 </long-description>
-          <tag name="return" description="The body content of the response." type="\string" line="154">
-            <type by_reference="false">\string</type>
+          <tag name="return" description="The body content of the response." type="string" line="154">
+            <type by_reference="false">string</type>
           </tag>
         </docblock>
       </method>
@@ -269,11 +214,11 @@
           <description>Sets the headers for the response (not including cookies).</description>
           <long-description>
 </long-description>
-          <tag name="param" description="An array of headers." type="\array" variable="$headers" line="166">
-            <type by_reference="false">\array</type>
+          <tag name="param" description="An array of headers." type="array" variable="$headers" line="166">
+            <type by_reference="false">array</type>
           </tag>
-          <tag name="return" description="" type="\void" line="166">
-            <type by_reference="false">\void</type>
+          <tag name="return" description="" type="void" line="166">
+            <type by_reference="false">void</type>
           </tag>
           <tag name="todo" description="extract to a Headers object" line="166"/>
         </docblock>
@@ -289,8 +234,8 @@
           <description>Returns the headers for the response (not including cookies).</description>
           <long-description>
 </long-description>
-          <tag name="return" description="An array of headers." type="\array" line="182">
-            <type by_reference="false">\array</type>
+          <tag name="return" description="An array of headers." type="array" line="182">
+            <type by_reference="false">array</type>
           </tag>
         </docblock>
       </method>
@@ -300,8 +245,8 @@
           <description>Sets the HTTP status code to for the response.</description>
           <long-description>&lt;p&gt;Automatically resets the status text to null.&lt;/p&gt;
 </long-description>
-          <tag name="param" description="An HTTP status code, such as 200, 302, 404, etc." type="\int" variable="$code" line="194">
-            <type by_reference="false">\int</type>
+          <tag name="param" description="An HTTP status code, such as 200, 302, 404, etc." type="int" variable="$code" line="194">
+            <type by_reference="false">int</type>
           </tag>
         </docblock>
         <argument line="203">
@@ -316,8 +261,8 @@
           <description>Returns the HTTP status code for the response.</description>
           <long-description>
 </long-description>
-          <tag name="return" description="" type="\int" line="219">
-            <type by_reference="false">\int</type>
+          <tag name="return" description="" type="int" line="219">
+            <type by_reference="false">int</type>
           </tag>
         </docblock>
       </method>
@@ -327,11 +272,11 @@
           <description>Sets the HTTP status text for the response.</description>
           <long-description>
 </long-description>
-          <tag name="param" description="The status text." type="\string" variable="$text" line="231">
-            <type by_reference="false">\string</type>
+          <tag name="param" description="The status text." type="string" variable="$text" line="231">
+            <type by_reference="false">string</type>
           </tag>
-          <tag name="return" description="" type="\void" line="231">
-            <type by_reference="false">\void</type>
+          <tag name="return" description="" type="void" line="231">
+            <type by_reference="false">void</type>
           </tag>
         </docblock>
         <argument line="240">
@@ -346,8 +291,8 @@
           <description>Returns the HTTP status text for the response.</description>
           <long-description>
 </long-description>
-          <tag name="return" description="" type="\string" line="246">
-            <type by_reference="false">\string</type>
+          <tag name="return" description="" type="string" line="246">
+            <type by_reference="false">string</type>
           </tag>
         </docblock>
       </method>
@@ -357,11 +302,11 @@
           <description>Sets the HTTP version for the response to '1.0' or '1.1'.</description>
           <long-description>
 </long-description>
-          <tag name="param" description="The HTTP version to use for this response." type="\string" variable="$version" line="258">
-            <type by_reference="false">\string</type>
+          <tag name="param" description="The HTTP version to use for this response." type="string" variable="$version" line="258">
+            <type by_reference="false">string</type>
           </tag>
-          <tag name="return" description="" type="\void" line="258">
-            <type by_reference="false">\void</type>
+          <tag name="return" description="" type="void" line="258">
+            <type by_reference="false">void</type>
           </tag>
         </docblock>
         <argument line="267">
@@ -376,11 +321,66 @@
           <description>Returns the HTTP version for the response.</description>
           <long-description>
 </long-description>
-          <tag name="return" description="" type="\string" line="277">
-            <type by_reference="false">\string</type>
+          <tag name="return" description="" type="string" line="277">
+            <type by_reference="false">string</type>
           </tag>
         </docblock>
       </method>
+    </class>
+  </file>
+  <file path="src/Cookies.php" hash="46d6bc3990e451a2e7b5f6f5a188d17a">
+    <class final="false" abstract="false" line="18" namespace="Aura\Http">
+      <name>Cookies</name>
+      <extends/>
+      <full_name>\Aura\Http\Cookies</full_name>
+      <docblock>
+        <description>Collection of non-cookie HTTP headers.</description>
+        <long-description>
+</long-description>
+        <tag name="package" description="Aura.Http" line="11"/>
+      </docblock>
+      <property final="false" static="false" visibility="protected" line="20">
+        <name>$list</name>
+        <default>array</default>
+      </property>
+      <property final="false" static="false" visibility="protected" line="23">
+        <name>$base</name>
+        <default>array</default>
+      </property>
+      <method final="false" abstract="false" static="false" visibility="public" line="32">
+        <name>set</name>
+        <argument line="32">
+          <name>$name</name>
+          <default/>
+          <type/>
+        </argument>
+        <argument line="32">
+          <name>$info</name>
+          <default>array</default>
+          <type>array</type>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" line="41">
+        <name>getAll</name>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" line="46">
+        <name>setAll</name>
+        <argument line="46">
+          <name>$cookies</name>
+          <default>array</default>
+          <type>array</type>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" line="54">
+        <name>send</name>
+      </method>
+    </class>
+  </file>
+  <file path="src/Exception.php" hash="62e33aa65c754a672914499b6c21ac85">
+    <class final="false" abstract="false" line="6" namespace="Aura\Http">
+      <name>Exception</name>
+      <extends>\Exception</extends>
+      <full_name>\Aura\Http\Exception</full_name>
     </class>
   </file>
   <file path="src.php" hash="621283324fd17d91dcdcab4b61512e9d">

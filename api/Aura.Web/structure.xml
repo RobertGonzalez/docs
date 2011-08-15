@@ -1,669 +1,48 @@
 <?xml version="1.0"?>
-<project version="0.11.2" title="Aura Project for PHP: Aura.Web">
-  <file path="src/Context.php" hash="8e3726f49e6a73eaabb6fd0a970e764a">
-    <class final="false" abstract="false" line="18" namespace="Aura\Web">
-      <name>Context</name>
-      <extends/>
-      <full_name>\Aura\Web\Context</full_name>
-      <docblock>
-        <description>Collection point for information about the web environment.</description>
-        <long-description>
-</long-description>
-        <tag name="package" description="Aura.Web" line="11"/>
-      </docblock>
-      <property final="false" static="false" visibility="protected" line="27">
-        <name>$get</name>
-        <default/>
-        <docblock>
-          <description>Imported $_GET values.</description>
-          <long-description>
-</long-description>
-          <tag name="var" description="" type="\array" line="20">
-            <type by_reference="false">\array</type>
-          </tag>
-        </docblock>
-      </property>
-      <property final="false" static="false" visibility="protected" line="36">
-        <name>$post</name>
-        <default/>
-        <docblock>
-          <description>Imported $_POST values.</description>
-          <long-description>
-</long-description>
-          <tag name="var" description="" type="\array" line="29">
-            <type by_reference="false">\array</type>
-          </tag>
-        </docblock>
-      </property>
-      <property final="false" static="false" visibility="protected" line="45">
-        <name>$server</name>
-        <default/>
-        <docblock>
-          <description>Imported $_SERVER values.</description>
-          <long-description>
-</long-description>
-          <tag name="var" description="" type="\array" line="38">
-            <type by_reference="false">\array</type>
-          </tag>
-        </docblock>
-      </property>
-      <property final="false" static="false" visibility="protected" line="54">
-        <name>$cookie</name>
-        <default/>
-        <docblock>
-          <description>Imported $_COOKIE values.</description>
-          <long-description>
-</long-description>
-          <tag name="var" description="" type="\array" line="47">
-            <type by_reference="false">\array</type>
-          </tag>
-        </docblock>
-      </property>
-      <property final="false" static="false" visibility="protected" line="63">
-        <name>$env</name>
-        <default/>
-        <docblock>
-          <description>Imported $_ENV values.</description>
-          <long-description>
-</long-description>
-          <tag name="var" description="" type="\array" line="56">
-            <type by_reference="false">\array</type>
-          </tag>
-        </docblock>
-      </property>
-      <property final="false" static="false" visibility="protected" line="72">
-        <name>$files</name>
-        <default/>
-        <docblock>
-          <description>Imported $_FILES values.</description>
-          <long-description>
-</long-description>
-          <tag name="var" description="" type="\array" line="65">
-            <type by_reference="false">\array</type>
-          </tag>
-        </docblock>
-      </property>
-      <property final="false" static="false" visibility="protected" line="84">
-        <name>$header</name>
-        <default/>
-        <docblock>
-          <description>Imported $_SERVER['HTTP_*'] values.</description>
-          <long-description>&lt;p&gt;Header keys are normalized and lower-cased; keys and values are
-filtered for control characters.&lt;/p&gt;
-</long-description>
-          <tag name="var" description="" type="\array" line="74">
-            <type by_reference="false">\array</type>
-          </tag>
-        </docblock>
-      </property>
-      <property final="false" static="false" visibility="protected" line="94">
-        <name>$accept</name>
-        <default/>
-        <docblock>
-          <description>The parsed http[accept*] headers with each header sorted
-by the quality factor</description>
-          <long-description>
-</long-description>
-          <tag name="var" description="" type="\array" line="86">
-            <type by_reference="false">\array</type>
-          </tag>
-        </docblock>
-      </property>
-      <property final="false" static="false" visibility="protected" line="103">
-        <name>$raw_input</name>
-        <default>false</default>
-        <docblock>
-          <description>The value of `php://input`.</description>
-          <long-description>
-</long-description>
-          <tag name="var" description="" type="\string" line="96">
-            <type by_reference="false">\string</type>
-          </tag>
-        </docblock>
-      </property>
-      <property final="false" static="false" visibility="protected" line="112">
-        <name>$csrf</name>
-        <default/>
-        <docblock>
-          <description>A cross-site request forgery object.</description>
-          <long-description>
-</long-description>
-          <tag name="var" description="" type="\Aura\Web\Csrf" line="105">
-            <type by_reference="false">\Aura\Web\Csrf</type>
-          </tag>
-        </docblock>
-      </property>
-      <property final="false" static="false" visibility="protected" line="125">
-        <name>$agents</name>
-        <default>array</default>
-        <docblock>
-          <description>An array of http user-agents used in matching
-mobile browsers and crawlers</description>
-          <long-description>
-</long-description>
-          <tag name="see" description="isMobile()" line="114"/>
-          <tag name="see" description="isCrawler()" line="114"/>
-          <tag name="var" description="" type="\array" line="114">
-            <type by_reference="false">\array</type>
-          </tag>
-        </docblock>
-      </property>
-      <property final="false" static="false" visibility="protected" line="199">
-        <name>$is_mobile</name>
-        <default/>
-        <docblock>
-          <description>A property to hold previous calls to isMobile()
-so you don't have to loop through $this-&gt;agents['mobile'] again.</description>
-          <long-description>
-</long-description>
-          <tag name="var" description="" type="\mixed" line="191">
-            <type by_reference="false">\mixed</type>
-          </tag>
-        </docblock>
-      </property>
-      <property final="false" static="false" visibility="protected" line="209">
-        <name>$is_crawler</name>
-        <default/>
-        <docblock>
-          <description>A property to hold previous calls to isCrawler()
-so you don't have to loop through $this-&gt;agents['crawler'] again.</description>
-          <long-description>
-</long-description>
-          <tag name="var" description="" type="\mixed" line="201">
-            <type by_reference="false">\mixed</type>
-          </tag>
-        </docblock>
-      </property>
-      <method final="false" abstract="false" static="false" visibility="public" line="216">
+<project version="0.13.1" title="Aura Project for PHP: Aura.Web">
+  <file path="src/Exception/NoClassForController.php" hash="d286a3af5ce381e9d4c7113bf7dfa82c">
+    <class final="false" abstract="false" line="10" namespace="Aura\Web\Exception">
+      <name>NoClassForController</name>
+      <extends>\Aura\Web\Exception</extends>
+      <full_name>\Aura\Web\Exception\NoClassForController</full_name>
+    </class>
+  </file>
+  <file path="src/Exception/NoMethodForAction.php" hash="1b71fa88dc334b3eb3346bc0c99d8250">
+    <class final="false" abstract="false" line="10" namespace="Aura\Web\Exception">
+      <name>NoMethodForAction</name>
+      <extends>\Aura\Web\Exception</extends>
+      <full_name>\Aura\Web\Exception\NoMethodForAction</full_name>
+    </class>
+  </file>
+  <file path="src/Exception/NoAcceptableLayout.php" hash="fad04d363bcf7383192f13228bf90f85">
+    <class final="false" abstract="false" line="10" namespace="Aura\Web\Exception">
+      <name>NoAcceptableLayout</name>
+      <extends>\Aura\Web\Exception</extends>
+      <full_name>\Aura\Web\Exception\NoAcceptableLayout</full_name>
+    </class>
+  </file>
+  <file path="src/Exception/MalformedToken.php" hash="dc081c29dcd38cd79d839b20fed4a1be">
+    <class final="false" abstract="false" line="10" namespace="Aura\Web\Exception">
+      <name>MalformedToken</name>
+      <extends>\Aura\Web\Exception</extends>
+      <full_name>\Aura\Web\Exception\MalformedToken</full_name>
+      <method final="false" abstract="false" static="false" visibility="public" line="12">
         <name>__construct</name>
-        <docblock>
-          <description>Constructor.</description>
-          <long-description>
-</long-description>
-        </docblock>
-        <argument line="216">
-          <name>$globals</name>
-          <default/>
-          <type>array</type>
-        </argument>
-        <argument line="216">
-          <name>$csrf</name>
-          <default>null</default>
-          <type>Csrf</type>
-        </argument>
-        <argument line="216">
-          <name>$agents</name>
-          <default>null</default>
-          <type>array</type>
-        </argument>
       </method>
-      <method final="false" abstract="false" static="false" visibility="public" line="244">
-        <name>__get</name>
-        <docblock>
-          <description>Magic get to make properties read-only.</description>
-          <long-description>
-</long-description>
-          <tag name="param" description="The property to read." type="\string" variable="$key" line="235">
-            <type by_reference="false">\string</type>
-          </tag>
-          <tag name="return" description="The property value." type="\mixed" line="235">
-            <type by_reference="false">\mixed</type>
-          </tag>
-        </docblock>
-        <argument line="244">
-          <name>$key</name>
-          <default/>
-          <type/>
-        </argument>
-      </method>
-      <method final="false" abstract="false" static="false" visibility="public" line="264">
-        <name>isGet</name>
-        <docblock>
-          <description>Is this a GET request?</description>
-          <long-description>
-</long-description>
-          <tag name="return" description="" type="\boolean" line="257">
-            <type by_reference="false">\boolean</type>
-          </tag>
-        </docblock>
-      </method>
-      <method final="false" abstract="false" static="false" visibility="public" line="276">
-        <name>isPost</name>
-        <docblock>
-          <description>Is this a POST request?</description>
-          <long-description>
-</long-description>
-          <tag name="return" description="" type="\boolean" line="269">
-            <type by_reference="false">\boolean</type>
-          </tag>
-        </docblock>
-      </method>
-      <method final="false" abstract="false" static="false" visibility="public" line="288">
-        <name>isPut</name>
-        <docblock>
-          <description>Is this a PUT request?</description>
-          <long-description>
-</long-description>
-          <tag name="return" description="" type="\boolean" line="281">
-            <type by_reference="false">\boolean</type>
-          </tag>
-        </docblock>
-      </method>
-      <method final="false" abstract="false" static="false" visibility="public" line="300">
-        <name>isDelete</name>
-        <docblock>
-          <description>Is this a DELETE request?</description>
-          <long-description>
-</long-description>
-          <tag name="return" description="" type="\boolean" line="293">
-            <type by_reference="false">\boolean</type>
-          </tag>
-        </docblock>
-      </method>
-      <method final="false" abstract="false" static="false" visibility="public" line="312">
-        <name>isHead</name>
-        <docblock>
-          <description>Is this a HEAD request?</description>
-          <long-description>
-</long-description>
-          <tag name="return" description="" type="\boolean" line="305">
-            <type by_reference="false">\boolean</type>
-          </tag>
-        </docblock>
-      </method>
-      <method final="false" abstract="false" static="false" visibility="public" line="324">
-        <name>isOptions</name>
-        <docblock>
-          <description>Is this an OPTIONS request?</description>
-          <long-description>
-</long-description>
-          <tag name="return" description="" type="\boolean" line="317">
-            <type by_reference="false">\boolean</type>
-          </tag>
-        </docblock>
-      </method>
-      <method final="false" abstract="false" static="false" visibility="public" line="336">
-        <name>isXhr</name>
-        <docblock>
-          <description>Is this an XmlHttpRequest?</description>
-          <long-description>
-</long-description>
-          <tag name="return" description="" type="\boolean" line="329">
-            <type by_reference="false">\boolean</type>
-          </tag>
-        </docblock>
-      </method>
-      <method final="false" abstract="false" static="false" visibility="public" line="348">
-        <name>isMobile</name>
-        <docblock>
-          <description>Is this a mobile device?</description>
-          <long-description>
-</long-description>
-          <tag name="return" description="False if not mobile, or the matched pattern if it is." type="\mixed" line="341">
-            <type by_reference="false">\mixed</type>
-          </tag>
-        </docblock>
-      </method>
-      <method final="false" abstract="false" static="false" visibility="public" line="383">
-        <name>isCrawler</name>
-        <docblock>
-          <description>Is this a crawler/bot device?</description>
-          <long-description>
-</long-description>
-          <tag name="return" description="False if not a crawler, or the matched pattern if it is." type="\mixed" line="376">
-            <type by_reference="false">\mixed</type>
-          </tag>
-        </docblock>
-      </method>
-      <method final="false" abstract="false" static="false" visibility="public" line="424">
-        <name>isCsrf</name>
-        <docblock>
-          <description>Is the current request a cross-site forgery?</description>
-          <long-description>&lt;p&gt;Note: if the key does not exist this method will return true.&lt;/p&gt;
-</long-description>
-          <tag name="throws" description="If a CSRF library has not been provided." type="\Aura\Web\Exception\Context" line="411">
-            <type by_reference="false">\Aura\Web\Exception\Context</type>
-          </tag>
-          <tag name="param" description="The name of the $_POST key containing the CSRF token." type="\string" variable="$key" line="411">
-            <type by_reference="false">\string</type>
-          </tag>
-          <tag name="return" description="" type="\bool" line="411">
-            <type by_reference="false">\bool</type>
-          </tag>
-        </docblock>
-        <argument line="424">
-          <name>$key</name>
-          <default>__csrf_token</default>
-          <type/>
-        </argument>
-      </method>
-      <method final="false" abstract="false" static="false" visibility="public" line="447">
-        <name>isSsl</name>
-        <docblock>
-          <description>Is this an SSL request?</description>
-          <long-description>
-</long-description>
-          <tag name="return" description="" type="\boolean" line="440">
-            <type by_reference="false">\boolean</type>
-          </tag>
-        </docblock>
-      </method>
-      <method final="false" abstract="false" static="false" visibility="public" line="466">
-        <name>getQuery</name>
-        <docblock>
-          <description>Retrieves an **unfiltered** value by key from the `$get` property,
-or an alternate default value if that key does not exist.</description>
-          <long-description>
-</long-description>
-          <tag name="param" description="The $get key to retrieve the value of." type="\string" variable="$key" line="453">
-            <type by_reference="false">\string</type>
-          </tag>
-          <tag name="param" description="The value to return if the key does not exist." type="\string" variable="$alt" line="453">
-            <type by_reference="false">\string</type>
-          </tag>
-          <tag name="return" description="The value of $get[$key], or the alternate default value." type="\mixed" line="453">
-            <type by_reference="false">\mixed</type>
-          </tag>
-        </docblock>
-        <argument line="466">
-          <name>$key</name>
-          <default>null</default>
-          <type/>
-        </argument>
-        <argument line="466">
-          <name>$alt</name>
-          <default>null</default>
-          <type/>
-        </argument>
-      </method>
-      <method final="false" abstract="false" static="false" visibility="public" line="484">
-        <name>getCookie</name>
-        <docblock>
-          <description>Retrieves an **unfiltered** value by key from the `$cookie` property,
-or an alternate default value if that key does not exist.</description>
-          <long-description>
-</long-description>
-          <tag name="param" description="The $cookie key to retrieve the value of." type="\string" variable="$key" line="471">
-            <type by_reference="false">\string</type>
-          </tag>
-          <tag name="param" description="The value to return if the key does not exist." type="\string" variable="$alt" line="471">
-            <type by_reference="false">\string</type>
-          </tag>
-          <tag name="param" description="The value of $cookie[$key], or the alternate default value." type="\bool" variable="" line="471">
-            <type by_reference="false">\bool</type>
-          </tag>
-        </docblock>
-        <argument line="484">
-          <name>$key</name>
-          <default>null</default>
-          <type/>
-        </argument>
-        <argument line="484">
-          <name>$alt</name>
-          <default>null</default>
-          <type/>
-        </argument>
-      </method>
-      <method final="false" abstract="false" static="false" visibility="public" line="502">
-        <name>getEnv</name>
-        <docblock>
-          <description>Retrieves an **unfiltered** value by key from the `$env` property,
-or an alternate default value if that key does not exist.</description>
-          <long-description>
-</long-description>
-          <tag name="param" description="The $env key to retrieve the value of." type="\string" variable="$key" line="489">
-            <type by_reference="false">\string</type>
-          </tag>
-          <tag name="param" description="The value to return if the key does not exist." type="\string" variable="$alt" line="489">
-            <type by_reference="false">\string</type>
-          </tag>
-          <tag name="return" description="The value of $env[$key], or the alternate default value." type="\mixed" line="489">
-            <type by_reference="false">\mixed</type>
-          </tag>
-        </docblock>
-        <argument line="502">
-          <name>$key</name>
-          <default>null</default>
-          <type/>
-        </argument>
-        <argument line="502">
-          <name>$alt</name>
-          <default>null</default>
-          <type/>
-        </argument>
-      </method>
-      <method final="false" abstract="false" static="false" visibility="public" line="520">
-        <name>getServer</name>
-        <docblock>
-          <description>Retrieves an **unfiltered** value by key from the `$server` property,
-or an alternate default value if that key does not exist.</description>
-          <long-description>
-</long-description>
-          <tag name="param" description="The $server key to retrieve the value of." type="\string" variable="$key" line="507">
-            <type by_reference="false">\string</type>
-          </tag>
-          <tag name="param" description="The value to return if the key does not exist." type="\string" variable="$alt" line="507">
-            <type by_reference="false">\string</type>
-          </tag>
-          <tag name="return" description="The value of $server[$key], or the alternate default value." type="\mixed" line="507">
-            <type by_reference="false">\mixed</type>
-          </tag>
-        </docblock>
-        <argument line="520">
-          <name>$key</name>
-          <default>null</default>
-          <type/>
-        </argument>
-        <argument line="520">
-          <name>$alt</name>
-          <default>null</default>
-          <type/>
-        </argument>
-      </method>
-      <method final="false" abstract="false" static="false" visibility="public" line="546">
-        <name>getInput</name>
-        <docblock>
-          <description>Retrieves an **unfiltered** value from a user input.</description>
-          <long-description>&lt;p&gt;A value by key from the &lt;code&gt;$post&lt;/code&gt; &lt;em&gt;and&lt;/em&gt; &lt;code&gt;$files&lt;/code&gt; properties, or an
-alternate default value if that key does not exist in either location.
-Files takes precedence over post.&lt;/p&gt;
-
-&lt;p&gt;If the key is null and the content type isn't &lt;code&gt;multipart/form-data&lt;/code&gt; and
-&lt;code&gt;$post&lt;/code&gt; and &lt;code&gt;$files&lt;/code&gt; are empty, the raw data from the request body
-is returned.&lt;/p&gt;
-</long-description>
-          <tag name="param" description="The $post and $files key to retrieve the value of." type="\string" variable="$key" line="525">
-            <type by_reference="false">\string</type>
-          </tag>
-          <tag name="param" description="The value to return if the key does not exist in either $post or $files." type="\string" variable="$alt" line="525">
-            <type by_reference="false">\string</type>
-          </tag>
-          <tag name="return" description="The value of $post[$key] combined with $files[$key], or the raw request body, or the alternate default value." type="\mixed" line="525">
-            <type by_reference="false">\mixed</type>
-          </tag>
-        </docblock>
-        <argument line="546">
-          <name>$key</name>
-          <default>null</default>
-          <type/>
-        </argument>
-        <argument line="546">
-          <name>$alt</name>
-          <default>null</default>
-          <type/>
-        </argument>
-      </method>
-      <method final="false" abstract="false" static="false" visibility="public" line="631">
-        <name>getHeader</name>
-        <docblock>
-          <description>Retrieves an **unfiltered** value by key from the `$header` property,
-or an alternate default value if that key does not exist.</description>
-          <long-description>
-</long-description>
-          <tag name="param" description="The $http key to retrieve the value of." type="\string" variable="$key" line="618">
-            <type by_reference="false">\string</type>
-          </tag>
-          <tag name="param" description="The value to return if the key does not exist." type="\string" variable="$alt" line="618">
-            <type by_reference="false">\string</type>
-          </tag>
-          <tag name="return" description="The value of $header[$key], or the alternate default value." type="\mixed" line="618">
-            <type by_reference="false">\mixed</type>
-          </tag>
-        </docblock>
-        <argument line="631">
-          <name>$key</name>
-          <default>null</default>
-          <type/>
-        </argument>
-        <argument line="631">
-          <name>$alt</name>
-          <default>null</default>
-          <type/>
-        </argument>
-      </method>
-      <method final="false" abstract="false" static="false" visibility="protected" line="650">
-        <name>parseAccept</name>
-        <docblock>
-          <description>Parse an HTTP `Accept*` header and sort by the quality factor, the
-highest being first in the returned array. The returned data is
-unfiltered.</description>
-          <long-description>
-</long-description>
-          <tag name="param" description="The name of the accept header to parse." type="\string" variable="$header" line="637">
-            <type by_reference="false">\string</type>
-          </tag>
-          <tag name="param" description="The value to return if the key does not exist." type="\mixed" variable="$alt" line="637">
-            <type by_reference="false">\mixed</type>
-          </tag>
-          <tag name="return" description="" type="\array" line="637">
-            <type by_reference="false">\array</type>
-          </tag>
-        </docblock>
-        <argument line="650">
-          <name>$accept</name>
-          <default/>
-          <type/>
-        </argument>
-        <argument line="650">
-          <name>$alt</name>
-          <default>null</default>
-          <type/>
-        </argument>
-      </method>
-      <method final="false" abstract="false" static="false" visibility="public" line="685">
-        <name>getAccept</name>
-        <docblock>
-          <description>Gets an `Accept` header.  If you want the content-type, ask for
-`'type'`; otherwise, if you want (e.g.) `'Accept-Language'`, ask for
-`'language'`.</description>
-          <long-description>
-</long-description>
-          <tag name="param" description="The `$accept` key to return; if null, returns the entire `$accept` property." type="\string" variable="$key" line="671">
-            <type by_reference="false">\string</type>
-          </tag>
-          <tag name="param" description="The value to return if the key does not exist." type="\mixed" variable="$alt" line="671">
-            <type by_reference="false">\mixed</type>
-          </tag>
-          <tag name="return" description="" type="\array" line="671">
-            <type by_reference="false">\array</type>
-          </tag>
-        </docblock>
-        <argument line="685">
-          <name>$key</name>
-          <default>null</default>
-          <type/>
-        </argument>
-        <argument line="685">
-          <name>$alt</name>
-          <default>null</default>
-          <type/>
-        </argument>
-      </method>
-      <method final="false" abstract="false" static="false" visibility="protected" line="728">
-        <name>setHeader</name>
-        <docblock>
-          <description>Set the "fake" `$header` property.</description>
-          <long-description>
-</long-description>
-          <tag name="return" description="" type="\void" line="721">
-            <type by_reference="false">\void</type>
-          </tag>
-        </docblock>
-      </method>
-      <method final="false" abstract="false" static="false" visibility="protected" line="766">
-        <name>httpMethodOverride</name>
-        <docblock>
-          <description>Overrides the REQUEST_METHOD with X-HTTP-Method-Override header or
-$_POST value.</description>
-          <long-description>
-</long-description>
-          <tag name="return" description="" type="\void" line="758">
-            <type by_reference="false">\void</type>
-          </tag>
-        </docblock>
-      </method>
-      <method final="false" abstract="false" static="false" visibility="protected" line="803">
-        <name>rebuildFiles</name>
-        <docblock>
-          <description>Recursive method to rebuild $_FILES structure to be more like $_POST.</description>
-          <long-description>
-</long-description>
-          <tag name="param" description="The source $_FILES array, perhaps from a sub- element of that array/" type="\array" variable="$src" line="790">
-            <type by_reference="false">\array</type>
-          </tag>
-          <tag name="param" description="&amp;amp;$tgt Where we will store the restructured data when we find it." type="\array" variable="$tgt" line="790">
-            <type by_reference="false">\array</type>
-          </tag>
-          <tag name="return" description="" type="\void" line="790">
-            <type by_reference="false">\void</type>
-          </tag>
-        </docblock>
-        <argument line="803">
-          <name>$src</name>
-          <default/>
-          <type/>
-        </argument>
-        <argument line="803">
-          <name>$tgt</name>
-          <default/>
-          <type/>
-        </argument>
-      </method>
-      <method final="false" abstract="false" static="false" visibility="protected" line="858">
-        <name>getValue</name>
-        <docblock>
-          <description>Common method to get a property value and return it.</description>
-          <long-description>
-</long-description>
-          <tag name="param" description="The property variable to fetch from: get, post, etc." type="\string" variable="$var" line="842">
-            <type by_reference="false">\string</type>
-          </tag>
-          <tag name="param" description="The array key, if any, to get the value of." type="\string" variable="$key" line="842">
-            <type by_reference="false">\string</type>
-          </tag>
-          <tag name="param" description="The alternative default value to return if the requested key does not exist." type="\string" variable="$alt" line="842">
-            <type by_reference="false">\string</type>
-          </tag>
-          <tag name="return" description="The requested value, or the alternative default value." type="\mixed" line="842">
-            <type by_reference="false">\mixed</type>
-          </tag>
-        </docblock>
-        <argument line="858">
-          <name>$var</name>
-          <default/>
-          <type/>
-        </argument>
-        <argument line="858">
-          <name>$key</name>
-          <default/>
-          <type/>
-        </argument>
-        <argument line="858">
-          <name>$alt</name>
-          <default/>
-          <type/>
-        </argument>
-      </method>
+    </class>
+  </file>
+  <file path="src/Exception/NoAcceptableView.php" hash="d68fd117d1a5a6407e5dd85e2c539278">
+    <class final="false" abstract="false" line="10" namespace="Aura\Web\Exception">
+      <name>NoAcceptableView</name>
+      <extends>\Aura\Web\Exception</extends>
+      <full_name>\Aura\Web\Exception\NoAcceptableView</full_name>
+    </class>
+  </file>
+  <file path="src/Exception/Context.php" hash="2f99172e74771cf46b937b409779dd44">
+    <class final="false" abstract="false" line="10" namespace="Aura\Web\Exception">
+      <name>Context</name>
+      <extends>\Aura\Web\Exception</extends>
+      <full_name>\Aura\Web\Exception\Context</full_name>
     </class>
   </file>
   <file path="src/ControllerFactory.php" hash="8faade9a6d5ce56701a78b0d5b3f9a4a">
@@ -724,11 +103,11 @@ controllers, but (e.g.) Resource or App controllers.</description>
           <tag name="param" description="An object-creation Forge." type="\Aura\Di\ForgeInterface" variable="$forge" line="49">
             <type by_reference="false">\Aura\Di\ForgeInterface</type>
           </tag>
-          <tag name="param" description="A map of controller names to controller classes." type="\array" variable="$map" line="49">
-            <type by_reference="false">\array</type>
+          <tag name="param" description="A map of controller names to controller classes." type="array" variable="$map" line="49">
+            <type by_reference="false">array</type>
           </tag>
-          <tag name="param" description="The controller class to instantiate when no mapping is found." type="\string" variable="$not_found" line="49">
-            <type by_reference="false">\string</type>
+          <tag name="param" description="The controller class to instantiate when no mapping is found." type="string" variable="$not_found" line="49">
+            <type by_reference="false">string</type>
           </tag>
         </docblock>
         <argument line="61">
@@ -753,11 +132,11 @@ controllers, but (e.g.) Resource or App controllers.</description>
           <description>Creates and returns a controller class based on a controller name.</description>
           <long-description>
 </long-description>
-          <tag name="param" description="The controller name." type="\string" variable="$name" line="68">
-            <type by_reference="false">\string</type>
+          <tag name="param" description="The controller name." type="string" variable="$name" line="68">
+            <type by_reference="false">string</type>
           </tag>
-          <tag name="param" description="Params to pass to the controller." type="\array" variable="$params" line="68">
-            <type by_reference="false">\array</type>
+          <tag name="param" description="Params to pass to the controller." type="array" variable="$params" line="68">
+            <type by_reference="false">array</type>
           </tag>
           <tag name="return" description="A controller instance." type="\Aura\Web\Page" line="68">
             <type by_reference="false">\Aura\Web\Page</type>
@@ -770,490 +149,6 @@ controllers, but (e.g.) Resource or App controllers.</description>
         </argument>
         <argument line="79">
           <name>$params</name>
-          <default/>
-          <type/>
-        </argument>
-      </method>
-    </class>
-  </file>
-  <file path="src/Csrf.php" hash="d01de7a2051c30e0dde9eef9a8ce91f4">
-    <class final="false" abstract="false" line="18" namespace="Aura\Web">
-      <name>Csrf</name>
-      <extends/>
-      <full_name>\Aura\Web\Csrf</full_name>
-      <docblock>
-        <description>Generate and validate CSRF tokens.</description>
-        <long-description>
-</long-description>
-        <tag name="package" description="Aura.Web" line="11"/>
-      </docblock>
-      <property final="false" static="false" visibility="protected" line="27">
-        <name>$secret_key</name>
-        <default/>
-        <docblock>
-          <description>Unique key for the project, application, or site.</description>
-          <long-description>
-</long-description>
-          <tag name="var" description="" type="\string" line="20">
-            <type by_reference="false">\string</type>
-          </tag>
-        </docblock>
-      </property>
-      <property final="false" static="false" visibility="protected" line="36">
-        <name>$user_key</name>
-        <default/>
-        <docblock>
-          <description>Unique key for the user (not a password!).</description>
-          <long-description>
-</long-description>
-          <tag name="var" description="" type="\string" line="29">
-            <type by_reference="false">\string</type>
-          </tag>
-        </docblock>
-      </property>
-      <property final="false" static="false" visibility="protected" line="45">
-        <name>$hash_algo</name>
-        <default/>
-        <docblock>
-          <description>The hash algorithm to use.</description>
-          <long-description>
-</long-description>
-          <tag name="var" description="" type="\string" line="38">
-            <type by_reference="false">\string</type>
-          </tag>
-        </docblock>
-      </property>
-      <property final="false" static="false" visibility="protected" line="54">
-        <name>$timeout</name>
-        <default/>
-        <docblock>
-          <description>The time, in seconds, before a token expires.</description>
-          <long-description>
-</long-description>
-          <tag name="var" description="" type="\int" line="47">
-            <type by_reference="false">\int</type>
-          </tag>
-        </docblock>
-      </property>
-      <method final="false" abstract="false" static="false" visibility="public" line="76">
-        <name>__construct</name>
-        <docblock>
-          <description>NOTE: Each project should have a unique and random $secret_key.</description>
-          <long-description>&lt;p&gt;The $user_key must be something unique to the user and does not change
-between requests. This allows the token to be linked to one user.
-The $user_key could be an email address or the primary key from the users
-table, anything unique to the user, except for passwords will do.&lt;/p&gt;
-</long-description>
-          <tag name="param" description="Project unique key." type="\string" variable="$secret_key" line="56">
-            <type by_reference="false">\string</type>
-          </tag>
-          <tag name="param" description="Unique key for a user; e.g., an email address." type="\mixed" variable="$user_key" line="56">
-            <type by_reference="false">\mixed</type>
-          </tag>
-          <tag name="param" description="In seconds. Default is 30 minutes." type="\integer" variable="$timeout" line="56">
-            <type by_reference="false">\integer</type>
-          </tag>
-          <tag name="param" description="Hashing algorithm for hash_hmac()." type="\string" variable="$hash_algo" line="56">
-            <type by_reference="false">\string</type>
-          </tag>
-          <tag name="todo" description="cli script to generate random keys" line="56"/>
-        </docblock>
-        <argument line="76">
-          <name>$secret_key</name>
-          <default/>
-          <type/>
-        </argument>
-        <argument line="76">
-          <name>$user_key</name>
-          <default/>
-          <type/>
-        </argument>
-        <argument line="76">
-          <name>$timeout</name>
-          <default>1800</default>
-          <type/>
-        </argument>
-        <argument line="76">
-          <name>$hash_algo</name>
-          <default>sha1</default>
-          <type/>
-        </argument>
-      </method>
-      <method final="false" abstract="false" static="false" visibility="public" line="95">
-        <name>__get</name>
-        <docblock>
-          <description>Magic get to provide access to the hash_algo and timeout variables.</description>
-          <long-description>
-</long-description>
-          <tag name="throws" description="" type="\UnexpectedValueException" line="84">
-            <type by_reference="false">\UnexpectedValueException</type>
-          </tag>
-          <tag name="param" description="The property to retrieve: hash_algo &amp;amp; timeout." type="\string" variable="$key" line="84">
-            <type by_reference="false">\string</type>
-          </tag>
-          <tag name="return" description="" type="\mixed" line="84">
-            <type by_reference="false">\mixed</type>
-          </tag>
-        </docblock>
-        <argument line="95">
-          <name>$key</name>
-          <default/>
-          <type/>
-        </argument>
-      </method>
-      <method final="false" abstract="false" static="false" visibility="public" line="116">
-        <name>__set</name>
-        <docblock>
-          <description>Magic set to provide access to the secret_key, hash_algo and timeout
-variables.</description>
-          <long-description>
-</long-description>
-          <tag name="throws" description="" type="\UnexpectedValueException" line="104">
-            <type by_reference="false">\UnexpectedValueException</type>
-          </tag>
-          <tag name="param" description="The property to set: secret_key, hash_algo &amp;amp; timeout." type="\string" variable="$key" line="104">
-            <type by_reference="false">\string</type>
-          </tag>
-          <tag name="return" description="" type="\void" line="104">
-            <type by_reference="false">\void</type>
-          </tag>
-        </docblock>
-        <argument line="116">
-          <name>$key</name>
-          <default/>
-          <type/>
-        </argument>
-        <argument line="116">
-          <name>$value</name>
-          <default/>
-          <type/>
-        </argument>
-      </method>
-      <method final="false" abstract="false" static="false" visibility="public" line="133">
-        <name>generateToken</name>
-        <docblock>
-          <description>Generate a CSRF token.</description>
-          <long-description>
-</long-description>
-          <tag name="return" description="" type="\string" line="126">
-            <type by_reference="false">\string</type>
-          </tag>
-        </docblock>
-      </method>
-      <method final="false" abstract="false" static="false" visibility="public" line="167">
-        <name>isValidToken</name>
-        <docblock>
-          <description>Test if a token is valid and has not timed out.</description>
-          <long-description>&lt;p&gt;If the incoming token is not propertly formated the exception
-aura\csrf\Exception\MalformedToken will be thrown.&lt;/p&gt;
-</long-description>
-          <tag name="throws" description="" type="\Aura\Web\Exception\MalformedToken" line="153">
-            <type by_reference="false">\Aura\Web\Exception\MalformedToken</type>
-          </tag>
-          <tag name="param" description="" type="\string" variable="$incoming_token" line="153">
-            <type by_reference="false">\string</type>
-          </tag>
-          <tag name="return" description="" type="\boolean" line="153">
-            <type by_reference="false">\boolean</type>
-          </tag>
-        </docblock>
-        <argument line="167">
-          <name>$incoming_token</name>
-          <default/>
-          <type/>
-        </argument>
-      </method>
-    </class>
-  </file>
-  <file path="src/Exception/Context.php" hash="456c66ac759b26fd51ad6a43109be1e5">
-    <class final="false" abstract="false" line="3" namespace="Aura\Web\Exception">
-      <name>Context</name>
-      <extends>\Aura\Web\Exception</extends>
-      <full_name>\Aura\Web\Exception\Context</full_name>
-    </class>
-  </file>
-  <file path="src/Exception/MalformedToken.php" hash="77ee170f6a3deacd98147287dc8854d2">
-    <class final="false" abstract="false" line="3" namespace="Aura\Web\Exception">
-      <name>MalformedToken</name>
-      <extends>\Aura\Web\Exception</extends>
-      <full_name>\Aura\Web\Exception\MalformedToken</full_name>
-      <method final="false" abstract="false" static="false" visibility="public" line="5">
-        <name>__construct</name>
-      </method>
-    </class>
-  </file>
-  <file path="src/Exception/NoAcceptableLayout.php" hash="e5daccb46588b68800822094738cbc07">
-    <class final="false" abstract="false" line="3" namespace="Aura\Web\Exception">
-      <name>NoAcceptableLayout</name>
-      <extends>\Aura\Web\Exception</extends>
-      <full_name>\Aura\Web\Exception\NoAcceptableLayout</full_name>
-    </class>
-  </file>
-  <file path="src/Exception/NoAcceptableView.php" hash="ab4d7bc3afacb6aea5f085cc206a03a2">
-    <class final="false" abstract="false" line="3" namespace="Aura\Web\Exception">
-      <name>NoAcceptableView</name>
-      <extends>\Aura\Web\Exception</extends>
-      <full_name>\Aura\Web\Exception\NoAcceptableView</full_name>
-    </class>
-  </file>
-  <file path="src/Exception/NoClassForController.php" hash="ece86d79dbb27af6332c74bc468e7ddc">
-    <class final="false" abstract="false" line="3" namespace="Aura\Web\Exception">
-      <name>NoClassForController</name>
-      <extends>\Aura\Web\Exception</extends>
-      <full_name>\Aura\Web\Exception\NoClassForController</full_name>
-    </class>
-  </file>
-  <file path="src/Exception/NoMethodForAction.php" hash="3f9db0fc2dab07b4c300d8f70dd0b8bc">
-    <class final="false" abstract="false" line="3" namespace="Aura\Web\Exception">
-      <name>NoMethodForAction</name>
-      <extends>\Aura\Web\Exception</extends>
-      <full_name>\Aura\Web\Exception\NoMethodForAction</full_name>
-    </class>
-  </file>
-  <file path="src/Exception.php" hash="29bb917d193d0a414a8b9c1070b39869">
-    <class final="false" abstract="false" line="3" namespace="Aura\Web">
-      <name>Exception</name>
-      <extends>\Exception</extends>
-      <full_name>\Aura\Web\Exception</full_name>
-    </class>
-  </file>
-  <file path="src/Page.php" hash="d9da1dfa90932b7e41ef906f2cceb5bf">
-    <namespace-alias name="SignalManager">Aura\Signal\Manager</namespace-alias>
-    <class final="false" abstract="true" line="35" namespace="Aura\Web">
-      <name>Page</name>
-      <extends/>
-      <full_name>\Aura\Web\Page</full_name>
-      <docblock>
-        <description>A page controller.</description>
-        <long-description>&lt;p&gt;public function actionBrowse()
-     {
-         // blah blah blah&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;     // now set the view
-     $this-&amp;gt;response-&amp;gt;view = array(
-         'text/html' =&amp;gt; 'index',
-         // closure always takes one param, the response transfer object
-         'application/json' =&amp;gt; function($response) {
-             $response-&amp;gt;layout = null;
-             return json_encode($response-&amp;gt;view_data-&amp;gt;list);
-         },
-         'application/xml' =&amp;gt; 'default.xml',
-     );
- }
-&lt;/code&gt;&lt;/pre&gt;
-</long-description>
-        <tag name="package" description="Aura.Web" line="12"/>
-      </docblock>
-      <property final="false" static="false" visibility="protected" line="44">
-        <name>$context</name>
-        <default/>
-        <docblock>
-          <description>The context of the request environment.</description>
-          <long-description>
-</long-description>
-          <tag name="var" description="" type="\Aura\Web\Context" line="37">
-            <type by_reference="false">\Aura\Web\Context</type>
-          </tag>
-        </docblock>
-      </property>
-      <property final="false" static="false" visibility="protected" line="53">
-        <name>$response</name>
-        <default/>
-        <docblock>
-          <description>A data transfer object for the eventual HTTP response.</description>
-          <long-description>
-</long-description>
-          <tag name="var" description="" type="\Aura\Web\ResponseTransfer" line="46">
-            <type by_reference="false">\Aura\Web\ResponseTransfer</type>
-          </tag>
-        </docblock>
-      </property>
-      <property final="false" static="false" visibility="protected" line="62">
-        <name>$signal</name>
-        <default/>
-        <docblock>
-          <description>A signal manager.</description>
-          <long-description>
-</long-description>
-          <tag name="var" description="" type="\Aura\Signal\Manager" line="55">
-            <type by_reference="false">\Aura\Signal\Manager</type>
-          </tag>
-        </docblock>
-      </property>
-      <property final="false" static="false" visibility="protected" line="71">
-        <name>$params</name>
-        <default/>
-        <docblock>
-          <description>Path-info parameters from the route.</description>
-          <long-description>
-</long-description>
-          <tag name="var" description="" type="\ArrayObject" line="64">
-            <type by_reference="false">\ArrayObject</type>
-          </tag>
-        </docblock>
-      </property>
-      <property final="false" static="false" visibility="protected" line="80">
-        <name>$action</name>
-        <default/>
-        <docblock>
-          <description>The action to perform.</description>
-          <long-description>
-</long-description>
-          <tag name="var" description="" type="\string" line="73">
-            <type by_reference="false">\string</type>
-          </tag>
-        </docblock>
-      </property>
-      <property final="false" static="false" visibility="protected" line="90">
-        <name>$skip_action</name>
-        <default>false</default>
-        <docblock>
-          <description>When set to `true` before `action()` is called, the `action()` will not
-be called after all.</description>
-          <long-description>
-</long-description>
-          <tag name="var" description="" type="\bool" line="82">
-            <type by_reference="false">\bool</type>
-          </tag>
-        </docblock>
-      </property>
-      <method final="false" abstract="false" static="false" visibility="public" line="99">
-        <name>__construct</name>
-        <docblock>
-          <description>Constructor.</description>
-          <long-description>
-</long-description>
-          <tag name="param" description="The request environment." type="\Aura\Web\Context" variable="$context" line="92">
-            <type by_reference="false">\Aura\Web\Context</type>
-          </tag>
-        </docblock>
-        <argument line="100">
-          <name>$context</name>
-          <default/>
-          <type>Context</type>
-        </argument>
-        <argument line="101">
-          <name>$signal</name>
-          <default/>
-          <type>SignalManager</type>
-        </argument>
-        <argument line="102">
-          <name>$response</name>
-          <default/>
-          <type>ResponseTransfer</type>
-        </argument>
-        <argument line="103">
-          <name>$params</name>
-          <default>array</default>
-          <type>array</type>
-        </argument>
-      </method>
-      <method final="false" abstract="false" static="false" visibility="public" line="166">
-        <name>exec</name>
-        <docblock>
-          <description>Executes the Page action.  In order, it does these things:</description>
-          <long-description>&lt;ul&gt;
-&lt;li&gt;&lt;p&gt;signals &lt;code&gt;'pre_exec'&lt;/code&gt;&lt;/p&gt;&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;is the action is not to be skipped ...&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;p&gt;signals &lt;code&gt;'pre_action'&lt;/code&gt;&lt;/p&gt;&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;calls &lt;code&gt;invokeMethod()&lt;/code&gt; to run the action&lt;/p&gt;&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;signals &lt;code&gt;'post_action'&lt;/code&gt;&lt;/p&gt;&lt;/li&gt;
-&lt;/ul&gt;&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;signals &lt;code&gt;'post_exec'&lt;/code&gt;&lt;/p&gt;&lt;/li&gt;
-&lt;/ul&gt;
-</long-description>
-          <tag name="signal" description="&amp;#039;pre_exec&amp;#039;" line="139"/>
-          <tag name="signal" description="&amp;#039;pre_action&amp;#039;" line="139"/>
-          <tag name="signal" description="&amp;#039;post_action&amp;#039;" line="139"/>
-          <tag name="signal" description="&amp;#039;post_exec&amp;#039;" line="139"/>
-          <tag name="return" description="" type="\void" line="139">
-            <type by_reference="false">\void</type>
-          </tag>
-        </docblock>
-      </method>
-      <method final="false" abstract="false" static="false" visibility="public" line="191">
-        <name>skipAction</name>
-        <docblock>
-          <description>Stops `exec()` from calling `action()` if it has not already done so.</description>
-          <long-description>
-</long-description>
-          <tag name="return" description="" type="\void" line="184">
-            <type by_reference="false">\void</type>
-          </tag>
-        </docblock>
-      </method>
-      <method final="false" abstract="false" static="false" visibility="public" line="203">
-        <name>isSkipAction</name>
-        <docblock>
-          <description>Should the call to `action()` be skipped?</description>
-          <long-description>
-</long-description>
-          <tag name="return" description="" type="\bool" line="196">
-            <type by_reference="false">\bool</type>
-          </tag>
-        </docblock>
-      </method>
-      <method final="false" abstract="false" static="false" visibility="public" line="215">
-        <name>preExec</name>
-        <docblock>
-          <description>Runs before `action()` as part of the `'pre_exec'` signal.</description>
-          <long-description>
-</long-description>
-          <tag name="return" description="" type="\mixed" line="208">
-            <type by_reference="false">\mixed</type>
-          </tag>
-        </docblock>
-      </method>
-      <method final="false" abstract="false" static="false" visibility="public" line="226">
-        <name>preAction</name>
-        <docblock>
-          <description>Runs before `action()` as part of the `'pre_action'` signal.</description>
-          <long-description>
-</long-description>
-          <tag name="return" description="" type="\mixed" line="219">
-            <type by_reference="false">\mixed</type>
-          </tag>
-        </docblock>
-      </method>
-      <method final="false" abstract="false" static="false" visibility="public" line="237">
-        <name>postAction</name>
-        <docblock>
-          <description>Runs after `action()` as part of the `'post_action'` signal.</description>
-          <long-description>
-</long-description>
-          <tag name="return" description="" type="\mixed" line="230">
-            <type by_reference="false">\mixed</type>
-          </tag>
-        </docblock>
-      </method>
-      <method final="false" abstract="false" static="false" visibility="public" line="248">
-        <name>postExec</name>
-        <docblock>
-          <description>Runs after `action()` as part of the `'post_exec'` signal.</description>
-          <long-description>
-</long-description>
-          <tag name="return" description="" type="\mixed" line="241">
-            <type by_reference="false">\mixed</type>
-          </tag>
-        </docblock>
-      </method>
-      <method final="false" abstract="false" static="false" visibility="protected" line="261">
-        <name>invokeMethod</name>
-        <docblock>
-          <description>Invokes a method by name, matching method params to `$this-&gt;params`.</description>
-          <long-description>
-</long-description>
-          <tag name="param" description="The method name to execute, typcially an action." type="\string" variable="$name" line="252">
-            <type by_reference="false">\string</type>
-          </tag>
-          <tag name="return" description="The return from the executed method." type="\mixed" line="252">
-            <type by_reference="false">\mixed</type>
-          </tag>
-        </docblock>
-        <argument line="261">
-          <name>$name</name>
           <default/>
           <type/>
         </argument>
@@ -1290,11 +185,11 @@ return value (note that they are not added to &lt;code&gt;$headers&lt;/code&gt; 
 &lt;p&gt;When true or null, the &lt;code&gt;getHeaders()&lt;/code&gt; method will make no changes to
 the existing headers.&lt;/p&gt;
 </long-description>
-          <tag name="var" description="" type="\bool" line="21">
-            <type by_reference="false">\bool</type>
+          <tag name="var" description="" type="bool" line="21">
+            <type by_reference="false">bool</type>
           </tag>
-          <tag name="see" description="setCache()" line="21"/>
-          <tag name="see" description="setRedirectAfterPost()" line="21"/>
+          <tag name="see" description="\Aura\Web\setCache()" refers="\Aura\Web\setCache()" line="21"/>
+          <tag name="see" description="\Aura\Web\setRedirectAfterPost()" refers="\Aura\Web\setRedirectAfterPost()" line="21"/>
         </docblock>
       </property>
       <property final="false" static="false" visibility="protected" line="54">
@@ -1304,8 +199,8 @@ the existing headers.&lt;/p&gt;
           <description>The response body content.</description>
           <long-description>
 </long-description>
-          <tag name="var" description="" type="\string" line="47">
-            <type by_reference="false">\string</type>
+          <tag name="var" description="" type="string" line="47">
+            <type by_reference="false">string</type>
           </tag>
         </docblock>
       </property>
@@ -1316,8 +211,8 @@ the existing headers.&lt;/p&gt;
           <description>The Content-Type of the response.</description>
           <long-description>
 </long-description>
-          <tag name="var" description="" type="\string" line="56">
-            <type by_reference="false">\string</type>
+          <tag name="var" description="" type="string" line="56">
+            <type by_reference="false">string</type>
           </tag>
         </docblock>
       </property>
@@ -1328,8 +223,8 @@ the existing headers.&lt;/p&gt;
           <description>The response cookies.</description>
           <long-description>
 </long-description>
-          <tag name="var" description="" type="\array" line="65">
-            <type by_reference="false">\array</type>
+          <tag name="var" description="" type="array" line="65">
+            <type by_reference="false">array</type>
           </tag>
         </docblock>
       </property>
@@ -1340,8 +235,8 @@ the existing headers.&lt;/p&gt;
           <description>Whether or not cookies should default to being sent by HTTP only.</description>
           <long-description>
 </long-description>
-          <tag name="var" description="" type="\bool" line="74">
-            <type by_reference="false">\bool</type>
+          <tag name="var" description="" type="bool" line="74">
+            <type by_reference="false">bool</type>
           </tag>
         </docblock>
       </property>
@@ -1352,8 +247,8 @@ the existing headers.&lt;/p&gt;
           <description>The filename .format extension used to determine the content-type.</description>
           <long-description>
 </long-description>
-          <tag name="var" description="" type="\bool" line="83">
-            <type by_reference="false">\bool</type>
+          <tag name="var" description="" type="bool" line="83">
+            <type by_reference="false">bool</type>
           </tag>
         </docblock>
       </property>
@@ -1364,8 +259,8 @@ the existing headers.&lt;/p&gt;
           <description>The response headers (less the cookies).</description>
           <long-description>
 </long-description>
-          <tag name="var" description="" type="\array" line="92">
-            <type by_reference="false">\array</type>
+          <tag name="var" description="" type="array" line="92">
+            <type by_reference="false">array</type>
           </tag>
         </docblock>
       </property>
@@ -1376,8 +271,8 @@ the existing headers.&lt;/p&gt;
           <description>Redirect to this location.</description>
           <long-description>
 </long-description>
-          <tag name="var" description="" type="\string" line="101">
-            <type by_reference="false">\string</type>
+          <tag name="var" description="" type="string" line="101">
+            <type by_reference="false">string</type>
           </tag>
         </docblock>
       </property>
@@ -1388,8 +283,8 @@ the existing headers.&lt;/p&gt;
           <description>The response status code.</description>
           <long-description>
 </long-description>
-          <tag name="var" description="" type="\int" line="110">
-            <type by_reference="false">\int</type>
+          <tag name="var" description="" type="int" line="110">
+            <type by_reference="false">int</type>
           </tag>
         </docblock>
       </property>
@@ -1400,8 +295,8 @@ the existing headers.&lt;/p&gt;
           <description>The response status text.</description>
           <long-description>
 </long-description>
-          <tag name="var" description="" type="\int" line="119">
-            <type by_reference="false">\int</type>
+          <tag name="var" description="" type="int" line="119">
+            <type by_reference="false">int</type>
           </tag>
         </docblock>
       </property>
@@ -1412,8 +307,8 @@ the existing headers.&lt;/p&gt;
           <description>The HTTP version to send as.</description>
           <long-description>
 </long-description>
-          <tag name="var" description="" type="\string" line="128">
-            <type by_reference="false">\string</type>
+          <tag name="var" description="" type="string" line="128">
+            <type by_reference="false">string</type>
           </tag>
         </docblock>
       </property>
@@ -1424,8 +319,8 @@ the existing headers.&lt;/p&gt;
           <description>The outer layout template for use in a 2-step view.</description>
           <long-description>
 </long-description>
-          <tag name="var" description="" type="\mixed" line="137">
-            <type by_reference="false">\mixed</type>
+          <tag name="var" description="" type="mixed" line="137">
+            <type by_reference="false">mixed</type>
           </tag>
         </docblock>
       </property>
@@ -1436,8 +331,8 @@ the existing headers.&lt;/p&gt;
           <description>The name of the content variable in the layout template.</description>
           <long-description>
 </long-description>
-          <tag name="var" description="" type="\string" line="146">
-            <type by_reference="false">\string</type>
+          <tag name="var" description="" type="string" line="146">
+            <type by_reference="false">string</type>
           </tag>
         </docblock>
       </property>
@@ -1460,8 +355,8 @@ the existing headers.&lt;/p&gt;
           <description>Stack to search for layout templates.</description>
           <long-description>
 </long-description>
-          <tag name="var" description="" type="\array" line="164">
-            <type by_reference="false">\array</type>
+          <tag name="var" description="" type="array" line="164">
+            <type by_reference="false">array</type>
           </tag>
         </docblock>
       </property>
@@ -1472,9 +367,9 @@ the existing headers.&lt;/p&gt;
           <description>The inner view template options for use in a 2-step view.</description>
           <long-description>
 </long-description>
-          <tag name="var" description="" type="\string|\array" line="173">
-            <type by_reference="false">\string</type>
-            <type by_reference="false">\array</type>
+          <tag name="var" description="" type="string|array" line="173">
+            <type by_reference="false">string</type>
+            <type by_reference="false">array</type>
           </tag>
         </docblock>
       </property>
@@ -1497,8 +392,8 @@ the existing headers.&lt;/p&gt;
           <description>Stack to search for view templates.</description>
           <long-description>
 </long-description>
-          <tag name="var" description="" type="\array" line="191">
-            <type by_reference="false">\array</type>
+          <tag name="var" description="" type="array" line="191">
+            <type by_reference="false">array</type>
           </tag>
         </docblock>
       </property>
@@ -1509,8 +404,8 @@ the existing headers.&lt;/p&gt;
           <description>An array of `.format` extensions to Content-Type mappings.</description>
           <long-description>
 </long-description>
-          <tag name="var" description="" type="\array" line="200">
-            <type by_reference="false">\array</type>
+          <tag name="var" description="" type="array" line="200">
+            <type by_reference="false">array</type>
           </tag>
         </docblock>
       </property>
@@ -1520,8 +415,8 @@ the existing headers.&lt;/p&gt;
           <description>Constructor.</description>
           <long-description>
 </long-description>
-          <tag name="param" description="Additional or override `.format` to Content-Type mappings." type="\array" variable="$format_type" line="291">
-            <type by_reference="false">\array</type>
+          <tag name="param" description="Additional or override `.format` to Content-Type mappings." type="array" variable="$format_type" line="291">
+            <type by_reference="false">array</type>
           </tag>
         </docblock>
         <argument line="299">
@@ -1536,11 +431,11 @@ the existing headers.&lt;/p&gt;
           <description>Magic read to provide access to $view_data and $layout_data properties.</description>
           <long-description>
 </long-description>
-          <tag name="param" description="The property name." type="\string" variable="$key" line="306">
-            <type by_reference="false">\string</type>
+          <tag name="param" description="The property name." type="string" variable="$key" line="306">
+            <type by_reference="false">string</type>
           </tag>
-          <tag name="return" description="The property value." type="\mixed" line="306">
-            <type by_reference="false">\mixed</type>
+          <tag name="return" description="The property value." type="mixed" line="306">
+            <type by_reference="false">mixed</type>
           </tag>
         </docblock>
         <argument line="315">
@@ -1561,12 +456,12 @@ Cache-Control: post-check=0, pre-check=0
 Expires: 1
 &lt;/code&gt;&lt;/pre&gt;
 </long-description>
-          <tag name="param" description="When true, disable browser caching." type="\bool" variable="$flag" line="328">
-            <type by_reference="false">\bool</type>
+          <tag name="param" description="When true, disable browser caching." type="bool" variable="$flag" line="328">
+            <type by_reference="false">bool</type>
           </tag>
-          <tag name="see" description="redirectPost()" line="328"/>
-          <tag name="return" description="" type="\void" line="328">
-            <type by_reference="false">\void</type>
+          <tag name="see" description="\Aura\Web\redirectPost()" refers="\Aura\Web\redirectPost()" line="328"/>
+          <tag name="return" description="" type="void" line="328">
+            <type by_reference="false">void</type>
           </tag>
         </docblock>
         <argument line="346">
@@ -1581,8 +476,8 @@ Expires: 1
           <description>Is caching turned off?</description>
           <long-description>
 </long-description>
-          <tag name="return" description="Note that this is a ternary: true, false, or null." type="\mixed" line="355">
-            <type by_reference="false">\mixed</type>
+          <tag name="return" description="Note that this is a ternary: true, false, or null." type="mixed" line="355">
+            <type by_reference="false">mixed</type>
           </tag>
         </docblock>
       </method>
@@ -1592,11 +487,11 @@ Expires: 1
           <description>Sets the content of the response.</description>
           <long-description>
 </long-description>
-          <tag name="param" description="The body content of the response." type="\string" variable="$content" line="367">
-            <type by_reference="false">\string</type>
+          <tag name="param" description="The body content of the response." type="string" variable="$content" line="367">
+            <type by_reference="false">string</type>
           </tag>
-          <tag name="return" description="" type="\void" line="367">
-            <type by_reference="false">\void</type>
+          <tag name="return" description="" type="void" line="367">
+            <type by_reference="false">void</type>
           </tag>
         </docblock>
         <argument line="376">
@@ -1611,8 +506,8 @@ Expires: 1
           <description>Gets the content of the response.</description>
           <long-description>
 </long-description>
-          <tag name="return" description="The body content of the response." type="\string" line="381">
-            <type by_reference="false">\string</type>
+          <tag name="return" description="The body content of the response." type="string" line="381">
+            <type by_reference="false">string</type>
           </tag>
         </docblock>
       </method>
@@ -1622,13 +517,13 @@ Expires: 1
           <description>Sets the Content-Type of the response.</description>
           <long-description>
 </long-description>
-          <tag name="param" description="The Content-Type of the response." type="\string" variable="$type" line="393">
-            <type by_reference="false">\string</type>
+          <tag name="param" description="The Content-Type of the response." type="string" variable="$type" line="393">
+            <type by_reference="false">string</type>
           </tag>
-          <tag name="return" description="" type="\void" line="393">
-            <type by_reference="false">\void</type>
+          <tag name="return" description="" type="void" line="393">
+            <type by_reference="false">void</type>
           </tag>
-          <tag name="see" description="negotiateContentType()" line="393"/>
+          <tag name="see" description="\Aura\Web\negotiateContentType()" refers="\Aura\Web\negotiateContentType()" line="393"/>
         </docblock>
         <argument line="404">
           <name>$type</name>
@@ -1642,8 +537,8 @@ Expires: 1
           <description>Gets the Content-Type of the response.</description>
           <long-description>
 </long-description>
-          <tag name="return" description="The Content-Type of the response." type="\string" line="409">
-            <type by_reference="false">\string</type>
+          <tag name="return" description="The Content-Type of the response." type="string" line="409">
+            <type by_reference="false">string</type>
           </tag>
         </docblock>
       </method>
@@ -1653,30 +548,30 @@ Expires: 1
           <description>Sets a cookie value in `$cookies`.</description>
           <long-description>
 </long-description>
-          <tag name="param" description="The name of the cookie." type="\string" variable="$name" line="421">
-            <type by_reference="false">\string</type>
+          <tag name="param" description="The name of the cookie." type="string" variable="$name" line="421">
+            <type by_reference="false">string</type>
           </tag>
-          <tag name="param" description="The value of the cookie." type="\string" variable="$value" line="421">
-            <type by_reference="false">\string</type>
+          <tag name="param" description="The value of the cookie." type="string" variable="$value" line="421">
+            <type by_reference="false">string</type>
           </tag>
-          <tag name="param" description="The Unix timestamp after which the cookie expires. If non-numeric, the method uses strtotime() on the value." type="\int|\string" variable="$expire" line="421">
-            <type by_reference="false">\int</type>
-            <type by_reference="false">\string</type>
+          <tag name="param" description="The Unix timestamp after which the cookie expires. If non-numeric, the method uses strtotime() on the value." type="int|string" variable="$expire" line="421">
+            <type by_reference="false">int</type>
+            <type by_reference="false">string</type>
           </tag>
-          <tag name="param" description="The path on the server in which the cookie will be available on." type="\string" variable="$path" line="421">
-            <type by_reference="false">\string</type>
+          <tag name="param" description="The path on the server in which the cookie will be available on." type="string" variable="$path" line="421">
+            <type by_reference="false">string</type>
           </tag>
-          <tag name="param" description="The domain that the cookie is available on." type="\string" variable="$domain" line="421">
-            <type by_reference="false">\string</type>
+          <tag name="param" description="The domain that the cookie is available on." type="string" variable="$domain" line="421">
+            <type by_reference="false">string</type>
           </tag>
-          <tag name="param" description="Indicates that the cookie should only be transmitted over a secure HTTPS connection." type="\bool" variable="$secure" line="421">
-            <type by_reference="false">\bool</type>
+          <tag name="param" description="Indicates that the cookie should only be transmitted over a secure HTTPS connection." type="bool" variable="$secure" line="421">
+            <type by_reference="false">bool</type>
           </tag>
-          <tag name="param" description="When true, the cookie will be made accessible only through the HTTP protocol. This means that the cookie won&amp;#039;t be accessible by scripting languages, such as JavaScript." type="\bool" variable="$httponly" line="421">
-            <type by_reference="false">\bool</type>
+          <tag name="param" description="When true, the cookie will be made accessible only through the HTTP protocol. This means that the cookie won't be accessible by scripting languages, such as JavaScript." type="bool" variable="$httponly" line="421">
+            <type by_reference="false">bool</type>
           </tag>
-          <tag name="return" description="" type="\void" line="421">
-            <type by_reference="false">\void</type>
+          <tag name="return" description="" type="void" line="421">
+            <type by_reference="false">void</type>
           </tag>
         </docblock>
         <argument line="447">
@@ -1721,11 +616,11 @@ Expires: 1
           <description>Gets one cookie for the response.</description>
           <long-description>
 </long-description>
-          <tag name="param" description="The cookie name." type="\string" variable="$name" line="460">
-            <type by_reference="false">\string</type>
+          <tag name="param" description="The cookie name." type="string" variable="$name" line="460">
+            <type by_reference="false">string</type>
           </tag>
-          <tag name="return" description="A cookie descriptor." type="\array" line="460">
-            <type by_reference="false">\array</type>
+          <tag name="return" description="A cookie descriptor." type="array" line="460">
+            <type by_reference="false">array</type>
           </tag>
         </docblock>
         <argument line="469">
@@ -1740,8 +635,8 @@ Expires: 1
           <description>Gets all cookies for the response.</description>
           <long-description>
 </long-description>
-          <tag name="return" description="A sequential array of cookie descriptors." type="\array" line="489">
-            <type by_reference="false">\array</type>
+          <tag name="return" description="A sequential array of cookie descriptors." type="array" line="489">
+            <type by_reference="false">array</type>
           </tag>
         </docblock>
       </method>
@@ -1751,11 +646,11 @@ Expires: 1
           <description>By default, should cookies be sent by HTTP only?</description>
           <long-description>
 </long-description>
-          <tag name="param" description="True to send by HTTP only, false to send by any method." type="\bool" variable="$flag" line="505">
-            <type by_reference="false">\bool</type>
+          <tag name="param" description="True to send by HTTP only, false to send by any method." type="bool" variable="$flag" line="505">
+            <type by_reference="false">bool</type>
           </tag>
-          <tag name="return" description="" type="\void" line="505">
-            <type by_reference="false">\void</type>
+          <tag name="return" description="" type="void" line="505">
+            <type by_reference="false">void</type>
           </tag>
         </docblock>
         <argument line="515">
@@ -1770,14 +665,14 @@ Expires: 1
           <description>Sets a header value in `$headers`.</description>
           <long-description>
 </long-description>
-          <tag name="param" description="The header label." type="\string" variable="$key" line="520">
-            <type by_reference="false">\string</type>
+          <tag name="param" description="The header label." type="string" variable="$key" line="520">
+            <type by_reference="false">string</type>
           </tag>
-          <tag name="param" description="The value for the header." type="\string" variable="$val" line="520">
-            <type by_reference="false">\string</type>
+          <tag name="param" description="The value for the header." type="string" variable="$val" line="520">
+            <type by_reference="false">string</type>
           </tag>
-          <tag name="return" description="" type="\void" line="520">
-            <type by_reference="false">\void</type>
+          <tag name="return" description="" type="void" line="520">
+            <type by_reference="false">void</type>
           </tag>
         </docblock>
         <argument line="531">
@@ -1802,14 +697,14 @@ Expires: 1
           <description>Adds to a header value in $this-&gt;headers.</description>
           <long-description>
 </long-description>
-          <tag name="param" description="The header label, such as &amp;quot;Content-Type&amp;quot;." type="\string" variable="$key" line="538">
-            <type by_reference="false">\string</type>
+          <tag name="param" description="The header label, such as &quot;Content-Type&quot;." type="string" variable="$key" line="538">
+            <type by_reference="false">string</type>
           </tag>
-          <tag name="param" description="The value for the header." type="\string" variable="$val" line="538">
-            <type by_reference="false">\string</type>
+          <tag name="param" description="The value for the header." type="string" variable="$val" line="538">
+            <type by_reference="false">string</type>
           </tag>
-          <tag name="return" description="" type="\void" line="538">
-            <type by_reference="false">\void</type>
+          <tag name="return" description="" type="void" line="538">
+            <type by_reference="false">void</type>
           </tag>
         </docblock>
         <argument line="549">
@@ -1829,12 +724,12 @@ Expires: 1
           <description>Returns the value of a single header.</description>
           <long-description>
 </long-description>
-          <tag name="param" description="The header name." type="\string" variable="$key" line="557">
-            <type by_reference="false">\string</type>
+          <tag name="param" description="The header name." type="string" variable="$key" line="557">
+            <type by_reference="false">string</type>
           </tag>
-          <tag name="return" description="A string if the header has only one value, or an array if the header has multiple values, or null if the header does not exist." type="\string|\array" line="557">
-            <type by_reference="false">\string</type>
-            <type by_reference="false">\array</type>
+          <tag name="return" description="A string if the header has only one value, or an array if the header has multiple values, or null if the header does not exist." type="string|array" line="557">
+            <type by_reference="false">string</type>
+            <type by_reference="false">array</type>
           </tag>
         </docblock>
         <argument line="568">
@@ -1849,8 +744,8 @@ Expires: 1
           <description>Returns the array of all headers to be sent with the response.</description>
           <long-description>
 </long-description>
-          <tag name="return" description="" type="\array" line="577">
-            <type by_reference="false">\array</type>
+          <tag name="return" description="" type="array" line="577">
+            <type by_reference="false">array</type>
           </tag>
           <tag name="todo" description="Add case for cache === true (hm, or cache === array)." line="577"/>
         </docblock>
@@ -1862,17 +757,17 @@ Expires: 1
 a status code and status text.</description>
           <long-description>
 </long-description>
-          <tag name="param" description="The URI to redirect to." type="\string" variable="$uri" line="610">
-            <type by_reference="false">\string</type>
+          <tag name="param" description="The URI to redirect to." type="string" variable="$uri" line="610">
+            <type by_reference="false">string</type>
           </tag>
-          <tag name="param" description="The HTTP status code to redirect with; default is `302`." type="\int" variable="$code" line="610">
-            <type by_reference="false">\int</type>
+          <tag name="param" description="The HTTP status code to redirect with; default is `302`." type="int" variable="$code" line="610">
+            <type by_reference="false">int</type>
           </tag>
-          <tag name="param" description="The HTTP status text; default is `&amp;#039;Found&amp;#039;`." type="\string" variable="$text" line="610">
-            <type by_reference="false">\string</type>
+          <tag name="param" description="The HTTP status text; default is `'Found'`." type="string" variable="$text" line="610">
+            <type by_reference="false">string</type>
           </tag>
-          <tag name="return" description="" type="\void" line="610">
-            <type by_reference="false">\void</type>
+          <tag name="return" description="" type="void" line="610">
+            <type by_reference="false">void</type>
           </tag>
         </docblock>
         <argument line="625">
@@ -1898,18 +793,18 @@ a status code and status text.</description>
 a status code and status text, *and* sets caching to false.</description>
           <long-description>
 </long-description>
-          <tag name="param" description="The URI to redirect to." type="\string" variable="$uri" line="632">
-            <type by_reference="false">\string</type>
+          <tag name="param" description="The URI to redirect to." type="string" variable="$uri" line="632">
+            <type by_reference="false">string</type>
           </tag>
-          <tag name="param" description="The HTTP status code to redirect with; default is `303`." type="\int|\string" variable="$code" line="632">
-            <type by_reference="false">\int</type>
-            <type by_reference="false">\string</type>
+          <tag name="param" description="The HTTP status code to redirect with; default is `303`." type="int|string" variable="$code" line="632">
+            <type by_reference="false">int</type>
+            <type by_reference="false">string</type>
           </tag>
-          <tag name="param" description="The HTTP status text; default is `&amp;#039;See Other&amp;#039;`." type="\string" variable="$text" line="632">
-            <type by_reference="false">\string</type>
+          <tag name="param" description="The HTTP status text; default is `'See Other'`." type="string" variable="$text" line="632">
+            <type by_reference="false">string</type>
           </tag>
-          <tag name="return" description="" type="\void" line="632">
-            <type by_reference="false">\void</type>
+          <tag name="return" description="" type="void" line="632">
+            <type by_reference="false">void</type>
           </tag>
         </docblock>
         <argument line="647">
@@ -1934,8 +829,8 @@ a status code and status text, *and* sets caching to false.</description>
           <description>Is the response set to issue a redirect?</description>
           <long-description>
 </long-description>
-          <tag name="return" description="" type="\bool" line="653">
-            <type by_reference="false">\bool</type>
+          <tag name="return" description="" type="bool" line="653">
+            <type by_reference="false">bool</type>
           </tag>
         </docblock>
       </method>
@@ -1945,8 +840,8 @@ a status code and status text, *and* sets caching to false.</description>
           <description>Returns the redirect location, if any.</description>
           <long-description>
 </long-description>
-          <tag name="return" description="" type="\string" line="665">
-            <type by_reference="false">\string</type>
+          <tag name="return" description="" type="string" line="665">
+            <type by_reference="false">string</type>
           </tag>
         </docblock>
       </method>
@@ -1956,8 +851,8 @@ a status code and status text, *and* sets caching to false.</description>
           <description>Sets the HTTP status code to for the response.</description>
           <long-description>&lt;p&gt;Automatically resets the status text to null.&lt;/p&gt;
 </long-description>
-          <tag name="param" description="An HTTP status code, such as 200, 302, 404, etc." type="\int" variable="$code" line="677">
-            <type by_reference="false">\int</type>
+          <tag name="param" description="An HTTP status code, such as 200, 302, 404, etc." type="int" variable="$code" line="677">
+            <type by_reference="false">int</type>
           </tag>
         </docblock>
         <argument line="686">
@@ -1972,8 +867,8 @@ a status code and status text, *and* sets caching to false.</description>
           <description>Returns the HTTP status code for the response.</description>
           <long-description>
 </long-description>
-          <tag name="return" description="" type="\int" line="697">
-            <type by_reference="false">\int</type>
+          <tag name="return" description="" type="int" line="697">
+            <type by_reference="false">int</type>
           </tag>
         </docblock>
       </method>
@@ -1983,11 +878,11 @@ a status code and status text, *and* sets caching to false.</description>
           <description>Sets the HTTP status text for the response.</description>
           <long-description>
 </long-description>
-          <tag name="param" description="The status text." type="\string" variable="$text" line="709">
-            <type by_reference="false">\string</type>
+          <tag name="param" description="The status text." type="string" variable="$text" line="709">
+            <type by_reference="false">string</type>
           </tag>
-          <tag name="return" description="" type="\void" line="709">
-            <type by_reference="false">\void</type>
+          <tag name="return" description="" type="void" line="709">
+            <type by_reference="false">void</type>
           </tag>
         </docblock>
         <argument line="718">
@@ -2002,8 +897,8 @@ a status code and status text, *and* sets caching to false.</description>
           <description>Returns the HTTP status text for the response.</description>
           <long-description>
 </long-description>
-          <tag name="return" description="" type="\string" line="725">
-            <type by_reference="false">\string</type>
+          <tag name="return" description="" type="string" line="725">
+            <type by_reference="false">string</type>
           </tag>
         </docblock>
       </method>
@@ -2013,11 +908,11 @@ a status code and status text, *and* sets caching to false.</description>
           <description>Sets the HTTP version for the response to '1.0' or '1.1'.</description>
           <long-description>
 </long-description>
-          <tag name="param" description="The HTTP version to use for this response." type="\string" variable="$version" line="737">
-            <type by_reference="false">\string</type>
+          <tag name="param" description="The HTTP version to use for this response." type="string" variable="$version" line="737">
+            <type by_reference="false">string</type>
           </tag>
-          <tag name="return" description="" type="\void" line="737">
-            <type by_reference="false">\void</type>
+          <tag name="return" description="" type="void" line="737">
+            <type by_reference="false">void</type>
           </tag>
         </docblock>
         <argument line="746">
@@ -2032,8 +927,8 @@ a status code and status text, *and* sets caching to false.</description>
           <description>Returns the HTTP version for the response.</description>
           <long-description>
 </long-description>
-          <tag name="return" description="" type="\string" line="756">
-            <type by_reference="false">\string</type>
+          <tag name="return" description="" type="string" line="756">
+            <type by_reference="false">string</type>
           </tag>
         </docblock>
       </method>
@@ -2043,11 +938,11 @@ a status code and status text, *and* sets caching to false.</description>
           <description>Sets the inner view template for a two-step view.</description>
           <long-description>
 </long-description>
-          <tag name="param" description="The inner view template." type="\mixed" variable="$view" line="768">
-            <type by_reference="false">\mixed</type>
+          <tag name="param" description="The inner view template." type="mixed" variable="$view" line="768">
+            <type by_reference="false">mixed</type>
           </tag>
-          <tag name="return" description="" type="\void" line="768">
-            <type by_reference="false">\void</type>
+          <tag name="return" description="" type="void" line="768">
+            <type by_reference="false">void</type>
           </tag>
         </docblock>
         <argument line="777">
@@ -2062,8 +957,8 @@ a status code and status text, *and* sets caching to false.</description>
           <description>Returns the inner view template for a two-step view.</description>
           <long-description>
 </long-description>
-          <tag name="return" description="The inner view template." type="\mixed" line="782">
-            <type by_reference="false">\mixed</type>
+          <tag name="return" description="The inner view template." type="mixed" line="782">
+            <type by_reference="false">mixed</type>
           </tag>
         </docblock>
       </method>
@@ -2073,11 +968,11 @@ a status code and status text, *and* sets caching to false.</description>
           <description>Sets the data for the inner view template.</description>
           <long-description>
 </long-description>
-          <tag name="param" description="The inner view template data." type="\array" variable="$view_data" line="794">
-            <type by_reference="false">\array</type>
+          <tag name="param" description="The inner view template data." type="array" variable="$view_data" line="794">
+            <type by_reference="false">array</type>
           </tag>
-          <tag name="return" description="" type="\void" line="794">
-            <type by_reference="false">\void</type>
+          <tag name="return" description="" type="void" line="794">
+            <type by_reference="false">void</type>
           </tag>
         </docblock>
         <argument line="803">
@@ -2092,8 +987,8 @@ a status code and status text, *and* sets caching to false.</description>
           <description>Returns the data for the inner view template.</description>
           <long-description>
 </long-description>
-          <tag name="return" description="The inner view template data." type="\array" line="808">
-            <type by_reference="false">\array</type>
+          <tag name="return" description="The inner view template data." type="array" line="808">
+            <type by_reference="false">array</type>
           </tag>
         </docblock>
       </method>
@@ -2103,11 +998,11 @@ a status code and status text, *and* sets caching to false.</description>
           <description>Adds a class name and subdirectory for the inner view template finder.</description>
           <long-description>
 </long-description>
-          <tag name="param" description="The inner view template finder stack." type="\array" variable="$view_stack" line="820">
-            <type by_reference="false">\array</type>
+          <tag name="param" description="The inner view template finder stack." type="array" variable="$view_stack" line="820">
+            <type by_reference="false">array</type>
           </tag>
-          <tag name="return" description="" type="\void" line="820">
-            <type by_reference="false">\void</type>
+          <tag name="return" description="" type="void" line="820">
+            <type by_reference="false">void</type>
           </tag>
         </docblock>
         <argument line="829">
@@ -2127,8 +1022,8 @@ a status code and status text, *and* sets caching to false.</description>
           <description>Returns the stack for the inner view template finder.</description>
           <long-description>
 </long-description>
-          <tag name="return" description="The inner view template finder stack." type="\array" line="835">
-            <type by_reference="false">\array</type>
+          <tag name="return" description="The inner view template finder stack." type="array" line="835">
+            <type by_reference="false">array</type>
           </tag>
         </docblock>
       </method>
@@ -2138,11 +1033,11 @@ a status code and status text, *and* sets caching to false.</description>
           <description>Sets the outer layout template for a two-step layout.</description>
           <long-description>
 </long-description>
-          <tag name="param" description="The outer layout template." type="\mixed" variable="$layout" line="847">
-            <type by_reference="false">\mixed</type>
+          <tag name="param" description="The outer layout template." type="mixed" variable="$layout" line="847">
+            <type by_reference="false">mixed</type>
           </tag>
-          <tag name="return" description="" type="\void" line="847">
-            <type by_reference="false">\void</type>
+          <tag name="return" description="" type="void" line="847">
+            <type by_reference="false">void</type>
           </tag>
         </docblock>
         <argument line="856">
@@ -2157,8 +1052,8 @@ a status code and status text, *and* sets caching to false.</description>
           <description>Returns the outer layout template for a two-step layout.</description>
           <long-description>
 </long-description>
-          <tag name="return" description="The outer layout template." type="\mixed" line="861">
-            <type by_reference="false">\mixed</type>
+          <tag name="return" description="The outer layout template." type="mixed" line="861">
+            <type by_reference="false">mixed</type>
           </tag>
         </docblock>
       </method>
@@ -2168,11 +1063,11 @@ a status code and status text, *and* sets caching to false.</description>
           <description>Sets the data for the outer layout template.</description>
           <long-description>
 </long-description>
-          <tag name="param" description="The outer layout template data." type="\array" variable="$layout_data" line="873">
-            <type by_reference="false">\array</type>
+          <tag name="param" description="The outer layout template data." type="array" variable="$layout_data" line="873">
+            <type by_reference="false">array</type>
           </tag>
-          <tag name="return" description="" type="\void" line="873">
-            <type by_reference="false">\void</type>
+          <tag name="return" description="" type="void" line="873">
+            <type by_reference="false">void</type>
           </tag>
         </docblock>
         <argument line="882">
@@ -2187,8 +1082,8 @@ a status code and status text, *and* sets caching to false.</description>
           <description>Returns the data for the outer layout template.</description>
           <long-description>
 </long-description>
-          <tag name="return" description="The outer layout template data." type="\array" line="887">
-            <type by_reference="false">\array</type>
+          <tag name="return" description="The outer layout template data." type="array" line="887">
+            <type by_reference="false">array</type>
           </tag>
         </docblock>
       </method>
@@ -2198,11 +1093,11 @@ a status code and status text, *and* sets caching to false.</description>
           <description>Adds a class name and subdirectory for the outer layout template finder.</description>
           <long-description>
 </long-description>
-          <tag name="param" description="The outer layout template finder stack." type="\array" variable="$layout_stack" line="899">
-            <type by_reference="false">\array</type>
+          <tag name="param" description="The outer layout template finder stack." type="array" variable="$layout_stack" line="899">
+            <type by_reference="false">array</type>
           </tag>
-          <tag name="return" description="" type="\void" line="899">
-            <type by_reference="false">\void</type>
+          <tag name="return" description="" type="void" line="899">
+            <type by_reference="false">void</type>
           </tag>
         </docblock>
         <argument line="908">
@@ -2222,8 +1117,8 @@ a status code and status text, *and* sets caching to false.</description>
           <description>Returns the stack for the outer layout template finder.</description>
           <long-description>
 </long-description>
-          <tag name="return" description="The outer layout template finder stack." type="\array" line="914">
-            <type by_reference="false">\array</type>
+          <tag name="return" description="The outer layout template finder stack." type="array" line="914">
+            <type by_reference="false">array</type>
           </tag>
         </docblock>
       </method>
@@ -2244,11 +1139,11 @@ a status code and status text, *and* sets caching to false.</description>
           <description>Sets the output format extension.</description>
           <long-description>
 </long-description>
-          <tag name="param" description="" type="\string" variable="$format" line="936">
-            <type by_reference="false">\string</type>
+          <tag name="param" description="" type="string" variable="$format" line="936">
+            <type by_reference="false">string</type>
           </tag>
-          <tag name="return" description="" type="\void" line="936">
-            <type by_reference="false">\void</type>
+          <tag name="return" description="" type="void" line="936">
+            <type by_reference="false">void</type>
           </tag>
         </docblock>
         <argument line="945">
@@ -2263,8 +1158,8 @@ a status code and status text, *and* sets caching to false.</description>
           <description>Returns the output format extension.</description>
           <long-description>
 </long-description>
-          <tag name="return" description="" type="\string" line="950">
-            <type by_reference="false">\string</type>
+          <tag name="return" description="" type="string" line="950">
+            <type by_reference="false">string</type>
           </tag>
         </docblock>
       </method>
@@ -2276,11 +1171,11 @@ an array of acceptable types against the format extension, then
 against the view type map, and finally against the layout type map.</description>
           <long-description>
 </long-description>
-          <tag name="param" description="An array of acceptable types." type="\array" variable="$accept" line="962">
-            <type by_reference="false">\array</type>
+          <tag name="param" description="An array of acceptable types." type="array" variable="$accept" line="962">
+            <type by_reference="false">array</type>
           </tag>
-          <tag name="return" description="" type="\void" line="962">
-            <type by_reference="false">\void</type>
+          <tag name="return" description="" type="void" line="962">
+            <type by_reference="false">void</type>
           </tag>
         </docblock>
         <argument line="973">
@@ -2296,8 +1191,8 @@ against the view type map, and finally against the layout type map.</description
 matching view specification.</description>
           <long-description>
 </long-description>
-          <tag name="return" description="" type="\string" line="1012">
-            <type by_reference="false">\string</type>
+          <tag name="return" description="" type="string" line="1012">
+            <type by_reference="false">string</type>
           </tag>
         </docblock>
       </method>
@@ -2308,8 +1203,8 @@ matching view specification.</description>
 matching layout specification.</description>
           <long-description>
 </long-description>
-          <tag name="return" description="" type="\string" line="1030">
-            <type by_reference="false">\string</type>
+          <tag name="return" description="" type="string" line="1030">
+            <type by_reference="false">string</type>
           </tag>
         </docblock>
       </method>
@@ -2319,11 +1214,11 @@ matching layout specification.</description>
           <description>Support method for matching views and layouts.</description>
           <long-description>
 </long-description>
-          <tag name="param" description="The $view or $layout specification." type="\mixed" variable="$spec" line="1048">
-            <type by_reference="false">\mixed</type>
+          <tag name="param" description="The $view or $layout specification." type="mixed" variable="$spec" line="1048">
+            <type by_reference="false">mixed</type>
           </tag>
-          <tag name="return" description="The matching view or layout." type="\mixed" line="1048">
-            <type by_reference="false">\mixed</type>
+          <tag name="return" description="The matching view or layout." type="mixed" line="1048">
+            <type by_reference="false">mixed</type>
           </tag>
         </docblock>
         <argument line="1057">
@@ -2338,11 +1233,11 @@ matching layout specification.</description>
           <description>Normalizes and sanitizes a header label.</description>
           <long-description>
 </long-description>
-          <tag name="param" description="The header label to be sanitized." type="\string" variable="$label" line="1091">
-            <type by_reference="false">\string</type>
+          <tag name="param" description="The header label to be sanitized." type="string" variable="$label" line="1091">
+            <type by_reference="false">string</type>
           </tag>
-          <tag name="return" description="The sanitized header label." type="\string" line="1091">
-            <type by_reference="false">\string</type>
+          <tag name="return" description="The sanitized header label." type="string" line="1091">
+            <type by_reference="false">string</type>
           </tag>
         </docblock>
         <argument line="1100">
@@ -2357,15 +1252,1148 @@ matching layout specification.</description>
           <description>Sanitizes a header value.</description>
           <long-description>
 </long-description>
-          <tag name="param" description="The header value to be sanitized." type="\string" variable="$label" line="1108">
-            <type by_reference="false">\string</type>
+          <tag name="param" description="The header value to be sanitized." type="string" variable="$label" line="1108">
+            <type by_reference="false">string</type>
           </tag>
-          <tag name="return" description="The sanitized header value." type="\string" line="1108">
-            <type by_reference="false">\string</type>
+          <tag name="return" description="The sanitized header value." type="string" line="1108">
+            <type by_reference="false">string</type>
           </tag>
         </docblock>
         <argument line="1117">
           <name>$value</name>
+          <default/>
+          <type/>
+        </argument>
+      </method>
+    </class>
+  </file>
+  <file path="src/Page.php" hash="50f4fc846f5748e3d6f9491fd83b9a03">
+    <namespace-alias name="SignalManager">Aura\Signal\Manager</namespace-alias>
+    <class final="false" abstract="true" line="35" namespace="Aura\Web">
+      <name>Page</name>
+      <extends/>
+      <full_name>\Aura\Web\Page</full_name>
+      <docblock>
+        <description>A page controller.</description>
+        <long-description>&lt;p&gt;public function actionBrowse()
+     {
+         // blah blah blah&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;     // now set the view
+     $this-&amp;gt;response-&amp;gt;view = array(
+         'text/html' =&amp;gt; 'index',
+         // closure always takes one param, the response transfer object
+         'application/json' =&amp;gt; function($response) {
+             $response-&amp;gt;layout = null;
+             return json_encode($response-&amp;gt;view_data-&amp;gt;list);
+         },
+         'application/xml' =&amp;gt; 'default.xml',
+     );
+ }
+&lt;/code&gt;&lt;/pre&gt;
+</long-description>
+        <tag name="package" description="Aura.Web" line="12"/>
+      </docblock>
+      <property final="false" static="false" visibility="protected" line="44">
+        <name>$context</name>
+        <default/>
+        <docblock>
+          <description>The context of the request environment.</description>
+          <long-description>
+</long-description>
+          <tag name="var" description="" type="\Aura\Web\Context" line="37">
+            <type by_reference="false">\Aura\Web\Context</type>
+          </tag>
+        </docblock>
+      </property>
+      <property final="false" static="false" visibility="protected" line="53">
+        <name>$router</name>
+        <default/>
+        <docblock>
+          <description>A router for generating URIs.</description>
+          <long-description>
+</long-description>
+          <tag name="var" description="" type="object" line="46">
+            <type by_reference="false">object</type>
+          </tag>
+        </docblock>
+      </property>
+      <property final="false" static="false" visibility="protected" line="62">
+        <name>$response</name>
+        <default/>
+        <docblock>
+          <description>A data transfer object for the eventual HTTP response.</description>
+          <long-description>
+</long-description>
+          <tag name="var" description="" type="\Aura\Web\ResponseTransfer" line="55">
+            <type by_reference="false">\Aura\Web\ResponseTransfer</type>
+          </tag>
+        </docblock>
+      </property>
+      <property final="false" static="false" visibility="protected" line="71">
+        <name>$signal</name>
+        <default/>
+        <docblock>
+          <description>A signal manager.</description>
+          <long-description>
+</long-description>
+          <tag name="var" description="" type="\Aura\Signal\Manager" line="64">
+            <type by_reference="false">\Aura\Signal\Manager</type>
+          </tag>
+        </docblock>
+      </property>
+      <property final="false" static="false" visibility="protected" line="80">
+        <name>$params</name>
+        <default/>
+        <docblock>
+          <description>Path-info parameters from the route.</description>
+          <long-description>
+</long-description>
+          <tag name="var" description="" type="\ArrayObject" line="73">
+            <type by_reference="false">\ArrayObject</type>
+          </tag>
+        </docblock>
+      </property>
+      <property final="false" static="false" visibility="protected" line="89">
+        <name>$action</name>
+        <default/>
+        <docblock>
+          <description>The action to perform.</description>
+          <long-description>
+</long-description>
+          <tag name="var" description="" type="string" line="82">
+            <type by_reference="false">string</type>
+          </tag>
+        </docblock>
+      </property>
+      <property final="false" static="false" visibility="protected" line="99">
+        <name>$skip_action</name>
+        <default>false</default>
+        <docblock>
+          <description>When set to `true` before `action()` is called, the `action()` will not
+be called after all.</description>
+          <long-description>
+</long-description>
+          <tag name="var" description="" type="bool" line="91">
+            <type by_reference="false">bool</type>
+          </tag>
+        </docblock>
+      </property>
+      <method final="false" abstract="false" static="false" visibility="public" line="108">
+        <name>__construct</name>
+        <docblock>
+          <description>Constructor.</description>
+          <long-description>
+</long-description>
+          <tag name="param" description="The request environment." type="\Aura\Web\Context" variable="$context" line="101">
+            <type by_reference="false">\Aura\Web\Context</type>
+          </tag>
+        </docblock>
+        <argument line="109">
+          <name>$context</name>
+          <default/>
+          <type>Context</type>
+        </argument>
+        <argument line="110">
+          <name>$signal</name>
+          <default/>
+          <type>SignalManager</type>
+        </argument>
+        <argument line="111">
+          <name>$response</name>
+          <default/>
+          <type>ResponseTransfer</type>
+        </argument>
+        <argument line="112">
+          <name>$params</name>
+          <default>array</default>
+          <type>array</type>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" line="155">
+        <name>setRouter</name>
+        <docblock>
+          <description>Sets the router object.</description>
+          <long-description>
+</long-description>
+          <tag name="param" description="The router object for generating URIs." type="object" variable="$router" line="148">
+            <type by_reference="false">object</type>
+          </tag>
+        </docblock>
+        <argument line="155">
+          <name>$router</name>
+          <default/>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" line="187">
+        <name>exec</name>
+        <docblock>
+          <description>Executes the Page action.  In order, it does these things:</description>
+          <long-description>&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;signals &lt;code&gt;'pre_exec'&lt;/code&gt;&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;is the action is not to be skipped ...&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;signals &lt;code&gt;'pre_action'&lt;/code&gt;&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;calls &lt;code&gt;invokeMethod()&lt;/code&gt; to run the action&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;signals &lt;code&gt;'post_action'&lt;/code&gt;&lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;signals &lt;code&gt;'post_exec'&lt;/code&gt;&lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</long-description>
+          <tag name="signal" description="'pre_exec'" line="160"/>
+          <tag name="signal" description="'pre_action'" line="160"/>
+          <tag name="signal" description="'post_action'" line="160"/>
+          <tag name="signal" description="'post_exec'" line="160"/>
+          <tag name="return" description="" type="void" line="160">
+            <type by_reference="false">void</type>
+          </tag>
+        </docblock>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" line="212">
+        <name>skipAction</name>
+        <docblock>
+          <description>Stops `exec()` from calling `action()` if it has not already done so.</description>
+          <long-description>
+</long-description>
+          <tag name="return" description="" type="void" line="205">
+            <type by_reference="false">void</type>
+          </tag>
+        </docblock>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" line="224">
+        <name>isSkipAction</name>
+        <docblock>
+          <description>Should the call to `action()` be skipped?</description>
+          <long-description>
+</long-description>
+          <tag name="return" description="" type="bool" line="217">
+            <type by_reference="false">bool</type>
+          </tag>
+        </docblock>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" line="236">
+        <name>preExec</name>
+        <docblock>
+          <description>Runs before `action()` as part of the `'pre_exec'` signal.</description>
+          <long-description>
+</long-description>
+          <tag name="return" description="" type="mixed" line="229">
+            <type by_reference="false">mixed</type>
+          </tag>
+        </docblock>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" line="247">
+        <name>preAction</name>
+        <docblock>
+          <description>Runs before `action()` as part of the `'pre_action'` signal.</description>
+          <long-description>
+</long-description>
+          <tag name="return" description="" type="mixed" line="240">
+            <type by_reference="false">mixed</type>
+          </tag>
+        </docblock>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" line="258">
+        <name>postAction</name>
+        <docblock>
+          <description>Runs after `action()` as part of the `'post_action'` signal.</description>
+          <long-description>
+</long-description>
+          <tag name="return" description="" type="mixed" line="251">
+            <type by_reference="false">mixed</type>
+          </tag>
+        </docblock>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" line="269">
+        <name>postExec</name>
+        <docblock>
+          <description>Runs after `action()` as part of the `'post_exec'` signal.</description>
+          <long-description>
+</long-description>
+          <tag name="return" description="" type="mixed" line="262">
+            <type by_reference="false">mixed</type>
+          </tag>
+        </docblock>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="protected" line="282">
+        <name>invokeMethod</name>
+        <docblock>
+          <description>Invokes a method by name, matching method params to `$this-&gt;params`.</description>
+          <long-description>
+</long-description>
+          <tag name="param" description="The method name to execute, typcially an action." type="string" variable="$name" line="273">
+            <type by_reference="false">string</type>
+          </tag>
+          <tag name="return" description="The return from the executed method." type="mixed" line="273">
+            <type by_reference="false">mixed</type>
+          </tag>
+        </docblock>
+        <argument line="282">
+          <name>$name</name>
+          <default/>
+          <type/>
+        </argument>
+      </method>
+    </class>
+  </file>
+  <file path="src/Context.php" hash="8e3726f49e6a73eaabb6fd0a970e764a">
+    <class final="false" abstract="false" line="18" namespace="Aura\Web">
+      <name>Context</name>
+      <extends/>
+      <full_name>\Aura\Web\Context</full_name>
+      <docblock>
+        <description>Collection point for information about the web environment.</description>
+        <long-description>
+</long-description>
+        <tag name="package" description="Aura.Web" line="11"/>
+      </docblock>
+      <property final="false" static="false" visibility="protected" line="27">
+        <name>$get</name>
+        <default/>
+        <docblock>
+          <description>Imported $_GET values.</description>
+          <long-description>
+</long-description>
+          <tag name="var" description="" type="array" line="20">
+            <type by_reference="false">array</type>
+          </tag>
+        </docblock>
+      </property>
+      <property final="false" static="false" visibility="protected" line="36">
+        <name>$post</name>
+        <default/>
+        <docblock>
+          <description>Imported $_POST values.</description>
+          <long-description>
+</long-description>
+          <tag name="var" description="" type="array" line="29">
+            <type by_reference="false">array</type>
+          </tag>
+        </docblock>
+      </property>
+      <property final="false" static="false" visibility="protected" line="45">
+        <name>$server</name>
+        <default/>
+        <docblock>
+          <description>Imported $_SERVER values.</description>
+          <long-description>
+</long-description>
+          <tag name="var" description="" type="array" line="38">
+            <type by_reference="false">array</type>
+          </tag>
+        </docblock>
+      </property>
+      <property final="false" static="false" visibility="protected" line="54">
+        <name>$cookie</name>
+        <default/>
+        <docblock>
+          <description>Imported $_COOKIE values.</description>
+          <long-description>
+</long-description>
+          <tag name="var" description="" type="array" line="47">
+            <type by_reference="false">array</type>
+          </tag>
+        </docblock>
+      </property>
+      <property final="false" static="false" visibility="protected" line="63">
+        <name>$env</name>
+        <default/>
+        <docblock>
+          <description>Imported $_ENV values.</description>
+          <long-description>
+</long-description>
+          <tag name="var" description="" type="array" line="56">
+            <type by_reference="false">array</type>
+          </tag>
+        </docblock>
+      </property>
+      <property final="false" static="false" visibility="protected" line="72">
+        <name>$files</name>
+        <default/>
+        <docblock>
+          <description>Imported $_FILES values.</description>
+          <long-description>
+</long-description>
+          <tag name="var" description="" type="array" line="65">
+            <type by_reference="false">array</type>
+          </tag>
+        </docblock>
+      </property>
+      <property final="false" static="false" visibility="protected" line="84">
+        <name>$header</name>
+        <default/>
+        <docblock>
+          <description>Imported $_SERVER['HTTP_*'] values.</description>
+          <long-description>&lt;p&gt;Header keys are normalized and lower-cased; keys and values are
+filtered for control characters.&lt;/p&gt;
+</long-description>
+          <tag name="var" description="" type="array" line="74">
+            <type by_reference="false">array</type>
+          </tag>
+        </docblock>
+      </property>
+      <property final="false" static="false" visibility="protected" line="94">
+        <name>$accept</name>
+        <default/>
+        <docblock>
+          <description>The parsed http[accept*] headers with each header sorted
+by the quality factor</description>
+          <long-description>
+</long-description>
+          <tag name="var" description="" type="array" line="86">
+            <type by_reference="false">array</type>
+          </tag>
+        </docblock>
+      </property>
+      <property final="false" static="false" visibility="protected" line="103">
+        <name>$raw_input</name>
+        <default>false</default>
+        <docblock>
+          <description>The value of `php://input`.</description>
+          <long-description>
+</long-description>
+          <tag name="var" description="" type="string" line="96">
+            <type by_reference="false">string</type>
+          </tag>
+        </docblock>
+      </property>
+      <property final="false" static="false" visibility="protected" line="112">
+        <name>$csrf</name>
+        <default/>
+        <docblock>
+          <description>A cross-site request forgery object.</description>
+          <long-description>
+</long-description>
+          <tag name="var" description="" type="\Aura\Web\Csrf" line="105">
+            <type by_reference="false">\Aura\Web\Csrf</type>
+          </tag>
+        </docblock>
+      </property>
+      <property final="false" static="false" visibility="protected" line="125">
+        <name>$agents</name>
+        <default>array</default>
+        <docblock>
+          <description>An array of http user-agents used in matching
+mobile browsers and crawlers</description>
+          <long-description>
+</long-description>
+          <tag name="see" description="\Aura\Web\isMobile()" refers="\Aura\Web\isMobile()" line="114"/>
+          <tag name="see" description="\Aura\Web\isCrawler()" refers="\Aura\Web\isCrawler()" line="114"/>
+          <tag name="var" description="" type="array" line="114">
+            <type by_reference="false">array</type>
+          </tag>
+        </docblock>
+      </property>
+      <property final="false" static="false" visibility="protected" line="199">
+        <name>$is_mobile</name>
+        <default/>
+        <docblock>
+          <description>A property to hold previous calls to isMobile()
+so you don't have to loop through $this-&gt;agents['mobile'] again.</description>
+          <long-description>
+</long-description>
+          <tag name="var" description="" type="mixed" line="191">
+            <type by_reference="false">mixed</type>
+          </tag>
+        </docblock>
+      </property>
+      <property final="false" static="false" visibility="protected" line="209">
+        <name>$is_crawler</name>
+        <default/>
+        <docblock>
+          <description>A property to hold previous calls to isCrawler()
+so you don't have to loop through $this-&gt;agents['crawler'] again.</description>
+          <long-description>
+</long-description>
+          <tag name="var" description="" type="mixed" line="201">
+            <type by_reference="false">mixed</type>
+          </tag>
+        </docblock>
+      </property>
+      <method final="false" abstract="false" static="false" visibility="public" line="216">
+        <name>__construct</name>
+        <docblock>
+          <description>Constructor.</description>
+          <long-description>
+</long-description>
+        </docblock>
+        <argument line="216">
+          <name>$globals</name>
+          <default/>
+          <type>array</type>
+        </argument>
+        <argument line="216">
+          <name>$csrf</name>
+          <default>null</default>
+          <type>Csrf</type>
+        </argument>
+        <argument line="216">
+          <name>$agents</name>
+          <default>null</default>
+          <type>array</type>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" line="244">
+        <name>__get</name>
+        <docblock>
+          <description>Magic get to make properties read-only.</description>
+          <long-description>
+</long-description>
+          <tag name="param" description="The property to read." type="string" variable="$key" line="235">
+            <type by_reference="false">string</type>
+          </tag>
+          <tag name="return" description="The property value." type="mixed" line="235">
+            <type by_reference="false">mixed</type>
+          </tag>
+        </docblock>
+        <argument line="244">
+          <name>$key</name>
+          <default/>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" line="264">
+        <name>isGet</name>
+        <docblock>
+          <description>Is this a GET request?</description>
+          <long-description>
+</long-description>
+          <tag name="return" description="" type="boolean" line="257">
+            <type by_reference="false">boolean</type>
+          </tag>
+        </docblock>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" line="276">
+        <name>isPost</name>
+        <docblock>
+          <description>Is this a POST request?</description>
+          <long-description>
+</long-description>
+          <tag name="return" description="" type="boolean" line="269">
+            <type by_reference="false">boolean</type>
+          </tag>
+        </docblock>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" line="288">
+        <name>isPut</name>
+        <docblock>
+          <description>Is this a PUT request?</description>
+          <long-description>
+</long-description>
+          <tag name="return" description="" type="boolean" line="281">
+            <type by_reference="false">boolean</type>
+          </tag>
+        </docblock>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" line="300">
+        <name>isDelete</name>
+        <docblock>
+          <description>Is this a DELETE request?</description>
+          <long-description>
+</long-description>
+          <tag name="return" description="" type="boolean" line="293">
+            <type by_reference="false">boolean</type>
+          </tag>
+        </docblock>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" line="312">
+        <name>isHead</name>
+        <docblock>
+          <description>Is this a HEAD request?</description>
+          <long-description>
+</long-description>
+          <tag name="return" description="" type="boolean" line="305">
+            <type by_reference="false">boolean</type>
+          </tag>
+        </docblock>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" line="324">
+        <name>isOptions</name>
+        <docblock>
+          <description>Is this an OPTIONS request?</description>
+          <long-description>
+</long-description>
+          <tag name="return" description="" type="boolean" line="317">
+            <type by_reference="false">boolean</type>
+          </tag>
+        </docblock>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" line="336">
+        <name>isXhr</name>
+        <docblock>
+          <description>Is this an XmlHttpRequest?</description>
+          <long-description>
+</long-description>
+          <tag name="return" description="" type="boolean" line="329">
+            <type by_reference="false">boolean</type>
+          </tag>
+        </docblock>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" line="348">
+        <name>isMobile</name>
+        <docblock>
+          <description>Is this a mobile device?</description>
+          <long-description>
+</long-description>
+          <tag name="return" description="False if not mobile, or the matched pattern if it is." type="mixed" line="341">
+            <type by_reference="false">mixed</type>
+          </tag>
+        </docblock>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" line="383">
+        <name>isCrawler</name>
+        <docblock>
+          <description>Is this a crawler/bot device?</description>
+          <long-description>
+</long-description>
+          <tag name="return" description="False if not a crawler, or the matched pattern if it is." type="mixed" line="376">
+            <type by_reference="false">mixed</type>
+          </tag>
+        </docblock>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" line="424">
+        <name>isCsrf</name>
+        <docblock>
+          <description>Is the current request a cross-site forgery?</description>
+          <long-description>&lt;p&gt;Note: if the key does not exist this method will return true.&lt;/p&gt;
+</long-description>
+          <tag name="throws" description="If a CSRF library has not been provided." type="\Aura\Web\Exception\Context" line="411">
+            <type by_reference="false">\Aura\Web\Exception\Context</type>
+          </tag>
+          <tag name="param" description="The name of the $_POST key containing the CSRF token." type="string" variable="$key" line="411">
+            <type by_reference="false">string</type>
+          </tag>
+          <tag name="return" description="" type="bool" line="411">
+            <type by_reference="false">bool</type>
+          </tag>
+        </docblock>
+        <argument line="424">
+          <name>$key</name>
+          <default>__csrf_token</default>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" line="447">
+        <name>isSsl</name>
+        <docblock>
+          <description>Is this an SSL request?</description>
+          <long-description>
+</long-description>
+          <tag name="return" description="" type="boolean" line="440">
+            <type by_reference="false">boolean</type>
+          </tag>
+        </docblock>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" line="466">
+        <name>getQuery</name>
+        <docblock>
+          <description>Retrieves an **unfiltered** value by key from the `$get` property,
+or an alternate default value if that key does not exist.</description>
+          <long-description>
+</long-description>
+          <tag name="param" description="The $get key to retrieve the value of." type="string" variable="$key" line="453">
+            <type by_reference="false">string</type>
+          </tag>
+          <tag name="param" description="The value to return if the key does not exist." type="string" variable="$alt" line="453">
+            <type by_reference="false">string</type>
+          </tag>
+          <tag name="return" description="The value of $get[$key], or the alternate default value." type="mixed" line="453">
+            <type by_reference="false">mixed</type>
+          </tag>
+        </docblock>
+        <argument line="466">
+          <name>$key</name>
+          <default>null</default>
+          <type/>
+        </argument>
+        <argument line="466">
+          <name>$alt</name>
+          <default>null</default>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" line="484">
+        <name>getCookie</name>
+        <docblock>
+          <description>Retrieves an **unfiltered** value by key from the `$cookie` property,
+or an alternate default value if that key does not exist.</description>
+          <long-description>
+</long-description>
+          <tag name="param" description="The $cookie key to retrieve the value of." type="string" variable="$key" line="471">
+            <type by_reference="false">string</type>
+          </tag>
+          <tag name="param" description="The value to return if the key does not exist." type="string" variable="$alt" line="471">
+            <type by_reference="false">string</type>
+          </tag>
+          <tag name="param" description="The value of $cookie[$key], or the alternate default value." type="bool" variable="" line="471">
+            <type by_reference="false">bool</type>
+          </tag>
+        </docblock>
+        <argument line="484">
+          <name>$key</name>
+          <default>null</default>
+          <type/>
+        </argument>
+        <argument line="484">
+          <name>$alt</name>
+          <default>null</default>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" line="502">
+        <name>getEnv</name>
+        <docblock>
+          <description>Retrieves an **unfiltered** value by key from the `$env` property,
+or an alternate default value if that key does not exist.</description>
+          <long-description>
+</long-description>
+          <tag name="param" description="The $env key to retrieve the value of." type="string" variable="$key" line="489">
+            <type by_reference="false">string</type>
+          </tag>
+          <tag name="param" description="The value to return if the key does not exist." type="string" variable="$alt" line="489">
+            <type by_reference="false">string</type>
+          </tag>
+          <tag name="return" description="The value of $env[$key], or the alternate default value." type="mixed" line="489">
+            <type by_reference="false">mixed</type>
+          </tag>
+        </docblock>
+        <argument line="502">
+          <name>$key</name>
+          <default>null</default>
+          <type/>
+        </argument>
+        <argument line="502">
+          <name>$alt</name>
+          <default>null</default>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" line="520">
+        <name>getServer</name>
+        <docblock>
+          <description>Retrieves an **unfiltered** value by key from the `$server` property,
+or an alternate default value if that key does not exist.</description>
+          <long-description>
+</long-description>
+          <tag name="param" description="The $server key to retrieve the value of." type="string" variable="$key" line="507">
+            <type by_reference="false">string</type>
+          </tag>
+          <tag name="param" description="The value to return if the key does not exist." type="string" variable="$alt" line="507">
+            <type by_reference="false">string</type>
+          </tag>
+          <tag name="return" description="The value of $server[$key], or the alternate default value." type="mixed" line="507">
+            <type by_reference="false">mixed</type>
+          </tag>
+        </docblock>
+        <argument line="520">
+          <name>$key</name>
+          <default>null</default>
+          <type/>
+        </argument>
+        <argument line="520">
+          <name>$alt</name>
+          <default>null</default>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" line="546">
+        <name>getInput</name>
+        <docblock>
+          <description>Retrieves an **unfiltered** value from a user input.</description>
+          <long-description>&lt;p&gt;A value by key from the &lt;code&gt;$post&lt;/code&gt; &lt;em&gt;and&lt;/em&gt; &lt;code&gt;$files&lt;/code&gt; properties, or an
+alternate default value if that key does not exist in either location.
+Files takes precedence over post.&lt;/p&gt;
+
+&lt;p&gt;If the key is null and the content type isn't &lt;code&gt;multipart/form-data&lt;/code&gt; and
+&lt;code&gt;$post&lt;/code&gt; and &lt;code&gt;$files&lt;/code&gt; are empty, the raw data from the request body
+is returned.&lt;/p&gt;
+</long-description>
+          <tag name="param" description="The $post and $files key to retrieve the value of." type="string" variable="$key" line="525">
+            <type by_reference="false">string</type>
+          </tag>
+          <tag name="param" description="The value to return if the key does not exist in either $post or $files." type="string" variable="$alt" line="525">
+            <type by_reference="false">string</type>
+          </tag>
+          <tag name="return" description="The value of $post[$key] combined with $files[$key], or the raw request body, or the alternate default value." type="mixed" line="525">
+            <type by_reference="false">mixed</type>
+          </tag>
+        </docblock>
+        <argument line="546">
+          <name>$key</name>
+          <default>null</default>
+          <type/>
+        </argument>
+        <argument line="546">
+          <name>$alt</name>
+          <default>null</default>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" line="631">
+        <name>getHeader</name>
+        <docblock>
+          <description>Retrieves an **unfiltered** value by key from the `$header` property,
+or an alternate default value if that key does not exist.</description>
+          <long-description>
+</long-description>
+          <tag name="param" description="The $http key to retrieve the value of." type="string" variable="$key" line="618">
+            <type by_reference="false">string</type>
+          </tag>
+          <tag name="param" description="The value to return if the key does not exist." type="string" variable="$alt" line="618">
+            <type by_reference="false">string</type>
+          </tag>
+          <tag name="return" description="The value of $header[$key], or the alternate default value." type="mixed" line="618">
+            <type by_reference="false">mixed</type>
+          </tag>
+        </docblock>
+        <argument line="631">
+          <name>$key</name>
+          <default>null</default>
+          <type/>
+        </argument>
+        <argument line="631">
+          <name>$alt</name>
+          <default>null</default>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="protected" line="650">
+        <name>parseAccept</name>
+        <docblock>
+          <description>Parse an HTTP `Accept*` header and sort by the quality factor, the
+highest being first in the returned array. The returned data is
+unfiltered.</description>
+          <long-description>
+</long-description>
+          <tag name="param" description="The name of the accept header to parse." type="string" variable="$header" line="637">
+            <type by_reference="false">string</type>
+          </tag>
+          <tag name="param" description="The value to return if the key does not exist." type="mixed" variable="$alt" line="637">
+            <type by_reference="false">mixed</type>
+          </tag>
+          <tag name="return" description="" type="array" line="637">
+            <type by_reference="false">array</type>
+          </tag>
+        </docblock>
+        <argument line="650">
+          <name>$accept</name>
+          <default/>
+          <type/>
+        </argument>
+        <argument line="650">
+          <name>$alt</name>
+          <default>null</default>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" line="685">
+        <name>getAccept</name>
+        <docblock>
+          <description>Gets an `Accept` header.  If you want the content-type, ask for
+`'type'`; otherwise, if you want (e.g.) `'Accept-Language'`, ask for
+`'language'`.</description>
+          <long-description>
+</long-description>
+          <tag name="param" description="The `$accept` key to return; if null, returns the entire `$accept` property." type="string" variable="$key" line="671">
+            <type by_reference="false">string</type>
+          </tag>
+          <tag name="param" description="The value to return if the key does not exist." type="mixed" variable="$alt" line="671">
+            <type by_reference="false">mixed</type>
+          </tag>
+          <tag name="return" description="" type="array" line="671">
+            <type by_reference="false">array</type>
+          </tag>
+        </docblock>
+        <argument line="685">
+          <name>$key</name>
+          <default>null</default>
+          <type/>
+        </argument>
+        <argument line="685">
+          <name>$alt</name>
+          <default>null</default>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="protected" line="728">
+        <name>setHeader</name>
+        <docblock>
+          <description>Set the "fake" `$header` property.</description>
+          <long-description>
+</long-description>
+          <tag name="return" description="" type="void" line="721">
+            <type by_reference="false">void</type>
+          </tag>
+        </docblock>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="protected" line="766">
+        <name>httpMethodOverride</name>
+        <docblock>
+          <description>Overrides the REQUEST_METHOD with X-HTTP-Method-Override header or
+$_POST value.</description>
+          <long-description>
+</long-description>
+          <tag name="return" description="" type="void" line="758">
+            <type by_reference="false">void</type>
+          </tag>
+        </docblock>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="protected" line="803">
+        <name>rebuildFiles</name>
+        <docblock>
+          <description>Recursive method to rebuild $_FILES structure to be more like $_POST.</description>
+          <long-description>
+</long-description>
+          <tag name="param" description="The source $_FILES array, perhaps from a sub- element of that array/" type="array" variable="$src" line="790">
+            <type by_reference="false">array</type>
+          </tag>
+          <tag name="param" description="&amp;$tgt Where we will store the restructured data when we find it." type="array" variable="$tgt" line="790">
+            <type by_reference="false">array</type>
+          </tag>
+          <tag name="return" description="" type="void" line="790">
+            <type by_reference="false">void</type>
+          </tag>
+        </docblock>
+        <argument line="803">
+          <name>$src</name>
+          <default/>
+          <type/>
+        </argument>
+        <argument line="803">
+          <name>$tgt</name>
+          <default/>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="protected" line="858">
+        <name>getValue</name>
+        <docblock>
+          <description>Common method to get a property value and return it.</description>
+          <long-description>
+</long-description>
+          <tag name="param" description="The property variable to fetch from: get, post, etc." type="string" variable="$var" line="842">
+            <type by_reference="false">string</type>
+          </tag>
+          <tag name="param" description="The array key, if any, to get the value of." type="string" variable="$key" line="842">
+            <type by_reference="false">string</type>
+          </tag>
+          <tag name="param" description="The alternative default value to return if the requested key does not exist." type="string" variable="$alt" line="842">
+            <type by_reference="false">string</type>
+          </tag>
+          <tag name="return" description="The requested value, or the alternative default value." type="mixed" line="842">
+            <type by_reference="false">mixed</type>
+          </tag>
+        </docblock>
+        <argument line="858">
+          <name>$var</name>
+          <default/>
+          <type/>
+        </argument>
+        <argument line="858">
+          <name>$key</name>
+          <default/>
+          <type/>
+        </argument>
+        <argument line="858">
+          <name>$alt</name>
+          <default/>
+          <type/>
+        </argument>
+      </method>
+    </class>
+  </file>
+  <file path="src/Exception.php" hash="7bf57799f0bc7fc67cd847f0389f51d3">
+    <class final="false" abstract="false" line="10" namespace="Aura\Web">
+      <name>Exception</name>
+      <extends>\Exception</extends>
+      <full_name>\Aura\Web\Exception</full_name>
+    </class>
+  </file>
+  <file path="src/Csrf.php" hash="d01de7a2051c30e0dde9eef9a8ce91f4">
+    <class final="false" abstract="false" line="18" namespace="Aura\Web">
+      <name>Csrf</name>
+      <extends/>
+      <full_name>\Aura\Web\Csrf</full_name>
+      <docblock>
+        <description>Generate and validate CSRF tokens.</description>
+        <long-description>
+</long-description>
+        <tag name="package" description="Aura.Web" line="11"/>
+      </docblock>
+      <property final="false" static="false" visibility="protected" line="27">
+        <name>$secret_key</name>
+        <default/>
+        <docblock>
+          <description>Unique key for the project, application, or site.</description>
+          <long-description>
+</long-description>
+          <tag name="var" description="" type="string" line="20">
+            <type by_reference="false">string</type>
+          </tag>
+        </docblock>
+      </property>
+      <property final="false" static="false" visibility="protected" line="36">
+        <name>$user_key</name>
+        <default/>
+        <docblock>
+          <description>Unique key for the user (not a password!).</description>
+          <long-description>
+</long-description>
+          <tag name="var" description="" type="string" line="29">
+            <type by_reference="false">string</type>
+          </tag>
+        </docblock>
+      </property>
+      <property final="false" static="false" visibility="protected" line="45">
+        <name>$hash_algo</name>
+        <default/>
+        <docblock>
+          <description>The hash algorithm to use.</description>
+          <long-description>
+</long-description>
+          <tag name="var" description="" type="string" line="38">
+            <type by_reference="false">string</type>
+          </tag>
+        </docblock>
+      </property>
+      <property final="false" static="false" visibility="protected" line="54">
+        <name>$timeout</name>
+        <default/>
+        <docblock>
+          <description>The time, in seconds, before a token expires.</description>
+          <long-description>
+</long-description>
+          <tag name="var" description="" type="int" line="47">
+            <type by_reference="false">int</type>
+          </tag>
+        </docblock>
+      </property>
+      <method final="false" abstract="false" static="false" visibility="public" line="76">
+        <name>__construct</name>
+        <docblock>
+          <description>NOTE: Each project should have a unique and random $secret_key.</description>
+          <long-description>&lt;p&gt;The $user_key must be something unique to the user and does not change
+between requests. This allows the token to be linked to one user.
+The $user_key could be an email address or the primary key from the users
+table, anything unique to the user, except for passwords will do.&lt;/p&gt;
+</long-description>
+          <tag name="param" description="Project unique key." type="string" variable="$secret_key" line="56">
+            <type by_reference="false">string</type>
+          </tag>
+          <tag name="param" description="Unique key for a user; e.g., an email address." type="mixed" variable="$user_key" line="56">
+            <type by_reference="false">mixed</type>
+          </tag>
+          <tag name="param" description="In seconds. Default is 30 minutes." type="integer" variable="$timeout" line="56">
+            <type by_reference="false">integer</type>
+          </tag>
+          <tag name="param" description="Hashing algorithm for hash_hmac()." type="string" variable="$hash_algo" line="56">
+            <type by_reference="false">string</type>
+          </tag>
+          <tag name="todo" description="cli script to generate random keys" line="56"/>
+        </docblock>
+        <argument line="76">
+          <name>$secret_key</name>
+          <default/>
+          <type/>
+        </argument>
+        <argument line="76">
+          <name>$user_key</name>
+          <default/>
+          <type/>
+        </argument>
+        <argument line="76">
+          <name>$timeout</name>
+          <default>1800</default>
+          <type/>
+        </argument>
+        <argument line="76">
+          <name>$hash_algo</name>
+          <default>sha1</default>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" line="95">
+        <name>__get</name>
+        <docblock>
+          <description>Magic get to provide access to the hash_algo and timeout variables.</description>
+          <long-description>
+</long-description>
+          <tag name="throws" description="" type="\UnexpectedValueException" line="84">
+            <type by_reference="false">\UnexpectedValueException</type>
+          </tag>
+          <tag name="param" description="The property to retrieve: hash_algo &amp; timeout." type="string" variable="$key" line="84">
+            <type by_reference="false">string</type>
+          </tag>
+          <tag name="return" description="" type="mixed" line="84">
+            <type by_reference="false">mixed</type>
+          </tag>
+        </docblock>
+        <argument line="95">
+          <name>$key</name>
+          <default/>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" line="116">
+        <name>__set</name>
+        <docblock>
+          <description>Magic set to provide access to the secret_key, hash_algo and timeout
+variables.</description>
+          <long-description>
+</long-description>
+          <tag name="throws" description="" type="\UnexpectedValueException" line="104">
+            <type by_reference="false">\UnexpectedValueException</type>
+          </tag>
+          <tag name="param" description="The property to set: secret_key, hash_algo &amp; timeout." type="string" variable="$key" line="104">
+            <type by_reference="false">string</type>
+          </tag>
+          <tag name="return" description="" type="void" line="104">
+            <type by_reference="false">void</type>
+          </tag>
+        </docblock>
+        <argument line="116">
+          <name>$key</name>
+          <default/>
+          <type/>
+        </argument>
+        <argument line="116">
+          <name>$value</name>
+          <default/>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" line="133">
+        <name>generateToken</name>
+        <docblock>
+          <description>Generate a CSRF token.</description>
+          <long-description>
+</long-description>
+          <tag name="return" description="" type="string" line="126">
+            <type by_reference="false">string</type>
+          </tag>
+        </docblock>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" line="167">
+        <name>isValidToken</name>
+        <docblock>
+          <description>Test if a token is valid and has not timed out.</description>
+          <long-description>&lt;p&gt;If the incoming token is not propertly formated the exception
+aura\csrf\Exception\MalformedToken will be thrown.&lt;/p&gt;
+</long-description>
+          <tag name="throws" description="" type="\Aura\Web\Exception\MalformedToken" line="153">
+            <type by_reference="false">\Aura\Web\Exception\MalformedToken</type>
+          </tag>
+          <tag name="param" description="" type="string" variable="$incoming_token" line="153">
+            <type by_reference="false">string</type>
+          </tag>
+          <tag name="return" description="" type="boolean" line="153">
+            <type by_reference="false">boolean</type>
+          </tag>
+        </docblock>
+        <argument line="167">
+          <name>$incoming_token</name>
           <default/>
           <type/>
         </argument>

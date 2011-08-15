@@ -1,5 +1,537 @@
 <?xml version="1.0"?>
-<project version="0.11.2" title="Aura Project for PHP: Aura.Di">
+<project version="0.13.1" title="Aura Project for PHP: Aura.Di">
+  <file path="src/Manager.php" hash="b09c72e3d2e281d989b9996f9d2d46de">
+    <class final="false" abstract="false" line="19" namespace="Aura\Di">
+      <name>Manager</name>
+      <extends>\Aura\Di\Container</extends>
+      <full_name>\Aura\Di\Manager</full_name>
+      <docblock>
+        <description>Manager for multiple DI containers; the Manager is itself the main
+container, and it provides access to sub-containers.</description>
+        <long-description>
+</long-description>
+        <tag name="package" description="Aura.Di" line="11"/>
+      </docblock>
+      <property final="false" static="false" visibility="protected" line="28">
+        <name>$containers</name>
+        <default>array</default>
+        <docblock>
+          <description>Sub-container definitions.</description>
+          <long-description>
+</long-description>
+          <tag name="var" description="" type="array" line="21">
+            <type by_reference="false">array</type>
+          </tag>
+        </docblock>
+      </property>
+      <method final="false" abstract="false" static="false" visibility="public" line="38">
+        <name>lock</name>
+        <docblock>
+          <description>Locks the main container and all sub-containers; once locked, they
+cannot be unlocked.</description>
+          <long-description>
+</long-description>
+          <tag name="return" description="" type="void" line="30">
+            <type by_reference="false">void</type>
+          </tag>
+        </docblock>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" line="57">
+        <name>newContainer</name>
+        <docblock>
+          <description>Creates and retains a new sub-container.  The new container does not
+inherit configuration from the main container in any way; you will have
+to add params, setters, etc. on the new container.</description>
+          <long-description>
+</long-description>
+          <tag name="param" description="The sub-container name." type="string" variable="$name" line="46">
+            <type by_reference="false">string</type>
+          </tag>
+          <tag name="return" description="The new sub-container." type="\Aura\Di\Container" line="46">
+            <type by_reference="false">\Aura\Di\Container</type>
+          </tag>
+        </docblock>
+        <argument line="57">
+          <name>$name</name>
+          <default/>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" line="78">
+        <name>getContainer</name>
+        <docblock>
+          <description>Gets a sub-container by name, throwing an exception if it does not
+exist.</description>
+          <long-description>
+</long-description>
+          <tag name="param" description="The sub-container name." type="string" variable="$name" line="68">
+            <type by_reference="false">string</type>
+          </tag>
+          <tag name="return" description="The sub-container." type="\Aura\Di\Container" line="68">
+            <type by_reference="false">\Aura\Di\Container</type>
+          </tag>
+        </docblock>
+        <argument line="78">
+          <name>$name</name>
+          <default/>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" line="97">
+        <name>subContainer</name>
+        <docblock>
+          <description>Gets a sub-container by name if it exists, or creates a new one under
+that name if it does not.</description>
+          <long-description>
+</long-description>
+          <tag name="param" description="The sub-container name." type="string" variable="$name" line="87">
+            <type by_reference="false">string</type>
+          </tag>
+          <tag name="return" description="The sub-container." type="\Aura\Di\Container" line="87">
+            <type by_reference="false">\Aura\Di\Container</type>
+          </tag>
+        </docblock>
+        <argument line="97">
+          <name>$name</name>
+          <default/>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" line="113">
+        <name>getContainers</name>
+        <docblock>
+          <description>Gets the names of all sub-containers.</description>
+          <long-description>
+</long-description>
+          <tag name="return" description="The names of all sub-containers." type="array" line="106">
+            <type by_reference="false">array</type>
+          </tag>
+        </docblock>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" line="131">
+        <name>cloneContainer</name>
+        <docblock>
+          <description>Returns a clone of a sub-container.  The clone will have all the
+configuration and service definitions of the origin container, but it
+will not have any of the service objects.  Calling get() will create
+new services that are independent and separate from the origin
+container services.</description>
+          <long-description>
+</long-description>
+          <tag name="param" description="The sub-container name." type="string" variable="$name" line="118">
+            <type by_reference="false">string</type>
+          </tag>
+          <tag name="return" description="A clone of the named sub-container." type="\Aura\Di\Container" line="118">
+            <type by_reference="false">\Aura\Di\Container</type>
+          </tag>
+        </docblock>
+        <argument line="131">
+          <name>$name</name>
+          <default/>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" line="146">
+        <name>lazyCloneContainer</name>
+        <docblock>
+          <description>Returns a Lazy that, when invoked, will return a sub-container clone.</description>
+          <long-description>
+</long-description>
+          <tag name="param" description="The sub-container name." type="string" variable="$name" line="137">
+            <type by_reference="false">string</type>
+          </tag>
+          <tag name="return" description="" type="\Aura\Di\Lazy" line="137">
+            <type by_reference="false">\Aura\Di\Lazy</type>
+          </tag>
+        </docblock>
+        <argument line="146">
+          <name>$name</name>
+          <default/>
+          <type/>
+        </argument>
+      </method>
+    </class>
+  </file>
+  <file path="src/ForgeInterface.php" hash="b6ad6e095469460bc9f88057e524cc06">
+    <interface namespace="Aura\Di" line="18">
+      <name>ForgeInterface</name>
+      <extends/>
+      <full_name>\Aura\Di\ForgeInterface</full_name>
+      <docblock>
+        <description>Defines the interface for Forge dependencies.</description>
+        <long-description>
+</long-description>
+        <tag name="package" description="Aura.Di" line="11"/>
+      </docblock>
+      <method final="false" abstract="false" static="false" visibility="public" line="27">
+        <name>getConfig</name>
+        <docblock>
+          <description>Gets the injected Config object.</description>
+          <long-description>
+</long-description>
+          <tag name="return" description="" type="\Aura\Di\ConfigInterface" line="20">
+            <type by_reference="false">\Aura\Di\ConfigInterface</type>
+          </tag>
+        </docblock>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" line="43">
+        <name>newInstance</name>
+        <docblock>
+          <description>Creates and returns a new instance of a class using reflection and
+the configuration parameters, optionally with overriding params.</description>
+          <long-description>
+</long-description>
+          <tag name="param" description="The class to instantiate." type="string" variable="$class" line="29">
+            <type by_reference="false">string</type>
+          </tag>
+          <tag name="param" description="An associative array of override parameters where the key the name of the constructor parameter and the value is the parameter value to use." type="array" variable="$params" line="29">
+            <type by_reference="false">array</type>
+          </tag>
+          <tag name="return" description="" type="object" line="29">
+            <type by_reference="false">object</type>
+          </tag>
+        </docblock>
+        <argument line="43">
+          <name>$class</name>
+          <default/>
+          <type/>
+        </argument>
+        <argument line="43">
+          <name>$params</name>
+          <default>null</default>
+          <type>array</type>
+        </argument>
+      </method>
+    </interface>
+  </file>
+  <file path="src/Exception/ContainerExists.php" hash="d18f2d692bcb7840a08b0a264194e1da">
+    <class final="false" abstract="false" line="18" namespace="Aura\Di\Exception">
+      <name>ContainerExists</name>
+      <extends>\Aura\Di\Exception</extends>
+      <full_name>\Aura\Di\Exception\ContainerExists</full_name>
+      <docblock>
+        <description>The named DI container already exists.</description>
+        <long-description>
+</long-description>
+        <tag name="package" description="Aura.Di" line="11"/>
+      </docblock>
+    </class>
+  </file>
+  <file path="src/Exception/ServiceInvalid.php" hash="37fcf894112097e555abd355a13af41f">
+    <class final="false" abstract="false" line="18" namespace="Aura\Di\Exception">
+      <name>ServiceInvalid</name>
+      <extends>\Aura\Di\Exception</extends>
+      <full_name>\Aura\Di\Exception\ServiceInvalid</full_name>
+      <docblock>
+        <description>The service definition is not valid.</description>
+        <long-description>
+</long-description>
+        <tag name="package" description="Aura.Di" line="11"/>
+      </docblock>
+    </class>
+  </file>
+  <file path="src/Exception/ServiceNotFound.php" hash="ab4706328870e2443f5b32eb739e648f">
+    <class final="false" abstract="false" line="18" namespace="Aura\Di\Exception">
+      <name>ServiceNotFound</name>
+      <extends>\Aura\Di\Exception</extends>
+      <full_name>\Aura\Di\Exception\ServiceNotFound</full_name>
+      <docblock>
+        <description>The named service was not found.</description>
+        <long-description>
+</long-description>
+        <tag name="package" description="Aura.Di" line="11"/>
+      </docblock>
+    </class>
+  </file>
+  <file path="src/Exception/ContainerNotFound.php" hash="a71b599fe7ff140db5347b8e70124481">
+    <class final="false" abstract="false" line="18" namespace="Aura\Di\Exception">
+      <name>ContainerNotFound</name>
+      <extends>\Aura\Di\Exception</extends>
+      <full_name>\Aura\Di\Exception\ContainerNotFound</full_name>
+      <docblock>
+        <description>The named DI container was not found.</description>
+        <long-description>
+</long-description>
+        <tag name="package" description="Aura.Di" line="11"/>
+      </docblock>
+    </class>
+  </file>
+  <file path="src/Exception/ContainerLocked.php" hash="6fe74feaa472f23278f8fffb79bf980d">
+    <class final="false" abstract="false" line="18" namespace="Aura\Di\Exception">
+      <name>ContainerLocked</name>
+      <extends>\Aura\Di\Exception</extends>
+      <full_name>\Aura\Di\Exception\ContainerLocked</full_name>
+      <docblock>
+        <description>The DI container is locked.</description>
+        <long-description>
+</long-description>
+        <tag name="package" description="Aura.Di" line="11"/>
+      </docblock>
+    </class>
+  </file>
+  <file path="src/Lazy.php" hash="aa549b85056ae68a9be7fafff91a394a">
+    <class final="false" abstract="false" line="18" namespace="Aura\Di">
+      <name>Lazy</name>
+      <extends/>
+      <full_name>\Aura\Di\Lazy</full_name>
+      <docblock>
+        <description>Wraps a closure specifically for the purpose of lazy-loading an object.</description>
+        <long-description>
+</long-description>
+        <tag name="package" description="Aura.Di" line="11"/>
+      </docblock>
+      <property final="false" static="false" visibility="protected" line="27">
+        <name>$closure</name>
+        <default/>
+        <docblock>
+          <description>A closure that creates an object instance.</description>
+          <long-description>
+</long-description>
+          <tag name="var" description="" type="\Closure" line="20">
+            <type by_reference="false">\Closure</type>
+          </tag>
+        </docblock>
+      </property>
+      <method final="false" abstract="false" static="false" visibility="public" line="38">
+        <name>__construct</name>
+        <docblock>
+          <description>Constructor.</description>
+          <long-description>
+</long-description>
+          <tag name="param" description="A closure that creates an object instance." type="\Closure" variable="$closure" line="29">
+            <type by_reference="false">\Closure</type>
+          </tag>
+          <tag name="return" description="" type="void" line="29">
+            <type by_reference="false">void</type>
+          </tag>
+        </docblock>
+        <argument line="38">
+          <name>$closure</name>
+          <default/>
+          <type>Closure</type>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" line="50">
+        <name>__invoke</name>
+        <docblock>
+          <description>Invokes the closure to create the instance.</description>
+          <long-description>
+</long-description>
+          <tag name="return" description="The object created by the closure." type="object" line="43">
+            <type by_reference="false">object</type>
+          </tag>
+        </docblock>
+      </method>
+    </class>
+  </file>
+  <file path="src/ContainerInterface.php" hash="179baabb1e4b48bb0b559a1e139e81fe">
+    <interface namespace="Aura\Di" line="18">
+      <name>ContainerInterface</name>
+      <extends/>
+      <full_name>\Aura\Di\ContainerInterface</full_name>
+      <docblock>
+        <description>Interface for dependency injection containers.</description>
+        <long-description>
+</long-description>
+        <tag name="package" description="Aura.Di" line="11"/>
+      </docblock>
+      <method final="false" abstract="false" static="false" visibility="public" line="28">
+        <name>lock</name>
+        <docblock>
+          <description>Lock the Container so that configuration cannot be accessed externally,
+and no new service definitions can be added.</description>
+          <long-description>
+</long-description>
+          <tag name="return" description="" type="void" line="20">
+            <type by_reference="false">void</type>
+          </tag>
+        </docblock>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" line="37">
+        <name>isLocked</name>
+        <docblock>
+          <description>Is the Container locked?</description>
+          <long-description>
+</long-description>
+          <tag name="return" description="" type="bool" line="30">
+            <type by_reference="false">bool</type>
+          </tag>
+        </docblock>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" line="46">
+        <name>getForge</name>
+        <docblock>
+          <description>Gets the Forge object used for creating new instances.</description>
+          <long-description>
+</long-description>
+          <tag name="return" description="" type="array" line="39">
+            <type by_reference="false">array</type>
+          </tag>
+        </docblock>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" line="57">
+        <name>has</name>
+        <docblock>
+          <description>Does a particular service exist?</description>
+          <long-description>
+</long-description>
+          <tag name="param" description="The service key to look up." type="string" variable="$key" line="48">
+            <type by_reference="false">string</type>
+          </tag>
+          <tag name="return" description="" type="bool" line="48">
+            <type by_reference="false">bool</type>
+          </tag>
+        </docblock>
+        <argument line="57">
+          <name>$key</name>
+          <default/>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" line="68">
+        <name>set</name>
+        <docblock>
+          <description>Sets a service object by name.</description>
+          <long-description>
+</long-description>
+          <tag name="param" description="The service key." type="string" variable="$key" line="59">
+            <type by_reference="false">string</type>
+          </tag>
+          <tag name="param" description="The service object." type="object" variable="$val" line="59">
+            <type by_reference="false">object</type>
+          </tag>
+        </docblock>
+        <argument line="68">
+          <name>$key</name>
+          <default/>
+          <type/>
+        </argument>
+        <argument line="68">
+          <name>$val</name>
+          <default/>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" line="82">
+        <name>get</name>
+        <docblock>
+          <description>Gets a service object by key, lazy-loading it as needed.</description>
+          <long-description>
+</long-description>
+          <tag name="param" description="The service to get." type="string" variable="$key" line="70">
+            <type by_reference="false">string</type>
+          </tag>
+          <tag name="return" description="" type="object" line="70">
+            <type by_reference="false">object</type>
+          </tag>
+          <tag name="throws" description="when the requested service does not exist." type="\Aura\Di\Exception\ServiceNotFound" line="70">
+            <type by_reference="false">\Aura\Di\Exception\ServiceNotFound</type>
+          </tag>
+        </docblock>
+        <argument line="82">
+          <name>$key</name>
+          <default/>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" line="91">
+        <name>getServices</name>
+        <docblock>
+          <description>Gets the list of services provided.</description>
+          <long-description>
+</long-description>
+          <tag name="return" description="" type="array" line="84">
+            <type by_reference="false">array</type>
+          </tag>
+        </docblock>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" line="100">
+        <name>getDefs</name>
+        <docblock>
+          <description>Gets the list of service definitions.</description>
+          <long-description>
+</long-description>
+          <tag name="return" description="" type="array" line="93">
+            <type by_reference="false">array</type>
+          </tag>
+        </docblock>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" line="111">
+        <name>lazyGet</name>
+        <docblock>
+          <description>Returns a Lazy that gets a service.</description>
+          <long-description>
+</long-description>
+          <tag name="param" description="The service name; it does not need to exist yet." type="string" variable="$key" line="102">
+            <type by_reference="false">string</type>
+          </tag>
+          <tag name="return" description="A lazy-load object that gets the named service." type="\Aura\Di\Lazy" line="102">
+            <type by_reference="false">\Aura\Di\Lazy</type>
+          </tag>
+        </docblock>
+        <argument line="111">
+          <name>$key</name>
+          <default/>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" line="125">
+        <name>newInstance</name>
+        <docblock>
+          <description>Returns a new instance of the specified class, optionally
+with additional override parameters.</description>
+          <long-description>
+</long-description>
+          <tag name="param" description="The type of class of instantiate." type="string" variable="$class" line="113">
+            <type by_reference="false">string</type>
+          </tag>
+          <tag name="param" description="Override parameters for the instance." type="array" variable="$params" line="113">
+            <type by_reference="false">array</type>
+          </tag>
+          <tag name="return" description="An instance of the requested class." type="object" line="113">
+            <type by_reference="false">object</type>
+          </tag>
+        </docblock>
+        <argument line="125">
+          <name>$class</name>
+          <default/>
+          <type/>
+        </argument>
+        <argument line="125">
+          <name>$params</name>
+          <default>null</default>
+          <type>array</type>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" line="138">
+        <name>lazyNew</name>
+        <docblock>
+          <description>Returns a Lazy that creates a new instance.</description>
+          <long-description>
+</long-description>
+          <tag name="param" description="The type of class of instantiate." type="string" variable="$class" line="127">
+            <type by_reference="false">string</type>
+          </tag>
+          <tag name="param" description="Override parameters for the instance." type="array" variable="$params" line="127">
+            <type by_reference="false">array</type>
+          </tag>
+          <tag name="return" description="A lazy-load object that creates the new instance." type="\Aura\Di\Lazy" line="127">
+            <type by_reference="false">\Aura\Di\Lazy</type>
+          </tag>
+        </docblock>
+        <argument line="138">
+          <name>$class</name>
+          <default/>
+          <type/>
+        </argument>
+        <argument line="138">
+          <name>$params</name>
+          <default>null</default>
+          <type>array</type>
+        </argument>
+      </method>
+    </interface>
+  </file>
   <file path="src/Config.php" hash="1623ee94192c3c955e9b6eada09e6174">
     <class final="false" abstract="false" line="18" namespace="Aura\Di">
       <name>Config</name>
@@ -33,8 +565,8 @@
 the Forge as it is for Config.</description>
           <long-description>
 </long-description>
-          <tag name="var" description="" type="\array" line="30">
-            <type by_reference="false">\array</type>
+          <tag name="var" description="" type="array" line="30">
+            <type by_reference="false">array</type>
           </tag>
         </docblock>
       </property>
@@ -58,8 +590,8 @@ the Forge as it is for Config.</description>
 defaults, inheritance hierarchies, and external configurations.</description>
           <long-description>
 </long-description>
-          <tag name="var" description="" type="\array" line="49">
-            <type by_reference="false">\array</type>
+          <tag name="var" description="" type="array" line="49">
+            <type by_reference="false">array</type>
           </tag>
         </docblock>
       </property>
@@ -78,8 +610,8 @@ defaults, inheritance hierarchies, and external configurations.</description>
 leave the reflection values in place).</description>
           <long-description>
 </long-description>
-          <tag name="return" description="" type="\void" line="69">
-            <type by_reference="false">\void</type>
+          <tag name="return" description="" type="void" line="69">
+            <type by_reference="false">void</type>
           </tag>
         </docblock>
       </method>
@@ -89,8 +621,8 @@ leave the reflection values in place).</description>
           <description>Resets the params and setter values.</description>
           <long-description>
 </long-description>
-          <tag name="return" description="" type="\void" line="82">
-            <type by_reference="false">\void</type>
+          <tag name="return" description="" type="void" line="82">
+            <type by_reference="false">void</type>
           </tag>
         </docblock>
       </method>
@@ -122,8 +654,8 @@ leave the reflection values in place).</description>
           <description>Returns a \ReflectionClass for a named class.</description>
           <long-description>
 </long-description>
-          <tag name="param" description="The class to reflect on." type="\string" variable="$class" line="121">
-            <type by_reference="false">\string</type>
+          <tag name="param" description="The class to reflect on." type="string" variable="$class" line="121">
+            <type by_reference="false">string</type>
           </tag>
           <tag name="return" description="" type="\ReflectionClass" line="121">
             <type by_reference="false">\ReflectionClass</type>
@@ -141,17 +673,374 @@ leave the reflection values in place).</description>
           <description>Fetches the unified constructor params and setter values for a class.</description>
           <long-description>
 </long-description>
-          <tag name="param" description="The class name to fetch values for." type="\string" variable="$class" line="138">
-            <type by_reference="false">\string</type>
+          <tag name="param" description="The class name to fetch values for." type="string" variable="$class" line="138">
+            <type by_reference="false">string</type>
           </tag>
-          <tag name="return" description="An array with two elements; 0 is the constructor values for the class, and 1 is the setter methods and values for the class." type="\array" line="138">
-            <type by_reference="false">\array</type>
+          <tag name="return" description="An array with two elements; 0 is the constructor values for the class, and 1 is the setter methods and values for the class." type="array" line="138">
+            <type by_reference="false">array</type>
           </tag>
         </docblock>
         <argument line="148">
           <name>$class</name>
           <default/>
           <type/>
+        </argument>
+      </method>
+    </class>
+  </file>
+  <file path="src/Container.php" hash="5f003e64d2491cbafe6ecdf1abec6f7a">
+    <class final="false" abstract="false" line="18" namespace="Aura\Di">
+      <name>Container</name>
+      <extends/>
+      <full_name>\Aura\Di\Container</full_name>
+      <docblock>
+        <description>Dependency injection container.</description>
+        <long-description>
+</long-description>
+        <tag name="package" description="Aura.Di" line="11"/>
+      </docblock>
+      <implements>\Aura\Di\ContainerInterface</implements>
+      <property final="false" static="false" visibility="protected" line="27">
+        <name>$forge</name>
+        <default/>
+        <docblock>
+          <description>A Forge object to create classes through reflection.</description>
+          <long-description>
+</long-description>
+          <tag name="var" description="" type="array" line="20">
+            <type by_reference="false">array</type>
+          </tag>
+        </docblock>
+      </property>
+      <property final="false" static="false" visibility="protected" line="37">
+        <name>$params</name>
+        <default/>
+        <docblock>
+          <description>A convenient reference to the Config::$params object, which itself
+is contained by the Forge object.</description>
+          <long-description>
+</long-description>
+          <tag name="var" description="" type="\ArrayObject" line="29">
+            <type by_reference="false">\ArrayObject</type>
+          </tag>
+        </docblock>
+      </property>
+      <property final="false" static="false" visibility="protected" line="47">
+        <name>$setter</name>
+        <default/>
+        <docblock>
+          <description>A convenient reference to the Config::$setter object, which itself
+is contained by the Forge object.</description>
+          <long-description>
+</long-description>
+          <tag name="var" description="" type="\ArrayObject" line="39">
+            <type by_reference="false">\ArrayObject</type>
+          </tag>
+        </docblock>
+      </property>
+      <property final="false" static="false" visibility="protected" line="56">
+        <name>$defs</name>
+        <default>array</default>
+        <docblock>
+          <description>Retains named service definitions.</description>
+          <long-description>
+</long-description>
+          <tag name="var" description="" type="array" line="49">
+            <type by_reference="false">array</type>
+          </tag>
+        </docblock>
+      </property>
+      <property final="false" static="false" visibility="protected" line="65">
+        <name>$services</name>
+        <default>array</default>
+        <docblock>
+          <description>Retains the actual service objects.</description>
+          <long-description>
+</long-description>
+          <tag name="var" description="" type="array" line="58">
+            <type by_reference="false">array</type>
+          </tag>
+        </docblock>
+      </property>
+      <property final="false" static="false" visibility="protected" line="79">
+        <name>$locked</name>
+        <default>false</default>
+        <docblock>
+          <description>Is the Container locked?  (When locked, you cannot access configuration
+properties from outside the object, and cannot set services.)</description>
+          <long-description>
+</long-description>
+          <tag name="var" description="" type="bool" line="67">
+            <type by_reference="false">bool</type>
+          </tag>
+          <tag name="see" description="\Aura\Di\__get()" refers="\Aura\Di\__get()" line="67"/>
+          <tag name="see" description="\Aura\Di\set()" refers="\Aura\Di\set()" line="67"/>
+        </docblock>
+      </property>
+      <method final="false" abstract="false" static="false" visibility="public" line="89">
+        <name>__construct</name>
+        <docblock>
+          <description>Constructor.</description>
+          <long-description>
+</long-description>
+          <tag name="param" description="A forge for creating objects using keyword parameter configuration." type="\Aura\Di\ForgeInterface" variable="$forge" line="81">
+            <type by_reference="false">\Aura\Di\ForgeInterface</type>
+          </tag>
+        </docblock>
+        <argument line="89">
+          <name>$forge</name>
+          <default/>
+          <type>ForgeInterface</type>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" line="106">
+        <name>__get</name>
+        <docblock>
+          <description>Magic get to provide access to the Config::$params and $setter
+objects.</description>
+          <long-description>
+</long-description>
+          <tag name="param" description="The property to retrieve ('params' or 'setter')." type="string" variable="$key" line="96">
+            <type by_reference="false">string</type>
+          </tag>
+          <tag name="return" description="" type="mixed" line="96">
+            <type by_reference="false">mixed</type>
+          </tag>
+        </docblock>
+        <argument line="106">
+          <name>$key</name>
+          <default/>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" line="127">
+        <name>__clone</name>
+        <docblock>
+          <description>When cloning this Container, *do not* make a copy of the service
+objects.  Leave the configuration and definitions intact.</description>
+          <long-description>
+</long-description>
+          <tag name="return" description="" type="void" line="119">
+            <type by_reference="false">void</type>
+          </tag>
+        </docblock>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" line="141">
+        <name>lock</name>
+        <docblock>
+          <description>Lock the Container so that configuration cannot be accessed externally,
+and no new service definitions can be added.</description>
+          <long-description>
+</long-description>
+          <tag name="return" description="" type="void" line="133">
+            <type by_reference="false">void</type>
+          </tag>
+        </docblock>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" line="153">
+        <name>isLocked</name>
+        <docblock>
+          <description>Is the Container locked?</description>
+          <long-description>
+</long-description>
+          <tag name="return" description="" type="bool" line="146">
+            <type by_reference="false">bool</type>
+          </tag>
+        </docblock>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" line="165">
+        <name>getForge</name>
+        <docblock>
+          <description>Gets the Forge object used for creating new instances.</description>
+          <long-description>
+</long-description>
+          <tag name="return" description="" type="array" line="158">
+            <type by_reference="false">array</type>
+          </tag>
+        </docblock>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" line="179">
+        <name>has</name>
+        <docblock>
+          <description>Does a particular service definition exist?</description>
+          <long-description>
+</long-description>
+          <tag name="param" description="The service key to look up." type="string" variable="$key" line="170">
+            <type by_reference="false">string</type>
+          </tag>
+          <tag name="return" description="" type="bool" line="170">
+            <type by_reference="false">bool</type>
+          </tag>
+        </docblock>
+        <argument line="179">
+          <name>$key</name>
+          <default/>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" line="200">
+        <name>set</name>
+        <docblock>
+          <description>Sets a service definition by name.</description>
+          <long-description>&lt;p&gt;If you set a service as a closure, it is automatically treated as a
+Lazy.&lt;/p&gt;
+</long-description>
+          <tag name="param" description="The service key." type="string" variable="$key" line="184">
+            <type by_reference="false">string</type>
+          </tag>
+          <tag name="param" description="The service object; if a Closure, is treated as a Lazy." type="object" variable="$val" line="184">
+            <type by_reference="false">object</type>
+          </tag>
+          <tag name="throws" description="when the Container is locked." type="\Exception\ContainerLocked" line="184">
+            <type by_reference="false">\Exception\ContainerLocked</type>
+          </tag>
+          <tag name="throws" description="" type="\Exception\Service" line="184">
+            <type by_reference="false">\Exception\Service</type>
+          </tag>
+        </docblock>
+        <argument line="200">
+          <name>$key</name>
+          <default/>
+          <type/>
+        </argument>
+        <argument line="200">
+          <name>$val</name>
+          <default/>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" line="229">
+        <name>get</name>
+        <docblock>
+          <description>Gets a service object by key, lazy-loading it as needed.</description>
+          <long-description>
+</long-description>
+          <tag name="param" description="The service to get." type="string" variable="$key" line="217">
+            <type by_reference="false">string</type>
+          </tag>
+          <tag name="return" description="" type="object" line="217">
+            <type by_reference="false">object</type>
+          </tag>
+          <tag name="throws" description="when the requested service does not exist." type="\Exception\ServiceNotFound" line="217">
+            <type by_reference="false">\Exception\ServiceNotFound</type>
+          </tag>
+        </docblock>
+        <argument line="229">
+          <name>$key</name>
+          <default/>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" line="259">
+        <name>getServices</name>
+        <docblock>
+          <description>Gets the list of instantiated services.</description>
+          <long-description>
+</long-description>
+          <tag name="return" description="" type="array" line="252">
+            <type by_reference="false">array</type>
+          </tag>
+        </docblock>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" line="271">
+        <name>getDefs</name>
+        <docblock>
+          <description>Gets the list of service definitions.</description>
+          <long-description>
+</long-description>
+          <tag name="return" description="" type="array" line="264">
+            <type by_reference="false">array</type>
+          </tag>
+        </docblock>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" line="294">
+        <name>lazyGet</name>
+        <docblock>
+          <description>Returns a Lazy that gets a service. This allows you to replace the
+following idiom ...</description>
+          <long-description>&lt;p&gt;$di-&gt;params['ClassName']['param_name'] = new Lazy(function() use ($di)) {
+         return $di-&gt;get('service');
+     }&lt;/p&gt;
+
+&lt;p&gt;... with the following:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt; $di-&amp;gt;params['ClassName']['param_name'] = $di-&amp;gt;lazyGet('service');
+&lt;/code&gt;&lt;/pre&gt;
+</long-description>
+          <tag name="param" description="The service name; it does not need to exist yet." type="string" variable="$key" line="276">
+            <type by_reference="false">string</type>
+          </tag>
+          <tag name="return" description="A lazy-load object that gets the named service." type="\Aura\Di\Lazy" line="276">
+            <type by_reference="false">\Aura\Di\Lazy</type>
+          </tag>
+        </docblock>
+        <argument line="294">
+          <name>$key</name>
+          <default/>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" line="314">
+        <name>newInstance</name>
+        <docblock>
+          <description>Returns a new instance of the specified class, optionally
+with additional override parameters.</description>
+          <long-description>
+</long-description>
+          <tag name="param" description="The type of class of instantiate." type="string" variable="$class" line="302">
+            <type by_reference="false">string</type>
+          </tag>
+          <tag name="param" description="Override parameters for the instance." type="array" variable="$params" line="302">
+            <type by_reference="false">array</type>
+          </tag>
+          <tag name="return" description="An instance of the requested class." type="object" line="302">
+            <type by_reference="false">object</type>
+          </tag>
+        </docblock>
+        <argument line="314">
+          <name>$class</name>
+          <default/>
+          <type/>
+        </argument>
+        <argument line="314">
+          <name>$params</name>
+          <default>null</default>
+          <type>array</type>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" line="339">
+        <name>lazyNew</name>
+        <docblock>
+          <description>Returns a Lazy that creates a new instance. This allows you to replace
+the following idiom:</description>
+          <long-description>&lt;p&gt;$di-&gt;params['ClassName']['param_name'] = Lazy(function() use ($di)) {
+         return $di-&gt;newInstance('OtherClass', array(...));
+     }&lt;/p&gt;
+
+&lt;p&gt;... with the following:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt; $di-&amp;gt;params['ClassName']['param_name'] = $di-&amp;gt;lazyNew('OtherClass', array(...));
+&lt;/code&gt;&lt;/pre&gt;
+</long-description>
+          <tag name="param" description="The type of class of instantiate." type="string" variable="$class" line="319">
+            <type by_reference="false">string</type>
+          </tag>
+          <tag name="param" description="Override parameters for the instance." type="array" variable="$params" line="319">
+            <type by_reference="false">array</type>
+          </tag>
+          <tag name="return" description="A lazy-load object that creates the new instance." type="\Aura\Di\Lazy" line="319">
+            <type by_reference="false">\Aura\Di\Lazy</type>
+          </tag>
+        </docblock>
+        <argument line="339">
+          <name>$class</name>
+          <default/>
+          <type/>
+        </argument>
+        <argument line="339">
+          <name>$params</name>
+          <default>null</default>
+          <type>array</type>
         </argument>
       </method>
     </class>
@@ -173,11 +1062,11 @@ leave the reflection values in place).</description>
           <description>Fetches the unified constructor values and external values.</description>
           <long-description>
 </long-description>
-          <tag name="param" description="The class name to fetch values for." type="\string" variable="$class" line="20">
-            <type by_reference="false">\string</type>
+          <tag name="param" description="The class name to fetch values for." type="string" variable="$class" line="20">
+            <type by_reference="false">string</type>
           </tag>
-          <tag name="return" description="An associative array of constructor values for the class." type="\array" line="20">
-            <type by_reference="false">\array</type>
+          <tag name="return" description="An associative array of constructor values for the class." type="array" line="20">
+            <type by_reference="false">array</type>
           </tag>
         </docblock>
         <argument line="29">
@@ -215,8 +1104,8 @@ leave the reflection values in place).</description>
 retains one before returning it.</description>
           <long-description>
 </long-description>
-          <tag name="param" description="The class to reflect on." type="\string" variable="$class" line="49">
-            <type by_reference="false">\string</type>
+          <tag name="param" description="The class to reflect on." type="string" variable="$class" line="49">
+            <type by_reference="false">string</type>
           </tag>
           <tag name="return" description="" type="\ReflectionClass" line="49">
             <type by_reference="false">\ReflectionClass</type>
@@ -229,613 +1118,6 @@ retains one before returning it.</description>
         </argument>
       </method>
     </interface>
-  </file>
-  <file path="src/Container.php" hash="5f003e64d2491cbafe6ecdf1abec6f7a">
-    <class final="false" abstract="false" line="18" namespace="Aura\Di">
-      <name>Container</name>
-      <extends/>
-      <full_name>\Aura\Di\Container</full_name>
-      <docblock>
-        <description>Dependency injection container.</description>
-        <long-description>
-</long-description>
-        <tag name="package" description="Aura.Di" line="11"/>
-      </docblock>
-      <implements>\Aura\Di\ContainerInterface</implements>
-      <property final="false" static="false" visibility="protected" line="27">
-        <name>$forge</name>
-        <default/>
-        <docblock>
-          <description>A Forge object to create classes through reflection.</description>
-          <long-description>
-</long-description>
-          <tag name="var" description="" type="\array" line="20">
-            <type by_reference="false">\array</type>
-          </tag>
-        </docblock>
-      </property>
-      <property final="false" static="false" visibility="protected" line="37">
-        <name>$params</name>
-        <default/>
-        <docblock>
-          <description>A convenient reference to the Config::$params object, which itself
-is contained by the Forge object.</description>
-          <long-description>
-</long-description>
-          <tag name="var" description="" type="\ArrayObject" line="29">
-            <type by_reference="false">\ArrayObject</type>
-          </tag>
-        </docblock>
-      </property>
-      <property final="false" static="false" visibility="protected" line="47">
-        <name>$setter</name>
-        <default/>
-        <docblock>
-          <description>A convenient reference to the Config::$setter object, which itself
-is contained by the Forge object.</description>
-          <long-description>
-</long-description>
-          <tag name="var" description="" type="\ArrayObject" line="39">
-            <type by_reference="false">\ArrayObject</type>
-          </tag>
-        </docblock>
-      </property>
-      <property final="false" static="false" visibility="protected" line="56">
-        <name>$defs</name>
-        <default>array</default>
-        <docblock>
-          <description>Retains named service definitions.</description>
-          <long-description>
-</long-description>
-          <tag name="var" description="" type="\array" line="49">
-            <type by_reference="false">\array</type>
-          </tag>
-        </docblock>
-      </property>
-      <property final="false" static="false" visibility="protected" line="65">
-        <name>$services</name>
-        <default>array</default>
-        <docblock>
-          <description>Retains the actual service objects.</description>
-          <long-description>
-</long-description>
-          <tag name="var" description="" type="\array" line="58">
-            <type by_reference="false">\array</type>
-          </tag>
-        </docblock>
-      </property>
-      <property final="false" static="false" visibility="protected" line="79">
-        <name>$locked</name>
-        <default>false</default>
-        <docblock>
-          <description>Is the Container locked?  (When locked, you cannot access configuration
-properties from outside the object, and cannot set services.)</description>
-          <long-description>
-</long-description>
-          <tag name="var" description="" type="\bool" line="67">
-            <type by_reference="false">\bool</type>
-          </tag>
-          <tag name="see" description="__get()" line="67"/>
-          <tag name="see" description="set()" line="67"/>
-        </docblock>
-      </property>
-      <method final="false" abstract="false" static="false" visibility="public" line="89">
-        <name>__construct</name>
-        <docblock>
-          <description>Constructor.</description>
-          <long-description>
-</long-description>
-          <tag name="param" description="A forge for creating objects using keyword parameter configuration." type="\Aura\Di\ForgeInterface" variable="$forge" line="81">
-            <type by_reference="false">\Aura\Di\ForgeInterface</type>
-          </tag>
-        </docblock>
-        <argument line="89">
-          <name>$forge</name>
-          <default/>
-          <type>ForgeInterface</type>
-        </argument>
-      </method>
-      <method final="false" abstract="false" static="false" visibility="public" line="106">
-        <name>__get</name>
-        <docblock>
-          <description>Magic get to provide access to the Config::$params and $setter
-objects.</description>
-          <long-description>
-</long-description>
-          <tag name="param" description="The property to retrieve (&amp;#039;params&amp;#039; or &amp;#039;setter&amp;#039;)." type="\string" variable="$key" line="96">
-            <type by_reference="false">\string</type>
-          </tag>
-          <tag name="return" description="" type="\mixed" line="96">
-            <type by_reference="false">\mixed</type>
-          </tag>
-        </docblock>
-        <argument line="106">
-          <name>$key</name>
-          <default/>
-          <type/>
-        </argument>
-      </method>
-      <method final="false" abstract="false" static="false" visibility="public" line="127">
-        <name>__clone</name>
-        <docblock>
-          <description>When cloning this Container, *do not* make a copy of the service
-objects.  Leave the configuration and definitions intact.</description>
-          <long-description>
-</long-description>
-          <tag name="return" description="" type="\void" line="119">
-            <type by_reference="false">\void</type>
-          </tag>
-        </docblock>
-      </method>
-      <method final="false" abstract="false" static="false" visibility="public" line="141">
-        <name>lock</name>
-        <docblock>
-          <description>Lock the Container so that configuration cannot be accessed externally,
-and no new service definitions can be added.</description>
-          <long-description>
-</long-description>
-          <tag name="return" description="" type="\void" line="133">
-            <type by_reference="false">\void</type>
-          </tag>
-        </docblock>
-      </method>
-      <method final="false" abstract="false" static="false" visibility="public" line="153">
-        <name>isLocked</name>
-        <docblock>
-          <description>Is the Container locked?</description>
-          <long-description>
-</long-description>
-          <tag name="return" description="" type="\bool" line="146">
-            <type by_reference="false">\bool</type>
-          </tag>
-        </docblock>
-      </method>
-      <method final="false" abstract="false" static="false" visibility="public" line="165">
-        <name>getForge</name>
-        <docblock>
-          <description>Gets the Forge object used for creating new instances.</description>
-          <long-description>
-</long-description>
-          <tag name="return" description="" type="\array" line="158">
-            <type by_reference="false">\array</type>
-          </tag>
-        </docblock>
-      </method>
-      <method final="false" abstract="false" static="false" visibility="public" line="179">
-        <name>has</name>
-        <docblock>
-          <description>Does a particular service definition exist?</description>
-          <long-description>
-</long-description>
-          <tag name="param" description="The service key to look up." type="\string" variable="$key" line="170">
-            <type by_reference="false">\string</type>
-          </tag>
-          <tag name="return" description="" type="\bool" line="170">
-            <type by_reference="false">\bool</type>
-          </tag>
-        </docblock>
-        <argument line="179">
-          <name>$key</name>
-          <default/>
-          <type/>
-        </argument>
-      </method>
-      <method final="false" abstract="false" static="false" visibility="public" line="200">
-        <name>set</name>
-        <docblock>
-          <description>Sets a service definition by name.</description>
-          <long-description>&lt;p&gt;If you set a service as a closure, it is automatically treated as a
-Lazy.&lt;/p&gt;
-</long-description>
-          <tag name="param" description="The service key." type="\string" variable="$key" line="184">
-            <type by_reference="false">\string</type>
-          </tag>
-          <tag name="param" description="The service object; if a Closure, is treated as a Lazy." type="\object" variable="$val" line="184">
-            <type by_reference="false">\object</type>
-          </tag>
-          <tag name="throws" description="when the Container is locked." type="\Exception\ContainerLocked" line="184">
-            <type by_reference="false">\Exception\ContainerLocked</type>
-          </tag>
-          <tag name="throws" description="" type="\Exception\Service" line="184">
-            <type by_reference="false">\Exception\Service</type>
-          </tag>
-        </docblock>
-        <argument line="200">
-          <name>$key</name>
-          <default/>
-          <type/>
-        </argument>
-        <argument line="200">
-          <name>$val</name>
-          <default/>
-          <type/>
-        </argument>
-      </method>
-      <method final="false" abstract="false" static="false" visibility="public" line="229">
-        <name>get</name>
-        <docblock>
-          <description>Gets a service object by key, lazy-loading it as needed.</description>
-          <long-description>
-</long-description>
-          <tag name="param" description="The service to get." type="\string" variable="$key" line="217">
-            <type by_reference="false">\string</type>
-          </tag>
-          <tag name="return" description="" type="\object" line="217">
-            <type by_reference="false">\object</type>
-          </tag>
-          <tag name="throws" description="when the requested service does not exist." type="\Exception\ServiceNotFound" line="217">
-            <type by_reference="false">\Exception\ServiceNotFound</type>
-          </tag>
-        </docblock>
-        <argument line="229">
-          <name>$key</name>
-          <default/>
-          <type/>
-        </argument>
-      </method>
-      <method final="false" abstract="false" static="false" visibility="public" line="259">
-        <name>getServices</name>
-        <docblock>
-          <description>Gets the list of instantiated services.</description>
-          <long-description>
-</long-description>
-          <tag name="return" description="" type="\array" line="252">
-            <type by_reference="false">\array</type>
-          </tag>
-        </docblock>
-      </method>
-      <method final="false" abstract="false" static="false" visibility="public" line="271">
-        <name>getDefs</name>
-        <docblock>
-          <description>Gets the list of service definitions.</description>
-          <long-description>
-</long-description>
-          <tag name="return" description="" type="\array" line="264">
-            <type by_reference="false">\array</type>
-          </tag>
-        </docblock>
-      </method>
-      <method final="false" abstract="false" static="false" visibility="public" line="294">
-        <name>lazyGet</name>
-        <docblock>
-          <description>Returns a Lazy that gets a service. This allows you to replace the
-following idiom ...</description>
-          <long-description>&lt;p&gt;$di-&gt;params['ClassName']['param_name'] = new Lazy(function() use ($di)) {
-         return $di-&gt;get('service');
-     }&lt;/p&gt;
-
-&lt;p&gt;... with the following:&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt; $di-&amp;gt;params['ClassName']['param_name'] = $di-&amp;gt;lazyGet('service');
-&lt;/code&gt;&lt;/pre&gt;
-</long-description>
-          <tag name="param" description="The service name; it does not need to exist yet." type="\string" variable="$key" line="276">
-            <type by_reference="false">\string</type>
-          </tag>
-          <tag name="return" description="A lazy-load object that gets the named service." type="\Aura\Di\Lazy" line="276">
-            <type by_reference="false">\Aura\Di\Lazy</type>
-          </tag>
-        </docblock>
-        <argument line="294">
-          <name>$key</name>
-          <default/>
-          <type/>
-        </argument>
-      </method>
-      <method final="false" abstract="false" static="false" visibility="public" line="314">
-        <name>newInstance</name>
-        <docblock>
-          <description>Returns a new instance of the specified class, optionally
-with additional override parameters.</description>
-          <long-description>
-</long-description>
-          <tag name="param" description="The type of class of instantiate." type="\string" variable="$class" line="302">
-            <type by_reference="false">\string</type>
-          </tag>
-          <tag name="param" description="Override parameters for the instance." type="\array" variable="$params" line="302">
-            <type by_reference="false">\array</type>
-          </tag>
-          <tag name="return" description="An instance of the requested class." type="\object" line="302">
-            <type by_reference="false">\object</type>
-          </tag>
-        </docblock>
-        <argument line="314">
-          <name>$class</name>
-          <default/>
-          <type/>
-        </argument>
-        <argument line="314">
-          <name>$params</name>
-          <default>null</default>
-          <type>array</type>
-        </argument>
-      </method>
-      <method final="false" abstract="false" static="false" visibility="public" line="339">
-        <name>lazyNew</name>
-        <docblock>
-          <description>Returns a Lazy that creates a new instance. This allows you to replace
-the following idiom:</description>
-          <long-description>&lt;p&gt;$di-&gt;params['ClassName']['param_name'] = Lazy(function() use ($di)) {
-         return $di-&gt;newInstance('OtherClass', array(...));
-     }&lt;/p&gt;
-
-&lt;p&gt;... with the following:&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt; $di-&amp;gt;params['ClassName']['param_name'] = $di-&amp;gt;lazyNew('OtherClass', array(...));
-&lt;/code&gt;&lt;/pre&gt;
-</long-description>
-          <tag name="param" description="The type of class of instantiate." type="\string" variable="$class" line="319">
-            <type by_reference="false">\string</type>
-          </tag>
-          <tag name="param" description="Override parameters for the instance." type="\array" variable="$params" line="319">
-            <type by_reference="false">\array</type>
-          </tag>
-          <tag name="return" description="A lazy-load object that creates the new instance." type="\Aura\Di\Lazy" line="319">
-            <type by_reference="false">\Aura\Di\Lazy</type>
-          </tag>
-        </docblock>
-        <argument line="339">
-          <name>$class</name>
-          <default/>
-          <type/>
-        </argument>
-        <argument line="339">
-          <name>$params</name>
-          <default>null</default>
-          <type>array</type>
-        </argument>
-      </method>
-    </class>
-  </file>
-  <file path="src/ContainerInterface.php" hash="179baabb1e4b48bb0b559a1e139e81fe">
-    <interface namespace="Aura\Di" line="18">
-      <name>ContainerInterface</name>
-      <extends/>
-      <full_name>\Aura\Di\ContainerInterface</full_name>
-      <docblock>
-        <description>Interface for dependency injection containers.</description>
-        <long-description>
-</long-description>
-        <tag name="package" description="Aura.Di" line="11"/>
-      </docblock>
-      <method final="false" abstract="false" static="false" visibility="public" line="28">
-        <name>lock</name>
-        <docblock>
-          <description>Lock the Container so that configuration cannot be accessed externally,
-and no new service definitions can be added.</description>
-          <long-description>
-</long-description>
-          <tag name="return" description="" type="\void" line="20">
-            <type by_reference="false">\void</type>
-          </tag>
-        </docblock>
-      </method>
-      <method final="false" abstract="false" static="false" visibility="public" line="37">
-        <name>isLocked</name>
-        <docblock>
-          <description>Is the Container locked?</description>
-          <long-description>
-</long-description>
-          <tag name="return" description="" type="\bool" line="30">
-            <type by_reference="false">\bool</type>
-          </tag>
-        </docblock>
-      </method>
-      <method final="false" abstract="false" static="false" visibility="public" line="46">
-        <name>getForge</name>
-        <docblock>
-          <description>Gets the Forge object used for creating new instances.</description>
-          <long-description>
-</long-description>
-          <tag name="return" description="" type="\array" line="39">
-            <type by_reference="false">\array</type>
-          </tag>
-        </docblock>
-      </method>
-      <method final="false" abstract="false" static="false" visibility="public" line="57">
-        <name>has</name>
-        <docblock>
-          <description>Does a particular service exist?</description>
-          <long-description>
-</long-description>
-          <tag name="param" description="The service key to look up." type="\string" variable="$key" line="48">
-            <type by_reference="false">\string</type>
-          </tag>
-          <tag name="return" description="" type="\bool" line="48">
-            <type by_reference="false">\bool</type>
-          </tag>
-        </docblock>
-        <argument line="57">
-          <name>$key</name>
-          <default/>
-          <type/>
-        </argument>
-      </method>
-      <method final="false" abstract="false" static="false" visibility="public" line="68">
-        <name>set</name>
-        <docblock>
-          <description>Sets a service object by name.</description>
-          <long-description>
-</long-description>
-          <tag name="param" description="The service key." type="\string" variable="$key" line="59">
-            <type by_reference="false">\string</type>
-          </tag>
-          <tag name="param" description="The service object." type="\object" variable="$val" line="59">
-            <type by_reference="false">\object</type>
-          </tag>
-        </docblock>
-        <argument line="68">
-          <name>$key</name>
-          <default/>
-          <type/>
-        </argument>
-        <argument line="68">
-          <name>$val</name>
-          <default/>
-          <type/>
-        </argument>
-      </method>
-      <method final="false" abstract="false" static="false" visibility="public" line="82">
-        <name>get</name>
-        <docblock>
-          <description>Gets a service object by key, lazy-loading it as needed.</description>
-          <long-description>
-</long-description>
-          <tag name="param" description="The service to get." type="\string" variable="$key" line="70">
-            <type by_reference="false">\string</type>
-          </tag>
-          <tag name="return" description="" type="\object" line="70">
-            <type by_reference="false">\object</type>
-          </tag>
-          <tag name="throws" description="when the requested service does not exist." type="\Aura\Di\Exception\ServiceNotFound" line="70">
-            <type by_reference="false">\Aura\Di\Exception\ServiceNotFound</type>
-          </tag>
-        </docblock>
-        <argument line="82">
-          <name>$key</name>
-          <default/>
-          <type/>
-        </argument>
-      </method>
-      <method final="false" abstract="false" static="false" visibility="public" line="91">
-        <name>getServices</name>
-        <docblock>
-          <description>Gets the list of services provided.</description>
-          <long-description>
-</long-description>
-          <tag name="return" description="" type="\array" line="84">
-            <type by_reference="false">\array</type>
-          </tag>
-        </docblock>
-      </method>
-      <method final="false" abstract="false" static="false" visibility="public" line="100">
-        <name>getDefs</name>
-        <docblock>
-          <description>Gets the list of service definitions.</description>
-          <long-description>
-</long-description>
-          <tag name="return" description="" type="\array" line="93">
-            <type by_reference="false">\array</type>
-          </tag>
-        </docblock>
-      </method>
-      <method final="false" abstract="false" static="false" visibility="public" line="111">
-        <name>lazyGet</name>
-        <docblock>
-          <description>Returns a Lazy that gets a service.</description>
-          <long-description>
-</long-description>
-          <tag name="param" description="The service name; it does not need to exist yet." type="\string" variable="$key" line="102">
-            <type by_reference="false">\string</type>
-          </tag>
-          <tag name="return" description="A lazy-load object that gets the named service." type="\Aura\Di\Lazy" line="102">
-            <type by_reference="false">\Aura\Di\Lazy</type>
-          </tag>
-        </docblock>
-        <argument line="111">
-          <name>$key</name>
-          <default/>
-          <type/>
-        </argument>
-      </method>
-      <method final="false" abstract="false" static="false" visibility="public" line="125">
-        <name>newInstance</name>
-        <docblock>
-          <description>Returns a new instance of the specified class, optionally
-with additional override parameters.</description>
-          <long-description>
-</long-description>
-          <tag name="param" description="The type of class of instantiate." type="\string" variable="$class" line="113">
-            <type by_reference="false">\string</type>
-          </tag>
-          <tag name="param" description="Override parameters for the instance." type="\array" variable="$params" line="113">
-            <type by_reference="false">\array</type>
-          </tag>
-          <tag name="return" description="An instance of the requested class." type="\object" line="113">
-            <type by_reference="false">\object</type>
-          </tag>
-        </docblock>
-        <argument line="125">
-          <name>$class</name>
-          <default/>
-          <type/>
-        </argument>
-        <argument line="125">
-          <name>$params</name>
-          <default>null</default>
-          <type>array</type>
-        </argument>
-      </method>
-      <method final="false" abstract="false" static="false" visibility="public" line="138">
-        <name>lazyNew</name>
-        <docblock>
-          <description>Returns a Lazy that creates a new instance.</description>
-          <long-description>
-</long-description>
-          <tag name="param" description="The type of class of instantiate." type="\string" variable="$class" line="127">
-            <type by_reference="false">\string</type>
-          </tag>
-          <tag name="param" description="Override parameters for the instance." type="\array" variable="$params" line="127">
-            <type by_reference="false">\array</type>
-          </tag>
-          <tag name="return" description="A lazy-load object that creates the new instance." type="\Aura\Di\Lazy" line="127">
-            <type by_reference="false">\Aura\Di\Lazy</type>
-          </tag>
-        </docblock>
-        <argument line="138">
-          <name>$class</name>
-          <default/>
-          <type/>
-        </argument>
-        <argument line="138">
-          <name>$params</name>
-          <default>null</default>
-          <type>array</type>
-        </argument>
-      </method>
-    </interface>
-  </file>
-  <file path="src/Exception/ContainerExists.php" hash="d2f96e580283986d0d97022c69d8754f">
-    <class final="false" abstract="false" line="3" namespace="Aura\Di\Exception">
-      <name>ContainerExists</name>
-      <extends>\Aura\Di\Exception</extends>
-      <full_name>\Aura\Di\Exception\ContainerExists</full_name>
-    </class>
-  </file>
-  <file path="src/Exception/ContainerLocked.php" hash="2110cf74a4e7ef2d4754373a21de8137">
-    <class final="false" abstract="false" line="3" namespace="Aura\Di\Exception">
-      <name>ContainerLocked</name>
-      <extends>\Aura\Di\Exception</extends>
-      <full_name>\Aura\Di\Exception\ContainerLocked</full_name>
-    </class>
-  </file>
-  <file path="src/Exception/ContainerNotFound.php" hash="8302819e3c9c6f489d3c1eefab1053c9">
-    <class final="false" abstract="false" line="3" namespace="Aura\Di\Exception">
-      <name>ContainerNotFound</name>
-      <extends>\Aura\Di\Exception</extends>
-      <full_name>\Aura\Di\Exception\ContainerNotFound</full_name>
-    </class>
-  </file>
-  <file path="src/Exception/ServiceInvalid.php" hash="a120e7f7957523742b5670905929fc92">
-    <class final="false" abstract="false" line="3" namespace="Aura\Di\Exception">
-      <name>ServiceInvalid</name>
-      <extends>\Aura\Di\Exception</extends>
-      <full_name>\Aura\Di\Exception\ServiceInvalid</full_name>
-    </class>
-  </file>
-  <file path="src/Exception/ServiceNotFound.php" hash="ba0a426778c503d905ee860c0e24f301">
-    <class final="false" abstract="false" line="3" namespace="Aura\Di\Exception">
-      <name>ServiceNotFound</name>
-      <extends>\Aura\Di\Exception</extends>
-      <full_name>\Aura\Di\Exception\ServiceNotFound</full_name>
-    </class>
-  </file>
-  <file path="src/Exception.php" hash="5828bb87ff3d596c6c8c235d9f31f90f">
-    <class final="false" abstract="false" line="3" namespace="Aura\Di">
-      <name>Exception</name>
-      <extends>\Exception</extends>
-      <full_name>\Aura\Di\Exception</full_name>
-    </class>
   </file>
   <file path="src/Forge.php" hash="14d7d9fbb10cd16f5f219d73f1eee37f">
     <class final="false" abstract="false" line="18" namespace="Aura\Di">
@@ -884,8 +1166,8 @@ with additional override parameters.</description>
           <description>When cloning this Forge, create a separate Config object for the clone.</description>
           <long-description>
 </long-description>
-          <tag name="return" description="" type="\void" line="42">
-            <type by_reference="false">\void</type>
+          <tag name="return" description="" type="void" line="42">
+            <type by_reference="false">void</type>
           </tag>
         </docblock>
       </method>
@@ -907,14 +1189,14 @@ with additional override parameters.</description>
 the configuration parameters, optionally with overriding params.</description>
           <long-description>&lt;p&gt;Parameters that are Lazy are invoked before instantiation.&lt;/p&gt;
 </long-description>
-          <tag name="param" description="The class to instantiate." type="\string" variable="$class" line="66">
-            <type by_reference="false">\string</type>
+          <tag name="param" description="The class to instantiate." type="string" variable="$class" line="66">
+            <type by_reference="false">string</type>
           </tag>
-          <tag name="param" description="An associative array of override parameters where the key the name of the constructor parameter and the value is the parameter value to use." type="\array" variable="$params" line="66">
-            <type by_reference="false">\array</type>
+          <tag name="param" description="An associative array of override parameters where the key the name of the constructor parameter and the value is the parameter value to use." type="array" variable="$params" line="66">
+            <type by_reference="false">array</type>
           </tag>
-          <tag name="return" description="" type="\object" line="66">
-            <type by_reference="false">\object</type>
+          <tag name="return" description="" type="object" line="66">
+            <type by_reference="false">object</type>
           </tag>
         </docblock>
         <argument line="82">
@@ -930,230 +1212,17 @@ the configuration parameters, optionally with overriding params.</description>
       </method>
     </class>
   </file>
-  <file path="src/ForgeInterface.php" hash="338890c51e7dbd40d5b565fb42b7d1ee">
-    <interface namespace="Aura\Di" line="3">
-      <name>ForgeInterface</name>
-      <extends/>
-      <full_name>\Aura\Di\ForgeInterface</full_name>
-      <method final="false" abstract="false" static="false" visibility="public" line="12">
-        <name>getConfig</name>
-        <docblock>
-          <description>Gets the injected Config object.</description>
-          <long-description>
-</long-description>
-          <tag name="return" description="" type="\Aura\Di\ConfigInterface" line="5">
-            <type by_reference="false">\Aura\Di\ConfigInterface</type>
-          </tag>
-        </docblock>
-      </method>
-      <method final="false" abstract="false" static="false" visibility="public" line="28">
-        <name>newInstance</name>
-        <docblock>
-          <description>Creates and returns a new instance of a class using reflection and
-the configuration parameters, optionally with overriding params.</description>
-          <long-description>
-</long-description>
-          <tag name="param" description="The class to instantiate." type="\string" variable="$class" line="14">
-            <type by_reference="false">\string</type>
-          </tag>
-          <tag name="param" description="An associative array of override parameters where the key the name of the constructor parameter and the value is the parameter value to use." type="\array" variable="$params" line="14">
-            <type by_reference="false">\array</type>
-          </tag>
-          <tag name="return" description="" type="\object" line="14">
-            <type by_reference="false">\object</type>
-          </tag>
-        </docblock>
-        <argument line="28">
-          <name>$class</name>
-          <default/>
-          <type/>
-        </argument>
-        <argument line="28">
-          <name>$params</name>
-          <default>null</default>
-          <type>array</type>
-        </argument>
-      </method>
-    </interface>
-  </file>
-  <file path="src/Lazy.php" hash="aa549b85056ae68a9be7fafff91a394a">
+  <file path="src/Exception.php" hash="397bbd58b7a9876e5ba540290d5f696f">
     <class final="false" abstract="false" line="18" namespace="Aura\Di">
-      <name>Lazy</name>
-      <extends/>
-      <full_name>\Aura\Di\Lazy</full_name>
+      <name>Exception</name>
+      <extends>\Exception</extends>
+      <full_name>\Aura\Di\Exception</full_name>
       <docblock>
-        <description>Wraps a closure specifically for the purpose of lazy-loading an object.</description>
+        <description>Generic package exception.</description>
         <long-description>
 </long-description>
         <tag name="package" description="Aura.Di" line="11"/>
       </docblock>
-      <property final="false" static="false" visibility="protected" line="27">
-        <name>$closure</name>
-        <default/>
-        <docblock>
-          <description>A closure that creates an object instance.</description>
-          <long-description>
-</long-description>
-          <tag name="var" description="" type="\Closure" line="20">
-            <type by_reference="false">\Closure</type>
-          </tag>
-        </docblock>
-      </property>
-      <method final="false" abstract="false" static="false" visibility="public" line="38">
-        <name>__construct</name>
-        <docblock>
-          <description>Constructor.</description>
-          <long-description>
-</long-description>
-          <tag name="param" description="A closure that creates an object instance." type="\Closure" variable="$closure" line="29">
-            <type by_reference="false">\Closure</type>
-          </tag>
-          <tag name="return" description="" type="\void" line="29">
-            <type by_reference="false">\void</type>
-          </tag>
-        </docblock>
-        <argument line="38">
-          <name>$closure</name>
-          <default/>
-          <type>Closure</type>
-        </argument>
-      </method>
-      <method final="false" abstract="false" static="false" visibility="public" line="50">
-        <name>__invoke</name>
-        <docblock>
-          <description>Invokes the closure to create the instance.</description>
-          <long-description>
-</long-description>
-          <tag name="return" description="The object created by the closure." type="\object" line="43">
-            <type by_reference="false">\object</type>
-          </tag>
-        </docblock>
-      </method>
-    </class>
-  </file>
-  <file path="src/Manager.php" hash="c11278daf71420cc7ad66e1525a6ead5">
-    <class final="false" abstract="false" line="19" namespace="Aura\Di">
-      <name>Manager</name>
-      <extends>\Aura\Di\Container</extends>
-      <full_name>\Aura\Di\Manager</full_name>
-      <docblock>
-        <description>Manager for multiple DI containers; the Manager is itself the main
-container, and it provides access to sub-containers.</description>
-        <long-description>
-</long-description>
-        <tag name="package" description="Aura.Di" line="11"/>
-      </docblock>
-      <property final="false" static="false" visibility="protected" line="28">
-        <name>$containers</name>
-        <default>array</default>
-        <docblock>
-          <description>Sub-container definitions.</description>
-          <long-description>
-</long-description>
-          <tag name="var" description="" type="\array" line="21">
-            <type by_reference="false">\array</type>
-          </tag>
-        </docblock>
-      </property>
-      <method final="false" abstract="false" static="false" visibility="public" line="38">
-        <name>lock</name>
-        <docblock>
-          <description>Locks the main container and all sub-containers; once locked, they
-cannot be unlocked.</description>
-          <long-description>
-</long-description>
-          <tag name="return" description="" type="\void" line="30">
-            <type by_reference="false">\void</type>
-          </tag>
-        </docblock>
-      </method>
-      <method final="false" abstract="false" static="false" visibility="public" line="57">
-        <name>newContainer</name>
-        <docblock>
-          <description>Creates and retains a new sub-container.  The new container does not
-inherit configuration from the main container in any way; you will have
-to add params, setters, etc. on the new container.</description>
-          <long-description>
-</long-description>
-          <tag name="param" description="The sub-container name." type="\string" variable="$name" line="46">
-            <type by_reference="false">\string</type>
-          </tag>
-          <tag name="return" description="The new sub-container." type="\Aura\Di\Container" line="46">
-            <type by_reference="false">\Aura\Di\Container</type>
-          </tag>
-        </docblock>
-        <argument line="57">
-          <name>$name</name>
-          <default/>
-          <type/>
-        </argument>
-      </method>
-      <method final="false" abstract="false" static="false" visibility="public" line="77">
-        <name>getContainer</name>
-        <docblock>
-          <description>Gets a sub-container by name.</description>
-          <long-description>
-</long-description>
-          <tag name="param" description="The sub-container name." type="\string" variable="$name" line="68">
-            <type by_reference="false">\string</type>
-          </tag>
-          <tag name="return" description="The sub-container." type="\Aura\Di\Container" line="68">
-            <type by_reference="false">\Aura\Di\Container</type>
-          </tag>
-        </docblock>
-        <argument line="77">
-          <name>$name</name>
-          <default/>
-          <type/>
-        </argument>
-      </method>
-      <method final="false" abstract="false" static="false" visibility="public" line="93">
-        <name>getContainers</name>
-        <docblock>
-          <description>Gets the names of all sub-containers.</description>
-          <long-description>
-</long-description>
-          <tag name="return" description="The names of all sub-containers." type="\array" line="86">
-            <type by_reference="false">\array</type>
-          </tag>
-        </docblock>
-      </method>
-      <method final="false" abstract="false" static="false" visibility="public" line="109">
-        <name>cloneContainer</name>
-        <docblock>
-          <description>Returns a clone of a sub-container.  The clone will have all the
-configuration and service definitions of the origin container, but it
-will not have any of the service objects.  Calling get() will create
-new services that are independent and separate from the origin
-container services.</description>
-          <long-description>
-</long-description>
-          <tag name="return" description="A clone of the named sub-container." type="\Aura\Di\Container" line="98">
-            <type by_reference="false">\Aura\Di\Container</type>
-          </tag>
-        </docblock>
-        <argument line="109">
-          <name>$name</name>
-          <default/>
-          <type/>
-        </argument>
-      </method>
-      <method final="false" abstract="false" static="false" visibility="public" line="122">
-        <name>lazyCloneContainer</name>
-        <docblock>
-          <description>Returns a Lazy that, when invoked, will return sub-container clone</description>
-          <long-description>
-</long-description>
-          <tag name="return" description="" type="\Aura\Di\Lazy" line="115">
-            <type by_reference="false">\Aura\Di\Lazy</type>
-          </tag>
-        </docblock>
-        <argument line="122">
-          <name>$name</name>
-          <default/>
-          <type/>
-        </argument>
-      </method>
     </class>
   </file>
   <file path="src.php" hash="653504751579243e98515d3588e15765">

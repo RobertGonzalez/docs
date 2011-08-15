@@ -1,205 +1,5 @@
 <?xml version="1.0"?>
-<project version="0.11.2" title="Aura Project for PHP: Aura.Signal">
-  <file path="src/Exception.php" hash="ce09ec2f96ece02ac860cb1744d35828">
-    <class final="false" abstract="false" line="18" namespace="Aura\Signal">
-      <name>Exception</name>
-      <extends>\Exception</extends>
-      <full_name>\Aura\Signal\Exception</full_name>
-      <docblock>
-        <description>Generic package exception.</description>
-        <long-description>
-</long-description>
-        <tag name="package" description="Aura.Signal" line="11"/>
-      </docblock>
-    </class>
-  </file>
-  <file path="src/Handler.php" hash="0054cb827ff712cdcd5bba6082aedda6">
-    <class final="false" abstract="false" line="18" namespace="Aura\Signal">
-      <name>Handler</name>
-      <extends/>
-      <full_name>\Aura\Signal\Handler</full_name>
-      <docblock>
-        <description>A signal Handler definition.</description>
-        <long-description>
-</long-description>
-        <tag name="package" description="Aura.Signal" line="11"/>
-      </docblock>
-      <property final="false" static="false" visibility="protected" line="30">
-        <name>$sender</name>
-        <default/>
-        <docblock>
-          <description>Handle signals from this sender. This can be an object, in which case
-the Handler will match only signals from that object, or a class name,
-in which case the Handler will match signals from any instance of that
-class.</description>
-          <long-description>
-</long-description>
-          <tag name="var" description="" type="\object|\string" line="20">
-            <type by_reference="false">\object</type>
-            <type by_reference="false">\string</type>
-          </tag>
-        </docblock>
-      </property>
-      <property final="false" static="false" visibility="protected" line="39">
-        <name>$signal</name>
-        <default/>
-        <docblock>
-          <description>Handle this signal from the sender.</description>
-          <long-description>
-</long-description>
-          <tag name="var" description="" type="\string" line="32">
-            <type by_reference="false">\string</type>
-          </tag>
-        </docblock>
-      </property>
-      <property final="false" static="false" visibility="protected" line="48">
-        <name>$callback</name>
-        <default/>
-        <docblock>
-          <description>Use this callback to handle the signal.</description>
-          <long-description>
-</long-description>
-          <tag name="var" description="" type="\callback" line="41">
-            <type by_reference="false">\callback</type>
-          </tag>
-        </docblock>
-      </property>
-      <method final="false" abstract="false" static="false" visibility="public" line="61">
-        <name>__construct</name>
-        <docblock>
-          <description>Constructor.</description>
-          <long-description>
-</long-description>
-          <tag name="param" description="Handle signals from this sender." type="\object|\string" variable="$sender" line="50">
-            <type by_reference="false">\object</type>
-            <type by_reference="false">\string</type>
-          </tag>
-          <tag name="param" description="Handle this specific signal." type="\string" variable="$signal" line="50">
-            <type by_reference="false">\string</type>
-          </tag>
-          <tag name="param" description="Use this callback to handle the signal." type="\callback" variable="$callback" line="50">
-            <type by_reference="false">\callback</type>
-          </tag>
-        </docblock>
-        <argument line="61">
-          <name>$sender</name>
-          <default/>
-          <type/>
-        </argument>
-        <argument line="61">
-          <name>$signal</name>
-          <default/>
-          <type/>
-        </argument>
-        <argument line="61">
-          <name>$callback</name>
-          <default/>
-          <type/>
-        </argument>
-      </method>
-      <method final="false" abstract="false" static="false" visibility="public" line="77">
-        <name>__get</name>
-        <docblock>
-          <description>Make properties available as magic read-only.</description>
-          <long-description>
-</long-description>
-          <tag name="param" description="The property name." type="\string" variable="$key" line="68">
-            <type by_reference="false">\string</type>
-          </tag>
-          <tag name="return" description="" type="\mixed" line="68">
-            <type by_reference="false">\mixed</type>
-          </tag>
-        </docblock>
-        <argument line="77">
-          <name>$key</name>
-          <default/>
-          <type/>
-        </argument>
-      </method>
-      <method final="false" abstract="false" static="false" visibility="public" line="99">
-        <name>exec</name>
-        <docblock>
-          <description>Execute the handler: if the originating object matches the required
-sender, and the signal matches the required signal, then run the
-callback and return the results.</description>
-          <long-description>
-</long-description>
-          <tag name="param" description="The originating object that sent the signal." type="\object" variable="$origin" line="82">
-            <type by_reference="false">\object</type>
-          </tag>
-          <tag name="param" description="The signal sent by the originating object." type="\string" variable="$signal" line="82">
-            <type by_reference="false">\string</type>
-          </tag>
-          <tag name="param" description="Arguments for the callback, which will be invoked if the sender and signal match this Handler." type="\array" variable="$args" line="82">
-            <type by_reference="false">\array</type>
-          </tag>
-          <tag name="return" description="An array of parameters suitable for creating a Result object, or null if the origin and signal did not match this Handler." type="\null|\array" line="82">
-            <type by_reference="false">\null</type>
-            <type by_reference="false">\array</type>
-          </tag>
-        </docblock>
-        <argument line="99">
-          <name>$origin</name>
-          <default/>
-          <type/>
-        </argument>
-        <argument line="99">
-          <name>$signal</name>
-          <default/>
-          <type/>
-        </argument>
-        <argument line="99">
-          <name>$args</name>
-          <default/>
-          <type/>
-        </argument>
-      </method>
-    </class>
-  </file>
-  <file path="src/HandlerFactory.php" hash="af501e68a8b46eb3bfe3cb852535b2c2">
-    <class final="false" abstract="false" line="18" namespace="Aura\Signal">
-      <name>HandlerFactory</name>
-      <extends/>
-      <full_name>\Aura\Signal\HandlerFactory</full_name>
-      <docblock>
-        <description>A factory to create Handler objects.</description>
-        <long-description>
-</long-description>
-        <tag name="package" description="Aura.Signal" line="11"/>
-      </docblock>
-      <property final="false" static="false" visibility="protected" line="27">
-        <name>$params</name>
-        <default>array</default>
-        <docblock>
-          <description>An array of default parameters for Handler objects.</description>
-          <long-description>
-</long-description>
-          <tag name="var" description="" type="\array" line="20">
-            <type by_reference="false">\array</type>
-          </tag>
-        </docblock>
-      </property>
-      <method final="false" abstract="false" static="false" visibility="public" line="43">
-        <name>newInstance</name>
-        <docblock>
-          <description>Creates and returns a new Handler object.</description>
-          <long-description>
-</long-description>
-          <tag name="param" description="An array of key-value pairs corresponding to Handler constructor params." type="\array" variable="$params" line="33">
-            <type by_reference="false">\array</type>
-          </tag>
-          <tag name="return" description="" type="\Aura\Signal\Handler" line="33">
-            <type by_reference="false">\Aura\Signal\Handler</type>
-          </tag>
-        </docblock>
-        <argument line="43">
-          <name>$params</name>
-          <default/>
-          <type>array</type>
-        </argument>
-      </method>
-    </class>
-  </file>
+<project version="0.13.1" title="Aura Project for PHP: Aura.Signal">
   <file path="src/Manager.php" hash="2c19ce1953d6378e412edf4552f40551">
     <class final="false" abstract="false" line="18" namespace="Aura\Signal">
       <name>Manager</name>
@@ -240,8 +40,8 @@ callback and return the results.</description>
           <description>An array of Handler instances that respond to class signals.</description>
           <long-description>
 </long-description>
-          <tag name="var" description="" type="\array" line="38">
-            <type by_reference="false">\array</type>
+          <tag name="var" description="" type="array" line="38">
+            <type by_reference="false">array</type>
           </tag>
         </docblock>
       </property>
@@ -289,8 +89,8 @@ the Result objects from Handler instances.</description>
           <description>Have the handlers for a signal been sorted by position?</description>
           <long-description>
 </long-description>
-          <tag name="var" description="" type="\array" line="75">
-            <type by_reference="false">\array</type>
+          <tag name="var" description="" type="array" line="75">
+            <type by_reference="false">array</type>
           </tag>
         </docblock>
       </property>
@@ -306,8 +106,8 @@ the Result objects from Handler instances.</description>
           <tag name="param" description="A prototype ResultCollection." type="\Aura\Signal\ResultCollection" variable="$result_collection" line="84">
             <type by_reference="false">\Aura\Signal\ResultCollection</type>
           </tag>
-          <tag name="param" description="An array describing Handler params." type="\array" variable="$handlers" line="84">
-            <type by_reference="false">\array</type>
+          <tag name="param" description="An array describing Handler params." type="array" variable="$handlers" line="84">
+            <type by_reference="false">array</type>
           </tag>
         </docblock>
         <argument line="97">
@@ -337,21 +137,21 @@ the Result objects from Handler instances.</description>
           <description>Adds a Handler to respond to a sender signal.</description>
           <long-description>
 </long-description>
-          <tag name="param" description="The class or object sender of the signal. If a class, inheritance will be honored, and &amp;#039;*&amp;#039; will be interpreted as &amp;quot;any class.&amp;quot;" type="\string|\object" variable="$sender" line="117">
-            <type by_reference="false">\string</type>
-            <type by_reference="false">\object</type>
+          <tag name="param" description="The class or object sender of the signal. If a class, inheritance will be honored, and '*' will be interpreted as &quot;any class.&quot;" type="string|object" variable="$sender" line="117">
+            <type by_reference="false">string</type>
+            <type by_reference="false">object</type>
           </tag>
-          <tag name="param" description="The name of the signal for that sender." type="\string" variable="$signal" line="117">
-            <type by_reference="false">\string</type>
+          <tag name="param" description="The name of the signal for that sender." type="string" variable="$signal" line="117">
+            <type by_reference="false">string</type>
           </tag>
-          <tag name="param" description="The callback to execute when the signal is received." type="\callback" variable="$callback" line="117">
-            <type by_reference="false">\callback</type>
+          <tag name="param" description="The callback to execute when the signal is received." type="callback" variable="$callback" line="117">
+            <type by_reference="false">callback</type>
           </tag>
-          <tag name="param" description="The handler processing position; lower numbers are processed first. Use this to force a handler to be used before or after others." type="\int" variable="$position" line="117">
-            <type by_reference="false">\int</type>
+          <tag name="param" description="The handler processing position; lower numbers are processed first. Use this to force a handler to be used before or after others." type="int" variable="$position" line="117">
+            <type by_reference="false">int</type>
           </tag>
-          <tag name="return" description="" type="\void" line="117">
-            <type by_reference="false">\void</type>
+          <tag name="return" description="" type="void" line="117">
+            <type by_reference="false">void</type>
           </tag>
         </docblock>
         <argument line="136">
@@ -381,11 +181,11 @@ the Result objects from Handler instances.</description>
           <description>Gets Handler instances for the Manager.</description>
           <long-description>
 </long-description>
-          <tag name="param" description="Only get Handler instances for this signal; if null, get all Handler instances." type="\string" variable="$signal" line="147">
-            <type by_reference="false">\string</type>
+          <tag name="param" description="Only get Handler instances for this signal; if null, get all Handler instances." type="string" variable="$signal" line="147">
+            <type by_reference="false">string</type>
           </tag>
-          <tag name="return" description="" type="\array" line="147">
-            <type by_reference="false">\array</type>
+          <tag name="return" description="" type="array" line="147">
+            <type by_reference="false">array</type>
           </tag>
         </docblock>
         <argument line="157">
@@ -400,11 +200,11 @@ the Result objects from Handler instances.</description>
           <description>Invokes the Handler objects for a sender and signal.</description>
           <long-description>
 </long-description>
-          <tag name="param" description="The object sending the signal. Note that this is always an object, not a class name." type="\object" variable="$origin" line="174">
-            <type by_reference="false">\object</type>
+          <tag name="param" description="The object sending the signal. Note that this is always an object, not a class name." type="object" variable="$origin" line="174">
+            <type by_reference="false">object</type>
           </tag>
-          <tag name="param" description="The name of the signal from that origin." type="\string" variable="$signal" line="174">
-            <type by_reference="false">\string</type>
+          <tag name="param" description="The name of the signal from that origin." type="string" variable="$signal" line="174">
+            <type by_reference="false">string</type>
           </tag>
           <tag name="params" description="Arguments to pass to the Handler callback." line="174"/>
           <tag name="return" description="The results from each of the Handler objects." type="\Aura\Signal\ResultCollection" line="174">
@@ -428,11 +228,11 @@ the Result objects from Handler instances.</description>
           <description>Invokes the Handler objects for a sender and signal.</description>
           <long-description>
 </long-description>
-          <tag name="param" description="The object sending the signal. Note that this is always an object, not a class name." type="\object" variable="$origin" line="202">
-            <type by_reference="false">\object</type>
+          <tag name="param" description="The object sending the signal. Note that this is always an object, not a class name." type="object" variable="$origin" line="202">
+            <type by_reference="false">object</type>
           </tag>
-          <tag name="param" description="The name of the signal from that origin." type="\string" variable="$signal" line="202">
-            <type by_reference="false">\string</type>
+          <tag name="param" description="The name of the signal from that origin." type="string" variable="$signal" line="202">
+            <type by_reference="false">string</type>
           </tag>
           <tag name="param" description="Arguments to pass to the Handler callback." type="\Aura\Signal\$args" variable="$args" line="202">
             <type by_reference="false">\Aura\Signal\$args</type>
@@ -488,8 +288,8 @@ the Result objects from Handler instances.</description>
           <description>The origin object that actually sent the signal.</description>
           <long-description>
 </long-description>
-          <tag name="var" description="" type="\object" line="20">
-            <type by_reference="false">\object</type>
+          <tag name="var" description="" type="object" line="20">
+            <type by_reference="false">object</type>
           </tag>
         </docblock>
       </property>
@@ -500,8 +300,8 @@ the Result objects from Handler instances.</description>
           <description>The sender defined by the Handler.</description>
           <long-description>
 </long-description>
-          <tag name="var" description="" type="\mixed" line="29">
-            <type by_reference="false">\mixed</type>
+          <tag name="var" description="" type="mixed" line="29">
+            <type by_reference="false">mixed</type>
           </tag>
         </docblock>
       </property>
@@ -512,8 +312,8 @@ the Result objects from Handler instances.</description>
           <description>The signal defined by the Handler and sent by the origin.</description>
           <long-description>
 </long-description>
-          <tag name="var" description="" type="\mixed" line="38">
-            <type by_reference="false">\mixed</type>
+          <tag name="var" description="" type="mixed" line="38">
+            <type by_reference="false">mixed</type>
           </tag>
         </docblock>
       </property>
@@ -524,8 +324,8 @@ the Result objects from Handler instances.</description>
           <description>The value returned by the Handler callback, if any.</description>
           <long-description>
 </long-description>
-          <tag name="var" description="" type="\mixed" line="47">
-            <type by_reference="false">\mixed</type>
+          <tag name="var" description="" type="mixed" line="47">
+            <type by_reference="false">mixed</type>
           </tag>
         </docblock>
       </property>
@@ -535,17 +335,17 @@ the Result objects from Handler instances.</description>
           <description>Constructor.</description>
           <long-description>
 </long-description>
-          <tag name="param" description="The origin object that sent the signal." type="\object" variable="$origin" line="56">
-            <type by_reference="false">\object</type>
+          <tag name="param" description="The origin object that sent the signal." type="object" variable="$origin" line="56">
+            <type by_reference="false">object</type>
           </tag>
-          <tag name="param" description="The sender as defined by the Handler." type="\mixed" variable="$sender" line="56">
-            <type by_reference="false">\mixed</type>
+          <tag name="param" description="The sender as defined by the Handler." type="mixed" variable="$sender" line="56">
+            <type by_reference="false">mixed</type>
           </tag>
-          <tag name="param" description="The signal defined by the Handler and sent by the origin." type="\string" variable="$signal" line="56">
-            <type by_reference="false">\string</type>
+          <tag name="param" description="The signal defined by the Handler and sent by the origin." type="string" variable="$signal" line="56">
+            <type by_reference="false">string</type>
           </tag>
-          <tag name="param" description="The value returned by the Handler callback." type="\mixed" variable="$value" line="56">
-            <type by_reference="false">\mixed</type>
+          <tag name="param" description="The value returned by the Handler callback." type="mixed" variable="$value" line="56">
+            <type by_reference="false">mixed</type>
           </tag>
         </docblock>
         <argument line="70">
@@ -575,15 +375,158 @@ the Result objects from Handler instances.</description>
           <description>Make the properties available as magic read-only.</description>
           <long-description>
 </long-description>
-          <tag name="param" description="The property name." type="\string" variable="$key" line="78">
-            <type by_reference="false">\string</type>
+          <tag name="param" description="The property name." type="string" variable="$key" line="78">
+            <type by_reference="false">string</type>
           </tag>
-          <tag name="return" description="" type="\mixed" line="78">
-            <type by_reference="false">\mixed</type>
+          <tag name="return" description="" type="mixed" line="78">
+            <type by_reference="false">mixed</type>
           </tag>
         </docblock>
         <argument line="87">
           <name>$key</name>
+          <default/>
+          <type/>
+        </argument>
+      </method>
+    </class>
+  </file>
+  <file path="src/Handler.php" hash="0054cb827ff712cdcd5bba6082aedda6">
+    <class final="false" abstract="false" line="18" namespace="Aura\Signal">
+      <name>Handler</name>
+      <extends/>
+      <full_name>\Aura\Signal\Handler</full_name>
+      <docblock>
+        <description>A signal Handler definition.</description>
+        <long-description>
+</long-description>
+        <tag name="package" description="Aura.Signal" line="11"/>
+      </docblock>
+      <property final="false" static="false" visibility="protected" line="30">
+        <name>$sender</name>
+        <default/>
+        <docblock>
+          <description>Handle signals from this sender. This can be an object, in which case
+the Handler will match only signals from that object, or a class name,
+in which case the Handler will match signals from any instance of that
+class.</description>
+          <long-description>
+</long-description>
+          <tag name="var" description="" type="object|string" line="20">
+            <type by_reference="false">object</type>
+            <type by_reference="false">string</type>
+          </tag>
+        </docblock>
+      </property>
+      <property final="false" static="false" visibility="protected" line="39">
+        <name>$signal</name>
+        <default/>
+        <docblock>
+          <description>Handle this signal from the sender.</description>
+          <long-description>
+</long-description>
+          <tag name="var" description="" type="string" line="32">
+            <type by_reference="false">string</type>
+          </tag>
+        </docblock>
+      </property>
+      <property final="false" static="false" visibility="protected" line="48">
+        <name>$callback</name>
+        <default/>
+        <docblock>
+          <description>Use this callback to handle the signal.</description>
+          <long-description>
+</long-description>
+          <tag name="var" description="" type="callback" line="41">
+            <type by_reference="false">callback</type>
+          </tag>
+        </docblock>
+      </property>
+      <method final="false" abstract="false" static="false" visibility="public" line="61">
+        <name>__construct</name>
+        <docblock>
+          <description>Constructor.</description>
+          <long-description>
+</long-description>
+          <tag name="param" description="Handle signals from this sender." type="object|string" variable="$sender" line="50">
+            <type by_reference="false">object</type>
+            <type by_reference="false">string</type>
+          </tag>
+          <tag name="param" description="Handle this specific signal." type="string" variable="$signal" line="50">
+            <type by_reference="false">string</type>
+          </tag>
+          <tag name="param" description="Use this callback to handle the signal." type="callback" variable="$callback" line="50">
+            <type by_reference="false">callback</type>
+          </tag>
+        </docblock>
+        <argument line="61">
+          <name>$sender</name>
+          <default/>
+          <type/>
+        </argument>
+        <argument line="61">
+          <name>$signal</name>
+          <default/>
+          <type/>
+        </argument>
+        <argument line="61">
+          <name>$callback</name>
+          <default/>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" line="77">
+        <name>__get</name>
+        <docblock>
+          <description>Make properties available as magic read-only.</description>
+          <long-description>
+</long-description>
+          <tag name="param" description="The property name." type="string" variable="$key" line="68">
+            <type by_reference="false">string</type>
+          </tag>
+          <tag name="return" description="" type="mixed" line="68">
+            <type by_reference="false">mixed</type>
+          </tag>
+        </docblock>
+        <argument line="77">
+          <name>$key</name>
+          <default/>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" line="99">
+        <name>exec</name>
+        <docblock>
+          <description>Execute the handler: if the originating object matches the required
+sender, and the signal matches the required signal, then run the
+callback and return the results.</description>
+          <long-description>
+</long-description>
+          <tag name="param" description="The originating object that sent the signal." type="object" variable="$origin" line="82">
+            <type by_reference="false">object</type>
+          </tag>
+          <tag name="param" description="The signal sent by the originating object." type="string" variable="$signal" line="82">
+            <type by_reference="false">string</type>
+          </tag>
+          <tag name="param" description="Arguments for the callback, which will be invoked if the sender and signal match this Handler." type="array" variable="$args" line="82">
+            <type by_reference="false">array</type>
+          </tag>
+          <tag name="return" description="An array of parameters suitable for creating a Result object, or null if the origin and signal did not match this Handler." type="null|array" line="82">
+            <type by_reference="false">null</type>
+            <type by_reference="false">array</type>
+          </tag>
+        </docblock>
+        <argument line="99">
+          <name>$origin</name>
+          <default/>
+          <type/>
+        </argument>
+        <argument line="99">
+          <name>$signal</name>
+          <default/>
+          <type/>
+        </argument>
+        <argument line="99">
+          <name>$args</name>
           <default/>
           <type/>
         </argument>
@@ -618,8 +561,8 @@ the Result objects from Handler instances.</description>
           <description>Tells if the ResultCollection was stopped during processing.</description>
           <long-description>
 </long-description>
-          <tag name="return" description="" type="\bool" line="35">
-            <type by_reference="false">\bool</type>
+          <tag name="return" description="" type="bool" line="35">
+            <type by_reference="false">bool</type>
           </tag>
         </docblock>
       </method>
@@ -643,8 +586,8 @@ the Result objects from Handler instances.</description>
           <description>An array of default parameters for Result objects.</description>
           <long-description>
 </long-description>
-          <tag name="var" description="" type="\array" line="20">
-            <type by_reference="false">\array</type>
+          <tag name="var" description="" type="array" line="20">
+            <type by_reference="false">array</type>
           </tag>
         </docblock>
       </property>
@@ -654,8 +597,8 @@ the Result objects from Handler instances.</description>
           <description>Creates and returns a new Option object.</description>
           <long-description>
 </long-description>
-          <tag name="param" description="An array of key-value pairs corresponding to Result constructor params." type="\array" variable="$params" line="34">
-            <type by_reference="false">\array</type>
+          <tag name="param" description="An array of key-value pairs corresponding to Result constructor params." type="array" variable="$params" line="34">
+            <type by_reference="false">array</type>
           </tag>
           <tag name="return" description="" type="\Aura\Signal\Result" line="34">
             <type by_reference="false">\Aura\Signal\Result</type>
@@ -667,6 +610,63 @@ the Result objects from Handler instances.</description>
           <type>array</type>
         </argument>
       </method>
+    </class>
+  </file>
+  <file path="src/HandlerFactory.php" hash="af501e68a8b46eb3bfe3cb852535b2c2">
+    <class final="false" abstract="false" line="18" namespace="Aura\Signal">
+      <name>HandlerFactory</name>
+      <extends/>
+      <full_name>\Aura\Signal\HandlerFactory</full_name>
+      <docblock>
+        <description>A factory to create Handler objects.</description>
+        <long-description>
+</long-description>
+        <tag name="package" description="Aura.Signal" line="11"/>
+      </docblock>
+      <property final="false" static="false" visibility="protected" line="27">
+        <name>$params</name>
+        <default>array</default>
+        <docblock>
+          <description>An array of default parameters for Handler objects.</description>
+          <long-description>
+</long-description>
+          <tag name="var" description="" type="array" line="20">
+            <type by_reference="false">array</type>
+          </tag>
+        </docblock>
+      </property>
+      <method final="false" abstract="false" static="false" visibility="public" line="43">
+        <name>newInstance</name>
+        <docblock>
+          <description>Creates and returns a new Handler object.</description>
+          <long-description>
+</long-description>
+          <tag name="param" description="An array of key-value pairs corresponding to Handler constructor params." type="array" variable="$params" line="33">
+            <type by_reference="false">array</type>
+          </tag>
+          <tag name="return" description="" type="\Aura\Signal\Handler" line="33">
+            <type by_reference="false">\Aura\Signal\Handler</type>
+          </tag>
+        </docblock>
+        <argument line="43">
+          <name>$params</name>
+          <default/>
+          <type>array</type>
+        </argument>
+      </method>
+    </class>
+  </file>
+  <file path="src/Exception.php" hash="ce09ec2f96ece02ac860cb1744d35828">
+    <class final="false" abstract="false" line="18" namespace="Aura\Signal">
+      <name>Exception</name>
+      <extends>\Exception</extends>
+      <full_name>\Aura\Signal\Exception</full_name>
+      <docblock>
+        <description>Generic package exception.</description>
+        <long-description>
+</long-description>
+        <tag name="package" description="Aura.Signal" line="11"/>
+      </docblock>
     </class>
   </file>
   <file path="src.php" hash="c62fedbd0866bddb9d7fa24abe7224e5">

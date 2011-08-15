@@ -35,6 +35,7 @@ if (!file_exists($base_repo_path))
 }
 
 // foreach repository: if it exists locally: pull, if not: clone
+/*
 foreach($repositories as $name => $repo)
 {
   echo '        Retrieving: ' . $name . PHP_EOL;
@@ -49,7 +50,7 @@ foreach($repositories as $name => $repo)
     exit(1);
   }
 }
-
+ */
 echo '[3/4] Building API documentation'.PHP_EOL;
 $config_file = __DIR__.DIRECTORY_SEPARATOR.'docblox.config.xml';
 $base_api_path = __DIR__.DIRECTORY_SEPARATOR.'api';

@@ -1,0 +1,369 @@
+<html xmlns="http://www.w3.org/1999/xhtml"><head><title>Aura Project for PHP: Aura.Signal</title><meta http-equiv="Content-Type" content="text/html; charset=utf-8"></meta><link rel="stylesheet" href="css/black-tie/jquery-ui-1.8.2.custom.css" type="text/css"></link><link rel="stylesheet" href="css/jquery.treeview.css" type="text/css"></link><link rel="stylesheet" href="css/theme.css" type="text/css"></link><script type="text/javascript" src="js/jquery-1.4.2.min.js"></script><script type="text/javascript" src="js/jquery-ui-1.8.2.custom.min.js"></script><script type="text/javascript" src="js/jquery.cookie.js"></script><script type="text/javascript" src="js/jquery.treeview.js"></script><script type="text/javascript">
+            $(document).ready(function() {
+                $(".filetree").treeview({
+                    collapsed: true,
+                    persist: "cookie"
+                });
+
+                $("#accordion").accordion({
+                    collapsible: true,
+                    autoHeight:  false,
+                    fillSpace:   true
+                });
+
+                $(".tabs").tabs();
+            });
+        </script></head><body><div xmlns="" id="content">
+<script type="text/javascript" src="js/menu.js"></script><script>
+      $(document).ready(function() {
+        $('a.gripper').click(function() {
+            $(this).nextAll('div.code-tabs').slideToggle();
+            $(this).children('img').toggle();
+            return false;
+        });
+        $('div.code-tabs').hide();
+        $('a.gripper').show();
+        $('div.file-nav').show();
+      });
+    </script><h1 class="file">src/ResultCollection.php</h1>
+<div class="file-nav"><ul id="file-nav">
+<li><a href="#top">Global</a></li>
+<li>
+<a href="#classes"><img src="images/icons/class.png" height="14">
+                      Classes
+                  </a><ul><li><a href="#%5CAura%5CSignal%5CResultCollection">\Aura\Signal\ResultCollection</a></li></ul>
+</li>
+</ul></div>
+<a name="top"></a><div id="file-description"></div>
+<dl class="file-info"></dl>
+<a name="classes"></a><a id="\Aura\Signal\ResultCollection"></a><h2 class="class">\Aura\Signal\ResultCollection<div class="to-top"><a href="#top">jump to top</a></div>
+</h2>
+<div class="class">
+<p class="short-description">Represents a collection of Result objects.</p>
+<div class="long-description">
+</div>
+<dl class="class-info">
+<dt>Extends from</dt>
+<dd><a href="http://php.net/manual/en/class.arrayobject.php">\ArrayObject</a></dd>
+<dt>package</dt>
+<dd>Aura.Signal</dd>
+</dl>
+<h3>Methods</h3>
+<div>
+<a id="\Aura\Signal\ResultCollection::__construct()"></a><div class="method inherited_from ">
+<a href="#" class="gripper"><img src="images/icons/arrow_right.png"><img src="images/icons/arrow_down.png" style="display: none;"></a><code><img src="images/icons/method.png" alt="method"><img src="images/icons/visibility_public.png" style="margin-right: 5px" alt="public"> 
+            <span class="highlight">__construct</span><span class="nb-faded-text">(
+          
+          )
+        </span>
+        :
+        </code><div class="description"><small>Inherited from:
+                    </small></div>
+<div class="code-tabs"></div>
+<div class="clear"></div>
+</div>
+<a id="\Aura\Signal\ResultCollection::append()"></a><div class="method inherited_from ">
+<a href="#" class="gripper"><img src="images/icons/arrow_right.png"><img src="images/icons/arrow_down.png" style="display: none;"></a><code><img src="images/icons/method.png" alt="method"><img src="images/icons/visibility_public.png" style="margin-right: 5px" alt="public"> 
+            <span class="highlight">append</span><span class="nb-faded-text">(
+          
+          )
+        </span>
+        :
+        </code><div class="description"><small>Inherited from:
+                    </small></div>
+<div class="code-tabs"></div>
+<div class="clear"></div>
+</div>
+<a id="\Aura\Signal\ResultCollection::asort()"></a><div class="method inherited_from ">
+<a href="#" class="gripper"><img src="images/icons/arrow_right.png"><img src="images/icons/arrow_down.png" style="display: none;"></a><code><img src="images/icons/method.png" alt="method"><img src="images/icons/visibility_public.png" style="margin-right: 5px" alt="public"> 
+            <span class="highlight">asort</span><span class="nb-faded-text">(
+          
+          )
+        </span>
+        :
+        </code><div class="description"><small>Inherited from:
+                    </small></div>
+<div class="code-tabs"></div>
+<div class="clear"></div>
+</div>
+<a id="\Aura\Signal\ResultCollection::count()"></a><div class="method inherited_from ">
+<a href="#" class="gripper"><img src="images/icons/arrow_right.png"><img src="images/icons/arrow_down.png" style="display: none;"></a><code><img src="images/icons/method.png" alt="method"><img src="images/icons/visibility_public.png" style="margin-right: 5px" alt="public"> 
+            <span class="highlight">count</span><span class="nb-faded-text">(
+          
+          )
+        </span>
+        :
+        </code><div class="description"><small>Inherited from:
+                    </small></div>
+<div class="code-tabs"></div>
+<div class="clear"></div>
+</div>
+<a id="\Aura\Signal\ResultCollection::exchangeArray()"></a><div class="method inherited_from ">
+<a href="#" class="gripper"><img src="images/icons/arrow_right.png"><img src="images/icons/arrow_down.png" style="display: none;"></a><code><img src="images/icons/method.png" alt="method"><img src="images/icons/visibility_public.png" style="margin-right: 5px" alt="public"> 
+            <span class="highlight">exchangeArray</span><span class="nb-faded-text">(
+          
+          )
+        </span>
+        :
+        </code><div class="description"><small>Inherited from:
+                    </small></div>
+<div class="code-tabs"></div>
+<div class="clear"></div>
+</div>
+<a id="\Aura\Signal\ResultCollection::getArrayCopy()"></a><div class="method inherited_from ">
+<a href="#" class="gripper"><img src="images/icons/arrow_right.png"><img src="images/icons/arrow_down.png" style="display: none;"></a><code><img src="images/icons/method.png" alt="method"><img src="images/icons/visibility_public.png" style="margin-right: 5px" alt="public"> 
+            <span class="highlight">getArrayCopy</span><span class="nb-faded-text">(
+          
+          )
+        </span>
+        :
+        </code><div class="description"><small>Inherited from:
+                    </small></div>
+<div class="code-tabs"></div>
+<div class="clear"></div>
+</div>
+<a id="\Aura\Signal\ResultCollection::getFlags()"></a><div class="method inherited_from ">
+<a href="#" class="gripper"><img src="images/icons/arrow_right.png"><img src="images/icons/arrow_down.png" style="display: none;"></a><code><img src="images/icons/method.png" alt="method"><img src="images/icons/visibility_public.png" style="margin-right: 5px" alt="public"> 
+            <span class="highlight">getFlags</span><span class="nb-faded-text">(
+          
+          )
+        </span>
+        :
+        </code><div class="description"><small>Inherited from:
+                    </small></div>
+<div class="code-tabs"></div>
+<div class="clear"></div>
+</div>
+<a id="\Aura\Signal\ResultCollection::getIterator()"></a><div class="method inherited_from ">
+<a href="#" class="gripper"><img src="images/icons/arrow_right.png"><img src="images/icons/arrow_down.png" style="display: none;"></a><code><img src="images/icons/method.png" alt="method"><img src="images/icons/visibility_public.png" style="margin-right: 5px" alt="public"> 
+            <span class="highlight">getIterator</span><span class="nb-faded-text">(
+          
+          )
+        </span>
+        :
+        </code><div class="description"><small>Inherited from:
+                    </small></div>
+<div class="code-tabs"></div>
+<div class="clear"></div>
+</div>
+<a id="\Aura\Signal\ResultCollection::getIteratorClass()"></a><div class="method inherited_from ">
+<a href="#" class="gripper"><img src="images/icons/arrow_right.png"><img src="images/icons/arrow_down.png" style="display: none;"></a><code><img src="images/icons/method.png" alt="method"><img src="images/icons/visibility_public.png" style="margin-right: 5px" alt="public"> 
+            <span class="highlight">getIteratorClass</span><span class="nb-faded-text">(
+          
+          )
+        </span>
+        :
+        </code><div class="description"><small>Inherited from:
+                    </small></div>
+<div class="code-tabs"></div>
+<div class="clear"></div>
+</div>
+<a id="\Aura\Signal\ResultCollection::getLast()"></a><div class="method">
+<a href="#" class="gripper"><img src="images/icons/arrow_right.png"><img src="images/icons/arrow_down.png" style="display: none;"></a><code><img src="images/icons/method.png" alt="method"><img src="images/icons/visibility_public.png" style="margin-right: 5px" alt="public"> 
+            <span class="highlight">getLast</span><span class="nb-faded-text">(
+          
+          )
+        </span>
+        :
+        <a href="db_src_Result.html#%5CAura%5CSignal%5CResult">\Aura\Signal\Result</a></code><div class="description">Returns the last Result in the collection.</div>
+<div class="code-tabs">
+<div class="long-description">
+</div>
+<strong>Returns</strong><table class="argument-info">
+<thead><tr>
+<th>Type</th>
+<th>Description</th>
+</tr></thead>
+<tr>
+<td><a href="db_src_Result.html#%5CAura%5CSignal%5CResult">\Aura\Signal\Result</a></td>
+<td></td>
+</tr>
+</table>
+</div>
+<div class="clear"></div>
+</div>
+<a id="\Aura\Signal\ResultCollection::isStopped()"></a><div class="method">
+<a href="#" class="gripper"><img src="images/icons/arrow_right.png"><img src="images/icons/arrow_down.png" style="display: none;"></a><code><img src="images/icons/method.png" alt="method"><img src="images/icons/visibility_public.png" style="margin-right: 5px" alt="public"> 
+            <span class="highlight">isStopped</span><span class="nb-faded-text">(
+          
+          )
+        </span>
+        :
+        bool</code><div class="description">Tells if the ResultCollection was stopped during processing.</div>
+<div class="code-tabs">
+<div class="long-description">
+</div>
+<strong>Returns</strong><table class="argument-info">
+<thead><tr>
+<th>Type</th>
+<th>Description</th>
+</tr></thead>
+<tr>
+<td>bool</td>
+<td></td>
+</tr>
+</table>
+</div>
+<div class="clear"></div>
+</div>
+<a id="\Aura\Signal\ResultCollection::ksort()"></a><div class="method inherited_from ">
+<a href="#" class="gripper"><img src="images/icons/arrow_right.png"><img src="images/icons/arrow_down.png" style="display: none;"></a><code><img src="images/icons/method.png" alt="method"><img src="images/icons/visibility_public.png" style="margin-right: 5px" alt="public"> 
+            <span class="highlight">ksort</span><span class="nb-faded-text">(
+          
+          )
+        </span>
+        :
+        </code><div class="description"><small>Inherited from:
+                    </small></div>
+<div class="code-tabs"></div>
+<div class="clear"></div>
+</div>
+<a id="\Aura\Signal\ResultCollection::natcasesort()"></a><div class="method inherited_from ">
+<a href="#" class="gripper"><img src="images/icons/arrow_right.png"><img src="images/icons/arrow_down.png" style="display: none;"></a><code><img src="images/icons/method.png" alt="method"><img src="images/icons/visibility_public.png" style="margin-right: 5px" alt="public"> 
+            <span class="highlight">natcasesort</span><span class="nb-faded-text">(
+          
+          )
+        </span>
+        :
+        </code><div class="description"><small>Inherited from:
+                    </small></div>
+<div class="code-tabs"></div>
+<div class="clear"></div>
+</div>
+<a id="\Aura\Signal\ResultCollection::natsort()"></a><div class="method inherited_from ">
+<a href="#" class="gripper"><img src="images/icons/arrow_right.png"><img src="images/icons/arrow_down.png" style="display: none;"></a><code><img src="images/icons/method.png" alt="method"><img src="images/icons/visibility_public.png" style="margin-right: 5px" alt="public"> 
+            <span class="highlight">natsort</span><span class="nb-faded-text">(
+          
+          )
+        </span>
+        :
+        </code><div class="description"><small>Inherited from:
+                    </small></div>
+<div class="code-tabs"></div>
+<div class="clear"></div>
+</div>
+<a id="\Aura\Signal\ResultCollection::offsetExists()"></a><div class="method inherited_from ">
+<a href="#" class="gripper"><img src="images/icons/arrow_right.png"><img src="images/icons/arrow_down.png" style="display: none;"></a><code><img src="images/icons/method.png" alt="method"><img src="images/icons/visibility_public.png" style="margin-right: 5px" alt="public"> 
+            <span class="highlight">offsetExists</span><span class="nb-faded-text">(
+          
+          )
+        </span>
+        :
+        </code><div class="description"><small>Inherited from:
+                    </small></div>
+<div class="code-tabs"></div>
+<div class="clear"></div>
+</div>
+<a id="\Aura\Signal\ResultCollection::offsetGet()"></a><div class="method inherited_from ">
+<a href="#" class="gripper"><img src="images/icons/arrow_right.png"><img src="images/icons/arrow_down.png" style="display: none;"></a><code><img src="images/icons/method.png" alt="method"><img src="images/icons/visibility_public.png" style="margin-right: 5px" alt="public"> 
+            <span class="highlight">offsetGet</span><span class="nb-faded-text">(
+          
+          )
+        </span>
+        :
+        </code><div class="description"><small>Inherited from:
+                    </small></div>
+<div class="code-tabs"></div>
+<div class="clear"></div>
+</div>
+<a id="\Aura\Signal\ResultCollection::offsetSet()"></a><div class="method inherited_from ">
+<a href="#" class="gripper"><img src="images/icons/arrow_right.png"><img src="images/icons/arrow_down.png" style="display: none;"></a><code><img src="images/icons/method.png" alt="method"><img src="images/icons/visibility_public.png" style="margin-right: 5px" alt="public"> 
+            <span class="highlight">offsetSet</span><span class="nb-faded-text">(
+          
+          )
+        </span>
+        :
+        </code><div class="description"><small>Inherited from:
+                    </small></div>
+<div class="code-tabs"></div>
+<div class="clear"></div>
+</div>
+<a id="\Aura\Signal\ResultCollection::offsetUnset()"></a><div class="method inherited_from ">
+<a href="#" class="gripper"><img src="images/icons/arrow_right.png"><img src="images/icons/arrow_down.png" style="display: none;"></a><code><img src="images/icons/method.png" alt="method"><img src="images/icons/visibility_public.png" style="margin-right: 5px" alt="public"> 
+            <span class="highlight">offsetUnset</span><span class="nb-faded-text">(
+          
+          )
+        </span>
+        :
+        </code><div class="description"><small>Inherited from:
+                    </small></div>
+<div class="code-tabs"></div>
+<div class="clear"></div>
+</div>
+<a id="\Aura\Signal\ResultCollection::serialize()"></a><div class="method inherited_from ">
+<a href="#" class="gripper"><img src="images/icons/arrow_right.png"><img src="images/icons/arrow_down.png" style="display: none;"></a><code><img src="images/icons/method.png" alt="method"><img src="images/icons/visibility_public.png" style="margin-right: 5px" alt="public"> 
+            <span class="highlight">serialize</span><span class="nb-faded-text">(
+          
+          )
+        </span>
+        :
+        </code><div class="description"><small>Inherited from:
+                    </small></div>
+<div class="code-tabs"></div>
+<div class="clear"></div>
+</div>
+<a id="\Aura\Signal\ResultCollection::setFlags()"></a><div class="method inherited_from ">
+<a href="#" class="gripper"><img src="images/icons/arrow_right.png"><img src="images/icons/arrow_down.png" style="display: none;"></a><code><img src="images/icons/method.png" alt="method"><img src="images/icons/visibility_public.png" style="margin-right: 5px" alt="public"> 
+            <span class="highlight">setFlags</span><span class="nb-faded-text">(
+          
+          )
+        </span>
+        :
+        </code><div class="description"><small>Inherited from:
+                    </small></div>
+<div class="code-tabs"></div>
+<div class="clear"></div>
+</div>
+<a id="\Aura\Signal\ResultCollection::setIteratorClass()"></a><div class="method inherited_from ">
+<a href="#" class="gripper"><img src="images/icons/arrow_right.png"><img src="images/icons/arrow_down.png" style="display: none;"></a><code><img src="images/icons/method.png" alt="method"><img src="images/icons/visibility_public.png" style="margin-right: 5px" alt="public"> 
+            <span class="highlight">setIteratorClass</span><span class="nb-faded-text">(
+          
+          )
+        </span>
+        :
+        </code><div class="description"><small>Inherited from:
+                    </small></div>
+<div class="code-tabs"></div>
+<div class="clear"></div>
+</div>
+<a id="\Aura\Signal\ResultCollection::uasort()"></a><div class="method inherited_from ">
+<a href="#" class="gripper"><img src="images/icons/arrow_right.png"><img src="images/icons/arrow_down.png" style="display: none;"></a><code><img src="images/icons/method.png" alt="method"><img src="images/icons/visibility_public.png" style="margin-right: 5px" alt="public"> 
+            <span class="highlight">uasort</span><span class="nb-faded-text">(
+          
+          )
+        </span>
+        :
+        </code><div class="description"><small>Inherited from:
+                    </small></div>
+<div class="code-tabs"></div>
+<div class="clear"></div>
+</div>
+<a id="\Aura\Signal\ResultCollection::uksort()"></a><div class="method inherited_from ">
+<a href="#" class="gripper"><img src="images/icons/arrow_right.png"><img src="images/icons/arrow_down.png" style="display: none;"></a><code><img src="images/icons/method.png" alt="method"><img src="images/icons/visibility_public.png" style="margin-right: 5px" alt="public"> 
+            <span class="highlight">uksort</span><span class="nb-faded-text">(
+          
+          )
+        </span>
+        :
+        </code><div class="description"><small>Inherited from:
+                    </small></div>
+<div class="code-tabs"></div>
+<div class="clear"></div>
+</div>
+<a id="\Aura\Signal\ResultCollection::unserialize()"></a><div class="method inherited_from ">
+<a href="#" class="gripper"><img src="images/icons/arrow_right.png"><img src="images/icons/arrow_down.png" style="display: none;"></a><code><img src="images/icons/method.png" alt="method"><img src="images/icons/visibility_public.png" style="margin-right: 5px" alt="public"> 
+            <span class="highlight">unserialize</span><span class="nb-faded-text">(
+          
+          )
+        </span>
+        :
+        </code><div class="description"><small>Inherited from:
+                    </small></div>
+<div class="code-tabs"></div>
+<div class="clear"></div>
+</div>
+</div>
+</div>
+</div>
+<small xmlns="" class="footer">Documentation was generated by <a href="http://docblox-project.org">DocBlox 0.13.1</a>.
+    </small></body></html>

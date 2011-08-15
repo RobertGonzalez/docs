@@ -1,669 +1,5 @@
 <?xml version="1.0"?>
-<project version="0.11.2" title="Aura Project for PHP: Aura.Cli">
-  <file path="src/Command.php" hash="0ede86b69f5240b21fa39f8ed8ad94be">
-    <namespace-alias name="SignalManager">Aura\Signal\Manager</namespace-alias>
-    <class final="false" abstract="true" line="19" namespace="Aura\Cli">
-      <name>Command</name>
-      <extends/>
-      <full_name>\Aura\Cli\Command</full_name>
-      <docblock>
-        <description>The CLI equivalent of a page-controller to perform a single action.</description>
-        <long-description>
-</long-description>
-        <tag name="package" description="Aura.Cli" line="12"/>
-      </docblock>
-      <property final="false" static="false" visibility="protected" line="29">
-        <name>$getopt</name>
-        <default/>
-        <docblock>
-          <description>A Getopt object for the Command; retains the short and long options
-passed at the command line.</description>
-          <long-description>
-</long-description>
-          <tag name="var" description="" type="\Aura\Cli\Getopt" line="21">
-            <type by_reference="false">\Aura\Cli\Getopt</type>
-          </tag>
-        </docblock>
-      </property>
-      <property final="false" static="false" visibility="protected" line="38">
-        <name>$options</name>
-        <default>array</default>
-        <docblock>
-          <description>The option definitions for the Getopt object.</description>
-          <long-description>
-</long-description>
-          <tag name="var" description="" type="\array" line="31">
-            <type by_reference="false">\array</type>
-          </tag>
-        </docblock>
-      </property>
-      <property final="false" static="false" visibility="protected" line="49">
-        <name>$options_strict</name>
-        <default>Getopt</default>
-        <docblock>
-          <description>Should Getopt be strict about how options are processed?  In strict
-mode, passing an undefined option will throw an exception; in
-non-strict, it will not.</description>
-          <long-description>
-</long-description>
-          <tag name="var" description="" type="\bool" line="40">
-            <type by_reference="false">\bool</type>
-          </tag>
-        </docblock>
-      </property>
-      <property final="false" static="false" visibility="protected" line="58">
-        <name>$params</name>
-        <default>array</default>
-        <docblock>
-          <description>The positional (numeric) arguments passed at the command line.</description>
-          <long-description>
-</long-description>
-          <tag name="var" description="" type="\array" line="51">
-            <type by_reference="false">\array</type>
-          </tag>
-        </docblock>
-      </property>
-      <property final="false" static="false" visibility="protected" line="68">
-        <name>$skip_action</name>
-        <default>false</default>
-        <docblock>
-          <description>When set to `true` before `action()` is called, the `action()` will not
-be called after all.</description>
-          <long-description>
-</long-description>
-          <tag name="var" description="" type="\bool" line="60">
-            <type by_reference="false">\bool</type>
-          </tag>
-        </docblock>
-      </property>
-      <method final="false" abstract="false" static="false" visibility="public" line="83">
-        <name>__construct</name>
-        <docblock>
-          <description>Constructor.</description>
-          <long-description>
-</long-description>
-          <tag name="param" description="The command-line context." type="\Aura\Cli\Context" variable="$context" line="70">
-            <type by_reference="false">\Aura\Cli\Context</type>
-          </tag>
-          <tag name="param" description="Standard input/output streams." type="\Aura\Cli\Stdio" variable="$stdio" line="70">
-            <type by_reference="false">\Aura\Cli\Stdio</type>
-          </tag>
-          <tag name="param" description="An options processor and reader." type="\Aura\Cli\Getopt" variable="$getopt" line="70">
-            <type by_reference="false">\Aura\Cli\Getopt</type>
-          </tag>
-          <tag name="param" description="A signal manager to send signals to." type="\Aura\Signal\Manager" variable="$signal" line="70">
-            <type by_reference="false">\Aura\Signal\Manager</type>
-          </tag>
-        </docblock>
-        <argument line="84">
-          <name>$context</name>
-          <default/>
-          <type>Context</type>
-        </argument>
-        <argument line="85">
-          <name>$stdio</name>
-          <default/>
-          <type>Stdio</type>
-        </argument>
-        <argument line="86">
-          <name>$getopt</name>
-          <default/>
-          <type>Getopt</type>
-        </argument>
-        <argument line="87">
-          <name>$signal</name>
-          <default/>
-          <type>SignalManager</type>
-        </argument>
-      </method>
-      <method final="false" abstract="false" static="false" visibility="protected" line="113">
-        <name>loadGetoptParams</name>
-        <docblock>
-          <description>Passes the Context arguments to `$getopt` and retains the numeric
-parameters in `$params`.</description>
-          <long-description>
-</long-description>
-          <tag name="return" description="" type="\void" line="105">
-            <type by_reference="false">\void</type>
-          </tag>
-        </docblock>
-      </method>
-      <method final="false" abstract="false" static="false" visibility="public" line="148">
-        <name>exec</name>
-        <docblock>
-          <description>Executes the Command.  In order, it does these things:</description>
-          <long-description>&lt;ul&gt;
-&lt;li&gt;&lt;p&gt;signals &lt;code&gt;'pre_exec'&lt;/code&gt;&lt;/p&gt;&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;signals &lt;code&gt;'pre_action'&lt;/code&gt;&lt;/p&gt;&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;is the action is not to be skipped, calls &lt;code&gt;action()&lt;/code&gt; and signals
-&lt;code&gt;'post_action'&lt;/code&gt;&lt;/p&gt;&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;signals &lt;code&gt;'post_exec'&lt;/code&gt;&lt;/p&gt;&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;resets the terminal to normal colors&lt;/p&gt;&lt;/li&gt;
-&lt;/ul&gt;
-</long-description>
-          <tag name="signal" description="&amp;#039;pre_exec&amp;#039;" line="120"/>
-          <tag name="signal" description="&amp;#039;pre_action&amp;#039;" line="120"/>
-          <tag name="signal" description="&amp;#039;post_action&amp;#039;" line="120"/>
-          <tag name="signal" description="&amp;#039;post_exec&amp;#039;" line="120"/>
-          <tag name="see" description="action()" line="120"/>
-          <tag name="return" description="" type="\void" line="120">
-            <type by_reference="false">\void</type>
-          </tag>
-        </docblock>
-      </method>
-      <method final="false" abstract="false" static="false" visibility="public" line="170">
-        <name>skipAction</name>
-        <docblock>
-          <description>Stops `exec()` from calling `action()` if it has not already done so.</description>
-          <long-description>
-</long-description>
-          <tag name="return" description="" type="\void" line="163">
-            <type by_reference="false">\void</type>
-          </tag>
-        </docblock>
-      </method>
-      <method final="false" abstract="false" static="false" visibility="public" line="182">
-        <name>isSkipAction</name>
-        <docblock>
-          <description>Should the call to `action()` be skipped?</description>
-          <long-description>
-</long-description>
-          <tag name="return" description="" type="\bool" line="175">
-            <type by_reference="false">\bool</type>
-          </tag>
-        </docblock>
-      </method>
-      <method final="false" abstract="false" static="false" visibility="public" line="194">
-        <name>preExec</name>
-        <docblock>
-          <description>Runs before `action()` as part of the `'pre_exec'` signal.</description>
-          <long-description>
-</long-description>
-          <tag name="return" description="" type="\mixed" line="187">
-            <type by_reference="false">\mixed</type>
-          </tag>
-        </docblock>
-      </method>
-      <method final="false" abstract="false" static="false" visibility="public" line="205">
-        <name>preAction</name>
-        <docblock>
-          <description>Runs before `action()` as part of the `'pre_action'` signal.</description>
-          <long-description>
-</long-description>
-          <tag name="return" description="" type="\mixed" line="198">
-            <type by_reference="false">\mixed</type>
-          </tag>
-        </docblock>
-      </method>
-      <method final="false" abstract="true" static="false" visibility="public" line="216">
-        <name>action</name>
-        <docblock>
-          <description>The main logic for the Command.</description>
-          <long-description>
-</long-description>
-          <tag name="return" description="" type="\void" line="209">
-            <type by_reference="false">\void</type>
-          </tag>
-        </docblock>
-      </method>
-      <method final="false" abstract="false" static="false" visibility="public" line="225">
-        <name>postAction</name>
-        <docblock>
-          <description>Runs after `action()` as part of the `'post_action'` signal.</description>
-          <long-description>
-</long-description>
-          <tag name="return" description="" type="\mixed" line="218">
-            <type by_reference="false">\mixed</type>
-          </tag>
-        </docblock>
-      </method>
-      <method final="false" abstract="false" static="false" visibility="public" line="236">
-        <name>postExec</name>
-        <docblock>
-          <description>Runs after `action()` as part of the `'post_exec'` signal.</description>
-          <long-description>
-</long-description>
-          <tag name="return" description="" type="\mixed" line="229">
-            <type by_reference="false">\mixed</type>
-          </tag>
-        </docblock>
-      </method>
-    </class>
-  </file>
-  <file path="src/CommandFactory.php" hash="d6748f93fbcf788c999478260f17fdf8">
-    <namespace-alias name="ForgeInterface">Aura\Di\ForgeInterface</namespace-alias>
-    <class final="false" abstract="false" line="19" namespace="Aura\Cli">
-      <name>CommandFactory</name>
-      <extends/>
-      <full_name>\Aura\Cli\CommandFactory</full_name>
-      <docblock>
-        <description>A factory to create Command objects.</description>
-        <long-description>
-</long-description>
-        <tag name="package" description="Aura.Cli" line="12"/>
-      </docblock>
-      <property final="false" static="false" visibility="protected" line="28">
-        <name>$forge</name>
-        <default/>
-        <docblock>
-          <description>A Forge to create objects.</description>
-          <long-description>
-</long-description>
-          <tag name="var" description="" type="\Aura\Di\ForgeInterface" line="21">
-            <type by_reference="false">\Aura\Di\ForgeInterface</type>
-          </tag>
-        </docblock>
-      </property>
-      <property final="false" static="false" visibility="protected" line="38">
-        <name>$map</name>
-        <default>array</default>
-        <docblock>
-          <description>A map of names (called at the command line) to their corresponding
-Command classes.</description>
-          <long-description>
-</long-description>
-          <tag name="var" description="" type="\array" line="30">
-            <type by_reference="false">\array</type>
-          </tag>
-        </docblock>
-      </property>
-      <property final="false" static="false" visibility="protected" line="47">
-        <name>$not_found</name>
-        <default>null</default>
-        <docblock>
-          <description>A Command class to use when no class exists for a mapped name.</description>
-          <long-description>
-</long-description>
-          <tag name="var" description="" type="\string" line="40">
-            <type by_reference="false">\string</type>
-          </tag>
-        </docblock>
-      </property>
-      <method final="false" abstract="false" static="false" visibility="public" line="61">
-        <name>__construct</name>
-        <docblock>
-          <description>A Command class to use when no class exists for a mapped name.</description>
-          <long-description>
-</long-description>
-          <tag name="param" description="A Forge to create objects." type="\Aura\Di\ForgeInterface" variable="$forge" line="49">
-            <type by_reference="false">\Aura\Di\ForgeInterface</type>
-          </tag>
-          <tag name="param" description="A map of command names to Command classes." type="\array" variable="$map" line="49">
-            <type by_reference="false">\array</type>
-          </tag>
-          <tag name="param" description="A Command class to use when no class can be found for a mapped name." type="\string" variable="$not_found" line="49">
-            <type by_reference="false">\string</type>
-          </tag>
-        </docblock>
-        <argument line="62">
-          <name>$forge</name>
-          <default/>
-          <type>ForgeInterface</type>
-        </argument>
-        <argument line="63">
-          <name>$map</name>
-          <default>null</default>
-          <type>array</type>
-        </argument>
-        <argument line="64">
-          <name>$not_found</name>
-          <default>null</default>
-          <type/>
-        </argument>
-      </method>
-      <method final="false" abstract="false" static="false" visibility="public" line="84">
-        <name>newInstance</name>
-        <docblock>
-          <description>Creates and returns a Command class based on a command name.</description>
-          <long-description>
-</long-description>
-          <tag name="param" description="A command name that maps to a Command class; if this name is not found in the map, use the `$not_found` class." type="\string" variable="$name" line="71">
-            <type by_reference="false">\string</type>
-          </tag>
-          <tag name="return" description="" type="\Aura\Cli\Command" line="71">
-            <type by_reference="false">\Aura\Cli\Command</type>
-          </tag>
-          <tag name="throws" description="when no mapped class can be found and no `$not_found` class is specified." type="\Exception\CommandFactory" line="71">
-            <type by_reference="false">\Exception\CommandFactory</type>
-          </tag>
-        </docblock>
-        <argument line="84">
-          <name>$name</name>
-          <default/>
-          <type/>
-        </argument>
-      </method>
-      <method final="false" abstract="false" static="false" visibility="public" line="97">
-        <name>map</name>
-        <argument line="97">
-          <name>$name</name>
-          <default/>
-          <type/>
-        </argument>
-        <argument line="97">
-          <name>$class</name>
-          <default/>
-          <type/>
-        </argument>
-      </method>
-    </class>
-  </file>
-  <file path="src/Context.php" hash="f8d4674ca76e78eccefeedbb4be2887f">
-    <class final="false" abstract="false" line="18" namespace="Aura\Cli">
-      <name>Context</name>
-      <extends/>
-      <full_name>\Aura\Cli\Context</full_name>
-      <docblock>
-        <description>Collection point for information about the command-line execution context.</description>
-        <long-description>
-</long-description>
-        <tag name="package" description="Aura.Cli" line="11"/>
-      </docblock>
-      <property final="false" static="false" visibility="protected" line="27">
-        <name>$argv</name>
-        <default/>
-        <docblock>
-          <description>Values taken from $_SERVER['argv'].</description>
-          <long-description>
-</long-description>
-          <tag name="var" description="" type="\array" line="20">
-            <type by_reference="false">\array</type>
-          </tag>
-        </docblock>
-      </property>
-      <property final="false" static="false" visibility="protected" line="36">
-        <name>$env</name>
-        <default/>
-        <docblock>
-          <description>Imported $_ENV values.</description>
-          <long-description>
-</long-description>
-          <tag name="var" description="" type="\array" line="29">
-            <type by_reference="false">\array</type>
-          </tag>
-        </docblock>
-      </property>
-      <property final="false" static="false" visibility="protected" line="45">
-        <name>$server</name>
-        <default/>
-        <docblock>
-          <description>Imported $_SERVER values.</description>
-          <long-description>
-</long-description>
-          <tag name="var" description="" type="\array" line="38">
-            <type by_reference="false">\array</type>
-          </tag>
-        </docblock>
-      </property>
-      <method final="false" abstract="false" static="false" visibility="public" line="54">
-        <name>__construct</name>
-        <docblock>
-          <description>Constructor.</description>
-          <long-description>
-</long-description>
-          <tag name="return" description="" type="\void" line="47">
-            <type by_reference="false">\void</type>
-          </tag>
-        </docblock>
-      </method>
-      <method final="false" abstract="false" static="false" visibility="public" line="81">
-        <name>getEnv</name>
-        <docblock>
-          <description>Retrieves an **unfiltered** value by key from the $env property, or an
-alternate default value if that key does not exist.</description>
-          <long-description>
-</long-description>
-          <tag name="param" description="The $env key to retrieve the value of." type="\string" variable="$key" line="68">
-            <type by_reference="false">\string</type>
-          </tag>
-          <tag name="param" description="The value to return if the key does not exist." type="\string" variable="$alt" line="68">
-            <type by_reference="false">\string</type>
-          </tag>
-          <tag name="return" description="The value of $env[$key], or the alternate default value." type="\mixed" line="68">
-            <type by_reference="false">\mixed</type>
-          </tag>
-        </docblock>
-        <argument line="81">
-          <name>$key</name>
-          <default>null</default>
-          <type/>
-        </argument>
-        <argument line="81">
-          <name>$alt</name>
-          <default>null</default>
-          <type/>
-        </argument>
-      </method>
-      <method final="false" abstract="false" static="false" visibility="public" line="99">
-        <name>getServer</name>
-        <docblock>
-          <description>Retrieves an **unfiltered** value by key from the $server property, or
-an alternate default value if that key does not exist.</description>
-          <long-description>
-</long-description>
-          <tag name="param" description="The $server key to retrieve the value of." type="\string" variable="$key" line="86">
-            <type by_reference="false">\string</type>
-          </tag>
-          <tag name="param" description="The value to return if the key does not exist." type="\string" variable="$alt" line="86">
-            <type by_reference="false">\string</type>
-          </tag>
-          <tag name="return" description="The value of $server[$key], or the alternate default value." type="\mixed" line="86">
-            <type by_reference="false">\mixed</type>
-          </tag>
-        </docblock>
-        <argument line="99">
-          <name>$key</name>
-          <default>null</default>
-          <type/>
-        </argument>
-        <argument line="99">
-          <name>$alt</name>
-          <default>null</default>
-          <type/>
-        </argument>
-      </method>
-      <method final="false" abstract="false" static="false" visibility="public" line="118">
-        <name>getArgv</name>
-        <docblock>
-          <description>Retrieves an **unfiltered** value by position from the `$argv`
-property, or an alternate default value if that position does not
-exist.</description>
-          <long-description>
-</long-description>
-          <tag name="param" description="The `$argv` positional key to retrieve the value of." type="\int" variable="$key" line="104">
-            <type by_reference="false">\int</type>
-          </tag>
-          <tag name="param" description="The value to return if the key does not exist." type="\string" variable="$alt" line="104">
-            <type by_reference="false">\string</type>
-          </tag>
-          <tag name="return" description="The value of $server[$key], or the alternate default value." type="\mixed" line="104">
-            <type by_reference="false">\mixed</type>
-          </tag>
-        </docblock>
-        <argument line="118">
-          <name>$key</name>
-          <default>null</default>
-          <type/>
-        </argument>
-        <argument line="118">
-          <name>$alt</name>
-          <default>null</default>
-          <type/>
-        </argument>
-      </method>
-      <method final="false" abstract="false" static="false" visibility="public" line="133">
-        <name>shiftArgv</name>
-        <docblock>
-          <description>Shifts the first value off the `$argv` property and returns it. Note
-that this modifies the `$argv` property; if you need the original,
-unmodified arguments, call `server('argv')`.</description>
-          <long-description>
-</long-description>
-          <tag name="return" description="The value shifted off the beginning of the `$argv` property." type="\mixed" line="123">
-            <type by_reference="false">\mixed</type>
-          </tag>
-        </docblock>
-      </method>
-      <method final="false" abstract="false" static="false" visibility="protected" line="147">
-        <name>setArgv</name>
-        <docblock>
-          <description>Sets the `$argv` property.</description>
-          <long-description>
-</long-description>
-          <tag name="param" description="The new value of `$argv`." type="\array" variable="$argv" line="138">
-            <type by_reference="false">\array</type>
-          </tag>
-          <tag name="return" description="" type="\void" line="138">
-            <type by_reference="false">\void</type>
-          </tag>
-        </docblock>
-        <argument line="147">
-          <name>$argv</name>
-          <default/>
-          <type>array</type>
-        </argument>
-      </method>
-      <method final="false" abstract="false" static="false" visibility="protected" line="169">
-        <name>getValue</name>
-        <docblock>
-          <description>Common method to get a property value and return it.</description>
-          <long-description>
-</long-description>
-          <tag name="param" description="The property variable to fetch from: get, post, etc." type="\string" variable="$var" line="152">
-            <type by_reference="false">\string</type>
-          </tag>
-          <tag name="param" description="The array key in that property, if any, to get the value of." type="\string" variable="$key" line="152">
-            <type by_reference="false">\string</type>
-          </tag>
-          <tag name="param" description="The alternative default value to return if the requested key does not exist." type="\string" variable="$alt" line="152">
-            <type by_reference="false">\string</type>
-          </tag>
-          <tag name="return" description="The requested value, or the alternative default value." type="\mixed" line="152">
-            <type by_reference="false">\mixed</type>
-          </tag>
-        </docblock>
-        <argument line="169">
-          <name>$var</name>
-          <default/>
-          <type/>
-        </argument>
-        <argument line="169">
-          <name>$key</name>
-          <default/>
-          <type/>
-        </argument>
-        <argument line="169">
-          <name>$alt</name>
-          <default/>
-          <type/>
-        </argument>
-      </method>
-    </class>
-  </file>
-  <file path="src/Exception/CommandFactory.php" hash="cd93aef974cf65f860bf3cbd27223fab">
-    <class final="false" abstract="false" line="18" namespace="Aura\Cli\Exception">
-      <name>CommandFactory</name>
-      <extends>\Aura\Cli\Exception</extends>
-      <full_name>\Aura\Cli\Exception\CommandFactory</full_name>
-      <docblock>
-        <description>Generic CommandFactory exception.</description>
-        <long-description>
-</long-description>
-        <tag name="package" description="Aura.Cli" line="11"/>
-      </docblock>
-    </class>
-  </file>
-  <file path="src/Exception/OptionName.php" hash="e1bae6ed494a950c57478bf5190d1dff">
-    <class final="false" abstract="false" line="18" namespace="Aura\Cli\Exception">
-      <name>OptionName</name>
-      <extends>\Aura\Cli\Exception</extends>
-      <full_name>\Aura\Cli\Exception\OptionName</full_name>
-      <docblock>
-        <description>Option objects need to be initialized with a name.</description>
-        <long-description>
-</long-description>
-        <tag name="package" description="Aura.Cli" line="11"/>
-      </docblock>
-    </class>
-  </file>
-  <file path="src/Exception/OptionNotDefined.php" hash="1a58e08aae160caf18bd001b0cbfd520">
-    <class final="false" abstract="false" line="18" namespace="Aura\Cli\Exception">
-      <name>OptionNotDefined</name>
-      <extends>\Aura\Cli\Exception</extends>
-      <full_name>\Aura\Cli\Exception\OptionNotDefined</full_name>
-      <docblock>
-        <description>Asked for an option that is not defined.</description>
-        <long-description>
-</long-description>
-        <tag name="package" description="Aura.Cli" line="11"/>
-      </docblock>
-    </class>
-  </file>
-  <file path="src/Exception/OptionNotMulti.php" hash="79cadc0afd13eae5f8450f504f8b0fc4">
-    <class final="false" abstract="false" line="18" namespace="Aura\Cli\Exception">
-      <name>OptionNotMulti</name>
-      <extends>\Aura\Cli\Exception</extends>
-      <full_name>\Aura\Cli\Exception\OptionNotMulti</full_name>
-      <docblock>
-        <description>The option does not allow multiple values.</description>
-        <long-description>
-</long-description>
-        <tag name="package" description="Aura.Cli" line="11"/>
-      </docblock>
-    </class>
-  </file>
-  <file path="src/Exception/OptionParam.php" hash="bce28cd00e7d16802bff5d084e99e12b">
-    <class final="false" abstract="false" line="18" namespace="Aura\Cli\Exception">
-      <name>OptionParam</name>
-      <extends>\Aura\Cli\Exception</extends>
-      <full_name>\Aura\Cli\Exception\OptionParam</full_name>
-      <docblock>
-        <description>The option 'param' value needs a boolean or a null.</description>
-        <long-description>
-</long-description>
-        <tag name="package" description="Aura.Cli" line="11"/>
-      </docblock>
-    </class>
-  </file>
-  <file path="src/Exception/OptionParamRejected.php" hash="7aa37df0f38f25ffa6196373d5ed3fb7">
-    <class final="false" abstract="false" line="18" namespace="Aura\Cli\Exception">
-      <name>OptionParamRejected</name>
-      <extends>\Aura\Cli\Exception</extends>
-      <full_name>\Aura\Cli\Exception\OptionParamRejected</full_name>
-      <docblock>
-        <description>The option requires that no parameter be present.</description>
-        <long-description>
-</long-description>
-        <tag name="package" description="Aura.Cli" line="11"/>
-      </docblock>
-    </class>
-  </file>
-  <file path="src/Exception/OptionParamRequired.php" hash="d5675290c9c8eee3b967112a6771c0d4">
-    <class final="false" abstract="false" line="18" namespace="Aura\Cli\Exception">
-      <name>OptionParamRequired</name>
-      <extends>\Aura\Cli\Exception</extends>
-      <full_name>\Aura\Cli\Exception\OptionParamRequired</full_name>
-      <docblock>
-        <description>The option requires a non-blank parameter.</description>
-        <long-description>
-</long-description>
-        <tag name="package" description="Aura.Cli" line="11"/>
-      </docblock>
-    </class>
-  </file>
-  <file path="src/Exception.php" hash="4de9a8b9a240b55fa6090483bd65518a">
-    <class final="false" abstract="false" line="18" namespace="Aura\Cli">
-      <name>Exception</name>
-      <extends>\Exception</extends>
-      <full_name>\Aura\Cli\Exception</full_name>
-      <docblock>
-        <description>Generic package exception.</description>
-        <long-description>
-</long-description>
-        <tag name="package" description="Aura.Cli" line="11"/>
-      </docblock>
-    </class>
-  </file>
+<project version="0.13.1" title="Aura Project for PHP: Aura.Cli">
   <file path="src/Getopt.php" hash="fc43a1c353ddab3ed87bbc72d7a73e37">
     <class final="false" abstract="false" line="18" namespace="Aura\Cli">
       <name>Getopt</name>
@@ -714,8 +50,8 @@ unmodified arguments, call `server('argv')`.</description>
           <description>Definitions for recognized options.</description>
           <long-description>
 </long-description>
-          <tag name="var" description="" type="\array" line="47">
-            <type by_reference="false">\array</type>
+          <tag name="var" description="" type="array" line="47">
+            <type by_reference="false">array</type>
           </tag>
         </docblock>
       </property>
@@ -726,8 +62,8 @@ unmodified arguments, call `server('argv')`.</description>
           <description>Remaining non-option params after loading option values.</description>
           <long-description>
 </long-description>
-          <tag name="var" description="" type="\array" line="56">
-            <type by_reference="false">\array</type>
+          <tag name="var" description="" type="array" line="56">
+            <type by_reference="false">array</type>
           </tag>
         </docblock>
       </property>
@@ -763,11 +99,11 @@ unmodified arguments, call `server('argv')`.</description>
           <description>Make Option values available as magic readonly properties.</description>
           <long-description>
 </long-description>
-          <tag name="param" description="The option name." type="\string" variable="$key" line="86">
-            <type by_reference="false">\string</type>
+          <tag name="param" description="The option name." type="string" variable="$key" line="86">
+            <type by_reference="false">string</type>
           </tag>
-          <tag name="return" description="The option value." type="\mixed" line="86">
-            <type by_reference="false">\mixed</type>
+          <tag name="return" description="The option value." type="mixed" line="86">
+            <type by_reference="false">mixed</type>
           </tag>
         </docblock>
         <argument line="95">
@@ -782,14 +118,14 @@ unmodified arguments, call `server('argv')`.</description>
           <description>Initializes the instance with option definitions.</description>
           <long-description>
 </long-description>
-          <tag name="param" description="An array of key-value pairs where the key is the option name and the value is the option spec." type="\array" variable="$opts" line="103">
-            <type by_reference="false">\array</type>
+          <tag name="param" description="An array of key-value pairs where the key is the option name and the value is the option spec." type="array" variable="$opts" line="103">
+            <type by_reference="false">array</type>
           </tag>
-          <tag name="param" description="Initialize in strict (true) or non-strict (false) mode?" type="\bool" variable="$strict" line="103">
-            <type by_reference="false">\bool</type>
+          <tag name="param" description="Initialize in strict (true) or non-strict (false) mode?" type="bool" variable="$strict" line="103">
+            <type by_reference="false">bool</type>
           </tag>
-          <tag name="return" description="" type="\void" line="103">
-            <type by_reference="false">\void</type>
+          <tag name="return" description="" type="void" line="103">
+            <type by_reference="false">void</type>
           </tag>
         </docblock>
         <argument line="116">
@@ -809,8 +145,8 @@ unmodified arguments, call `server('argv')`.</description>
           <description>Returns all the Option definition objects.</description>
           <long-description>
 </long-description>
-          <tag name="return" description="An array of Option objects." type="\array" line="133">
-            <type by_reference="false">\array</type>
+          <tag name="return" description="An array of Option objects." type="array" line="133">
+            <type by_reference="false">array</type>
           </tag>
         </docblock>
       </method>
@@ -820,8 +156,8 @@ unmodified arguments, call `server('argv')`.</description>
           <description>Returns a single Option definition object by its property name.</description>
           <long-description>
 </long-description>
-          <tag name="var" description="The property name of the option." type="\string" line="145">
-            <type by_reference="false">\string</type>
+          <tag name="var" description="The property name of the option." type="string" line="145">
+            <type by_reference="false">string</type>
           </tag>
           <tag name="return" description="" type="\Aura\Cli\Option" line="145">
             <type by_reference="false">\Aura\Cli\Option</type>
@@ -839,8 +175,8 @@ unmodified arguments, call `server('argv')`.</description>
           <description>Returns an array of all Option names and their values.</description>
           <long-description>
 </long-description>
-          <tag name="return" description="" type="\array" line="165">
-            <type by_reference="false">\array</type>
+          <tag name="return" description="" type="array" line="165">
+            <type by_reference="false">array</type>
           </tag>
         </docblock>
       </method>
@@ -850,11 +186,11 @@ unmodified arguments, call `server('argv')`.</description>
           <description>Returns the value of a single Option by name.</description>
           <long-description>
 </long-description>
-          <tag name="param" description="The option name to get a value for." type="\string" variable="$name" line="181">
-            <type by_reference="false">\string</type>
+          <tag name="param" description="The option name to get a value for." type="string" variable="$name" line="181">
+            <type by_reference="false">string</type>
           </tag>
-          <tag name="return" description="" type="\mixed" line="181">
-            <type by_reference="false">\mixed</type>
+          <tag name="return" description="" type="mixed" line="181">
+            <type by_reference="false">mixed</type>
           </tag>
         </docblock>
         <argument line="190">
@@ -869,8 +205,8 @@ unmodified arguments, call `server('argv')`.</description>
           <description>Returns an array of all numeric parameters.</description>
           <long-description>
 </long-description>
-          <tag name="return" description="" type="\array" line="198">
-            <type by_reference="false">\array</type>
+          <tag name="return" description="" type="array" line="198">
+            <type by_reference="false">array</type>
           </tag>
         </docblock>
       </method>
@@ -880,8 +216,8 @@ unmodified arguments, call `server('argv')`.</description>
           <description>Returns a single Option definition object by its long-format name.</description>
           <long-description>
 </long-description>
-          <tag name="var" description="The long-format name of the option." type="\string" line="210">
-            <type by_reference="false">\string</type>
+          <tag name="var" description="The long-format name of the option." type="string" line="210">
+            <type by_reference="false">string</type>
           </tag>
           <tag name="return" description="" type="\Aura\Cli\Option" line="210">
             <type by_reference="false">\Aura\Cli\Option</type>
@@ -899,8 +235,8 @@ unmodified arguments, call `server('argv')`.</description>
           <description>Returns a single Option definition object by its short-format name.</description>
           <long-description>
 </long-description>
-          <tag name="var" description="The long-format name of the option." type="\string" line="232">
-            <type by_reference="false">\string</type>
+          <tag name="var" description="The long-format name of the option." type="string" line="232">
+            <type by_reference="false">string</type>
           </tag>
           <tag name="return" description="" type="\Aura\Cli\Option" line="232">
             <type by_reference="false">\Aura\Cli\Option</type>
@@ -920,11 +256,11 @@ in the defined Option objects and placing non-option params in a
 `$params` variable.</description>
           <long-description>
 </long-description>
-          <tag name="param" description="An argument array, typically from $_SERVER[&amp;#039;argv&amp;#039;]." type="\array" variable="$argv" line="254">
-            <type by_reference="false">\array</type>
+          <tag name="param" description="An argument array, typically from $_SERVER['argv']." type="array" variable="$argv" line="254">
+            <type by_reference="false">array</type>
           </tag>
-          <tag name="return" description="" type="\void" line="254">
-            <type by_reference="false">\void</type>
+          <tag name="return" description="" type="void" line="254">
+            <type by_reference="false">void</type>
           </tag>
         </docblock>
         <argument line="265">
@@ -939,11 +275,11 @@ in the defined Option objects and placing non-option params in a
           <description>Parses a long-form option.</description>
           <long-description>
 </long-description>
-          <tag name="param" description="The `$argv` element, e.g. &amp;quot;--foo&amp;quot; or &amp;quot;--bar=baz&amp;quot;." type="\string" variable="$spec" line="305">
-            <type by_reference="false">\string</type>
+          <tag name="param" description="The `$argv` element, e.g. &quot;--foo&quot; or &quot;--bar=baz&quot;." type="string" variable="$spec" line="305">
+            <type by_reference="false">string</type>
           </tag>
-          <tag name="return" description="" type="\void" line="305">
-            <type by_reference="false">\void</type>
+          <tag name="return" description="" type="void" line="305">
+            <type by_reference="false">void</type>
           </tag>
         </docblock>
         <argument line="314">
@@ -958,11 +294,11 @@ in the defined Option objects and placing non-option params in a
           <description>Parses a short-form option (or cluster of options).</description>
           <long-description>
 </long-description>
-          <tag name="param" description="The `$argv` element, e.g. &amp;quot;-f&amp;quot; or &amp;quot;-fbz&amp;quot;." type="\string" variable="$arg" line="353">
-            <type by_reference="false">\string</type>
+          <tag name="param" description="The `$argv` element, e.g. &quot;-f&quot; or &quot;-fbz&quot;." type="string" variable="$arg" line="353">
+            <type by_reference="false">string</type>
           </tag>
-          <tag name="return" description="" type="\void" line="353">
-            <type by_reference="false">\void</type>
+          <tag name="return" description="" type="void" line="353">
+            <type by_reference="false">void</type>
           </tag>
         </docblock>
         <argument line="362">
@@ -977,17 +313,382 @@ in the defined Option objects and placing non-option params in a
           <description>Parses a cluster of short options.</description>
           <long-description>
 </long-description>
-          <tag name="param" description="The short-option cluster (e.g. &amp;quot;-abcd&amp;quot;)." type="\string" variable="$spec" line="413">
-            <type by_reference="false">\string</type>
+          <tag name="param" description="The short-option cluster (e.g. &quot;-abcd&quot;)." type="string" variable="$spec" line="413">
+            <type by_reference="false">string</type>
           </tag>
-          <tag name="return" description="" type="\void" line="413">
-            <type by_reference="false">\void</type>
+          <tag name="return" description="" type="void" line="413">
+            <type by_reference="false">void</type>
           </tag>
         </docblock>
         <argument line="422">
           <name>$spec</name>
           <default/>
           <type/>
+        </argument>
+      </method>
+    </class>
+  </file>
+  <file path="src/Exception/OptionParamRejected.php" hash="7aa37df0f38f25ffa6196373d5ed3fb7">
+    <class final="false" abstract="false" line="18" namespace="Aura\Cli\Exception">
+      <name>OptionParamRejected</name>
+      <extends>\Aura\Cli\Exception</extends>
+      <full_name>\Aura\Cli\Exception\OptionParamRejected</full_name>
+      <docblock>
+        <description>The option requires that no parameter be present.</description>
+        <long-description>
+</long-description>
+        <tag name="package" description="Aura.Cli" line="11"/>
+      </docblock>
+    </class>
+  </file>
+  <file path="src/Exception/OptionNotDefined.php" hash="1a58e08aae160caf18bd001b0cbfd520">
+    <class final="false" abstract="false" line="18" namespace="Aura\Cli\Exception">
+      <name>OptionNotDefined</name>
+      <extends>\Aura\Cli\Exception</extends>
+      <full_name>\Aura\Cli\Exception\OptionNotDefined</full_name>
+      <docblock>
+        <description>Asked for an option that is not defined.</description>
+        <long-description>
+</long-description>
+        <tag name="package" description="Aura.Cli" line="11"/>
+      </docblock>
+    </class>
+  </file>
+  <file path="src/Exception/OptionName.php" hash="e1bae6ed494a950c57478bf5190d1dff">
+    <class final="false" abstract="false" line="18" namespace="Aura\Cli\Exception">
+      <name>OptionName</name>
+      <extends>\Aura\Cli\Exception</extends>
+      <full_name>\Aura\Cli\Exception\OptionName</full_name>
+      <docblock>
+        <description>Option objects need to be initialized with a name.</description>
+        <long-description>
+</long-description>
+        <tag name="package" description="Aura.Cli" line="11"/>
+      </docblock>
+    </class>
+  </file>
+  <file path="src/Exception/CommandFactory.php" hash="cd93aef974cf65f860bf3cbd27223fab">
+    <class final="false" abstract="false" line="18" namespace="Aura\Cli\Exception">
+      <name>CommandFactory</name>
+      <extends>\Aura\Cli\Exception</extends>
+      <full_name>\Aura\Cli\Exception\CommandFactory</full_name>
+      <docblock>
+        <description>Generic CommandFactory exception.</description>
+        <long-description>
+</long-description>
+        <tag name="package" description="Aura.Cli" line="11"/>
+      </docblock>
+    </class>
+  </file>
+  <file path="src/Exception/OptionParamRequired.php" hash="d5675290c9c8eee3b967112a6771c0d4">
+    <class final="false" abstract="false" line="18" namespace="Aura\Cli\Exception">
+      <name>OptionParamRequired</name>
+      <extends>\Aura\Cli\Exception</extends>
+      <full_name>\Aura\Cli\Exception\OptionParamRequired</full_name>
+      <docblock>
+        <description>The option requires a non-blank parameter.</description>
+        <long-description>
+</long-description>
+        <tag name="package" description="Aura.Cli" line="11"/>
+      </docblock>
+    </class>
+  </file>
+  <file path="src/Exception/OptionParam.php" hash="bce28cd00e7d16802bff5d084e99e12b">
+    <class final="false" abstract="false" line="18" namespace="Aura\Cli\Exception">
+      <name>OptionParam</name>
+      <extends>\Aura\Cli\Exception</extends>
+      <full_name>\Aura\Cli\Exception\OptionParam</full_name>
+      <docblock>
+        <description>The option 'param' value needs a boolean or a null.</description>
+        <long-description>
+</long-description>
+        <tag name="package" description="Aura.Cli" line="11"/>
+      </docblock>
+    </class>
+  </file>
+  <file path="src/Exception/OptionNotMulti.php" hash="79cadc0afd13eae5f8450f504f8b0fc4">
+    <class final="false" abstract="false" line="18" namespace="Aura\Cli\Exception">
+      <name>OptionNotMulti</name>
+      <extends>\Aura\Cli\Exception</extends>
+      <full_name>\Aura\Cli\Exception\OptionNotMulti</full_name>
+      <docblock>
+        <description>The option does not allow multiple values.</description>
+        <long-description>
+</long-description>
+        <tag name="package" description="Aura.Cli" line="11"/>
+      </docblock>
+    </class>
+  </file>
+  <file path="src/Command.php" hash="0ede86b69f5240b21fa39f8ed8ad94be">
+    <namespace-alias name="SignalManager">Aura\Signal\Manager</namespace-alias>
+    <class final="false" abstract="true" line="19" namespace="Aura\Cli">
+      <name>Command</name>
+      <extends/>
+      <full_name>\Aura\Cli\Command</full_name>
+      <docblock>
+        <description>The CLI equivalent of a page-controller to perform a single action.</description>
+        <long-description>
+</long-description>
+        <tag name="package" description="Aura.Cli" line="12"/>
+      </docblock>
+      <property final="false" static="false" visibility="protected" line="29">
+        <name>$getopt</name>
+        <default/>
+        <docblock>
+          <description>A Getopt object for the Command; retains the short and long options
+passed at the command line.</description>
+          <long-description>
+</long-description>
+          <tag name="var" description="" type="\Aura\Cli\Getopt" line="21">
+            <type by_reference="false">\Aura\Cli\Getopt</type>
+          </tag>
+        </docblock>
+      </property>
+      <property final="false" static="false" visibility="protected" line="38">
+        <name>$options</name>
+        <default>array</default>
+        <docblock>
+          <description>The option definitions for the Getopt object.</description>
+          <long-description>
+</long-description>
+          <tag name="var" description="" type="array" line="31">
+            <type by_reference="false">array</type>
+          </tag>
+        </docblock>
+      </property>
+      <property final="false" static="false" visibility="protected" line="49">
+        <name>$options_strict</name>
+        <default>Getopt</default>
+        <docblock>
+          <description>Should Getopt be strict about how options are processed?  In strict
+mode, passing an undefined option will throw an exception; in
+non-strict, it will not.</description>
+          <long-description>
+</long-description>
+          <tag name="var" description="" type="bool" line="40">
+            <type by_reference="false">bool</type>
+          </tag>
+        </docblock>
+      </property>
+      <property final="false" static="false" visibility="protected" line="58">
+        <name>$params</name>
+        <default>array</default>
+        <docblock>
+          <description>The positional (numeric) arguments passed at the command line.</description>
+          <long-description>
+</long-description>
+          <tag name="var" description="" type="array" line="51">
+            <type by_reference="false">array</type>
+          </tag>
+        </docblock>
+      </property>
+      <property final="false" static="false" visibility="protected" line="68">
+        <name>$skip_action</name>
+        <default>false</default>
+        <docblock>
+          <description>When set to `true` before `action()` is called, the `action()` will not
+be called after all.</description>
+          <long-description>
+</long-description>
+          <tag name="var" description="" type="bool" line="60">
+            <type by_reference="false">bool</type>
+          </tag>
+        </docblock>
+      </property>
+      <method final="false" abstract="false" static="false" visibility="public" line="83">
+        <name>__construct</name>
+        <docblock>
+          <description>Constructor.</description>
+          <long-description>
+</long-description>
+          <tag name="param" description="The command-line context." type="\Aura\Cli\Context" variable="$context" line="70">
+            <type by_reference="false">\Aura\Cli\Context</type>
+          </tag>
+          <tag name="param" description="Standard input/output streams." type="\Aura\Cli\Stdio" variable="$stdio" line="70">
+            <type by_reference="false">\Aura\Cli\Stdio</type>
+          </tag>
+          <tag name="param" description="An options processor and reader." type="\Aura\Cli\Getopt" variable="$getopt" line="70">
+            <type by_reference="false">\Aura\Cli\Getopt</type>
+          </tag>
+          <tag name="param" description="A signal manager to send signals to." type="\Aura\Signal\Manager" variable="$signal" line="70">
+            <type by_reference="false">\Aura\Signal\Manager</type>
+          </tag>
+        </docblock>
+        <argument line="84">
+          <name>$context</name>
+          <default/>
+          <type>Context</type>
+        </argument>
+        <argument line="85">
+          <name>$stdio</name>
+          <default/>
+          <type>Stdio</type>
+        </argument>
+        <argument line="86">
+          <name>$getopt</name>
+          <default/>
+          <type>Getopt</type>
+        </argument>
+        <argument line="87">
+          <name>$signal</name>
+          <default/>
+          <type>SignalManager</type>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="protected" line="113">
+        <name>loadGetoptParams</name>
+        <docblock>
+          <description>Passes the Context arguments to `$getopt` and retains the numeric
+parameters in `$params`.</description>
+          <long-description>
+</long-description>
+          <tag name="return" description="" type="void" line="105">
+            <type by_reference="false">void</type>
+          </tag>
+        </docblock>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" line="148">
+        <name>exec</name>
+        <docblock>
+          <description>Executes the Command.  In order, it does these things:</description>
+          <long-description>&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;signals &lt;code&gt;'pre_exec'&lt;/code&gt;&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;signals &lt;code&gt;'pre_action'&lt;/code&gt;&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;is the action is not to be skipped, calls &lt;code&gt;action()&lt;/code&gt; and signals
+&lt;code&gt;'post_action'&lt;/code&gt;&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;signals &lt;code&gt;'post_exec'&lt;/code&gt;&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;resets the terminal to normal colors&lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</long-description>
+          <tag name="signal" description="'pre_exec'" line="120"/>
+          <tag name="signal" description="'pre_action'" line="120"/>
+          <tag name="signal" description="'post_action'" line="120"/>
+          <tag name="signal" description="'post_exec'" line="120"/>
+          <tag name="see" description="\Aura\Cli\action()" refers="\Aura\Cli\action()" line="120"/>
+          <tag name="return" description="" type="void" line="120">
+            <type by_reference="false">void</type>
+          </tag>
+        </docblock>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" line="170">
+        <name>skipAction</name>
+        <docblock>
+          <description>Stops `exec()` from calling `action()` if it has not already done so.</description>
+          <long-description>
+</long-description>
+          <tag name="return" description="" type="void" line="163">
+            <type by_reference="false">void</type>
+          </tag>
+        </docblock>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" line="182">
+        <name>isSkipAction</name>
+        <docblock>
+          <description>Should the call to `action()` be skipped?</description>
+          <long-description>
+</long-description>
+          <tag name="return" description="" type="bool" line="175">
+            <type by_reference="false">bool</type>
+          </tag>
+        </docblock>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" line="194">
+        <name>preExec</name>
+        <docblock>
+          <description>Runs before `action()` as part of the `'pre_exec'` signal.</description>
+          <long-description>
+</long-description>
+          <tag name="return" description="" type="mixed" line="187">
+            <type by_reference="false">mixed</type>
+          </tag>
+        </docblock>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" line="205">
+        <name>preAction</name>
+        <docblock>
+          <description>Runs before `action()` as part of the `'pre_action'` signal.</description>
+          <long-description>
+</long-description>
+          <tag name="return" description="" type="mixed" line="198">
+            <type by_reference="false">mixed</type>
+          </tag>
+        </docblock>
+      </method>
+      <method final="false" abstract="true" static="false" visibility="public" line="216">
+        <name>action</name>
+        <docblock>
+          <description>The main logic for the Command.</description>
+          <long-description>
+</long-description>
+          <tag name="return" description="" type="void" line="209">
+            <type by_reference="false">void</type>
+          </tag>
+        </docblock>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" line="225">
+        <name>postAction</name>
+        <docblock>
+          <description>Runs after `action()` as part of the `'post_action'` signal.</description>
+          <long-description>
+</long-description>
+          <tag name="return" description="" type="mixed" line="218">
+            <type by_reference="false">mixed</type>
+          </tag>
+        </docblock>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" line="236">
+        <name>postExec</name>
+        <docblock>
+          <description>Runs after `action()` as part of the `'post_exec'` signal.</description>
+          <long-description>
+</long-description>
+          <tag name="return" description="" type="mixed" line="229">
+            <type by_reference="false">mixed</type>
+          </tag>
+        </docblock>
+      </method>
+    </class>
+  </file>
+  <file path="src/OptionFactory.php" hash="a454e839009a36d2bfe359f1c7ae6c07">
+    <class final="false" abstract="false" line="18" namespace="Aura\Cli">
+      <name>OptionFactory</name>
+      <extends/>
+      <full_name>\Aura\Cli\OptionFactory</full_name>
+      <docblock>
+        <description>A factory to create Option objects.</description>
+        <long-description>
+</long-description>
+        <tag name="package" description="Aura.Cli" line="11"/>
+      </docblock>
+      <property final="false" static="false" visibility="protected" line="27">
+        <name>$params</name>
+        <default>array</default>
+        <docblock>
+          <description>An array of default parameters for Option objects.</description>
+          <long-description>
+</long-description>
+          <tag name="var" description="" type="array" line="20">
+            <type by_reference="false">array</type>
+          </tag>
+        </docblock>
+      </property>
+      <method final="false" abstract="false" static="false" visibility="public" line="46">
+        <name>newInstance</name>
+        <docblock>
+          <description>Creates and returns a new Option object.</description>
+          <long-description>
+</long-description>
+          <tag name="param" description="An array of key-value pairs corresponding to Option constructor params." type="array" variable="$params" line="36">
+            <type by_reference="false">array</type>
+          </tag>
+          <tag name="return" description="" type="\Aura\Cli\Option" line="36">
+            <type by_reference="false">\Aura\Cli\Option</type>
+          </tag>
+        </docblock>
+        <argument line="46">
+          <name>$params</name>
+          <default/>
+          <type>array</type>
         </argument>
       </method>
     </class>
@@ -1040,8 +741,8 @@ in the defined Option objects and placing non-option params in a
           <description>The property name of the option.</description>
           <long-description>
 </long-description>
-          <tag name="var" description="" type="\string" line="47">
-            <type by_reference="false">\string</type>
+          <tag name="var" description="" type="string" line="47">
+            <type by_reference="false">string</type>
           </tag>
         </docblock>
       </property>
@@ -1052,8 +753,8 @@ in the defined Option objects and placing non-option params in a
           <description>The long name of the option.</description>
           <long-description>
 </long-description>
-          <tag name="var" description="" type="\string" line="56">
-            <type by_reference="false">\string</type>
+          <tag name="var" description="" type="string" line="56">
+            <type by_reference="false">string</type>
           </tag>
         </docblock>
       </property>
@@ -1064,8 +765,8 @@ in the defined Option objects and placing non-option params in a
           <description>The short name of the option.</description>
           <long-description>
 </long-description>
-          <tag name="var" description="" type="\string" line="65">
-            <type by_reference="false">\string</type>
+          <tag name="var" description="" type="string" line="65">
+            <type by_reference="false">string</type>
           </tag>
         </docblock>
       </property>
@@ -1077,8 +778,8 @@ in the defined Option objects and placing non-option params in a
 rejected (i.e., no param allowed) ?</description>
           <long-description>
 </long-description>
-          <tag name="var" description="" type="\string" line="74">
-            <type by_reference="false">\string</type>
+          <tag name="var" description="" type="string" line="74">
+            <type by_reference="false">string</type>
           </tag>
         </docblock>
       </property>
@@ -1089,8 +790,8 @@ rejected (i.e., no param allowed) ?</description>
           <description>Can the option be specified multiple times?</description>
           <long-description>
 </long-description>
-          <tag name="var" description="" type="\bool" line="84">
-            <type by_reference="false">\bool</type>
+          <tag name="var" description="" type="bool" line="84">
+            <type by_reference="false">bool</type>
           </tag>
         </docblock>
       </property>
@@ -1101,8 +802,8 @@ rejected (i.e., no param allowed) ?</description>
           <description>The default value for the option param.</description>
           <long-description>
 </long-description>
-          <tag name="var" description="" type="\string" line="93">
-            <type by_reference="false">\string</type>
+          <tag name="var" description="" type="string" line="93">
+            <type by_reference="false">string</type>
           </tag>
         </docblock>
       </property>
@@ -1113,8 +814,8 @@ rejected (i.e., no param allowed) ?</description>
           <description>The option value as set from the command line.</description>
           <long-description>
 </long-description>
-          <tag name="var" description="" type="\string" line="102">
-            <type by_reference="false">\string</type>
+          <tag name="var" description="" type="string" line="102">
+            <type by_reference="false">string</type>
           </tag>
         </docblock>
       </property>
@@ -1124,11 +825,11 @@ rejected (i.e., no param allowed) ?</description>
           <description>Initialized the object with an option definition array.</description>
           <long-description>
 </long-description>
-          <tag name="param" description="The option definition." type="\array" variable="$data" line="111">
-            <type by_reference="false">\array</type>
+          <tag name="param" description="The option definition." type="array" variable="$data" line="111">
+            <type by_reference="false">array</type>
           </tag>
-          <tag name="return" description="" type="\void" line="111">
-            <type by_reference="false">\void</type>
+          <tag name="return" description="" type="void" line="111">
+            <type by_reference="false">void</type>
           </tag>
         </docblock>
         <argument line="121">
@@ -1168,11 +869,11 @@ rejected (i.e., no param allowed) ?</description>
           <description>Sets the option value.</description>
           <long-description>
 </long-description>
-          <tag name="param" description="The value to set." type="\mixed" variable="$value" line="164">
-            <type by_reference="false">\mixed</type>
+          <tag name="param" description="The value to set." type="mixed" variable="$value" line="164">
+            <type by_reference="false">mixed</type>
           </tag>
-          <tag name="return" description="" type="\void" line="164">
-            <type by_reference="false">\void</type>
+          <tag name="return" description="" type="void" line="164">
+            <type by_reference="false">void</type>
           </tag>
         </docblock>
         <argument line="173">
@@ -1187,8 +888,8 @@ rejected (i.e., no param allowed) ?</description>
           <description>Gets the option value.</description>
           <long-description>
 </long-description>
-          <tag name="return" description="The value as set from the command line, or the default value if not set from the command line." type="\mixed" line="191">
-            <type by_reference="false">\mixed</type>
+          <tag name="return" description="The value as set from the command line, or the default value if not set from the command line." type="mixed" line="191">
+            <type by_reference="false">mixed</type>
           </tag>
         </docblock>
       </method>
@@ -1198,8 +899,8 @@ rejected (i.e., no param allowed) ?</description>
           <description>Gets the long name for this option.</description>
           <long-description>
 </long-description>
-          <tag name="return" description="" type="\string" line="208">
-            <type by_reference="false">\string</type>
+          <tag name="return" description="" type="string" line="208">
+            <type by_reference="false">string</type>
           </tag>
         </docblock>
       </method>
@@ -1209,8 +910,8 @@ rejected (i.e., no param allowed) ?</description>
           <description>Gets the short name for this option.</description>
           <long-description>
 </long-description>
-          <tag name="return" description="" type="\string" line="220">
-            <type by_reference="false">\string</type>
+          <tag name="return" description="" type="string" line="220">
+            <type by_reference="false">string</type>
           </tag>
         </docblock>
       </method>
@@ -1220,8 +921,8 @@ rejected (i.e., no param allowed) ?</description>
           <description>Gets the property name for this option.</description>
           <long-description>
 </long-description>
-          <tag name="return" description="" type="\string" line="232">
-            <type by_reference="false">\string</type>
+          <tag name="return" description="" type="string" line="232">
+            <type by_reference="false">string</type>
           </tag>
         </docblock>
       </method>
@@ -1231,8 +932,8 @@ rejected (i.e., no param allowed) ?</description>
           <description>Gets the default value of this option.</description>
           <long-description>
 </long-description>
-          <tag name="return" description="" type="\mixed" line="244">
-            <type by_reference="false">\mixed</type>
+          <tag name="return" description="" type="mixed" line="244">
+            <type by_reference="false">mixed</type>
           </tag>
         </docblock>
       </method>
@@ -1242,8 +943,8 @@ rejected (i.e., no param allowed) ?</description>
           <description>Can this option be present multiple times?</description>
           <long-description>
 </long-description>
-          <tag name="return" description="" type="\bool" line="256">
-            <type by_reference="false">\bool</type>
+          <tag name="return" description="" type="bool" line="256">
+            <type by_reference="false">bool</type>
           </tag>
         </docblock>
       </method>
@@ -1253,8 +954,8 @@ rejected (i.e., no param allowed) ?</description>
           <description>Is a param value required to be present on this option?</description>
           <long-description>
 </long-description>
-          <tag name="return" description="" type="\bool" line="268">
-            <type by_reference="false">\bool</type>
+          <tag name="return" description="" type="bool" line="268">
+            <type by_reference="false">bool</type>
           </tag>
         </docblock>
       </method>
@@ -1264,8 +965,8 @@ rejected (i.e., no param allowed) ?</description>
           <description>Is a param value required *not* to be present on this option?</description>
           <long-description>
 </long-description>
-          <tag name="return" description="" type="\bool" line="280">
-            <type by_reference="false">\bool</type>
+          <tag name="return" description="" type="bool" line="280">
+            <type by_reference="false">bool</type>
           </tag>
         </docblock>
       </method>
@@ -1275,53 +976,201 @@ rejected (i.e., no param allowed) ?</description>
           <description>Is a param value optional on this option?</description>
           <long-description>
 </long-description>
-          <tag name="return" description="" type="\bool" line="292">
-            <type by_reference="false">\bool</type>
+          <tag name="return" description="" type="bool" line="292">
+            <type by_reference="false">bool</type>
           </tag>
         </docblock>
       </method>
     </class>
   </file>
-  <file path="src/OptionFactory.php" hash="a454e839009a36d2bfe359f1c7ae6c07">
-    <class final="false" abstract="false" line="18" namespace="Aura\Cli">
-      <name>OptionFactory</name>
+  <file path="src/Vt100.php" hash="ff9f2278d86dfc7606c2697b91330b36">
+    <class final="false" abstract="false" line="24" namespace="Aura\Cli">
+      <name>Vt100</name>
       <extends/>
-      <full_name>\Aura\Cli\OptionFactory</full_name>
+      <full_name>\Aura\Cli\Vt100</full_name>
       <docblock>
-        <description>A factory to create Option objects.</description>
+        <description>Text formatting for VT100 terminals.</description>
         <long-description>
 </long-description>
         <tag name="package" description="Aura.Cli" line="11"/>
+        <tag name="author" description="Clay Loveless &lt;clay@killersoft.com&gt;" line="11"/>
+        <tag name="author" description="Paul M. Jones &lt;pmjones@paul-m-jones.com&gt;" line="11"/>
+        <tag name="license" description="http://opensource.org/licenses/bsd-license.php BSD" line="11"/>
       </docblock>
-      <property final="false" static="false" visibility="protected" line="27">
-        <name>$params</name>
+      <property final="false" static="false" visibility="protected" line="39">
+        <name>$format</name>
         <default>array</default>
         <docblock>
-          <description>An array of default parameters for Option objects.</description>
-          <long-description>
+          <description>Array of format conversions for use on a variety of pre-set console
+style combinations.</description>
+          <long-description>&lt;p&gt;Based on &lt;code&gt;ANSI VT100 Color/Style Codes&lt;/code&gt; according to the
+&lt;a href="http://vt100.net/docs/vt100-ug"&gt;VT100 User Guide&lt;/a&gt; and the
+&lt;a href="http://www.termsys.demon.co.uk/vtansi.htm"&gt;ANSI/VT100 Terminal Control reference&lt;/a&gt;.
+Inspired by &lt;a href="http://pear.php.net/Console_Color"&gt;PEAR Console_Color&lt;/a&gt;.&lt;/p&gt;
 </long-description>
-          <tag name="var" description="" type="\array" line="20">
-            <type by_reference="false">\array</type>
+          <tag name="var" description="" type="array" line="26">
+            <type by_reference="false">array</type>
           </tag>
         </docblock>
       </property>
-      <method final="false" abstract="false" static="false" visibility="public" line="46">
-        <name>newInstance</name>
+      <property final="false" static="false" visibility="protected" line="98">
+        <name>$posix</name>
+        <default>null</default>
         <docblock>
-          <description>Creates and returns a new Option object.</description>
+          <description>The POSIX terminal flag.</description>
           <long-description>
 </long-description>
-          <tag name="param" description="An array of key-value pairs corresponding to Option constructor params." type="\array" variable="$params" line="36">
-            <type by_reference="false">\array</type>
+          <tag name="var" description="" type="bool" line="87">
+            <type by_reference="false">bool</type>
           </tag>
-          <tag name="return" description="" type="\Aura\Cli\Option" line="36">
-            <type by_reference="false">\Aura\Cli\Option</type>
+          <tag name="see" description="\Aura\Cli\setPosix()" refers="\Aura\Cli\setPosix()" line="87"/>
+          <tag name="see" description="\Aura\Cli\getPosix()" refers="\Aura\Cli\getPosix()" line="87"/>
+        </docblock>
+      </property>
+      <method final="false" abstract="false" static="false" visibility="public" line="111">
+        <name>setPosix</name>
+        <docblock>
+          <description>Forces output to format for POSIX terminals, or to strip for non-POSIX
+terminals; when null, will auto-determine if the terminal is POSIX.</description>
+          <long-description>
+</long-description>
+          <tag name="param" description="True to force formatting, false to force stripping, or null to auto-determine." type="bool" variable="$flag" line="100">
+            <type by_reference="false">bool</type>
+          </tag>
+          <tag name="return" description="" type="void" line="100">
+            <type by_reference="false">void</type>
           </tag>
         </docblock>
-        <argument line="46">
-          <name>$params</name>
+        <argument line="111">
+          <name>$flag</name>
           <default/>
-          <type>array</type>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" line="128">
+        <name>getPosix</name>
+        <docblock>
+          <description>Gets the value of the POSIX terminal flag.</description>
+          <long-description>
+</long-description>
+          <tag name="param" description="True to force formatting, false to force stripping, or null to auto-determine." type="mixed" variable="$flag" line="120">
+            <type by_reference="false">mixed</type>
+          </tag>
+        </docblock>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" line="142">
+        <name>format</name>
+        <docblock>
+          <description>Converts VT100 %-markup in text to control codes.</description>
+          <long-description>
+</long-description>
+          <tag name="param" description="The text to format." type="string" variable="$text" line="133">
+            <type by_reference="false">string</type>
+          </tag>
+          <tag name="return" description="The formatted text." type="string" line="133">
+            <type by_reference="false">string</type>
+          </tag>
+        </docblock>
+        <argument line="142">
+          <name>$text</name>
+          <default/>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" line="156">
+        <name>strip</name>
+        <docblock>
+          <description>Strips VT100 %-markup from text.</description>
+          <long-description>
+</long-description>
+          <tag name="param" description="The text to strip %-markup from." type="string" variable="$text" line="147">
+            <type by_reference="false">string</type>
+          </tag>
+          <tag name="return" description="The plain text." type="string" line="147">
+            <type by_reference="false">string</type>
+          </tag>
+        </docblock>
+        <argument line="156">
+          <name>$text</name>
+          <default/>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" line="184">
+        <name>write</name>
+        <docblock>
+          <description>Writes text to a file handle, converting to control codes if the handle
+is a posix TTY, or to plain text if not.</description>
+          <long-description>
+</long-description>
+          <tag name="param" description="The file handle." type="resource" variable="$handle" line="169">
+            <type by_reference="false">resource</type>
+          </tag>
+          <tag name="param" description="The text to write to the file handle, converting %-markup if the handle is a posix TTY, or stripping markup if not." type="string" variable="$text" line="169">
+            <type by_reference="false">string</type>
+          </tag>
+          <tag name="return" description="" type="void" line="169">
+            <type by_reference="false">void</type>
+          </tag>
+          <tag name="see" description="\Aura\Cli\writeln()" refers="\Aura\Cli\writeln()" line="169"/>
+        </docblock>
+        <argument line="184">
+          <name>$handle</name>
+          <default/>
+          <type/>
+        </argument>
+        <argument line="184">
+          <name>$text</name>
+          <default/>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" line="210">
+        <name>writeln</name>
+        <docblock>
+          <description>Writes text to a file handle, converting to control codes if the handle
+is a posix TTY, or to plain text if not, and then appends a newline.</description>
+          <long-description>
+</long-description>
+          <tag name="param" description="The file handle." type="resource" variable="$handle" line="195">
+            <type by_reference="false">resource</type>
+          </tag>
+          <tag name="param" description="The text to write to the file handle, converting %-markup if the handle is a posix TTY, or stripping markup if not." type="string" variable="$text" line="195">
+            <type by_reference="false">string</type>
+          </tag>
+          <tag name="return" description="" type="void" line="195">
+            <type by_reference="false">void</type>
+          </tag>
+          <tag name="see" description="\Aura\Cli\write()" refers="\Aura\Cli\write()" line="195"/>
+        </docblock>
+        <argument line="210">
+          <name>$handle</name>
+          <default/>
+          <type/>
+        </argument>
+        <argument line="210">
+          <name>$text</name>
+          <default/>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="protected" line="225">
+        <name>isPosix</name>
+        <docblock>
+          <description>Determines if a stream handle should be treated as a POSIX terminal.</description>
+          <long-description>
+</long-description>
+          <tag name="param" description="The stream handle." type="resource" variable="$handle" line="216">
+            <type by_reference="false">resource</type>
+          </tag>
+          <tag name="return" description="" type="bool" line="216">
+            <type by_reference="false">bool</type>
+          </tag>
+        </docblock>
+        <argument line="225">
+          <name>$handle</name>
+          <default/>
+          <type/>
         </argument>
       </method>
     </class>
@@ -1344,8 +1193,8 @@ rejected (i.e., no param allowed) ?</description>
           <description>A handle for standard input.</description>
           <long-description>
 </long-description>
-          <tag name="var" description="" type="\resource" line="20">
-            <type by_reference="false">\resource</type>
+          <tag name="var" description="" type="resource" line="20">
+            <type by_reference="false">resource</type>
           </tag>
         </docblock>
       </property>
@@ -1356,8 +1205,8 @@ rejected (i.e., no param allowed) ?</description>
           <description>A handle for standard output.</description>
           <long-description>
 </long-description>
-          <tag name="var" description="" type="\resource" line="29">
-            <type by_reference="false">\resource</type>
+          <tag name="var" description="" type="resource" line="29">
+            <type by_reference="false">resource</type>
           </tag>
         </docblock>
       </property>
@@ -1368,8 +1217,8 @@ rejected (i.e., no param allowed) ?</description>
           <description>A handle for standard error.</description>
           <long-description>
 </long-description>
-          <tag name="var" description="" type="\resource" line="38">
-            <type by_reference="false">\resource</type>
+          <tag name="var" description="" type="resource" line="38">
+            <type by_reference="false">resource</type>
           </tag>
         </docblock>
       </property>
@@ -1391,14 +1240,14 @@ rejected (i.e., no param allowed) ?</description>
           <description>Constructor.</description>
           <long-description>
 </long-description>
-          <tag name="param" description="A handle for standard input." type="\resource" variable="$stdin" line="56">
-            <type by_reference="false">\resource</type>
+          <tag name="param" description="A handle for standard input." type="resource" variable="$stdin" line="56">
+            <type by_reference="false">resource</type>
           </tag>
-          <tag name="param" description="A handle for standard output." type="\resource" variable="$stdout" line="56">
-            <type by_reference="false">\resource</type>
+          <tag name="param" description="A handle for standard output." type="resource" variable="$stdout" line="56">
+            <type by_reference="false">resource</type>
           </tag>
-          <tag name="param" description="A handle for standard error." type="\resource" variable="$stderr" line="56">
-            <type by_reference="false">\resource</type>
+          <tag name="param" description="A handle for standard error." type="resource" variable="$stderr" line="56">
+            <type by_reference="false">resource</type>
           </tag>
         </docblock>
         <argument line="68">
@@ -1428,8 +1277,8 @@ rejected (i.e., no param allowed) ?</description>
           <description>Returns the standard input handle.</description>
           <long-description>
 </long-description>
-          <tag name="return" description="" type="\resource" line="79">
-            <type by_reference="false">\resource</type>
+          <tag name="return" description="" type="resource" line="79">
+            <type by_reference="false">resource</type>
           </tag>
         </docblock>
       </method>
@@ -1439,8 +1288,8 @@ rejected (i.e., no param allowed) ?</description>
           <description>Returns the standard output handle.</description>
           <long-description>
 </long-description>
-          <tag name="return" description="" type="\resource" line="91">
-            <type by_reference="false">\resource</type>
+          <tag name="return" description="" type="resource" line="91">
+            <type by_reference="false">resource</type>
           </tag>
         </docblock>
       </method>
@@ -1450,8 +1299,8 @@ rejected (i.e., no param allowed) ?</description>
           <description>Returns the standard error handle.</description>
           <long-description>
 </long-description>
-          <tag name="return" description="" type="\resource" line="103">
-            <type by_reference="false">\resource</type>
+          <tag name="return" description="" type="resource" line="103">
+            <type by_reference="false">resource</type>
           </tag>
         </docblock>
       </method>
@@ -1462,8 +1311,8 @@ rejected (i.e., no param allowed) ?</description>
 prompt to standard output.</description>
           <long-description>
 </long-description>
-          <tag name="return" description="" type="\void" line="115">
-            <type by_reference="false">\void</type>
+          <tag name="return" description="" type="void" line="115">
+            <type by_reference="false">void</type>
           </tag>
         </docblock>
       </method>
@@ -1477,11 +1326,11 @@ prompt to standard output.</description>
 a trailing newline.</description>
           <long-description>
 </long-description>
-          <tag name="param" description="The text to print to standard output." type="\string" variable="$string" line="133">
-            <type by_reference="false">\string</type>
+          <tag name="param" description="The text to print to standard output." type="string" variable="$string" line="133">
+            <type by_reference="false">string</type>
           </tag>
-          <tag name="return" description="" type="\void" line="133">
-            <type by_reference="false">\void</type>
+          <tag name="return" description="" type="void" line="133">
+            <type by_reference="false">void</type>
           </tag>
         </docblock>
         <argument line="143">
@@ -1497,11 +1346,11 @@ a trailing newline.</description>
 a trailing newline.</description>
           <long-description>
 </long-description>
-          <tag name="param" description="The text to print to standard output." type="\string" variable="$string" line="148">
-            <type by_reference="false">\string</type>
+          <tag name="param" description="The text to print to standard output." type="string" variable="$string" line="148">
+            <type by_reference="false">string</type>
           </tag>
-          <tag name="return" description="" type="\void" line="148">
-            <type by_reference="false">\void</type>
+          <tag name="return" description="" type="void" line="148">
+            <type by_reference="false">void</type>
           </tag>
         </docblock>
         <argument line="158">
@@ -1517,11 +1366,11 @@ a trailing newline.</description>
 a trailing newline.</description>
           <long-description>
 </long-description>
-          <tag name="param" description="The text to print to standard error." type="\string" variable="$string" line="163">
-            <type by_reference="false">\string</type>
+          <tag name="param" description="The text to print to standard error." type="string" variable="$string" line="163">
+            <type by_reference="false">string</type>
           </tag>
-          <tag name="return" description="" type="\void" line="163">
-            <type by_reference="false">\void</type>
+          <tag name="return" description="" type="void" line="163">
+            <type by_reference="false">void</type>
           </tag>
         </docblock>
         <argument line="173">
@@ -1537,11 +1386,11 @@ a trailing newline.</description>
 a trailing newline.</description>
           <long-description>
 </long-description>
-          <tag name="param" description="The text to print to standard error." type="\string" variable="$string" line="178">
-            <type by_reference="false">\string</type>
+          <tag name="param" description="The text to print to standard error." type="string" variable="$string" line="178">
+            <type by_reference="false">string</type>
           </tag>
-          <tag name="return" description="" type="\void" line="178">
-            <type by_reference="false">\void</type>
+          <tag name="return" description="" type="void" line="178">
+            <type by_reference="false">void</type>
           </tag>
         </docblock>
         <argument line="188">
@@ -1552,196 +1401,347 @@ a trailing newline.</description>
       </method>
     </class>
   </file>
-  <file path="src/Vt100.php" hash="b2b327d2ad2511595645205a6e96aef3">
-    <class final="false" abstract="false" line="24" namespace="Aura\Cli">
-      <name>Vt100</name>
+  <file path="src/CommandFactory.php" hash="d6748f93fbcf788c999478260f17fdf8">
+    <namespace-alias name="ForgeInterface">Aura\Di\ForgeInterface</namespace-alias>
+    <class final="false" abstract="false" line="19" namespace="Aura\Cli">
+      <name>CommandFactory</name>
       <extends/>
-      <full_name>\Aura\Cli\Vt100</full_name>
+      <full_name>\Aura\Cli\CommandFactory</full_name>
       <docblock>
-        <description>Text formatting for VT100 terminals.</description>
+        <description>A factory to create Command objects.</description>
+        <long-description>
+</long-description>
+        <tag name="package" description="Aura.Cli" line="12"/>
+      </docblock>
+      <property final="false" static="false" visibility="protected" line="28">
+        <name>$forge</name>
+        <default/>
+        <docblock>
+          <description>A Forge to create objects.</description>
+          <long-description>
+</long-description>
+          <tag name="var" description="" type="\Aura\Di\ForgeInterface" line="21">
+            <type by_reference="false">\Aura\Di\ForgeInterface</type>
+          </tag>
+        </docblock>
+      </property>
+      <property final="false" static="false" visibility="protected" line="38">
+        <name>$map</name>
+        <default>array</default>
+        <docblock>
+          <description>A map of names (called at the command line) to their corresponding
+Command classes.</description>
+          <long-description>
+</long-description>
+          <tag name="var" description="" type="array" line="30">
+            <type by_reference="false">array</type>
+          </tag>
+        </docblock>
+      </property>
+      <property final="false" static="false" visibility="protected" line="47">
+        <name>$not_found</name>
+        <default>null</default>
+        <docblock>
+          <description>A Command class to use when no class exists for a mapped name.</description>
+          <long-description>
+</long-description>
+          <tag name="var" description="" type="string" line="40">
+            <type by_reference="false">string</type>
+          </tag>
+        </docblock>
+      </property>
+      <method final="false" abstract="false" static="false" visibility="public" line="61">
+        <name>__construct</name>
+        <docblock>
+          <description>A Command class to use when no class exists for a mapped name.</description>
+          <long-description>
+</long-description>
+          <tag name="param" description="A Forge to create objects." type="\Aura\Di\ForgeInterface" variable="$forge" line="49">
+            <type by_reference="false">\Aura\Di\ForgeInterface</type>
+          </tag>
+          <tag name="param" description="A map of command names to Command classes." type="array" variable="$map" line="49">
+            <type by_reference="false">array</type>
+          </tag>
+          <tag name="param" description="A Command class to use when no class can be found for a mapped name." type="string" variable="$not_found" line="49">
+            <type by_reference="false">string</type>
+          </tag>
+        </docblock>
+        <argument line="62">
+          <name>$forge</name>
+          <default/>
+          <type>ForgeInterface</type>
+        </argument>
+        <argument line="63">
+          <name>$map</name>
+          <default>null</default>
+          <type>array</type>
+        </argument>
+        <argument line="64">
+          <name>$not_found</name>
+          <default>null</default>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" line="84">
+        <name>newInstance</name>
+        <docblock>
+          <description>Creates and returns a Command class based on a command name.</description>
+          <long-description>
+</long-description>
+          <tag name="param" description="A command name that maps to a Command class; if this name is not found in the map, use the `$not_found` class." type="string" variable="$name" line="71">
+            <type by_reference="false">string</type>
+          </tag>
+          <tag name="return" description="" type="\Aura\Cli\Command" line="71">
+            <type by_reference="false">\Aura\Cli\Command</type>
+          </tag>
+          <tag name="throws" description="when no mapped class can be found and no `$not_found` class is specified." type="\Exception\CommandFactory" line="71">
+            <type by_reference="false">\Exception\CommandFactory</type>
+          </tag>
+        </docblock>
+        <argument line="84">
+          <name>$name</name>
+          <default/>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" line="97">
+        <name>map</name>
+        <argument line="97">
+          <name>$name</name>
+          <default/>
+          <type/>
+        </argument>
+        <argument line="97">
+          <name>$class</name>
+          <default/>
+          <type/>
+        </argument>
+      </method>
+    </class>
+  </file>
+  <file path="src/Context.php" hash="f8d4674ca76e78eccefeedbb4be2887f">
+    <class final="false" abstract="false" line="18" namespace="Aura\Cli">
+      <name>Context</name>
+      <extends/>
+      <full_name>\Aura\Cli\Context</full_name>
+      <docblock>
+        <description>Collection point for information about the command-line execution context.</description>
         <long-description>
 </long-description>
         <tag name="package" description="Aura.Cli" line="11"/>
-        <tag name="author" description="Clay Loveless &amp;lt;clay@killersoft.com&amp;gt;" line="11"/>
-        <tag name="author" description="Paul M. Jones &amp;lt;pmjones@paul-m-jones.com&amp;gt;" line="11"/>
-        <tag name="license" description="http://opensource.org/licenses/bsd-license.php BSD" line="11"/>
       </docblock>
-      <property final="false" static="false" visibility="protected" line="39">
-        <name>$format</name>
-        <default>array</default>
+      <property final="false" static="false" visibility="protected" line="27">
+        <name>$argv</name>
+        <default/>
         <docblock>
-          <description>Array of format conversions for use on a variety of pre-set console
-style combinations.</description>
-          <long-description>&lt;p&gt;Based on &lt;code&gt;ANSI VT100 Color/Style Codes&lt;/code&gt; according to the
-&lt;a href="http://vt100.net/docs/vt100-ug"&gt;VT100 User Guide&lt;/a&gt; and the
-&lt;a href="http://www.termsys.demon.co.uk/vtansi.htm"&gt;ANSI/VT100 Terminal Control reference&lt;/a&gt;.
-Inspired by &lt;a href="http://pear.php.net/Console_Color"&gt;PEAR Console_Color&lt;/a&gt;.&lt;/p&gt;
+          <description>Values taken from $_SERVER['argv'].</description>
+          <long-description>
 </long-description>
-          <tag name="var" description="" type="\array" line="26">
-            <type by_reference="false">\array</type>
+          <tag name="var" description="" type="array" line="20">
+            <type by_reference="false">array</type>
           </tag>
         </docblock>
       </property>
-      <property final="false" static="false" visibility="protected" line="98">
-        <name>$posix</name>
-        <default>null</default>
+      <property final="false" static="false" visibility="protected" line="36">
+        <name>$env</name>
+        <default/>
         <docblock>
-          <description>The POSIX terminal flag.</description>
+          <description>Imported $_ENV values.</description>
           <long-description>
 </long-description>
-          <tag name="var" description="" type="\bool" line="87">
-            <type by_reference="false">\bool</type>
+          <tag name="var" description="" type="array" line="29">
+            <type by_reference="false">array</type>
           </tag>
-          <tag name="see" description="setPosix()" line="87"/>
-          <tag name="see" description="getPosix()" line="87"/>
         </docblock>
       </property>
-      <method final="false" abstract="false" static="false" visibility="public" line="111">
-        <name>setPosix</name>
+      <property final="false" static="false" visibility="protected" line="45">
+        <name>$server</name>
+        <default/>
         <docblock>
-          <description>Forces output to format for POSIX terminals, or to strip for non-POSIX
-terminals; when null, will auto-determine if the terminal is POSIX.</description>
+          <description>Imported $_SERVER values.</description>
           <long-description>
 </long-description>
-          <tag name="param" description="True to force formatting, false to force stripping, or null to auto-determine." type="\bool" variable="$flag" line="100">
-            <type by_reference="false">\bool</type>
-          </tag>
-          <tag name="return" description="" type="\void" line="100">
-            <type by_reference="false">\void</type>
+          <tag name="var" description="" type="array" line="38">
+            <type by_reference="false">array</type>
           </tag>
         </docblock>
-        <argument line="111">
-          <name>$flag</name>
+      </property>
+      <method final="false" abstract="false" static="false" visibility="public" line="54">
+        <name>__construct</name>
+        <docblock>
+          <description>Constructor.</description>
+          <long-description>
+</long-description>
+          <tag name="return" description="" type="void" line="47">
+            <type by_reference="false">void</type>
+          </tag>
+        </docblock>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" line="81">
+        <name>getEnv</name>
+        <docblock>
+          <description>Retrieves an **unfiltered** value by key from the $env property, or an
+alternate default value if that key does not exist.</description>
+          <long-description>
+</long-description>
+          <tag name="param" description="The $env key to retrieve the value of." type="string" variable="$key" line="68">
+            <type by_reference="false">string</type>
+          </tag>
+          <tag name="param" description="The value to return if the key does not exist." type="string" variable="$alt" line="68">
+            <type by_reference="false">string</type>
+          </tag>
+          <tag name="return" description="The value of $env[$key], or the alternate default value." type="mixed" line="68">
+            <type by_reference="false">mixed</type>
+          </tag>
+        </docblock>
+        <argument line="81">
+          <name>$key</name>
+          <default>null</default>
+          <type/>
+        </argument>
+        <argument line="81">
+          <name>$alt</name>
+          <default>null</default>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" line="99">
+        <name>getServer</name>
+        <docblock>
+          <description>Retrieves an **unfiltered** value by key from the $server property, or
+an alternate default value if that key does not exist.</description>
+          <long-description>
+</long-description>
+          <tag name="param" description="The $server key to retrieve the value of." type="string" variable="$key" line="86">
+            <type by_reference="false">string</type>
+          </tag>
+          <tag name="param" description="The value to return if the key does not exist." type="string" variable="$alt" line="86">
+            <type by_reference="false">string</type>
+          </tag>
+          <tag name="return" description="The value of $server[$key], or the alternate default value." type="mixed" line="86">
+            <type by_reference="false">mixed</type>
+          </tag>
+        </docblock>
+        <argument line="99">
+          <name>$key</name>
+          <default>null</default>
+          <type/>
+        </argument>
+        <argument line="99">
+          <name>$alt</name>
+          <default>null</default>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" line="118">
+        <name>getArgv</name>
+        <docblock>
+          <description>Retrieves an **unfiltered** value by position from the `$argv`
+property, or an alternate default value if that position does not
+exist.</description>
+          <long-description>
+</long-description>
+          <tag name="param" description="The `$argv` positional key to retrieve the value of." type="int" variable="$key" line="104">
+            <type by_reference="false">int</type>
+          </tag>
+          <tag name="param" description="The value to return if the key does not exist." type="string" variable="$alt" line="104">
+            <type by_reference="false">string</type>
+          </tag>
+          <tag name="return" description="The value of $server[$key], or the alternate default value." type="mixed" line="104">
+            <type by_reference="false">mixed</type>
+          </tag>
+        </docblock>
+        <argument line="118">
+          <name>$key</name>
+          <default>null</default>
+          <type/>
+        </argument>
+        <argument line="118">
+          <name>$alt</name>
+          <default>null</default>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" line="133">
+        <name>shiftArgv</name>
+        <docblock>
+          <description>Shifts the first value off the `$argv` property and returns it. Note
+that this modifies the `$argv` property; if you need the original,
+unmodified arguments, call `server('argv')`.</description>
+          <long-description>
+</long-description>
+          <tag name="return" description="The value shifted off the beginning of the `$argv` property." type="mixed" line="123">
+            <type by_reference="false">mixed</type>
+          </tag>
+        </docblock>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="protected" line="147">
+        <name>setArgv</name>
+        <docblock>
+          <description>Sets the `$argv` property.</description>
+          <long-description>
+</long-description>
+          <tag name="param" description="The new value of `$argv`." type="array" variable="$argv" line="138">
+            <type by_reference="false">array</type>
+          </tag>
+          <tag name="return" description="" type="void" line="138">
+            <type by_reference="false">void</type>
+          </tag>
+        </docblock>
+        <argument line="147">
+          <name>$argv</name>
+          <default/>
+          <type>array</type>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="protected" line="169">
+        <name>getValue</name>
+        <docblock>
+          <description>Common method to get a property value and return it.</description>
+          <long-description>
+</long-description>
+          <tag name="param" description="The property variable to fetch from: get, post, etc." type="string" variable="$var" line="152">
+            <type by_reference="false">string</type>
+          </tag>
+          <tag name="param" description="The array key in that property, if any, to get the value of." type="string" variable="$key" line="152">
+            <type by_reference="false">string</type>
+          </tag>
+          <tag name="param" description="The alternative default value to return if the requested key does not exist." type="string" variable="$alt" line="152">
+            <type by_reference="false">string</type>
+          </tag>
+          <tag name="return" description="The requested value, or the alternative default value." type="mixed" line="152">
+            <type by_reference="false">mixed</type>
+          </tag>
+        </docblock>
+        <argument line="169">
+          <name>$var</name>
+          <default/>
+          <type/>
+        </argument>
+        <argument line="169">
+          <name>$key</name>
+          <default/>
+          <type/>
+        </argument>
+        <argument line="169">
+          <name>$alt</name>
           <default/>
           <type/>
         </argument>
       </method>
-      <method final="false" abstract="false" static="false" visibility="public" line="128">
-        <name>getPosix</name>
-        <docblock>
-          <description>Gets the value of the POSIX terminal flag.</description>
-          <long-description>
+    </class>
+  </file>
+  <file path="src/Exception.php" hash="4de9a8b9a240b55fa6090483bd65518a">
+    <class final="false" abstract="false" line="18" namespace="Aura\Cli">
+      <name>Exception</name>
+      <extends>\Exception</extends>
+      <full_name>\Aura\Cli\Exception</full_name>
+      <docblock>
+        <description>Generic package exception.</description>
+        <long-description>
 </long-description>
-          <tag name="param" description="True to force formatting, false to force stripping, or null to auto-determine." type="\mixed" variable="$flag" line="120">
-            <type by_reference="false">\mixed</type>
-          </tag>
-        </docblock>
-      </method>
-      <method final="false" abstract="false" static="false" visibility="public" line="142">
-        <name>format</name>
-        <docblock>
-          <description>Converts VT100 %-markup in text to control codes.</description>
-          <long-description>
-</long-description>
-          <tag name="param" description="The text to format." type="\string" variable="$text" line="133">
-            <type by_reference="false">\string</type>
-          </tag>
-          <tag name="return" description="The formatted text." type="\string" line="133">
-            <type by_reference="false">\string</type>
-          </tag>
-        </docblock>
-        <argument line="142">
-          <name>$text</name>
-          <default/>
-          <type/>
-        </argument>
-      </method>
-      <method final="false" abstract="false" static="false" visibility="public" line="156">
-        <name>strip</name>
-        <docblock>
-          <description>Strips VT100 %-markup from text.</description>
-          <long-description>
-</long-description>
-          <tag name="param" description="The text to strip %-markup from." type="\string" variable="$text" line="147">
-            <type by_reference="false">\string</type>
-          </tag>
-          <tag name="return" description="The plain text." type="\string" line="147">
-            <type by_reference="false">\string</type>
-          </tag>
-        </docblock>
-        <argument line="156">
-          <name>$text</name>
-          <default/>
-          <type/>
-        </argument>
-      </method>
-      <method final="false" abstract="false" static="false" visibility="public" line="184">
-        <name>write</name>
-        <docblock>
-          <description>Writes text to a file handle, converting to control codes if the handle
-is a posix TTY, or to plain text if not.</description>
-          <long-description>
-</long-description>
-          <tag name="param" description="The file handle." type="\resource" variable="$handle" line="169">
-            <type by_reference="false">\resource</type>
-          </tag>
-          <tag name="param" description="The text to write to the file handle, converting %-markup if the handle is a posix TTY, or stripping markup if not." type="\string" variable="$text" line="169">
-            <type by_reference="false">\string</type>
-          </tag>
-          <tag name="return" description="" type="\void" line="169">
-            <type by_reference="false">\void</type>
-          </tag>
-          <tag name="see" description="writeln()" line="169"/>
-        </docblock>
-        <argument line="184">
-          <name>$handle</name>
-          <default/>
-          <type/>
-        </argument>
-        <argument line="184">
-          <name>$text</name>
-          <default/>
-          <type/>
-        </argument>
-      </method>
-      <method final="false" abstract="false" static="false" visibility="public" line="210">
-        <name>writeln</name>
-        <docblock>
-          <description>Writes text to a file handle, converting to control codes if the handle
-is a posix TTY, or to plain text if not, and then appends a newline.</description>
-          <long-description>
-</long-description>
-          <tag name="param" description="The file handle." type="\resource" variable="$handle" line="195">
-            <type by_reference="false">\resource</type>
-          </tag>
-          <tag name="param" description="The text to write to the file handle, converting %-markup if the handle is a posix TTY, or stripping markup if not." type="\string" variable="$text" line="195">
-            <type by_reference="false">\string</type>
-          </tag>
-          <tag name="return" description="" type="\void" line="195">
-            <type by_reference="false">\void</type>
-          </tag>
-          <tag name="see" description="write()" line="195"/>
-        </docblock>
-        <argument line="210">
-          <name>$handle</name>
-          <default/>
-          <type/>
-        </argument>
-        <argument line="210">
-          <name>$text</name>
-          <default/>
-          <type/>
-        </argument>
-      </method>
-      <method final="false" abstract="false" static="false" visibility="protected" line="225">
-        <name>isPosix</name>
-        <docblock>
-          <description>Determines if a stream handle should be treated as a POSIX terminal.</description>
-          <long-description>
-</long-description>
-          <tag name="param" description="The stream handle." type="\resource" variable="$handle" line="216">
-            <type by_reference="false">\resource</type>
-          </tag>
-          <tag name="return" description="" type="\bool" line="216">
-            <type by_reference="false">\bool</type>
-          </tag>
-        </docblock>
-        <argument line="225">
-          <name>$handle</name>
-          <default/>
-          <type/>
-        </argument>
-      </method>
+        <tag name="package" description="Aura.Cli" line="11"/>
+      </docblock>
     </class>
   </file>
   <file path="src.php" hash="47db0bef3d5c90299442b8d54981c556">

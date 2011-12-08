@@ -1,0 +1,248 @@
+<html xmlns="http://www.w3.org/1999/xhtml"><head><title>Aura Project for PHP: Aura.Marshal</title><meta http-equiv="Content-Type" content="text/html; charset=utf-8"></meta><link rel="stylesheet" href="css/jquery-ui.css" type="text/css"></link><link rel="stylesheet" href="css/docblox/jquery-ui-1.8.16.custom.css" type="text/css"></link><link rel="stylesheet" href="css/jquery.treeview.css" type="text/css"></link><link rel="stylesheet" href="css/theme.css" type="text/css"></link><script type="text/javascript" src="js/jquery-1.4.2.min.js"></script><script type="text/javascript" src="js/jquery-ui-1.8.2.custom.min.js"></script><script type="text/javascript" src="js/jquery.tools.min.js"></script><script type="text/javascript" src="js/jquery.cookie.js"></script><script type="text/javascript" src="js/jquery.treeview.js"></script><script type="text/javascript">
+            $(document).ready(function() {
+                $(".filetree").treeview({
+                    collapsed: true,
+                    persist: "cookie"
+                });
+
+                $("#accordion").accordion({
+                    collapsible: true,
+                    autoHeight:  false,
+                    fillSpace:   true
+                });
+
+                $(".tabs").tabs();
+            });
+        </script></head><body><script xmlns="" type="text/javascript" src="js/sidebar.js"></script><div xmlns="" id="sidebar">
+<div id="sidebar-header">
+<h1>Aura Project for PHP: Aura.Marshal</h1>
+<div style="clear: both"></div>
+</div>
+<div id="sidebar-nav">
+<h3 id="sidebar-dashboard">
+<img class="icon" src="css/docblox/images/icons/dashboard.png" alt="Dashboard"><a href="content.html" class="link" target="content">Dashboard</a>
+</h3>
+<div style="display: none"></div>
+<h3 id="sidebar-files">
+<img src="css/docblox/images/icons/files.png" alt="Files"><a href="#files">Files</a>
+</h3>
+<div class="sidebar-section">
+<div class="search-bar">
+<a href="#" onclick="$(this).parent().next().find('.collapsable-hitarea').click(); return false;"><img src="images/collapse_all.png" title="Collapse all" alt="Collapse all"></a><a href="#" onclick="$(this).parent().next().find('.expandable-hitarea').click(); return false;"><img src="images/expand_all.png" title="Expand all" alt="Expand all"></a><div><input type="text" onkeyup="tree_search(this);"></div>
+</div>
+<ul class="sidebar-nav-tree">
+<li class="closed">
+<span class="file"><a href="db_config_default.html" target="content">config/default.php</a></span><ul id="files_98a9de80a61e6b13ccc6f26e0aac4c9f" class="filetree"><li><span class="function"><a href="db_config_default.html#::Closure()" target="content">Closure<br></a></span></li></ul>
+</li>
+<li class="closed">
+<span class="file"><a href="db_scripts_instance.html" target="content">scripts/instance.php</a></span><ul id="files_77a3aeecd98ab55078198d5e0e0c3e70" class="filetree"></ul>
+</li>
+<li class="closed">
+<span class="file"><a href="db_src.html" target="content">src.php</a></span><ul id="files_d06879b4a109af7e58ea92e170d27448" class="filetree"></ul>
+</li>
+<li class="closed">
+<span class="file"><a href="db_src_Collection_Builder.html" target="content">src/Collection/Builder.php</a></span><ul id="files_ef481e6dfb733b9f12b81e9e317a698f" class="filetree"><li><span class="class"><a href="db_src_Collection_Builder.html#%5CAura%5CMarshal%5CCollection%5CBuilder" target="content">Builder<br></a></span></li></ul>
+</li>
+<li class="closed">
+<span class="file"><a href="db_src_Collection_BuilderInterface.html" target="content">src/Collection/BuilderInterface.php</a></span><ul id="files_e97e74fae22d03bb2606ca3e922ada92" class="filetree"><li><span class="interface"><a href="db_src_Collection_BuilderInterface.html#%5CAura%5CMarshal%5CCollection%5CBuilderInterface" target="content">BuilderInterface<br></a></span></li></ul>
+</li>
+<li class="closed">
+<span class="file"><a href="db_src_Collection_GenericCollection.html" target="content">src/Collection/GenericCollection.php</a></span><ul id="files_d3fdfa2338bfa0e842d26604addde518" class="filetree"><li><span class="class"><a href="db_src_Collection_GenericCollection.html#%5CAura%5CMarshal%5CCollection%5CGenericCollection" target="content">GenericCollection<br></a></span></li></ul>
+</li>
+<li class="closed">
+<span class="file"><a href="db_src_Data.html" target="content">src/Data.php</a></span><ul id="files_c689d3f8829449df24b5f630c45407ce" class="filetree"><li><span class="class"><a href="db_src_Data.html#%5CAura%5CMarshal%5CData" target="content">Data<br></a></span></li></ul>
+</li>
+<li class="closed">
+<span class="file"><a href="db_src_DataIterator.html" target="content">src/DataIterator.php</a></span><ul id="files_3cd60b26fff48d0663430bf25a2054d6" class="filetree"><li><span class="class"><a href="db_src_DataIterator.html#%5CAura%5CMarshal%5CDataIterator" target="content">DataIterator<br></a></span></li></ul>
+</li>
+<li class="closed">
+<span class="file"><a href="db_src_Exception.html" target="content">src/Exception.php</a></span><ul id="files_c01fbedfa526bb4d25d0f42c52ddd428" class="filetree"><li><span class="class"><a href="db_src_Exception.html#%5CAura%5CMarshal%5CException" target="content">Exception<br></a></span></li></ul>
+</li>
+<li class="closed">
+<span class="file"><a href="db_src_Manager.html" target="content">src/Manager.php</a></span><ul id="files_14abb1c67d586cd3198d5a577c59b428" class="filetree"><li><span class="class"><a href="db_src_Manager.html#%5CAura%5CMarshal%5CManager" target="content">Manager<br></a></span></li></ul>
+</li>
+<li class="closed">
+<span class="file"><a href="db_src_Record_Builder.html" target="content">src/Record/Builder.php</a></span><ul id="files_36d7a4d797fddfdbdffefaa9e5018159" class="filetree"><li><span class="class"><a href="db_src_Record_Builder.html#%5CAura%5CMarshal%5CRecord%5CBuilder" target="content">Builder<br></a></span></li></ul>
+</li>
+<li class="closed">
+<span class="file"><a href="db_src_Record_BuilderInterface.html" target="content">src/Record/BuilderInterface.php</a></span><ul id="files_7bff1cac163a0fdeb8d84e1c061f8e43" class="filetree"><li><span class="interface"><a href="db_src_Record_BuilderInterface.html#%5CAura%5CMarshal%5CRecord%5CBuilderInterface" target="content">BuilderInterface<br></a></span></li></ul>
+</li>
+<li class="closed">
+<span class="file"><a href="db_src_Record_GenericRecord.html" target="content">src/Record/GenericRecord.php</a></span><ul id="files_a8c3de5ce5dc70a6f552c4208aff2918" class="filetree"><li><span class="class"><a href="db_src_Record_GenericRecord.html#%5CAura%5CMarshal%5CRecord%5CGenericRecord" target="content">GenericRecord<br></a></span></li></ul>
+</li>
+<li class="closed">
+<span class="file"><a href="db_src_Relation_AbstractRelation.html" target="content">src/Relation/AbstractRelation.php</a></span><ul id="files_a1ffa0609df7b7a5cd0813a7509280d6" class="filetree"><li><span class="class"><a href="db_src_Relation_AbstractRelation.html#%5CAura%5CMarshal%5CRelation%5CAbstractRelation" target="content">AbstractRelation<br></a></span></li></ul>
+</li>
+<li class="closed">
+<span class="file"><a href="db_src_Relation_BelongsTo.html" target="content">src/Relation/BelongsTo.php</a></span><ul id="files_04ff0d1dcf7682f4ea8091657dd95178" class="filetree"><li><span class="class"><a href="db_src_Relation_BelongsTo.html#%5CAura%5CMarshal%5CRelation%5CBelongsTo" target="content">BelongsTo<br></a></span></li></ul>
+</li>
+<li class="closed">
+<span class="file"><a href="db_src_Relation_Builder.html" target="content">src/Relation/Builder.php</a></span><ul id="files_fcf40a2305e5c83bbbda6b289c085d6c" class="filetree"><li><span class="class"><a href="db_src_Relation_Builder.html#%5CAura%5CMarshal%5CRelation%5CBuilder" target="content">Builder<br></a></span></li></ul>
+</li>
+<li class="closed">
+<span class="file"><a href="db_src_Relation_HasMany.html" target="content">src/Relation/HasMany.php</a></span><ul id="files_300247b0feb79e93efeee2fff34fd3b8" class="filetree"><li><span class="class"><a href="db_src_Relation_HasMany.html#%5CAura%5CMarshal%5CRelation%5CHasMany" target="content">HasMany<br></a></span></li></ul>
+</li>
+<li class="closed">
+<span class="file"><a href="db_src_Relation_HasManyThrough.html" target="content">src/Relation/HasManyThrough.php</a></span><ul id="files_611a52b87990d094e1c28ab2dcd0ed3a" class="filetree"><li><span class="class"><a href="db_src_Relation_HasManyThrough.html#%5CAura%5CMarshal%5CRelation%5CHasManyThrough" target="content">HasManyThrough<br></a></span></li></ul>
+</li>
+<li class="closed">
+<span class="file"><a href="db_src_Relation_HasOne.html" target="content">src/Relation/HasOne.php</a></span><ul id="files_6013c50a45ba19cd2095c4aedfb8f97e" class="filetree"><li><span class="class"><a href="db_src_Relation_HasOne.html#%5CAura%5CMarshal%5CRelation%5CHasOne" target="content">HasOne<br></a></span></li></ul>
+</li>
+<li class="closed">
+<span class="file"><a href="db_src_Relation_RelationInterface.html" target="content">src/Relation/RelationInterface.php</a></span><ul id="files_b1bc3a313a302aca8a1b0937ae2f9025" class="filetree"><li><span class="interface"><a href="db_src_Relation_RelationInterface.html#%5CAura%5CMarshal%5CRelation%5CRelationInterface" target="content">RelationInterface<br></a></span></li></ul>
+</li>
+<li class="closed">
+<span class="file"><a href="db_src_Type_Builder.html" target="content">src/Type/Builder.php</a></span><ul id="files_f603f22b444ec5c9a661f4d1c9b8b9d8" class="filetree"><li><span class="class"><a href="db_src_Type_Builder.html#%5CAura%5CMarshal%5CType%5CBuilder" target="content">Builder<br></a></span></li></ul>
+</li>
+<li class="closed">
+<span class="file"><a href="db_src_Type_GenericType.html" target="content">src/Type/GenericType.php</a></span><ul id="files_b427854efd36827d41f96da67f503061" class="filetree"><li><span class="class"><a href="db_src_Type_GenericType.html#%5CAura%5CMarshal%5CType%5CGenericType" target="content">GenericType<br></a></span></li></ul>
+</li>
+<li class="closed">
+<span class="file"><a href="db_tests_CollectionTest.html" target="content">tests/CollectionTest.php</a></span><ul id="files_de773403e111c12fb82d48ac2f1199d7" class="filetree"><li><span class="class"><a href="db_tests_CollectionTest.html#%5CAura%5CMarshal%5CCollectionTest" target="content">CollectionTest<br></a></span></li></ul>
+</li>
+<li class="closed">
+<span class="file"><a href="db_tests_DataTest.html" target="content">tests/DataTest.php</a></span><ul id="files_1226869ae23f88333e144649512d97c1" class="filetree"><li><span class="class"><a href="db_tests_DataTest.html#%5CAura%5CMarshal%5CDataTest" target="content">DataTest<br></a></span></li></ul>
+</li>
+<li class="closed">
+<span class="file"><a href="db_tests_ManagerTest.html" target="content">tests/ManagerTest.php</a></span><ul id="files_2d00ffc6cc16308168dedfb5532ca246" class="filetree"><li><span class="class"><a href="db_tests_ManagerTest.html#%5CAura%5CMarshal%5CManagerTest" target="content">ManagerTest<br></a></span></li></ul>
+</li>
+<li class="closed">
+<span class="file"><a href="db_tests_RecordTest.html" target="content">tests/RecordTest.php</a></span><ul id="files_2db186a1f67f8f29b87b89a908b7520f" class="filetree"><li><span class="class"><a href="db_tests_RecordTest.html#%5CAura%5CMarshal%5CRecordTest" target="content">RecordTest<br></a></span></li></ul>
+</li>
+<li class="closed">
+<span class="file"><a href="db_tests_RelationTest.html" target="content">tests/RelationTest.php</a></span><ul id="files_2a39705e9124eded9ff6d5e145d3595d" class="filetree"><li><span class="class"><a href="db_tests_RelationTest.html#%5CAura%5CMarshal%5CRelationTest" target="content">RelationTest<br></a></span></li></ul>
+</li>
+<li class="closed">
+<span class="file"><a href="db_tests_TypeTest.html" target="content">tests/TypeTest.php</a></span><ul id="files_93e3c7324e52e9a46aec55466f773c78" class="filetree"><li><span class="class"><a href="db_tests_TypeTest.html#%5CAura%5CMarshal%5CTypeTest" target="content">TypeTest<br></a></span></li></ul>
+</li>
+<li class="closed">
+<span class="file"><a href="db_tests_fixture_data.html" target="content">tests/fixture_data.php</a></span><ul id="files_d271573a5b19aa7780b002e7c1f843cf" class="filetree"></ul>
+</li>
+<li class="closed">
+<span class="file"><a href="db_tests_fixture_types.html" target="content">tests/fixture_types.php</a></span><ul id="files_83c6c3b49d3063af92a0ca0b8a50ccdd" class="filetree"></ul>
+</li>
+</ul>
+</div>
+<h3 id="sidebar-packages">
+<img src="css/docblox/images/icons/packages.png" alt="Packages"><a href="#packages">Packages</a>
+</h3>
+<div class="sidebar-section sidebar-tree">
+<div class="search-bar">
+<a href="#" onclick="$(this).parent().next().find('.collapsable-hitarea').click(); return false;"><img src="images/collapse_all.png" title="Collapse all" alt="Collapse all"></a><a href="#" onclick="$(this).parent().next().find('.expandable-hitarea').click(); return false;"><img src="images/expand_all.png" title="Expand all" alt="Expand all"></a><div><input type="text" onkeyup="tree_search(this);"></div>
+</div>
+<ul class="sidebar-nav-tree">
+<li class="closed">
+<span class="folder">Aura</span><ul><li class="closed">
+<span class="folder">Marshal</span><ul>
+<li><span class="class"><a href="db_src_Relation_AbstractRelation.html#%5CAura%5CMarshal%5CRelation%5CAbstractRelation" target="content">AbstractRelation</a></span></li>
+<li><span class="class"><a href="db_src_Relation_BelongsTo.html#%5CAura%5CMarshal%5CRelation%5CBelongsTo" target="content">BelongsTo</a></span></li>
+<li><span class="class"><a href="db_src_Collection_Builder.html#%5CAura%5CMarshal%5CCollection%5CBuilder" target="content">Builder</a></span></li>
+<li><span class="class"><a href="db_src_Record_Builder.html#%5CAura%5CMarshal%5CRecord%5CBuilder" target="content">Builder</a></span></li>
+<li><span class="class"><a href="db_src_Relation_Builder.html#%5CAura%5CMarshal%5CRelation%5CBuilder" target="content">Builder</a></span></li>
+<li><span class="class"><a href="db_src_Type_Builder.html#%5CAura%5CMarshal%5CType%5CBuilder" target="content">Builder</a></span></li>
+<li><span class="interface"><a href="db_src_Collection_BuilderInterface.html#%5CAura%5CMarshal%5CCollection%5CBuilderInterface" target="content">BuilderInterface</a></span></li>
+<li><span class="interface"><a href="db_src_Record_BuilderInterface.html#%5CAura%5CMarshal%5CRecord%5CBuilderInterface" target="content">BuilderInterface</a></span></li>
+<li><span class="class"><a href="db_src_Data.html#%5CAura%5CMarshal%5CData" target="content">Data</a></span></li>
+<li><span class="class"><a href="db_src_DataIterator.html#%5CAura%5CMarshal%5CDataIterator" target="content">DataIterator</a></span></li>
+<li><span class="class"><a href="db_src_Exception.html#%5CAura%5CMarshal%5CException" target="content">Exception</a></span></li>
+<li><span class="class"><a href="db_src_Collection_GenericCollection.html#%5CAura%5CMarshal%5CCollection%5CGenericCollection" target="content">GenericCollection</a></span></li>
+<li><span class="class"><a href="db_src_Record_GenericRecord.html#%5CAura%5CMarshal%5CRecord%5CGenericRecord" target="content">GenericRecord</a></span></li>
+<li><span class="class"><a href="db_src_Type_GenericType.html#%5CAura%5CMarshal%5CType%5CGenericType" target="content">GenericType</a></span></li>
+<li><span class="class"><a href="db_src_Relation_HasMany.html#%5CAura%5CMarshal%5CRelation%5CHasMany" target="content">HasMany</a></span></li>
+<li><span class="class"><a href="db_src_Relation_HasManyThrough.html#%5CAura%5CMarshal%5CRelation%5CHasManyThrough" target="content">HasManyThrough</a></span></li>
+<li><span class="class"><a href="db_src_Relation_HasOne.html#%5CAura%5CMarshal%5CRelation%5CHasOne" target="content">HasOne</a></span></li>
+<li><span class="class"><a href="db_src_Manager.html#%5CAura%5CMarshal%5CManager" target="content">Manager</a></span></li>
+<li><span class="interface"><a href="db_src_Relation_RelationInterface.html#%5CAura%5CMarshal%5CRelation%5CRelationInterface" target="content">RelationInterface</a></span></li>
+</ul>
+</li></ul>
+</li>
+<li class="closed">
+<span class="folder">Default</span><ul>
+<li><span class="function"><a href="db_config_default.html#::Closure()" target="content">Closure</a></span></li>
+<li><span class="class"><a href="db_tests_CollectionTest.html#%5CAura%5CMarshal%5CCollectionTest" target="content">CollectionTest</a></span></li>
+<li><span class="class"><a href="db_tests_DataTest.html#%5CAura%5CMarshal%5CDataTest" target="content">DataTest</a></span></li>
+<li><span class="class"><a href="db_tests_ManagerTest.html#%5CAura%5CMarshal%5CManagerTest" target="content">ManagerTest</a></span></li>
+<li><span class="class"><a href="db_tests_RecordTest.html#%5CAura%5CMarshal%5CRecordTest" target="content">RecordTest</a></span></li>
+<li><span class="class"><a href="db_tests_RelationTest.html#%5CAura%5CMarshal%5CRelationTest" target="content">RelationTest</a></span></li>
+<li><span class="class"><a href="db_tests_TypeTest.html#%5CAura%5CMarshal%5CTypeTest" target="content">TypeTest</a></span></li>
+</ul>
+</li>
+</ul>
+</div>
+<h3 id="sidebar-namespaces">
+<img src="css/docblox/images/icons/namespaces.png" alt="Namespaces"><a href="#namespaces">Namespaces</a>
+</h3>
+<div class="sidebar-section sidebar-tree">
+<div class="search-bar">
+<a href="#" onclick="$(this).parent().next().find('.collapsable-hitarea').click(); return false;"><img src="images/collapse_all.png" title="Collapse all" alt="Collapse all"></a><a href="#" onclick="$(this).parent().next().find('.expandable-hitarea').click(); return false;"><img src="images/expand_all.png" title="Expand all" alt="Expand all"></a><div><input type="text" onkeyup="tree_search(this);"></div>
+</div>
+<ul class="sidebar-nav-tree">
+<li class="closed">
+<span class="folder">Aura</span><ul><li class="closed">
+<span class="folder">Marshal</span><ul>
+<li class="closed">
+<span class="folder">Collection</span><ul>
+<li><span class="class"><a href="db_src_Collection_Builder.html#%5CAura%5CMarshal%5CCollection%5CBuilder" target="content">Builder</a></span></li>
+<li><span class="interface"><a href="db_src_Collection_BuilderInterface.html#%5CAura%5CMarshal%5CCollection%5CBuilderInterface" target="content">BuilderInterface</a></span></li>
+<li><span class="class"><a href="db_src_Collection_GenericCollection.html#%5CAura%5CMarshal%5CCollection%5CGenericCollection" target="content">GenericCollection</a></span></li>
+</ul>
+</li>
+<li class="closed">
+<span class="folder">Record</span><ul>
+<li><span class="class"><a href="db_src_Record_Builder.html#%5CAura%5CMarshal%5CRecord%5CBuilder" target="content">Builder</a></span></li>
+<li><span class="interface"><a href="db_src_Record_BuilderInterface.html#%5CAura%5CMarshal%5CRecord%5CBuilderInterface" target="content">BuilderInterface</a></span></li>
+<li><span class="class"><a href="db_src_Record_GenericRecord.html#%5CAura%5CMarshal%5CRecord%5CGenericRecord" target="content">GenericRecord</a></span></li>
+</ul>
+</li>
+<li class="closed">
+<span class="folder">Relation</span><ul>
+<li><span class="class"><a href="db_src_Relation_AbstractRelation.html#%5CAura%5CMarshal%5CRelation%5CAbstractRelation" target="content">AbstractRelation</a></span></li>
+<li><span class="class"><a href="db_src_Relation_BelongsTo.html#%5CAura%5CMarshal%5CRelation%5CBelongsTo" target="content">BelongsTo</a></span></li>
+<li><span class="class"><a href="db_src_Relation_Builder.html#%5CAura%5CMarshal%5CRelation%5CBuilder" target="content">Builder</a></span></li>
+<li><span class="class"><a href="db_src_Relation_HasMany.html#%5CAura%5CMarshal%5CRelation%5CHasMany" target="content">HasMany</a></span></li>
+<li><span class="class"><a href="db_src_Relation_HasManyThrough.html#%5CAura%5CMarshal%5CRelation%5CHasManyThrough" target="content">HasManyThrough</a></span></li>
+<li><span class="class"><a href="db_src_Relation_HasOne.html#%5CAura%5CMarshal%5CRelation%5CHasOne" target="content">HasOne</a></span></li>
+<li><span class="interface"><a href="db_src_Relation_RelationInterface.html#%5CAura%5CMarshal%5CRelation%5CRelationInterface" target="content">RelationInterface</a></span></li>
+</ul>
+</li>
+<li class="closed">
+<span class="folder">Type</span><ul>
+<li><span class="class"><a href="db_src_Type_Builder.html#%5CAura%5CMarshal%5CType%5CBuilder" target="content">Builder</a></span></li>
+<li><span class="class"><a href="db_src_Type_GenericType.html#%5CAura%5CMarshal%5CType%5CGenericType" target="content">GenericType</a></span></li>
+</ul>
+</li>
+<li><span class="class"><a href="db_tests_CollectionTest.html#%5CAura%5CMarshal%5CCollectionTest" target="content">CollectionTest</a></span></li>
+<li><span class="class"><a href="db_src_Data.html#%5CAura%5CMarshal%5CData" target="content">Data</a></span></li>
+<li><span class="class"><a href="db_src_DataIterator.html#%5CAura%5CMarshal%5CDataIterator" target="content">DataIterator</a></span></li>
+<li><span class="class"><a href="db_tests_DataTest.html#%5CAura%5CMarshal%5CDataTest" target="content">DataTest</a></span></li>
+<li><span class="class"><a href="db_src_Exception.html#%5CAura%5CMarshal%5CException" target="content">Exception</a></span></li>
+<li><span class="class"><a href="db_src_Manager.html#%5CAura%5CMarshal%5CManager" target="content">Manager</a></span></li>
+<li><span class="class"><a href="db_tests_ManagerTest.html#%5CAura%5CMarshal%5CManagerTest" target="content">ManagerTest</a></span></li>
+<li><span class="class"><a href="db_tests_RecordTest.html#%5CAura%5CMarshal%5CRecordTest" target="content">RecordTest</a></span></li>
+<li><span class="class"><a href="db_tests_RelationTest.html#%5CAura%5CMarshal%5CRelationTest" target="content">RelationTest</a></span></li>
+<li><span class="class"><a href="db_tests_TypeTest.html#%5CAura%5CMarshal%5CTypeTest" target="content">TypeTest</a></span></li>
+</ul>
+</li></ul>
+</li>
+<li class="closed">
+<span class="folder">default</span><ul><li><span class="function"><a href="db_config_default.html#::Closure()" target="content">Closure</a></span></li></ul>
+</li>
+</ul>
+</div>
+<h3 id="sidebar-charts">
+<img src="css/docblox/images/icons/chart.png" alt="Charts"><a href="#charts">Charts</a>
+</h3>
+<div class="sidebar-section"><ul style="list-style-image: url('css/docblox/images/icons/chart15x12.png');"><li><a href="graph.html" target="content">Class Inheritance Diagram</a></li></ul></div>
+<h3 id="sidebar-reports">
+<img src="css/docblox/images/icons/reports.png" alt="Reports"><a href="#reports">Reports</a>
+</h3>
+<div class="sidebar-section"><ul style="list-style-image: url('css/docblox/images/icons/reports9x12.png');">
+<li><a href="report_markers.html" target="content">Markers (TODO/FIXME)</a></li>
+<li><a href="report_parse_markers.html" target="content">Parsing errors</a></li>
+<li><a href="report_deprecated.html" target="content">Deprecated elements</a></li>
+</ul></div>
+</div>
+<div id="sidebar-footer">
+        Documentation is generated by <a href="http://docblox-project.org" target="_top"><img src="images/icon48x48.png" height="12" align="top" alt="Logo"> DocBlox 0.16.0</a>, images courtesy of <a href="http://glyphish.com/" target="_top">Glyphish</a>
+</div>
+</div></body></html>

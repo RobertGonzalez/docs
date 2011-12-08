@@ -1,0 +1,1081 @@
+<html xmlns="http://www.w3.org/1999/xhtml"><head><title>Aura Project for PHP: Aura.Sql</title><meta http-equiv="Content-Type" content="text/html; charset=utf-8"></meta><link rel="stylesheet" href="css/jquery-ui.css" type="text/css"></link><link rel="stylesheet" href="css/docblox/jquery-ui-1.8.16.custom.css" type="text/css"></link><link rel="stylesheet" href="css/jquery.treeview.css" type="text/css"></link><link rel="stylesheet" href="css/theme.css" type="text/css"></link><script type="text/javascript" src="js/jquery-1.4.2.min.js"></script><script type="text/javascript" src="js/jquery-ui-1.8.2.custom.min.js"></script><script type="text/javascript" src="js/jquery.tools.min.js"></script><script type="text/javascript" src="js/jquery.cookie.js"></script><script type="text/javascript" src="js/jquery.treeview.js"></script><script type="text/javascript">
+            $(document).ready(function() {
+                $(".filetree").treeview({
+                    collapsed: true,
+                    persist: "cookie"
+                });
+
+                $("#accordion").accordion({
+                    collapsible: true,
+                    autoHeight:  false,
+                    fillSpace:   true
+                });
+
+                $(".tabs").tabs();
+            });
+        </script></head><body><script xmlns="" type="text/javascript">
+        $(document).ready(function() {
+            $("#marker-accordion").accordion({
+                collapsible: true,
+                autoHeight:  false
+            });
+        });
+    </script><div xmlns="" id="content">
+<h1>Compilation Errors</h1>
+<div id="marker-accordion">
+<h3><a href="#">scripts/instance.php<small>1</small></a></h3>
+<div><table>
+<tr>
+<th>Type</th>
+<th>Line</th>
+<th>Description</th>
+</tr>
+<tr>
+<td>error</td>
+<td>1</td>
+<td>No DocBlock was found for File scripts/instance.php</td>
+</tr>
+</table></div>
+<h3><a href="#">tests/ConnectionFactoryTest.php<small>4</small></a></h3>
+<div><table>
+<tr>
+<th>Type</th>
+<th>Line</th>
+<th>Description</th>
+</tr>
+<tr>
+<td>error</td>
+<td>1</td>
+<td>No DocBlock was found for File tests/ConnectionFactoryTest.php</td>
+</tr>
+<tr>
+<td>critical</td>
+<td>13</td>
+<td>No short description for property $factory</td>
+</tr>
+<tr>
+<td>critical</td>
+<td>44</td>
+<td>No short description for method testNewInstance</td>
+</tr>
+<tr>
+<td>critical</td>
+<td>59</td>
+<td>No short description for method testNoMapping</td>
+</tr>
+</table></div>
+<h3><a href="#">tests/ConnectionManagerTest.php<small>19</small></a></h3>
+<div><table>
+<tr>
+<th>Type</th>
+<th>Line</th>
+<th>Description</th>
+</tr>
+<tr>
+<td>error</td>
+<td>1</td>
+<td>No DocBlock was found for File tests/ConnectionManagerTest.php</td>
+</tr>
+<tr>
+<td>critical</td>
+<td>12</td>
+<td>No short description for property $manager</td>
+</tr>
+<tr>
+<td>error</td>
+<td>17</td>
+<td>No DocBlock was found for Property $default</td>
+</tr>
+<tr>
+<td>error</td>
+<td>25</td>
+<td>No DocBlock was found for Property $masters</td>
+</tr>
+<tr>
+<td>error</td>
+<td>34</td>
+<td>No DocBlock was found for Property $slaves</td>
+</tr>
+<tr>
+<td>error</td>
+<td>56</td>
+<td>No DocBlock was found for Method newManager</td>
+</tr>
+<tr>
+<td>critical</td>
+<td>78</td>
+<td>No short description for method testGetReadDefaultOnly</td>
+</tr>
+<tr>
+<td>error</td>
+<td>90</td>
+<td>No DocBlock was found for Method testGetReadDefaultAndMasters</td>
+</tr>
+<tr>
+<td>error</td>
+<td>106</td>
+<td>No DocBlock was found for Method testGetReadDefaultMastersAndSlaves</td>
+</tr>
+<tr>
+<td>error</td>
+<td>123</td>
+<td>No DocBlock was found for Method testGetReadDefaultAndSlaves</td>
+</tr>
+<tr>
+<td>critical</td>
+<td>140</td>
+<td>No short description for method testGetWriteDefaultOnly</td>
+</tr>
+<tr>
+<td>error</td>
+<td>152</td>
+<td>No DocBlock was found for Method testGetWriteDefaultAndMasters</td>
+</tr>
+<tr>
+<td>error</td>
+<td>168</td>
+<td>No DocBlock was found for Method testGetWriteDefaultMastersAndSlaves</td>
+</tr>
+<tr>
+<td>error</td>
+<td>184</td>
+<td>No DocBlock was found for Method testGetWriteDefaultAndSlaves</td>
+</tr>
+<tr>
+<td>critical</td>
+<td>199</td>
+<td>No short description for method testGetDefault</td>
+</tr>
+<tr>
+<td>critical</td>
+<td>213</td>
+<td>No short description for method testGetMaster</td>
+</tr>
+<tr>
+<td>critical</td>
+<td>232</td>
+<td>No short description for method testNoSuchMaster</td>
+</tr>
+<tr>
+<td>critical</td>
+<td>241</td>
+<td>No short description for method testGetSlave</td>
+</tr>
+<tr>
+<td>critical</td>
+<td>264</td>
+<td>No short description for method testNoSuchSlave</td>
+</tr>
+</table></div>
+<h3><a href="#">tests/Connection/SqlsrvTest.php<small>7</small></a></h3>
+<div><table>
+<tr>
+<th>Type</th>
+<th>Line</th>
+<th>Description</th>
+</tr>
+<tr>
+<td>error</td>
+<td>1</td>
+<td>No DocBlock was found for File tests/Connection/SqlsrvTest.php</td>
+</tr>
+<tr>
+<td>error</td>
+<td>10</td>
+<td>No DocBlock was found for Property $extension</td>
+</tr>
+<tr>
+<td>error</td>
+<td>12</td>
+<td>No DocBlock was found for Property $connect_type</td>
+</tr>
+<tr>
+<td>error</td>
+<td>14</td>
+<td>No DocBlock was found for Property $expect_class</td>
+</tr>
+<tr>
+<td>error</td>
+<td>16</td>
+<td>No DocBlock was found for Property $create_table</td>
+</tr>
+<tr>
+<td>error</td>
+<td>22</td>
+<td>No DocBlock was found for Property $expect_convert_select</td>
+</tr>
+<tr>
+<td>error</td>
+<td>50</td>
+<td>No DocBlock was found for Property $expect_fetch_table_cols</td>
+</tr>
+</table></div>
+<h3><a href="#">tests/Connection/MockConnection.php<small>6</small></a></h3>
+<div><table>
+<tr>
+<th>Type</th>
+<th>Line</th>
+<th>Description</th>
+</tr>
+<tr>
+<td>error</td>
+<td>1</td>
+<td>No DocBlock was found for File tests/Connection/MockConnection.php</td>
+</tr>
+<tr>
+<td>error</td>
+<td>3</td>
+<td>No DocBlock was found for Class MockConnection</td>
+</tr>
+<tr>
+<td>error</td>
+<td>5</td>
+<td>No DocBlock was found for Property $params</td>
+</tr>
+<tr>
+<td>error</td>
+<td>8</td>
+<td>No DocBlock was found for Method __construct</td>
+</tr>
+<tr>
+<td>error</td>
+<td>22</td>
+<td>No DocBlock was found for Method getParams</td>
+</tr>
+<tr>
+<td>error</td>
+<td>27</td>
+<td>No DocBlock was found for Method getDsnHost</td>
+</tr>
+</table></div>
+<h3><a href="#">tests/Connection/AbstractConnectionTest.php<small>28</small></a></h3>
+<div><table>
+<tr>
+<th>Type</th>
+<th>Line</th>
+<th>Description</th>
+</tr>
+<tr>
+<td>error</td>
+<td>1</td>
+<td>No DocBlock was found for File tests/Connection/AbstractConnectionTest.php</td>
+</tr>
+<tr>
+<td>error</td>
+<td>23</td>
+<td>No DocBlock was found for Property $extension</td>
+</tr>
+<tr>
+<td>error</td>
+<td>25</td>
+<td>No DocBlock was found for Property $dsn</td>
+</tr>
+<tr>
+<td>error</td>
+<td>27</td>
+<td>No DocBlock was found for Property $connect_type</td>
+</tr>
+<tr>
+<td>error</td>
+<td>29</td>
+<td>No DocBlock was found for Property $expect_dsn_string</td>
+</tr>
+<tr>
+<td>error</td>
+<td>31</td>
+<td>No DocBlock was found for Property $expect_class</td>
+</tr>
+<tr>
+<td>error</td>
+<td>33</td>
+<td>No DocBlock was found for Property $expect_convert_select</td>
+</tr>
+<tr>
+<td>error</td>
+<td>56</td>
+<td>No DocBlock was found for Property $conn</td>
+</tr>
+<tr>
+<td>error</td>
+<td>58</td>
+<td>No DocBlock was found for Property $table</td>
+</tr>
+<tr>
+<td>error</td>
+<td>100</td>
+<td>No DocBlock was found for Method createTable</td>
+</tr>
+<tr>
+<td>error</td>
+<td>105</td>
+<td>No DocBlock was found for Method dropTable</td>
+</tr>
+<tr>
+<td>error</td>
+<td>110</td>
+<td>No DocBlock was found for Method fillTable</td>
+</tr>
+<tr>
+<td>critical</td>
+<td>122</td>
+<td>No short description for method testGetDsnString</td>
+</tr>
+<tr>
+<td>critical</td>
+<td>131</td>
+<td>No short description for method testConnect</td>
+</tr>
+<tr>
+<td>error</td>
+<td>140</td>
+<td>No DocBlock was found for Method testQuery</td>
+</tr>
+<tr>
+<td>error</td>
+<td>151</td>
+<td>No DocBlock was found for Method testQueryWithData</td>
+</tr>
+<tr>
+<td>error</td>
+<td>163</td>
+<td>No DocBlock was found for Method testFetchAll</td>
+</tr>
+<tr>
+<td>error</td>
+<td>172</td>
+<td>No DocBlock was found for Method testFetchAssoc</td>
+</tr>
+<tr>
+<td>error</td>
+<td>186</td>
+<td>No DocBlock was found for Method testFetchCol</td>
+</tr>
+<tr>
+<td>error</td>
+<td>199</td>
+<td>No DocBlock was found for Method testFetchValue</td>
+</tr>
+<tr>
+<td>error</td>
+<td>216</td>
+<td>No DocBlock was found for Method testFetchPairs</td>
+</tr>
+<tr>
+<td>error</td>
+<td>235</td>
+<td>No DocBlock was found for Method testFetchOne</td>
+</tr>
+<tr>
+<td>error</td>
+<td>259</td>
+<td>No DocBlock was found for Method testFetchTableList</td>
+</tr>
+<tr>
+<td>error</td>
+<td>266</td>
+<td>No DocBlock was found for Method testFetchTableCols</td>
+</tr>
+<tr>
+<td>error</td>
+<td>327</td>
+<td>No DocBlock was found for Method testInsertAndLastInsertId</td>
+</tr>
+<tr>
+<td>error</td>
+<td>343</td>
+<td>No DocBlock was found for Method testUpdate</td>
+</tr>
+<tr>
+<td>error</td>
+<td>360</td>
+<td>No DocBlock was found for Method testDelete</td>
+</tr>
+<tr>
+<td>error</td>
+<td>375</td>
+<td>No DocBlock was found for Method testConvertSelect</td>
+</tr>
+</table></div>
+<h3><a href="#">tests/Connection/SqlsrvDenaliTest.php<small>5</small></a></h3>
+<div><table>
+<tr>
+<th>Type</th>
+<th>Line</th>
+<th>Description</th>
+</tr>
+<tr>
+<td>error</td>
+<td>1</td>
+<td>No DocBlock was found for File tests/Connection/SqlsrvDenaliTest.php</td>
+</tr>
+<tr>
+<td>error</td>
+<td>12</td>
+<td>No DocBlock was found for Property $connect_type</td>
+</tr>
+<tr>
+<td>error</td>
+<td>14</td>
+<td>No DocBlock was found for Property $expect_class</td>
+</tr>
+<tr>
+<td>error</td>
+<td>16</td>
+<td>No DocBlock was found for Method testFetchTableList</td>
+</tr>
+<tr>
+<td>error</td>
+<td>23</td>
+<td>No DocBlock was found for Method testConvertSelect</td>
+</tr>
+</table></div>
+<h3><a href="#">tests/Connection/MysqlTest.php<small>6</small></a></h3>
+<div><table>
+<tr>
+<th>Type</th>
+<th>Line</th>
+<th>Description</th>
+</tr>
+<tr>
+<td>error</td>
+<td>1</td>
+<td>No DocBlock was found for File tests/Connection/MysqlTest.php</td>
+</tr>
+<tr>
+<td>error</td>
+<td>10</td>
+<td>No DocBlock was found for Property $extension</td>
+</tr>
+<tr>
+<td>error</td>
+<td>12</td>
+<td>No DocBlock was found for Property $connect_type</td>
+</tr>
+<tr>
+<td>error</td>
+<td>14</td>
+<td>No DocBlock was found for Property $expect_class</td>
+</tr>
+<tr>
+<td>error</td>
+<td>16</td>
+<td>No DocBlock was found for Property $create_table</td>
+</tr>
+<tr>
+<td>error</td>
+<td>22</td>
+<td>No DocBlock was found for Property $expect_fetch_table_cols</td>
+</tr>
+</table></div>
+<h3><a href="#">tests/Column.php<small>12</small></a></h3>
+<div><table>
+<tr>
+<th>Type</th>
+<th>Line</th>
+<th>Description</th>
+</tr>
+<tr>
+<td>error</td>
+<td>1</td>
+<td>No DocBlock was found for File tests/Column.php</td>
+</tr>
+<tr>
+<td>error</td>
+<td>4</td>
+<td>No DocBlock was found for Class Column</td>
+</tr>
+<tr>
+<td>error</td>
+<td>6</td>
+<td>No DocBlock was found for Property $name</td>
+</tr>
+<tr>
+<td>error</td>
+<td>7</td>
+<td>No DocBlock was found for Property $type</td>
+</tr>
+<tr>
+<td>error</td>
+<td>8</td>
+<td>No DocBlock was found for Property $size</td>
+</tr>
+<tr>
+<td>error</td>
+<td>9</td>
+<td>No DocBlock was found for Property $scope</td>
+</tr>
+<tr>
+<td>error</td>
+<td>10</td>
+<td>No DocBlock was found for Property $default</td>
+</tr>
+<tr>
+<td>error</td>
+<td>11</td>
+<td>No DocBlock was found for Property $require</td>
+</tr>
+<tr>
+<td>error</td>
+<td>12</td>
+<td>No DocBlock was found for Property $primary</td>
+</tr>
+<tr>
+<td>error</td>
+<td>13</td>
+<td>No DocBlock was found for Property $autoinc</td>
+</tr>
+<tr>
+<td>error</td>
+<td>15</td>
+<td>No DocBlock was found for Method __get</td>
+</tr>
+<tr>
+<td>error</td>
+<td>20</td>
+<td>No DocBlock was found for Method __set</td>
+</tr>
+</table></div>
+<h3><a href="#">src/ConnectionFactory.php<small>3</small></a></h3>
+<div><table>
+<tr>
+<th>Type</th>
+<th>Line</th>
+<th>Description</th>
+</tr>
+<tr>
+<td>error</td>
+<td>1</td>
+<td>No DocBlock was found for File src/ConnectionFactory.php</td>
+</tr>
+<tr>
+<td>error</td>
+<td>5</td>
+<td>No DocBlock was found for Class ConnectionFactory</td>
+</tr>
+<tr>
+<td>notice</td>
+<td>59</td>
+<td>Argument $params is missing from the function Docblock</td>
+</tr>
+</table></div>
+<h3><a href="#">src/Exception/ConnectionFactory.php<small>2</small></a></h3>
+<div><table>
+<tr>
+<th>Type</th>
+<th>Line</th>
+<th>Description</th>
+</tr>
+<tr>
+<td>error</td>
+<td>1</td>
+<td>No DocBlock was found for File src/Exception/ConnectionFactory.php</td>
+</tr>
+<tr>
+<td>error</td>
+<td>3</td>
+<td>No DocBlock was found for Class ConnectionFactory</td>
+</tr>
+</table></div>
+<h3><a href="#">src/Exception/NoSuchMaster.php<small>2</small></a></h3>
+<div><table>
+<tr>
+<th>Type</th>
+<th>Line</th>
+<th>Description</th>
+</tr>
+<tr>
+<td>error</td>
+<td>1</td>
+<td>No DocBlock was found for File src/Exception/NoSuchMaster.php</td>
+</tr>
+<tr>
+<td>error</td>
+<td>3</td>
+<td>No DocBlock was found for Class NoSuchMaster</td>
+</tr>
+</table></div>
+<h3><a href="#">src/Exception/NoSuchSlave.php<small>2</small></a></h3>
+<div><table>
+<tr>
+<th>Type</th>
+<th>Line</th>
+<th>Description</th>
+</tr>
+<tr>
+<td>error</td>
+<td>1</td>
+<td>No DocBlock was found for File src/Exception/NoSuchSlave.php</td>
+</tr>
+<tr>
+<td>error</td>
+<td>3</td>
+<td>No DocBlock was found for Class NoSuchSlave</td>
+</tr>
+</table></div>
+<h3><a href="#">src/Select.php<small>20</small></a></h3>
+<div><table>
+<tr>
+<th>Type</th>
+<th>Line</th>
+<th>Description</th>
+</tr>
+<tr>
+<td>error</td>
+<td>1</td>
+<td>No DocBlock was found for File src/Select.php</td>
+</tr>
+<tr>
+<td>error</td>
+<td>3</td>
+<td>No DocBlock was found for Class Select</td>
+</tr>
+<tr>
+<td>error</td>
+<td>5</td>
+<td>No DocBlock was found for Property $distinct</td>
+</tr>
+<tr>
+<td>error</td>
+<td>6</td>
+<td>No DocBlock was found for Property $cols</td>
+</tr>
+<tr>
+<td>error</td>
+<td>7</td>
+<td>No DocBlock was found for Property $from</td>
+</tr>
+<tr>
+<td>error</td>
+<td>8</td>
+<td>No DocBlock was found for Property $join</td>
+</tr>
+<tr>
+<td>error</td>
+<td>9</td>
+<td>No DocBlock was found for Property $where</td>
+</tr>
+<tr>
+<td>error</td>
+<td>10</td>
+<td>No DocBlock was found for Property $group</td>
+</tr>
+<tr>
+<td>error</td>
+<td>11</td>
+<td>No DocBlock was found for Property $having</td>
+</tr>
+<tr>
+<td>error</td>
+<td>12</td>
+<td>No DocBlock was found for Property $order</td>
+</tr>
+<tr>
+<td>error</td>
+<td>13</td>
+<td>No DocBlock was found for Property $limit</td>
+</tr>
+<tr>
+<td>error</td>
+<td>14</td>
+<td>No DocBlock was found for Property $offset</td>
+</tr>
+<tr>
+<td>error</td>
+<td>16</td>
+<td>No DocBlock was found for Method __get</td>
+</tr>
+<tr>
+<td>error</td>
+<td>21</td>
+<td>No DocBlock was found for Method __set</td>
+</tr>
+<tr>
+<td>error</td>
+<td>26</td>
+<td>No DocBlock was found for Method __construct</td>
+</tr>
+<tr>
+<td>error</td>
+<td>37</td>
+<td>No DocBlock was found for Method distinct</td>
+</tr>
+<tr>
+<td>error</td>
+<td>42</td>
+<td>No DocBlock was found for Method cols</td>
+</tr>
+<tr>
+<td>error</td>
+<td>47</td>
+<td>No DocBlock was found for Method __toString</td>
+</tr>
+<tr>
+<td>error</td>
+<td>117</td>
+<td>No DocBlock was found for Method clearOrder</td>
+</tr>
+<tr>
+<td>error</td>
+<td>122</td>
+<td>No DocBlock was found for Method getOrderString</td>
+</tr>
+</table></div>
+<h3><a href="#">src/Connection/Sqlsrv.php<small>9</small></a></h3>
+<div><table>
+<tr>
+<th>Type</th>
+<th>Line</th>
+<th>Description</th>
+</tr>
+<tr>
+<td>error</td>
+<td>1</td>
+<td>No DocBlock was found for File src/Connection/Sqlsrv.php</td>
+</tr>
+<tr>
+<td>error</td>
+<td>4</td>
+<td>No DocBlock was found for Class Sqlsrv</td>
+</tr>
+<tr>
+<td>error</td>
+<td>6</td>
+<td>No DocBlock was found for Property $dsn_prefix</td>
+</tr>
+<tr>
+<td>error</td>
+<td>8</td>
+<td>No DocBlock was found for Property $dsn</td>
+</tr>
+<tr>
+<td>error</td>
+<td>13</td>
+<td>No DocBlock was found for Property $ident_quote_prefix</td>
+</tr>
+<tr>
+<td>error</td>
+<td>15</td>
+<td>No DocBlock was found for Property $ident_quote_suffix</td>
+</tr>
+<tr>
+<td>error</td>
+<td>30</td>
+<td>No DocBlock was found for Method fetchTableCols</td>
+</tr>
+<tr>
+<td>error</td>
+<td>70</td>
+<td>No DocBlock was found for Method convertSelect</td>
+</tr>
+<tr>
+<td>error</td>
+<td>90</td>
+<td>No DocBlock was found for Method convertSelectStrategy</td>
+</tr>
+</table></div>
+<h3><a href="#">src/Connection/AbstractConnection.php<small>17</small></a></h3>
+<div><table>
+<tr>
+<th>Type</th>
+<th>Line</th>
+<th>Description</th>
+</tr>
+<tr>
+<td>error</td>
+<td>1</td>
+<td>No DocBlock was found for File src/Connection/AbstractConnection.php</td>
+</tr>
+<tr>
+<td>error</td>
+<td>7</td>
+<td>No DocBlock was found for Class AbstractConnection</td>
+</tr>
+<tr>
+<td>error</td>
+<td>9</td>
+<td>No DocBlock was found for Property $dsn_prefix</td>
+</tr>
+<tr>
+<td>error</td>
+<td>11</td>
+<td>No DocBlock was found for Property $dsn</td>
+</tr>
+<tr>
+<td>error</td>
+<td>13</td>
+<td>No DocBlock was found for Property $ident_quote_prefix</td>
+</tr>
+<tr>
+<td>error</td>
+<td>15</td>
+<td>No DocBlock was found for Property $ident_quote_suffix</td>
+</tr>
+<tr>
+<td>error</td>
+<td>17</td>
+<td>No DocBlock was found for Property $username</td>
+</tr>
+<tr>
+<td>error</td>
+<td>19</td>
+<td>No DocBlock was found for Property $password</td>
+</tr>
+<tr>
+<td>error</td>
+<td>21</td>
+<td>No DocBlock was found for Property $options</td>
+</tr>
+<tr>
+<td>error</td>
+<td>23</td>
+<td>No DocBlock was found for Property $pdo</td>
+</tr>
+<tr>
+<td>error</td>
+<td>25</td>
+<td>No DocBlock was found for Property $signal</td>
+</tr>
+<tr>
+<td>error</td>
+<td>27</td>
+<td>No DocBlock was found for Method __construct</td>
+</tr>
+<tr>
+<td>error</td>
+<td>41</td>
+<td>No DocBlock was found for Method getDsnString</td>
+</tr>
+<tr>
+<td>error</td>
+<td>52</td>
+<td>No DocBlock was found for Method connect</td>
+</tr>
+<tr>
+<td>error</td>
+<td>67</td>
+<td>No DocBlock was found for Method query</td>
+</tr>
+<tr>
+<td>error</td>
+<td>747</td>
+<td>No DocBlock was found for Method convertSelect</td>
+</tr>
+<tr>
+<td>error</td>
+<td>815</td>
+<td>No DocBlock was found for Method fetchTableCols</td>
+</tr>
+</table></div>
+<h3><a href="#">src/Connection/SqlsrvDenali.php<small>3</small></a></h3>
+<div><table>
+<tr>
+<th>Type</th>
+<th>Line</th>
+<th>Description</th>
+</tr>
+<tr>
+<td>error</td>
+<td>1</td>
+<td>No DocBlock was found for File src/Connection/SqlsrvDenali.php</td>
+</tr>
+<tr>
+<td>error</td>
+<td>4</td>
+<td>No DocBlock was found for Class SqlsrvDenali</td>
+</tr>
+<tr>
+<td>error</td>
+<td>9</td>
+<td>No DocBlock was found for Method convertSelectStrategy</td>
+</tr>
+</table></div>
+<h3><a href="#">src/Connection/Mysql.php<small>8</small></a></h3>
+<div><table>
+<tr>
+<th>Type</th>
+<th>Line</th>
+<th>Description</th>
+</tr>
+<tr>
+<td>error</td>
+<td>1</td>
+<td>No DocBlock was found for File src/Connection/Mysql.php</td>
+</tr>
+<tr>
+<td>error</td>
+<td>4</td>
+<td>No DocBlock was found for Class Mysql</td>
+</tr>
+<tr>
+<td>error</td>
+<td>6</td>
+<td>No DocBlock was found for Property $dsn_prefix</td>
+</tr>
+<tr>
+<td>error</td>
+<td>8</td>
+<td>No DocBlock was found for Property $dsn</td>
+</tr>
+<tr>
+<td>error</td>
+<td>16</td>
+<td>No DocBlock was found for Property $ident_quote_prefix</td>
+</tr>
+<tr>
+<td>error</td>
+<td>18</td>
+<td>No DocBlock was found for Property $ident_quote_suffix</td>
+</tr>
+<tr>
+<td>error</td>
+<td>20</td>
+<td>No DocBlock was found for Method fetchTableList</td>
+</tr>
+<tr>
+<td>error</td>
+<td>29</td>
+<td>No DocBlock was found for Method fetchTableCols</td>
+</tr>
+</table></div>
+<h3><a href="#">src/ConnectionManager.php<small>15</small></a></h3>
+<div><table>
+<tr>
+<th>Type</th>
+<th>Line</th>
+<th>Description</th>
+</tr>
+<tr>
+<td>error</td>
+<td>1</td>
+<td>No DocBlock was found for File src/ConnectionManager.php</td>
+</tr>
+<tr>
+<td>error</td>
+<td>6</td>
+<td>No DocBlock was found for Class ConnectionManager</td>
+</tr>
+<tr>
+<td>error</td>
+<td>8</td>
+<td>No DocBlock was found for Property $default</td>
+</tr>
+<tr>
+<td>error</td>
+<td>16</td>
+<td>No DocBlock was found for Property $masters</td>
+</tr>
+<tr>
+<td>error</td>
+<td>18</td>
+<td>No DocBlock was found for Property $slaves</td>
+</tr>
+<tr>
+<td>error</td>
+<td>20</td>
+<td>No DocBlock was found for Property $factory</td>
+</tr>
+<tr>
+<td>error</td>
+<td>22</td>
+<td>No DocBlock was found for Property $conn</td>
+</tr>
+<tr>
+<td>error</td>
+<td>28</td>
+<td>No DocBlock was found for Method __construct</td>
+</tr>
+<tr>
+<td>error</td>
+<td>41</td>
+<td>No DocBlock was found for Method getRead</td>
+</tr>
+<tr>
+<td>error</td>
+<td>53</td>
+<td>No DocBlock was found for Method getWrite</td>
+</tr>
+<tr>
+<td>error</td>
+<td>63</td>
+<td>No DocBlock was found for Method getDefault</td>
+</tr>
+<tr>
+<td>error</td>
+<td>73</td>
+<td>No DocBlock was found for Method getMaster</td>
+</tr>
+<tr>
+<td>error</td>
+<td>93</td>
+<td>No DocBlock was found for Method getSlave</td>
+</tr>
+<tr>
+<td>error</td>
+<td>112</td>
+<td>No DocBlock was found for Method mergeAdapterParams</td>
+</tr>
+<tr>
+<td>error</td>
+<td>125</td>
+<td>No DocBlock was found for Method merge</td>
+</tr>
+</table></div>
+<h3><a href="#">src/Exception.php<small>2</small></a></h3>
+<div><table>
+<tr>
+<th>Type</th>
+<th>Line</th>
+<th>Description</th>
+</tr>
+<tr>
+<td>error</td>
+<td>1</td>
+<td>No DocBlock was found for File src/Exception.php</td>
+</tr>
+<tr>
+<td>error</td>
+<td>3</td>
+<td>No DocBlock was found for Class Exception</td>
+</tr>
+</table></div>
+<h3><a href="#">config/test.php<small>1</small></a></h3>
+<div><table>
+<tr>
+<th>Type</th>
+<th>Line</th>
+<th>Description</th>
+</tr>
+<tr>
+<td>error</td>
+<td>2</td>
+<td>No Page-level DocBlock was found in file config/test.php</td>
+</tr>
+</table></div>
+<h3><a href="#">config/default.php<small>1</small></a></h3>
+<div><table>
+<tr>
+<th>Type</th>
+<th>Line</th>
+<th>Description</th>
+</tr>
+<tr>
+<td>error</td>
+<td>2</td>
+<td>No Page-level DocBlock was found in file config/default.php</td>
+</tr>
+</table></div>
+<h3><a href="#">src.php<small>1</small></a></h3>
+<div><table>
+<tr>
+<th>Type</th>
+<th>Line</th>
+<th>Description</th>
+</tr>
+<tr>
+<td>error</td>
+<td>1</td>
+<td>No DocBlock was found for File src.php</td>
+</tr>
+</table></div>
+</div>
+</div></body></html>

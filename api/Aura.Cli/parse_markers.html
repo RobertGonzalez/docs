@@ -1,0 +1,726 @@
+<html xmlns="http://www.w3.org/1999/xhtml"><head><title>Aura Project for PHP: Aura.Cli</title><meta http-equiv="Content-Type" content="text/html; charset=utf-8"></meta><link rel="stylesheet" href="css/black-tie/jquery-ui-1.8.2.custom.css" type="text/css"></link><link rel="stylesheet" href="css/jquery.treeview.css" type="text/css"></link><link rel="stylesheet" href="css/theme.css" type="text/css"></link><script type="text/javascript" src="js/jquery-1.4.2.min.js"></script><script type="text/javascript" src="js/jquery-ui-1.8.2.custom.min.js"></script><script type="text/javascript" src="js/jquery.cookie.js"></script><script type="text/javascript" src="js/jquery.treeview.js"></script><script type="text/javascript">
+            $(document).ready(function() {
+                $(".filetree").treeview({
+                    collapsed: true,
+                    persist: "cookie"
+                });
+
+                $("#accordion").accordion({
+                    collapsible: true,
+                    autoHeight:  false,
+                    fillSpace:   true
+                });
+
+                $(".tabs").tabs();
+            });
+        </script></head><body><script xmlns="" type="text/javascript">
+        $(document).ready(function() {
+            $("#marker-accordion").accordion({
+                collapsible: true,
+                autoHeight:  false
+            });
+        });
+    </script><div xmlns="" id="content">
+<h1>Compilation Errors</h1>
+<div id="marker-accordion">
+<h3><a href="#">tests/MockCommandSkip.php<small>2</small></a></h3>
+<div><table>
+<tr>
+<th>Type</th>
+<th>Line</th>
+<th>Description</th>
+</tr>
+<tr>
+<td>error</td>
+<td>3</td>
+<td>No DocBlock was found for Class MockCommandSkip</td>
+</tr>
+<tr>
+<td>error</td>
+<td>5</td>
+<td>No DocBlock was found for Method preAction</td>
+</tr>
+</table></div>
+<h3><a href="#">tests/OptionTest.php<small>10</small></a></h3>
+<div><table>
+<tr>
+<th>Type</th>
+<th>Line</th>
+<th>Description</th>
+</tr>
+<tr>
+<td>error</td>
+<td>33</td>
+<td>No DocBlock was found for Method testInit</td>
+</tr>
+<tr>
+<td>error</td>
+<td>61</td>
+<td>No DocBlock was found for Method testInit_noLongOrShort</td>
+</tr>
+<tr>
+<td>error</td>
+<td>89</td>
+<td>No DocBlock was found for Method testSetValue</td>
+</tr>
+<tr>
+<td>error</td>
+<td>138</td>
+<td>No DocBlock was found for Method testIsMulti</td>
+</tr>
+<tr>
+<td>error</td>
+<td>155</td>
+<td>No DocBlock was found for Method testGetValue</td>
+</tr>
+<tr>
+<td>error</td>
+<td>170</td>
+<td>No DocBlock was found for Method testGetValue_default</td>
+</tr>
+<tr>
+<td>error</td>
+<td>184</td>
+<td>No DocBlock was found for Method testGetDefault</td>
+</tr>
+<tr>
+<td>error</td>
+<td>198</td>
+<td>No DocBlock was found for Method testIsParamRequired</td>
+</tr>
+<tr>
+<td>error</td>
+<td>214</td>
+<td>No DocBlock was found for Method testIsParamRejected</td>
+</tr>
+<tr>
+<td>error</td>
+<td>230</td>
+<td>No DocBlock was found for Method testIsParamOptional</td>
+</tr>
+</table></div>
+<h3><a href="#">tests/StdioTest.php<small>6</small></a></h3>
+<div><table>
+<tr>
+<th>Type</th>
+<th>Line</th>
+<th>Description</th>
+</tr>
+<tr>
+<td>error</td>
+<td>14</td>
+<td>No DocBlock was found for Property $stdin</td>
+</tr>
+<tr>
+<td>error</td>
+<td>16</td>
+<td>No DocBlock was found for Property $stdout</td>
+</tr>
+<tr>
+<td>error</td>
+<td>18</td>
+<td>No DocBlock was found for Property $stderr</td>
+</tr>
+<tr>
+<td>error</td>
+<td>20</td>
+<td>No DocBlock was found for Property $vt100</td>
+</tr>
+<tr>
+<td>error</td>
+<td>125</td>
+<td>No DocBlock was found for Method testInln</td>
+</tr>
+<tr>
+<td>error</td>
+<td>134</td>
+<td>No DocBlock was found for Method testIn</td>
+</tr>
+</table></div>
+<h3><a href="#">tests/ContextTest.php<small>2</small></a></h3>
+<div><table>
+<tr>
+<th>Type</th>
+<th>Line</th>
+<th>Description</th>
+</tr>
+<tr>
+<td>error</td>
+<td>99</td>
+<td>No DocBlock was found for Method testGetArgv</td>
+</tr>
+<tr>
+<td>error</td>
+<td>107</td>
+<td>No DocBlock was found for Method testShiftArgv</td>
+</tr>
+</table></div>
+<h3><a href="#">tests/CommandTest.php<small>4</small></a></h3>
+<div><table>
+<tr>
+<th>Type</th>
+<th>Line</th>
+<th>Description</th>
+</tr>
+<tr>
+<td>error</td>
+<td>13</td>
+<td>No DocBlock was found for Method newMockCommand</td>
+</tr>
+<tr>
+<td>error</td>
+<td>33</td>
+<td>No DocBlock was found for Method testExec</td>
+</tr>
+<tr>
+<td>error</td>
+<td>44</td>
+<td>No DocBlock was found for Method testExec_hooks</td>
+</tr>
+<tr>
+<td>error</td>
+<td>52</td>
+<td>No DocBlock was found for Method testExec_skipAction</td>
+</tr>
+</table></div>
+<h3><a href="#">tests/MockCommandWrong.php<small>2</small></a></h3>
+<div><table>
+<tr>
+<th>Type</th>
+<th>Line</th>
+<th>Description</th>
+</tr>
+<tr>
+<td>error</td>
+<td>5</td>
+<td>No DocBlock was found for Class MockCommandWrong</td>
+</tr>
+<tr>
+<td>error</td>
+<td>7</td>
+<td>No DocBlock was found for Method __construct</td>
+</tr>
+</table></div>
+<h3><a href="#">tests/MockCommand.php<small>9</small></a></h3>
+<div><table>
+<tr>
+<th>Type</th>
+<th>Line</th>
+<th>Description</th>
+</tr>
+<tr>
+<td>error</td>
+<td>5</td>
+<td>No DocBlock was found for Class MockCommand</td>
+</tr>
+<tr>
+<td>error</td>
+<td>7</td>
+<td>No DocBlock was found for Property $_action</td>
+</tr>
+<tr>
+<td>error</td>
+<td>9</td>
+<td>No DocBlock was found for Property $_pre_action</td>
+</tr>
+<tr>
+<td>error</td>
+<td>11</td>
+<td>No DocBlock was found for Property $_post_action</td>
+</tr>
+<tr>
+<td>error</td>
+<td>13</td>
+<td>No DocBlock was found for Property $options</td>
+</tr>
+<tr>
+<td>error</td>
+<td>17</td>
+<td>No DocBlock was found for Method __get</td>
+</tr>
+<tr>
+<td>error</td>
+<td>22</td>
+<td>No DocBlock was found for Method preAction</td>
+</tr>
+<tr>
+<td>error</td>
+<td>28</td>
+<td>No DocBlock was found for Method postAction</td>
+</tr>
+<tr>
+<td>error</td>
+<td>34</td>
+<td>No DocBlock was found for Method action</td>
+</tr>
+</table></div>
+<h3><a href="#">tests/CommandFactoryTest.php<small>2</small></a></h3>
+<div><table>
+<tr>
+<th>Type</th>
+<th>Line</th>
+<th>Description</th>
+</tr>
+<tr>
+<td>error</td>
+<td>75</td>
+<td>No DocBlock was found for Method testNewInstance_notFound</td>
+</tr>
+<tr>
+<td>error</td>
+<td>96</td>
+<td>No DocBlock was found for Method testMap</td>
+</tr>
+</table></div>
+<h3><a href="#">tests/GetoptTest.php<small>21</small></a></h3>
+<div><table>
+<tr>
+<th>Type</th>
+<th>Line</th>
+<th>Description</th>
+</tr>
+<tr>
+<td>error</td>
+<td>17</td>
+<td>No DocBlock was found for Property $option_factory</td>
+</tr>
+<tr>
+<td>error</td>
+<td>41</td>
+<td>No DocBlock was found for Method testInit</td>
+</tr>
+<tr>
+<td>error</td>
+<td>94</td>
+<td>No DocBlock was found for Method testGetOptions</td>
+</tr>
+<tr>
+<td>error</td>
+<td>117</td>
+<td>No DocBlock was found for Method testGetOption</td>
+</tr>
+<tr>
+<td>error</td>
+<td>141</td>
+<td>No DocBlock was found for Method testGetOption_optionNotDefined_nonStrict</td>
+</tr>
+<tr>
+<td>error</td>
+<td>148</td>
+<td>No DocBlock was found for Method testGetLongOption</td>
+</tr>
+<tr>
+<td>error</td>
+<td>172</td>
+<td>No DocBlock was found for Method testGetLongOption_optionNotDefined_nonStrict</td>
+</tr>
+<tr>
+<td>error</td>
+<td>179</td>
+<td>No DocBlock was found for Method testGetShortOption</td>
+</tr>
+<tr>
+<td>error</td>
+<td>203</td>
+<td>No DocBlock was found for Method testGetShortOption_optionNotDefined_nonStrict</td>
+</tr>
+<tr>
+<td>error</td>
+<td>210</td>
+<td>No DocBlock was found for Method testLoad_noOptions</td>
+</tr>
+<tr>
+<td>error</td>
+<td>237</td>
+<td>No DocBlock was found for Method testLoad_longOptions</td>
+</tr>
+<tr>
+<td>error</td>
+<td>275</td>
+<td>No DocBlock was found for Method testLoad_longOptions_nonStrict</td>
+</tr>
+<tr>
+<td>error</td>
+<td>289</td>
+<td>No DocBlock was found for Method testLoad_shortOptions</td>
+</tr>
+<tr>
+<td>error</td>
+<td>328</td>
+<td>No DocBlock was found for Method testLoad_shortOptions_nonStrict</td>
+</tr>
+<tr>
+<td>error</td>
+<td>342</td>
+<td>No DocBlock was found for Method testLoad_mixedOptionsAndParams</td>
+</tr>
+<tr>
+<td>error</td>
+<td>389</td>
+<td>No DocBlock was found for Method testLoad_optionalParamsAsFlags</td>
+</tr>
+<tr>
+<td>error</td>
+<td>490</td>
+<td>No DocBlock was found for Method testLoad_shortOptionParamRejected</td>
+</tr>
+<tr>
+<td>error</td>
+<td>512</td>
+<td>No DocBlock was found for Method testLoad_shortOptionCluster</td>
+</tr>
+<tr>
+<td>error</td>
+<td>545</td>
+<td>No DocBlock was found for Method testLoad_shortOptionCluster_nonStrict</td>
+</tr>
+<tr>
+<td>error</td>
+<td>587</td>
+<td>No DocBlock was found for Method testMagicGet</td>
+</tr>
+<tr>
+<td>error</td>
+<td>609</td>
+<td>No DocBlock was found for Method testMagicGetNonStrict</td>
+</tr>
+</table></div>
+<h3><a href="#">tests/Vt100Test.php<small>6</small></a></h3>
+<div><table>
+<tr>
+<th>Type</th>
+<th>Line</th>
+<th>Description</th>
+</tr>
+<tr>
+<td>error</td>
+<td>44</td>
+<td>No DocBlock was found for Method testStrip</td>
+</tr>
+<tr>
+<td>error</td>
+<td>52</td>
+<td>No DocBlock was found for Method test_setAndGetPosix</td>
+</tr>
+<tr>
+<td>error</td>
+<td>61</td>
+<td>No DocBlock was found for Method testWrite</td>
+</tr>
+<tr>
+<td>error</td>
+<td>75</td>
+<td>No DocBlock was found for Method testWriteln</td>
+</tr>
+<tr>
+<td>error</td>
+<td>89</td>
+<td>No DocBlock was found for Method testWrite_posix</td>
+</tr>
+<tr>
+<td>error</td>
+<td>106</td>
+<td>No DocBlock was found for Method testWriteln_posix</td>
+</tr>
+</table></div>
+<h3><a href="#">src/Getopt.php<small>5</small></a></h3>
+<div><table>
+<tr>
+<th>Type</th>
+<th>Line</th>
+<th>Description</th>
+</tr>
+<tr>
+<td>error</td>
+<td>2</td>
+<td>No Page-level DocBlock was found</td>
+</tr>
+<tr>
+<td>notice</td>
+<td>154</td>
+<td>Argument $prop is missing from the function Docblock</td>
+</tr>
+<tr>
+<td>notice</td>
+<td>219</td>
+<td>Argument $long is missing from the function Docblock</td>
+</tr>
+<tr>
+<td>notice</td>
+<td>241</td>
+<td>Argument $char is missing from the function Docblock</td>
+</tr>
+<tr>
+<td>notice</td>
+<td>362</td>
+<td>Name of argument $spec does not match with function Docblock</td>
+</tr>
+</table></div>
+<h3><a href="#">src/Exception/OptionParamRejected.php<small>1</small></a></h3>
+<div><table>
+<tr>
+<th>Type</th>
+<th>Line</th>
+<th>Description</th>
+</tr>
+<tr>
+<td>error</td>
+<td>2</td>
+<td>No Page-level DocBlock was found</td>
+</tr>
+</table></div>
+<h3><a href="#">src/Exception/OptionNotDefined.php<small>1</small></a></h3>
+<div><table>
+<tr>
+<th>Type</th>
+<th>Line</th>
+<th>Description</th>
+</tr>
+<tr>
+<td>error</td>
+<td>2</td>
+<td>No Page-level DocBlock was found</td>
+</tr>
+</table></div>
+<h3><a href="#">src/Exception/OptionName.php<small>1</small></a></h3>
+<div><table>
+<tr>
+<th>Type</th>
+<th>Line</th>
+<th>Description</th>
+</tr>
+<tr>
+<td>error</td>
+<td>2</td>
+<td>No Page-level DocBlock was found</td>
+</tr>
+</table></div>
+<h3><a href="#">src/Exception/CommandFactory.php<small>1</small></a></h3>
+<div><table>
+<tr>
+<th>Type</th>
+<th>Line</th>
+<th>Description</th>
+</tr>
+<tr>
+<td>error</td>
+<td>2</td>
+<td>No Page-level DocBlock was found</td>
+</tr>
+</table></div>
+<h3><a href="#">src/Exception/OptionParamRequired.php<small>1</small></a></h3>
+<div><table>
+<tr>
+<th>Type</th>
+<th>Line</th>
+<th>Description</th>
+</tr>
+<tr>
+<td>error</td>
+<td>2</td>
+<td>No Page-level DocBlock was found</td>
+</tr>
+</table></div>
+<h3><a href="#">src/Exception/OptionParam.php<small>1</small></a></h3>
+<div><table>
+<tr>
+<th>Type</th>
+<th>Line</th>
+<th>Description</th>
+</tr>
+<tr>
+<td>error</td>
+<td>2</td>
+<td>No Page-level DocBlock was found</td>
+</tr>
+</table></div>
+<h3><a href="#">src/Exception/OptionNotMulti.php<small>1</small></a></h3>
+<div><table>
+<tr>
+<th>Type</th>
+<th>Line</th>
+<th>Description</th>
+</tr>
+<tr>
+<td>error</td>
+<td>2</td>
+<td>No Page-level DocBlock was found</td>
+</tr>
+</table></div>
+<h3><a href="#">src/Command.php<small>1</small></a></h3>
+<div><table>
+<tr>
+<th>Type</th>
+<th>Line</th>
+<th>Description</th>
+</tr>
+<tr>
+<td>error</td>
+<td>2</td>
+<td>No Page-level DocBlock was found</td>
+</tr>
+</table></div>
+<h3><a href="#">src/OptionFactory.php<small>1</small></a></h3>
+<div><table>
+<tr>
+<th>Type</th>
+<th>Line</th>
+<th>Description</th>
+</tr>
+<tr>
+<td>error</td>
+<td>2</td>
+<td>No Page-level DocBlock was found</td>
+</tr>
+</table></div>
+<h3><a href="#">src/Option.php<small>7</small></a></h3>
+<div><table>
+<tr>
+<th>Type</th>
+<th>Line</th>
+<th>Description</th>
+</tr>
+<tr>
+<td>error</td>
+<td>2</td>
+<td>No Page-level DocBlock was found</td>
+</tr>
+<tr>
+<td>notice</td>
+<td>121</td>
+<td>Name of argument $name does not match with function Docblock</td>
+</tr>
+<tr>
+<td>notice</td>
+<td>122</td>
+<td>Argument $long is missing from the function Docblock</td>
+</tr>
+<tr>
+<td>notice</td>
+<td>123</td>
+<td>Argument $short is missing from the function Docblock</td>
+</tr>
+<tr>
+<td>notice</td>
+<td>124</td>
+<td>Argument $param is missing from the function Docblock</td>
+</tr>
+<tr>
+<td>notice</td>
+<td>125</td>
+<td>Argument $multi is missing from the function Docblock</td>
+</tr>
+<tr>
+<td>notice</td>
+<td>126</td>
+<td>Argument $default is missing from the function Docblock</td>
+</tr>
+</table></div>
+<h3><a href="#">src/Vt100.php<small>1</small></a></h3>
+<div><table>
+<tr>
+<th>Type</th>
+<th>Line</th>
+<th>Description</th>
+</tr>
+<tr>
+<td>error</td>
+<td>2</td>
+<td>No Page-level DocBlock was found</td>
+</tr>
+</table></div>
+<h3><a href="#">src/Stdio.php<small>3</small></a></h3>
+<div><table>
+<tr>
+<th>Type</th>
+<th>Line</th>
+<th>Description</th>
+</tr>
+<tr>
+<td>error</td>
+<td>2</td>
+<td>No Page-level DocBlock was found</td>
+</tr>
+<tr>
+<td>notice</td>
+<td>71</td>
+<td>Argument $vt100 is missing from the function Docblock</td>
+</tr>
+<tr>
+<td>error</td>
+<td>128</td>
+<td>No DocBlock was found for Method inln</td>
+</tr>
+</table></div>
+<h3><a href="#">src/CommandFactory.php<small>2</small></a></h3>
+<div><table>
+<tr>
+<th>Type</th>
+<th>Line</th>
+<th>Description</th>
+</tr>
+<tr>
+<td>error</td>
+<td>2</td>
+<td>No Page-level DocBlock was found</td>
+</tr>
+<tr>
+<td>error</td>
+<td>97</td>
+<td>No DocBlock was found for Method map</td>
+</tr>
+</table></div>
+<h3><a href="#">src/Context.php<small>1</small></a></h3>
+<div><table>
+<tr>
+<th>Type</th>
+<th>Line</th>
+<th>Description</th>
+</tr>
+<tr>
+<td>error</td>
+<td>2</td>
+<td>No Page-level DocBlock was found</td>
+</tr>
+</table></div>
+<h3><a href="#">src/Exception.php<small>1</small></a></h3>
+<div><table>
+<tr>
+<th>Type</th>
+<th>Line</th>
+<th>Description</th>
+</tr>
+<tr>
+<td>error</td>
+<td>2</td>
+<td>No Page-level DocBlock was found</td>
+</tr>
+</table></div>
+<h3><a href="#">config/test.php<small>1</small></a></h3>
+<div><table>
+<tr>
+<th>Type</th>
+<th>Line</th>
+<th>Description</th>
+</tr>
+<tr>
+<td>error</td>
+<td>2</td>
+<td>No Page-level DocBlock was found</td>
+</tr>
+</table></div>
+<h3><a href="#">config/default.php<small>1</small></a></h3>
+<div><table>
+<tr>
+<th>Type</th>
+<th>Line</th>
+<th>Description</th>
+</tr>
+<tr>
+<td>error</td>
+<td>2</td>
+<td>No Page-level DocBlock was found</td>
+</tr>
+</table></div>
+</div>
+</div></body></html>

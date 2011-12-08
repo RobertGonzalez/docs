@@ -1,5 +1,4 @@
-<html xmlns="http://www.w3.org/1999/xhtml"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>Aura Project for PHP: Aura.Di</title><link rel="stylesheet" href="css/black-tie/jquery-ui-1.8.2.custom.css" type="text/css"></link><link rel="stylesheet" href="css/jquery.treeview.css" type="text/css"></link><link rel="stylesheet" href="css/theme.css" type="text/css"></link><script type="text/javascript" src="js/jquery-1.4.2.min.js"></script><script type="text/javascript" src="js/jquery-ui-1.8.2.custom.min.js"></script><script type="text/javascript" src="js/jquery.cookie.js"></script><script type="text/javascript" src="js/jquery.treeview.js"></script><script type="text/javascript">
+<html xmlns="http://www.w3.org/1999/xhtml"><head><title>Aura Project for PHP: Aura.Di</title><meta http-equiv="Content-Type" content="text/html; charset=utf-8"></meta><link rel="stylesheet" href="css/jquery-ui.css" type="text/css"></link><link rel="stylesheet" href="css/docblox/jquery-ui-1.8.16.custom.css" type="text/css"></link><link rel="stylesheet" href="css/jquery.treeview.css" type="text/css"></link><link rel="stylesheet" href="css/theme.css" type="text/css"></link><script type="text/javascript" src="js/jquery-1.4.2.min.js"></script><script type="text/javascript" src="js/jquery-ui-1.8.2.custom.min.js"></script><script type="text/javascript" src="js/jquery.tools.min.js"></script><script type="text/javascript" src="js/jquery.cookie.js"></script><script type="text/javascript" src="js/jquery.treeview.js"></script><script type="text/javascript">
             $(document).ready(function() {
                 $(".filetree").treeview({
                     collapsed: true,
@@ -14,106 +13,195 @@
 
                 $(".tabs").tabs();
             });
-        </script></head><body><div xmlns="" id="accordion">
-<h1><a href="#">Namespaces</a></h1>
-<div style="padding: 0px;"><ul id="namespaces-" class="filetree"><li class="closed">
+        </script></head><body><script xmlns="" type="text/javascript" src="js/sidebar.js"></script><div xmlns="" id="sidebar">
+<div id="sidebar-header">
+<h1>Aura Project for PHP: Aura.Di</h1>
+<div style="clear: both"></div>
+</div>
+<div id="sidebar-nav">
+<h3 id="sidebar-dashboard">
+<img class="icon" src="css/docblox/images/icons/dashboard.png" alt="Dashboard"><a href="content.html" class="link" target="content">Dashboard</a>
+</h3>
+<div style="display: none"></div>
+<h3 id="sidebar-files">
+<img src="css/docblox/images/icons/files.png" alt="Files"><a href="#files">Files</a>
+</h3>
+<div class="sidebar-section">
+<div class="search-bar">
+<a href="#" onclick="$(this).parent().next().find('.collapsable-hitarea').click(); return false;"><img src="images/collapse_all.png" title="Collapse all" alt="Collapse all"></a><a href="#" onclick="$(this).parent().next().find('.expandable-hitarea').click(); return false;"><img src="images/expand_all.png" title="Expand all" alt="Expand all"></a><div><input type="text" onkeyup="tree_search(this);"></div>
+</div>
+<ul class="sidebar-nav-tree">
+<li class="closed">
+<span class="file"><a href="db_config_default.html" target="content">config/default.php</a></span><ul id="files_66f17533a1b89b542ec0aab3587306da" class="filetree"></ul>
+</li>
+<li class="closed">
+<span class="file"><a href="db_config_test.html" target="content">config/test.php</a></span><ul id="files_01930f5a0695fff483a39a14b589e8f8" class="filetree"></ul>
+</li>
+<li class="closed">
+<span class="file"><a href="db_scripts_instance.html" target="content">scripts/instance.php</a></span><ul id="files_78441c0e3df2bf52e8bb2d6e843c8cf2" class="filetree"></ul>
+</li>
+<li class="closed">
+<span class="file"><a href="db_src.html" target="content">src.php</a></span><ul id="files_653504751579243e98515d3588e15765" class="filetree"></ul>
+</li>
+<li class="closed">
+<span class="file"><a href="db_src_Config.html" target="content">src/Config.php</a></span><ul id="files_1623ee94192c3c955e9b6eada09e6174" class="filetree"><li><span class="class"><a href="db_src_Config.html#%5CAura%5CDi%5CConfig" target="content">Config<br></a></span></li></ul>
+</li>
+<li class="closed">
+<span class="file"><a href="db_src_ConfigInterface.html" target="content">src/ConfigInterface.php</a></span><ul id="files_8577698ffdc7bd321ade266897f69b21" class="filetree"><li><span class="interface"><a href="db_src_ConfigInterface.html#%5CAura%5CDi%5CConfigInterface" target="content">ConfigInterface<br></a></span></li></ul>
+</li>
+<li class="closed">
+<span class="file"><a href="db_src_Container.html" target="content">src/Container.php</a></span><ul id="files_5f003e64d2491cbafe6ecdf1abec6f7a" class="filetree"><li><span class="class"><a href="db_src_Container.html#%5CAura%5CDi%5CContainer" target="content">Container<br></a></span></li></ul>
+</li>
+<li class="closed">
+<span class="file"><a href="db_src_ContainerInterface.html" target="content">src/ContainerInterface.php</a></span><ul id="files_179baabb1e4b48bb0b559a1e139e81fe" class="filetree"><li><span class="interface"><a href="db_src_ContainerInterface.html#%5CAura%5CDi%5CContainerInterface" target="content">ContainerInterface<br></a></span></li></ul>
+</li>
+<li class="closed">
+<span class="file"><a href="db_src_Exception.html" target="content">src/Exception.php</a></span><ul id="files_397bbd58b7a9876e5ba540290d5f696f" class="filetree"><li><span class="class"><a href="db_src_Exception.html#%5CAura%5CDi%5CException" target="content">Exception<br></a></span></li></ul>
+</li>
+<li class="closed">
+<span class="file"><a href="db_src_Exception_ContainerExists.html" target="content">src/Exception/ContainerExists.php</a></span><ul id="files_d18f2d692bcb7840a08b0a264194e1da" class="filetree"><li><span class="class"><a href="db_src_Exception_ContainerExists.html#%5CAura%5CDi%5CException%5CContainerExists" target="content">ContainerExists<br></a></span></li></ul>
+</li>
+<li class="closed">
+<span class="file"><a href="db_src_Exception_ContainerLocked.html" target="content">src/Exception/ContainerLocked.php</a></span><ul id="files_6fe74feaa472f23278f8fffb79bf980d" class="filetree"><li><span class="class"><a href="db_src_Exception_ContainerLocked.html#%5CAura%5CDi%5CException%5CContainerLocked" target="content">ContainerLocked<br></a></span></li></ul>
+</li>
+<li class="closed">
+<span class="file"><a href="db_src_Exception_ContainerNotFound.html" target="content">src/Exception/ContainerNotFound.php</a></span><ul id="files_a71b599fe7ff140db5347b8e70124481" class="filetree"><li><span class="class"><a href="db_src_Exception_ContainerNotFound.html#%5CAura%5CDi%5CException%5CContainerNotFound" target="content">ContainerNotFound<br></a></span></li></ul>
+</li>
+<li class="closed">
+<span class="file"><a href="db_src_Exception_ServiceInvalid.html" target="content">src/Exception/ServiceInvalid.php</a></span><ul id="files_37fcf894112097e555abd355a13af41f" class="filetree"><li><span class="class"><a href="db_src_Exception_ServiceInvalid.html#%5CAura%5CDi%5CException%5CServiceInvalid" target="content">ServiceInvalid<br></a></span></li></ul>
+</li>
+<li class="closed">
+<span class="file"><a href="db_src_Exception_ServiceNotFound.html" target="content">src/Exception/ServiceNotFound.php</a></span><ul id="files_ab4706328870e2443f5b32eb739e648f" class="filetree"><li><span class="class"><a href="db_src_Exception_ServiceNotFound.html#%5CAura%5CDi%5CException%5CServiceNotFound" target="content">ServiceNotFound<br></a></span></li></ul>
+</li>
+<li class="closed">
+<span class="file"><a href="db_src_Forge.html" target="content">src/Forge.php</a></span><ul id="files_14d7d9fbb10cd16f5f219d73f1eee37f" class="filetree"><li><span class="class"><a href="db_src_Forge.html#%5CAura%5CDi%5CForge" target="content">Forge<br></a></span></li></ul>
+</li>
+<li class="closed">
+<span class="file"><a href="db_src_ForgeInterface.html" target="content">src/ForgeInterface.php</a></span><ul id="files_b6ad6e095469460bc9f88057e524cc06" class="filetree"><li><span class="interface"><a href="db_src_ForgeInterface.html#%5CAura%5CDi%5CForgeInterface" target="content">ForgeInterface<br></a></span></li></ul>
+</li>
+<li class="closed">
+<span class="file"><a href="db_src_Lazy.html" target="content">src/Lazy.php</a></span><ul id="files_aa549b85056ae68a9be7fafff91a394a" class="filetree"><li><span class="class"><a href="db_src_Lazy.html#%5CAura%5CDi%5CLazy" target="content">Lazy<br></a></span></li></ul>
+</li>
+<li class="closed">
+<span class="file"><a href="db_src_Manager.html" target="content">src/Manager.php</a></span><ul id="files_b09c72e3d2e281d989b9996f9d2d46de" class="filetree"><li><span class="class"><a href="db_src_Manager.html#%5CAura%5CDi%5CManager" target="content">Manager<br></a></span></li></ul>
+</li>
+<li class="closed">
+<span class="file"><a href="db_tests_ConfigTest.html" target="content">tests/ConfigTest.php</a></span><ul id="files_8a6b3660e9e84adb3d4aefe8e4e6a2a7" class="filetree"><li><span class="class"><a href="db_tests_ConfigTest.html#%5CAura%5CDi%5CConfigTest" target="content">ConfigTest<br></a></span></li></ul>
+</li>
+<li class="closed">
+<span class="file"><a href="db_tests_ContainerTest.html" target="content">tests/ContainerTest.php</a></span><ul id="files_be4f9a99046391b58329c044f1eb2ce6" class="filetree"><li><span class="class"><a href="db_tests_ContainerTest.html#%5CAura%5CDi%5CContainerTest" target="content">ContainerTest<br></a></span></li></ul>
+</li>
+<li class="closed">
+<span class="file"><a href="db_tests_ForgeTest.html" target="content">tests/ForgeTest.php</a></span><ul id="files_3f5196ff0caf8d36ca48dcf14241b668" class="filetree"><li><span class="class"><a href="db_tests_ForgeTest.html#%5CAura%5CDi%5CForgeTest" target="content">ForgeTest<br></a></span></li></ul>
+</li>
+<li class="closed">
+<span class="file"><a href="db_tests_ManagerTest.html" target="content">tests/ManagerTest.php</a></span><ul id="files_ec8785d8b120bb3ce45e7ca398528574" class="filetree"><li><span class="class"><a href="db_tests_ManagerTest.html#%5CAura%5CDi%5CManagerTest" target="content">ManagerTest<br></a></span></li></ul>
+</li>
+<li class="closed">
+<span class="file"><a href="db_tests_MockChildClass.html" target="content">tests/MockChildClass.php</a></span><ul id="files_e63ae35108760b0d85939674549bfa8d" class="filetree"><li><span class="class"><a href="db_tests_MockChildClass.html#%5CAura%5CDi%5CMockChildClass" target="content">MockChildClass<br></a></span></li></ul>
+</li>
+<li class="closed">
+<span class="file"><a href="db_tests_MockOtherClass.html" target="content">tests/MockOtherClass.php</a></span><ul id="files_25174cf88be412846f71dda2415b0d9d" class="filetree"><li><span class="class"><a href="db_tests_MockOtherClass.html#%5CAura%5CDi%5CMockOtherClass" target="content">MockOtherClass<br></a></span></li></ul>
+</li>
+<li class="closed">
+<span class="file"><a href="db_tests_MockParentClass.html" target="content">tests/MockParentClass.php</a></span><ul id="files_46b14fcb2b9c6c04acaa21a73442beb4" class="filetree"><li><span class="class"><a href="db_tests_MockParentClass.html#%5CAura%5CDi%5CMockParentClass" target="content">MockParentClass<br></a></span></li></ul>
+</li>
+</ul>
+</div>
+<h3 id="sidebar-packages">
+<img src="css/docblox/images/icons/packages.png" alt="Packages"><a href="#packages">Packages</a>
+</h3>
+<div class="sidebar-section sidebar-tree">
+<div class="search-bar">
+<a href="#" onclick="$(this).parent().next().find('.collapsable-hitarea').click(); return false;"><img src="images/collapse_all.png" title="Collapse all" alt="Collapse all"></a><a href="#" onclick="$(this).parent().next().find('.expandable-hitarea').click(); return false;"><img src="images/expand_all.png" title="Expand all" alt="Expand all"></a><div><input type="text" onkeyup="tree_search(this);"></div>
+</div>
+<ul class="sidebar-nav-tree">
+<li class="closed">
+<span class="folder">Aura</span><ul><li class="closed">
+<span class="folder">Di</span><ul>
+<li><span class="class"><a href="db_src_Config.html#%5CAura%5CDi%5CConfig" target="content">Config</a></span></li>
+<li><span class="interface"><a href="db_src_ConfigInterface.html#%5CAura%5CDi%5CConfigInterface" target="content">ConfigInterface</a></span></li>
+<li><span class="class"><a href="db_src_Container.html#%5CAura%5CDi%5CContainer" target="content">Container</a></span></li>
+<li><span class="class"><a href="db_src_Exception_ContainerExists.html#%5CAura%5CDi%5CException%5CContainerExists" target="content">ContainerExists</a></span></li>
+<li><span class="interface"><a href="db_src_ContainerInterface.html#%5CAura%5CDi%5CContainerInterface" target="content">ContainerInterface</a></span></li>
+<li><span class="class"><a href="db_src_Exception_ContainerLocked.html#%5CAura%5CDi%5CException%5CContainerLocked" target="content">ContainerLocked</a></span></li>
+<li><span class="class"><a href="db_src_Exception_ContainerNotFound.html#%5CAura%5CDi%5CException%5CContainerNotFound" target="content">ContainerNotFound</a></span></li>
+<li><span class="class"><a href="db_src_Exception.html#%5CAura%5CDi%5CException" target="content">Exception</a></span></li>
+<li><span class="class"><a href="db_src_Forge.html#%5CAura%5CDi%5CForge" target="content">Forge</a></span></li>
+<li><span class="interface"><a href="db_src_ForgeInterface.html#%5CAura%5CDi%5CForgeInterface" target="content">ForgeInterface</a></span></li>
+<li><span class="class"><a href="db_src_Lazy.html#%5CAura%5CDi%5CLazy" target="content">Lazy</a></span></li>
+<li><span class="class"><a href="db_src_Manager.html#%5CAura%5CDi%5CManager" target="content">Manager</a></span></li>
+<li><span class="class"><a href="db_src_Exception_ServiceInvalid.html#%5CAura%5CDi%5CException%5CServiceInvalid" target="content">ServiceInvalid</a></span></li>
+<li><span class="class"><a href="db_src_Exception_ServiceNotFound.html#%5CAura%5CDi%5CException%5CServiceNotFound" target="content">ServiceNotFound</a></span></li>
+</ul>
+</li></ul>
+</li>
+<li class="closed">
+<span class="folder">Default</span><ul>
+<li><span class="class"><a href="db_tests_ConfigTest.html#%5CAura%5CDi%5CConfigTest" target="content">ConfigTest</a></span></li>
+<li><span class="class"><a href="db_tests_ContainerTest.html#%5CAura%5CDi%5CContainerTest" target="content">ContainerTest</a></span></li>
+<li><span class="class"><a href="db_tests_ForgeTest.html#%5CAura%5CDi%5CForgeTest" target="content">ForgeTest</a></span></li>
+<li><span class="class"><a href="db_tests_ManagerTest.html#%5CAura%5CDi%5CManagerTest" target="content">ManagerTest</a></span></li>
+<li><span class="class"><a href="db_tests_MockChildClass.html#%5CAura%5CDi%5CMockChildClass" target="content">MockChildClass</a></span></li>
+<li><span class="class"><a href="db_tests_MockOtherClass.html#%5CAura%5CDi%5CMockOtherClass" target="content">MockOtherClass</a></span></li>
+<li><span class="class"><a href="db_tests_MockParentClass.html#%5CAura%5CDi%5CMockParentClass" target="content">MockParentClass</a></span></li>
+</ul>
+</li>
+</ul>
+</div>
+<h3 id="sidebar-namespaces">
+<img src="css/docblox/images/icons/namespaces.png" alt="Namespaces"><a href="#namespaces">Namespaces</a>
+</h3>
+<div class="sidebar-section sidebar-tree">
+<div class="search-bar">
+<a href="#" onclick="$(this).parent().next().find('.collapsable-hitarea').click(); return false;"><img src="images/collapse_all.png" title="Collapse all" alt="Collapse all"></a><a href="#" onclick="$(this).parent().next().find('.expandable-hitarea').click(); return false;"><img src="images/expand_all.png" title="Expand all" alt="Expand all"></a><div><input type="text" onkeyup="tree_search(this);"></div>
+</div>
+<ul class="sidebar-nav-tree"><li class="closed">
 <span class="folder">Aura</span><ul><li class="closed">
 <span class="folder">Di</span><ul>
 <li class="closed">
 <span class="folder">Exception</span><ul>
-<li><span class="class"><a href="_src_Exception_ContainerExists.html#%5CAura%5CDi%5CException%5CContainerExists" target="content">ContainerExists<br><small></small></a></span></li>
-<li><span class="class"><a href="_src_Exception_ContainerLocked.html#%5CAura%5CDi%5CException%5CContainerLocked" target="content">ContainerLocked<br><small></small></a></span></li>
-<li><span class="class"><a href="_src_Exception_ContainerNotFound.html#%5CAura%5CDi%5CException%5CContainerNotFound" target="content">ContainerNotFound<br><small></small></a></span></li>
-<li><span class="class"><a href="_src_Exception_ServiceInvalid.html#%5CAura%5CDi%5CException%5CServiceInvalid" target="content">ServiceInvalid<br><small></small></a></span></li>
-<li><span class="class"><a href="_src_Exception_ServiceNotFound.html#%5CAura%5CDi%5CException%5CServiceNotFound" target="content">ServiceNotFound<br><small></small></a></span></li>
+<li><span class="class"><a href="db_src_Exception_ContainerExists.html#%5CAura%5CDi%5CException%5CContainerExists" target="content">ContainerExists</a></span></li>
+<li><span class="class"><a href="db_src_Exception_ContainerLocked.html#%5CAura%5CDi%5CException%5CContainerLocked" target="content">ContainerLocked</a></span></li>
+<li><span class="class"><a href="db_src_Exception_ContainerNotFound.html#%5CAura%5CDi%5CException%5CContainerNotFound" target="content">ContainerNotFound</a></span></li>
+<li><span class="class"><a href="db_src_Exception_ServiceInvalid.html#%5CAura%5CDi%5CException%5CServiceInvalid" target="content">ServiceInvalid</a></span></li>
+<li><span class="class"><a href="db_src_Exception_ServiceNotFound.html#%5CAura%5CDi%5CException%5CServiceNotFound" target="content">ServiceNotFound</a></span></li>
 </ul>
 </li>
-<li><span class="class"><a href="_src_Config.html#%5CAura%5CDi%5CConfig" target="content">Config<br><small>Retains and unifies class configurations.</small></a></span></li>
-<li><span class="interface"><a href="_src_ConfigInterface.html#%5CAura%5CDi%5CConfigInterface" target="content">ConfigInterface<br><small>Retains and unifies class constructor parameter values with external values.</small></a></span></li>
-<li><span class="class"><a href="_src_Container.html#%5CAura%5CDi%5CContainer" target="content">Container<br><small>Dependency injection container.</small></a></span></li>
-<li><span class="interface"><a href="_src_ContainerInterface.html#%5CAura%5CDi%5CContainerInterface" target="content">ContainerInterface<br><small>Interface for dependency injection containers.</small></a></span></li>
-<li><span class="class"><a href="_src_Exception.html#%5CAura%5CDi%5CException" target="content">Exception<br><small></small></a></span></li>
-<li><span class="class"><a href="_src_Forge.html#%5CAura%5CDi%5CForge" target="content">Forge<br><small>Creates objects using reflection and the specified configuration values.</small></a></span></li>
-<li><span class="interface"><a href="_src_ForgeInterface.html#%5CAura%5CDi%5CForgeInterface" target="content">ForgeInterface<br><small></small></a></span></li>
-<li><span class="class"><a href="_src_Lazy.html#%5CAura%5CDi%5CLazy" target="content">Lazy<br><small>Wraps a closure specifically for the purpose of lazy-loading an object.</small></a></span></li>
-<li><span class="class"><a href="_src_Manager.html#%5CAura%5CDi%5CManager" target="content">Manager<br><small>Manager for multiple DI containers; the Manager is itself the main
-container, and it provides access to sub-containers.</small></a></span></li>
+<li><span class="class"><a href="db_src_Config.html#%5CAura%5CDi%5CConfig" target="content">Config</a></span></li>
+<li><span class="interface"><a href="db_src_ConfigInterface.html#%5CAura%5CDi%5CConfigInterface" target="content">ConfigInterface</a></span></li>
+<li><span class="class"><a href="db_tests_ConfigTest.html#%5CAura%5CDi%5CConfigTest" target="content">ConfigTest</a></span></li>
+<li><span class="class"><a href="db_src_Container.html#%5CAura%5CDi%5CContainer" target="content">Container</a></span></li>
+<li><span class="interface"><a href="db_src_ContainerInterface.html#%5CAura%5CDi%5CContainerInterface" target="content">ContainerInterface</a></span></li>
+<li><span class="class"><a href="db_tests_ContainerTest.html#%5CAura%5CDi%5CContainerTest" target="content">ContainerTest</a></span></li>
+<li><span class="class"><a href="db_src_Exception.html#%5CAura%5CDi%5CException" target="content">Exception</a></span></li>
+<li><span class="class"><a href="db_src_Forge.html#%5CAura%5CDi%5CForge" target="content">Forge</a></span></li>
+<li><span class="interface"><a href="db_src_ForgeInterface.html#%5CAura%5CDi%5CForgeInterface" target="content">ForgeInterface</a></span></li>
+<li><span class="class"><a href="db_tests_ForgeTest.html#%5CAura%5CDi%5CForgeTest" target="content">ForgeTest</a></span></li>
+<li><span class="class"><a href="db_src_Lazy.html#%5CAura%5CDi%5CLazy" target="content">Lazy</a></span></li>
+<li><span class="class"><a href="db_src_Manager.html#%5CAura%5CDi%5CManager" target="content">Manager</a></span></li>
+<li><span class="class"><a href="db_tests_ManagerTest.html#%5CAura%5CDi%5CManagerTest" target="content">ManagerTest</a></span></li>
+<li><span class="class"><a href="db_tests_MockChildClass.html#%5CAura%5CDi%5CMockChildClass" target="content">MockChildClass</a></span></li>
+<li><span class="class"><a href="db_tests_MockOtherClass.html#%5CAura%5CDi%5CMockOtherClass" target="content">MockOtherClass</a></span></li>
+<li><span class="class"><a href="db_tests_MockParentClass.html#%5CAura%5CDi%5CMockParentClass" target="content">MockParentClass</a></span></li>
 </ul>
 </li></ul>
-</li></ul></div>
-<h1><a href="#">Packages</a></h1>
-<div style="padding: 0px;"><ul id="packages-" class="filetree">
-<li class="closed">
-<span class="folder">Default</span><ul id="packages_" class="filetree">
-<li class="closed"><span class="class"><a href="_src_Exception_ContainerExists.html#%5CAura%5CDi%5CException%5CContainerExists" target="content">ContainerExists<br><small></small></a></span></li>
-<li class="closed"><span class="class"><a href="_src_Exception_ContainerLocked.html#%5CAura%5CDi%5CException%5CContainerLocked" target="content">ContainerLocked<br><small></small></a></span></li>
-<li class="closed"><span class="class"><a href="_src_Exception_ContainerNotFound.html#%5CAura%5CDi%5CException%5CContainerNotFound" target="content">ContainerNotFound<br><small></small></a></span></li>
-<li class="closed"><span class="class"><a href="_src_Exception.html#%5CAura%5CDi%5CException" target="content">Exception<br><small></small></a></span></li>
-<li class="closed"><span class="interface"><a href="_src_ForgeInterface.html#%5CAura%5CDi%5CForgeInterface" target="content">ForgeInterface<br><small></small></a></span></li>
-<li class="closed"><span class="class"><a href="_src_Exception_ServiceInvalid.html#%5CAura%5CDi%5CException%5CServiceInvalid" target="content">ServiceInvalid<br><small></small></a></span></li>
-<li class="closed"><span class="class"><a href="_src_Exception_ServiceNotFound.html#%5CAura%5CDi%5CException%5CServiceNotFound" target="content">ServiceNotFound<br><small></small></a></span></li>
-</ul>
-</li>
-<li class="closed">
-<span class="folder">Aura.Di</span><ul id="packages_Aura.Di" class="filetree">
-<li class="closed"><span class="class"><a href="_src_Config.html#%5CAura%5CDi%5CConfig" target="content">Config<br><small>Retains and unifies class configurations.</small></a></span></li>
-<li class="closed"><span class="interface"><a href="_src_ConfigInterface.html#%5CAura%5CDi%5CConfigInterface" target="content">ConfigInterface<br><small>Retains and unifies class constructor parameter values with external values.</small></a></span></li>
-<li class="closed"><span class="class"><a href="_src_Container.html#%5CAura%5CDi%5CContainer" target="content">Container<br><small>Dependency injection container.</small></a></span></li>
-<li class="closed"><span class="interface"><a href="_src_ContainerInterface.html#%5CAura%5CDi%5CContainerInterface" target="content">ContainerInterface<br><small>Interface for dependency injection containers.</small></a></span></li>
-<li class="closed"><span class="class"><a href="_src_Forge.html#%5CAura%5CDi%5CForge" target="content">Forge<br><small>Creates objects using reflection and the specified configuration values.</small></a></span></li>
-<li class="closed"><span class="class"><a href="_src_Lazy.html#%5CAura%5CDi%5CLazy" target="content">Lazy<br><small>Wraps a closure specifically for the purpose of lazy-loading an object.</small></a></span></li>
-<li class="closed"><span class="class"><a href="_src_Manager.html#%5CAura%5CDi%5CManager" target="content">Manager<br><small>Manager for multiple DI containers; the Manager is itself the main
-container, and it provides access to sub-containers.</small></a></span></li>
-</ul>
-</li>
+</li></ul>
+</div>
+<h3 id="sidebar-charts">
+<img src="css/docblox/images/icons/chart.png" alt="Charts"><a href="#charts">Charts</a>
+</h3>
+<div class="sidebar-section"><ul style="list-style-image: url('css/docblox/images/icons/chart15x12.png');"><li><a href="graph.html" target="content">Class Inheritance Diagram</a></li></ul></div>
+<h3 id="sidebar-reports">
+<img src="css/docblox/images/icons/reports.png" alt="Reports"><a href="#reports">Reports</a>
+</h3>
+<div class="sidebar-section"><ul style="list-style-image: url('css/docblox/images/icons/reports9x12.png');">
+<li><a href="report_markers.html" target="content">Markers (TODO/FIXME)</a></li>
+<li><a href="report_parse_markers.html" target="content">Parsing errors</a></li>
+<li><a href="report_deprecated.html" target="content">Deprecated elements</a></li>
 </ul></div>
-<h1><a href="#">Files</a></h1>
-<div style="padding: 0px;"><ul id="files-" class="filetree">
-<li class="closed">
-<span class="file"><a href="_src.html" target="content">src.php</a></span><ul id="files_653504751579243e98515d3588e15765" class="filetree"></ul>
-</li>
-<li class="closed">
-<span class="file"><a href="_src_Config.html" target="content">src/Config.php</a></span><ul id="files_1623ee94192c3c955e9b6eada09e6174" class="filetree"><li><span class="class"><a href="_src_Config.html#%5CAura%5CDi%5CConfig" target="content">Config<br><small>Retains and unifies class configurations.</small></a></span></li></ul>
-</li>
-<li class="closed">
-<span class="file"><a href="_src_ConfigInterface.html" target="content">src/ConfigInterface.php</a></span><ul id="files_8577698ffdc7bd321ade266897f69b21" class="filetree"><li><span class="interface"><a href="_src_ConfigInterface.html#%5CAura%5CDi%5CConfigInterface" target="content">ConfigInterface<br><small>Retains and unifies class constructor parameter values with external values.</small></a></span></li></ul>
-</li>
-<li class="closed">
-<span class="file"><a href="_src_Container.html" target="content">src/Container.php</a></span><ul id="files_5f003e64d2491cbafe6ecdf1abec6f7a" class="filetree"><li><span class="class"><a href="_src_Container.html#%5CAura%5CDi%5CContainer" target="content">Container<br><small>Dependency injection container.</small></a></span></li></ul>
-</li>
-<li class="closed">
-<span class="file"><a href="_src_ContainerInterface.html" target="content">src/ContainerInterface.php</a></span><ul id="files_179baabb1e4b48bb0b559a1e139e81fe" class="filetree"><li><span class="interface"><a href="_src_ContainerInterface.html#%5CAura%5CDi%5CContainerInterface" target="content">ContainerInterface<br><small>Interface for dependency injection containers.</small></a></span></li></ul>
-</li>
-<li class="closed">
-<span class="file"><a href="_src_Exception.html" target="content">src/Exception.php</a></span><ul id="files_5828bb87ff3d596c6c8c235d9f31f90f" class="filetree"><li><span class="class"><a href="_src_Exception.html#%5CAura%5CDi%5CException" target="content">Exception<br><small></small></a></span></li></ul>
-</li>
-<li class="closed">
-<span class="file"><a href="_src_Exception_ContainerExists.html" target="content">src/Exception/ContainerExists.php</a></span><ul id="files_d2f96e580283986d0d97022c69d8754f" class="filetree"><li><span class="class"><a href="_src_Exception_ContainerExists.html#%5CAura%5CDi%5CException%5CContainerExists" target="content">ContainerExists<br><small></small></a></span></li></ul>
-</li>
-<li class="closed">
-<span class="file"><a href="_src_Exception_ContainerLocked.html" target="content">src/Exception/ContainerLocked.php</a></span><ul id="files_2110cf74a4e7ef2d4754373a21de8137" class="filetree"><li><span class="class"><a href="_src_Exception_ContainerLocked.html#%5CAura%5CDi%5CException%5CContainerLocked" target="content">ContainerLocked<br><small></small></a></span></li></ul>
-</li>
-<li class="closed">
-<span class="file"><a href="_src_Exception_ContainerNotFound.html" target="content">src/Exception/ContainerNotFound.php</a></span><ul id="files_8302819e3c9c6f489d3c1eefab1053c9" class="filetree"><li><span class="class"><a href="_src_Exception_ContainerNotFound.html#%5CAura%5CDi%5CException%5CContainerNotFound" target="content">ContainerNotFound<br><small></small></a></span></li></ul>
-</li>
-<li class="closed">
-<span class="file"><a href="_src_Exception_ServiceInvalid.html" target="content">src/Exception/ServiceInvalid.php</a></span><ul id="files_a120e7f7957523742b5670905929fc92" class="filetree"><li><span class="class"><a href="_src_Exception_ServiceInvalid.html#%5CAura%5CDi%5CException%5CServiceInvalid" target="content">ServiceInvalid<br><small></small></a></span></li></ul>
-</li>
-<li class="closed">
-<span class="file"><a href="_src_Exception_ServiceNotFound.html" target="content">src/Exception/ServiceNotFound.php</a></span><ul id="files_ba0a426778c503d905ee860c0e24f301" class="filetree"><li><span class="class"><a href="_src_Exception_ServiceNotFound.html#%5CAura%5CDi%5CException%5CServiceNotFound" target="content">ServiceNotFound<br><small></small></a></span></li></ul>
-</li>
-<li class="closed">
-<span class="file"><a href="_src_Forge.html" target="content">src/Forge.php</a></span><ul id="files_14d7d9fbb10cd16f5f219d73f1eee37f" class="filetree"><li><span class="class"><a href="_src_Forge.html#%5CAura%5CDi%5CForge" target="content">Forge<br><small>Creates objects using reflection and the specified configuration values.</small></a></span></li></ul>
-</li>
-<li class="closed">
-<span class="file"><a href="_src_ForgeInterface.html" target="content">src/ForgeInterface.php</a></span><ul id="files_338890c51e7dbd40d5b565fb42b7d1ee" class="filetree"><li><span class="interface"><a href="_src_ForgeInterface.html#%5CAura%5CDi%5CForgeInterface" target="content">ForgeInterface<br><small></small></a></span></li></ul>
-</li>
-<li class="closed">
-<span class="file"><a href="_src_Lazy.html" target="content">src/Lazy.php</a></span><ul id="files_aa549b85056ae68a9be7fafff91a394a" class="filetree"><li><span class="class"><a href="_src_Lazy.html#%5CAura%5CDi%5CLazy" target="content">Lazy<br><small>Wraps a closure specifically for the purpose of lazy-loading an object.</small></a></span></li></ul>
-</li>
-<li class="closed">
-<span class="file"><a href="_src_Manager.html" target="content">src/Manager.php</a></span><ul id="files_c11278daf71420cc7ad66e1525a6ead5" class="filetree"><li><span class="class"><a href="_src_Manager.html#%5CAura%5CDi%5CManager" target="content">Manager<br><small>Manager for multiple DI containers; the Manager is itself the main
-container, and it provides access to sub-containers.</small></a></span></li></ul>
-</li>
-</ul></div>
+</div>
+<div id="sidebar-footer">
+        Documentation is generated by <a href="http://docblox-project.org" target="_top"><img src="images/icon48x48.png" height="12" align="top" alt="Logo"> DocBlox 0.16.0</a>, images courtesy of <a href="http://glyphish.com/" target="_top">Glyphish</a>
+</div>
 </div></body></html>

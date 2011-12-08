@@ -1,5 +1,4 @@
-<html xmlns="http://www.w3.org/1999/xhtml"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>Aura Project for PHP: Aura.View</title><link rel="stylesheet" href="css/black-tie/jquery-ui-1.8.2.custom.css" type="text/css"></link><link rel="stylesheet" href="css/jquery.treeview.css" type="text/css"></link><link rel="stylesheet" href="css/theme.css" type="text/css"></link><script type="text/javascript" src="js/jquery-1.4.2.min.js"></script><script type="text/javascript" src="js/jquery-ui-1.8.2.custom.min.js"></script><script type="text/javascript" src="js/jquery.cookie.js"></script><script type="text/javascript" src="js/jquery.treeview.js"></script><script type="text/javascript">
+<html xmlns="http://www.w3.org/1999/xhtml"><head><title>Aura Project for PHP: Aura.View</title><meta http-equiv="Content-Type" content="text/html; charset=utf-8"></meta><link rel="stylesheet" href="css/jquery-ui.css" type="text/css"></link><link rel="stylesheet" href="css/docblox/jquery-ui-1.8.16.custom.css" type="text/css"></link><link rel="stylesheet" href="css/jquery.treeview.css" type="text/css"></link><link rel="stylesheet" href="css/theme.css" type="text/css"></link><script type="text/javascript" src="js/jquery-1.4.2.min.js"></script><script type="text/javascript" src="js/jquery-ui-1.8.2.custom.min.js"></script><script type="text/javascript" src="js/jquery.tools.min.js"></script><script type="text/javascript" src="js/jquery.cookie.js"></script><script type="text/javascript" src="js/jquery.treeview.js"></script><script type="text/javascript">
             $(document).ready(function() {
                 $(".filetree").treeview({
                     collapsed: true,
@@ -14,144 +13,272 @@
 
                 $(".tabs").tabs();
             });
-        </script></head><body><div xmlns="" id="accordion">
-<h1><a href="#">Namespaces</a></h1>
-<div style="padding: 0px;"><ul id="namespaces-" class="filetree"><li class="closed">
+        </script></head><body><script xmlns="" type="text/javascript" src="js/sidebar.js"></script><div xmlns="" id="sidebar">
+<div id="sidebar-header">
+<h1>Aura Project for PHP: Aura.View</h1>
+<div style="clear: both"></div>
+</div>
+<div id="sidebar-nav">
+<h3 id="sidebar-dashboard">
+<img class="icon" src="css/docblox/images/icons/dashboard.png" alt="Dashboard"><a href="content.html" class="link" target="content">Dashboard</a>
+</h3>
+<div style="display: none"></div>
+<h3 id="sidebar-files">
+<img src="css/docblox/images/icons/files.png" alt="Files"><a href="#files">Files</a>
+</h3>
+<div class="sidebar-section">
+<div class="search-bar">
+<a href="#" onclick="$(this).parent().next().find('.collapsable-hitarea').click(); return false;"><img src="images/collapse_all.png" title="Collapse all" alt="Collapse all"></a><a href="#" onclick="$(this).parent().next().find('.expandable-hitarea').click(); return false;"><img src="images/expand_all.png" title="Expand all" alt="Expand all"></a><div><input type="text" onkeyup="tree_search(this);"></div>
+</div>
+<ul class="sidebar-nav-tree">
+<li class="closed">
+<span class="file"><a href="db_config_default.html" target="content">config/default.php</a></span><ul id="files_0e508e0cb8a5dc3b0abe84df86a0be4d" class="filetree"><li><span class="function"><a href="db_config_default.html#::Closure()" target="content">Closure<br></a></span></li></ul>
+</li>
+<li class="closed">
+<span class="file"><a href="db_config_test.html" target="content">config/test.php</a></span><ul id="files_ae57ecbee616579efd82d90d4aa91a29" class="filetree"></ul>
+</li>
+<li class="closed">
+<span class="file"><a href="db_scripts_instance.html" target="content">scripts/instance.php</a></span><ul id="files_8a24a8d833b2656d3032cbac447df71f" class="filetree"><li><span class="function"><a href="db_scripts_instance.html#::Closure()" target="content">Closure<br></a></span></li></ul>
+</li>
+<li class="closed">
+<span class="file"><a href="db_src.html" target="content">src.php</a></span><ul id="files_aedb85dae938d5437d72c6d38e14c857" class="filetree"></ul>
+</li>
+<li class="closed">
+<span class="file"><a href="db_src_AbstractTemplate.html" target="content">src/AbstractTemplate.php</a></span><ul id="files_085c84048b1c4f523c2b848d8859e4a9" class="filetree"><li><span class="class"><a href="db_src_AbstractTemplate.html#%5CAura%5CView%5CAbstractTemplate" target="content">AbstractTemplate<br></a></span></li></ul>
+</li>
+<li class="closed">
+<span class="file"><a href="db_src_Exception.html" target="content">src/Exception.php</a></span><ul id="files_8f9b456f914498e14fc834e8f80d4f84" class="filetree"><li><span class="class"><a href="db_src_Exception.html#%5CAura%5CView%5CException" target="content">Exception<br></a></span></li></ul>
+</li>
+<li class="closed">
+<span class="file"><a href="db_src_Exception_HelperNotMapped.html" target="content">src/Exception/HelperNotMapped.php</a></span><ul id="files_f6214ec5b4356a88c69e9ada6bdbc892" class="filetree"><li><span class="class"><a href="db_src_Exception_HelperNotMapped.html#%5CAura%5CView%5CException%5CHelperNotMapped" target="content">HelperNotMapped<br></a></span></li></ul>
+</li>
+<li class="closed">
+<span class="file"><a href="db_src_Exception_TemplateNotFound.html" target="content">src/Exception/TemplateNotFound.php</a></span><ul id="files_502c444b8c26aec993b57bd5a8d66d76" class="filetree"><li><span class="class"><a href="db_src_Exception_TemplateNotFound.html#%5CAura%5CView%5CException%5CTemplateNotFound" target="content">TemplateNotFound<br></a></span></li></ul>
+</li>
+<li class="closed">
+<span class="file"><a href="db_src_Finder.html" target="content">src/Finder.php</a></span><ul id="files_405d8d31ec4c704fc91d6a8f3fbc7035" class="filetree"><li><span class="class"><a href="db_src_Finder.html#%5CAura%5CView%5CFinder" target="content">Finder<br></a></span></li></ul>
+</li>
+<li class="closed">
+<span class="file"><a href="db_src_Helper_AbstractHelper.html" target="content">src/Helper/AbstractHelper.php</a></span><ul id="files_c9260ee8ec1a0a578087f3b17ec62204" class="filetree"><li><span class="class"><a href="db_src_Helper_AbstractHelper.html#%5CAura%5CView%5CHelper%5CAbstractHelper" target="content">AbstractHelper<br></a></span></li></ul>
+</li>
+<li class="closed">
+<span class="file"><a href="db_src_Helper_Anchor.html" target="content">src/Helper/Anchor.php</a></span><ul id="files_8ba0ca6f05253a6542b8e374e2c028e1" class="filetree"><li><span class="class"><a href="db_src_Helper_Anchor.html#%5CAura%5CView%5CHelper%5CAnchor" target="content">Anchor<br></a></span></li></ul>
+</li>
+<li class="closed">
+<span class="file"><a href="db_src_Helper_Attribs.html" target="content">src/Helper/Attribs.php</a></span><ul id="files_89e8350d92303bf372235008509c5fd8" class="filetree"><li><span class="class"><a href="db_src_Helper_Attribs.html#%5CAura%5CView%5CHelper%5CAttribs" target="content">Attribs<br></a></span></li></ul>
+</li>
+<li class="closed">
+<span class="file"><a href="db_src_Helper_Base.html" target="content">src/Helper/Base.php</a></span><ul id="files_652de66a8b416c5d6ffc7028d0253dd4" class="filetree"><li><span class="class"><a href="db_src_Helper_Base.html#%5CAura%5CView%5CHelper%5CBase" target="content">Base<br></a></span></li></ul>
+</li>
+<li class="closed">
+<span class="file"><a href="db_src_Helper_Datetime.html" target="content">src/Helper/Datetime.php</a></span><ul id="files_944f281a6e803ed76c04816edfcac97e" class="filetree"><li><span class="class"><a href="db_src_Helper_Datetime.html#%5CAura%5CView%5CHelper%5CDatetime" target="content">Datetime<br></a></span></li></ul>
+</li>
+<li class="closed">
+<span class="file"><a href="db_src_Helper_Escape.html" target="content">src/Helper/Escape.php</a></span><ul id="files_ab620fc4836d7b579dac935942cbad53" class="filetree"><li><span class="class"><a href="db_src_Helper_Escape.html#%5CAura%5CView%5CHelper%5CEscape" target="content">Escape<br></a></span></li></ul>
+</li>
+<li class="closed">
+<span class="file"><a href="db_src_Helper_Image.html" target="content">src/Helper/Image.php</a></span><ul id="files_01f1b617f73fda3c0477697934cb36b5" class="filetree"><li><span class="class"><a href="db_src_Helper_Image.html#%5CAura%5CView%5CHelper%5CImage" target="content">Image<br></a></span></li></ul>
+</li>
+<li class="closed">
+<span class="file"><a href="db_src_Helper_Links.html" target="content">src/Helper/Links.php</a></span><ul id="files_7eb4f49a5bacfa8af335352a29036d7e" class="filetree"><li><span class="class"><a href="db_src_Helper_Links.html#%5CAura%5CView%5CHelper%5CLinks" target="content">Links<br></a></span></li></ul>
+</li>
+<li class="closed">
+<span class="file"><a href="db_src_Helper_Metas.html" target="content">src/Helper/Metas.php</a></span><ul id="files_9c6c81a80a7b86c4618352f4918e11ca" class="filetree"><li><span class="class"><a href="db_src_Helper_Metas.html#%5CAura%5CView%5CHelper%5CMetas" target="content">Metas<br></a></span></li></ul>
+</li>
+<li class="closed">
+<span class="file"><a href="db_src_Helper_Scripts.html" target="content">src/Helper/Scripts.php</a></span><ul id="files_a1afdf13aa329f4fef26e1bb44ff14cb" class="filetree"><li><span class="class"><a href="db_src_Helper_Scripts.html#%5CAura%5CView%5CHelper%5CScripts" target="content">Scripts<br></a></span></li></ul>
+</li>
+<li class="closed">
+<span class="file"><a href="db_src_Helper_Styles.html" target="content">src/Helper/Styles.php</a></span><ul id="files_cb0f6c430342ec19bd617e9fa03b57d5" class="filetree"><li><span class="class"><a href="db_src_Helper_Styles.html#%5CAura%5CView%5CHelper%5CStyles" target="content">Styles<br></a></span></li></ul>
+</li>
+<li class="closed">
+<span class="file"><a href="db_src_Helper_Title.html" target="content">src/Helper/Title.php</a></span><ul id="files_7fe3526eae4280fbc3d05a0feecad482" class="filetree"><li><span class="class"><a href="db_src_Helper_Title.html#%5CAura%5CView%5CHelper%5CTitle" target="content">Title<br></a></span></li></ul>
+</li>
+<li class="closed">
+<span class="file"><a href="db_src_Template.html" target="content">src/Template.php</a></span><ul id="files_86e5757b0f4eedf3d536541aeb839126" class="filetree"><li><span class="class"><a href="db_src_Template.html#%5CAura%5CView%5CTemplate" target="content">Template<br></a></span></li></ul>
+</li>
+<li class="closed">
+<span class="file"><a href="db_src_TwoStep.html" target="content">src/TwoStep.php</a></span><ul id="files_4d15afdc4b03f6431a9c67c41e5c82d5" class="filetree"><li><span class="class"><a href="db_src_TwoStep.html#%5CAura%5CView%5CTwoStep" target="content">TwoStep<br></a></span></li></ul>
+</li>
+<li class="closed">
+<span class="file"><a href="db_tests_FinderTest.html" target="content">tests/FinderTest.php</a></span><ul id="files_f090f553b8a66291819cd19726161900" class="filetree"><li><span class="class"><a href="db_tests_FinderTest.html#%5CAura%5CView%5CFinderTest" target="content">FinderTest<br></a></span></li></ul>
+</li>
+<li class="closed">
+<span class="file"><a href="db_tests_Helper_AnchorTest.html" target="content">tests/Helper/AnchorTest.php</a></span><ul id="files_b85f6b17e65414e1f142acd3a0347201" class="filetree"><li><span class="class"><a href="db_tests_Helper_AnchorTest.html#%5CAura%5CView%5CHelper%5CAnchorTest" target="content">AnchorTest<br></a></span></li></ul>
+</li>
+<li class="closed">
+<span class="file"><a href="db_tests_Helper_AttribsTest.html" target="content">tests/Helper/AttribsTest.php</a></span><ul id="files_46c50b1090074ab0115b7623225a53e8" class="filetree"><li><span class="class"><a href="db_tests_Helper_AttribsTest.html#%5CAura%5CView%5CHelper%5CAttribsTest" target="content">AttribsTest<br></a></span></li></ul>
+</li>
+<li class="closed">
+<span class="file"><a href="db_tests_Helper_BaseTest.html" target="content">tests/Helper/BaseTest.php</a></span><ul id="files_06c587df1928074afadf374d9832b1c0" class="filetree"><li><span class="class"><a href="db_tests_Helper_BaseTest.html#%5CAura%5CView%5CHelper%5CBaseTest" target="content">BaseTest<br></a></span></li></ul>
+</li>
+<li class="closed">
+<span class="file"><a href="db_tests_Helper_DatetimeTest.html" target="content">tests/Helper/DatetimeTest.php</a></span><ul id="files_e592d8047b57fddb320cfb6069be02bb" class="filetree"><li><span class="class"><a href="db_tests_Helper_DatetimeTest.html#%5CAura%5CView%5CHelper%5CDatetimeTest" target="content">DatetimeTest<br></a></span></li></ul>
+</li>
+<li class="closed">
+<span class="file"><a href="db_tests_Helper_EscapeTest.html" target="content">tests/Helper/EscapeTest.php</a></span><ul id="files_7270354b8bdb2c6d521f4fe4cfc25efe" class="filetree"><li><span class="class"><a href="db_tests_Helper_EscapeTest.html#%5CAura%5CView%5CHelper%5CEscapeTest" target="content">EscapeTest<br></a></span></li></ul>
+</li>
+<li class="closed">
+<span class="file"><a href="db_tests_Helper_ImageTest.html" target="content">tests/Helper/ImageTest.php</a></span><ul id="files_a6339ceba27f8c2f7a2cc11d8517cfa8" class="filetree"><li><span class="class"><a href="db_tests_Helper_ImageTest.html#%5CAura%5CView%5CHelper%5CImageTest" target="content">ImageTest<br></a></span></li></ul>
+</li>
+<li class="closed">
+<span class="file"><a href="db_tests_Helper_LinksTest.html" target="content">tests/Helper/LinksTest.php</a></span><ul id="files_56d7c804bab6ac47ff7cea1e79e472f7" class="filetree"><li><span class="class"><a href="db_tests_Helper_LinksTest.html#%5CAura%5CView%5CHelper%5CLinksTest" target="content">LinksTest<br></a></span></li></ul>
+</li>
+<li class="closed">
+<span class="file"><a href="db_tests_Helper_MetasTest.html" target="content">tests/Helper/MetasTest.php</a></span><ul id="files_cd2af8c44358fc19e88d5963f1cb2d2e" class="filetree"><li><span class="class"><a href="db_tests_Helper_MetasTest.html#%5CAura%5CView%5CHelper%5CMetasTest" target="content">MetasTest<br></a></span></li></ul>
+</li>
+<li class="closed">
+<span class="file"><a href="db_tests_Helper_MockHelper.html" target="content">tests/Helper/MockHelper.php</a></span><ul id="files_c5de8a50229e8a60f4d6056da24d921a" class="filetree"><li><span class="class"><a href="db_tests_Helper_MockHelper.html#%5CAura%5CView%5CHelper%5CMockHelper" target="content">MockHelper<br></a></span></li></ul>
+</li>
+<li class="closed">
+<span class="file"><a href="db_tests_Helper_ScriptsTest.html" target="content">tests/Helper/ScriptsTest.php</a></span><ul id="files_a9ef3136a908ba0b677b2f6ec6f638fc" class="filetree"><li><span class="class"><a href="db_tests_Helper_ScriptsTest.html#%5CAura%5CView%5CHelper%5CScriptsTest" target="content">ScriptsTest<br></a></span></li></ul>
+</li>
+<li class="closed">
+<span class="file"><a href="db_tests_Helper_StylesTest.html" target="content">tests/Helper/StylesTest.php</a></span><ul id="files_613eceaa1cbd63bc2a7e60fa276eb53c" class="filetree"><li><span class="class"><a href="db_tests_Helper_StylesTest.html#%5CAura%5CView%5CHelper%5CStylesTest" target="content">StylesTest<br></a></span></li></ul>
+</li>
+<li class="closed">
+<span class="file"><a href="db_tests_Helper_TitleTest.html" target="content">tests/Helper/TitleTest.php</a></span><ul id="files_11d9c0fefd5c15a17182510b5ba25442" class="filetree"><li><span class="class"><a href="db_tests_Helper_TitleTest.html#%5CAura%5CView%5CHelper%5CTitleTest" target="content">TitleTest<br></a></span></li></ul>
+</li>
+<li class="closed">
+<span class="file"><a href="db_tests_TemplateTest.html" target="content">tests/TemplateTest.php</a></span><ul id="files_8379ef871da269fdf3aa307de8e083e4" class="filetree"><li><span class="class"><a href="db_tests_TemplateTest.html#%5CAura%5CView%5CTemplateTest" target="content">TemplateTest<br></a></span></li></ul>
+</li>
+<li class="closed">
+<span class="file"><a href="db_tests_TwoStepTest.html" target="content">tests/TwoStepTest.php</a></span><ul id="files_9c00ab8e3603bfeef9809ae51ca5e4c0" class="filetree"><li><span class="class"><a href="db_tests_TwoStepTest.html#%5CAura%5CView%5CTwoStepTest" target="content">TwoStepTest<br></a></span></li></ul>
+</li>
+</ul>
+</div>
+<h3 id="sidebar-packages">
+<img src="css/docblox/images/icons/packages.png" alt="Packages"><a href="#packages">Packages</a>
+</h3>
+<div class="sidebar-section sidebar-tree">
+<div class="search-bar">
+<a href="#" onclick="$(this).parent().next().find('.collapsable-hitarea').click(); return false;"><img src="images/collapse_all.png" title="Collapse all" alt="Collapse all"></a><a href="#" onclick="$(this).parent().next().find('.expandable-hitarea').click(); return false;"><img src="images/expand_all.png" title="Expand all" alt="Expand all"></a><div><input type="text" onkeyup="tree_search(this);"></div>
+</div>
+<ul class="sidebar-nav-tree">
+<li class="closed">
+<span class="folder">Aura</span><ul><li class="closed">
+<span class="folder">View</span><ul>
+<li><span class="class"><a href="db_src_Helper_AbstractHelper.html#%5CAura%5CView%5CHelper%5CAbstractHelper" target="content">AbstractHelper</a></span></li>
+<li><span class="class"><a href="db_src_AbstractTemplate.html#%5CAura%5CView%5CAbstractTemplate" target="content">AbstractTemplate</a></span></li>
+<li><span class="class"><a href="db_src_Helper_Anchor.html#%5CAura%5CView%5CHelper%5CAnchor" target="content">Anchor</a></span></li>
+<li><span class="class"><a href="db_src_Helper_Attribs.html#%5CAura%5CView%5CHelper%5CAttribs" target="content">Attribs</a></span></li>
+<li><span class="class"><a href="db_src_Helper_Base.html#%5CAura%5CView%5CHelper%5CBase" target="content">Base</a></span></li>
+<li><span class="class"><a href="db_src_Helper_Datetime.html#%5CAura%5CView%5CHelper%5CDatetime" target="content">Datetime</a></span></li>
+<li><span class="class"><a href="db_src_Finder.html#%5CAura%5CView%5CFinder" target="content">Finder</a></span></li>
+<li><span class="class"><a href="db_src_Template.html#%5CAura%5CView%5CTemplate" target="content">Template</a></span></li>
+<li><span class="class"><a href="db_src_TwoStep.html#%5CAura%5CView%5CTwoStep" target="content">TwoStep</a></span></li>
+</ul>
+</li></ul>
+</li>
+<li class="closed">
+<span class="folder">Default</span><ul>
+<li><span class="function"><a href="db_scripts_instance.html#::Closure()" target="content">Closure</a></span></li>
+<li><span class="function"><a href="db_config_default.html#::Closure()" target="content">Closure</a></span></li>
+<li><span class="class"><a href="db_tests_Helper_AnchorTest.html#%5CAura%5CView%5CHelper%5CAnchorTest" target="content">AnchorTest</a></span></li>
+<li><span class="class"><a href="db_tests_Helper_AttribsTest.html#%5CAura%5CView%5CHelper%5CAttribsTest" target="content">AttribsTest</a></span></li>
+<li><span class="class"><a href="db_tests_Helper_BaseTest.html#%5CAura%5CView%5CHelper%5CBaseTest" target="content">BaseTest</a></span></li>
+<li><span class="class"><a href="db_tests_Helper_DatetimeTest.html#%5CAura%5CView%5CHelper%5CDatetimeTest" target="content">DatetimeTest</a></span></li>
+<li><span class="class"><a href="db_src_Helper_Escape.html#%5CAura%5CView%5CHelper%5CEscape" target="content">Escape</a></span></li>
+<li><span class="class"><a href="db_tests_Helper_EscapeTest.html#%5CAura%5CView%5CHelper%5CEscapeTest" target="content">EscapeTest</a></span></li>
+<li><span class="class"><a href="db_src_Exception.html#%5CAura%5CView%5CException" target="content">Exception</a></span></li>
+<li><span class="class"><a href="db_tests_FinderTest.html#%5CAura%5CView%5CFinderTest" target="content">FinderTest</a></span></li>
+<li><span class="class"><a href="db_src_Exception_HelperNotMapped.html#%5CAura%5CView%5CException%5CHelperNotMapped" target="content">HelperNotMapped</a></span></li>
+<li><span class="class"><a href="db_src_Helper_Image.html#%5CAura%5CView%5CHelper%5CImage" target="content">Image</a></span></li>
+<li><span class="class"><a href="db_tests_Helper_ImageTest.html#%5CAura%5CView%5CHelper%5CImageTest" target="content">ImageTest</a></span></li>
+<li><span class="class"><a href="db_src_Helper_Links.html#%5CAura%5CView%5CHelper%5CLinks" target="content">Links</a></span></li>
+<li><span class="class"><a href="db_tests_Helper_LinksTest.html#%5CAura%5CView%5CHelper%5CLinksTest" target="content">LinksTest</a></span></li>
+<li><span class="class"><a href="db_src_Helper_Metas.html#%5CAura%5CView%5CHelper%5CMetas" target="content">Metas</a></span></li>
+<li><span class="class"><a href="db_tests_Helper_MetasTest.html#%5CAura%5CView%5CHelper%5CMetasTest" target="content">MetasTest</a></span></li>
+<li><span class="class"><a href="db_tests_Helper_MockHelper.html#%5CAura%5CView%5CHelper%5CMockHelper" target="content">MockHelper</a></span></li>
+<li><span class="class"><a href="db_src_Helper_Scripts.html#%5CAura%5CView%5CHelper%5CScripts" target="content">Scripts</a></span></li>
+<li><span class="class"><a href="db_tests_Helper_ScriptsTest.html#%5CAura%5CView%5CHelper%5CScriptsTest" target="content">ScriptsTest</a></span></li>
+<li><span class="class"><a href="db_src_Helper_Styles.html#%5CAura%5CView%5CHelper%5CStyles" target="content">Styles</a></span></li>
+<li><span class="class"><a href="db_tests_Helper_StylesTest.html#%5CAura%5CView%5CHelper%5CStylesTest" target="content">StylesTest</a></span></li>
+<li><span class="class"><a href="db_src_Exception_TemplateNotFound.html#%5CAura%5CView%5CException%5CTemplateNotFound" target="content">TemplateNotFound</a></span></li>
+<li><span class="class"><a href="db_tests_TemplateTest.html#%5CAura%5CView%5CTemplateTest" target="content">TemplateTest</a></span></li>
+<li><span class="class"><a href="db_src_Helper_Title.html#%5CAura%5CView%5CHelper%5CTitle" target="content">Title</a></span></li>
+<li><span class="class"><a href="db_tests_Helper_TitleTest.html#%5CAura%5CView%5CHelper%5CTitleTest" target="content">TitleTest</a></span></li>
+<li><span class="class"><a href="db_tests_TwoStepTest.html#%5CAura%5CView%5CTwoStepTest" target="content">TwoStepTest</a></span></li>
+</ul>
+</li>
+</ul>
+</div>
+<h3 id="sidebar-namespaces">
+<img src="css/docblox/images/icons/namespaces.png" alt="Namespaces"><a href="#namespaces">Namespaces</a>
+</h3>
+<div class="sidebar-section sidebar-tree">
+<div class="search-bar">
+<a href="#" onclick="$(this).parent().next().find('.collapsable-hitarea').click(); return false;"><img src="images/collapse_all.png" title="Collapse all" alt="Collapse all"></a><a href="#" onclick="$(this).parent().next().find('.expandable-hitarea').click(); return false;"><img src="images/expand_all.png" title="Expand all" alt="Expand all"></a><div><input type="text" onkeyup="tree_search(this);"></div>
+</div>
+<ul class="sidebar-nav-tree">
+<li class="closed">
 <span class="folder">Aura</span><ul><li class="closed">
 <span class="folder">View</span><ul>
 <li class="closed">
 <span class="folder">Exception</span><ul>
-<li><span class="class"><a href="_src_Exception_HelperNotMapped.html#%5CAura%5CView%5CException%5CHelperNotMapped" target="content">HelperNotMapped<br><small></small></a></span></li>
-<li><span class="class"><a href="_src_Exception_TemplateNotFound.html#%5CAura%5CView%5CException%5CTemplateNotFound" target="content">TemplateNotFound<br><small></small></a></span></li>
+<li><span class="class"><a href="db_src_Exception_HelperNotMapped.html#%5CAura%5CView%5CException%5CHelperNotMapped" target="content">HelperNotMapped</a></span></li>
+<li><span class="class"><a href="db_src_Exception_TemplateNotFound.html#%5CAura%5CView%5CException%5CTemplateNotFound" target="content">TemplateNotFound</a></span></li>
 </ul>
 </li>
 <li class="closed">
 <span class="folder">Helper</span><ul>
-<li><span class="class"><a href="_src_Helper_AbstractHelper.html#%5CAura%5CView%5CHelper%5CAbstractHelper" target="content">AbstractHelper<br><small>Abstract helper base class.</small></a></span></li>
-<li><span class="class"><a href="_src_Helper_Anchor.html#%5CAura%5CView%5CHelper%5CAnchor" target="content">Anchor<br><small>Helper to generate `&lt;a ... /&gt;` tags.</small></a></span></li>
-<li><span class="class"><a href="_src_Helper_Attribs.html#%5CAura%5CView%5CHelper%5CAttribs" target="content">Attribs<br><small>Helper to escape attributes.</small></a></span></li>
-<li><span class="class"><a href="_src_Helper_Base.html#%5CAura%5CView%5CHelper%5CBase" target="content">Base<br><small>Helper to generate `&lt;base ... /&gt;` tags.</small></a></span></li>
-<li><span class="class"><a href="_src_Helper_Datetime.html#%5CAura%5CView%5CHelper%5CDatetime" target="content">Datetime<br><small>Helper for a formatted timestamp using date() format codes.</small></a></span></li>
-<li><span class="class"><a href="_src_Helper_Escape.html#%5CAura%5CView%5CHelper%5CEscape" target="content">Escape<br><small>Abstract helper base class.</small></a></span></li>
-<li><span class="class"><a href="_src_Helper_Image.html#%5CAura%5CView%5CHelper%5CImage" target="content">Image<br><small>Helper to generate an &lt;img ... /&gt; tag.</small></a></span></li>
-<li><span class="class"><a href="_src_Helper_Links.html#%5CAura%5CView%5CHelper%5CLinks" target="content">Links<br><small>Helper for a stack of &lt;link ... /&gt; tags.</small></a></span></li>
-<li><span class="class"><a href="_src_Helper_Metas.html#%5CAura%5CView%5CHelper%5CMetas" target="content">Metas<br><small>Helper for a stack of &lt;meta ... /&gt; tags.</small></a></span></li>
-<li><span class="class"><a href="_src_Helper_Scripts.html#%5CAura%5CView%5CHelper%5CScripts" target="content">Scripts<br><small>Helper for a stack of &lt;script&gt; tags.</small></a></span></li>
-<li><span class="class"><a href="_src_Helper_Styles.html#%5CAura%5CView%5CHelper%5CStyles" target="content">Styles<br><small>Helper for &lt;link rel="stylesheet" ... /&gt; tags.</small></a></span></li>
-<li><span class="class"><a href="_src_Helper_Title.html#%5CAura%5CView%5CHelper%5CTitle" target="content">Title<br><small>Abstract helper base class.</small></a></span></li>
+<li><span class="class"><a href="db_src_Helper_AbstractHelper.html#%5CAura%5CView%5CHelper%5CAbstractHelper" target="content">AbstractHelper</a></span></li>
+<li><span class="class"><a href="db_src_Helper_Anchor.html#%5CAura%5CView%5CHelper%5CAnchor" target="content">Anchor</a></span></li>
+<li><span class="class"><a href="db_tests_Helper_AnchorTest.html#%5CAura%5CView%5CHelper%5CAnchorTest" target="content">AnchorTest</a></span></li>
+<li><span class="class"><a href="db_src_Helper_Attribs.html#%5CAura%5CView%5CHelper%5CAttribs" target="content">Attribs</a></span></li>
+<li><span class="class"><a href="db_tests_Helper_AttribsTest.html#%5CAura%5CView%5CHelper%5CAttribsTest" target="content">AttribsTest</a></span></li>
+<li><span class="class"><a href="db_src_Helper_Base.html#%5CAura%5CView%5CHelper%5CBase" target="content">Base</a></span></li>
+<li><span class="class"><a href="db_tests_Helper_BaseTest.html#%5CAura%5CView%5CHelper%5CBaseTest" target="content">BaseTest</a></span></li>
+<li><span class="class"><a href="db_src_Helper_Datetime.html#%5CAura%5CView%5CHelper%5CDatetime" target="content">Datetime</a></span></li>
+<li><span class="class"><a href="db_tests_Helper_DatetimeTest.html#%5CAura%5CView%5CHelper%5CDatetimeTest" target="content">DatetimeTest</a></span></li>
+<li><span class="class"><a href="db_src_Helper_Escape.html#%5CAura%5CView%5CHelper%5CEscape" target="content">Escape</a></span></li>
+<li><span class="class"><a href="db_tests_Helper_EscapeTest.html#%5CAura%5CView%5CHelper%5CEscapeTest" target="content">EscapeTest</a></span></li>
+<li><span class="class"><a href="db_src_Helper_Image.html#%5CAura%5CView%5CHelper%5CImage" target="content">Image</a></span></li>
+<li><span class="class"><a href="db_tests_Helper_ImageTest.html#%5CAura%5CView%5CHelper%5CImageTest" target="content">ImageTest</a></span></li>
+<li><span class="class"><a href="db_src_Helper_Links.html#%5CAura%5CView%5CHelper%5CLinks" target="content">Links</a></span></li>
+<li><span class="class"><a href="db_tests_Helper_LinksTest.html#%5CAura%5CView%5CHelper%5CLinksTest" target="content">LinksTest</a></span></li>
+<li><span class="class"><a href="db_src_Helper_Metas.html#%5CAura%5CView%5CHelper%5CMetas" target="content">Metas</a></span></li>
+<li><span class="class"><a href="db_tests_Helper_MetasTest.html#%5CAura%5CView%5CHelper%5CMetasTest" target="content">MetasTest</a></span></li>
+<li><span class="class"><a href="db_tests_Helper_MockHelper.html#%5CAura%5CView%5CHelper%5CMockHelper" target="content">MockHelper</a></span></li>
+<li><span class="class"><a href="db_src_Helper_Scripts.html#%5CAura%5CView%5CHelper%5CScripts" target="content">Scripts</a></span></li>
+<li><span class="class"><a href="db_tests_Helper_ScriptsTest.html#%5CAura%5CView%5CHelper%5CScriptsTest" target="content">ScriptsTest</a></span></li>
+<li><span class="class"><a href="db_src_Helper_Styles.html#%5CAura%5CView%5CHelper%5CStyles" target="content">Styles</a></span></li>
+<li><span class="class"><a href="db_tests_Helper_StylesTest.html#%5CAura%5CView%5CHelper%5CStylesTest" target="content">StylesTest</a></span></li>
+<li><span class="class"><a href="db_src_Helper_Title.html#%5CAura%5CView%5CHelper%5CTitle" target="content">Title</a></span></li>
+<li><span class="class"><a href="db_tests_Helper_TitleTest.html#%5CAura%5CView%5CHelper%5CTitleTest" target="content">TitleTest</a></span></li>
 </ul>
 </li>
-<li><span class="class"><a href="_src_AbstractTemplate.html#%5CAura%5CView%5CAbstractTemplate" target="content">AbstractTemplate<br><small>Provides an abstract TemplateView pattern implementation. We use an
-abstract so that the extended "real" Template class does not have access
-to the private support properties herein.</small></a></span></li>
-<li><span class="class"><a href="_src_Exception.html#%5CAura%5CView%5CException" target="content">Exception<br><small></small></a></span></li>
-<li><span class="class"><a href="_src_Finder.html#%5CAura%5CView%5CFinder" target="content">Finder<br><small>Finds files in user-defined path hierarchies.</small></a></span></li>
-<li><span class="class"><a href="_src_Template.html#%5CAura%5CView%5CTemplate" target="content">Template<br><small>Provides a concrete Template View pattern implementation; it does not
-have access to the private support properties of the parent abstract.</small></a></span></li>
-<li><span class="class"><a href="_src_TwoStep.html#%5CAura%5CView%5CTwoStep" target="content">TwoStep<br><small>Provides a Two Step View pattern implementation; this allows for an
-inner "view" and and outer "layout" as commonly used by web apps.</small></a></span></li>
+<li><span class="function"><a href="db_scripts_instance.html#::Closure()" target="content">Closure</a></span></li>
+<li><span class="class"><a href="db_src_AbstractTemplate.html#%5CAura%5CView%5CAbstractTemplate" target="content">AbstractTemplate</a></span></li>
+<li><span class="class"><a href="db_src_Exception.html#%5CAura%5CView%5CException" target="content">Exception</a></span></li>
+<li><span class="class"><a href="db_src_Finder.html#%5CAura%5CView%5CFinder" target="content">Finder</a></span></li>
+<li><span class="class"><a href="db_tests_FinderTest.html#%5CAura%5CView%5CFinderTest" target="content">FinderTest</a></span></li>
+<li><span class="class"><a href="db_src_Template.html#%5CAura%5CView%5CTemplate" target="content">Template</a></span></li>
+<li><span class="class"><a href="db_tests_TemplateTest.html#%5CAura%5CView%5CTemplateTest" target="content">TemplateTest</a></span></li>
+<li><span class="class"><a href="db_src_TwoStep.html#%5CAura%5CView%5CTwoStep" target="content">TwoStep</a></span></li>
+<li><span class="class"><a href="db_tests_TwoStepTest.html#%5CAura%5CView%5CTwoStepTest" target="content">TwoStepTest</a></span></li>
 </ul>
 </li></ul>
-</li></ul></div>
-<h1><a href="#">Packages</a></h1>
-<div style="padding: 0px;"><ul id="packages-" class="filetree">
+</li>
 <li class="closed">
-<span class="folder">Default</span><ul id="packages_" class="filetree">
-<li class="closed"><span class="class"><a href="_src_Exception.html#%5CAura%5CView%5CException" target="content">Exception<br><small></small></a></span></li>
-<li class="closed"><span class="class"><a href="_src_Exception_HelperNotMapped.html#%5CAura%5CView%5CException%5CHelperNotMapped" target="content">HelperNotMapped<br><small></small></a></span></li>
-<li class="closed"><span class="class"><a href="_src_Exception_TemplateNotFound.html#%5CAura%5CView%5CException%5CTemplateNotFound" target="content">TemplateNotFound<br><small></small></a></span></li>
+<span class="folder">default</span><ul><li><span class="function"><a href="db_config_default.html#::Closure()" target="content">Closure</a></span></li></ul>
+</li>
 </ul>
-</li>
-<li class="closed">
-<span class="folder">Aura.View</span><ul id="packages_Aura.View" class="filetree">
-<li class="closed"><span class="class"><a href="_src_Helper_AbstractHelper.html#%5CAura%5CView%5CHelper%5CAbstractHelper" target="content">AbstractHelper<br><small>Abstract helper base class.</small></a></span></li>
-<li class="closed"><span class="class"><a href="_src_AbstractTemplate.html#%5CAura%5CView%5CAbstractTemplate" target="content">AbstractTemplate<br><small>Provides an abstract TemplateView pattern implementation. We use an
-abstract so that the extended "real" Template class does not have access
-to the private support properties herein.</small></a></span></li>
-<li class="closed"><span class="class"><a href="_src_Helper_Anchor.html#%5CAura%5CView%5CHelper%5CAnchor" target="content">Anchor<br><small>Helper to generate `&lt;a ... /&gt;` tags.</small></a></span></li>
-<li class="closed"><span class="class"><a href="_src_Helper_Attribs.html#%5CAura%5CView%5CHelper%5CAttribs" target="content">Attribs<br><small>Helper to escape attributes.</small></a></span></li>
-<li class="closed"><span class="class"><a href="_src_Helper_Base.html#%5CAura%5CView%5CHelper%5CBase" target="content">Base<br><small>Helper to generate `&lt;base ... /&gt;` tags.</small></a></span></li>
-<li class="closed"><span class="class"><a href="_src_Helper_Datetime.html#%5CAura%5CView%5CHelper%5CDatetime" target="content">Datetime<br><small>Helper for a formatted timestamp using date() format codes.</small></a></span></li>
-<li class="closed"><span class="class"><a href="_src_Helper_Escape.html#%5CAura%5CView%5CHelper%5CEscape" target="content">Escape<br><small>Abstract helper base class.</small></a></span></li>
-<li class="closed"><span class="class"><a href="_src_Finder.html#%5CAura%5CView%5CFinder" target="content">Finder<br><small>Finds files in user-defined path hierarchies.</small></a></span></li>
-<li class="closed"><span class="class"><a href="_src_Helper_Image.html#%5CAura%5CView%5CHelper%5CImage" target="content">Image<br><small>Helper to generate an &lt;img ... /&gt; tag.</small></a></span></li>
-<li class="closed"><span class="class"><a href="_src_Helper_Links.html#%5CAura%5CView%5CHelper%5CLinks" target="content">Links<br><small>Helper for a stack of &lt;link ... /&gt; tags.</small></a></span></li>
-<li class="closed"><span class="class"><a href="_src_Helper_Metas.html#%5CAura%5CView%5CHelper%5CMetas" target="content">Metas<br><small>Helper for a stack of &lt;meta ... /&gt; tags.</small></a></span></li>
-<li class="closed"><span class="class"><a href="_src_Helper_Scripts.html#%5CAura%5CView%5CHelper%5CScripts" target="content">Scripts<br><small>Helper for a stack of &lt;script&gt; tags.</small></a></span></li>
-<li class="closed"><span class="class"><a href="_src_Helper_Styles.html#%5CAura%5CView%5CHelper%5CStyles" target="content">Styles<br><small>Helper for &lt;link rel="stylesheet" ... /&gt; tags.</small></a></span></li>
-<li class="closed"><span class="class"><a href="_src_Template.html#%5CAura%5CView%5CTemplate" target="content">Template<br><small>Provides a concrete Template View pattern implementation; it does not
-have access to the private support properties of the parent abstract.</small></a></span></li>
-<li class="closed"><span class="class"><a href="_src_Helper_Title.html#%5CAura%5CView%5CHelper%5CTitle" target="content">Title<br><small>Abstract helper base class.</small></a></span></li>
-<li class="closed"><span class="class"><a href="_src_TwoStep.html#%5CAura%5CView%5CTwoStep" target="content">TwoStep<br><small>Provides a Two Step View pattern implementation; this allows for an
-inner "view" and and outer "layout" as commonly used by web apps.</small></a></span></li>
-</ul>
-</li>
+</div>
+<h3 id="sidebar-charts">
+<img src="css/docblox/images/icons/chart.png" alt="Charts"><a href="#charts">Charts</a>
+</h3>
+<div class="sidebar-section"><ul style="list-style-image: url('css/docblox/images/icons/chart15x12.png');"><li><a href="graph.html" target="content">Class Inheritance Diagram</a></li></ul></div>
+<h3 id="sidebar-reports">
+<img src="css/docblox/images/icons/reports.png" alt="Reports"><a href="#reports">Reports</a>
+</h3>
+<div class="sidebar-section"><ul style="list-style-image: url('css/docblox/images/icons/reports9x12.png');">
+<li><a href="report_markers.html" target="content">Markers (TODO/FIXME)</a></li>
+<li><a href="report_parse_markers.html" target="content">Parsing errors</a></li>
+<li><a href="report_deprecated.html" target="content">Deprecated elements</a></li>
 </ul></div>
-<h1><a href="#">Files</a></h1>
-<div style="padding: 0px;"><ul id="files-" class="filetree">
-<li class="closed">
-<span class="file"><a href="_src.html" target="content">src.php</a></span><ul id="files_aedb85dae938d5437d72c6d38e14c857" class="filetree"></ul>
-</li>
-<li class="closed">
-<span class="file"><a href="_src_AbstractTemplate.html" target="content">src/AbstractTemplate.php</a></span><ul id="files_085c84048b1c4f523c2b848d8859e4a9" class="filetree"><li><span class="class"><a href="_src_AbstractTemplate.html#%5CAura%5CView%5CAbstractTemplate" target="content">AbstractTemplate<br><small>Provides an abstract TemplateView pattern implementation. We use an
-abstract so that the extended "real" Template class does not have access
-to the private support properties herein.</small></a></span></li></ul>
-</li>
-<li class="closed">
-<span class="file"><a href="_src_Exception.html" target="content">src/Exception.php</a></span><ul id="files_8f9b456f914498e14fc834e8f80d4f84" class="filetree"><li><span class="class"><a href="_src_Exception.html#%5CAura%5CView%5CException" target="content">Exception<br><small></small></a></span></li></ul>
-</li>
-<li class="closed">
-<span class="file"><a href="_src_Exception_HelperNotMapped.html" target="content">src/Exception/HelperNotMapped.php</a></span><ul id="files_f6214ec5b4356a88c69e9ada6bdbc892" class="filetree"><li><span class="class"><a href="_src_Exception_HelperNotMapped.html#%5CAura%5CView%5CException%5CHelperNotMapped" target="content">HelperNotMapped<br><small></small></a></span></li></ul>
-</li>
-<li class="closed">
-<span class="file"><a href="_src_Exception_TemplateNotFound.html" target="content">src/Exception/TemplateNotFound.php</a></span><ul id="files_502c444b8c26aec993b57bd5a8d66d76" class="filetree"><li><span class="class"><a href="_src_Exception_TemplateNotFound.html#%5CAura%5CView%5CException%5CTemplateNotFound" target="content">TemplateNotFound<br><small></small></a></span></li></ul>
-</li>
-<li class="closed">
-<span class="file"><a href="_src_Finder.html" target="content">src/Finder.php</a></span><ul id="files_405d8d31ec4c704fc91d6a8f3fbc7035" class="filetree"><li><span class="class"><a href="_src_Finder.html#%5CAura%5CView%5CFinder" target="content">Finder<br><small>Finds files in user-defined path hierarchies.</small></a></span></li></ul>
-</li>
-<li class="closed">
-<span class="file"><a href="_src_Helper_AbstractHelper.html" target="content">src/Helper/AbstractHelper.php</a></span><ul id="files_c9260ee8ec1a0a578087f3b17ec62204" class="filetree"><li><span class="class"><a href="_src_Helper_AbstractHelper.html#%5CAura%5CView%5CHelper%5CAbstractHelper" target="content">AbstractHelper<br><small>Abstract helper base class.</small></a></span></li></ul>
-</li>
-<li class="closed">
-<span class="file"><a href="_src_Helper_Anchor.html" target="content">src/Helper/Anchor.php</a></span><ul id="files_8ba0ca6f05253a6542b8e374e2c028e1" class="filetree"><li><span class="class"><a href="_src_Helper_Anchor.html#%5CAura%5CView%5CHelper%5CAnchor" target="content">Anchor<br><small>Helper to generate `&lt;a ... /&gt;` tags.</small></a></span></li></ul>
-</li>
-<li class="closed">
-<span class="file"><a href="_src_Helper_Attribs.html" target="content">src/Helper/Attribs.php</a></span><ul id="files_89e8350d92303bf372235008509c5fd8" class="filetree"><li><span class="class"><a href="_src_Helper_Attribs.html#%5CAura%5CView%5CHelper%5CAttribs" target="content">Attribs<br><small>Helper to escape attributes.</small></a></span></li></ul>
-</li>
-<li class="closed">
-<span class="file"><a href="_src_Helper_Base.html" target="content">src/Helper/Base.php</a></span><ul id="files_652de66a8b416c5d6ffc7028d0253dd4" class="filetree"><li><span class="class"><a href="_src_Helper_Base.html#%5CAura%5CView%5CHelper%5CBase" target="content">Base<br><small>Helper to generate `&lt;base ... /&gt;` tags.</small></a></span></li></ul>
-</li>
-<li class="closed">
-<span class="file"><a href="_src_Helper_Datetime.html" target="content">src/Helper/Datetime.php</a></span><ul id="files_944f281a6e803ed76c04816edfcac97e" class="filetree"><li><span class="class"><a href="_src_Helper_Datetime.html#%5CAura%5CView%5CHelper%5CDatetime" target="content">Datetime<br><small>Helper for a formatted timestamp using date() format codes.</small></a></span></li></ul>
-</li>
-<li class="closed">
-<span class="file"><a href="_src_Helper_Escape.html" target="content">src/Helper/Escape.php</a></span><ul id="files_ab620fc4836d7b579dac935942cbad53" class="filetree"><li><span class="class"><a href="_src_Helper_Escape.html#%5CAura%5CView%5CHelper%5CEscape" target="content">Escape<br><small>Abstract helper base class.</small></a></span></li></ul>
-</li>
-<li class="closed">
-<span class="file"><a href="_src_Helper_Image.html" target="content">src/Helper/Image.php</a></span><ul id="files_01f1b617f73fda3c0477697934cb36b5" class="filetree"><li><span class="class"><a href="_src_Helper_Image.html#%5CAura%5CView%5CHelper%5CImage" target="content">Image<br><small>Helper to generate an &lt;img ... /&gt; tag.</small></a></span></li></ul>
-</li>
-<li class="closed">
-<span class="file"><a href="_src_Helper_Links.html" target="content">src/Helper/Links.php</a></span><ul id="files_7eb4f49a5bacfa8af335352a29036d7e" class="filetree"><li><span class="class"><a href="_src_Helper_Links.html#%5CAura%5CView%5CHelper%5CLinks" target="content">Links<br><small>Helper for a stack of &lt;link ... /&gt; tags.</small></a></span></li></ul>
-</li>
-<li class="closed">
-<span class="file"><a href="_src_Helper_Metas.html" target="content">src/Helper/Metas.php</a></span><ul id="files_9c6c81a80a7b86c4618352f4918e11ca" class="filetree"><li><span class="class"><a href="_src_Helper_Metas.html#%5CAura%5CView%5CHelper%5CMetas" target="content">Metas<br><small>Helper for a stack of &lt;meta ... /&gt; tags.</small></a></span></li></ul>
-</li>
-<li class="closed">
-<span class="file"><a href="_src_Helper_Scripts.html" target="content">src/Helper/Scripts.php</a></span><ul id="files_a1afdf13aa329f4fef26e1bb44ff14cb" class="filetree"><li><span class="class"><a href="_src_Helper_Scripts.html#%5CAura%5CView%5CHelper%5CScripts" target="content">Scripts<br><small>Helper for a stack of &lt;script&gt; tags.</small></a></span></li></ul>
-</li>
-<li class="closed">
-<span class="file"><a href="_src_Helper_Styles.html" target="content">src/Helper/Styles.php</a></span><ul id="files_cb0f6c430342ec19bd617e9fa03b57d5" class="filetree"><li><span class="class"><a href="_src_Helper_Styles.html#%5CAura%5CView%5CHelper%5CStyles" target="content">Styles<br><small>Helper for &lt;link rel="stylesheet" ... /&gt; tags.</small></a></span></li></ul>
-</li>
-<li class="closed">
-<span class="file"><a href="_src_Helper_Title.html" target="content">src/Helper/Title.php</a></span><ul id="files_7fe3526eae4280fbc3d05a0feecad482" class="filetree"><li><span class="class"><a href="_src_Helper_Title.html#%5CAura%5CView%5CHelper%5CTitle" target="content">Title<br><small>Abstract helper base class.</small></a></span></li></ul>
-</li>
-<li class="closed">
-<span class="file"><a href="_src_Template.html" target="content">src/Template.php</a></span><ul id="files_86e5757b0f4eedf3d536541aeb839126" class="filetree"><li><span class="class"><a href="_src_Template.html#%5CAura%5CView%5CTemplate" target="content">Template<br><small>Provides a concrete Template View pattern implementation; it does not
-have access to the private support properties of the parent abstract.</small></a></span></li></ul>
-</li>
-<li class="closed">
-<span class="file"><a href="_src_TwoStep.html" target="content">src/TwoStep.php</a></span><ul id="files_4d15afdc4b03f6431a9c67c41e5c82d5" class="filetree"><li><span class="class"><a href="_src_TwoStep.html#%5CAura%5CView%5CTwoStep" target="content">TwoStep<br><small>Provides a Two Step View pattern implementation; this allows for an
-inner "view" and and outer "layout" as commonly used by web apps.</small></a></span></li></ul>
-</li>
-</ul></div>
+</div>
+<div id="sidebar-footer">
+        Documentation is generated by <a href="http://docblox-project.org" target="_top"><img src="images/icon48x48.png" height="12" align="top" alt="Logo"> DocBlox 0.16.0</a>, images courtesy of <a href="http://glyphish.com/" target="_top">Glyphish</a>
+</div>
 </div></body></html>

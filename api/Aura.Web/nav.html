@@ -1,5 +1,4 @@
-<html xmlns="http://www.w3.org/1999/xhtml"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>Aura Project for PHP: Aura.Web</title><link rel="stylesheet" href="css/black-tie/jquery-ui-1.8.2.custom.css" type="text/css"></link><link rel="stylesheet" href="css/jquery.treeview.css" type="text/css"></link><link rel="stylesheet" href="css/theme.css" type="text/css"></link><script type="text/javascript" src="js/jquery-1.4.2.min.js"></script><script type="text/javascript" src="js/jquery-ui-1.8.2.custom.min.js"></script><script type="text/javascript" src="js/jquery.cookie.js"></script><script type="text/javascript" src="js/jquery.treeview.js"></script><script type="text/javascript">
+<html xmlns="http://www.w3.org/1999/xhtml"><head><title>Aura Project for PHP: Aura.Web</title><meta http-equiv="Content-Type" content="text/html; charset=utf-8"></meta><link rel="stylesheet" href="css/jquery-ui.css" type="text/css"></link><link rel="stylesheet" href="css/docblox/jquery-ui-1.8.16.custom.css" type="text/css"></link><link rel="stylesheet" href="css/jquery.treeview.css" type="text/css"></link><link rel="stylesheet" href="css/theme.css" type="text/css"></link><script type="text/javascript" src="js/jquery-1.4.2.min.js"></script><script type="text/javascript" src="js/jquery-ui-1.8.2.custom.min.js"></script><script type="text/javascript" src="js/jquery.tools.min.js"></script><script type="text/javascript" src="js/jquery.cookie.js"></script><script type="text/javascript" src="js/jquery.treeview.js"></script><script type="text/javascript">
             $(document).ready(function() {
                 $(".filetree").treeview({
                     collapsed: true,
@@ -14,99 +13,196 @@
 
                 $(".tabs").tabs();
             });
-        </script></head><body><div xmlns="" id="accordion">
-<h1><a href="#">Namespaces</a></h1>
-<div style="padding: 0px;"><ul id="namespaces-" class="filetree"><li class="closed">
+        </script></head><body><script xmlns="" type="text/javascript" src="js/sidebar.js"></script><div xmlns="" id="sidebar">
+<div id="sidebar-header">
+<h1>Aura Project for PHP: Aura.Web</h1>
+<div style="clear: both"></div>
+</div>
+<div id="sidebar-nav">
+<h3 id="sidebar-dashboard">
+<img class="icon" src="css/docblox/images/icons/dashboard.png" alt="Dashboard"><a href="content.html" class="link" target="content">Dashboard</a>
+</h3>
+<div style="display: none"></div>
+<h3 id="sidebar-files">
+<img src="css/docblox/images/icons/files.png" alt="Files"><a href="#files">Files</a>
+</h3>
+<div class="sidebar-section">
+<div class="search-bar">
+<a href="#" onclick="$(this).parent().next().find('.collapsable-hitarea').click(); return false;"><img src="images/collapse_all.png" title="Collapse all" alt="Collapse all"></a><a href="#" onclick="$(this).parent().next().find('.expandable-hitarea').click(); return false;"><img src="images/expand_all.png" title="Expand all" alt="Expand all"></a><div><input type="text" onkeyup="tree_search(this);"></div>
+</div>
+<ul class="sidebar-nav-tree">
+<li class="closed">
+<span class="file"><a href="db_config_default.html" target="content">config/default.php</a></span><ul id="files_51a97561e7b34bc37b8756fc85da1798" class="filetree"><li><span class="function"><a href="db_config_default.html#::Closure()" target="content">Closure<br></a></span></li></ul>
+</li>
+<li class="closed">
+<span class="file"><a href="db_config_test.html" target="content">config/test.php</a></span><ul id="files_a5d95d56aaf09a871935f70c16f12211" class="filetree"></ul>
+</li>
+<li class="closed">
+<span class="file"><a href="db_scripts_instance.html" target="content">scripts/instance.php</a></span><ul id="files_5d3ec99ac860234eb26f93bb55e1c0ea" class="filetree"></ul>
+</li>
+<li class="closed">
+<span class="file"><a href="db_src.html" target="content">src.php</a></span><ul id="files_e01cf7caf0fa4f8f5123a0e60df010fc" class="filetree"></ul>
+</li>
+<li class="closed">
+<span class="file"><a href="db_src_Context.html" target="content">src/Context.php</a></span><ul id="files_8e3726f49e6a73eaabb6fd0a970e764a" class="filetree"><li><span class="class"><a href="db_src_Context.html#%5CAura%5CWeb%5CContext" target="content">Context<br></a></span></li></ul>
+</li>
+<li class="closed">
+<span class="file"><a href="db_src_ControllerFactory.html" target="content">src/ControllerFactory.php</a></span><ul id="files_8faade9a6d5ce56701a78b0d5b3f9a4a" class="filetree"><li><span class="class"><a href="db_src_ControllerFactory.html#%5CAura%5CWeb%5CControllerFactory" target="content">ControllerFactory<br></a></span></li></ul>
+</li>
+<li class="closed">
+<span class="file"><a href="db_src_Csrf.html" target="content">src/Csrf.php</a></span><ul id="files_d01de7a2051c30e0dde9eef9a8ce91f4" class="filetree"><li><span class="class"><a href="db_src_Csrf.html#%5CAura%5CWeb%5CCsrf" target="content">Csrf<br></a></span></li></ul>
+</li>
+<li class="closed">
+<span class="file"><a href="db_src_Exception.html" target="content">src/Exception.php</a></span><ul id="files_7bf57799f0bc7fc67cd847f0389f51d3" class="filetree"><li><span class="class"><a href="db_src_Exception.html#%5CAura%5CWeb%5CException" target="content">Exception<br></a></span></li></ul>
+</li>
+<li class="closed">
+<span class="file"><a href="db_src_Exception_Context.html" target="content">src/Exception/Context.php</a></span><ul id="files_2f99172e74771cf46b937b409779dd44" class="filetree"><li><span class="class"><a href="db_src_Exception_Context.html#%5CAura%5CWeb%5CException%5CContext" target="content">Context<br></a></span></li></ul>
+</li>
+<li class="closed">
+<span class="file"><a href="db_src_Exception_MalformedToken.html" target="content">src/Exception/MalformedToken.php</a></span><ul id="files_dc081c29dcd38cd79d839b20fed4a1be" class="filetree"><li><span class="class"><a href="db_src_Exception_MalformedToken.html#%5CAura%5CWeb%5CException%5CMalformedToken" target="content">MalformedToken<br></a></span></li></ul>
+</li>
+<li class="closed">
+<span class="file"><a href="db_src_Exception_NoAcceptableLayout.html" target="content">src/Exception/NoAcceptableLayout.php</a></span><ul id="files_fad04d363bcf7383192f13228bf90f85" class="filetree"><li><span class="class"><a href="db_src_Exception_NoAcceptableLayout.html#%5CAura%5CWeb%5CException%5CNoAcceptableLayout" target="content">NoAcceptableLayout<br></a></span></li></ul>
+</li>
+<li class="closed">
+<span class="file"><a href="db_src_Exception_NoAcceptableView.html" target="content">src/Exception/NoAcceptableView.php</a></span><ul id="files_d68fd117d1a5a6407e5dd85e2c539278" class="filetree"><li><span class="class"><a href="db_src_Exception_NoAcceptableView.html#%5CAura%5CWeb%5CException%5CNoAcceptableView" target="content">NoAcceptableView<br></a></span></li></ul>
+</li>
+<li class="closed">
+<span class="file"><a href="db_src_Exception_NoClassForController.html" target="content">src/Exception/NoClassForController.php</a></span><ul id="files_d286a3af5ce381e9d4c7113bf7dfa82c" class="filetree"><li><span class="class"><a href="db_src_Exception_NoClassForController.html#%5CAura%5CWeb%5CException%5CNoClassForController" target="content">NoClassForController<br></a></span></li></ul>
+</li>
+<li class="closed">
+<span class="file"><a href="db_src_Exception_NoMethodForAction.html" target="content">src/Exception/NoMethodForAction.php</a></span><ul id="files_1b71fa88dc334b3eb3346bc0c99d8250" class="filetree"><li><span class="class"><a href="db_src_Exception_NoMethodForAction.html#%5CAura%5CWeb%5CException%5CNoMethodForAction" target="content">NoMethodForAction<br></a></span></li></ul>
+</li>
+<li class="closed">
+<span class="file"><a href="db_src_Page.html" target="content">src/Page.php</a></span><ul id="files_50f4fc846f5748e3d6f9491fd83b9a03" class="filetree"><li><span class="class"><a href="db_src_Page.html#%5CAura%5CWeb%5CPage" target="content">Page<br></a></span></li></ul>
+</li>
+<li class="closed">
+<span class="file"><a href="db_src_ResponseTransfer.html" target="content">src/ResponseTransfer.php</a></span><ul id="files_aab32fa2228e67b42260a162e05a3438" class="filetree"><li><span class="class"><a href="db_src_ResponseTransfer.html#%5CAura%5CWeb%5CResponseTransfer" target="content">ResponseTransfer<br></a></span></li></ul>
+</li>
+<li class="closed">
+<span class="file"><a href="db_tests_ContextTest.html" target="content">tests/ContextTest.php</a></span><ul id="files_fc6c2dbf6e82c6a3a2409ac1f237465e" class="filetree"><li><span class="class"><a href="db_tests_ContextTest.html#%5CAura%5CWeb%5CContextTest" target="content">ContextTest<br></a></span></li></ul>
+</li>
+<li class="closed">
+<span class="file"><a href="db_tests_ControllerFactoryTest.html" target="content">tests/ControllerFactoryTest.php</a></span><ul id="files_d4de29e9b28f4f0dd22794c40d5a2ba4" class="filetree"><li><span class="class"><a href="db_tests_ControllerFactoryTest.html#%5CAura%5CWeb%5CControllerFactoryTest" target="content">ControllerFactoryTest<br></a></span></li></ul>
+</li>
+<li class="closed">
+<span class="file"><a href="db_tests_CsrfTest.html" target="content">tests/CsrfTest.php</a></span><ul id="files_9010a36b135dcfe4aa661a9afec20df4" class="filetree"><li><span class="class"><a href="db_tests_CsrfTest.html#%5CAura%5CWeb%5CCsrfTest" target="content">CsrfTest<br></a></span></li></ul>
+</li>
+<li class="closed">
+<span class="file"><a href="db_tests_MockController.html" target="content">tests/MockController.php</a></span><ul id="files_abac3f82d2ee17c26cae0610a718d347" class="filetree"><li><span class="class"><a href="db_tests_MockController.html#%5CAura%5CWeb%5CMockController" target="content">MockController<br></a></span></li></ul>
+</li>
+<li class="closed">
+<span class="file"><a href="db_tests_MockPage.html" target="content">tests/MockPage.php</a></span><ul id="files_6766d29272b7bddba18dd30d42bf3fea" class="filetree"><li><span class="class"><a href="db_tests_MockPage.html#%5CAura%5CWeb%5CMockPage" target="content">MockPage<br></a></span></li></ul>
+</li>
+<li class="closed">
+<span class="file"><a href="db_tests_PageTest.html" target="content">tests/PageTest.php</a></span><ul id="files_ec383ff30283bfc22a26d97614e77311" class="filetree"><li><span class="class"><a href="db_tests_PageTest.html#%5CAura%5CWeb%5CPageTest" target="content">PageTest<br></a></span></li></ul>
+</li>
+<li class="closed">
+<span class="file"><a href="db_tests_PhpStream.html" target="content">tests/PhpStream.php</a></span><ul id="files_d8c44f2f470e492c1fd7d1e4ab819211" class="filetree"><li><span class="class"><a href="db_tests_PhpStream.html#%5CAura%5CWeb%5CPhpStream" target="content">PhpStream<br></a></span></li></ul>
+</li>
+<li class="closed">
+<span class="file"><a href="db_tests_ResponseTransferTest.html" target="content">tests/ResponseTransferTest.php</a></span><ul id="files_e7c189debeeb6391a7b7175cf40fa0d1" class="filetree"><li><span class="class"><a href="db_tests_ResponseTransferTest.html#%5CAura%5CWeb%5CResponseTransferTest" target="content">ResponseTransferTest<br></a></span></li></ul>
+</li>
+</ul>
+</div>
+<h3 id="sidebar-packages">
+<img src="css/docblox/images/icons/packages.png" alt="Packages"><a href="#packages">Packages</a>
+</h3>
+<div class="sidebar-section sidebar-tree">
+<div class="search-bar">
+<a href="#" onclick="$(this).parent().next().find('.collapsable-hitarea').click(); return false;"><img src="images/collapse_all.png" title="Collapse all" alt="Collapse all"></a><a href="#" onclick="$(this).parent().next().find('.expandable-hitarea').click(); return false;"><img src="images/expand_all.png" title="Expand all" alt="Expand all"></a><div><input type="text" onkeyup="tree_search(this);"></div>
+</div>
+<ul class="sidebar-nav-tree">
+<li class="closed">
+<span class="folder">Aura</span><ul><li class="closed">
+<span class="folder">Web</span><ul>
+<li><span class="class"><a href="db_src_Context.html#%5CAura%5CWeb%5CContext" target="content">Context</a></span></li>
+<li><span class="class"><a href="db_src_ControllerFactory.html#%5CAura%5CWeb%5CControllerFactory" target="content">ControllerFactory</a></span></li>
+<li><span class="class"><a href="db_src_Csrf.html#%5CAura%5CWeb%5CCsrf" target="content">Csrf</a></span></li>
+<li><span class="class"><a href="db_src_Page.html#%5CAura%5CWeb%5CPage" target="content">Page</a></span></li>
+<li><span class="class"><a href="db_src_ResponseTransfer.html#%5CAura%5CWeb%5CResponseTransfer" target="content">ResponseTransfer</a></span></li>
+</ul>
+</li></ul>
+</li>
+<li class="closed">
+<span class="folder">Default</span><ul>
+<li><span class="function"><a href="db_config_default.html#::Closure()" target="content">Closure</a></span></li>
+<li><span class="class"><a href="db_src_Exception_Context.html#%5CAura%5CWeb%5CException%5CContext" target="content">Context</a></span></li>
+<li><span class="class"><a href="db_tests_ContextTest.html#%5CAura%5CWeb%5CContextTest" target="content">ContextTest</a></span></li>
+<li><span class="class"><a href="db_tests_ControllerFactoryTest.html#%5CAura%5CWeb%5CControllerFactoryTest" target="content">ControllerFactoryTest</a></span></li>
+<li><span class="class"><a href="db_tests_CsrfTest.html#%5CAura%5CWeb%5CCsrfTest" target="content">CsrfTest</a></span></li>
+<li><span class="class"><a href="db_src_Exception.html#%5CAura%5CWeb%5CException" target="content">Exception</a></span></li>
+<li><span class="class"><a href="db_src_Exception_MalformedToken.html#%5CAura%5CWeb%5CException%5CMalformedToken" target="content">MalformedToken</a></span></li>
+<li><span class="class"><a href="db_tests_MockController.html#%5CAura%5CWeb%5CMockController" target="content">MockController</a></span></li>
+<li><span class="class"><a href="db_tests_MockPage.html#%5CAura%5CWeb%5CMockPage" target="content">MockPage</a></span></li>
+<li><span class="class"><a href="db_src_Exception_NoAcceptableLayout.html#%5CAura%5CWeb%5CException%5CNoAcceptableLayout" target="content">NoAcceptableLayout</a></span></li>
+<li><span class="class"><a href="db_src_Exception_NoAcceptableView.html#%5CAura%5CWeb%5CException%5CNoAcceptableView" target="content">NoAcceptableView</a></span></li>
+<li><span class="class"><a href="db_src_Exception_NoClassForController.html#%5CAura%5CWeb%5CException%5CNoClassForController" target="content">NoClassForController</a></span></li>
+<li><span class="class"><a href="db_src_Exception_NoMethodForAction.html#%5CAura%5CWeb%5CException%5CNoMethodForAction" target="content">NoMethodForAction</a></span></li>
+<li><span class="class"><a href="db_tests_PageTest.html#%5CAura%5CWeb%5CPageTest" target="content">PageTest</a></span></li>
+<li><span class="class"><a href="db_tests_PhpStream.html#%5CAura%5CWeb%5CPhpStream" target="content">PhpStream</a></span></li>
+<li><span class="class"><a href="db_tests_ResponseTransferTest.html#%5CAura%5CWeb%5CResponseTransferTest" target="content">ResponseTransferTest</a></span></li>
+</ul>
+</li>
+</ul>
+</div>
+<h3 id="sidebar-namespaces">
+<img src="css/docblox/images/icons/namespaces.png" alt="Namespaces"><a href="#namespaces">Namespaces</a>
+</h3>
+<div class="sidebar-section sidebar-tree">
+<div class="search-bar">
+<a href="#" onclick="$(this).parent().next().find('.collapsable-hitarea').click(); return false;"><img src="images/collapse_all.png" title="Collapse all" alt="Collapse all"></a><a href="#" onclick="$(this).parent().next().find('.expandable-hitarea').click(); return false;"><img src="images/expand_all.png" title="Expand all" alt="Expand all"></a><div><input type="text" onkeyup="tree_search(this);"></div>
+</div>
+<ul class="sidebar-nav-tree">
+<li class="closed">
 <span class="folder">Aura</span><ul><li class="closed">
 <span class="folder">Web</span><ul>
 <li class="closed">
 <span class="folder">Exception</span><ul>
-<li><span class="class"><a href="_src_Exception_Context.html#%5CAura%5CWeb%5CException%5CContext" target="content">Context<br><small></small></a></span></li>
-<li><span class="class"><a href="_src_Exception_MalformedToken.html#%5CAura%5CWeb%5CException%5CMalformedToken" target="content">MalformedToken<br><small></small></a></span></li>
-<li><span class="class"><a href="_src_Exception_NoAcceptableLayout.html#%5CAura%5CWeb%5CException%5CNoAcceptableLayout" target="content">NoAcceptableLayout<br><small></small></a></span></li>
-<li><span class="class"><a href="_src_Exception_NoAcceptableView.html#%5CAura%5CWeb%5CException%5CNoAcceptableView" target="content">NoAcceptableView<br><small></small></a></span></li>
-<li><span class="class"><a href="_src_Exception_NoClassForController.html#%5CAura%5CWeb%5CException%5CNoClassForController" target="content">NoClassForController<br><small></small></a></span></li>
-<li><span class="class"><a href="_src_Exception_NoMethodForAction.html#%5CAura%5CWeb%5CException%5CNoMethodForAction" target="content">NoMethodForAction<br><small></small></a></span></li>
+<li><span class="class"><a href="db_src_Exception_Context.html#%5CAura%5CWeb%5CException%5CContext" target="content">Context</a></span></li>
+<li><span class="class"><a href="db_src_Exception_MalformedToken.html#%5CAura%5CWeb%5CException%5CMalformedToken" target="content">MalformedToken</a></span></li>
+<li><span class="class"><a href="db_src_Exception_NoAcceptableLayout.html#%5CAura%5CWeb%5CException%5CNoAcceptableLayout" target="content">NoAcceptableLayout</a></span></li>
+<li><span class="class"><a href="db_src_Exception_NoAcceptableView.html#%5CAura%5CWeb%5CException%5CNoAcceptableView" target="content">NoAcceptableView</a></span></li>
+<li><span class="class"><a href="db_src_Exception_NoClassForController.html#%5CAura%5CWeb%5CException%5CNoClassForController" target="content">NoClassForController</a></span></li>
+<li><span class="class"><a href="db_src_Exception_NoMethodForAction.html#%5CAura%5CWeb%5CException%5CNoMethodForAction" target="content">NoMethodForAction</a></span></li>
 </ul>
 </li>
-<li><span class="class"><a href="_src_Context.html#%5CAura%5CWeb%5CContext" target="content">Context<br><small>Collection point for information about the web environment.</small></a></span></li>
-<li><span class="class"><a href="_src_ControllerFactory.html#%5CAura%5CWeb%5CControllerFactory" target="content">ControllerFactory<br><small>A factory to create controller objects; these need not be only Page
-controllers, but (e.g.) Resource or App controllers.</small></a></span></li>
-<li><span class="class"><a href="_src_Csrf.html#%5CAura%5CWeb%5CCsrf" target="content">Csrf<br><small>Generate and validate CSRF tokens.</small></a></span></li>
-<li><span class="class"><a href="_src_Exception.html#%5CAura%5CWeb%5CException" target="content">Exception<br><small></small></a></span></li>
-<li><span class="class"><a href="_src_Page.html#%5CAura%5CWeb%5CPage" target="content">Page<br><small>A page controller.</small></a></span></li>
-<li><span class="class"><a href="_src_ResponseTransfer.html#%5CAura%5CWeb%5CResponseTransfer" target="content">ResponseTransfer<br><small>Retains information about the controller results for transfer to an actual
-HTTP response object.</small></a></span></li>
+<li><span class="class"><a href="db_src_Context.html#%5CAura%5CWeb%5CContext" target="content">Context</a></span></li>
+<li><span class="class"><a href="db_tests_ContextTest.html#%5CAura%5CWeb%5CContextTest" target="content">ContextTest</a></span></li>
+<li><span class="class"><a href="db_src_ControllerFactory.html#%5CAura%5CWeb%5CControllerFactory" target="content">ControllerFactory</a></span></li>
+<li><span class="class"><a href="db_tests_ControllerFactoryTest.html#%5CAura%5CWeb%5CControllerFactoryTest" target="content">ControllerFactoryTest</a></span></li>
+<li><span class="class"><a href="db_src_Csrf.html#%5CAura%5CWeb%5CCsrf" target="content">Csrf</a></span></li>
+<li><span class="class"><a href="db_tests_CsrfTest.html#%5CAura%5CWeb%5CCsrfTest" target="content">CsrfTest</a></span></li>
+<li><span class="class"><a href="db_src_Exception.html#%5CAura%5CWeb%5CException" target="content">Exception</a></span></li>
+<li><span class="class"><a href="db_tests_MockController.html#%5CAura%5CWeb%5CMockController" target="content">MockController</a></span></li>
+<li><span class="class"><a href="db_tests_MockPage.html#%5CAura%5CWeb%5CMockPage" target="content">MockPage</a></span></li>
+<li><span class="class"><a href="db_src_Page.html#%5CAura%5CWeb%5CPage" target="content">Page</a></span></li>
+<li><span class="class"><a href="db_tests_PageTest.html#%5CAura%5CWeb%5CPageTest" target="content">PageTest</a></span></li>
+<li><span class="class"><a href="db_tests_PhpStream.html#%5CAura%5CWeb%5CPhpStream" target="content">PhpStream</a></span></li>
+<li><span class="class"><a href="db_src_ResponseTransfer.html#%5CAura%5CWeb%5CResponseTransfer" target="content">ResponseTransfer</a></span></li>
+<li><span class="class"><a href="db_tests_ResponseTransferTest.html#%5CAura%5CWeb%5CResponseTransferTest" target="content">ResponseTransferTest</a></span></li>
 </ul>
 </li></ul>
-</li></ul></div>
-<h1><a href="#">Packages</a></h1>
-<div style="padding: 0px;"><ul id="packages-" class="filetree">
+</li>
 <li class="closed">
-<span class="folder">Default</span><ul id="packages_" class="filetree">
-<li class="closed"><span class="class"><a href="_src_Exception_Context.html#%5CAura%5CWeb%5CException%5CContext" target="content">Context<br><small></small></a></span></li>
-<li class="closed"><span class="class"><a href="_src_Exception.html#%5CAura%5CWeb%5CException" target="content">Exception<br><small></small></a></span></li>
-<li class="closed"><span class="class"><a href="_src_Exception_MalformedToken.html#%5CAura%5CWeb%5CException%5CMalformedToken" target="content">MalformedToken<br><small></small></a></span></li>
-<li class="closed"><span class="class"><a href="_src_Exception_NoAcceptableLayout.html#%5CAura%5CWeb%5CException%5CNoAcceptableLayout" target="content">NoAcceptableLayout<br><small></small></a></span></li>
-<li class="closed"><span class="class"><a href="_src_Exception_NoAcceptableView.html#%5CAura%5CWeb%5CException%5CNoAcceptableView" target="content">NoAcceptableView<br><small></small></a></span></li>
-<li class="closed"><span class="class"><a href="_src_Exception_NoClassForController.html#%5CAura%5CWeb%5CException%5CNoClassForController" target="content">NoClassForController<br><small></small></a></span></li>
-<li class="closed"><span class="class"><a href="_src_Exception_NoMethodForAction.html#%5CAura%5CWeb%5CException%5CNoMethodForAction" target="content">NoMethodForAction<br><small></small></a></span></li>
+<span class="folder">default</span><ul><li><span class="function"><a href="db_config_default.html#::Closure()" target="content">Closure</a></span></li></ul>
+</li>
 </ul>
-</li>
-<li class="closed">
-<span class="folder">Aura.Web</span><ul id="packages_Aura.Web" class="filetree">
-<li class="closed"><span class="class"><a href="_src_Context.html#%5CAura%5CWeb%5CContext" target="content">Context<br><small>Collection point for information about the web environment.</small></a></span></li>
-<li class="closed"><span class="class"><a href="_src_ControllerFactory.html#%5CAura%5CWeb%5CControllerFactory" target="content">ControllerFactory<br><small>A factory to create controller objects; these need not be only Page
-controllers, but (e.g.) Resource or App controllers.</small></a></span></li>
-<li class="closed"><span class="class"><a href="_src_Csrf.html#%5CAura%5CWeb%5CCsrf" target="content">Csrf<br><small>Generate and validate CSRF tokens.</small></a></span></li>
-<li class="closed"><span class="class"><a href="_src_Page.html#%5CAura%5CWeb%5CPage" target="content">Page<br><small>A page controller.</small></a></span></li>
-<li class="closed"><span class="class"><a href="_src_ResponseTransfer.html#%5CAura%5CWeb%5CResponseTransfer" target="content">ResponseTransfer<br><small>Retains information about the controller results for transfer to an actual
-HTTP response object.</small></a></span></li>
-</ul>
-</li>
+</div>
+<h3 id="sidebar-charts">
+<img src="css/docblox/images/icons/chart.png" alt="Charts"><a href="#charts">Charts</a>
+</h3>
+<div class="sidebar-section"><ul style="list-style-image: url('css/docblox/images/icons/chart15x12.png');"><li><a href="graph.html" target="content">Class Inheritance Diagram</a></li></ul></div>
+<h3 id="sidebar-reports">
+<img src="css/docblox/images/icons/reports.png" alt="Reports"><a href="#reports">Reports</a>
+</h3>
+<div class="sidebar-section"><ul style="list-style-image: url('css/docblox/images/icons/reports9x12.png');">
+<li><a href="report_markers.html" target="content">Markers (TODO/FIXME)</a></li>
+<li><a href="report_parse_markers.html" target="content">Parsing errors</a></li>
+<li><a href="report_deprecated.html" target="content">Deprecated elements</a></li>
 </ul></div>
-<h1><a href="#">Files</a></h1>
-<div style="padding: 0px;"><ul id="files-" class="filetree">
-<li class="closed">
-<span class="file"><a href="_src.html" target="content">src.php</a></span><ul id="files_e01cf7caf0fa4f8f5123a0e60df010fc" class="filetree"></ul>
-</li>
-<li class="closed">
-<span class="file"><a href="_src_Context.html" target="content">src/Context.php</a></span><ul id="files_8e3726f49e6a73eaabb6fd0a970e764a" class="filetree"><li><span class="class"><a href="_src_Context.html#%5CAura%5CWeb%5CContext" target="content">Context<br><small>Collection point for information about the web environment.</small></a></span></li></ul>
-</li>
-<li class="closed">
-<span class="file"><a href="_src_ControllerFactory.html" target="content">src/ControllerFactory.php</a></span><ul id="files_8faade9a6d5ce56701a78b0d5b3f9a4a" class="filetree"><li><span class="class"><a href="_src_ControllerFactory.html#%5CAura%5CWeb%5CControllerFactory" target="content">ControllerFactory<br><small>A factory to create controller objects; these need not be only Page
-controllers, but (e.g.) Resource or App controllers.</small></a></span></li></ul>
-</li>
-<li class="closed">
-<span class="file"><a href="_src_Csrf.html" target="content">src/Csrf.php</a></span><ul id="files_d01de7a2051c30e0dde9eef9a8ce91f4" class="filetree"><li><span class="class"><a href="_src_Csrf.html#%5CAura%5CWeb%5CCsrf" target="content">Csrf<br><small>Generate and validate CSRF tokens.</small></a></span></li></ul>
-</li>
-<li class="closed">
-<span class="file"><a href="_src_Exception.html" target="content">src/Exception.php</a></span><ul id="files_29bb917d193d0a414a8b9c1070b39869" class="filetree"><li><span class="class"><a href="_src_Exception.html#%5CAura%5CWeb%5CException" target="content">Exception<br><small></small></a></span></li></ul>
-</li>
-<li class="closed">
-<span class="file"><a href="_src_Exception_Context.html" target="content">src/Exception/Context.php</a></span><ul id="files_456c66ac759b26fd51ad6a43109be1e5" class="filetree"><li><span class="class"><a href="_src_Exception_Context.html#%5CAura%5CWeb%5CException%5CContext" target="content">Context<br><small></small></a></span></li></ul>
-</li>
-<li class="closed">
-<span class="file"><a href="_src_Exception_MalformedToken.html" target="content">src/Exception/MalformedToken.php</a></span><ul id="files_77ee170f6a3deacd98147287dc8854d2" class="filetree"><li><span class="class"><a href="_src_Exception_MalformedToken.html#%5CAura%5CWeb%5CException%5CMalformedToken" target="content">MalformedToken<br><small></small></a></span></li></ul>
-</li>
-<li class="closed">
-<span class="file"><a href="_src_Exception_NoAcceptableLayout.html" target="content">src/Exception/NoAcceptableLayout.php</a></span><ul id="files_e5daccb46588b68800822094738cbc07" class="filetree"><li><span class="class"><a href="_src_Exception_NoAcceptableLayout.html#%5CAura%5CWeb%5CException%5CNoAcceptableLayout" target="content">NoAcceptableLayout<br><small></small></a></span></li></ul>
-</li>
-<li class="closed">
-<span class="file"><a href="_src_Exception_NoAcceptableView.html" target="content">src/Exception/NoAcceptableView.php</a></span><ul id="files_ab4d7bc3afacb6aea5f085cc206a03a2" class="filetree"><li><span class="class"><a href="_src_Exception_NoAcceptableView.html#%5CAura%5CWeb%5CException%5CNoAcceptableView" target="content">NoAcceptableView<br><small></small></a></span></li></ul>
-</li>
-<li class="closed">
-<span class="file"><a href="_src_Exception_NoClassForController.html" target="content">src/Exception/NoClassForController.php</a></span><ul id="files_ece86d79dbb27af6332c74bc468e7ddc" class="filetree"><li><span class="class"><a href="_src_Exception_NoClassForController.html#%5CAura%5CWeb%5CException%5CNoClassForController" target="content">NoClassForController<br><small></small></a></span></li></ul>
-</li>
-<li class="closed">
-<span class="file"><a href="_src_Exception_NoMethodForAction.html" target="content">src/Exception/NoMethodForAction.php</a></span><ul id="files_3f9db0fc2dab07b4c300d8f70dd0b8bc" class="filetree"><li><span class="class"><a href="_src_Exception_NoMethodForAction.html#%5CAura%5CWeb%5CException%5CNoMethodForAction" target="content">NoMethodForAction<br><small></small></a></span></li></ul>
-</li>
-<li class="closed">
-<span class="file"><a href="_src_Page.html" target="content">src/Page.php</a></span><ul id="files_d9da1dfa90932b7e41ef906f2cceb5bf" class="filetree"><li><span class="class"><a href="_src_Page.html#%5CAura%5CWeb%5CPage" target="content">Page<br><small>A page controller.</small></a></span></li></ul>
-</li>
-<li class="closed">
-<span class="file"><a href="_src_ResponseTransfer.html" target="content">src/ResponseTransfer.php</a></span><ul id="files_aab32fa2228e67b42260a162e05a3438" class="filetree"><li><span class="class"><a href="_src_ResponseTransfer.html#%5CAura%5CWeb%5CResponseTransfer" target="content">ResponseTransfer<br><small>Retains information about the controller results for transfer to an actual
-HTTP response object.</small></a></span></li></ul>
-</li>
-</ul></div>
+</div>
+<div id="sidebar-footer">
+        Documentation is generated by <a href="http://docblox-project.org" target="_top"><img src="images/icon48x48.png" height="12" align="top" alt="Logo"> DocBlox 0.16.0</a>, images courtesy of <a href="http://glyphish.com/" target="_top">Glyphish</a>
+</div>
 </div></body></html>

@@ -1,0 +1,199 @@
+<html xmlns="http://www.w3.org/1999/xhtml"><head><title>Aura Project for PHP: Aura.Sql</title><meta http-equiv="Content-Type" content="text/html; charset=utf-8"></meta><link rel="stylesheet" href="css/jquery-ui.css" type="text/css"></link><link rel="stylesheet" href="css/docblox/jquery-ui-1.8.16.custom.css" type="text/css"></link><link rel="stylesheet" href="css/jquery.treeview.css" type="text/css"></link><link rel="stylesheet" href="css/theme.css" type="text/css"></link><script type="text/javascript" src="js/jquery-1.4.2.min.js"></script><script type="text/javascript" src="js/jquery-ui-1.8.2.custom.min.js"></script><script type="text/javascript" src="js/jquery.tools.min.js"></script><script type="text/javascript" src="js/jquery.cookie.js"></script><script type="text/javascript" src="js/jquery.treeview.js"></script><script type="text/javascript">
+            $(document).ready(function() {
+                $(".filetree").treeview({
+                    collapsed: true,
+                    persist: "cookie"
+                });
+
+                $("#accordion").accordion({
+                    collapsible: true,
+                    autoHeight:  false,
+                    fillSpace:   true
+                });
+
+                $(".tabs").tabs();
+            });
+        </script></head><body><script xmlns="" type="text/javascript" src="js/sidebar.js"></script><div xmlns="" id="sidebar">
+<div id="sidebar-header">
+<h1>Aura Project for PHP: Aura.Sql</h1>
+<div style="clear: both"></div>
+</div>
+<div id="sidebar-nav">
+<h3 id="sidebar-dashboard">
+<img class="icon" src="css/docblox/images/icons/dashboard.png" alt="Dashboard"><a href="content.html" class="link" target="content">Dashboard</a>
+</h3>
+<div style="display: none"></div>
+<h3 id="sidebar-files">
+<img src="css/docblox/images/icons/files.png" alt="Files"><a href="#files">Files</a>
+</h3>
+<div class="sidebar-section">
+<div class="search-bar">
+<a href="#" onclick="$(this).parent().next().find('.collapsable-hitarea').click(); return false;"><img src="images/collapse_all.png" title="Collapse all" alt="Collapse all"></a><a href="#" onclick="$(this).parent().next().find('.expandable-hitarea').click(); return false;"><img src="images/expand_all.png" title="Expand all" alt="Expand all"></a><div><input type="text" onkeyup="tree_search(this);"></div>
+</div>
+<ul class="sidebar-nav-tree">
+<li class="closed">
+<span class="file"><a href="db_config_default.html" target="content">config/default.php</a></span><ul id="files_42befbad276e1ad8051d6c708d6037dc" class="filetree"><li><span class="function"><a href="db_config_default.html#::Closure()" target="content">Closure<br></a></span></li></ul>
+</li>
+<li class="closed">
+<span class="file"><a href="db_config_test.html" target="content">config/test.php</a></span><ul id="files_0b3c0c0f60f076245defff628de4972a" class="filetree"></ul>
+</li>
+<li class="closed">
+<span class="file"><a href="db_scripts_instance.html" target="content">scripts/instance.php</a></span><ul id="files_c8215d53c25181f974191aa1dfdb20e4" class="filetree"></ul>
+</li>
+<li class="closed">
+<span class="file"><a href="db_src.html" target="content">src.php</a></span><ul id="files_574069ac8df63476006b84d4d4a4b6a5" class="filetree"></ul>
+</li>
+<li class="closed">
+<span class="file"><a href="db_src_Connection_AbstractConnection.html" target="content">src/Connection/AbstractConnection.php</a></span><ul id="files_03e1fbd8258369f21260d67da1dd1925" class="filetree"><li><span class="class"><a href="db_src_Connection_AbstractConnection.html#%5CAura%5CSql%5CConnection%5CAbstractConnection" target="content">AbstractConnection<br></a></span></li></ul>
+</li>
+<li class="closed">
+<span class="file"><a href="db_src_Connection_Mysql.html" target="content">src/Connection/Mysql.php</a></span><ul id="files_9b697ff1e7f613373cc62ad07b6ecaab" class="filetree"><li><span class="class"><a href="db_src_Connection_Mysql.html#%5CAura%5CSql%5CConnection%5CMysql" target="content">Mysql<br></a></span></li></ul>
+</li>
+<li class="closed">
+<span class="file"><a href="db_src_Connection_Sqlsrv.html" target="content">src/Connection/Sqlsrv.php</a></span><ul id="files_4491a40757772e03f81ed0e68143f8c7" class="filetree"><li><span class="class"><a href="db_src_Connection_Sqlsrv.html#%5CAura%5CSql%5CConnection%5CSqlsrv" target="content">Sqlsrv<br></a></span></li></ul>
+</li>
+<li class="closed">
+<span class="file"><a href="db_src_Connection_SqlsrvDenali.html" target="content">src/Connection/SqlsrvDenali.php</a></span><ul id="files_dbd3f2c9fac8a15a998d8b3720b8fe06" class="filetree"><li><span class="class"><a href="db_src_Connection_SqlsrvDenali.html#%5CAura%5CSql%5CConnection%5CSqlsrvDenali" target="content">SqlsrvDenali<br></a></span></li></ul>
+</li>
+<li class="closed">
+<span class="file"><a href="db_src_ConnectionFactory.html" target="content">src/ConnectionFactory.php</a></span><ul id="files_3d6233623b34a0f12904e0fb73ca46fc" class="filetree"><li><span class="class"><a href="db_src_ConnectionFactory.html#%5CAura%5CSql%5CConnectionFactory" target="content">ConnectionFactory<br></a></span></li></ul>
+</li>
+<li class="closed">
+<span class="file"><a href="db_src_ConnectionManager.html" target="content">src/ConnectionManager.php</a></span><ul id="files_ac9432d7971234796f0b7eede81b90d6" class="filetree"><li><span class="class"><a href="db_src_ConnectionManager.html#%5CAura%5CSql%5CConnectionManager" target="content">ConnectionManager<br></a></span></li></ul>
+</li>
+<li class="closed">
+<span class="file"><a href="db_src_Exception.html" target="content">src/Exception.php</a></span><ul id="files_994eee077d2e2bbf2e8a750e476be280" class="filetree"><li><span class="class"><a href="db_src_Exception.html#%5CAura%5CSql%5CException" target="content">Exception<br></a></span></li></ul>
+</li>
+<li class="closed">
+<span class="file"><a href="db_src_Exception_ConnectionFactory.html" target="content">src/Exception/ConnectionFactory.php</a></span><ul id="files_28d82ec4a5bea80568e590f6c5c89eb9" class="filetree"><li><span class="class"><a href="db_src_Exception_ConnectionFactory.html#%5CAura%5CSql%5CException%5CConnectionFactory" target="content">ConnectionFactory<br></a></span></li></ul>
+</li>
+<li class="closed">
+<span class="file"><a href="db_src_Exception_NoSuchMaster.html" target="content">src/Exception/NoSuchMaster.php</a></span><ul id="files_3eb85acfc4741cfafd53de723708276e" class="filetree"><li><span class="class"><a href="db_src_Exception_NoSuchMaster.html#%5CAura%5CSql%5CException%5CNoSuchMaster" target="content">NoSuchMaster<br></a></span></li></ul>
+</li>
+<li class="closed">
+<span class="file"><a href="db_src_Exception_NoSuchSlave.html" target="content">src/Exception/NoSuchSlave.php</a></span><ul id="files_a69c8c153617eb89908b1c3da903914b" class="filetree"><li><span class="class"><a href="db_src_Exception_NoSuchSlave.html#%5CAura%5CSql%5CException%5CNoSuchSlave" target="content">NoSuchSlave<br></a></span></li></ul>
+</li>
+<li class="closed">
+<span class="file"><a href="db_src_Select.html" target="content">src/Select.php</a></span><ul id="files_c16c4f81cff96ddd1dba39558ebd7e70" class="filetree"><li><span class="class"><a href="db_src_Select.html#%5CAura%5CSql%5CSelect" target="content">Select<br></a></span></li></ul>
+</li>
+<li class="closed">
+<span class="file"><a href="db_tests_Column.html" target="content">tests/Column.php</a></span><ul id="files_c150f12f332a753c9ff76d0b9c43cc61" class="filetree"><li><span class="class"><a href="db_tests_Column.html#%5CAura%5CSql%5CColumn" target="content">Column<br></a></span></li></ul>
+</li>
+<li class="closed">
+<span class="file"><a href="db_tests_Connection_AbstractConnectionTest.html" target="content">tests/Connection/AbstractConnectionTest.php</a></span><ul id="files_0a38076c05eff8c97252be8e53a74663" class="filetree"><li><span class="class"><a href="db_tests_Connection_AbstractConnectionTest.html#%5CAura%5CSql%5CConnection%5CAbstractConnectionTest" target="content">AbstractConnectionTest<br></a></span></li></ul>
+</li>
+<li class="closed">
+<span class="file"><a href="db_tests_Connection_MockConnection.html" target="content">tests/Connection/MockConnection.php</a></span><ul id="files_62cde04767e2ffcebe494cad48b2ade7" class="filetree"><li><span class="class"><a href="db_tests_Connection_MockConnection.html#%5CAura%5CSql%5CConnection%5CMockConnection" target="content">MockConnection<br></a></span></li></ul>
+</li>
+<li class="closed">
+<span class="file"><a href="db_tests_Connection_MysqlTest.html" target="content">tests/Connection/MysqlTest.php</a></span><ul id="files_5104bb2751455784cdbc608b274a2672" class="filetree"><li><span class="class"><a href="db_tests_Connection_MysqlTest.html#%5CAura%5CSql%5CConnection%5CMysqlTest" target="content">MysqlTest<br></a></span></li></ul>
+</li>
+<li class="closed">
+<span class="file"><a href="db_tests_Connection_SqlsrvDenaliTest.html" target="content">tests/Connection/SqlsrvDenaliTest.php</a></span><ul id="files_ff99d57f16ce938b783f570a09337b44" class="filetree"><li><span class="class"><a href="db_tests_Connection_SqlsrvDenaliTest.html#%5CAura%5CSql%5CConnection%5CSqlsrvDenaliTest" target="content">SqlsrvDenaliTest<br></a></span></li></ul>
+</li>
+<li class="closed">
+<span class="file"><a href="db_tests_Connection_SqlsrvTest.html" target="content">tests/Connection/SqlsrvTest.php</a></span><ul id="files_6f9cb2e408395cd241a98f7eb161410e" class="filetree"><li><span class="class"><a href="db_tests_Connection_SqlsrvTest.html#%5CAura%5CSql%5CConnection%5CSqlsrvTest" target="content">SqlsrvTest<br></a></span></li></ul>
+</li>
+<li class="closed">
+<span class="file"><a href="db_tests_ConnectionFactoryTest.html" target="content">tests/ConnectionFactoryTest.php</a></span><ul id="files_7342a248d989da0bd6c7c06b1e5db1b3" class="filetree"><li><span class="class"><a href="db_tests_ConnectionFactoryTest.html#%5CAura%5CSql%5CConnectionFactoryTest" target="content">ConnectionFactoryTest<br></a></span></li></ul>
+</li>
+<li class="closed">
+<span class="file"><a href="db_tests_ConnectionManagerTest.html" target="content">tests/ConnectionManagerTest.php</a></span><ul id="files_ef47514963560513cf4f2056685ff23c" class="filetree"><li><span class="class"><a href="db_tests_ConnectionManagerTest.html#%5CAura%5CSql%5CConnectionManagerTest" target="content">ConnectionManagerTest<br></a></span></li></ul>
+</li>
+</ul>
+</div>
+<h3 id="sidebar-packages">
+<img src="css/docblox/images/icons/packages.png" alt="Packages"><a href="#packages">Packages</a>
+</h3>
+<div class="sidebar-section sidebar-tree">
+<div class="search-bar">
+<a href="#" onclick="$(this).parent().next().find('.collapsable-hitarea').click(); return false;"><img src="images/collapse_all.png" title="Collapse all" alt="Collapse all"></a><a href="#" onclick="$(this).parent().next().find('.expandable-hitarea').click(); return false;"><img src="images/expand_all.png" title="Expand all" alt="Expand all"></a><div><input type="text" onkeyup="tree_search(this);"></div>
+</div>
+<ul class="sidebar-nav-tree"><li class="closed">
+<span class="folder">Default</span><ul>
+<li><span class="function"><a href="db_config_default.html#::Closure()" target="content">Closure</a></span></li>
+<li><span class="class"><a href="db_src_Connection_AbstractConnection.html#%5CAura%5CSql%5CConnection%5CAbstractConnection" target="content">AbstractConnection</a></span></li>
+<li><span class="class"><a href="db_tests_Connection_AbstractConnectionTest.html#%5CAura%5CSql%5CConnection%5CAbstractConnectionTest" target="content">AbstractConnectionTest</a></span></li>
+<li><span class="class"><a href="db_tests_Column.html#%5CAura%5CSql%5CColumn" target="content">Column</a></span></li>
+<li><span class="class"><a href="db_src_ConnectionFactory.html#%5CAura%5CSql%5CConnectionFactory" target="content">ConnectionFactory</a></span></li>
+<li><span class="class"><a href="db_src_Exception_ConnectionFactory.html#%5CAura%5CSql%5CException%5CConnectionFactory" target="content">ConnectionFactory</a></span></li>
+<li><span class="class"><a href="db_tests_ConnectionFactoryTest.html#%5CAura%5CSql%5CConnectionFactoryTest" target="content">ConnectionFactoryTest</a></span></li>
+<li><span class="class"><a href="db_src_ConnectionManager.html#%5CAura%5CSql%5CConnectionManager" target="content">ConnectionManager</a></span></li>
+<li><span class="class"><a href="db_tests_ConnectionManagerTest.html#%5CAura%5CSql%5CConnectionManagerTest" target="content">ConnectionManagerTest</a></span></li>
+<li><span class="class"><a href="db_src_Exception.html#%5CAura%5CSql%5CException" target="content">Exception</a></span></li>
+<li><span class="class"><a href="db_tests_Connection_MockConnection.html#%5CAura%5CSql%5CConnection%5CMockConnection" target="content">MockConnection</a></span></li>
+<li><span class="class"><a href="db_src_Connection_Mysql.html#%5CAura%5CSql%5CConnection%5CMysql" target="content">Mysql</a></span></li>
+<li><span class="class"><a href="db_tests_Connection_MysqlTest.html#%5CAura%5CSql%5CConnection%5CMysqlTest" target="content">MysqlTest</a></span></li>
+<li><span class="class"><a href="db_src_Exception_NoSuchMaster.html#%5CAura%5CSql%5CException%5CNoSuchMaster" target="content">NoSuchMaster</a></span></li>
+<li><span class="class"><a href="db_src_Exception_NoSuchSlave.html#%5CAura%5CSql%5CException%5CNoSuchSlave" target="content">NoSuchSlave</a></span></li>
+<li><span class="class"><a href="db_src_Select.html#%5CAura%5CSql%5CSelect" target="content">Select</a></span></li>
+<li><span class="class"><a href="db_src_Connection_Sqlsrv.html#%5CAura%5CSql%5CConnection%5CSqlsrv" target="content">Sqlsrv</a></span></li>
+<li><span class="class"><a href="db_src_Connection_SqlsrvDenali.html#%5CAura%5CSql%5CConnection%5CSqlsrvDenali" target="content">SqlsrvDenali</a></span></li>
+<li><span class="class"><a href="db_tests_Connection_SqlsrvDenaliTest.html#%5CAura%5CSql%5CConnection%5CSqlsrvDenaliTest" target="content">SqlsrvDenaliTest</a></span></li>
+<li><span class="class"><a href="db_tests_Connection_SqlsrvTest.html#%5CAura%5CSql%5CConnection%5CSqlsrvTest" target="content">SqlsrvTest</a></span></li>
+</ul>
+</li></ul>
+</div>
+<h3 id="sidebar-namespaces">
+<img src="css/docblox/images/icons/namespaces.png" alt="Namespaces"><a href="#namespaces">Namespaces</a>
+</h3>
+<div class="sidebar-section sidebar-tree">
+<div class="search-bar">
+<a href="#" onclick="$(this).parent().next().find('.collapsable-hitarea').click(); return false;"><img src="images/collapse_all.png" title="Collapse all" alt="Collapse all"></a><a href="#" onclick="$(this).parent().next().find('.expandable-hitarea').click(); return false;"><img src="images/expand_all.png" title="Expand all" alt="Expand all"></a><div><input type="text" onkeyup="tree_search(this);"></div>
+</div>
+<ul class="sidebar-nav-tree">
+<li class="closed">
+<span class="folder">Aura</span><ul><li class="closed">
+<span class="folder">Sql</span><ul>
+<li class="closed">
+<span class="folder">Connection</span><ul>
+<li><span class="class"><a href="db_src_Connection_AbstractConnection.html#%5CAura%5CSql%5CConnection%5CAbstractConnection" target="content">AbstractConnection</a></span></li>
+<li><span class="class"><a href="db_tests_Connection_AbstractConnectionTest.html#%5CAura%5CSql%5CConnection%5CAbstractConnectionTest" target="content">AbstractConnectionTest</a></span></li>
+<li><span class="class"><a href="db_tests_Connection_MockConnection.html#%5CAura%5CSql%5CConnection%5CMockConnection" target="content">MockConnection</a></span></li>
+<li><span class="class"><a href="db_src_Connection_Mysql.html#%5CAura%5CSql%5CConnection%5CMysql" target="content">Mysql</a></span></li>
+<li><span class="class"><a href="db_tests_Connection_MysqlTest.html#%5CAura%5CSql%5CConnection%5CMysqlTest" target="content">MysqlTest</a></span></li>
+<li><span class="class"><a href="db_src_Connection_Sqlsrv.html#%5CAura%5CSql%5CConnection%5CSqlsrv" target="content">Sqlsrv</a></span></li>
+<li><span class="class"><a href="db_src_Connection_SqlsrvDenali.html#%5CAura%5CSql%5CConnection%5CSqlsrvDenali" target="content">SqlsrvDenali</a></span></li>
+<li><span class="class"><a href="db_tests_Connection_SqlsrvDenaliTest.html#%5CAura%5CSql%5CConnection%5CSqlsrvDenaliTest" target="content">SqlsrvDenaliTest</a></span></li>
+<li><span class="class"><a href="db_tests_Connection_SqlsrvTest.html#%5CAura%5CSql%5CConnection%5CSqlsrvTest" target="content">SqlsrvTest</a></span></li>
+</ul>
+</li>
+<li class="closed">
+<span class="folder">Exception</span><ul>
+<li><span class="class"><a href="db_src_Exception_ConnectionFactory.html#%5CAura%5CSql%5CException%5CConnectionFactory" target="content">ConnectionFactory</a></span></li>
+<li><span class="class"><a href="db_src_Exception_NoSuchMaster.html#%5CAura%5CSql%5CException%5CNoSuchMaster" target="content">NoSuchMaster</a></span></li>
+<li><span class="class"><a href="db_src_Exception_NoSuchSlave.html#%5CAura%5CSql%5CException%5CNoSuchSlave" target="content">NoSuchSlave</a></span></li>
+</ul>
+</li>
+<li><span class="class"><a href="db_tests_Column.html#%5CAura%5CSql%5CColumn" target="content">Column</a></span></li>
+<li><span class="class"><a href="db_src_ConnectionFactory.html#%5CAura%5CSql%5CConnectionFactory" target="content">ConnectionFactory</a></span></li>
+<li><span class="class"><a href="db_tests_ConnectionFactoryTest.html#%5CAura%5CSql%5CConnectionFactoryTest" target="content">ConnectionFactoryTest</a></span></li>
+<li><span class="class"><a href="db_src_ConnectionManager.html#%5CAura%5CSql%5CConnectionManager" target="content">ConnectionManager</a></span></li>
+<li><span class="class"><a href="db_tests_ConnectionManagerTest.html#%5CAura%5CSql%5CConnectionManagerTest" target="content">ConnectionManagerTest</a></span></li>
+<li><span class="class"><a href="db_src_Exception.html#%5CAura%5CSql%5CException" target="content">Exception</a></span></li>
+<li><span class="class"><a href="db_src_Select.html#%5CAura%5CSql%5CSelect" target="content">Select</a></span></li>
+</ul>
+</li></ul>
+</li>
+<li class="closed">
+<span class="folder">default</span><ul><li><span class="function"><a href="db_config_default.html#::Closure()" target="content">Closure</a></span></li></ul>
+</li>
+</ul>
+</div>
+<h3 id="sidebar-charts">
+<img src="css/docblox/images/icons/chart.png" alt="Charts"><a href="#charts">Charts</a>
+</h3>
+<div class="sidebar-section"><ul style="list-style-image: url('css/docblox/images/icons/chart15x12.png');"><li><a href="graph.html" target="content">Class Inheritance Diagram</a></li></ul></div>
+<h3 id="sidebar-reports">
+<img src="css/docblox/images/icons/reports.png" alt="Reports"><a href="#reports">Reports</a>
+</h3>
+<div class="sidebar-section"><ul style="list-style-image: url('css/docblox/images/icons/reports9x12.png');">
+<li><a href="report_markers.html" target="content">Markers (TODO/FIXME)</a></li>
+<li><a href="report_parse_markers.html" target="content">Parsing errors</a></li>
+<li><a href="report_deprecated.html" target="content">Deprecated elements</a></li>
+</ul></div>
+</div>
+<div id="sidebar-footer">
+        Documentation is generated by <a href="http://docblox-project.org" target="_top"><img src="images/icon48x48.png" height="12" align="top" alt="Logo"> DocBlox 0.16.0</a>, images courtesy of <a href="http://glyphish.com/" target="_top">Glyphish</a>
+</div>
+</div></body></html>

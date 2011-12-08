@@ -1,4 +1,4 @@
-<html xmlns="http://www.w3.org/1999/xhtml"><head><title>Aura Project for PHP: Aura.Di</title><meta http-equiv="Content-Type" content="text/html; charset=utf-8"></meta><link rel="stylesheet" href="css/black-tie/jquery-ui-1.8.2.custom.css" type="text/css"></link><link rel="stylesheet" href="css/jquery.treeview.css" type="text/css"></link><link rel="stylesheet" href="css/theme.css" type="text/css"></link><script type="text/javascript" src="js/jquery-1.4.2.min.js"></script><script type="text/javascript" src="js/jquery-ui-1.8.2.custom.min.js"></script><script type="text/javascript" src="js/jquery.cookie.js"></script><script type="text/javascript" src="js/jquery.treeview.js"></script><script type="text/javascript">
+<html xmlns="http://www.w3.org/1999/xhtml"><head><title>Aura Project for PHP: Aura.Di</title><meta http-equiv="Content-Type" content="text/html; charset=utf-8"></meta><link rel="stylesheet" href="css/jquery-ui.css" type="text/css"></link><link rel="stylesheet" href="css/docblox/jquery-ui-1.8.16.custom.css" type="text/css"></link><link rel="stylesheet" href="css/jquery.treeview.css" type="text/css"></link><link rel="stylesheet" href="css/theme.css" type="text/css"></link><script type="text/javascript" src="js/jquery-1.4.2.min.js"></script><script type="text/javascript" src="js/jquery-ui-1.8.2.custom.min.js"></script><script type="text/javascript" src="js/jquery.tools.min.js"></script><script type="text/javascript" src="js/jquery.cookie.js"></script><script type="text/javascript" src="js/jquery.treeview.js"></script><script type="text/javascript">
             $(document).ready(function() {
                 $(".filetree").treeview({
                     collapsed: true,
@@ -14,41 +14,111 @@
                 $(".tabs").tabs();
             });
         </script></head><body><div xmlns="" id="content">
-<script type="text/javascript" src="js/menu.js"></script><script>
+<script xmlns:dbx="http://docblox-project.org/xsl/functions">
+
+      function filterElements()
+      {
+        inherited = !$('#show-inherited').hasClass('deselected');
+        public    = !$('#show-public').hasClass('deselected');
+        protected = !$('#show-protected').hasClass('deselected');
+        private   = !$('#show-private').hasClass('deselected');
+
+        $('div.public').each(function(index, val) {
+            $(val).toggle(public && !($(val).hasClass('inherited_from') && !inherited));
+        });
+        $('div.protected').each(function(index, val) {
+            $(val).toggle(protected && !($(val).hasClass('inherited_from') && !inherited));
+        });
+        $('div.private').each(function(index, val) {
+            $(val).toggle(private && !($(val).hasClass('inherited_from') && !inherited));
+        });
+      }
+
       $(document).ready(function() {
         $('a.gripper').click(function() {
             $(this).nextAll('div.code-tabs').slideToggle();
             $(this).children('img').toggle();
             return false;
         });
+
+        $('div.method code span.highlight,div.function code span.highlight,div.constant code span.highlight,div.property code span.highlight').css('cursor', 'pointer');
+
+        $('div.method code span.highlight,div.function code span.highlight,div.constant code span.highlight,div.property code span.highlight').click(function() {
+            $(this).parent().nextAll('div.code-tabs').slideToggle();
+            $(this).parent().prevAll('a.gripper').children('img').toggle();
+            return false;
+        });
+
         $('div.code-tabs').hide();
         $('a.gripper').show();
-        $('div.file-nav').show();
+        $('div.code-tabs:empty').prevAll('a.gripper').html('');
+
+        $('#show-public, #show-protected, #show-private, #show-inherited')
+            .css('cursor', 'pointer')
+            .click(function(){
+                $(this).toggleClass('deselected');
+                if ($(this).hasClass('deselected')) {
+                  $(this).fadeTo('fast', '0.4');
+                } else {
+                  $(this).fadeTo('fast', '1.0');
+                }
+                filterElements();
+                return false;
+            });
+        $('#show-protected, #show-private').click();
+
+        // add the sliding behaviour to the file navigation and show it
+        // it is initially hidden for non-JS users.
+        $("#file-nav-box").show().hover(function() {
+            $("#file-nav-container").slideDown(400);
+        }, function() {
+            $("#file-nav-container").slideUp(400);
+        });
       });
-    </script><h1 class="file">src/ContainerInterface.php</h1>
-<div class="file-nav"><ul id="file-nav"><li><a href="#top">Global</a></li></ul></div>
-<a name="top"></a><div id="file-description"></div>
-<dl class="file-info"></dl>
-<a name="interfaces"></a><a id="\Aura\Di\ContainerInterface"></a><h2 class="interface">\Aura\Di\ContainerInterface<div class="to-top"><a href="#top">jump to top</a></div>
+
+      
+    </script><h1 xmlns:dbx="http://docblox-project.org/xsl/functions" class="file">src/ContainerInterface.php</h1>
+<div xmlns:dbx="http://docblox-project.org/xsl/functions" id="file-nav-box">
+<div id="file-nav-options">
+              Show:
+              <img src="images/icons/visibility_public.png" id="show-public"><img src="images/icons/visibility_protected.png" id="show-protected"><img src="images/icons/visibility_private.png" id="show-private"><span class="attribute" id="show-inherited">inherited</span>
+</div>
+<div id="file-nav-container">
+<ul id="file-nav"></ul>
+<div style="clear: left;"></div>
+</div>
+<div id="file-nav-tab">
+              Table of Contents
+          </div>
+</div>
+<a xmlns:dbx="http://docblox-project.org/xsl/functions" name="top" class="anchor"></a><div id="file-description">
+<p xmlns:dbx="http://docblox-project.org/xsl/functions" class="short-description">This file is part of the Aura Project for PHP.</p>
+<div xmlns:dbx="http://docblox-project.org/xsl/functions" class="long-description">
+</div>
+</div>
+<dl class="file-info">
+<dt xmlns:dbx="http://docblox-project.org/xsl/functions">License</dt>
+<dd xmlns:dbx="http://docblox-project.org/xsl/functions">
+<a href="http://opensource.org/licenses/bsd-license.php">BSD</a>
+         
+    </dd>
+</dl>
+<a name="interfaces" class="anchor"></a><a xmlns:dbx="http://docblox-project.org/xsl/functions" id="\Aura\Di\ContainerInterface" class="anchor"></a><h2 xmlns:dbx="http://docblox-project.org/xsl/functions" class="interface">\Aura\Di\ContainerInterface<div class="to-top"><a href="#top">jump to top</a></div>
 </h2>
-<div class="class">
-<p class="short-description">Interface for dependency injection containers.</p>
+<div xmlns:dbx="http://docblox-project.org/xsl/functions" class="class">
+<small class="package"><b>Package: </b>Aura\Di</small><p class="short-description">Interface for dependency injection containers.</p>
 <div class="long-description">
 </div>
-<dl class="class-info">
-<dt>package</dt>
-<dd>Aura.Di</dd>
-</dl>
+<dl class="class-info"></dl>
 <h3>Methods</h3>
 <div>
-<a id="\Aura\Di\ContainerInterface::get()"></a><div class="method">
-<a href="#" class="gripper"><img src="images/icons/arrow_right.png"><img src="images/icons/arrow_down.png" style="display: none;"></a><code><img src="images/icons/method.png" alt="method"><img src="images/icons/visibility_public.png" style="margin-right: 5px" alt="public"> 
-            <span class="highlight">get</span><span class="nb-faded-text">(
-          string $key
+<a id="\Aura\Di\ContainerInterface::get()" class="anchor"></a><div class="method public">
+<a href="#" class="gripper"><img src="images/icons/arrow_right.png"><img src="images/icons/arrow_down.png" style="display: none;"></a><code><img src="images/icons/method.png" alt="method"><img src="images/icons/visibility_public.png" style="margin-right: 5px" alt="public"><span class="highlight">get</span><span class="nb-faded-text">(
+          \Aura\Di\string $key
           )
         </span>
         :
-        object</code><div class="description">Gets a service object by key, lazy-loading it as needed.</div>
+          \Aura\Di\object</code><div class="description"><p class="short_description">Gets a service object by key, lazy-loading it as needed.</p></div>
 <div class="code-tabs">
 <div class="long-description">
 </div>
@@ -60,8 +130,8 @@
 </tr></thead>
 <tr>
 <th>$key</th>
-<td>string</td>
-<td><em>The service to get.</em></td>
+<td>\Aura\Di\string</td>
+<td><em><p>The service to get.</p></em></td>
 </tr>
 </table>
 <strong>Returns</strong><table class="argument-info">
@@ -70,25 +140,30 @@
 <th>Description</th>
 </tr></thead>
 <tr>
-<td>object</td>
+<td>\Aura\Di\object</td>
 <td></td>
 </tr>
 </table>
-<strong>Details</strong><dl class="function-info">
-<dt>throws</dt>
-<dd>when the requested service does not exist.</dd>
-</dl>
+<strong>Throws</strong><table class="argument-info">
+<thead><tr>
+<th>Exception</th>
+<th>Description</th>
+</tr></thead>
+<tr>
+<td><a href="db_src_Exception_ServiceNotFound.html#%5CAura%5CDi%5CException%5CServiceNotFound">\Aura\Di\Exception\ServiceNotFound</a></td>
+<td><em>when the requested service does not exist.</em></td>
+</tr>
+</table>
 </div>
 <div class="clear"></div>
 </div>
-<a id="\Aura\Di\ContainerInterface::getDefs()"></a><div class="method">
-<a href="#" class="gripper"><img src="images/icons/arrow_right.png"><img src="images/icons/arrow_down.png" style="display: none;"></a><code><img src="images/icons/method.png" alt="method"><img src="images/icons/visibility_public.png" style="margin-right: 5px" alt="public"> 
-            <span class="highlight">getDefs</span><span class="nb-faded-text">(
+<a id="\Aura\Di\ContainerInterface::getDefs()" class="anchor"></a><div class="method public">
+<a href="#" class="gripper"><img src="images/icons/arrow_right.png"><img src="images/icons/arrow_down.png" style="display: none;"></a><code><img src="images/icons/method.png" alt="method"><img src="images/icons/visibility_public.png" style="margin-right: 5px" alt="public"><span class="highlight">getDefs</span><span class="nb-faded-text">(
           
           )
         </span>
         :
-        array</code><div class="description">Gets the list of service definitions.</div>
+          \Aura\Di\array</code><div class="description"><p class="short_description">Gets the list of service definitions.</p></div>
 <div class="code-tabs">
 <div class="long-description">
 </div>
@@ -98,21 +173,20 @@
 <th>Description</th>
 </tr></thead>
 <tr>
-<td>array</td>
+<td>\Aura\Di\array</td>
 <td></td>
 </tr>
 </table>
 </div>
 <div class="clear"></div>
 </div>
-<a id="\Aura\Di\ContainerInterface::getForge()"></a><div class="method">
-<a href="#" class="gripper"><img src="images/icons/arrow_right.png"><img src="images/icons/arrow_down.png" style="display: none;"></a><code><img src="images/icons/method.png" alt="method"><img src="images/icons/visibility_public.png" style="margin-right: 5px" alt="public"> 
-            <span class="highlight">getForge</span><span class="nb-faded-text">(
+<a id="\Aura\Di\ContainerInterface::getForge()" class="anchor"></a><div class="method public">
+<a href="#" class="gripper"><img src="images/icons/arrow_right.png"><img src="images/icons/arrow_down.png" style="display: none;"></a><code><img src="images/icons/method.png" alt="method"><img src="images/icons/visibility_public.png" style="margin-right: 5px" alt="public"><span class="highlight">getForge</span><span class="nb-faded-text">(
           
           )
         </span>
         :
-        array</code><div class="description">Gets the Forge object used for creating new instances.</div>
+          \Aura\Di\array</code><div class="description"><p class="short_description">Gets the Forge object used for creating new instances.</p></div>
 <div class="code-tabs">
 <div class="long-description">
 </div>
@@ -122,21 +196,20 @@
 <th>Description</th>
 </tr></thead>
 <tr>
-<td>array</td>
+<td>\Aura\Di\array</td>
 <td></td>
 </tr>
 </table>
 </div>
 <div class="clear"></div>
 </div>
-<a id="\Aura\Di\ContainerInterface::getServices()"></a><div class="method">
-<a href="#" class="gripper"><img src="images/icons/arrow_right.png"><img src="images/icons/arrow_down.png" style="display: none;"></a><code><img src="images/icons/method.png" alt="method"><img src="images/icons/visibility_public.png" style="margin-right: 5px" alt="public"> 
-            <span class="highlight">getServices</span><span class="nb-faded-text">(
+<a id="\Aura\Di\ContainerInterface::getServices()" class="anchor"></a><div class="method public">
+<a href="#" class="gripper"><img src="images/icons/arrow_right.png"><img src="images/icons/arrow_down.png" style="display: none;"></a><code><img src="images/icons/method.png" alt="method"><img src="images/icons/visibility_public.png" style="margin-right: 5px" alt="public"><span class="highlight">getServices</span><span class="nb-faded-text">(
           
           )
         </span>
         :
-        array</code><div class="description">Gets the list of services provided.</div>
+          \Aura\Di\array</code><div class="description"><p class="short_description">Gets the list of services provided.</p></div>
 <div class="code-tabs">
 <div class="long-description">
 </div>
@@ -146,21 +219,20 @@
 <th>Description</th>
 </tr></thead>
 <tr>
-<td>array</td>
+<td>\Aura\Di\array</td>
 <td></td>
 </tr>
 </table>
 </div>
 <div class="clear"></div>
 </div>
-<a id="\Aura\Di\ContainerInterface::has()"></a><div class="method">
-<a href="#" class="gripper"><img src="images/icons/arrow_right.png"><img src="images/icons/arrow_down.png" style="display: none;"></a><code><img src="images/icons/method.png" alt="method"><img src="images/icons/visibility_public.png" style="margin-right: 5px" alt="public"> 
-            <span class="highlight">has</span><span class="nb-faded-text">(
-          string $key
+<a id="\Aura\Di\ContainerInterface::has()" class="anchor"></a><div class="method public">
+<a href="#" class="gripper"><img src="images/icons/arrow_right.png"><img src="images/icons/arrow_down.png" style="display: none;"></a><code><img src="images/icons/method.png" alt="method"><img src="images/icons/visibility_public.png" style="margin-right: 5px" alt="public"><span class="highlight">has</span><span class="nb-faded-text">(
+          \Aura\Di\string $key
           )
         </span>
         :
-        bool</code><div class="description">Does a particular service exist?</div>
+          \Aura\Di\bool</code><div class="description"><p class="short_description">Does a particular service exist?</p></div>
 <div class="code-tabs">
 <div class="long-description">
 </div>
@@ -172,8 +244,8 @@
 </tr></thead>
 <tr>
 <th>$key</th>
-<td>string</td>
-<td><em>The service key to look up.</em></td>
+<td>\Aura\Di\string</td>
+<td><em><p>The service key to look up.</p></em></td>
 </tr>
 </table>
 <strong>Returns</strong><table class="argument-info">
@@ -182,21 +254,20 @@
 <th>Description</th>
 </tr></thead>
 <tr>
-<td>bool</td>
+<td>\Aura\Di\bool</td>
 <td></td>
 </tr>
 </table>
 </div>
 <div class="clear"></div>
 </div>
-<a id="\Aura\Di\ContainerInterface::isLocked()"></a><div class="method">
-<a href="#" class="gripper"><img src="images/icons/arrow_right.png"><img src="images/icons/arrow_down.png" style="display: none;"></a><code><img src="images/icons/method.png" alt="method"><img src="images/icons/visibility_public.png" style="margin-right: 5px" alt="public"> 
-            <span class="highlight">isLocked</span><span class="nb-faded-text">(
+<a id="\Aura\Di\ContainerInterface::isLocked()" class="anchor"></a><div class="method public">
+<a href="#" class="gripper"><img src="images/icons/arrow_right.png"><img src="images/icons/arrow_down.png" style="display: none;"></a><code><img src="images/icons/method.png" alt="method"><img src="images/icons/visibility_public.png" style="margin-right: 5px" alt="public"><span class="highlight">isLocked</span><span class="nb-faded-text">(
           
           )
         </span>
         :
-        bool</code><div class="description">Is the Container locked?</div>
+          \Aura\Di\bool</code><div class="description"><p class="short_description">Is the Container locked?</p></div>
 <div class="code-tabs">
 <div class="long-description">
 </div>
@@ -206,21 +277,20 @@
 <th>Description</th>
 </tr></thead>
 <tr>
-<td>bool</td>
+<td>\Aura\Di\bool</td>
 <td></td>
 </tr>
 </table>
 </div>
 <div class="clear"></div>
 </div>
-<a id="\Aura\Di\ContainerInterface::lazyGet()"></a><div class="method">
-<a href="#" class="gripper"><img src="images/icons/arrow_right.png"><img src="images/icons/arrow_down.png" style="display: none;"></a><code><img src="images/icons/method.png" alt="method"><img src="images/icons/visibility_public.png" style="margin-right: 5px" alt="public"> 
-            <span class="highlight">lazyGet</span><span class="nb-faded-text">(
-          string $key
+<a id="\Aura\Di\ContainerInterface::lazyGet()" class="anchor"></a><div class="method public">
+<a href="#" class="gripper"><img src="images/icons/arrow_right.png"><img src="images/icons/arrow_down.png" style="display: none;"></a><code><img src="images/icons/method.png" alt="method"><img src="images/icons/visibility_public.png" style="margin-right: 5px" alt="public"><span class="highlight">lazyGet</span><span class="nb-faded-text">(
+          \Aura\Di\string $key
           )
         </span>
         :
-        <a href="db_src_Lazy.html#%5CAura%5CDi%5CLazy">\Aura\Di\Lazy</a></code><div class="description">Returns a Lazy that gets a service.</div>
+          <a href="db_src_Lazy.html#%5CAura%5CDi%5CLazy">\Aura\Di\Lazy</a></code><div class="description"><p class="short_description">Returns a Lazy that gets a service.</p></div>
 <div class="code-tabs">
 <div class="long-description">
 </div>
@@ -232,8 +302,8 @@
 </tr></thead>
 <tr>
 <th>$key</th>
-<td>string</td>
-<td><em>The service name; it does not need to exist yet.</em></td>
+<td>\Aura\Di\string</td>
+<td><em><p>The service name; it does not need to exist yet.</p></em></td>
 </tr>
 </table>
 <strong>Returns</strong><table class="argument-info">
@@ -243,22 +313,21 @@
 </tr></thead>
 <tr>
 <td><a href="db_src_Lazy.html#%5CAura%5CDi%5CLazy">\Aura\Di\Lazy</a></td>
-<td></td>
+<td>A lazy-load object that gets the named service.</td>
 </tr>
 </table>
 </div>
 <div class="clear"></div>
 </div>
-<a id="\Aura\Di\ContainerInterface::lazyNew()"></a><div class="method">
-<a href="#" class="gripper"><img src="images/icons/arrow_right.png"><img src="images/icons/arrow_down.png" style="display: none;"></a><code><img src="images/icons/method.png" alt="method"><img src="images/icons/visibility_public.png" style="margin-right: 5px" alt="public"> 
-            <span class="highlight">lazyNew</span><span class="nb-faded-text">(
-          string $class, array $params
+<a id="\Aura\Di\ContainerInterface::lazyNew()" class="anchor"></a><div class="method public">
+<a href="#" class="gripper"><img src="images/icons/arrow_right.png"><img src="images/icons/arrow_down.png" style="display: none;"></a><code><img src="images/icons/method.png" alt="method"><img src="images/icons/visibility_public.png" style="margin-right: 5px" alt="public"><span class="highlight">lazyNew</span><span class="nb-faded-text">(
+          \Aura\Di\string $class, \Aura\Di\array $params
               =
               null
           )
         </span>
         :
-        <a href="db_src_Lazy.html#%5CAura%5CDi%5CLazy">\Aura\Di\Lazy</a></code><div class="description">Returns a Lazy that creates a new instance.</div>
+          <a href="db_src_Lazy.html#%5CAura%5CDi%5CLazy">\Aura\Di\Lazy</a></code><div class="description"><p class="short_description">Returns a Lazy that creates a new instance.</p></div>
 <div class="code-tabs">
 <div class="long-description">
 </div>
@@ -270,13 +339,13 @@
 </tr></thead>
 <tr>
 <th>$class</th>
-<td>string</td>
-<td><em>The type of class of instantiate.</em></td>
+<td>\Aura\Di\string</td>
+<td><em><p>The type of class of instantiate.</p></em></td>
 </tr>
 <tr>
 <th>$params</th>
-<td>array</td>
-<td><em>Override parameters for the instance.</em></td>
+<td>\Aura\Di\array</td>
+<td><em><p>Override parameters for the instance.</p></em></td>
 </tr>
 </table>
 <strong>Returns</strong><table class="argument-info">
@@ -286,36 +355,34 @@
 </tr></thead>
 <tr>
 <td><a href="db_src_Lazy.html#%5CAura%5CDi%5CLazy">\Aura\Di\Lazy</a></td>
-<td></td>
+<td>A lazy-load object that creates the new instance.</td>
 </tr>
 </table>
 </div>
 <div class="clear"></div>
 </div>
-<a id="\Aura\Di\ContainerInterface::lock()"></a><div class="method">
-<a href="#" class="gripper"><img src="images/icons/arrow_right.png"><img src="images/icons/arrow_down.png" style="display: none;"></a><code><img src="images/icons/method.png" alt="method"><img src="images/icons/visibility_public.png" style="margin-right: 5px" alt="public"> 
-            <span class="highlight">lock</span><span class="nb-faded-text">(
+<a id="\Aura\Di\ContainerInterface::lock()" class="anchor"></a><div class="method public">
+<a href="#" class="gripper"><img src="images/icons/arrow_right.png"><img src="images/icons/arrow_down.png" style="display: none;"></a><code><img src="images/icons/method.png" alt="method"><img src="images/icons/visibility_public.png" style="margin-right: 5px" alt="public"><span class="highlight">lock</span><span class="nb-faded-text">(
           
           )
         </span>
         :
-        void</code><div class="description">Lock the Container so that configuration cannot be accessed externally,
-and no new service definitions can be added.</div>
+          \Aura\Di\void</code><div class="description"><p class="short_description">Lock the Container so that configuration cannot be accessed externally,
+and no new service definitions can be added.</p></div>
 <div class="code-tabs"><div class="long-description">
 </div></div>
 <div class="clear"></div>
 </div>
-<a id="\Aura\Di\ContainerInterface::newInstance()"></a><div class="method">
-<a href="#" class="gripper"><img src="images/icons/arrow_right.png"><img src="images/icons/arrow_down.png" style="display: none;"></a><code><img src="images/icons/method.png" alt="method"><img src="images/icons/visibility_public.png" style="margin-right: 5px" alt="public"> 
-            <span class="highlight">newInstance</span><span class="nb-faded-text">(
-          string $class, array $params
+<a id="\Aura\Di\ContainerInterface::newInstance()" class="anchor"></a><div class="method public">
+<a href="#" class="gripper"><img src="images/icons/arrow_right.png"><img src="images/icons/arrow_down.png" style="display: none;"></a><code><img src="images/icons/method.png" alt="method"><img src="images/icons/visibility_public.png" style="margin-right: 5px" alt="public"><span class="highlight">newInstance</span><span class="nb-faded-text">(
+          \Aura\Di\string $class, \Aura\Di\array $params
               =
               null
           )
         </span>
         :
-        object</code><div class="description">Returns a new instance of the specified class, optionally
-with additional override parameters.</div>
+          \Aura\Di\object</code><div class="description"><p class="short_description">Returns a new instance of the specified class, optionally
+with additional override parameters.</p></div>
 <div class="code-tabs">
 <div class="long-description">
 </div>
@@ -327,13 +394,13 @@ with additional override parameters.</div>
 </tr></thead>
 <tr>
 <th>$class</th>
-<td>string</td>
-<td><em>The type of class of instantiate.</em></td>
+<td>\Aura\Di\string</td>
+<td><em><p>The type of class of instantiate.</p></em></td>
 </tr>
 <tr>
 <th>$params</th>
-<td>array</td>
-<td><em>Override parameters for the instance.</em></td>
+<td>\Aura\Di\array</td>
+<td><em><p>Override parameters for the instance.</p></em></td>
 </tr>
 </table>
 <strong>Returns</strong><table class="argument-info">
@@ -342,21 +409,20 @@ with additional override parameters.</div>
 <th>Description</th>
 </tr></thead>
 <tr>
-<td>object</td>
-<td></td>
+<td>\Aura\Di\object</td>
+<td>An instance of the requested class.</td>
 </tr>
 </table>
 </div>
 <div class="clear"></div>
 </div>
-<a id="\Aura\Di\ContainerInterface::set()"></a><div class="method">
-<a href="#" class="gripper"><img src="images/icons/arrow_right.png"><img src="images/icons/arrow_down.png" style="display: none;"></a><code><img src="images/icons/method.png" alt="method"><img src="images/icons/visibility_public.png" style="margin-right: 5px" alt="public"> 
-            <span class="highlight">set</span><span class="nb-faded-text">(
-          string $key, object $val
+<a id="\Aura\Di\ContainerInterface::set()" class="anchor"></a><div class="method public">
+<a href="#" class="gripper"><img src="images/icons/arrow_right.png"><img src="images/icons/arrow_down.png" style="display: none;"></a><code><img src="images/icons/method.png" alt="method"><img src="images/icons/visibility_public.png" style="margin-right: 5px" alt="public"><span class="highlight">set</span><span class="nb-faded-text">(
+          \Aura\Di\string $key, \Aura\Di\object $val
           )
         </span>
         :
-        </code><div class="description">Sets a service object by name.</div>
+          void</code><div class="description"><p class="short_description">Sets a service object by name.</p></div>
 <div class="code-tabs">
 <div class="long-description">
 </div>
@@ -368,13 +434,13 @@ with additional override parameters.</div>
 </tr></thead>
 <tr>
 <th>$key</th>
-<td>string</td>
-<td><em>The service key.</em></td>
+<td>\Aura\Di\string</td>
+<td><em><p>The service key.</p></em></td>
 </tr>
 <tr>
 <th>$val</th>
-<td>object</td>
-<td><em>The service object.</em></td>
+<td>\Aura\Di\object</td>
+<td><em><p>The service object.</p></em></td>
 </tr>
 </table>
 </div>
@@ -383,5 +449,5 @@ with additional override parameters.</div>
 </div>
 </div>
 </div>
-<small xmlns="" class="footer">Documentation was generated by <a href="http://docblox-project.org">DocBlox 0.13.1</a>.
+<small xmlns="" class="footer">Documentation was generated by <a href="http://docblox-project.org">DocBlox 0.16.0</a>.
     </small></body></html>

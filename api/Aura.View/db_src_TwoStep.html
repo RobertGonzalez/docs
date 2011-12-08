@@ -1,4 +1,4 @@
-<html xmlns="http://www.w3.org/1999/xhtml"><head><title>Aura Project for PHP: Aura.View</title><meta http-equiv="Content-Type" content="text/html; charset=utf-8"></meta><link rel="stylesheet" href="css/black-tie/jquery-ui-1.8.2.custom.css" type="text/css"></link><link rel="stylesheet" href="css/jquery.treeview.css" type="text/css"></link><link rel="stylesheet" href="css/theme.css" type="text/css"></link><script type="text/javascript" src="js/jquery-1.4.2.min.js"></script><script type="text/javascript" src="js/jquery-ui-1.8.2.custom.min.js"></script><script type="text/javascript" src="js/jquery.cookie.js"></script><script type="text/javascript" src="js/jquery.treeview.js"></script><script type="text/javascript">
+<html xmlns="http://www.w3.org/1999/xhtml"><head><title>Aura Project for PHP: Aura.View</title><meta http-equiv="Content-Type" content="text/html; charset=utf-8"></meta><link rel="stylesheet" href="css/jquery-ui.css" type="text/css"></link><link rel="stylesheet" href="css/docblox/jquery-ui-1.8.16.custom.css" type="text/css"></link><link rel="stylesheet" href="css/jquery.treeview.css" type="text/css"></link><link rel="stylesheet" href="css/theme.css" type="text/css"></link><script type="text/javascript" src="js/jquery-1.4.2.min.js"></script><script type="text/javascript" src="js/jquery-ui-1.8.2.custom.min.js"></script><script type="text/javascript" src="js/jquery.tools.min.js"></script><script type="text/javascript" src="js/jquery.cookie.js"></script><script type="text/javascript" src="js/jquery.treeview.js"></script><script type="text/javascript">
             $(document).ready(function() {
                 $(".filetree").treeview({
                     collapsed: true,
@@ -14,73 +14,141 @@
                 $(".tabs").tabs();
             });
         </script></head><body><div xmlns="" id="content">
-<script type="text/javascript" src="js/menu.js"></script><script>
+<script xmlns:dbx="http://docblox-project.org/xsl/functions">
+
+      function filterElements()
+      {
+        inherited = !$('#show-inherited').hasClass('deselected');
+        public    = !$('#show-public').hasClass('deselected');
+        protected = !$('#show-protected').hasClass('deselected');
+        private   = !$('#show-private').hasClass('deselected');
+
+        $('div.public').each(function(index, val) {
+            $(val).toggle(public && !($(val).hasClass('inherited_from') && !inherited));
+        });
+        $('div.protected').each(function(index, val) {
+            $(val).toggle(protected && !($(val).hasClass('inherited_from') && !inherited));
+        });
+        $('div.private').each(function(index, val) {
+            $(val).toggle(private && !($(val).hasClass('inherited_from') && !inherited));
+        });
+      }
+
       $(document).ready(function() {
         $('a.gripper').click(function() {
             $(this).nextAll('div.code-tabs').slideToggle();
             $(this).children('img').toggle();
             return false;
         });
+
+        $('div.method code span.highlight,div.function code span.highlight,div.constant code span.highlight,div.property code span.highlight').css('cursor', 'pointer');
+
+        $('div.method code span.highlight,div.function code span.highlight,div.constant code span.highlight,div.property code span.highlight').click(function() {
+            $(this).parent().nextAll('div.code-tabs').slideToggle();
+            $(this).parent().prevAll('a.gripper').children('img').toggle();
+            return false;
+        });
+
         $('div.code-tabs').hide();
         $('a.gripper').show();
-        $('div.file-nav').show();
+        $('div.code-tabs:empty').prevAll('a.gripper').html('');
+
+        $('#show-public, #show-protected, #show-private, #show-inherited')
+            .css('cursor', 'pointer')
+            .click(function(){
+                $(this).toggleClass('deselected');
+                if ($(this).hasClass('deselected')) {
+                  $(this).fadeTo('fast', '0.4');
+                } else {
+                  $(this).fadeTo('fast', '1.0');
+                }
+                filterElements();
+                return false;
+            });
+        $('#show-protected, #show-private').click();
+
+        // add the sliding behaviour to the file navigation and show it
+        // it is initially hidden for non-JS users.
+        $("#file-nav-box").show().hover(function() {
+            $("#file-nav-container").slideDown(400);
+        }, function() {
+            $("#file-nav-container").slideUp(400);
+        });
       });
-    </script><h1 class="file">src/TwoStep.php</h1>
-<div class="file-nav"><ul id="file-nav">
-<li><a href="#top">Global</a></li>
-<li>
+
+      
+    </script><h1 xmlns:dbx="http://docblox-project.org/xsl/functions" class="file">src/TwoStep.php</h1>
+<div xmlns:dbx="http://docblox-project.org/xsl/functions" id="file-nav-box">
+<div id="file-nav-options">
+              Show:
+              <img src="images/icons/visibility_public.png" id="show-public"><img src="images/icons/visibility_protected.png" id="show-protected"><img src="images/icons/visibility_private.png" id="show-private"><span class="attribute" id="show-inherited">inherited</span>
+</div>
+<div id="file-nav-container">
+<ul id="file-nav"><li>
 <a href="#classes"><img src="images/icons/class.png" height="14">
-                      Classes
-                  </a><ul><li><a href="#%5CAura%5CView%5CTwoStep">\Aura\View\TwoStep</a></li></ul>
-</li>
-</ul></div>
-<a name="top"></a><div id="file-description"></div>
-<dl class="file-info"></dl>
-<a name="classes"></a><a id="\Aura\View\TwoStep"></a><h2 class="class">\Aura\View\TwoStep<div class="to-top"><a href="#top">jump to top</a></div>
+                          Classes
+                      </a><ul><li><a href="#%5CAura%5CView%5CTwoStep">\Aura\View\TwoStep</a></li></ul>
+</li></ul>
+<div style="clear: left;"></div>
+</div>
+<div id="file-nav-tab">
+              Table of Contents
+          </div>
+</div>
+<a xmlns:dbx="http://docblox-project.org/xsl/functions" name="top" class="anchor"></a><div id="file-description">
+<p xmlns:dbx="http://docblox-project.org/xsl/functions" class="short-description">This file is part of the Aura Project for PHP.</p>
+<div xmlns:dbx="http://docblox-project.org/xsl/functions" class="long-description">
+</div>
+</div>
+<dl class="file-info">
+<dt xmlns:dbx="http://docblox-project.org/xsl/functions">License</dt>
+<dd xmlns:dbx="http://docblox-project.org/xsl/functions">
+<a href="http://opensource.org/licenses/bsd-license.php">BSD</a>
+         
+    </dd>
+</dl>
+<a name="classes" class="anchor"></a><a xmlns:dbx="http://docblox-project.org/xsl/functions" id="\Aura\View\TwoStep" class="anchor"></a><h2 xmlns:dbx="http://docblox-project.org/xsl/functions" class="class">\Aura\View\TwoStep<div class="to-top"><a href="#top">jump to top</a></div>
 </h2>
-<div class="class">
-<p class="short-description">Provides a Two Step View pattern implementation; this allows for an
+<div xmlns:dbx="http://docblox-project.org/xsl/functions" class="class">
+<small class="package"><b>Package: </b>Aura\View</small><p class="short-description">Provides a Two Step View pattern implementation; this allows for an
 inner "view" and and outer "layout" as commonly used by web apps.</p>
 <div class="long-description">
 </div>
-<dl class="class-info">
-<dt>package</dt>
-<dd>Aura.View</dd>
-</dl>
+<dl class="class-info"></dl>
 <h3>Properties</h3>
 <div>
-<a id="\Aura\View\TwoStep::$layout_content_var"></a><div class="property">
+<a id="\Aura\View\TwoStep::$layout_content_var" class="anchor"></a><div class="property protected">
 <a href="#" class="gripper"><img src="images/icons/arrow_right.png"><img src="images/icons/arrow_down.png" style="display: none;"></a><code><img src="images/icons/property.png" alt="Property"><img src="images/icons/visibility_protected.png" style="margin-right: 5px" alt="protected">string
-                 <span class="highlight">$layout_content_var</span>= 'layout_content'
+                 <span class="highlight">$layout_content_var</span>= ''layout_content''
                 </code><div class="description">
 <p class="short-description">The name of the variable in the outer layout template that should be
 replaced with the output of the inner view template.</p></div>
 <div class="code-tabs">
 <div class="long-description">
 </div>
-<strong>Default value</strong><code>layout_content</code><strong>Details</strong><dl class="property-info">
+<strong>Default value</strong><code>'layout_content'</code><strong>Details</strong><dl class="property-info">
 <dt>Type</dt>
-<dd>string</dd>
+<dd>\Aura\View\string</dd>
 </dl>
 </div>
 <div class="clear"></div>
 </div>
-<a id="\Aura\View\TwoStep::$layout_data"></a><div class="property">
+<a id="\Aura\View\TwoStep::$layout_data" class="anchor"></a><div class="property protected">
 <a href="#" class="gripper"><img src="images/icons/arrow_right.png"><img src="images/icons/arrow_down.png" style="display: none;"></a><code><img src="images/icons/property.png" alt="Property"><img src="images/icons/visibility_protected.png" style="margin-right: 5px" alt="protected">array
-                 <span class="highlight">$layout_data</span>= 'array'
+                 <span class="highlight">$layout_data</span>= 'array()'
                 </code><div class="description">
 <p class="short-description">The data for the outer layout template.</p></div>
 <div class="code-tabs">
 <div class="long-description">
 </div>
-<strong>Default value</strong><code>array</code><strong>Details</strong><dl class="property-info">
+<strong>Default value</strong><code>array()</code><strong>Details</strong><dl class="property-info">
 <dt>Type</dt>
-<dd>array</dd>
+<dd>\Aura\View\array</dd>
 </dl>
 </div>
 <div class="clear"></div>
 </div>
-<a id="\Aura\View\TwoStep::$layout_name"></a><div class="property">
+<a id="\Aura\View\TwoStep::$layout_name" class="anchor"></a><div class="property protected">
 <a href="#" class="gripper"><img src="images/icons/arrow_right.png"><img src="images/icons/arrow_down.png" style="display: none;"></a><code><img src="images/icons/property.png" alt="Property"><img src="images/icons/visibility_protected.png" style="margin-right: 5px" alt="protected">string
                  <span class="highlight">$layout_name</span>= ''
                 </code><div class="description">
@@ -90,27 +158,27 @@ replaced with the output of the inner view template.</p></div>
 </div>
 <strong>Details</strong><dl class="property-info">
 <dt>Type</dt>
-<dd>string</dd>
+<dd>\Aura\View\string</dd>
 </dl>
 </div>
 <div class="clear"></div>
 </div>
-<a id="\Aura\View\TwoStep::$layout_paths"></a><div class="property">
+<a id="\Aura\View\TwoStep::$layout_paths" class="anchor"></a><div class="property protected">
 <a href="#" class="gripper"><img src="images/icons/arrow_right.png"><img src="images/icons/arrow_down.png" style="display: none;"></a><code><img src="images/icons/property.png" alt="Property"><img src="images/icons/visibility_protected.png" style="margin-right: 5px" alt="protected">array
-                 <span class="highlight">$layout_paths</span>= 'array'
+                 <span class="highlight">$layout_paths</span>= 'array()'
                 </code><div class="description">
 <p class="short-description">The paths to search when finding the outer layout template.</p></div>
 <div class="code-tabs">
 <div class="long-description">
 </div>
-<strong>Default value</strong><code>array</code><strong>Details</strong><dl class="property-info">
+<strong>Default value</strong><code>array()</code><strong>Details</strong><dl class="property-info">
 <dt>Type</dt>
-<dd>array</dd>
+<dd>\Aura\View\array</dd>
 </dl>
 </div>
 <div class="clear"></div>
 </div>
-<a id="\Aura\View\TwoStep::$template"></a><div class="property">
+<a id="\Aura\View\TwoStep::$template" class="anchor"></a><div class="property protected">
 <a href="#" class="gripper"><img src="images/icons/arrow_right.png"><img src="images/icons/arrow_down.png" style="display: none;"></a><code><img src="images/icons/property.png" alt="Property"><img src="images/icons/visibility_protected.png" style="margin-right: 5px" alt="protected">\Aura\View\Template
                  <span class="highlight">$template</span>= ''
                 </code><div class="description">
@@ -126,22 +194,22 @@ layout.</p></div>
 </div>
 <div class="clear"></div>
 </div>
-<a id="\Aura\View\TwoStep::$view_data"></a><div class="property">
+<a id="\Aura\View\TwoStep::$view_data" class="anchor"></a><div class="property protected">
 <a href="#" class="gripper"><img src="images/icons/arrow_right.png"><img src="images/icons/arrow_down.png" style="display: none;"></a><code><img src="images/icons/property.png" alt="Property"><img src="images/icons/visibility_protected.png" style="margin-right: 5px" alt="protected">array
-                 <span class="highlight">$view_data</span>= 'array'
+                 <span class="highlight">$view_data</span>= 'array()'
                 </code><div class="description">
 <p class="short-description">The data for the inner view template.</p></div>
 <div class="code-tabs">
 <div class="long-description">
 </div>
-<strong>Default value</strong><code>array</code><strong>Details</strong><dl class="property-info">
+<strong>Default value</strong><code>array()</code><strong>Details</strong><dl class="property-info">
 <dt>Type</dt>
-<dd>array</dd>
+<dd>\Aura\View\array</dd>
 </dl>
 </div>
 <div class="clear"></div>
 </div>
-<a id="\Aura\View\TwoStep::$view_name"></a><div class="property">
+<a id="\Aura\View\TwoStep::$view_name" class="anchor"></a><div class="property protected">
 <a href="#" class="gripper"><img src="images/icons/arrow_right.png"><img src="images/icons/arrow_down.png" style="display: none;"></a><code><img src="images/icons/property.png" alt="Property"><img src="images/icons/visibility_protected.png" style="margin-right: 5px" alt="protected">string
                  <span class="highlight">$view_name</span>= ''
                 </code><div class="description">
@@ -151,22 +219,22 @@ layout.</p></div>
 </div>
 <strong>Details</strong><dl class="property-info">
 <dt>Type</dt>
-<dd>string</dd>
+<dd>\Aura\View\string</dd>
 </dl>
 </div>
 <div class="clear"></div>
 </div>
-<a id="\Aura\View\TwoStep::$view_paths"></a><div class="property">
+<a id="\Aura\View\TwoStep::$view_paths" class="anchor"></a><div class="property protected">
 <a href="#" class="gripper"><img src="images/icons/arrow_right.png"><img src="images/icons/arrow_down.png" style="display: none;"></a><code><img src="images/icons/property.png" alt="Property"><img src="images/icons/visibility_protected.png" style="margin-right: 5px" alt="protected">array
-                 <span class="highlight">$view_paths</span>= 'array'
+                 <span class="highlight">$view_paths</span>= 'array()'
                 </code><div class="description">
 <p class="short-description">The paths to search when finding the inner view template.</p></div>
 <div class="code-tabs">
 <div class="long-description">
 </div>
-<strong>Default value</strong><code>array</code><strong>Details</strong><dl class="property-info">
+<strong>Default value</strong><code>array()</code><strong>Details</strong><dl class="property-info">
 <dt>Type</dt>
-<dd>array</dd>
+<dd>\Aura\View\array</dd>
 </dl>
 </div>
 <div class="clear"></div>
@@ -174,14 +242,13 @@ layout.</p></div>
 </div>
 <h3>Methods</h3>
 <div>
-<a id="\Aura\View\TwoStep::__construct()"></a><div class="method">
-<a href="#" class="gripper"><img src="images/icons/arrow_right.png"><img src="images/icons/arrow_down.png" style="display: none;"></a><code><img src="images/icons/method.png" alt="method"><img src="images/icons/visibility_public.png" style="margin-right: 5px" alt="public"> 
-            <span class="highlight">__construct</span><span class="nb-faded-text">(
+<a id="\Aura\View\TwoStep::__construct()" class="anchor"></a><div class="method public">
+<a href="#" class="gripper"><img src="images/icons/arrow_right.png"><img src="images/icons/arrow_down.png" style="display: none;"></a><code><img src="images/icons/method.png" alt="method"><img src="images/icons/visibility_public.png" style="margin-right: 5px" alt="public"><span class="highlight">__construct</span><span class="nb-faded-text">(
           <a href="db_src_Template.html#%5CAura%5CView%5CTemplate">\Aura\View\Template</a> $template
           )
         </span>
         :
-        </code><div class="description">Constructor.</div>
+          void</code><div class="description"><p class="short_description">Constructor.</p></div>
 <div class="code-tabs">
 <div class="long-description">
 </div>
@@ -194,20 +261,19 @@ layout.</p></div>
 <tr>
 <th>$template</th>
 <td><a href="db_src_Template.html#%5CAura%5CView%5CTemplate">\Aura\View\Template</a></td>
-<td><em>The Template object to be used when rendering the inner view and outer layout.</em></td>
+<td><em><p>The Template object to be used when rendering the inner view and outer layout.</p></em></td>
 </tr>
 </table>
 </div>
 <div class="clear"></div>
 </div>
-<a id="\Aura\View\TwoStep::addLayoutPath()"></a><div class="method">
-<a href="#" class="gripper"><img src="images/icons/arrow_right.png"><img src="images/icons/arrow_down.png" style="display: none;"></a><code><img src="images/icons/method.png" alt="method"><img src="images/icons/visibility_public.png" style="margin-right: 5px" alt="public"> 
-            <span class="highlight">addLayoutPath</span><span class="nb-faded-text">(
+<a id="\Aura\View\TwoStep::addLayoutPath()" class="anchor"></a><div class="method public">
+<a href="#" class="gripper"><img src="images/icons/arrow_right.png"><img src="images/icons/arrow_down.png" style="display: none;"></a><code><img src="images/icons/method.png" alt="method"><img src="images/icons/visibility_public.png" style="margin-right: 5px" alt="public"><span class="highlight">addLayoutPath</span><span class="nb-faded-text">(
            $path
           )
         </span>
         :
-        </code><div class="description"></div>
+          void</code><div class="description"><p class="short_description"></p></div>
 <div class="code-tabs">
 <strong>Parameters</strong><table class="argument-info">
 <thead><tr>
@@ -224,14 +290,13 @@ layout.</p></div>
 </div>
 <div class="clear"></div>
 </div>
-<a id="\Aura\View\TwoStep::addViewPath()"></a><div class="method">
-<a href="#" class="gripper"><img src="images/icons/arrow_right.png"><img src="images/icons/arrow_down.png" style="display: none;"></a><code><img src="images/icons/method.png" alt="method"><img src="images/icons/visibility_public.png" style="margin-right: 5px" alt="public"> 
-            <span class="highlight">addViewPath</span><span class="nb-faded-text">(
+<a id="\Aura\View\TwoStep::addViewPath()" class="anchor"></a><div class="method public">
+<a href="#" class="gripper"><img src="images/icons/arrow_right.png"><img src="images/icons/arrow_down.png" style="display: none;"></a><code><img src="images/icons/method.png" alt="method"><img src="images/icons/visibility_public.png" style="margin-right: 5px" alt="public"><span class="highlight">addViewPath</span><span class="nb-faded-text">(
            $path
           )
         </span>
         :
-        </code><div class="description"></div>
+          void</code><div class="description"><p class="short_description"></p></div>
 <div class="code-tabs">
 <strong>Parameters</strong><table class="argument-info">
 <thead><tr>
@@ -248,15 +313,14 @@ layout.</p></div>
 </div>
 <div class="clear"></div>
 </div>
-<a id="\Aura\View\TwoStep::render()"></a><div class="method">
-<a href="#" class="gripper"><img src="images/icons/arrow_right.png"><img src="images/icons/arrow_down.png" style="display: none;"></a><code><img src="images/icons/method.png" alt="method"><img src="images/icons/visibility_public.png" style="margin-right: 5px" alt="public"> 
-            <span class="highlight">render</span><span class="nb-faded-text">(
+<a id="\Aura\View\TwoStep::render()" class="anchor"></a><div class="method public">
+<a href="#" class="gripper"><img src="images/icons/arrow_right.png"><img src="images/icons/arrow_down.png" style="display: none;"></a><code><img src="images/icons/method.png" alt="method"><img src="images/icons/visibility_public.png" style="margin-right: 5px" alt="public"><span class="highlight">render</span><span class="nb-faded-text">(
           
           )
         </span>
         :
-        string</code><div class="description">Renders the inner view and outer layout templates and returns the
-resulting output.</div>
+          \Aura\View\string</code><div class="description"><p class="short_description">Renders the inner view and outer layout templates and returns the
+resulting output.</p></div>
 <div class="code-tabs">
 <div class="long-description">
 </div>
@@ -266,22 +330,21 @@ resulting output.</div>
 <th>Description</th>
 </tr></thead>
 <tr>
-<td>string</td>
-<td></td>
+<td>\Aura\View\string</td>
+<td>The rendered two-step view results.</td>
 </tr>
 </table>
 </div>
 <div class="clear"></div>
 </div>
-<a id="\Aura\View\TwoStep::setLayoutContentVar()"></a><div class="method">
-<a href="#" class="gripper"><img src="images/icons/arrow_right.png"><img src="images/icons/arrow_down.png" style="display: none;"></a><code><img src="images/icons/method.png" alt="method"><img src="images/icons/visibility_public.png" style="margin-right: 5px" alt="public"> 
-            <span class="highlight">setLayoutContentVar</span><span class="nb-faded-text">(
-          string $layout_content_var
+<a id="\Aura\View\TwoStep::setLayoutContentVar()" class="anchor"></a><div class="method public">
+<a href="#" class="gripper"><img src="images/icons/arrow_right.png"><img src="images/icons/arrow_down.png" style="display: none;"></a><code><img src="images/icons/method.png" alt="method"><img src="images/icons/visibility_public.png" style="margin-right: 5px" alt="public"><span class="highlight">setLayoutContentVar</span><span class="nb-faded-text">(
+          \Aura\View\string $layout_content_var
           )
         </span>
         :
-        void</code><div class="description">Sets the name of the variable in the outer layout template that should
-be replaced with the output of the inner view template.</div>
+          \Aura\View\void</code><div class="description"><p class="short_description">Sets the name of the variable in the outer layout template that should
+be replaced with the output of the inner view template.</p></div>
 <div class="code-tabs">
 <div class="long-description">
 </div>
@@ -293,21 +356,20 @@ be replaced with the output of the inner view template.</div>
 </tr></thead>
 <tr>
 <th>$layout_content_var</th>
-<td>string</td>
+<td>\Aura\View\string</td>
 <td><em></em></td>
 </tr>
 </table>
 </div>
 <div class="clear"></div>
 </div>
-<a id="\Aura\View\TwoStep::setLayoutData()"></a><div class="method">
-<a href="#" class="gripper"><img src="images/icons/arrow_right.png"><img src="images/icons/arrow_down.png" style="display: none;"></a><code><img src="images/icons/method.png" alt="method"><img src="images/icons/visibility_public.png" style="margin-right: 5px" alt="public"> 
-            <span class="highlight">setLayoutData</span><span class="nb-faded-text">(
-          array $layout_data
+<a id="\Aura\View\TwoStep::setLayoutData()" class="anchor"></a><div class="method public">
+<a href="#" class="gripper"><img src="images/icons/arrow_right.png"><img src="images/icons/arrow_down.png" style="display: none;"></a><code><img src="images/icons/method.png" alt="method"><img src="images/icons/visibility_public.png" style="margin-right: 5px" alt="public"><span class="highlight">setLayoutData</span><span class="nb-faded-text">(
+          \Aura\View\array $layout_data
           )
         </span>
         :
-        void</code><div class="description">Sets the data for the outer layout template.</div>
+          \Aura\View\void</code><div class="description"><p class="short_description">Sets the data for the outer layout template.</p></div>
 <div class="code-tabs">
 <div class="long-description">
 </div>
@@ -319,21 +381,20 @@ be replaced with the output of the inner view template.</div>
 </tr></thead>
 <tr>
 <th>$layout_data</th>
-<td>array</td>
-<td><em>The data for the outer layout template.</em></td>
+<td>\Aura\View\array</td>
+<td><em><p>The data for the outer layout template.</p></em></td>
 </tr>
 </table>
 </div>
 <div class="clear"></div>
 </div>
-<a id="\Aura\View\TwoStep::setLayoutName()"></a><div class="method">
-<a href="#" class="gripper"><img src="images/icons/arrow_right.png"><img src="images/icons/arrow_down.png" style="display: none;"></a><code><img src="images/icons/method.png" alt="method"><img src="images/icons/visibility_public.png" style="margin-right: 5px" alt="public"> 
-            <span class="highlight">setLayoutName</span><span class="nb-faded-text">(
-          string $layout_name
+<a id="\Aura\View\TwoStep::setLayoutName()" class="anchor"></a><div class="method public">
+<a href="#" class="gripper"><img src="images/icons/arrow_right.png"><img src="images/icons/arrow_down.png" style="display: none;"></a><code><img src="images/icons/method.png" alt="method"><img src="images/icons/visibility_public.png" style="margin-right: 5px" alt="public"><span class="highlight">setLayoutName</span><span class="nb-faded-text">(
+          \Aura\View\string $layout_name
           )
         </span>
         :
-        void</code><div class="description">Sets the name of the outer layout template.</div>
+          \Aura\View\void</code><div class="description"><p class="short_description">Sets the name of the outer layout template.</p></div>
 <div class="code-tabs">
 <div class="long-description">
 </div>
@@ -345,23 +406,22 @@ be replaced with the output of the inner view template.</div>
 </tr></thead>
 <tr>
 <th>$layout_name</th>
-<td>string</td>
-<td><em>The name of the outer layout template.</em></td>
+<td>\Aura\View\string</td>
+<td><em><p>The name of the outer layout template.</p></em></td>
 </tr>
 </table>
 </div>
 <div class="clear"></div>
 </div>
-<a id="\Aura\View\TwoStep::setLayoutPaths()"></a><div class="method">
-<a href="#" class="gripper"><img src="images/icons/arrow_right.png"><img src="images/icons/arrow_down.png" style="display: none;"></a><code><img src="images/icons/method.png" alt="method"><img src="images/icons/visibility_public.png" style="margin-right: 5px" alt="public"> 
-            <span class="highlight">setLayoutPaths</span><span class="nb-faded-text">(
-          string $layout_paths
+<a id="\Aura\View\TwoStep::setLayoutPaths()" class="anchor"></a><div class="method public">
+<a href="#" class="gripper"><img src="images/icons/arrow_right.png"><img src="images/icons/arrow_down.png" style="display: none;"></a><code><img src="images/icons/method.png" alt="method"><img src="images/icons/visibility_public.png" style="margin-right: 5px" alt="public"><span class="highlight">setLayoutPaths</span><span class="nb-faded-text">(
+          \Aura\View\string $layout_paths
               =
-              array
+              array()
           )
         </span>
         :
-        void</code><div class="description">Sets the paths to search when finding the outer layout template.</div>
+          \Aura\View\void</code><div class="description"><p class="short_description">Sets the paths to search when finding the outer layout template.</p></div>
 <div class="code-tabs">
 <div class="long-description">
 </div>
@@ -373,21 +433,20 @@ be replaced with the output of the inner view template.</div>
 </tr></thead>
 <tr>
 <th>$layout_paths</th>
-<td>string</td>
-<td><em>The paths to search when finding the outer layout template.</em></td>
+<td>\Aura\View\string</td>
+<td><em><p>The paths to search when finding the outer layout template.</p></em></td>
 </tr>
 </table>
 </div>
 <div class="clear"></div>
 </div>
-<a id="\Aura\View\TwoStep::setViewData()"></a><div class="method">
-<a href="#" class="gripper"><img src="images/icons/arrow_right.png"><img src="images/icons/arrow_down.png" style="display: none;"></a><code><img src="images/icons/method.png" alt="method"><img src="images/icons/visibility_public.png" style="margin-right: 5px" alt="public"> 
-            <span class="highlight">setViewData</span><span class="nb-faded-text">(
-          array $view_data
+<a id="\Aura\View\TwoStep::setViewData()" class="anchor"></a><div class="method public">
+<a href="#" class="gripper"><img src="images/icons/arrow_right.png"><img src="images/icons/arrow_down.png" style="display: none;"></a><code><img src="images/icons/method.png" alt="method"><img src="images/icons/visibility_public.png" style="margin-right: 5px" alt="public"><span class="highlight">setViewData</span><span class="nb-faded-text">(
+          \Aura\View\array $view_data
           )
         </span>
         :
-        void</code><div class="description">Sets the data for the inner view template.</div>
+          \Aura\View\void</code><div class="description"><p class="short_description">Sets the data for the inner view template.</p></div>
 <div class="code-tabs">
 <div class="long-description">
 </div>
@@ -399,21 +458,20 @@ be replaced with the output of the inner view template.</div>
 </tr></thead>
 <tr>
 <th>$view_data</th>
-<td>array</td>
-<td><em>The data for the inner view template.</em></td>
+<td>\Aura\View\array</td>
+<td><em><p>The data for the inner view template.</p></em></td>
 </tr>
 </table>
 </div>
 <div class="clear"></div>
 </div>
-<a id="\Aura\View\TwoStep::setViewName()"></a><div class="method">
-<a href="#" class="gripper"><img src="images/icons/arrow_right.png"><img src="images/icons/arrow_down.png" style="display: none;"></a><code><img src="images/icons/method.png" alt="method"><img src="images/icons/visibility_public.png" style="margin-right: 5px" alt="public"> 
-            <span class="highlight">setViewName</span><span class="nb-faded-text">(
-          string $view_name
+<a id="\Aura\View\TwoStep::setViewName()" class="anchor"></a><div class="method public">
+<a href="#" class="gripper"><img src="images/icons/arrow_right.png"><img src="images/icons/arrow_down.png" style="display: none;"></a><code><img src="images/icons/method.png" alt="method"><img src="images/icons/visibility_public.png" style="margin-right: 5px" alt="public"><span class="highlight">setViewName</span><span class="nb-faded-text">(
+          \Aura\View\string $view_name
           )
         </span>
         :
-        void</code><div class="description">Sets the name of the inner view template.</div>
+          \Aura\View\void</code><div class="description"><p class="short_description">Sets the name of the inner view template.</p></div>
 <div class="code-tabs">
 <div class="long-description">
 </div>
@@ -425,23 +483,22 @@ be replaced with the output of the inner view template.</div>
 </tr></thead>
 <tr>
 <th>$view_name</th>
-<td>string</td>
-<td><em>The name of the inner view template.</em></td>
+<td>\Aura\View\string</td>
+<td><em><p>The name of the inner view template.</p></em></td>
 </tr>
 </table>
 </div>
 <div class="clear"></div>
 </div>
-<a id="\Aura\View\TwoStep::setViewPaths()"></a><div class="method">
-<a href="#" class="gripper"><img src="images/icons/arrow_right.png"><img src="images/icons/arrow_down.png" style="display: none;"></a><code><img src="images/icons/method.png" alt="method"><img src="images/icons/visibility_public.png" style="margin-right: 5px" alt="public"> 
-            <span class="highlight">setViewPaths</span><span class="nb-faded-text">(
-          string $view_paths
+<a id="\Aura\View\TwoStep::setViewPaths()" class="anchor"></a><div class="method public">
+<a href="#" class="gripper"><img src="images/icons/arrow_right.png"><img src="images/icons/arrow_down.png" style="display: none;"></a><code><img src="images/icons/method.png" alt="method"><img src="images/icons/visibility_public.png" style="margin-right: 5px" alt="public"><span class="highlight">setViewPaths</span><span class="nb-faded-text">(
+          \Aura\View\string $view_paths
               =
-              array
+              array()
           )
         </span>
         :
-        void</code><div class="description">Sets the paths to search when finding the inner view template.</div>
+          \Aura\View\void</code><div class="description"><p class="short_description">Sets the paths to search when finding the inner view template.</p></div>
 <div class="code-tabs">
 <div class="long-description">
 </div>
@@ -453,8 +510,8 @@ be replaced with the output of the inner view template.</div>
 </tr></thead>
 <tr>
 <th>$view_paths</th>
-<td>string</td>
-<td><em>The paths to search when finding the inner view template.</em></td>
+<td>\Aura\View\string</td>
+<td><em><p>The paths to search when finding the inner view template.</p></em></td>
 </tr>
 </table>
 </div>
@@ -463,5 +520,5 @@ be replaced with the output of the inner view template.</div>
 </div>
 </div>
 </div>
-<small xmlns="" class="footer">Documentation was generated by <a href="http://docblox-project.org">DocBlox 0.13.1</a>.
+<small xmlns="" class="footer">Documentation was generated by <a href="http://docblox-project.org">DocBlox 0.16.0</a>.
     </small></body></html>

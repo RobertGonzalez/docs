@@ -1,7 +1,387 @@
 <?xml version="1.0"?>
-<project version="0.13.1" title="Aura Project for PHP: Aura.Http">
-  <file path="src/Headers.php" hash="7881bb8d762ed32e335fcef6092ae60f">
-    <class final="false" abstract="false" line="18" namespace="Aura\Http">
+<project version="0.16.0" title="Aura Project for PHP: Aura.Http">
+  <file path="scripts/instance.php" hash="045738b43893e1055ca1bd8c6d431a8e" package="Default">
+    <parse_markers>
+      <error line="1">No DocBlock was found for File scripts/instance.php</error>
+    </parse_markers>
+    <include type="Require" line="3">
+      <name>Unknown</name>
+    </include>
+  </file>
+  <file path="tests/ResponseTest.php" hash="3e2974ec112c13f3aa58fe31f78006f3" package="Default">
+    <parse_markers>
+      <error line="1">No DocBlock was found for File tests/ResponseTest.php</error>
+      <error line="25">No DocBlock was found for Class ResponseTest</error>
+      <error line="27">No DocBlock was found for Property $callback</error>
+      <error line="28">No DocBlock was found for Property $headers_sent</error>
+      <error line="29">No DocBlock was found for Property $header_expect</error>
+      <error line="30">No DocBlock was found for Property $cookie_expect</error>
+      <error line="32">No DocBlock was found for Property $response</error>
+      <error line="34">No DocBlock was found for Method setUp</error>
+      <error line="43">No DocBlock was found for Method newResponse</error>
+      <error line="53">No DocBlock was found for Method test__get</error>
+      <error line="60">No DocBlock was found for Method test__getNoSuchProperty</error>
+      <error line="67">No DocBlock was found for Method testSetVersion</error>
+      <error line="75">No DocBlock was found for Method testSetVersionExceptionOnInvalidVersion</error>
+      <error line="82">No DocBlock was found for Method testGetVersion</error>
+      <error line="89">No DocBlock was found for Method testSetStatusCode</error>
+      <error line="97">No DocBlock was found for Method testSetStatusCodeNoDefaultText</error>
+      <error line="107">No DocBlock was found for Method testSetStatusCodeExceptionLessThan100</error>
+      <error line="114">No DocBlock was found for Method testSetStatusCodeExceptionGreaterThan599</error>
+      <error line="121">No DocBlock was found for Method testSetStatusText</error>
+      <error line="129">No DocBlock was found for Method testGetStatusCode</error>
+      <error line="136">No DocBlock was found for Method testGetStatusText</error>
+      <error line="147">No DocBlock was found for Method testSetAndGetHeaders</error>
+      <error line="156">No DocBlock was found for Method testSetContent</error>
+      <error line="164">No DocBlock was found for Method testGetContent</error>
+      <error line="175">No DocBlock was found for Method testSetAndGetCookies</error>
+      <error line="184">No DocBlock was found for Method testSendHeaders</error>
+      <error line="209">No DocBlock was found for Method testSendHeadersAlreadySent</error>
+      <error line="217">No DocBlock was found for Method testSend</error>
+      <error line="230">No DocBlock was found for Method testSend_resource</error>
+    </parse_markers>
+    <class final="false" abstract="false" line="25" namespace="Aura\Http" package="Default">
+      <name>ResponseTest</name>
+      <extends>\PHPUnit_Framework_TestCase</extends>
+      <full_name>\Aura\Http\ResponseTest</full_name>
+      <property final="false" static="true" visibility="public" line="27" package="Default">
+        <name>$callback</name>
+        <default/>
+      </property>
+      <property final="false" static="true" visibility="public" line="28" package="Default">
+        <name>$headers_sent</name>
+        <default>false</default>
+      </property>
+      <property final="false" static="false" visibility="protected" line="29" package="Default">
+        <name>$header_expect</name>
+        <default>array()</default>
+      </property>
+      <property final="false" static="false" visibility="protected" line="30" package="Default">
+        <name>$cookie_expect</name>
+        <default>array()</default>
+      </property>
+      <property final="false" static="false" visibility="protected" line="32" package="Default">
+        <name>$response</name>
+        <default/>
+      </property>
+      <method final="false" abstract="false" static="false" visibility="protected" line="34" package="Default">
+        <name>setUp</name>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="protected" line="43" package="Default">
+        <name>newResponse</name>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" line="53" package="Default">
+        <name>test__get</name>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" line="60" package="Default">
+        <name>test__getNoSuchProperty</name>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" line="67" package="Default">
+        <name>testSetVersion</name>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" line="75" package="Default">
+        <name>testSetVersionExceptionOnInvalidVersion</name>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" line="82" package="Default">
+        <name>testGetVersion</name>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" line="89" package="Default">
+        <name>testSetStatusCode</name>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" line="97" package="Default">
+        <name>testSetStatusCodeNoDefaultText</name>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" line="107" package="Default">
+        <name>testSetStatusCodeExceptionLessThan100</name>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" line="114" package="Default">
+        <name>testSetStatusCodeExceptionGreaterThan599</name>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" line="121" package="Default">
+        <name>testSetStatusText</name>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" line="129" package="Default">
+        <name>testGetStatusCode</name>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" line="136" package="Default">
+        <name>testGetStatusText</name>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" line="147" package="Default">
+        <name>testSetAndGetHeaders</name>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" line="156" package="Default">
+        <name>testSetContent</name>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" line="164" package="Default">
+        <name>testGetContent</name>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" line="175" package="Default">
+        <name>testSetAndGetCookies</name>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" line="184" package="Default">
+        <name>testSendHeaders</name>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" line="209" package="Default">
+        <name>testSendHeadersAlreadySent</name>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" line="217" package="Default">
+        <name>testSend</name>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" line="230" package="Default">
+        <name>testSend_resource</name>
+      </method>
+    </class>
+  </file>
+  <file path="tests/CookiesTest.php" hash="65ee60dc63344035e2542cbf57162901" package="Default">
+    <parse_markers>
+      <error line="1">No DocBlock was found for File tests/CookiesTest.php</error>
+      <critical line="10">No short description for property $cookies</critical>
+      <critical line="35">No short description for method testSetAndGetAll</critical>
+      <critical line="73">No short description for method testSend</critical>
+    </parse_markers>
+    <class final="false" abstract="false" line="8" namespace="Aura\Http" package="Default">
+      <name>CookiesTest</name>
+      <extends>\PHPUnit_Framework_TestCase</extends>
+      <full_name>\Aura\Http\CookiesTest</full_name>
+      <docblock>
+        <description>Test class for Cookies.</description>
+        <long-description>&lt;p&gt;Generated by PHPUnit on 2011-05-10 at 11:16:02.&lt;/p&gt;
+</long-description>
+      </docblock>
+      <property final="false" static="false" visibility="protected" line="13" package="Default">
+        <name>$cookies</name>
+        <default/>
+        <docblock>
+          <description/>
+          <long-description>
+</long-description>
+          <tag line="10" name="var" description="" type="\Aura\Http\Cookies">
+            <type by_reference="false">\Aura\Http\Cookies</type>
+          </tag>
+        </docblock>
+      </property>
+      <method final="false" abstract="false" static="false" visibility="protected" line="19" package="Default">
+        <name>setUp</name>
+        <docblock>
+          <description>Sets up the fixture, for example, opens a network connection.</description>
+          <long-description>&lt;p&gt;This method is called before a test is executed.&lt;/p&gt;
+</long-description>
+        </docblock>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="protected" line="30" package="Default">
+        <name>tearDown</name>
+        <docblock>
+          <description>Tears down the fixture, for example, closes a network connection.</description>
+          <long-description>&lt;p&gt;This method is called after a test is executed.&lt;/p&gt;
+</long-description>
+        </docblock>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" line="38" package="Default">
+        <name>testSetAndGetAll</name>
+        <docblock>
+          <description/>
+          <long-description>
+</long-description>
+          <tag line="35" name="todo" description="Implement testGetAll()."/>
+        </docblock>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" line="76" package="Default">
+        <name>testSend</name>
+        <docblock>
+          <description/>
+          <long-description>
+</long-description>
+          <tag line="73" name="todo" description="Implement testSend()."/>
+        </docblock>
+      </method>
+    </class>
+  </file>
+  <file path="tests/HeadersTest.php" hash="eabc6ecf4e1e4bfac30a5e2bae675275" package="Default">
+    <parse_markers>
+      <error line="1">No DocBlock was found for File tests/HeadersTest.php</error>
+      <critical line="10">No short description for property $headers</critical>
+      <critical line="35">No short description for method testSetAndAdd</critical>
+      <critical line="58">No short description for method testSetAndGetAll</critical>
+      <critical line="83">No short description for method testSend</critical>
+    </parse_markers>
+    <class final="false" abstract="false" line="8" namespace="Aura\Http" package="Default">
+      <name>HeadersTest</name>
+      <extends>\PHPUnit_Framework_TestCase</extends>
+      <full_name>\Aura\Http\HeadersTest</full_name>
+      <docblock>
+        <description>Test class for Headers.</description>
+        <long-description>&lt;p&gt;Generated by PHPUnit on 2011-05-10 at 11:16:06.&lt;/p&gt;
+</long-description>
+      </docblock>
+      <property final="false" static="false" visibility="protected" line="13" package="Default">
+        <name>$headers</name>
+        <default/>
+        <docblock>
+          <description/>
+          <long-description>
+</long-description>
+          <tag line="10" name="var" description="" type="\Aura\Http\Headers">
+            <type by_reference="false">\Aura\Http\Headers</type>
+          </tag>
+        </docblock>
+      </property>
+      <method final="false" abstract="false" static="false" visibility="protected" line="19" package="Default">
+        <name>setUp</name>
+        <docblock>
+          <description>Sets up the fixture, for example, opens a network connection.</description>
+          <long-description>&lt;p&gt;This method is called before a test is executed.&lt;/p&gt;
+</long-description>
+        </docblock>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="protected" line="30" package="Default">
+        <name>tearDown</name>
+        <docblock>
+          <description>Tears down the fixture, for example, closes a network connection.</description>
+          <long-description>&lt;p&gt;This method is called after a test is executed.&lt;/p&gt;
+</long-description>
+        </docblock>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" line="38" package="Default">
+        <name>testSetAndAdd</name>
+        <docblock>
+          <description/>
+          <long-description>
+</long-description>
+          <tag line="35" name="todo" description="Implement testSet()."/>
+        </docblock>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" line="61" package="Default">
+        <name>testSetAndGetAll</name>
+        <docblock>
+          <description/>
+          <long-description>
+</long-description>
+          <tag line="58" name="todo" description="Implement testGetAll()."/>
+        </docblock>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" line="86" package="Default">
+        <name>testSend</name>
+        <docblock>
+          <description/>
+          <long-description>
+</long-description>
+          <tag line="83" name="todo" description="Implement testSend()."/>
+        </docblock>
+      </method>
+    </class>
+  </file>
+  <file path="tests/MockHttp.php" hash="0745ad6d1b644947f4835c0a2f5ca517" package="Default">
+    <parse_markers>
+      <error line="1">No DocBlock was found for File tests/MockHttp.php</error>
+      <error line="5">No DocBlock was found for Function header</error>
+      <error line="12">No DocBlock was found for Function headers_sent</error>
+      <error line="24">No DocBlock was found for Function setcookie</error>
+      <error line="39">No DocBlock was found for Class MockHttp</error>
+      <error line="41">No DocBlock was found for Property $headers</error>
+      <error line="42">No DocBlock was found for Property $cookies</error>
+      <error line="43">No DocBlock was found for Property $headers_sent</error>
+      <error line="44">No DocBlock was found for Method reset</error>
+    </parse_markers>
+    <function namespace="Aura\Http" line="5" package="Default">
+      <name>header</name>
+      <type>function</type>
+      <argument line="5">
+        <name>$string</name>
+        <default/>
+        <type/>
+      </argument>
+    </function>
+    <function namespace="Aura\Http" line="12" package="Default">
+      <name>headers_sent</name>
+      <type>function</type>
+      <argument line="12">
+        <name>$file</name>
+        <default/>
+        <type/>
+      </argument>
+      <argument line="12">
+        <name>$line</name>
+        <default/>
+        <type/>
+      </argument>
+    </function>
+    <function namespace="Aura\Http" line="24" package="Default">
+      <name>setcookie</name>
+      <type>function</type>
+      <argument line="24">
+        <name>$name</name>
+        <default/>
+        <type/>
+      </argument>
+      <argument line="24">
+        <name>$value</name>
+        <default/>
+        <type/>
+      </argument>
+      <argument line="24">
+        <name>$expire</name>
+        <default>0</default>
+        <type/>
+      </argument>
+      <argument line="24">
+        <name>$path</name>
+        <default>null</default>
+        <type/>
+      </argument>
+      <argument line="25">
+        <name>$domain</name>
+        <default>null</default>
+        <type/>
+      </argument>
+      <argument line="25">
+        <name>$secure</name>
+        <default>false</default>
+        <type/>
+      </argument>
+      <argument line="25">
+        <name>$httponly</name>
+        <default>false</default>
+        <type/>
+      </argument>
+    </function>
+    <class final="false" abstract="false" line="39" namespace="Aura\Http" package="Default">
+      <name>MockHttp</name>
+      <extends/>
+      <full_name>\Aura\Http\MockHttp</full_name>
+      <property final="false" static="true" visibility="public" line="41" package="Default">
+        <name>$headers</name>
+        <default>array()</default>
+      </property>
+      <property final="false" static="true" visibility="public" line="42" package="Default">
+        <name>$cookies</name>
+        <default>array()</default>
+      </property>
+      <property final="false" static="true" visibility="public" line="43" package="Default">
+        <name>$headers_sent</name>
+        <default>false</default>
+      </property>
+      <method final="false" abstract="false" static="true" visibility="public" line="44" package="Default">
+        <name>reset</name>
+      </method>
+    </class>
+  </file>
+  <file path="src/Headers.php" hash="7881bb8d762ed32e335fcef6092ae60f" package="Default">
+    <docblock>
+      <description>This file is part of the Aura Project for PHP.</description>
+      <long-description>
+</long-description>
+      <tag line="2" name="license" description="http://opensource.org/licenses/bsd-license.php BSD"/>
+    </docblock>
+    <parse_markers>
+      <error line="2">No Page-level DocBlock was found in file src/Headers.php</error>
+      <error line="20">No DocBlock was found for Property $list</error>
+      <error line="22">No DocBlock was found for Method add</error>
+      <error line="28">No DocBlock was found for Method set</error>
+      <error line="34">No DocBlock was found for Method getAll</error>
+      <error line="39">No DocBlock was found for Method setAll</error>
+      <error line="49">No DocBlock was found for Method send</error>
+    </parse_markers>
+    <class final="false" abstract="false" line="18" namespace="Aura\Http" package="Aura\Http">
       <name>Headers</name>
       <extends/>
       <full_name>\Aura\Http\Headers</full_name>
@@ -9,13 +389,13 @@
         <description>Collection of non-cookie HTTP headers.</description>
         <long-description>
 </long-description>
-        <tag name="package" description="Aura.Http" line="11"/>
+        <tag line="11" name="package" description="Aura.Http"/>
       </docblock>
-      <property final="false" static="false" visibility="protected" line="20">
+      <property final="false" static="false" visibility="protected" line="20" package="Default">
         <name>$list</name>
-        <default>array</default>
+        <default>array()</default>
       </property>
-      <method final="false" abstract="false" static="false" visibility="public" line="22">
+      <method final="false" abstract="false" static="false" visibility="public" line="22" package="Default">
         <name>add</name>
         <argument line="22">
           <name>$label</name>
@@ -28,7 +408,7 @@
           <type/>
         </argument>
       </method>
-      <method final="false" abstract="false" static="false" visibility="public" line="28">
+      <method final="false" abstract="false" static="false" visibility="public" line="28" package="Default">
         <name>set</name>
         <argument line="28">
           <name>$label</name>
@@ -41,21 +421,21 @@
           <type/>
         </argument>
       </method>
-      <method final="false" abstract="false" static="false" visibility="public" line="34">
+      <method final="false" abstract="false" static="false" visibility="public" line="34" package="Default">
         <name>getAll</name>
       </method>
-      <method final="false" abstract="false" static="false" visibility="public" line="39">
+      <method final="false" abstract="false" static="false" visibility="public" line="39" package="Default">
         <name>setAll</name>
         <argument line="39">
           <name>$headers</name>
-          <default>array</default>
+          <default>array()</default>
           <type>array</type>
         </argument>
       </method>
-      <method final="false" abstract="false" static="false" visibility="public" line="49">
+      <method final="false" abstract="false" static="false" visibility="public" line="49" package="Default">
         <name>send</name>
       </method>
-      <method final="false" abstract="false" static="false" visibility="protected" line="71">
+      <method final="false" abstract="false" static="false" visibility="protected" line="71" package="Default">
         <name>sanitizeLabel</name>
         <docblock>
           <description>Sanitizes header labels by removing all characters besides [a-zA-z0-9_-].</description>
@@ -63,11 +443,11 @@
 
 &lt;p&gt;Converts "foo \r bar_ baz-dib \n 9" to "Foobar-Baz-Dib9".&lt;/p&gt;
 </long-description>
-          <tag name="param" description="The header label to sanitize." type="string" variable="$label" line="58">
-            <type by_reference="false">string</type>
+          <tag line="58" name="param" description="The header label to sanitize." type="string" variable="$label">
+            <type by_reference="false">\Aura\Http\string</type>
           </tag>
-          <tag name="return" description="The sanitized header label." type="string" line="58">
-            <type by_reference="false">string</type>
+          <tag line="58" name="return" description="The sanitized header label." type="string">
+            <type by_reference="false">\Aura\Http\string</type>
           </tag>
         </docblock>
         <argument line="71">
@@ -78,12 +458,17 @@
       </method>
     </class>
   </file>
-  <file path="src/Exception/HeadersSent.php" hash="6a3651147370f87bfda5591af3d8c389">
-    <class final="false" abstract="false" line="5" namespace="Aura\Http\Exception">
+  <file path="src/Exception/HeadersSent.php" hash="6a3651147370f87bfda5591af3d8c389" package="Default">
+    <parse_markers>
+      <error line="1">No DocBlock was found for File src/Exception/HeadersSent.php</error>
+      <error line="5">No DocBlock was found for Class HeadersSent</error>
+      <error line="7">No DocBlock was found for Method __construct</error>
+    </parse_markers>
+    <class final="false" abstract="false" line="5" namespace="Aura\Http\Exception" package="Default">
       <name>HeadersSent</name>
       <extends>\Aura\Http\Exception</extends>
       <full_name>\Aura\Http\Exception\HeadersSent</full_name>
-      <method final="false" abstract="false" static="false" visibility="public" line="7">
+      <method final="false" abstract="false" static="false" visibility="public" line="7" package="Default">
         <name>__construct</name>
         <argument line="7">
           <name>$file</name>
@@ -98,48 +483,65 @@
       </method>
     </class>
   </file>
-  <file path="src/Response.php" hash="6235ec9c9b80b1747d1090d1749415f7">
-    <class final="false" abstract="false" line="3" namespace="Aura\Http">
+  <file path="src/Response.php" hash="6235ec9c9b80b1747d1090d1749415f7" package="Default">
+    <parse_markers>
+      <error line="1">No DocBlock was found for File src/Response.php</error>
+      <error line="3">No DocBlock was found for Class Response</error>
+      <error line="5">No DocBlock was found for Property $cookies</error>
+      <error line="7">No DocBlock was found for Property $content</error>
+      <error line="9">No DocBlock was found for Property $headers</error>
+      <error line="11">No DocBlock was found for Property $status_code</error>
+      <error line="13">No DocBlock was found for Property $status_text</error>
+      <error line="69">No DocBlock was found for Property $version</error>
+      <error line="71">No DocBlock was found for Method __construct</error>
+      <error line="81">No DocBlock was found for Method __get</error>
+      <error line="94">No DocBlock was found for Method send</error>
+      <error line="108">No DocBlock was found for Method sendHeaders</error>
+      <error line="127">No DocBlock was found for Method setCookies</error>
+      <error line="132">No DocBlock was found for Method getCookies</error>
+    </parse_markers>
+    <class final="false" abstract="false" line="3" namespace="Aura\Http" package="Default">
       <name>Response</name>
       <extends/>
       <full_name>\Aura\Http\Response</full_name>
-      <property final="false" static="false" visibility="protected" line="5">
+      <property final="false" static="false" visibility="protected" line="5" package="Default">
         <name>$cookies</name>
-        <default>array</default>
+        <default>array()</default>
       </property>
-      <property final="false" static="false" visibility="protected" line="7">
+      <property final="false" static="false" visibility="protected" line="7" package="Default">
         <name>$content</name>
         <default/>
       </property>
-      <property final="false" static="false" visibility="protected" line="9">
+      <property final="false" static="false" visibility="protected" line="9" package="Default">
         <name>$headers</name>
-        <default>array</default>
+        <default>array()</default>
       </property>
-      <property final="false" static="false" visibility="protected" line="11">
+      <property final="false" static="false" visibility="protected" line="11" package="Default">
         <name>$status_code</name>
         <default/>
       </property>
-      <property final="false" static="false" visibility="protected" line="13">
+      <property final="false" static="false" visibility="protected" line="13" package="Default">
         <name>$status_text</name>
         <default/>
       </property>
-      <property final="false" static="false" visibility="protected" line="22">
+      <property final="false" static="false" visibility="protected" line="22" package="Default">
         <name>$status_text_default</name>
-        <default>array</default>
+        <default>array(
+        '100' =&gt; 'Continue'</default>
         <docblock>
           <description>List of the HTTP status text default values.</description>
           <long-description>
 </long-description>
-          <tag name="var" description="" type="array" line="15">
-            <type by_reference="false">array</type>
+          <tag line="15" name="var" description="" type="array">
+            <type by_reference="false">\Aura\Http\array</type>
           </tag>
         </docblock>
       </property>
-      <property final="false" static="false" visibility="protected" line="69">
+      <property final="false" static="false" visibility="protected" line="69" package="Default">
         <name>$version</name>
-        <default>1.1</default>
+        <default>'1.1'</default>
       </property>
-      <method final="false" abstract="false" static="false" visibility="public" line="71">
+      <method final="false" abstract="false" static="false" visibility="public" line="71" package="Default">
         <name>__construct</name>
         <argument line="72">
           <name>$headers</name>
@@ -152,7 +554,7 @@
           <type>Cookies</type>
         </argument>
       </method>
-      <method final="false" abstract="false" static="false" visibility="public" line="81">
+      <method final="false" abstract="false" static="false" visibility="public" line="81" package="Default">
         <name>__get</name>
         <argument line="81">
           <name>$key</name>
@@ -160,13 +562,13 @@
           <type/>
         </argument>
       </method>
-      <method final="false" abstract="false" static="false" visibility="public" line="94">
+      <method final="false" abstract="false" static="false" visibility="public" line="94" package="Default">
         <name>send</name>
       </method>
-      <method final="false" abstract="false" static="false" visibility="public" line="108">
+      <method final="false" abstract="false" static="false" visibility="public" line="108" package="Default">
         <name>sendHeaders</name>
       </method>
-      <method final="false" abstract="false" static="false" visibility="public" line="127">
+      <method final="false" abstract="false" static="false" visibility="public" line="127" package="Default">
         <name>setCookies</name>
         <argument line="127">
           <name>$cookies</name>
@@ -174,22 +576,22 @@
           <type>Cookies</type>
         </argument>
       </method>
-      <method final="false" abstract="false" static="false" visibility="public" line="132">
+      <method final="false" abstract="false" static="false" visibility="public" line="132" package="Default">
         <name>getCookies</name>
       </method>
-      <method final="false" abstract="false" static="false" visibility="public" line="149">
+      <method final="false" abstract="false" static="false" visibility="public" line="149" package="Default">
         <name>setContent</name>
         <docblock>
           <description>Sets the content of the response.</description>
           <long-description>
 </long-description>
-          <tag name="param" description="The body content of the response." type="string" variable="$content" line="137">
-            <type by_reference="false">string</type>
+          <tag line="137" name="param" description="The body content of the response." type="string" variable="$content">
+            <type by_reference="false">\Aura\Http\string</type>
           </tag>
-          <tag name="return" description="" type="void" line="137">
-            <type by_reference="false">void</type>
+          <tag line="137" name="return" description="" type="void">
+            <type by_reference="false">\Aura\Http\void</type>
           </tag>
-          <tag name="todo" description="Make this stream-aware so it can stream out resources (e.g., file&#10;handles)." line="137"/>
+          <tag line="137" name="todo" description="Make this stream-aware so it can stream out resources (e.g., file&#10;handles)."/>
         </docblock>
         <argument line="149">
           <name>$content</name>
@@ -197,30 +599,30 @@
           <type/>
         </argument>
       </method>
-      <method final="false" abstract="false" static="false" visibility="public" line="161">
+      <method final="false" abstract="false" static="false" visibility="public" line="161" package="Default">
         <name>getContent</name>
         <docblock>
           <description>Gets the content of the response.</description>
           <long-description>
 </long-description>
-          <tag name="return" description="The body content of the response." type="string" line="154">
-            <type by_reference="false">string</type>
+          <tag line="154" name="return" description="The body content of the response." type="string">
+            <type by_reference="false">\Aura\Http\string</type>
           </tag>
         </docblock>
       </method>
-      <method final="false" abstract="false" static="false" visibility="public" line="177">
+      <method final="false" abstract="false" static="false" visibility="public" line="177" package="Default">
         <name>setHeaders</name>
         <docblock>
           <description>Sets the headers for the response (not including cookies).</description>
           <long-description>
 </long-description>
-          <tag name="param" description="An array of headers." type="array" variable="$headers" line="166">
-            <type by_reference="false">array</type>
+          <tag line="166" name="param" description="An array of headers." type="array" variable="$headers">
+            <type by_reference="false">\Aura\Http\array</type>
           </tag>
-          <tag name="return" description="" type="void" line="166">
-            <type by_reference="false">void</type>
+          <tag line="166" name="return" description="" type="void">
+            <type by_reference="false">\Aura\Http\void</type>
           </tag>
-          <tag name="todo" description="extract to a Headers object" line="166"/>
+          <tag line="166" name="todo" description="extract to a Headers object"/>
         </docblock>
         <argument line="177">
           <name>$headers</name>
@@ -228,25 +630,25 @@
           <type>Headers</type>
         </argument>
       </method>
-      <method final="false" abstract="false" static="false" visibility="public" line="189">
+      <method final="false" abstract="false" static="false" visibility="public" line="189" package="Default">
         <name>getHeaders</name>
         <docblock>
           <description>Returns the headers for the response (not including cookies).</description>
           <long-description>
 </long-description>
-          <tag name="return" description="An array of headers." type="array" line="182">
-            <type by_reference="false">array</type>
+          <tag line="182" name="return" description="An array of headers." type="array">
+            <type by_reference="false">\Aura\Http\array</type>
           </tag>
         </docblock>
       </method>
-      <method final="false" abstract="false" static="false" visibility="public" line="203">
+      <method final="false" abstract="false" static="false" visibility="public" line="203" package="Default">
         <name>setStatusCode</name>
         <docblock>
           <description>Sets the HTTP status code to for the response.</description>
           <long-description>&lt;p&gt;Automatically resets the status text to null.&lt;/p&gt;
 </long-description>
-          <tag name="param" description="An HTTP status code, such as 200, 302, 404, etc." type="int" variable="$code" line="194">
-            <type by_reference="false">int</type>
+          <tag line="194" name="param" description="An HTTP status code, such as 200, 302, 404, etc." type="int" variable="$code">
+            <type by_reference="false">\Aura\Http\int</type>
           </tag>
         </docblock>
         <argument line="203">
@@ -255,28 +657,28 @@
           <type/>
         </argument>
       </method>
-      <method final="false" abstract="false" static="false" visibility="public" line="226">
+      <method final="false" abstract="false" static="false" visibility="public" line="226" package="Default">
         <name>getStatusCode</name>
         <docblock>
           <description>Returns the HTTP status code for the response.</description>
           <long-description>
 </long-description>
-          <tag name="return" description="" type="int" line="219">
-            <type by_reference="false">int</type>
+          <tag line="219" name="return" description="" type="int">
+            <type by_reference="false">\Aura\Http\int</type>
           </tag>
         </docblock>
       </method>
-      <method final="false" abstract="false" static="false" visibility="public" line="240">
+      <method final="false" abstract="false" static="false" visibility="public" line="240" package="Default">
         <name>setStatusText</name>
         <docblock>
           <description>Sets the HTTP status text for the response.</description>
           <long-description>
 </long-description>
-          <tag name="param" description="The status text." type="string" variable="$text" line="231">
-            <type by_reference="false">string</type>
+          <tag line="231" name="param" description="The status text." type="string" variable="$text">
+            <type by_reference="false">\Aura\Http\string</type>
           </tag>
-          <tag name="return" description="" type="void" line="231">
-            <type by_reference="false">void</type>
+          <tag line="231" name="return" description="" type="void">
+            <type by_reference="false">\Aura\Http\void</type>
           </tag>
         </docblock>
         <argument line="240">
@@ -285,28 +687,28 @@
           <type/>
         </argument>
       </method>
-      <method final="false" abstract="false" static="false" visibility="public" line="253">
+      <method final="false" abstract="false" static="false" visibility="public" line="253" package="Default">
         <name>getStatusText</name>
         <docblock>
           <description>Returns the HTTP status text for the response.</description>
           <long-description>
 </long-description>
-          <tag name="return" description="" type="string" line="246">
-            <type by_reference="false">string</type>
+          <tag line="246" name="return" description="" type="string">
+            <type by_reference="false">\Aura\Http\string</type>
           </tag>
         </docblock>
       </method>
-      <method final="false" abstract="false" static="false" visibility="public" line="267">
+      <method final="false" abstract="false" static="false" visibility="public" line="267" package="Default">
         <name>setVersion</name>
         <docblock>
           <description>Sets the HTTP version for the response to '1.0' or '1.1'.</description>
           <long-description>
 </long-description>
-          <tag name="param" description="The HTTP version to use for this response." type="string" variable="$version" line="258">
-            <type by_reference="false">string</type>
+          <tag line="258" name="param" description="The HTTP version to use for this response." type="string" variable="$version">
+            <type by_reference="false">\Aura\Http\string</type>
           </tag>
-          <tag name="return" description="" type="void" line="258">
-            <type by_reference="false">void</type>
+          <tag line="258" name="return" description="" type="void">
+            <type by_reference="false">\Aura\Http\void</type>
           </tag>
         </docblock>
         <argument line="267">
@@ -315,21 +717,36 @@
           <type/>
         </argument>
       </method>
-      <method final="false" abstract="false" static="false" visibility="public" line="284">
+      <method final="false" abstract="false" static="false" visibility="public" line="284" package="Default">
         <name>getVersion</name>
         <docblock>
           <description>Returns the HTTP version for the response.</description>
           <long-description>
 </long-description>
-          <tag name="return" description="" type="string" line="277">
-            <type by_reference="false">string</type>
+          <tag line="277" name="return" description="" type="string">
+            <type by_reference="false">\Aura\Http\string</type>
           </tag>
         </docblock>
       </method>
     </class>
   </file>
-  <file path="src/Cookies.php" hash="46d6bc3990e451a2e7b5f6f5a188d17a">
-    <class final="false" abstract="false" line="18" namespace="Aura\Http">
+  <file path="src/Cookies.php" hash="46d6bc3990e451a2e7b5f6f5a188d17a" package="Default">
+    <docblock>
+      <description>This file is part of the Aura Project for PHP.</description>
+      <long-description>
+</long-description>
+      <tag line="2" name="license" description="http://opensource.org/licenses/bsd-license.php BSD"/>
+    </docblock>
+    <parse_markers>
+      <error line="2">No Page-level DocBlock was found in file src/Cookies.php</error>
+      <error line="20">No DocBlock was found for Property $list</error>
+      <error line="23">No DocBlock was found for Property $base</error>
+      <error line="32">No DocBlock was found for Method set</error>
+      <error line="41">No DocBlock was found for Method getAll</error>
+      <error line="46">No DocBlock was found for Method setAll</error>
+      <error line="54">No DocBlock was found for Method send</error>
+    </parse_markers>
+    <class final="false" abstract="false" line="18" namespace="Aura\Http" package="Aura\Http">
       <name>Cookies</name>
       <extends/>
       <full_name>\Aura\Http\Cookies</full_name>
@@ -337,17 +754,18 @@
         <description>Collection of non-cookie HTTP headers.</description>
         <long-description>
 </long-description>
-        <tag name="package" description="Aura.Http" line="11"/>
+        <tag line="11" name="package" description="Aura.Http"/>
       </docblock>
-      <property final="false" static="false" visibility="protected" line="20">
+      <property final="false" static="false" visibility="protected" line="20" package="Default">
         <name>$list</name>
-        <default>array</default>
+        <default>array()</default>
       </property>
-      <property final="false" static="false" visibility="protected" line="23">
+      <property final="false" static="false" visibility="protected" line="23" package="Default">
         <name>$base</name>
-        <default>array</default>
+        <default>array(
+        'value'    =&gt; null</default>
       </property>
-      <method final="false" abstract="false" static="false" visibility="public" line="32">
+      <method final="false" abstract="false" static="false" visibility="public" line="32" package="Default">
         <name>set</name>
         <argument line="32">
           <name>$name</name>
@@ -356,34 +774,70 @@
         </argument>
         <argument line="32">
           <name>$info</name>
-          <default>array</default>
+          <default>array()</default>
           <type>array</type>
         </argument>
       </method>
-      <method final="false" abstract="false" static="false" visibility="public" line="41">
+      <method final="false" abstract="false" static="false" visibility="public" line="41" package="Default">
         <name>getAll</name>
       </method>
-      <method final="false" abstract="false" static="false" visibility="public" line="46">
+      <method final="false" abstract="false" static="false" visibility="public" line="46" package="Default">
         <name>setAll</name>
         <argument line="46">
           <name>$cookies</name>
-          <default>array</default>
+          <default>array()</default>
           <type>array</type>
         </argument>
       </method>
-      <method final="false" abstract="false" static="false" visibility="public" line="54">
+      <method final="false" abstract="false" static="false" visibility="public" line="54" package="Default">
         <name>send</name>
       </method>
     </class>
   </file>
-  <file path="src/Exception.php" hash="62e33aa65c754a672914499b6c21ac85">
-    <class final="false" abstract="false" line="6" namespace="Aura\Http">
+  <file path="src/Exception.php" hash="62e33aa65c754a672914499b6c21ac85" package="Default">
+    <parse_markers>
+      <error line="1">No DocBlock was found for File src/Exception.php</error>
+      <error line="6">No DocBlock was found for Class Exception</error>
+    </parse_markers>
+    <class final="false" abstract="false" line="6" namespace="Aura\Http" package="Default">
       <name>Exception</name>
       <extends>\Exception</extends>
       <full_name>\Aura\Http\Exception</full_name>
     </class>
   </file>
-  <file path="src.php" hash="621283324fd17d91dcdcab4b61512e9d">
+  <file path="config/test.php" hash="8435b209576f9216da04e6d3567e9bed" package="Default">
+    <docblock>
+      <description>Package prefix for autoloader.</description>
+      <long-description>
+</long-description>
+    </docblock>
+    <parse_markers>
+      <error line="2">No Page-level DocBlock was found in file config/test.php</error>
+    </parse_markers>
+  </file>
+  <file path="config/default.php" hash="37452811dfb337e2d19528426c1f3674" package="Default">
+    <docblock>
+      <description>Package prefix for autoloader.</description>
+      <long-description>
+</long-description>
+    </docblock>
+    <parse_markers>
+      <error line="2">No Page-level DocBlock was found in file config/default.php</error>
+    </parse_markers>
+    <function namespace="default" line="18" package="Default">
+      <name>Closure</name>
+      <type>closure</type>
+      <docblock>
+        <description>Dependency services.</description>
+        <long-description>
+</long-description>
+      </docblock>
+    </function>
+  </file>
+  <file path="src.php" hash="621283324fd17d91dcdcab4b61512e9d" package="Default">
+    <parse_markers>
+      <error line="1">No DocBlock was found for File src.php</error>
+    </parse_markers>
     <include type="Require Once" line="2">
       <name>/src/Cookies.php</name>
     </include>
@@ -400,13 +854,16 @@
       <name>/src/Response.php</name>
     </include>
   </file>
-  <package name=""/>
-  <package name="Aura.Http"/>
+  <package name="Aura">
+    <package name="Http"/>
+  </package>
+  <package name="Default"/>
   <namespace name="Aura">
     <namespace name="Http">
       <namespace name="Exception"/>
     </namespace>
   </namespace>
+  <namespace name="default"/>
   <marker>todo</marker>
   <marker>fixme</marker>
 </project>

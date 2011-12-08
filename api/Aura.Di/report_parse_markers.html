@@ -1,0 +1,647 @@
+<html xmlns="http://www.w3.org/1999/xhtml"><head><title>Aura Project for PHP: Aura.Di</title><meta http-equiv="Content-Type" content="text/html; charset=utf-8"></meta><link rel="stylesheet" href="css/jquery-ui.css" type="text/css"></link><link rel="stylesheet" href="css/docblox/jquery-ui-1.8.16.custom.css" type="text/css"></link><link rel="stylesheet" href="css/jquery.treeview.css" type="text/css"></link><link rel="stylesheet" href="css/theme.css" type="text/css"></link><script type="text/javascript" src="js/jquery-1.4.2.min.js"></script><script type="text/javascript" src="js/jquery-ui-1.8.2.custom.min.js"></script><script type="text/javascript" src="js/jquery.tools.min.js"></script><script type="text/javascript" src="js/jquery.cookie.js"></script><script type="text/javascript" src="js/jquery.treeview.js"></script><script type="text/javascript">
+            $(document).ready(function() {
+                $(".filetree").treeview({
+                    collapsed: true,
+                    persist: "cookie"
+                });
+
+                $("#accordion").accordion({
+                    collapsible: true,
+                    autoHeight:  false,
+                    fillSpace:   true
+                });
+
+                $(".tabs").tabs();
+            });
+        </script></head><body><script xmlns="" type="text/javascript">
+        $(document).ready(function() {
+            $("#marker-accordion").accordion({
+                collapsible: true,
+                autoHeight:  false
+            });
+        });
+    </script><div xmlns="" id="content">
+<h1>Compilation Errors</h1>
+<div id="marker-accordion">
+<h3><a href="#">scripts/instance.php<small>1</small></a></h3>
+<div><table>
+<tr>
+<th>Type</th>
+<th>Line</th>
+<th>Description</th>
+</tr>
+<tr>
+<td>error</td>
+<td>1</td>
+<td>No DocBlock was found for File scripts/instance.php</td>
+</tr>
+</table></div>
+<h3><a href="#">tests/ConfigTest.php<small>11</small></a></h3>
+<div><table>
+<tr>
+<th>Type</th>
+<th>Line</th>
+<th>Description</th>
+</tr>
+<tr>
+<td>error</td>
+<td>1</td>
+<td>No DocBlock was found for File tests/ConfigTest.php</td>
+</tr>
+<tr>
+<td>error</td>
+<td>9</td>
+<td>No DocBlock was found for Property $config</td>
+</tr>
+<tr>
+<td>error</td>
+<td>11</td>
+<td>No DocBlock was found for Method setUp</td>
+</tr>
+<tr>
+<td>error</td>
+<td>17</td>
+<td>No DocBlock was found for Method testFetchReadsConstructorDefaults</td>
+</tr>
+<tr>
+<td>error</td>
+<td>34</td>
+<td>No DocBlock was found for Method testFetchCapturesParentParams</td>
+</tr>
+<tr>
+<td>error</td>
+<td>45</td>
+<td>No DocBlock was found for Method testFetchCapturesExplicitParams</td>
+</tr>
+<tr>
+<td>error</td>
+<td>56</td>
+<td>No DocBlock was found for Method testFetchHonorsExplicitParentParams</td>
+</tr>
+<tr>
+<td>error</td>
+<td>74</td>
+<td>No DocBlock was found for Method testGetReflection</td>
+</tr>
+<tr>
+<td>error</td>
+<td>82</td>
+<td>No DocBlock was found for Method testFetchCapturesParentSetter</td>
+</tr>
+<tr>
+<td>error</td>
+<td>93</td>
+<td>No DocBlock was found for Method testFetchCapturesOverrideSetter</td>
+</tr>
+<tr>
+<td>error</td>
+<td>104</td>
+<td>No DocBlock was found for Method testClone</td>
+</tr>
+</table></div>
+<h3><a href="#">tests/ContainerTest.php<small>18</small></a></h3>
+<div><table>
+<tr>
+<th>Type</th>
+<th>Line</th>
+<th>Description</th>
+</tr>
+<tr>
+<td>error</td>
+<td>1</td>
+<td>No DocBlock was found for File tests/ContainerTest.php</td>
+</tr>
+<tr>
+<td>critical</td>
+<td>9</td>
+<td>No short description for property $container</td>
+</tr>
+<tr>
+<td>error</td>
+<td>14</td>
+<td>No DocBlock was found for Property $config</td>
+</tr>
+<tr>
+<td>error</td>
+<td>16</td>
+<td>No DocBlock was found for Property $forge</td>
+</tr>
+<tr>
+<td>critical</td>
+<td>39</td>
+<td>No short description for method testHasGet</td>
+</tr>
+<tr>
+<td>critical</td>
+<td>54</td>
+<td>No short description for method testInitInvalidService</td>
+</tr>
+<tr>
+<td>critical</td>
+<td>62</td>
+<td>No short description for method testGetNoSuchService</td>
+</tr>
+<tr>
+<td>error</td>
+<td>70</td>
+<td>No DocBlock was found for Method testGetServiceInsideClosure</td>
+</tr>
+<tr>
+<td>critical</td>
+<td>81</td>
+<td>No short description for method testGetDefsAndServices</td>
+</tr>
+<tr>
+<td>error</td>
+<td>100</td>
+<td>No DocBlock was found for Method testLazyGet</td>
+</tr>
+<tr>
+<td>error</td>
+<td>115</td>
+<td>No DocBlock was found for Method testMagicGet</td>
+</tr>
+<tr>
+<td>critical</td>
+<td>121</td>
+<td>No short description for method testMagicGetNoSuchProperty</td>
+</tr>
+<tr>
+<td>critical</td>
+<td>129</td>
+<td>No short description for method testNewInstanceWithDefaults</td>
+</tr>
+<tr>
+<td>error</td>
+<td>140</td>
+<td>No DocBlock was found for Method testNewInstanceWithOverride</td>
+</tr>
+<tr>
+<td>error</td>
+<td>154</td>
+<td>No DocBlock was found for Method testLazyNew</td>
+</tr>
+<tr>
+<td>error</td>
+<td>162</td>
+<td>No DocBlock was found for Method testClone</td>
+</tr>
+<tr>
+<td>critical</td>
+<td>168</td>
+<td>No short description for method testLockedConfig</td>
+</tr>
+<tr>
+<td>critical</td>
+<td>177</td>
+<td>No short description for method testLockedSet</td>
+</tr>
+</table></div>
+<h3><a href="#">tests/MockOtherClass.php<small>2</small></a></h3>
+<div><table>
+<tr>
+<th>Type</th>
+<th>Line</th>
+<th>Description</th>
+</tr>
+<tr>
+<td>error</td>
+<td>1</td>
+<td>No DocBlock was found for File tests/MockOtherClass.php</td>
+</tr>
+<tr>
+<td>error</td>
+<td>3</td>
+<td>No DocBlock was found for Class MockOtherClass</td>
+</tr>
+</table></div>
+<h3><a href="#">tests/ManagerTest.php<small>14</small></a></h3>
+<div><table>
+<tr>
+<th>Type</th>
+<th>Line</th>
+<th>Description</th>
+</tr>
+<tr>
+<td>error</td>
+<td>1</td>
+<td>No DocBlock was found for File tests/ManagerTest.php</td>
+</tr>
+<tr>
+<td>error</td>
+<td>4</td>
+<td>No DocBlock was found for Class ManagerTest</td>
+</tr>
+<tr>
+<td>error</td>
+<td>6</td>
+<td>No DocBlock was found for Property $config</td>
+</tr>
+<tr>
+<td>error</td>
+<td>8</td>
+<td>No DocBlock was found for Property $forge</td>
+</tr>
+<tr>
+<td>error</td>
+<td>10</td>
+<td>No DocBlock was found for Property $manager</td>
+</tr>
+<tr>
+<td>error</td>
+<td>12</td>
+<td>No DocBlock was found for Method setUp</td>
+</tr>
+<tr>
+<td>error</td>
+<td>20</td>
+<td>No DocBlock was found for Method tearDown</td>
+</tr>
+<tr>
+<td>error</td>
+<td>25</td>
+<td>No DocBlock was found for Method testNewAndGetContainer</td>
+</tr>
+<tr>
+<td>critical</td>
+<td>43</td>
+<td>No short description for method testNewContainerExists</td>
+</tr>
+<tr>
+<td>critical</td>
+<td>52</td>
+<td>No short description for method testGetContainerNotFound</td>
+</tr>
+<tr>
+<td>error</td>
+<td>60</td>
+<td>No DocBlock was found for Method testLock</td>
+</tr>
+<tr>
+<td>error</td>
+<td>71</td>
+<td>No DocBlock was found for Method testCloneContainer</td>
+</tr>
+<tr>
+<td>error</td>
+<td>84</td>
+<td>No DocBlock was found for Method testLazyCloneContainer</td>
+</tr>
+<tr>
+<td>error</td>
+<td>97</td>
+<td>No DocBlock was found for Method testSubContainer</td>
+</tr>
+</table></div>
+<h3><a href="#">tests/MockChildClass.php<small>7</small></a></h3>
+<div><table>
+<tr>
+<th>Type</th>
+<th>Line</th>
+<th>Description</th>
+</tr>
+<tr>
+<td>error</td>
+<td>1</td>
+<td>No DocBlock was found for File tests/MockChildClass.php</td>
+</tr>
+<tr>
+<td>error</td>
+<td>3</td>
+<td>No DocBlock was found for Class MockChildClass</td>
+</tr>
+<tr>
+<td>error</td>
+<td>5</td>
+<td>No DocBlock was found for Property $zim</td>
+</tr>
+<tr>
+<td>error</td>
+<td>7</td>
+<td>No DocBlock was found for Property $fake</td>
+</tr>
+<tr>
+<td>error</td>
+<td>9</td>
+<td>No DocBlock was found for Method __construct</td>
+</tr>
+<tr>
+<td>error</td>
+<td>15</td>
+<td>No DocBlock was found for Method setFake</td>
+</tr>
+<tr>
+<td>error</td>
+<td>20</td>
+<td>No DocBlock was found for Method getFake</td>
+</tr>
+</table></div>
+<h3><a href="#">tests/ForgeTest.php<small>9</small></a></h3>
+<div><table>
+<tr>
+<th>Type</th>
+<th>Line</th>
+<th>Description</th>
+</tr>
+<tr>
+<td>error</td>
+<td>1</td>
+<td>No DocBlock was found for File tests/ForgeTest.php</td>
+</tr>
+<tr>
+<td>critical</td>
+<td>9</td>
+<td>No short description for property $forge</td>
+</tr>
+<tr>
+<td>error</td>
+<td>14</td>
+<td>No DocBlock was found for Property $config</td>
+</tr>
+<tr>
+<td>critical</td>
+<td>36</td>
+<td>No short description for method testGetConfig</td>
+</tr>
+<tr>
+<td>critical</td>
+<td>44</td>
+<td>No short description for method testNewInstance</td>
+</tr>
+<tr>
+<td>error</td>
+<td>53</td>
+<td>No DocBlock was found for Method testNewInstanceWithLazyParam</td>
+</tr>
+<tr>
+<td>error</td>
+<td>69</td>
+<td>No DocBlock was found for Method testNewInstanceWithSetter</td>
+</tr>
+<tr>
+<td>error</td>
+<td>83</td>
+<td>No DocBlock was found for Method testnewInstanceWithLazySetter</td>
+</tr>
+<tr>
+<td>error</td>
+<td>101</td>
+<td>No DocBlock was found for Method testClone</td>
+</tr>
+</table></div>
+<h3><a href="#">tests/MockParentClass.php<small>5</small></a></h3>
+<div><table>
+<tr>
+<th>Type</th>
+<th>Line</th>
+<th>Description</th>
+</tr>
+<tr>
+<td>error</td>
+<td>1</td>
+<td>No DocBlock was found for File tests/MockParentClass.php</td>
+</tr>
+<tr>
+<td>error</td>
+<td>3</td>
+<td>No DocBlock was found for Class MockParentClass</td>
+</tr>
+<tr>
+<td>error</td>
+<td>5</td>
+<td>No DocBlock was found for Property $foo</td>
+</tr>
+<tr>
+<td>error</td>
+<td>7</td>
+<td>No DocBlock was found for Method __construct</td>
+</tr>
+<tr>
+<td>error</td>
+<td>12</td>
+<td>No DocBlock was found for Method getFoo</td>
+</tr>
+</table></div>
+<h3><a href="#">src/Manager.php<small>1</small></a></h3>
+<div><table>
+<tr>
+<th>Type</th>
+<th>Line</th>
+<th>Description</th>
+</tr>
+<tr>
+<td>error</td>
+<td>2</td>
+<td>No Page-level DocBlock was found in file src/Manager.php</td>
+</tr>
+</table></div>
+<h3><a href="#">src/ForgeInterface.php<small>1</small></a></h3>
+<div><table>
+<tr>
+<th>Type</th>
+<th>Line</th>
+<th>Description</th>
+</tr>
+<tr>
+<td>error</td>
+<td>2</td>
+<td>No Page-level DocBlock was found in file src/ForgeInterface.php</td>
+</tr>
+</table></div>
+<h3><a href="#">src/Exception/ContainerExists.php<small>1</small></a></h3>
+<div><table>
+<tr>
+<th>Type</th>
+<th>Line</th>
+<th>Description</th>
+</tr>
+<tr>
+<td>error</td>
+<td>2</td>
+<td>No Page-level DocBlock was found in file src/Exception/ContainerExists.php</td>
+</tr>
+</table></div>
+<h3><a href="#">src/Exception/ServiceInvalid.php<small>1</small></a></h3>
+<div><table>
+<tr>
+<th>Type</th>
+<th>Line</th>
+<th>Description</th>
+</tr>
+<tr>
+<td>error</td>
+<td>2</td>
+<td>No Page-level DocBlock was found in file src/Exception/ServiceInvalid.php</td>
+</tr>
+</table></div>
+<h3><a href="#">src/Exception/ServiceNotFound.php<small>1</small></a></h3>
+<div><table>
+<tr>
+<th>Type</th>
+<th>Line</th>
+<th>Description</th>
+</tr>
+<tr>
+<td>error</td>
+<td>2</td>
+<td>No Page-level DocBlock was found in file src/Exception/ServiceNotFound.php</td>
+</tr>
+</table></div>
+<h3><a href="#">src/Exception/ContainerNotFound.php<small>1</small></a></h3>
+<div><table>
+<tr>
+<th>Type</th>
+<th>Line</th>
+<th>Description</th>
+</tr>
+<tr>
+<td>error</td>
+<td>2</td>
+<td>No Page-level DocBlock was found in file src/Exception/ContainerNotFound.php</td>
+</tr>
+</table></div>
+<h3><a href="#">src/Exception/ContainerLocked.php<small>1</small></a></h3>
+<div><table>
+<tr>
+<th>Type</th>
+<th>Line</th>
+<th>Description</th>
+</tr>
+<tr>
+<td>error</td>
+<td>2</td>
+<td>No Page-level DocBlock was found in file src/Exception/ContainerLocked.php</td>
+</tr>
+</table></div>
+<h3><a href="#">src/Lazy.php<small>1</small></a></h3>
+<div><table>
+<tr>
+<th>Type</th>
+<th>Line</th>
+<th>Description</th>
+</tr>
+<tr>
+<td>error</td>
+<td>2</td>
+<td>No Page-level DocBlock was found in file src/Lazy.php</td>
+</tr>
+</table></div>
+<h3><a href="#">src/ContainerInterface.php<small>1</small></a></h3>
+<div><table>
+<tr>
+<th>Type</th>
+<th>Line</th>
+<th>Description</th>
+</tr>
+<tr>
+<td>error</td>
+<td>2</td>
+<td>No Page-level DocBlock was found in file src/ContainerInterface.php</td>
+</tr>
+</table></div>
+<h3><a href="#">src/Config.php<small>1</small></a></h3>
+<div><table>
+<tr>
+<th>Type</th>
+<th>Line</th>
+<th>Description</th>
+</tr>
+<tr>
+<td>error</td>
+<td>2</td>
+<td>No Page-level DocBlock was found in file src/Config.php</td>
+</tr>
+</table></div>
+<h3><a href="#">src/Container.php<small>1</small></a></h3>
+<div><table>
+<tr>
+<th>Type</th>
+<th>Line</th>
+<th>Description</th>
+</tr>
+<tr>
+<td>error</td>
+<td>2</td>
+<td>No Page-level DocBlock was found in file src/Container.php</td>
+</tr>
+</table></div>
+<h3><a href="#">src/ConfigInterface.php<small>1</small></a></h3>
+<div><table>
+<tr>
+<th>Type</th>
+<th>Line</th>
+<th>Description</th>
+</tr>
+<tr>
+<td>error</td>
+<td>2</td>
+<td>No Page-level DocBlock was found in file src/ConfigInterface.php</td>
+</tr>
+</table></div>
+<h3><a href="#">src/Forge.php<small>1</small></a></h3>
+<div><table>
+<tr>
+<th>Type</th>
+<th>Line</th>
+<th>Description</th>
+</tr>
+<tr>
+<td>error</td>
+<td>2</td>
+<td>No Page-level DocBlock was found in file src/Forge.php</td>
+</tr>
+</table></div>
+<h3><a href="#">src/Exception.php<small>1</small></a></h3>
+<div><table>
+<tr>
+<th>Type</th>
+<th>Line</th>
+<th>Description</th>
+</tr>
+<tr>
+<td>error</td>
+<td>2</td>
+<td>No Page-level DocBlock was found in file src/Exception.php</td>
+</tr>
+</table></div>
+<h3><a href="#">config/test.php<small>1</small></a></h3>
+<div><table>
+<tr>
+<th>Type</th>
+<th>Line</th>
+<th>Description</th>
+</tr>
+<tr>
+<td>error</td>
+<td>2</td>
+<td>No Page-level DocBlock was found in file config/test.php</td>
+</tr>
+</table></div>
+<h3><a href="#">config/default.php<small>1</small></a></h3>
+<div><table>
+<tr>
+<th>Type</th>
+<th>Line</th>
+<th>Description</th>
+</tr>
+<tr>
+<td>error</td>
+<td>2</td>
+<td>No Page-level DocBlock was found in file config/default.php</td>
+</tr>
+</table></div>
+<h3><a href="#">src.php<small>1</small></a></h3>
+<div><table>
+<tr>
+<th>Type</th>
+<th>Line</th>
+<th>Description</th>
+</tr>
+<tr>
+<td>error</td>
+<td>1</td>
+<td>No DocBlock was found for File src.php</td>
+</tr>
+</table></div>
+</div>
+</div></body></html>

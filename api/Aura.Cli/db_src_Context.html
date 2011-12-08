@@ -1,4 +1,4 @@
-<html xmlns="http://www.w3.org/1999/xhtml"><head><title>Aura Project for PHP: Aura.Cli</title><meta http-equiv="Content-Type" content="text/html; charset=utf-8"></meta><link rel="stylesheet" href="css/black-tie/jquery-ui-1.8.2.custom.css" type="text/css"></link><link rel="stylesheet" href="css/jquery.treeview.css" type="text/css"></link><link rel="stylesheet" href="css/theme.css" type="text/css"></link><script type="text/javascript" src="js/jquery-1.4.2.min.js"></script><script type="text/javascript" src="js/jquery-ui-1.8.2.custom.min.js"></script><script type="text/javascript" src="js/jquery.cookie.js"></script><script type="text/javascript" src="js/jquery.treeview.js"></script><script type="text/javascript">
+<html xmlns="http://www.w3.org/1999/xhtml"><head><title>Aura Project for PHP: Aura.Cli</title><meta http-equiv="Content-Type" content="text/html; charset=utf-8"></meta><link rel="stylesheet" href="css/jquery-ui.css" type="text/css"></link><link rel="stylesheet" href="css/docblox/jquery-ui-1.8.16.custom.css" type="text/css"></link><link rel="stylesheet" href="css/jquery.treeview.css" type="text/css"></link><link rel="stylesheet" href="css/theme.css" type="text/css"></link><script type="text/javascript" src="js/jquery-1.4.2.min.js"></script><script type="text/javascript" src="js/jquery-ui-1.8.2.custom.min.js"></script><script type="text/javascript" src="js/jquery.tools.min.js"></script><script type="text/javascript" src="js/jquery.cookie.js"></script><script type="text/javascript" src="js/jquery.treeview.js"></script><script type="text/javascript">
             $(document).ready(function() {
                 $(".filetree").treeview({
                     collapsed: true,
@@ -14,41 +14,109 @@
                 $(".tabs").tabs();
             });
         </script></head><body><div xmlns="" id="content">
-<script type="text/javascript" src="js/menu.js"></script><script>
+<script xmlns:dbx="http://docblox-project.org/xsl/functions">
+
+      function filterElements()
+      {
+        inherited = !$('#show-inherited').hasClass('deselected');
+        public    = !$('#show-public').hasClass('deselected');
+        protected = !$('#show-protected').hasClass('deselected');
+        private   = !$('#show-private').hasClass('deselected');
+
+        $('div.public').each(function(index, val) {
+            $(val).toggle(public && !($(val).hasClass('inherited_from') && !inherited));
+        });
+        $('div.protected').each(function(index, val) {
+            $(val).toggle(protected && !($(val).hasClass('inherited_from') && !inherited));
+        });
+        $('div.private').each(function(index, val) {
+            $(val).toggle(private && !($(val).hasClass('inherited_from') && !inherited));
+        });
+      }
+
       $(document).ready(function() {
         $('a.gripper').click(function() {
             $(this).nextAll('div.code-tabs').slideToggle();
             $(this).children('img').toggle();
             return false;
         });
+
+        $('div.method code span.highlight,div.function code span.highlight,div.constant code span.highlight,div.property code span.highlight').css('cursor', 'pointer');
+
+        $('div.method code span.highlight,div.function code span.highlight,div.constant code span.highlight,div.property code span.highlight').click(function() {
+            $(this).parent().nextAll('div.code-tabs').slideToggle();
+            $(this).parent().prevAll('a.gripper').children('img').toggle();
+            return false;
+        });
+
         $('div.code-tabs').hide();
         $('a.gripper').show();
-        $('div.file-nav').show();
+        $('div.code-tabs:empty').prevAll('a.gripper').html('');
+
+        $('#show-public, #show-protected, #show-private, #show-inherited')
+            .css('cursor', 'pointer')
+            .click(function(){
+                $(this).toggleClass('deselected');
+                if ($(this).hasClass('deselected')) {
+                  $(this).fadeTo('fast', '0.4');
+                } else {
+                  $(this).fadeTo('fast', '1.0');
+                }
+                filterElements();
+                return false;
+            });
+        $('#show-protected, #show-private').click();
+
+        // add the sliding behaviour to the file navigation and show it
+        // it is initially hidden for non-JS users.
+        $("#file-nav-box").show().hover(function() {
+            $("#file-nav-container").slideDown(400);
+        }, function() {
+            $("#file-nav-container").slideUp(400);
+        });
       });
-    </script><h1 class="file">src/Context.php</h1>
-<div class="file-nav"><ul id="file-nav">
-<li><a href="#top">Global</a></li>
-<li>
+
+      
+    </script><h1 xmlns:dbx="http://docblox-project.org/xsl/functions" class="file">src/Context.php</h1>
+<div xmlns:dbx="http://docblox-project.org/xsl/functions" id="file-nav-box">
+<div id="file-nav-options">
+              Show:
+              <img src="images/icons/visibility_public.png" id="show-public"><img src="images/icons/visibility_protected.png" id="show-protected"><img src="images/icons/visibility_private.png" id="show-private"><span class="attribute" id="show-inherited">inherited</span>
+</div>
+<div id="file-nav-container">
+<ul id="file-nav"><li>
 <a href="#classes"><img src="images/icons/class.png" height="14">
-                      Classes
-                  </a><ul><li><a href="#%5CAura%5CCli%5CContext">\Aura\Cli\Context</a></li></ul>
-</li>
-</ul></div>
-<a name="top"></a><div id="file-description"></div>
-<dl class="file-info"></dl>
-<a name="classes"></a><a id="\Aura\Cli\Context"></a><h2 class="class">\Aura\Cli\Context<div class="to-top"><a href="#top">jump to top</a></div>
+                          Classes
+                      </a><ul><li><a href="#%5CAura%5CCli%5CContext">\Aura\Cli\Context</a></li></ul>
+</li></ul>
+<div style="clear: left;"></div>
+</div>
+<div id="file-nav-tab">
+              Table of Contents
+          </div>
+</div>
+<a xmlns:dbx="http://docblox-project.org/xsl/functions" name="top" class="anchor"></a><div id="file-description">
+<p xmlns:dbx="http://docblox-project.org/xsl/functions" class="short-description">This file is part of the Aura project for PHP.</p>
+<div xmlns:dbx="http://docblox-project.org/xsl/functions" class="long-description">
+</div>
+</div>
+<dl class="file-info">
+<dt xmlns:dbx="http://docblox-project.org/xsl/functions">License</dt>
+<dd xmlns:dbx="http://docblox-project.org/xsl/functions">
+<a href="http://opensource.org/licenses/bsd-license.php">BSD</a>
+         
+    </dd>
+</dl>
+<a name="classes" class="anchor"></a><a xmlns:dbx="http://docblox-project.org/xsl/functions" id="\Aura\Cli\Context" class="anchor"></a><h2 xmlns:dbx="http://docblox-project.org/xsl/functions" class="class">\Aura\Cli\Context<div class="to-top"><a href="#top">jump to top</a></div>
 </h2>
-<div class="class">
-<p class="short-description">Collection point for information about the command-line execution context.</p>
+<div xmlns:dbx="http://docblox-project.org/xsl/functions" class="class">
+<small class="package"><b>Package: </b>Aura\Cli</small><p class="short-description">Collection point for information about the command-line execution context.</p>
 <div class="long-description">
 </div>
-<dl class="class-info">
-<dt>package</dt>
-<dd>Aura.Cli</dd>
-</dl>
+<dl class="class-info"></dl>
 <h3>Properties</h3>
 <div>
-<a id="\Aura\Cli\Context::$argv"></a><div class="property">
+<a id="\Aura\Cli\Context::$argv" class="anchor"></a><div class="property protected">
 <a href="#" class="gripper"><img src="images/icons/arrow_right.png"><img src="images/icons/arrow_down.png" style="display: none;"></a><code><img src="images/icons/property.png" alt="Property"><img src="images/icons/visibility_protected.png" style="margin-right: 5px" alt="protected">array
                  <span class="highlight">$argv</span>= ''
                 </code><div class="description">
@@ -58,12 +126,12 @@
 </div>
 <strong>Details</strong><dl class="property-info">
 <dt>Type</dt>
-<dd>array</dd>
+<dd>\Aura\Cli\array</dd>
 </dl>
 </div>
 <div class="clear"></div>
 </div>
-<a id="\Aura\Cli\Context::$env"></a><div class="property">
+<a id="\Aura\Cli\Context::$env" class="anchor"></a><div class="property protected">
 <a href="#" class="gripper"><img src="images/icons/arrow_right.png"><img src="images/icons/arrow_down.png" style="display: none;"></a><code><img src="images/icons/property.png" alt="Property"><img src="images/icons/visibility_protected.png" style="margin-right: 5px" alt="protected">array
                  <span class="highlight">$env</span>= ''
                 </code><div class="description">
@@ -73,12 +141,12 @@
 </div>
 <strong>Details</strong><dl class="property-info">
 <dt>Type</dt>
-<dd>array</dd>
+<dd>\Aura\Cli\array</dd>
 </dl>
 </div>
 <div class="clear"></div>
 </div>
-<a id="\Aura\Cli\Context::$server"></a><div class="property">
+<a id="\Aura\Cli\Context::$server" class="anchor"></a><div class="property protected">
 <a href="#" class="gripper"><img src="images/icons/arrow_right.png"><img src="images/icons/arrow_down.png" style="display: none;"></a><code><img src="images/icons/property.png" alt="Property"><img src="images/icons/visibility_protected.png" style="margin-right: 5px" alt="protected">array
                  <span class="highlight">$server</span>= ''
                 </code><div class="description">
@@ -88,7 +156,7 @@
 </div>
 <strong>Details</strong><dl class="property-info">
 <dt>Type</dt>
-<dd>array</dd>
+<dd>\Aura\Cli\array</dd>
 </dl>
 </div>
 <div class="clear"></div>
@@ -96,32 +164,30 @@
 </div>
 <h3>Methods</h3>
 <div>
-<a id="\Aura\Cli\Context::__construct()"></a><div class="method">
-<a href="#" class="gripper"><img src="images/icons/arrow_right.png"><img src="images/icons/arrow_down.png" style="display: none;"></a><code><img src="images/icons/method.png" alt="method"><img src="images/icons/visibility_public.png" style="margin-right: 5px" alt="public"> 
-            <span class="highlight">__construct</span><span class="nb-faded-text">(
+<a id="\Aura\Cli\Context::__construct()" class="anchor"></a><div class="method public">
+<a href="#" class="gripper"><img src="images/icons/arrow_right.png"><img src="images/icons/arrow_down.png" style="display: none;"></a><code><img src="images/icons/method.png" alt="method"><img src="images/icons/visibility_public.png" style="margin-right: 5px" alt="public"><span class="highlight">__construct</span><span class="nb-faded-text">(
           
           )
         </span>
         :
-        void</code><div class="description">Constructor.</div>
+          \Aura\Cli\void</code><div class="description"><p class="short_description">Constructor.</p></div>
 <div class="code-tabs"><div class="long-description">
 </div></div>
 <div class="clear"></div>
 </div>
-<a id="\Aura\Cli\Context::getArgv()"></a><div class="method">
-<a href="#" class="gripper"><img src="images/icons/arrow_right.png"><img src="images/icons/arrow_down.png" style="display: none;"></a><code><img src="images/icons/method.png" alt="method"><img src="images/icons/visibility_public.png" style="margin-right: 5px" alt="public"> 
-            <span class="highlight">getArgv</span><span class="nb-faded-text">(
-          int $key
+<a id="\Aura\Cli\Context::getArgv()" class="anchor"></a><div class="method public">
+<a href="#" class="gripper"><img src="images/icons/arrow_right.png"><img src="images/icons/arrow_down.png" style="display: none;"></a><code><img src="images/icons/method.png" alt="method"><img src="images/icons/visibility_public.png" style="margin-right: 5px" alt="public"><span class="highlight">getArgv</span><span class="nb-faded-text">(
+          \Aura\Cli\int $key
               =
-              null, string $alt
+              null, \Aura\Cli\string $alt
               =
               null
           )
         </span>
         :
-        mixed</code><div class="description">Retrieves an **unfiltered** value by position from the `$argv`
+          \Aura\Cli\mixed</code><div class="description"><p class="short_description">Retrieves an **unfiltered** value by position from the `$argv`
 property, or an alternate default value if that position does not
-exist.</div>
+exist.</p></div>
 <div class="code-tabs">
 <div class="long-description">
 </div>
@@ -133,14 +199,14 @@ exist.</div>
 </tr></thead>
 <tr>
 <th>$key</th>
-<td>int</td>
+<td>\Aura\Cli\int</td>
 <td><em><p>The <code>$argv</code> positional key to retrieve the value of.</p>
 </em></td>
 </tr>
 <tr>
 <th>$alt</th>
-<td>string</td>
-<td><em>The value to return if the key does not exist.</em></td>
+<td>\Aura\Cli\string</td>
+<td><em><p>The value to return if the key does not exist.</p></em></td>
 </tr>
 </table>
 <strong>Returns</strong><table class="argument-info">
@@ -149,26 +215,25 @@ exist.</div>
 <th>Description</th>
 </tr></thead>
 <tr>
-<td>mixed</td>
-<td></td>
+<td>\Aura\Cli\mixed</td>
+<td>The value of $server[$key], or the alternate default value.</td>
 </tr>
 </table>
 </div>
 <div class="clear"></div>
 </div>
-<a id="\Aura\Cli\Context::getEnv()"></a><div class="method">
-<a href="#" class="gripper"><img src="images/icons/arrow_right.png"><img src="images/icons/arrow_down.png" style="display: none;"></a><code><img src="images/icons/method.png" alt="method"><img src="images/icons/visibility_public.png" style="margin-right: 5px" alt="public"> 
-            <span class="highlight">getEnv</span><span class="nb-faded-text">(
-          string $key
+<a id="\Aura\Cli\Context::getEnv()" class="anchor"></a><div class="method public">
+<a href="#" class="gripper"><img src="images/icons/arrow_right.png"><img src="images/icons/arrow_down.png" style="display: none;"></a><code><img src="images/icons/method.png" alt="method"><img src="images/icons/visibility_public.png" style="margin-right: 5px" alt="public"><span class="highlight">getEnv</span><span class="nb-faded-text">(
+          \Aura\Cli\string $key
               =
-              null, string $alt
+              null, \Aura\Cli\string $alt
               =
               null
           )
         </span>
         :
-        mixed</code><div class="description">Retrieves an **unfiltered** value by key from the $env property, or an
-alternate default value if that key does not exist.</div>
+          \Aura\Cli\mixed</code><div class="description"><p class="short_description">Retrieves an **unfiltered** value by key from the $env property, or an
+alternate default value if that key does not exist.</p></div>
 <div class="code-tabs">
 <div class="long-description">
 </div>
@@ -180,14 +245,14 @@ alternate default value if that key does not exist.</div>
 </tr></thead>
 <tr>
 <th>$key</th>
-<td>string</td>
+<td>\Aura\Cli\string</td>
 <td><em><p>The $env key to retrieve the value of.</p>
 </em></td>
 </tr>
 <tr>
 <th>$alt</th>
-<td>string</td>
-<td><em>The value to return if the key does not exist.</em></td>
+<td>\Aura\Cli\string</td>
+<td><em><p>The value to return if the key does not exist.</p></em></td>
 </tr>
 </table>
 <strong>Returns</strong><table class="argument-info">
@@ -196,26 +261,25 @@ alternate default value if that key does not exist.</div>
 <th>Description</th>
 </tr></thead>
 <tr>
-<td>mixed</td>
-<td></td>
+<td>\Aura\Cli\mixed</td>
+<td>The value of $env[$key], or the alternate default value.</td>
 </tr>
 </table>
 </div>
 <div class="clear"></div>
 </div>
-<a id="\Aura\Cli\Context::getServer()"></a><div class="method">
-<a href="#" class="gripper"><img src="images/icons/arrow_right.png"><img src="images/icons/arrow_down.png" style="display: none;"></a><code><img src="images/icons/method.png" alt="method"><img src="images/icons/visibility_public.png" style="margin-right: 5px" alt="public"> 
-            <span class="highlight">getServer</span><span class="nb-faded-text">(
-          string $key
+<a id="\Aura\Cli\Context::getServer()" class="anchor"></a><div class="method public">
+<a href="#" class="gripper"><img src="images/icons/arrow_right.png"><img src="images/icons/arrow_down.png" style="display: none;"></a><code><img src="images/icons/method.png" alt="method"><img src="images/icons/visibility_public.png" style="margin-right: 5px" alt="public"><span class="highlight">getServer</span><span class="nb-faded-text">(
+          \Aura\Cli\string $key
               =
-              null, string $alt
+              null, \Aura\Cli\string $alt
               =
               null
           )
         </span>
         :
-        mixed</code><div class="description">Retrieves an **unfiltered** value by key from the $server property, or
-an alternate default value if that key does not exist.</div>
+          \Aura\Cli\mixed</code><div class="description"><p class="short_description">Retrieves an **unfiltered** value by key from the $server property, or
+an alternate default value if that key does not exist.</p></div>
 <div class="code-tabs">
 <div class="long-description">
 </div>
@@ -227,14 +291,14 @@ an alternate default value if that key does not exist.</div>
 </tr></thead>
 <tr>
 <th>$key</th>
-<td>string</td>
+<td>\Aura\Cli\string</td>
 <td><em><p>The $server key to retrieve the value of.</p>
 </em></td>
 </tr>
 <tr>
 <th>$alt</th>
-<td>string</td>
-<td><em>The value to return if the key does not exist.</em></td>
+<td>\Aura\Cli\string</td>
+<td><em><p>The value to return if the key does not exist.</p></em></td>
 </tr>
 </table>
 <strong>Returns</strong><table class="argument-info">
@@ -243,21 +307,20 @@ an alternate default value if that key does not exist.</div>
 <th>Description</th>
 </tr></thead>
 <tr>
-<td>mixed</td>
-<td></td>
+<td>\Aura\Cli\mixed</td>
+<td>The value of $server[$key], or the alternate default value.</td>
 </tr>
 </table>
 </div>
 <div class="clear"></div>
 </div>
-<a id="\Aura\Cli\Context::getValue()"></a><div class="method">
-<a href="#" class="gripper"><img src="images/icons/arrow_right.png"><img src="images/icons/arrow_down.png" style="display: none;"></a><code><img src="images/icons/method.png" alt="method"><img src="images/icons/visibility_protected.png" style="margin-right: 5px" alt="protected"> 
-            <span class="highlight">getValue</span><span class="nb-faded-text">(
-          string $var, string $key, string $alt
+<a id="\Aura\Cli\Context::getValue()" class="anchor"></a><div class="method protected">
+<a href="#" class="gripper"><img src="images/icons/arrow_right.png"><img src="images/icons/arrow_down.png" style="display: none;"></a><code><img src="images/icons/method.png" alt="method"><img src="images/icons/visibility_protected.png" style="margin-right: 5px" alt="protected"><span class="highlight">getValue</span><span class="nb-faded-text">(
+          \Aura\Cli\string $var, \Aura\Cli\string $key, \Aura\Cli\string $alt
           )
         </span>
         :
-        mixed</code><div class="description">Common method to get a property value and return it.</div>
+          \Aura\Cli\mixed</code><div class="description"><p class="short_description">Common method to get a property value and return it.</p></div>
 <div class="code-tabs">
 <div class="long-description">
 </div>
@@ -269,18 +332,18 @@ an alternate default value if that key does not exist.</div>
 </tr></thead>
 <tr>
 <th>$var</th>
-<td>string</td>
-<td><em>The property variable to fetch from: get, post, etc.</em></td>
+<td>\Aura\Cli\string</td>
+<td><em><p>The property variable to fetch from: get, post, etc.</p></em></td>
 </tr>
 <tr>
 <th>$key</th>
-<td>string</td>
-<td><em>The array key in that property, if any, to get the value of.</em></td>
+<td>\Aura\Cli\string</td>
+<td><em><p>The array key in that property, if any, to get the value of.</p></em></td>
 </tr>
 <tr>
 <th>$alt</th>
-<td>string</td>
-<td><em>The alternative default value to return if the requested key does not exist.</em></td>
+<td>\Aura\Cli\string</td>
+<td><em><p>The alternative default value to return if the requested key does not exist.</p></em></td>
 </tr>
 </table>
 <strong>Returns</strong><table class="argument-info">
@@ -289,21 +352,20 @@ an alternate default value if that key does not exist.</div>
 <th>Description</th>
 </tr></thead>
 <tr>
-<td>mixed</td>
-<td></td>
+<td>\Aura\Cli\mixed</td>
+<td>The requested value, or the alternative default value.</td>
 </tr>
 </table>
 </div>
 <div class="clear"></div>
 </div>
-<a id="\Aura\Cli\Context::setArgv()"></a><div class="method">
-<a href="#" class="gripper"><img src="images/icons/arrow_right.png"><img src="images/icons/arrow_down.png" style="display: none;"></a><code><img src="images/icons/method.png" alt="method"><img src="images/icons/visibility_protected.png" style="margin-right: 5px" alt="protected"> 
-            <span class="highlight">setArgv</span><span class="nb-faded-text">(
-          array $argv
+<a id="\Aura\Cli\Context::setArgv()" class="anchor"></a><div class="method protected">
+<a href="#" class="gripper"><img src="images/icons/arrow_right.png"><img src="images/icons/arrow_down.png" style="display: none;"></a><code><img src="images/icons/method.png" alt="method"><img src="images/icons/visibility_protected.png" style="margin-right: 5px" alt="protected"><span class="highlight">setArgv</span><span class="nb-faded-text">(
+          \Aura\Cli\array $argv
           )
         </span>
         :
-        void</code><div class="description">Sets the `$argv` property.</div>
+          \Aura\Cli\void</code><div class="description"><p class="short_description">Sets the `$argv` property.</p></div>
 <div class="code-tabs">
 <div class="long-description">
 </div>
@@ -315,7 +377,7 @@ an alternate default value if that key does not exist.</div>
 </tr></thead>
 <tr>
 <th>$argv</th>
-<td>array</td>
+<td>\Aura\Cli\array</td>
 <td><em><p>The new value of <code>$argv</code>.</p>
 </em></td>
 </tr>
@@ -323,16 +385,15 @@ an alternate default value if that key does not exist.</div>
 </div>
 <div class="clear"></div>
 </div>
-<a id="\Aura\Cli\Context::shiftArgv()"></a><div class="method">
-<a href="#" class="gripper"><img src="images/icons/arrow_right.png"><img src="images/icons/arrow_down.png" style="display: none;"></a><code><img src="images/icons/method.png" alt="method"><img src="images/icons/visibility_public.png" style="margin-right: 5px" alt="public"> 
-            <span class="highlight">shiftArgv</span><span class="nb-faded-text">(
+<a id="\Aura\Cli\Context::shiftArgv()" class="anchor"></a><div class="method public">
+<a href="#" class="gripper"><img src="images/icons/arrow_right.png"><img src="images/icons/arrow_down.png" style="display: none;"></a><code><img src="images/icons/method.png" alt="method"><img src="images/icons/visibility_public.png" style="margin-right: 5px" alt="public"><span class="highlight">shiftArgv</span><span class="nb-faded-text">(
           
           )
         </span>
         :
-        mixed</code><div class="description">Shifts the first value off the `$argv` property and returns it. Note
+          \Aura\Cli\mixed</code><div class="description"><p class="short_description">Shifts the first value off the `$argv` property and returns it. Note
 that this modifies the `$argv` property; if you need the original,
-unmodified arguments, call `server('argv')`.</div>
+unmodified arguments, call `server('argv')`.</p></div>
 <div class="code-tabs">
 <div class="long-description">
 </div>
@@ -342,8 +403,8 @@ unmodified arguments, call `server('argv')`.</div>
 <th>Description</th>
 </tr></thead>
 <tr>
-<td>mixed</td>
-<td></td>
+<td>\Aura\Cli\mixed</td>
+<td>The value shifted off the beginning of the `$argv` property.</td>
 </tr>
 </table>
 </div>
@@ -352,5 +413,5 @@ unmodified arguments, call `server('argv')`.</div>
 </div>
 </div>
 </div>
-<small xmlns="" class="footer">Documentation was generated by <a href="http://docblox-project.org">DocBlox 0.13.1</a>.
+<small xmlns="" class="footer">Documentation was generated by <a href="http://docblox-project.org">DocBlox 0.16.0</a>.
     </small></body></html>

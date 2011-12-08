@@ -1,4 +1,4 @@
-<html xmlns="http://www.w3.org/1999/xhtml"><head><title>Aura Project for PHP: Aura.Cli</title><meta http-equiv="Content-Type" content="text/html; charset=utf-8"></meta><link rel="stylesheet" href="css/black-tie/jquery-ui-1.8.2.custom.css" type="text/css"></link><link rel="stylesheet" href="css/jquery.treeview.css" type="text/css"></link><link rel="stylesheet" href="css/theme.css" type="text/css"></link><script type="text/javascript" src="js/jquery-1.4.2.min.js"></script><script type="text/javascript" src="js/jquery-ui-1.8.2.custom.min.js"></script><script type="text/javascript" src="js/jquery.cookie.js"></script><script type="text/javascript" src="js/jquery.treeview.js"></script><script type="text/javascript">
+<html xmlns="http://www.w3.org/1999/xhtml"><head><title>Aura Project for PHP: Aura.Cli</title><meta http-equiv="Content-Type" content="text/html; charset=utf-8"></meta><link rel="stylesheet" href="css/jquery-ui.css" type="text/css"></link><link rel="stylesheet" href="css/docblox/jquery-ui-1.8.16.custom.css" type="text/css"></link><link rel="stylesheet" href="css/jquery.treeview.css" type="text/css"></link><link rel="stylesheet" href="css/theme.css" type="text/css"></link><script type="text/javascript" src="js/jquery-1.4.2.min.js"></script><script type="text/javascript" src="js/jquery-ui-1.8.2.custom.min.js"></script><script type="text/javascript" src="js/jquery.tools.min.js"></script><script type="text/javascript" src="js/jquery.cookie.js"></script><script type="text/javascript" src="js/jquery.treeview.js"></script><script type="text/javascript">
             $(document).ready(function() {
                 $(".filetree").treeview({
                     collapsed: true,
@@ -13,55 +13,30 @@
 
                 $(".tabs").tabs();
             });
-        </script></head><body><div xmlns="" id="accordion">
-<h1><a href="#">Namespaces</a></h1>
-<div style="padding: 0px;"><ul id="namespaces-" class="filetree"><li class="closed">
-<span class="folder">Aura</span><ul><li class="closed">
-<span class="folder">Cli</span><ul>
+        </script></head><body><script xmlns="" type="text/javascript" src="js/sidebar.js"></script><div xmlns="" id="sidebar">
+<div id="sidebar-header">
+<h1>Aura Project for PHP: Aura.Cli</h1>
+<div style="clear: both"></div>
+</div>
+<div id="sidebar-nav">
+<h3 id="sidebar-dashboard">
+<img class="icon" src="css/docblox/images/icons/dashboard.png" alt="Dashboard"><a href="content.html" class="link" target="content">Dashboard</a>
+</h3>
+<div style="display: none"></div>
+<h3 id="sidebar-files">
+<img src="css/docblox/images/icons/files.png" alt="Files"><a href="#files">Files</a>
+</h3>
+<div class="sidebar-section">
+<div class="search-bar">
+<a href="#" onclick="$(this).parent().next().find('.collapsable-hitarea').click(); return false;"><img src="images/collapse_all.png" title="Collapse all" alt="Collapse all"></a><a href="#" onclick="$(this).parent().next().find('.expandable-hitarea').click(); return false;"><img src="images/expand_all.png" title="Expand all" alt="Expand all"></a><div><input type="text" onkeyup="tree_search(this);"></div>
+</div>
+<ul class="sidebar-nav-tree">
 <li class="closed">
-<span class="folder">Exception</span><ul>
-<li><span class="class"><a href="db_src_Exception_CommandFactory.html#%5CAura%5CCli%5CException%5CCommandFactory" target="content">CommandFactory</a></span></li>
-<li><span class="class"><a href="db_src_Exception_OptionName.html#%5CAura%5CCli%5CException%5COptionName" target="content">OptionName</a></span></li>
-<li><span class="class"><a href="db_src_Exception_OptionNotDefined.html#%5CAura%5CCli%5CException%5COptionNotDefined" target="content">OptionNotDefined</a></span></li>
-<li><span class="class"><a href="db_src_Exception_OptionNotMulti.html#%5CAura%5CCli%5CException%5COptionNotMulti" target="content">OptionNotMulti</a></span></li>
-<li><span class="class"><a href="db_src_Exception_OptionParam.html#%5CAura%5CCli%5CException%5COptionParam" target="content">OptionParam</a></span></li>
-<li><span class="class"><a href="db_src_Exception_OptionParamRejected.html#%5CAura%5CCli%5CException%5COptionParamRejected" target="content">OptionParamRejected</a></span></li>
-<li><span class="class"><a href="db_src_Exception_OptionParamRequired.html#%5CAura%5CCli%5CException%5COptionParamRequired" target="content">OptionParamRequired</a></span></li>
-</ul>
+<span class="file"><a href="db_config_default.html" target="content">config/default.php</a></span><ul id="files_e743b2d34af597f06edfe5acc9f28e7e" class="filetree"><li><span class="function"><a href="db_config_default.html#::Closure()" target="content">Closure<br></a></span></li></ul>
 </li>
-<li><span class="class"><a href="db_src_Command.html#%5CAura%5CCli%5CCommand" target="content">Command</a></span></li>
-<li><span class="class"><a href="db_src_CommandFactory.html#%5CAura%5CCli%5CCommandFactory" target="content">CommandFactory</a></span></li>
-<li><span class="class"><a href="db_src_Context.html#%5CAura%5CCli%5CContext" target="content">Context</a></span></li>
-<li><span class="class"><a href="db_src_Exception.html#%5CAura%5CCli%5CException" target="content">Exception</a></span></li>
-<li><span class="class"><a href="db_src_Getopt.html#%5CAura%5CCli%5CGetopt" target="content">Getopt</a></span></li>
-<li><span class="class"><a href="db_src_Option.html#%5CAura%5CCli%5COption" target="content">Option</a></span></li>
-<li><span class="class"><a href="db_src_OptionFactory.html#%5CAura%5CCli%5COptionFactory" target="content">OptionFactory</a></span></li>
-<li><span class="class"><a href="db_src_Stdio.html#%5CAura%5CCli%5CStdio" target="content">Stdio</a></span></li>
-<li><span class="class"><a href="db_src_Vt100.html#%5CAura%5CCli%5CVt100" target="content">Vt100</a></span></li>
-</ul>
-</li></ul>
-</li></ul></div>
-<h1><a href="#">Packages</a></h1>
-<div style="padding: 0px;"><ul id="packages-" class="deadtree"><li class="closed"><ul id="packages_Aura.Cli" class="filetree">
-<li class="closed"><span class="class"><a href="db_src_Command.html#%5CAura%5CCli%5CCommand" target="content">Command</a></span></li>
-<li class="closed"><span class="class"><a href="db_src_Exception_CommandFactory.html#%5CAura%5CCli%5CException%5CCommandFactory" target="content">CommandFactory</a></span></li>
-<li class="closed"><span class="class"><a href="db_src_CommandFactory.html#%5CAura%5CCli%5CCommandFactory" target="content">CommandFactory</a></span></li>
-<li class="closed"><span class="class"><a href="db_src_Context.html#%5CAura%5CCli%5CContext" target="content">Context</a></span></li>
-<li class="closed"><span class="class"><a href="db_src_Exception.html#%5CAura%5CCli%5CException" target="content">Exception</a></span></li>
-<li class="closed"><span class="class"><a href="db_src_Getopt.html#%5CAura%5CCli%5CGetopt" target="content">Getopt</a></span></li>
-<li class="closed"><span class="class"><a href="db_src_Option.html#%5CAura%5CCli%5COption" target="content">Option</a></span></li>
-<li class="closed"><span class="class"><a href="db_src_OptionFactory.html#%5CAura%5CCli%5COptionFactory" target="content">OptionFactory</a></span></li>
-<li class="closed"><span class="class"><a href="db_src_Exception_OptionName.html#%5CAura%5CCli%5CException%5COptionName" target="content">OptionName</a></span></li>
-<li class="closed"><span class="class"><a href="db_src_Exception_OptionNotDefined.html#%5CAura%5CCli%5CException%5COptionNotDefined" target="content">OptionNotDefined</a></span></li>
-<li class="closed"><span class="class"><a href="db_src_Exception_OptionNotMulti.html#%5CAura%5CCli%5CException%5COptionNotMulti" target="content">OptionNotMulti</a></span></li>
-<li class="closed"><span class="class"><a href="db_src_Exception_OptionParam.html#%5CAura%5CCli%5CException%5COptionParam" target="content">OptionParam</a></span></li>
-<li class="closed"><span class="class"><a href="db_src_Exception_OptionParamRejected.html#%5CAura%5CCli%5CException%5COptionParamRejected" target="content">OptionParamRejected</a></span></li>
-<li class="closed"><span class="class"><a href="db_src_Exception_OptionParamRequired.html#%5CAura%5CCli%5CException%5COptionParamRequired" target="content">OptionParamRequired</a></span></li>
-<li class="closed"><span class="class"><a href="db_src_Stdio.html#%5CAura%5CCli%5CStdio" target="content">Stdio</a></span></li>
-<li class="closed"><span class="class"><a href="db_src_Vt100.html#%5CAura%5CCli%5CVt100" target="content">Vt100</a></span></li>
-</ul></li></ul></div>
-<h1><a href="#">Files</a></h1>
-<div style="padding: 0px;"><ul id="files-" class="filetree">
+<li class="closed">
+<span class="file"><a href="db_config_test.html" target="content">config/test.php</a></span><ul id="files_8cd1036105983ad7ebd64b6fff1bc215" class="filetree"></ul>
+</li>
 <li class="closed">
 <span class="file"><a href="db_src.html" target="content">src.php</a></span><ul id="files_47db0bef3d5c90299442b8d54981c556" class="filetree"></ul>
 </li>
@@ -113,5 +88,153 @@
 <li class="closed">
 <span class="file"><a href="db_src_Vt100.html" target="content">src/Vt100.php</a></span><ul id="files_ff9f2278d86dfc7606c2697b91330b36" class="filetree"><li><span class="class"><a href="db_src_Vt100.html#%5CAura%5CCli%5CVt100" target="content">Vt100<br></a></span></li></ul>
 </li>
+<li class="closed">
+<span class="file"><a href="db_tests_CommandFactoryTest.html" target="content">tests/CommandFactoryTest.php</a></span><ul id="files_5cba03b3f964479572673146aefd5fcb" class="filetree"><li><span class="class"><a href="db_tests_CommandFactoryTest.html#%5CAura%5CCli%5CCommandFactoryTest" target="content">CommandFactoryTest<br></a></span></li></ul>
+</li>
+<li class="closed">
+<span class="file"><a href="db_tests_CommandTest.html" target="content">tests/CommandTest.php</a></span><ul id="files_8b95f59d991fc22456a7081cc417b784" class="filetree"><li><span class="class"><a href="db_tests_CommandTest.html#%5CAura%5CCli%5CCommandTest" target="content">CommandTest<br></a></span></li></ul>
+</li>
+<li class="closed">
+<span class="file"><a href="db_tests_ContextTest.html" target="content">tests/ContextTest.php</a></span><ul id="files_aa6628753b29b6c8e680e56f81b87f34" class="filetree"><li><span class="class"><a href="db_tests_ContextTest.html#%5CAura%5CCli%5CContextTest" target="content">ContextTest<br></a></span></li></ul>
+</li>
+<li class="closed">
+<span class="file"><a href="db_tests_GetoptTest.html" target="content">tests/GetoptTest.php</a></span><ul id="files_b9497fbd996ef3963d0654d7466bb9e8" class="filetree"><li><span class="class"><a href="db_tests_GetoptTest.html#%5CAura%5CCli%5CGetoptTest" target="content">GetoptTest<br></a></span></li></ul>
+</li>
+<li class="closed">
+<span class="file"><a href="db_tests_MockCommand.html" target="content">tests/MockCommand.php</a></span><ul id="files_067e37c9fb101c56ec25c3ed6d8d025c" class="filetree"><li><span class="class"><a href="db_tests_MockCommand.html#%5CAura%5CCli%5CMockCommand" target="content">MockCommand<br></a></span></li></ul>
+</li>
+<li class="closed">
+<span class="file"><a href="db_tests_MockCommandSkip.html" target="content">tests/MockCommandSkip.php</a></span><ul id="files_af11fc1fdcee49df6883a7b81f7dddd1" class="filetree"><li><span class="class"><a href="db_tests_MockCommandSkip.html#%5CAura%5CCli%5CMockCommandSkip" target="content">MockCommandSkip<br></a></span></li></ul>
+</li>
+<li class="closed">
+<span class="file"><a href="db_tests_MockCommandWrong.html" target="content">tests/MockCommandWrong.php</a></span><ul id="files_5ece14e394918e65c309f426bfb54368" class="filetree"><li><span class="class"><a href="db_tests_MockCommandWrong.html#%5CAura%5CCli%5CMockCommandWrong" target="content">MockCommandWrong<br></a></span></li></ul>
+</li>
+<li class="closed">
+<span class="file"><a href="db_tests_OptionFactoryTest.html" target="content">tests/OptionFactoryTest.php</a></span><ul id="files_a5ede51fe6b4fb6b76b0ca315397f192" class="filetree"><li><span class="class"><a href="db_tests_OptionFactoryTest.html#%5CAura%5CCli%5COptionFactoryTest" target="content">OptionFactoryTest<br></a></span></li></ul>
+</li>
+<li class="closed">
+<span class="file"><a href="db_tests_OptionTest.html" target="content">tests/OptionTest.php</a></span><ul id="files_b9a61851fef911d39fd5baa245f21ac9" class="filetree"><li><span class="class"><a href="db_tests_OptionTest.html#%5CAura%5CCli%5COptionTest" target="content">OptionTest<br></a></span></li></ul>
+</li>
+<li class="closed">
+<span class="file"><a href="db_tests_StdioTest.html" target="content">tests/StdioTest.php</a></span><ul id="files_5d8dcebb8d247d80a0df2effb643b10f" class="filetree"><li><span class="class"><a href="db_tests_StdioTest.html#%5CAura%5CCli%5CStdioTest" target="content">StdioTest<br></a></span></li></ul>
+</li>
+<li class="closed">
+<span class="file"><a href="db_tests_Vt100Test.html" target="content">tests/Vt100Test.php</a></span><ul id="files_42c901f035d396792ec161d542637e25" class="filetree"><li><span class="class"><a href="db_tests_Vt100Test.html#%5CAura%5CCli%5CVt100Test" target="content">Vt100Test<br></a></span></li></ul>
+</li>
+</ul>
+</div>
+<h3 id="sidebar-packages">
+<img src="css/docblox/images/icons/packages.png" alt="Packages"><a href="#packages">Packages</a>
+</h3>
+<div class="sidebar-section sidebar-tree">
+<div class="search-bar">
+<a href="#" onclick="$(this).parent().next().find('.collapsable-hitarea').click(); return false;"><img src="images/collapse_all.png" title="Collapse all" alt="Collapse all"></a><a href="#" onclick="$(this).parent().next().find('.expandable-hitarea').click(); return false;"><img src="images/expand_all.png" title="Expand all" alt="Expand all"></a><div><input type="text" onkeyup="tree_search(this);"></div>
+</div>
+<ul class="sidebar-nav-tree">
+<li class="closed">
+<span class="folder">Aura</span><ul><li class="closed">
+<span class="folder">Cli</span><ul>
+<li><span class="class"><a href="db_src_Command.html#%5CAura%5CCli%5CCommand" target="content">Command</a></span></li>
+<li><span class="class"><a href="db_src_Exception_CommandFactory.html#%5CAura%5CCli%5CException%5CCommandFactory" target="content">CommandFactory</a></span></li>
+<li><span class="class"><a href="db_src_CommandFactory.html#%5CAura%5CCli%5CCommandFactory" target="content">CommandFactory</a></span></li>
+<li><span class="class"><a href="db_src_Context.html#%5CAura%5CCli%5CContext" target="content">Context</a></span></li>
+<li><span class="class"><a href="db_src_Exception.html#%5CAura%5CCli%5CException" target="content">Exception</a></span></li>
+<li><span class="class"><a href="db_src_Getopt.html#%5CAura%5CCli%5CGetopt" target="content">Getopt</a></span></li>
+<li><span class="class"><a href="db_src_Option.html#%5CAura%5CCli%5COption" target="content">Option</a></span></li>
+<li><span class="class"><a href="db_src_OptionFactory.html#%5CAura%5CCli%5COptionFactory" target="content">OptionFactory</a></span></li>
+<li><span class="class"><a href="db_src_Exception_OptionName.html#%5CAura%5CCli%5CException%5COptionName" target="content">OptionName</a></span></li>
+<li><span class="class"><a href="db_src_Exception_OptionNotDefined.html#%5CAura%5CCli%5CException%5COptionNotDefined" target="content">OptionNotDefined</a></span></li>
+<li><span class="class"><a href="db_src_Exception_OptionNotMulti.html#%5CAura%5CCli%5CException%5COptionNotMulti" target="content">OptionNotMulti</a></span></li>
+<li><span class="class"><a href="db_src_Exception_OptionParam.html#%5CAura%5CCli%5CException%5COptionParam" target="content">OptionParam</a></span></li>
+<li><span class="class"><a href="db_src_Exception_OptionParamRejected.html#%5CAura%5CCli%5CException%5COptionParamRejected" target="content">OptionParamRejected</a></span></li>
+<li><span class="class"><a href="db_src_Exception_OptionParamRequired.html#%5CAura%5CCli%5CException%5COptionParamRequired" target="content">OptionParamRequired</a></span></li>
+<li><span class="class"><a href="db_src_Stdio.html#%5CAura%5CCli%5CStdio" target="content">Stdio</a></span></li>
+<li><span class="class"><a href="db_src_Vt100.html#%5CAura%5CCli%5CVt100" target="content">Vt100</a></span></li>
+</ul>
+</li></ul>
+</li>
+<li class="closed">
+<span class="folder">Default</span><ul>
+<li><span class="function"><a href="db_config_default.html#::Closure()" target="content">Closure</a></span></li>
+<li><span class="class"><a href="db_tests_CommandFactoryTest.html#%5CAura%5CCli%5CCommandFactoryTest" target="content">CommandFactoryTest</a></span></li>
+<li><span class="class"><a href="db_tests_CommandTest.html#%5CAura%5CCli%5CCommandTest" target="content">CommandTest</a></span></li>
+<li><span class="class"><a href="db_tests_ContextTest.html#%5CAura%5CCli%5CContextTest" target="content">ContextTest</a></span></li>
+<li><span class="class"><a href="db_tests_GetoptTest.html#%5CAura%5CCli%5CGetoptTest" target="content">GetoptTest</a></span></li>
+<li><span class="class"><a href="db_tests_MockCommand.html#%5CAura%5CCli%5CMockCommand" target="content">MockCommand</a></span></li>
+<li><span class="class"><a href="db_tests_MockCommandSkip.html#%5CAura%5CCli%5CMockCommandSkip" target="content">MockCommandSkip</a></span></li>
+<li><span class="class"><a href="db_tests_MockCommandWrong.html#%5CAura%5CCli%5CMockCommandWrong" target="content">MockCommandWrong</a></span></li>
+<li><span class="class"><a href="db_tests_OptionFactoryTest.html#%5CAura%5CCli%5COptionFactoryTest" target="content">OptionFactoryTest</a></span></li>
+<li><span class="class"><a href="db_tests_OptionTest.html#%5CAura%5CCli%5COptionTest" target="content">OptionTest</a></span></li>
+<li><span class="class"><a href="db_tests_StdioTest.html#%5CAura%5CCli%5CStdioTest" target="content">StdioTest</a></span></li>
+<li><span class="class"><a href="db_tests_Vt100Test.html#%5CAura%5CCli%5CVt100Test" target="content">Vt100Test</a></span></li>
+</ul>
+</li>
+</ul>
+</div>
+<h3 id="sidebar-namespaces">
+<img src="css/docblox/images/icons/namespaces.png" alt="Namespaces"><a href="#namespaces">Namespaces</a>
+</h3>
+<div class="sidebar-section sidebar-tree">
+<div class="search-bar">
+<a href="#" onclick="$(this).parent().next().find('.collapsable-hitarea').click(); return false;"><img src="images/collapse_all.png" title="Collapse all" alt="Collapse all"></a><a href="#" onclick="$(this).parent().next().find('.expandable-hitarea').click(); return false;"><img src="images/expand_all.png" title="Expand all" alt="Expand all"></a><div><input type="text" onkeyup="tree_search(this);"></div>
+</div>
+<ul class="sidebar-nav-tree">
+<li class="closed">
+<span class="folder">Aura</span><ul><li class="closed">
+<span class="folder">Cli</span><ul>
+<li class="closed">
+<span class="folder">Exception</span><ul>
+<li><span class="class"><a href="db_src_Exception_CommandFactory.html#%5CAura%5CCli%5CException%5CCommandFactory" target="content">CommandFactory</a></span></li>
+<li><span class="class"><a href="db_src_Exception_OptionName.html#%5CAura%5CCli%5CException%5COptionName" target="content">OptionName</a></span></li>
+<li><span class="class"><a href="db_src_Exception_OptionNotDefined.html#%5CAura%5CCli%5CException%5COptionNotDefined" target="content">OptionNotDefined</a></span></li>
+<li><span class="class"><a href="db_src_Exception_OptionNotMulti.html#%5CAura%5CCli%5CException%5COptionNotMulti" target="content">OptionNotMulti</a></span></li>
+<li><span class="class"><a href="db_src_Exception_OptionParam.html#%5CAura%5CCli%5CException%5COptionParam" target="content">OptionParam</a></span></li>
+<li><span class="class"><a href="db_src_Exception_OptionParamRejected.html#%5CAura%5CCli%5CException%5COptionParamRejected" target="content">OptionParamRejected</a></span></li>
+<li><span class="class"><a href="db_src_Exception_OptionParamRequired.html#%5CAura%5CCli%5CException%5COptionParamRequired" target="content">OptionParamRequired</a></span></li>
+</ul>
+</li>
+<li><span class="class"><a href="db_src_Command.html#%5CAura%5CCli%5CCommand" target="content">Command</a></span></li>
+<li><span class="class"><a href="db_src_CommandFactory.html#%5CAura%5CCli%5CCommandFactory" target="content">CommandFactory</a></span></li>
+<li><span class="class"><a href="db_tests_CommandFactoryTest.html#%5CAura%5CCli%5CCommandFactoryTest" target="content">CommandFactoryTest</a></span></li>
+<li><span class="class"><a href="db_tests_CommandTest.html#%5CAura%5CCli%5CCommandTest" target="content">CommandTest</a></span></li>
+<li><span class="class"><a href="db_src_Context.html#%5CAura%5CCli%5CContext" target="content">Context</a></span></li>
+<li><span class="class"><a href="db_tests_ContextTest.html#%5CAura%5CCli%5CContextTest" target="content">ContextTest</a></span></li>
+<li><span class="class"><a href="db_src_Exception.html#%5CAura%5CCli%5CException" target="content">Exception</a></span></li>
+<li><span class="class"><a href="db_src_Getopt.html#%5CAura%5CCli%5CGetopt" target="content">Getopt</a></span></li>
+<li><span class="class"><a href="db_tests_GetoptTest.html#%5CAura%5CCli%5CGetoptTest" target="content">GetoptTest</a></span></li>
+<li><span class="class"><a href="db_tests_MockCommand.html#%5CAura%5CCli%5CMockCommand" target="content">MockCommand</a></span></li>
+<li><span class="class"><a href="db_tests_MockCommandSkip.html#%5CAura%5CCli%5CMockCommandSkip" target="content">MockCommandSkip</a></span></li>
+<li><span class="class"><a href="db_tests_MockCommandWrong.html#%5CAura%5CCli%5CMockCommandWrong" target="content">MockCommandWrong</a></span></li>
+<li><span class="class"><a href="db_src_Option.html#%5CAura%5CCli%5COption" target="content">Option</a></span></li>
+<li><span class="class"><a href="db_src_OptionFactory.html#%5CAura%5CCli%5COptionFactory" target="content">OptionFactory</a></span></li>
+<li><span class="class"><a href="db_tests_OptionFactoryTest.html#%5CAura%5CCli%5COptionFactoryTest" target="content">OptionFactoryTest</a></span></li>
+<li><span class="class"><a href="db_tests_OptionTest.html#%5CAura%5CCli%5COptionTest" target="content">OptionTest</a></span></li>
+<li><span class="class"><a href="db_src_Stdio.html#%5CAura%5CCli%5CStdio" target="content">Stdio</a></span></li>
+<li><span class="class"><a href="db_tests_StdioTest.html#%5CAura%5CCli%5CStdioTest" target="content">StdioTest</a></span></li>
+<li><span class="class"><a href="db_src_Vt100.html#%5CAura%5CCli%5CVt100" target="content">Vt100</a></span></li>
+<li><span class="class"><a href="db_tests_Vt100Test.html#%5CAura%5CCli%5CVt100Test" target="content">Vt100Test</a></span></li>
+</ul>
+</li></ul>
+</li>
+<li class="closed">
+<span class="folder">default</span><ul><li><span class="function"><a href="db_config_default.html#::Closure()" target="content">Closure</a></span></li></ul>
+</li>
+</ul>
+</div>
+<h3 id="sidebar-charts">
+<img src="css/docblox/images/icons/chart.png" alt="Charts"><a href="#charts">Charts</a>
+</h3>
+<div class="sidebar-section"><ul style="list-style-image: url('css/docblox/images/icons/chart15x12.png');"><li><a href="graph.html" target="content">Class Inheritance Diagram</a></li></ul></div>
+<h3 id="sidebar-reports">
+<img src="css/docblox/images/icons/reports.png" alt="Reports"><a href="#reports">Reports</a>
+</h3>
+<div class="sidebar-section"><ul style="list-style-image: url('css/docblox/images/icons/reports9x12.png');">
+<li><a href="report_markers.html" target="content">Markers (TODO/FIXME)</a></li>
+<li><a href="report_parse_markers.html" target="content">Parsing errors</a></li>
+<li><a href="report_deprecated.html" target="content">Deprecated elements</a></li>
 </ul></div>
+</div>
+<div id="sidebar-footer">
+        Documentation is generated by <a href="http://docblox-project.org" target="_top"><img src="images/icon48x48.png" height="12" align="top" alt="Logo"> DocBlox 0.16.0</a>, images courtesy of <a href="http://glyphish.com/" target="_top">Glyphish</a>
+</div>
 </div></body></html>

@@ -1,0 +1,620 @@
+<html xmlns="http://www.w3.org/1999/xhtml"><head><title>Aura Project for PHP: Aura.Marshal</title><meta http-equiv="Content-Type" content="text/html; charset=utf-8"></meta><link rel="stylesheet" href="css/black-tie/jquery-ui-1.8.2.custom.css" type="text/css"></link><link rel="stylesheet" href="css/jquery.treeview.css" type="text/css"></link><link rel="stylesheet" href="css/theme.css" type="text/css"></link><script type="text/javascript" src="js/jquery-1.4.2.min.js"></script><script type="text/javascript" src="js/jquery-ui-1.8.2.custom.min.js"></script><script type="text/javascript" src="js/jquery.cookie.js"></script><script type="text/javascript" src="js/jquery.treeview.js"></script><script type="text/javascript">
+            $(document).ready(function() {
+                $(".filetree").treeview({
+                    collapsed: true,
+                    persist: "cookie"
+                });
+
+                $("#accordion").accordion({
+                    collapsible: true,
+                    autoHeight:  false,
+                    fillSpace:   true
+                });
+
+                $(".tabs").tabs();
+            });
+        </script></head><body><script xmlns="" type="text/javascript">
+        $(document).ready(function() {
+            $("#marker-accordion").accordion({
+                collapsible: true,
+                autoHeight:  false
+            });
+        });
+    </script><div xmlns="" id="content">
+<h1>Compilation Errors</h1>
+<div id="marker-accordion">
+<h3><a href="#">tests/TypeTest.php<small>16</small></a></h3>
+<div><table>
+<tr>
+<th>Type</th>
+<th>Line</th>
+<th>Description</th>
+</tr>
+<tr>
+<td>error</td>
+<td>49</td>
+<td>No DocBlock was found for Method testSetAndGetIdentityField</td>
+</tr>
+<tr>
+<td>error</td>
+<td>57</td>
+<td>No DocBlock was found for Method testSetAndGetRecordBuilder</td>
+</tr>
+<tr>
+<td>error</td>
+<td>65</td>
+<td>No DocBlock was found for Method testSetAndGetCollectionBuilder</td>
+</tr>
+<tr>
+<td>error</td>
+<td>73</td>
+<td>No DocBlock was found for Method testLoadAndGetStorage</td>
+</tr>
+<tr>
+<td>error</td>
+<td>83</td>
+<td>No DocBlock was found for Method testGetIdentityValues</td>
+</tr>
+<tr>
+<td>error</td>
+<td>93</td>
+<td>No DocBlock was found for Method testGetFieldValues</td>
+</tr>
+<tr>
+<td>error</td>
+<td>102</td>
+<td>No DocBlock was found for Method testGetRecord</td>
+</tr>
+<tr>
+<td>error</td>
+<td>119</td>
+<td>No DocBlock was found for Method testGetRecordByField</td>
+</tr>
+<tr>
+<td>error</td>
+<td>133</td>
+<td>No DocBlock was found for Method testGetRecordByField_identity</td>
+</tr>
+<tr>
+<td>error</td>
+<td>147</td>
+<td>No DocBlock was found for Method testGetRecordByField_none</td>
+</tr>
+<tr>
+<td>error</td>
+<td>158</td>
+<td>No DocBlock was found for Method getCollection</td>
+</tr>
+<tr>
+<td>error</td>
+<td>177</td>
+<td>No DocBlock was found for Method testGetCollectionByField</td>
+</tr>
+<tr>
+<td>error</td>
+<td>196</td>
+<td>No DocBlock was found for Method testGetCollectionByField_many</td>
+</tr>
+<tr>
+<td>error</td>
+<td>215</td>
+<td>No DocBlock was found for Method testGetCollectionByField_identity</td>
+</tr>
+<tr>
+<td>error</td>
+<td>234</td>
+<td>No DocBlock was found for Method testAddAndGetRelation</td>
+</tr>
+<tr>
+<td>error</td>
+<td>255</td>
+<td>No DocBlock was found for Method testTypeBuilder_noIdentityField</td>
+</tr>
+</table></div>
+<h3><a href="#">tests/RelationTest.php<small>11</small></a></h3>
+<div><table>
+<tr>
+<th>Type</th>
+<th>Line</th>
+<th>Description</th>
+</tr>
+<tr>
+<td>error</td>
+<td>44</td>
+<td>No DocBlock was found for Method testNoRelationship</td>
+</tr>
+<tr>
+<td>error</td>
+<td>58</td>
+<td>No DocBlock was found for Method testNoForeignType</td>
+</tr>
+<tr>
+<td>error</td>
+<td>72</td>
+<td>No DocBlock was found for Method testNoNativeField</td>
+</tr>
+<tr>
+<td>error</td>
+<td>86</td>
+<td>No DocBlock was found for Method testNoForeignField</td>
+</tr>
+<tr>
+<td>error</td>
+<td>100</td>
+<td>No DocBlock was found for Method testNoThroughType</td>
+</tr>
+<tr>
+<td>error</td>
+<td>114</td>
+<td>No DocBlock was found for Method testNoThroughNativeField</td>
+</tr>
+<tr>
+<td>error</td>
+<td>128</td>
+<td>No DocBlock was found for Method testNoThroughForeignField</td>
+</tr>
+<tr>
+<td>error</td>
+<td>142</td>
+<td>No DocBlock was found for Method testBelongsTo</td>
+</tr>
+<tr>
+<td>error</td>
+<td>149</td>
+<td>No DocBlock was found for Method testHasOne</td>
+</tr>
+<tr>
+<td>error</td>
+<td>157</td>
+<td>No DocBlock was found for Method testHasMany</td>
+</tr>
+<tr>
+<td>error</td>
+<td>176</td>
+<td>No DocBlock was found for Method testHasManyThrough</td>
+</tr>
+</table></div>
+<h3><a href="#">tests/DataTest.php<small>4</small></a></h3>
+<div><table>
+<tr>
+<th>Type</th>
+<th>Line</th>
+<th>Description</th>
+</tr>
+<tr>
+<td>error</td>
+<td>39</td>
+<td>No DocBlock was found for Method testOffsetExistsAndUnset</td>
+</tr>
+<tr>
+<td>error</td>
+<td>46</td>
+<td>No DocBlock was found for Method testOffsetSetAndGet</td>
+</tr>
+<tr>
+<td>error</td>
+<td>52</td>
+<td>No DocBlock was found for Method testCount</td>
+</tr>
+<tr>
+<td>error</td>
+<td>57</td>
+<td>No DocBlock was found for Method testGetIterator</td>
+</tr>
+</table></div>
+<h3><a href="#">tests/RecordTest.php<small>2</small></a></h3>
+<div><table>
+<tr>
+<th>Type</th>
+<th>Line</th>
+<th>Description</th>
+</tr>
+<tr>
+<td>error</td>
+<td>42</td>
+<td>No DocBlock was found for Method testSetAndGet</td>
+</tr>
+<tr>
+<td>error</td>
+<td>48</td>
+<td>No DocBlock was found for Method testIssetAndUnset</td>
+</tr>
+</table></div>
+<h3><a href="#">tests/ManagerTest.php<small>4</small></a></h3>
+<div><table>
+<tr>
+<th>Type</th>
+<th>Line</th>
+<th>Description</th>
+</tr>
+<tr>
+<td>error</td>
+<td>43</td>
+<td>No DocBlock was found for Method test__get</td>
+</tr>
+<tr>
+<td>error</td>
+<td>50</td>
+<td>No DocBlock was found for Method test__getNoSuchType</td>
+</tr>
+<tr>
+<td>error</td>
+<td>56</td>
+<td>No DocBlock was found for Method testGetTypes</td>
+</tr>
+<tr>
+<td>error</td>
+<td>71</td>
+<td>No DocBlock was found for Method testSetType_alreadySet</td>
+</tr>
+</table></div>
+<h3><a href="#">tests/CollectionTest.php<small>5</small></a></h3>
+<div><table>
+<tr>
+<th>Type</th>
+<th>Line</th>
+<th>Description</th>
+</tr>
+<tr>
+<td>error</td>
+<td>14</td>
+<td>No DocBlock was found for Property $collection</td>
+</tr>
+<tr>
+<td>error</td>
+<td>16</td>
+<td>No DocBlock was found for Property $empty_collection</td>
+</tr>
+<tr>
+<td>error</td>
+<td>50</td>
+<td>No DocBlock was found for Method testGetIdentityValues</td>
+</tr>
+<tr>
+<td>error</td>
+<td>57</td>
+<td>No DocBlock was found for Method testIsEmpty</td>
+</tr>
+<tr>
+<td>error</td>
+<td>63</td>
+<td>No DocBlock was found for Method testObjectsInCollectionAreInIdentityMap</td>
+</tr>
+</table></div>
+<h3><a href="#">src/Manager.php<small>2</small></a></h3>
+<div><table>
+<tr>
+<th>Type</th>
+<th>Line</th>
+<th>Description</th>
+</tr>
+<tr>
+<td>error</td>
+<td>2</td>
+<td>No Page-level DocBlock was found</td>
+</tr>
+<tr>
+<td>error</td>
+<td>172</td>
+<td>No DocBlock was found for Method setRelation</td>
+</tr>
+</table></div>
+<h3><a href="#">src/Data.php<small>1</small></a></h3>
+<div><table>
+<tr>
+<th>Type</th>
+<th>Line</th>
+<th>Description</th>
+</tr>
+<tr>
+<td>error</td>
+<td>2</td>
+<td>No Page-level DocBlock was found</td>
+</tr>
+</table></div>
+<h3><a href="#">src/DataIterator.php<small>1</small></a></h3>
+<div><table>
+<tr>
+<th>Type</th>
+<th>Line</th>
+<th>Description</th>
+</tr>
+<tr>
+<td>error</td>
+<td>2</td>
+<td>No Page-level DocBlock was found</td>
+</tr>
+</table></div>
+<h3><a href="#">src/Collection/GenericCollection.php<small>1</small></a></h3>
+<div><table>
+<tr>
+<th>Type</th>
+<th>Line</th>
+<th>Description</th>
+</tr>
+<tr>
+<td>error</td>
+<td>2</td>
+<td>No Page-level DocBlock was found</td>
+</tr>
+</table></div>
+<h3><a href="#">src/Collection/BuilderInterface.php<small>1</small></a></h3>
+<div><table>
+<tr>
+<th>Type</th>
+<th>Line</th>
+<th>Description</th>
+</tr>
+<tr>
+<td>error</td>
+<td>2</td>
+<td>No Page-level DocBlock was found</td>
+</tr>
+</table></div>
+<h3><a href="#">src/Collection/Builder.php<small>1</small></a></h3>
+<div><table>
+<tr>
+<th>Type</th>
+<th>Line</th>
+<th>Description</th>
+</tr>
+<tr>
+<td>error</td>
+<td>2</td>
+<td>No Page-level DocBlock was found</td>
+</tr>
+</table></div>
+<h3><a href="#">src/Record/BuilderInterface.php<small>1</small></a></h3>
+<div><table>
+<tr>
+<th>Type</th>
+<th>Line</th>
+<th>Description</th>
+</tr>
+<tr>
+<td>error</td>
+<td>2</td>
+<td>No Page-level DocBlock was found</td>
+</tr>
+</table></div>
+<h3><a href="#">src/Record/Builder.php<small>1</small></a></h3>
+<div><table>
+<tr>
+<th>Type</th>
+<th>Line</th>
+<th>Description</th>
+</tr>
+<tr>
+<td>error</td>
+<td>2</td>
+<td>No Page-level DocBlock was found</td>
+</tr>
+</table></div>
+<h3><a href="#">src/Record/GenericRecord.php<small>1</small></a></h3>
+<div><table>
+<tr>
+<th>Type</th>
+<th>Line</th>
+<th>Description</th>
+</tr>
+<tr>
+<td>error</td>
+<td>2</td>
+<td>No Page-level DocBlock was found</td>
+</tr>
+</table></div>
+<h3><a href="#">src/Relation/HasManyThrough.php<small>5</small></a></h3>
+<div><table>
+<tr>
+<th>Type</th>
+<th>Line</th>
+<th>Description</th>
+</tr>
+<tr>
+<td>error</td>
+<td>2</td>
+<td>No Page-level DocBlock was found</td>
+</tr>
+<tr>
+<td>notice</td>
+<td>63</td>
+<td>Name of argument $type does not match with function Docblock</td>
+</tr>
+<tr>
+<td>notice</td>
+<td>63</td>
+<td>Name of argument $name does not match with function Docblock</td>
+</tr>
+<tr>
+<td>notice</td>
+<td>63</td>
+<td>Argument $info is missing from the function Docblock</td>
+</tr>
+<tr>
+<td>notice</td>
+<td>63</td>
+<td>Argument $manager is missing from the function Docblock</td>
+</tr>
+</table></div>
+<h3><a href="#">src/Relation/Builder.php<small>5</small></a></h3>
+<div><table>
+<tr>
+<th>Type</th>
+<th>Line</th>
+<th>Description</th>
+</tr>
+<tr>
+<td>error</td>
+<td>2</td>
+<td>No Page-level DocBlock was found</td>
+</tr>
+<tr>
+<td>notice</td>
+<td>50</td>
+<td>Name of argument $type does not match with function Docblock</td>
+</tr>
+<tr>
+<td>notice</td>
+<td>50</td>
+<td>Name of argument $name does not match with function Docblock</td>
+</tr>
+<tr>
+<td>notice</td>
+<td>50</td>
+<td>Name of argument $info does not match with function Docblock</td>
+</tr>
+<tr>
+<td>notice</td>
+<td>50</td>
+<td>Argument $manager is missing from the function Docblock</td>
+</tr>
+</table></div>
+<h3><a href="#">src/Relation/HasOne.php<small>1</small></a></h3>
+<div><table>
+<tr>
+<th>Type</th>
+<th>Line</th>
+<th>Description</th>
+</tr>
+<tr>
+<td>error</td>
+<td>2</td>
+<td>No Page-level DocBlock was found</td>
+</tr>
+</table></div>
+<h3><a href="#">src/Relation/BelongsTo.php<small>1</small></a></h3>
+<div><table>
+<tr>
+<th>Type</th>
+<th>Line</th>
+<th>Description</th>
+</tr>
+<tr>
+<td>error</td>
+<td>2</td>
+<td>No Page-level DocBlock was found</td>
+</tr>
+</table></div>
+<h3><a href="#">src/Relation/RelationInterface.php<small>1</small></a></h3>
+<div><table>
+<tr>
+<th>Type</th>
+<th>Line</th>
+<th>Description</th>
+</tr>
+<tr>
+<td>error</td>
+<td>2</td>
+<td>No Page-level DocBlock was found</td>
+</tr>
+</table></div>
+<h3><a href="#">src/Relation/AbstractRelation.php<small>5</small></a></h3>
+<div><table>
+<tr>
+<th>Type</th>
+<th>Line</th>
+<th>Description</th>
+</tr>
+<tr>
+<td>error</td>
+<td>2</td>
+<td>No Page-level DocBlock was found</td>
+</tr>
+<tr>
+<td>notice</td>
+<td>68</td>
+<td>Name of argument $type does not match with function Docblock</td>
+</tr>
+<tr>
+<td>notice</td>
+<td>68</td>
+<td>Name of argument $name does not match with function Docblock</td>
+</tr>
+<tr>
+<td>notice</td>
+<td>68</td>
+<td>Argument $info is missing from the function Docblock</td>
+</tr>
+<tr>
+<td>notice</td>
+<td>68</td>
+<td>Argument $manager is missing from the function Docblock</td>
+</tr>
+</table></div>
+<h3><a href="#">src/Relation/HasMany.php<small>1</small></a></h3>
+<div><table>
+<tr>
+<th>Type</th>
+<th>Line</th>
+<th>Description</th>
+</tr>
+<tr>
+<td>error</td>
+<td>2</td>
+<td>No Page-level DocBlock was found</td>
+</tr>
+</table></div>
+<h3><a href="#">src/Type/GenericType.php<small>3</small></a></h3>
+<div><table>
+<tr>
+<th>Type</th>
+<th>Line</th>
+<th>Description</th>
+</tr>
+<tr>
+<td>error</td>
+<td>2</td>
+<td>No Page-level DocBlock was found</td>
+</tr>
+<tr>
+<td>notice</td>
+<td>164</td>
+<td>Name of argument $collection_builder does not match with function Docblock</td>
+</tr>
+<tr>
+<td>notice</td>
+<td>417</td>
+<td>Argument $name is missing from the function Docblock</td>
+</tr>
+</table></div>
+<h3><a href="#">src/Type/Builder.php<small>1</small></a></h3>
+<div><table>
+<tr>
+<th>Type</th>
+<th>Line</th>
+<th>Description</th>
+</tr>
+<tr>
+<td>error</td>
+<td>2</td>
+<td>No Page-level DocBlock was found</td>
+</tr>
+</table></div>
+<h3><a href="#">src/Exception.php<small>1</small></a></h3>
+<div><table>
+<tr>
+<th>Type</th>
+<th>Line</th>
+<th>Description</th>
+</tr>
+<tr>
+<td>error</td>
+<td>2</td>
+<td>No Page-level DocBlock was found</td>
+</tr>
+</table></div>
+<h3><a href="#">config/default.php<small>1</small></a></h3>
+<div><table>
+<tr>
+<th>Type</th>
+<th>Line</th>
+<th>Description</th>
+</tr>
+<tr>
+<td>error</td>
+<td>2</td>
+<td>No Page-level DocBlock was found</td>
+</tr>
+</table></div>
+</div>
+</div></body></html>

@@ -1,0 +1,534 @@
+<html xmlns="http://www.w3.org/1999/xhtml"><head><title>Aura Project for PHP: Aura.Cli</title><meta http-equiv="Content-Type" content="text/html; charset=utf-8"></meta><link rel="stylesheet" href="css/jquery-ui.css" type="text/css"></link><link rel="stylesheet" href="css/docblox/jquery-ui-1.8.16.custom.css" type="text/css"></link><link rel="stylesheet" href="css/jquery.treeview.css" type="text/css"></link><link rel="stylesheet" href="css/theme.css" type="text/css"></link><script type="text/javascript" src="js/jquery-1.4.2.min.js"></script><script type="text/javascript" src="js/jquery-ui-1.8.2.custom.min.js"></script><script type="text/javascript" src="js/jquery.tools.min.js"></script><script type="text/javascript" src="js/jquery.cookie.js"></script><script type="text/javascript" src="js/jquery.treeview.js"></script><script type="text/javascript">
+            $(document).ready(function() {
+                $(".filetree").treeview({
+                    collapsed: true,
+                    persist: "cookie"
+                });
+
+                $("#accordion").accordion({
+                    collapsible: true,
+                    autoHeight:  false,
+                    fillSpace:   true
+                });
+
+                $(".tabs").tabs();
+            });
+        </script></head><body><div xmlns="" id="content">
+<script xmlns:dbx="http://docblox-project.org/xsl/functions">
+
+      function filterElements()
+      {
+        inherited = !$('#show-inherited').hasClass('deselected');
+        public    = !$('#show-public').hasClass('deselected');
+        protected = !$('#show-protected').hasClass('deselected');
+        private   = !$('#show-private').hasClass('deselected');
+
+        $('div.public').each(function(index, val) {
+            $(val).toggle(public && !($(val).hasClass('inherited_from') && !inherited));
+        });
+        $('div.protected').each(function(index, val) {
+            $(val).toggle(protected && !($(val).hasClass('inherited_from') && !inherited));
+        });
+        $('div.private').each(function(index, val) {
+            $(val).toggle(private && !($(val).hasClass('inherited_from') && !inherited));
+        });
+      }
+
+      $(document).ready(function() {
+        $('a.gripper').click(function() {
+            $(this).nextAll('div.code-tabs').slideToggle();
+            $(this).children('img').toggle();
+            return false;
+        });
+
+        $('div.method code span.highlight,div.function code span.highlight,div.constant code span.highlight,div.property code span.highlight').css('cursor', 'pointer');
+
+        $('div.method code span.highlight,div.function code span.highlight,div.constant code span.highlight,div.property code span.highlight').click(function() {
+            $(this).parent().nextAll('div.code-tabs').slideToggle();
+            $(this).parent().prevAll('a.gripper').children('img').toggle();
+            return false;
+        });
+
+        $('div.code-tabs').hide();
+        $('a.gripper').show();
+        $('div.code-tabs:empty').prevAll('a.gripper').html('');
+
+        $('#show-public, #show-protected, #show-private, #show-inherited')
+            .css('cursor', 'pointer')
+            .click(function(){
+                $(this).toggleClass('deselected');
+                if ($(this).hasClass('deselected')) {
+                  $(this).fadeTo('fast', '0.4');
+                } else {
+                  $(this).fadeTo('fast', '1.0');
+                }
+                filterElements();
+                return false;
+            });
+        $('#show-protected, #show-private').click();
+
+        // add the sliding behaviour to the file navigation and show it
+        // it is initially hidden for non-JS users.
+        $("#file-nav-box").show().hover(function() {
+            $("#file-nav-container").slideDown(400);
+        }, function() {
+            $("#file-nav-container").slideUp(400);
+        });
+      });
+
+      
+    </script><h1 xmlns:dbx="http://docblox-project.org/xsl/functions" class="file">tests/MockCommandSkip.php</h1>
+<div xmlns:dbx="http://docblox-project.org/xsl/functions" id="file-nav-box">
+<div id="file-nav-options">
+              Show:
+              <img src="images/icons/visibility_public.png" id="show-public"><img src="images/icons/visibility_protected.png" id="show-protected"><img src="images/icons/visibility_private.png" id="show-private"><span class="attribute" id="show-inherited">inherited</span>
+</div>
+<div id="file-nav-container">
+<ul id="file-nav"><li>
+<a href="#classes"><img src="images/icons/class.png" height="14">
+                          Classes
+                      </a><ul><li><a href="#%5CAura%5CCli%5CMockCommandSkip">\Aura\Cli\MockCommandSkip</a></li></ul>
+</li></ul>
+<div style="clear: left;"></div>
+</div>
+<div id="file-nav-tab">
+              Table of Contents
+          </div>
+</div>
+<a xmlns:dbx="http://docblox-project.org/xsl/functions" name="top" class="anchor"></a><a name="classes" class="anchor"></a><a xmlns:dbx="http://docblox-project.org/xsl/functions" id="\Aura\Cli\MockCommandSkip" class="anchor"></a><h2 xmlns:dbx="http://docblox-project.org/xsl/functions" class="class">\Aura\Cli\MockCommandSkip<div class="to-top"><a href="#top">jump to top</a></div>
+</h2>
+<div xmlns:dbx="http://docblox-project.org/xsl/functions" class="class">
+<small class="package"><b>Package: </b>Default</small><p class="short-description">The CLI equivalent of a page-controller to perform a single action.</p>
+<div class="long-description">
+</div>
+<dl class="class-info">
+<dt>Parent(s)</dt>
+<dd>
+<a href="db_tests_MockCommand.html#%5CAura%5CCli%5CMockCommand">\Aura\Cli\MockCommand</a>
+            &lt;
+            <a href="db_src_Command.html#%5CAura%5CCli%5CCommand" style="color: gray; font-size: 0.8em
+                ">\Aura\Cli\Command</a>
+</dd>
+</dl>
+<h3>Properties</h3>
+<div>
+<a id="\Aura\Cli\MockCommandSkip::$getopt" class="anchor"></a><div class="property protected inherited_from ">
+<a href="#" class="gripper"><img src="images/icons/arrow_right.png"><img src="images/icons/arrow_down.png" style="display: none;"></a><code><img src="images/icons/property.png" alt="Property"><img src="images/icons/visibility_protected.png" style="margin-right: 5px" alt="protected">\Aura\Cli\Getopt
+                 <span class="highlight">$getopt</span>= ''
+                </code><div class="description">
+<span class="attribute">inherited</span><p class="short-description">A Getopt object for the Command; retains the short and long options
+passed at the command line.</p><small>Inherited from:
+                        <a href="db_src_Command.html#%5CAura%5CCli%5CCommand::%24getopt">\Aura\Cli\Command::$getopt</a></small>
+</div>
+<div class="code-tabs">
+<div class="long-description">
+</div>
+<strong>Details</strong><dl class="property-info">
+<dt>Type</dt>
+<dd><a href="db_src_Getopt.html#%5CAura%5CCli%5CGetopt">\Aura\Cli\Getopt</a></dd>
+<dt>Inherited_from</dt>
+<dd>
+<a href="db_src_Command.html#%5CAura%5CCli%5CCommand::%24getopt">\Aura\Cli\Command::$getopt</a>
+         
+    </dd>
+</dl>
+</div>
+<div class="clear"></div>
+</div>
+<a id="\Aura\Cli\MockCommandSkip::$options" class="anchor"></a><div class="property protected inherited_from ">
+<a href="#" class="gripper"><img src="images/icons/arrow_right.png"><img src="images/icons/arrow_down.png" style="display: none;"></a><code><img src="images/icons/property.png" alt="Property"><img src="images/icons/visibility_protected.png" style="margin-right: 5px" alt="protected">array
+                 <span class="highlight">$options</span>= 'array(
+        'option' =&gt; array()'
+                </code><div class="description">
+<span class="attribute">inherited</span><p class="short-description">The option definitions for the Getopt object.</p><small>Inherited from:
+                        <a href="db_tests_MockCommand.html#%5CAura%5CCli%5CMockCommand::%24options">\Aura\Cli\MockCommand::$options</a></small>
+</div>
+<div class="code-tabs">
+<div class="long-description">
+</div>
+<strong>Default value</strong><code>array(
+        'option' =&gt; array()</code><strong>Details</strong><dl class="property-info">
+<dt>Type</dt>
+<dd>\Aura\Cli\array</dd>
+<dt>Inherited_from</dt>
+<dd>
+<a href="db_tests_MockCommand.html#%5CAura%5CCli%5CMockCommand::%24options">\Aura\Cli\MockCommand::$options</a>
+         
+    </dd>
+</dl>
+</div>
+<div class="clear"></div>
+</div>
+<a id="\Aura\Cli\MockCommandSkip::$options_strict" class="anchor"></a><div class="property protected inherited_from ">
+<a href="#" class="gripper"><img src="images/icons/arrow_right.png"><img src="images/icons/arrow_down.png" style="display: none;"></a><code><img src="images/icons/property.png" alt="Property"><img src="images/icons/visibility_protected.png" style="margin-right: 5px" alt="protected">bool
+                 <span class="highlight">$options_strict</span>= 'Getopt::STRICT'
+                </code><div class="description">
+<span class="attribute">inherited</span><p class="short-description">Should Getopt be strict about how options are processed?  In strict
+mode, passing an undefined option will throw an exception; in
+non-strict, it will not.</p><small>Inherited from:
+                        <a href="db_src_Command.html#%5CAura%5CCli%5CCommand::%24options_strict">\Aura\Cli\Command::$options_strict</a></small>
+</div>
+<div class="code-tabs">
+<div class="long-description">
+</div>
+<strong>Default value</strong><code>Getopt::STRICT</code><strong>Details</strong><dl class="property-info">
+<dt>Type</dt>
+<dd>\Aura\Cli\bool</dd>
+<dt>Inherited_from</dt>
+<dd>
+<a href="db_src_Command.html#%5CAura%5CCli%5CCommand::%24options_strict">\Aura\Cli\Command::$options_strict</a>
+         
+    </dd>
+</dl>
+</div>
+<div class="clear"></div>
+</div>
+<a id="\Aura\Cli\MockCommandSkip::$params" class="anchor"></a><div class="property protected inherited_from ">
+<a href="#" class="gripper"><img src="images/icons/arrow_right.png"><img src="images/icons/arrow_down.png" style="display: none;"></a><code><img src="images/icons/property.png" alt="Property"><img src="images/icons/visibility_protected.png" style="margin-right: 5px" alt="protected">array
+                 <span class="highlight">$params</span>= 'array()'
+                </code><div class="description">
+<span class="attribute">inherited</span><p class="short-description">The positional (numeric) arguments passed at the command line.</p><small>Inherited from:
+                        <a href="db_src_Command.html#%5CAura%5CCli%5CCommand::%24params">\Aura\Cli\Command::$params</a></small>
+</div>
+<div class="code-tabs">
+<div class="long-description">
+</div>
+<strong>Default value</strong><code>array()</code><strong>Details</strong><dl class="property-info">
+<dt>Type</dt>
+<dd>\Aura\Cli\array</dd>
+<dt>Inherited_from</dt>
+<dd>
+<a href="db_src_Command.html#%5CAura%5CCli%5CCommand::%24params">\Aura\Cli\Command::$params</a>
+         
+    </dd>
+</dl>
+</div>
+<div class="clear"></div>
+</div>
+<a id="\Aura\Cli\MockCommandSkip::$skip_action" class="anchor"></a><div class="property protected inherited_from ">
+<a href="#" class="gripper"><img src="images/icons/arrow_right.png"><img src="images/icons/arrow_down.png" style="display: none;"></a><code><img src="images/icons/property.png" alt="Property"><img src="images/icons/visibility_protected.png" style="margin-right: 5px" alt="protected">bool
+                 <span class="highlight">$skip_action</span>= 'false'
+                </code><div class="description">
+<span class="attribute">inherited</span><p class="short-description">When set to `true` before `action()` is called, the `action()` will not
+be called after all.</p><small>Inherited from:
+                        <a href="db_src_Command.html#%5CAura%5CCli%5CCommand::%24skip_action">\Aura\Cli\Command::$skip_action</a></small>
+</div>
+<div class="code-tabs">
+<div class="long-description">
+</div>
+<strong>Default value</strong><code>false</code><strong>Details</strong><dl class="property-info">
+<dt>Type</dt>
+<dd>\Aura\Cli\bool</dd>
+<dt>Inherited_from</dt>
+<dd>
+<a href="db_src_Command.html#%5CAura%5CCli%5CCommand::%24skip_action">\Aura\Cli\Command::$skip_action</a>
+         
+    </dd>
+</dl>
+</div>
+<div class="clear"></div>
+</div>
+</div>
+<h3>Methods</h3>
+<div>
+<a id="\Aura\Cli\MockCommandSkip::__construct()" class="anchor"></a><div class="method public inherited_from ">
+<a href="#" class="gripper"><img src="images/icons/arrow_right.png"><img src="images/icons/arrow_down.png" style="display: none;"></a><code><img src="images/icons/method.png" alt="method"><img src="images/icons/visibility_public.png" style="margin-right: 5px" alt="public"><span class="highlight">__construct</span><span class="nb-faded-text">(
+          <a href="db_src_Context.html#%5CAura%5CCli%5CContext">\Aura\Cli\Context</a> $context, <a href="db_src_Stdio.html#%5CAura%5CCli%5CStdio">\Aura\Cli\Stdio</a> $stdio, <a href="db_src_Getopt.html#%5CAura%5CCli%5CGetopt">\Aura\Cli\Getopt</a> $getopt, \Aura\Signal\Manager $signal
+          )
+        </span>
+        :
+          void</code><div class="description">
+<span class="attribute">inherited</span><p class="short_description">Constructor.</p>
+<small>Inherited from:
+                    <a href="db_src_Command.html#%5CAura%5CCli%5CCommand::__construct()">\Aura\Cli\Command::__construct()</a></small>
+</div>
+<div class="code-tabs">
+<div class="long-description">
+</div>
+<strong>Parameters</strong><table class="argument-info">
+<thead><tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+</tr></thead>
+<tr>
+<th>$context</th>
+<td><a href="db_src_Context.html#%5CAura%5CCli%5CContext">\Aura\Cli\Context</a></td>
+<td><em><p>The command-line context.</p>
+</em></td>
+</tr>
+<tr>
+<th>$stdio</th>
+<td><a href="db_src_Stdio.html#%5CAura%5CCli%5CStdio">\Aura\Cli\Stdio</a></td>
+<td><em><p>Standard input/output streams.</p>
+</em></td>
+</tr>
+<tr>
+<th>$getopt</th>
+<td><a href="db_src_Getopt.html#%5CAura%5CCli%5CGetopt">\Aura\Cli\Getopt</a></td>
+<td><em><p>An options processor and reader.</p></em></td>
+</tr>
+<tr>
+<th>$signal</th>
+<td>\Aura\Signal\Manager</td>
+<td><em><p>A signal manager to send signals to.</p></em></td>
+</tr>
+</table>
+</div>
+<div class="clear"></div>
+</div>
+<a id="\Aura\Cli\MockCommandSkip::__get()" class="anchor"></a><div class="method public inherited_from ">
+<a href="#" class="gripper"><img src="images/icons/arrow_right.png"><img src="images/icons/arrow_down.png" style="display: none;"></a><code><img src="images/icons/method.png" alt="method"><img src="images/icons/visibility_public.png" style="margin-right: 5px" alt="public"><span class="highlight">__get</span><span class="nb-faded-text">(
+           $key
+          )
+        </span>
+        :
+          void</code><div class="description">
+<span class="attribute">inherited</span><p class="short_description"></p>
+<small>Inherited from:
+                    <a href="db_tests_MockCommand.html#%5CAura%5CCli%5CMockCommand::__get()">\Aura\Cli\MockCommand::__get()</a></small>
+</div>
+<div class="code-tabs">
+<strong>Parameters</strong><table class="argument-info">
+<thead><tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+</tr></thead>
+<tr>
+<th>$key</th>
+<td></td>
+<td><em></em></td>
+</tr>
+</table>
+</div>
+<div class="clear"></div>
+</div>
+<a id="\Aura\Cli\MockCommandSkip::action()" class="anchor"></a><div class="method public inherited_from ">
+<a href="#" class="gripper"><img src="images/icons/arrow_right.png"><img src="images/icons/arrow_down.png" style="display: none;"></a><code><img src="images/icons/method.png" alt="method"><img src="images/icons/visibility_public.png" style="margin-right: 5px" alt="public"><span class="highlight">action</span><span class="nb-faded-text">(
+          
+          )
+        </span>
+        :
+          \Aura\Cli\void</code><div class="description">
+<span class="attribute">inherited</span><p class="short_description">The main logic for the Command.</p>
+<small>Inherited from:
+                    <a href="db_tests_MockCommand.html#%5CAura%5CCli%5CMockCommand::action()">\Aura\Cli\MockCommand::action()</a></small>
+</div>
+<div class="code-tabs"><div class="long-description">
+</div></div>
+<div class="clear"></div>
+</div>
+<a id="\Aura\Cli\MockCommandSkip::exec()" class="anchor"></a><div class="method public inherited_from ">
+<a href="#" class="gripper"><img src="images/icons/arrow_right.png"><img src="images/icons/arrow_down.png" style="display: none;"></a><code><img src="images/icons/method.png" alt="method"><img src="images/icons/visibility_public.png" style="margin-right: 5px" alt="public"><span class="highlight">exec</span><span class="nb-faded-text">(
+          
+          )
+        </span>
+        :
+          \Aura\Cli\void</code><div class="description">
+<span class="attribute">inherited</span><p class="short_description">Executes the Command.  In order, it does these things:</p>
+<small>Inherited from:
+                    <a href="db_src_Command.html#%5CAura%5CCli%5CCommand::exec()">\Aura\Cli\Command::exec()</a></small>
+</div>
+<div class="code-tabs">
+<div class="long-description"><ul>
+<li><p>signals <code>'pre_exec'</code></p></li>
+<li><p>signals <code>'pre_action'</code></p></li>
+<li><p>is the action is not to be skipped, calls <code>action()</code> and signals
+<code>'post_action'</code></p></li>
+<li><p>signals <code>'post_exec'</code></p></li>
+<li><p>resets the terminal to normal colors</p></li>
+</ul>
+</div>
+<strong>Details</strong><dl class="function-info">
+<dt>See</dt>
+<dd>\Aura\Cli\action()
+         
+    </dd>
+<dt>Signal</dt>
+<dd>'pre_exec'
+         
+    </dd>
+<dt>Signal</dt>
+<dd>'pre_action'
+         
+    </dd>
+<dt>Signal</dt>
+<dd>'post_action'
+         
+    </dd>
+<dt>Signal</dt>
+<dd>'post_exec'
+         
+    </dd>
+</dl>
+</div>
+<div class="clear"></div>
+</div>
+<a id="\Aura\Cli\MockCommandSkip::isSkipAction()" class="anchor"></a><div class="method public inherited_from ">
+<a href="#" class="gripper"><img src="images/icons/arrow_right.png"><img src="images/icons/arrow_down.png" style="display: none;"></a><code><img src="images/icons/method.png" alt="method"><img src="images/icons/visibility_public.png" style="margin-right: 5px" alt="public"><span class="highlight">isSkipAction</span><span class="nb-faded-text">(
+          
+          )
+        </span>
+        :
+          \Aura\Cli\bool</code><div class="description">
+<span class="attribute">inherited</span><p class="short_description">Should the call to `action()` be skipped?</p>
+<small>Inherited from:
+                    <a href="db_src_Command.html#%5CAura%5CCli%5CCommand::isSkipAction()">\Aura\Cli\Command::isSkipAction()</a></small>
+</div>
+<div class="code-tabs">
+<div class="long-description">
+</div>
+<strong>Returns</strong><table class="argument-info">
+<thead><tr>
+<th>Type</th>
+<th>Description</th>
+</tr></thead>
+<tr>
+<td>\Aura\Cli\bool</td>
+<td></td>
+</tr>
+</table>
+</div>
+<div class="clear"></div>
+</div>
+<a id="\Aura\Cli\MockCommandSkip::loadGetoptParams()" class="anchor"></a><div class="method protected inherited_from ">
+<a href="#" class="gripper"><img src="images/icons/arrow_right.png"><img src="images/icons/arrow_down.png" style="display: none;"></a><code><img src="images/icons/method.png" alt="method"><img src="images/icons/visibility_protected.png" style="margin-right: 5px" alt="protected"><span class="highlight">loadGetoptParams</span><span class="nb-faded-text">(
+          
+          )
+        </span>
+        :
+          \Aura\Cli\void</code><div class="description">
+<span class="attribute">inherited</span><p class="short_description">Passes the Context arguments to `$getopt` and retains the numeric
+parameters in `$params`.</p>
+<small>Inherited from:
+                    <a href="db_src_Command.html#%5CAura%5CCli%5CCommand::loadGetoptParams()">\Aura\Cli\Command::loadGetoptParams()</a></small>
+</div>
+<div class="code-tabs"><div class="long-description">
+</div></div>
+<div class="clear"></div>
+</div>
+<a id="\Aura\Cli\MockCommandSkip::postAction()" class="anchor"></a><div class="method public inherited_from ">
+<a href="#" class="gripper"><img src="images/icons/arrow_right.png"><img src="images/icons/arrow_down.png" style="display: none;"></a><code><img src="images/icons/method.png" alt="method"><img src="images/icons/visibility_public.png" style="margin-right: 5px" alt="public"><span class="highlight">postAction</span><span class="nb-faded-text">(
+          
+          )
+        </span>
+        :
+          \Aura\Cli\mixed</code><div class="description">
+<span class="attribute">inherited</span><p class="short_description">Runs after `action()` as part of the `'post_action'` signal.</p>
+<small>Inherited from:
+                    <a href="db_tests_MockCommand.html#%5CAura%5CCli%5CMockCommand::postAction()">\Aura\Cli\MockCommand::postAction()</a></small>
+</div>
+<div class="code-tabs">
+<div class="long-description">
+</div>
+<strong>Returns</strong><table class="argument-info">
+<thead><tr>
+<th>Type</th>
+<th>Description</th>
+</tr></thead>
+<tr>
+<td>\Aura\Cli\mixed</td>
+<td></td>
+</tr>
+</table>
+</div>
+<div class="clear"></div>
+</div>
+<a id="\Aura\Cli\MockCommandSkip::postExec()" class="anchor"></a><div class="method public inherited_from ">
+<a href="#" class="gripper"><img src="images/icons/arrow_right.png"><img src="images/icons/arrow_down.png" style="display: none;"></a><code><img src="images/icons/method.png" alt="method"><img src="images/icons/visibility_public.png" style="margin-right: 5px" alt="public"><span class="highlight">postExec</span><span class="nb-faded-text">(
+          
+          )
+        </span>
+        :
+          \Aura\Cli\mixed</code><div class="description">
+<span class="attribute">inherited</span><p class="short_description">Runs after `action()` as part of the `'post_exec'` signal.</p>
+<small>Inherited from:
+                    <a href="db_src_Command.html#%5CAura%5CCli%5CCommand::postExec()">\Aura\Cli\Command::postExec()</a></small>
+</div>
+<div class="code-tabs">
+<div class="long-description">
+</div>
+<strong>Returns</strong><table class="argument-info">
+<thead><tr>
+<th>Type</th>
+<th>Description</th>
+</tr></thead>
+<tr>
+<td>\Aura\Cli\mixed</td>
+<td></td>
+</tr>
+</table>
+</div>
+<div class="clear"></div>
+</div>
+<a id="\Aura\Cli\MockCommandSkip::preAction()" class="anchor"></a><div class="method public">
+<a href="#" class="gripper"><img src="images/icons/arrow_right.png"><img src="images/icons/arrow_down.png" style="display: none;"></a><code><img src="images/icons/method.png" alt="method"><img src="images/icons/visibility_public.png" style="margin-right: 5px" alt="public"><span class="highlight">preAction</span><span class="nb-faded-text">(
+          
+          )
+        </span>
+        :
+          \Aura\Cli\mixed</code><div class="description"><p class="short_description">Runs before `action()` as part of the `'pre_action'` signal.</p></div>
+<div class="code-tabs">
+<div class="long-description">
+</div>
+<strong>Returns</strong><table class="argument-info">
+<thead><tr>
+<th>Type</th>
+<th>Description</th>
+</tr></thead>
+<tr>
+<td>\Aura\Cli\mixed</td>
+<td></td>
+</tr>
+</table>
+</div>
+<div class="clear"></div>
+</div>
+<a id="\Aura\Cli\MockCommandSkip::preExec()" class="anchor"></a><div class="method public inherited_from ">
+<a href="#" class="gripper"><img src="images/icons/arrow_right.png"><img src="images/icons/arrow_down.png" style="display: none;"></a><code><img src="images/icons/method.png" alt="method"><img src="images/icons/visibility_public.png" style="margin-right: 5px" alt="public"><span class="highlight">preExec</span><span class="nb-faded-text">(
+          
+          )
+        </span>
+        :
+          \Aura\Cli\mixed</code><div class="description">
+<span class="attribute">inherited</span><p class="short_description">Runs before `action()` as part of the `'pre_exec'` signal.</p>
+<small>Inherited from:
+                    <a href="db_src_Command.html#%5CAura%5CCli%5CCommand::preExec()">\Aura\Cli\Command::preExec()</a></small>
+</div>
+<div class="code-tabs">
+<div class="long-description">
+</div>
+<strong>Returns</strong><table class="argument-info">
+<thead><tr>
+<th>Type</th>
+<th>Description</th>
+</tr></thead>
+<tr>
+<td>\Aura\Cli\mixed</td>
+<td></td>
+</tr>
+</table>
+</div>
+<div class="clear"></div>
+</div>
+<a id="\Aura\Cli\MockCommandSkip::skipAction()" class="anchor"></a><div class="method public inherited_from ">
+<a href="#" class="gripper"><img src="images/icons/arrow_right.png"><img src="images/icons/arrow_down.png" style="display: none;"></a><code><img src="images/icons/method.png" alt="method"><img src="images/icons/visibility_public.png" style="margin-right: 5px" alt="public"><span class="highlight">skipAction</span><span class="nb-faded-text">(
+          
+          )
+        </span>
+        :
+          \Aura\Cli\void</code><div class="description">
+<span class="attribute">inherited</span><p class="short_description">Stops `exec()` from calling `action()` if it has not already done so.</p>
+<small>Inherited from:
+                    <a href="db_src_Command.html#%5CAura%5CCli%5CCommand::skipAction()">\Aura\Cli\Command::skipAction()</a></small>
+</div>
+<div class="code-tabs"><div class="long-description">
+</div></div>
+<div class="clear"></div>
+</div>
+</div>
+</div>
+</div>
+<small xmlns="" class="footer">Documentation was generated by <a href="http://docblox-project.org">DocBlox 0.16.0</a>.
+    </small></body></html>

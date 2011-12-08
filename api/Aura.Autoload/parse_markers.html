@@ -1,0 +1,202 @@
+<html xmlns="http://www.w3.org/1999/xhtml"><head><title>Aura Project for PHP: Aura.Autoload</title><meta http-equiv="Content-Type" content="text/html; charset=utf-8"></meta><link rel="stylesheet" href="css/black-tie/jquery-ui-1.8.2.custom.css" type="text/css"></link><link rel="stylesheet" href="css/jquery.treeview.css" type="text/css"></link><link rel="stylesheet" href="css/theme.css" type="text/css"></link><script type="text/javascript" src="js/jquery-1.4.2.min.js"></script><script type="text/javascript" src="js/jquery-ui-1.8.2.custom.min.js"></script><script type="text/javascript" src="js/jquery.cookie.js"></script><script type="text/javascript" src="js/jquery.treeview.js"></script><script type="text/javascript">
+            $(document).ready(function() {
+                $(".filetree").treeview({
+                    collapsed: true,
+                    persist: "cookie"
+                });
+
+                $("#accordion").accordion({
+                    collapsible: true,
+                    autoHeight:  false,
+                    fillSpace:   true
+                });
+
+                $(".tabs").tabs();
+            });
+        </script></head><body><script xmlns="" type="text/javascript">
+        $(document).ready(function() {
+            $("#marker-accordion").accordion({
+                collapsible: true,
+                autoHeight:  false
+            });
+        });
+    </script><div xmlns="" id="content">
+<h1>Compilation Errors</h1>
+<div id="marker-accordion">
+<h3><a href="#">tests/MockAutoloadChild.php<small>1</small></a></h3>
+<div><table>
+<tr>
+<th>Type</th>
+<th>Line</th>
+<th>Description</th>
+</tr>
+<tr>
+<td>error</td>
+<td>3</td>
+<td>No DocBlock was found for Class MockAutoloadChild</td>
+</tr>
+</table></div>
+<h3><a href="#">tests/LoaderTest.php<small>9</small></a></h3>
+<div><table>
+<tr>
+<th>Type</th>
+<th>Line</th>
+<th>Description</th>
+</tr>
+<tr>
+<td>error</td>
+<td>42</td>
+<td>No DocBlock was found for Method testLoadAlreadyLoaded</td>
+</tr>
+<tr>
+<td>error</td>
+<td>111</td>
+<td>No DocBlock was found for Method testAddPrefixAndGetPrefixes</td>
+</tr>
+<tr>
+<td>error</td>
+<td>120</td>
+<td>No DocBlock was found for Method testSetClassAndGetClasses</td>
+</tr>
+<tr>
+<td>error</td>
+<td>129</td>
+<td>No DocBlock was found for Method testLoadExactClass</td>
+</tr>
+<tr>
+<td>error</td>
+<td>160</td>
+<td>No DocBlock was found for Method testClassToFile</td>
+</tr>
+<tr>
+<td>error</td>
+<td>180</td>
+<td>No DocBlock was found for Method testFindDir</td>
+</tr>
+<tr>
+<td>error</td>
+<td>190</td>
+<td>No DocBlock was found for Method testFindDirContainingClass</td>
+</tr>
+<tr>
+<td>error</td>
+<td>204</td>
+<td>No DocBlock was found for Method testFindDirDoesNotExist</td>
+</tr>
+<tr>
+<td>error</td>
+<td>214</td>
+<td>No DocBlock was found for Method testSetClasses</td>
+</tr>
+</table></div>
+<h3><a href="#">tests/MockAutoloadClass.php<small>1</small></a></h3>
+<div><table>
+<tr>
+<th>Type</th>
+<th>Line</th>
+<th>Description</th>
+</tr>
+<tr>
+<td>error</td>
+<td>3</td>
+<td>No DocBlock was found for Class MockAutoloadClass</td>
+</tr>
+</table></div>
+<h3><a href="#">tests/MockAutoloadAlready.php<small>1</small></a></h3>
+<div><table>
+<tr>
+<th>Type</th>
+<th>Line</th>
+<th>Description</th>
+</tr>
+<tr>
+<td>error</td>
+<td>3</td>
+<td>No DocBlock was found for Class MockAutoloadAlready</td>
+</tr>
+</table></div>
+<h3><a href="#">src/Exception/AlreadyLoaded.php<small>1</small></a></h3>
+<div><table>
+<tr>
+<th>Type</th>
+<th>Line</th>
+<th>Description</th>
+</tr>
+<tr>
+<td>error</td>
+<td>2</td>
+<td>No Page-level DocBlock was found</td>
+</tr>
+</table></div>
+<h3><a href="#">src/Exception/NotFound.php<small>1</small></a></h3>
+<div><table>
+<tr>
+<th>Type</th>
+<th>Line</th>
+<th>Description</th>
+</tr>
+<tr>
+<td>error</td>
+<td>2</td>
+<td>No Page-level DocBlock was found</td>
+</tr>
+</table></div>
+<h3><a href="#">src/Loader.php<small>2</small></a></h3>
+<div><table>
+<tr>
+<th>Type</th>
+<th>Line</th>
+<th>Description</th>
+</tr>
+<tr>
+<td>error</td>
+<td>2</td>
+<td>No Page-level DocBlock was found</td>
+</tr>
+<tr>
+<td>error</td>
+<td>253</td>
+<td>No DocBlock was found for Method findDir</td>
+</tr>
+</table></div>
+<h3><a href="#">src/Exception.php<small>1</small></a></h3>
+<div><table>
+<tr>
+<th>Type</th>
+<th>Line</th>
+<th>Description</th>
+</tr>
+<tr>
+<td>error</td>
+<td>2</td>
+<td>No Page-level DocBlock was found</td>
+</tr>
+</table></div>
+<h3><a href="#">config/test.php<small>1</small></a></h3>
+<div><table>
+<tr>
+<th>Type</th>
+<th>Line</th>
+<th>Description</th>
+</tr>
+<tr>
+<td>error</td>
+<td>2</td>
+<td>No Page-level DocBlock was found</td>
+</tr>
+</table></div>
+<h3><a href="#">config/default.php<small>1</small></a></h3>
+<div><table>
+<tr>
+<th>Type</th>
+<th>Line</th>
+<th>Description</th>
+</tr>
+<tr>
+<td>error</td>
+<td>2</td>
+<td>No Page-level DocBlock was found</td>
+</tr>
+</table></div>
+</div>
+</div></body></html>

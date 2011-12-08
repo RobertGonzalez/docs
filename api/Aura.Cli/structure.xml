@@ -1,7 +1,920 @@
 <?xml version="1.0"?>
-<project version="0.13.1" title="Aura Project for PHP: Aura.Cli">
-  <file path="src/Getopt.php" hash="fc43a1c353ddab3ed87bbc72d7a73e37">
-    <class final="false" abstract="false" line="18" namespace="Aura\Cli">
+<project version="0.16.0" title="Aura Project for PHP: Aura.Cli">
+  <file path="tests/MockCommandSkip.php" hash="af11fc1fdcee49df6883a7b81f7dddd1" package="Default">
+    <parse_markers>
+      <error line="1">No DocBlock was found for File tests/MockCommandSkip.php</error>
+      <error line="3">No DocBlock was found for Class MockCommandSkip</error>
+      <error line="5">No DocBlock was found for Method preAction</error>
+    </parse_markers>
+    <class final="false" abstract="false" line="3" namespace="Aura\Cli" package="Default">
+      <name>MockCommandSkip</name>
+      <extends>\Aura\Cli\MockCommand</extends>
+      <full_name>\Aura\Cli\MockCommandSkip</full_name>
+      <method final="false" abstract="false" static="false" visibility="public" line="5" package="Default">
+        <name>preAction</name>
+      </method>
+    </class>
+  </file>
+  <file path="tests/OptionFactoryTest.php" hash="a5ede51fe6b4fb6b76b0ca315397f192" package="Default">
+    <parse_markers>
+      <error line="1">No DocBlock was found for File tests/OptionFactoryTest.php</error>
+      <critical line="9">No short description for property $factory</critical>
+      <critical line="33">No short description for method testNewInstance</critical>
+    </parse_markers>
+    <class final="false" abstract="false" line="7" namespace="Aura\Cli" package="Default">
+      <name>OptionFactoryTest</name>
+      <extends>\PHPUnit_Framework_TestCase</extends>
+      <full_name>\Aura\Cli\OptionFactoryTest</full_name>
+      <docblock>
+        <description>Test class for OptionFactory.</description>
+        <long-description>
+</long-description>
+      </docblock>
+      <property final="false" static="false" visibility="protected" line="12" package="Default">
+        <name>$factory</name>
+        <default/>
+        <docblock>
+          <description/>
+          <long-description>
+</long-description>
+          <tag line="9" name="var" description="" type="\Aura\Cli\OptionFactory">
+            <type by_reference="false">\Aura\Cli\OptionFactory</type>
+          </tag>
+        </docblock>
+      </property>
+      <method final="false" abstract="false" static="false" visibility="protected" line="18" package="Default">
+        <name>setUp</name>
+        <docblock>
+          <description>Sets up the fixture, for example, opens a network connection.</description>
+          <long-description>&lt;p&gt;This method is called before a test is executed.&lt;/p&gt;
+</long-description>
+        </docblock>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="protected" line="28" package="Default">
+        <name>tearDown</name>
+        <docblock>
+          <description>Tears down the fixture, for example, closes a network connection.</description>
+          <long-description>&lt;p&gt;This method is called after a test is executed.&lt;/p&gt;
+</long-description>
+        </docblock>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" line="36" package="Default">
+        <name>testNewInstance</name>
+        <docblock>
+          <description/>
+          <long-description>
+</long-description>
+          <tag line="33" name="todo" description="Implement testNewInstance()."/>
+        </docblock>
+      </method>
+    </class>
+  </file>
+  <file path="tests/OptionTest.php" hash="b9a61851fef911d39fd5baa245f21ac9" package="Default">
+    <parse_markers>
+      <error line="1">No DocBlock was found for File tests/OptionTest.php</error>
+      <critical line="9">No short description for property $factory</critical>
+      <error line="33">No DocBlock was found for Method testInit</error>
+      <critical line="48">No short description for method testInit_noName</critical>
+      <error line="61">No DocBlock was found for Method testInit_noLongOrShort</error>
+      <critical line="75">No short description for method testInit_badParamValue</critical>
+      <error line="89">No DocBlock was found for Method testSetValue</error>
+      <critical line="104">No short description for method testSetValue_required</critical>
+      <critical line="121">No short description for method testSetValue_notMulti</critical>
+      <error line="138">No DocBlock was found for Method testIsMulti</error>
+      <error line="155">No DocBlock was found for Method testGetValue</error>
+      <error line="170">No DocBlock was found for Method testGetValue_default</error>
+      <error line="184">No DocBlock was found for Method testGetDefault</error>
+      <error line="198">No DocBlock was found for Method testIsParamRequired</error>
+      <error line="214">No DocBlock was found for Method testIsParamRejected</error>
+      <error line="230">No DocBlock was found for Method testIsParamOptional</error>
+    </parse_markers>
+    <class final="false" abstract="false" line="7" namespace="Aura\Cli" package="Default">
+      <name>OptionTest</name>
+      <extends>\PHPUnit_Framework_TestCase</extends>
+      <full_name>\Aura\Cli\OptionTest</full_name>
+      <docblock>
+        <description>Test class for Option.</description>
+        <long-description>
+</long-description>
+      </docblock>
+      <property final="false" static="false" visibility="protected" line="12" package="Default">
+        <name>$factory</name>
+        <default/>
+        <docblock>
+          <description/>
+          <long-description>
+</long-description>
+          <tag line="9" name="var" description="" type="\Aura\Cli\Builder">
+            <type by_reference="false">\Aura\Cli\Builder</type>
+          </tag>
+        </docblock>
+      </property>
+      <method final="false" abstract="false" static="false" visibility="protected" line="18" package="Default">
+        <name>setUp</name>
+        <docblock>
+          <description>Sets up the fixture, for example, opens a network connection.</description>
+          <long-description>&lt;p&gt;This method is called before a test is executed.&lt;/p&gt;
+</long-description>
+        </docblock>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="protected" line="28" package="Default">
+        <name>tearDown</name>
+        <docblock>
+          <description>Tears down the fixture, for example, closes a network connection.</description>
+          <long-description>&lt;p&gt;This method is called after a test is executed.&lt;/p&gt;
+</long-description>
+        </docblock>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" line="33" package="Default">
+        <name>testInit</name>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" line="51" package="Default">
+        <name>testInit_noName</name>
+        <docblock>
+          <description/>
+          <long-description>
+</long-description>
+          <tag line="48" name="expectedException" description="Aura\Cli\Exception\OptionName"/>
+        </docblock>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" line="61" package="Default">
+        <name>testInit_noLongOrShort</name>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" line="78" package="Default">
+        <name>testInit_badParamValue</name>
+        <docblock>
+          <description/>
+          <long-description>
+</long-description>
+          <tag line="75" name="expectedException" description="Aura\Cli\Exception\OptionParam"/>
+        </docblock>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" line="89" package="Default">
+        <name>testSetValue</name>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" line="107" package="Default">
+        <name>testSetValue_required</name>
+        <docblock>
+          <description/>
+          <long-description>
+</long-description>
+          <tag line="104" name="expectedException" description="Aura\Cli\Exception\OptionParamRequired"/>
+        </docblock>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" line="124" package="Default">
+        <name>testSetValue_notMulti</name>
+        <docblock>
+          <description/>
+          <long-description>
+</long-description>
+          <tag line="121" name="expectedException" description="Aura\Cli\Exception\OptionNotMulti"/>
+        </docblock>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" line="138" package="Default">
+        <name>testIsMulti</name>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" line="155" package="Default">
+        <name>testGetValue</name>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" line="170" package="Default">
+        <name>testGetValue_default</name>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" line="184" package="Default">
+        <name>testGetDefault</name>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" line="198" package="Default">
+        <name>testIsParamRequired</name>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" line="214" package="Default">
+        <name>testIsParamRejected</name>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" line="230" package="Default">
+        <name>testIsParamOptional</name>
+      </method>
+    </class>
+  </file>
+  <file path="tests/StdioTest.php" hash="5d8dcebb8d247d80a0df2effb643b10f" package="Default">
+    <parse_markers>
+      <error line="1">No DocBlock was found for File tests/StdioTest.php</error>
+      <critical line="9">No short description for property $stdio</critical>
+      <error line="14">No DocBlock was found for Property $stdin</error>
+      <error line="16">No DocBlock was found for Property $stdout</error>
+      <error line="18">No DocBlock was found for Property $stderr</error>
+      <error line="20">No DocBlock was found for Property $vt100</error>
+      <critical line="50">No short description for method testGetStdin</critical>
+      <critical line="59">No short description for method testGetStdout</critical>
+      <critical line="68">No short description for method testGetStderr</critical>
+      <critical line="77">No short description for method testOut</critical>
+      <critical line="89">No short description for method testOutln</critical>
+      <critical line="101">No short description for method testErr</critical>
+      <critical line="113">No short description for method testErrln</critical>
+      <error line="125">No DocBlock was found for Method testInln</error>
+      <error line="134">No DocBlock was found for Method testIn</error>
+    </parse_markers>
+    <class final="false" abstract="false" line="7" namespace="Aura\Cli" package="Default">
+      <name>StdioTest</name>
+      <extends>\PHPUnit_Framework_TestCase</extends>
+      <full_name>\Aura\Cli\StdioTest</full_name>
+      <docblock>
+        <description>Test class for Stdio.</description>
+        <long-description>
+</long-description>
+      </docblock>
+      <property final="false" static="false" visibility="protected" line="12" package="Default">
+        <name>$stdio</name>
+        <default/>
+        <docblock>
+          <description/>
+          <long-description>
+</long-description>
+          <tag line="9" name="var" description="" type="\Aura\Cli\Stdio">
+            <type by_reference="false">\Aura\Cli\Stdio</type>
+          </tag>
+        </docblock>
+      </property>
+      <property final="false" static="false" visibility="protected" line="14" package="Default">
+        <name>$stdin</name>
+        <default/>
+      </property>
+      <property final="false" static="false" visibility="protected" line="16" package="Default">
+        <name>$stdout</name>
+        <default/>
+      </property>
+      <property final="false" static="false" visibility="protected" line="18" package="Default">
+        <name>$stderr</name>
+        <default/>
+      </property>
+      <property final="false" static="false" visibility="protected" line="20" package="Default">
+        <name>$vt100</name>
+        <default/>
+      </property>
+      <method final="false" abstract="false" static="false" visibility="protected" line="26" package="Default">
+        <name>setUp</name>
+        <docblock>
+          <description>Sets up the fixture, for example, opens a network connection.</description>
+          <long-description>&lt;p&gt;This method is called before a test is executed.&lt;/p&gt;
+</long-description>
+        </docblock>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="protected" line="45" package="Default">
+        <name>tearDown</name>
+        <docblock>
+          <description>Tears down the fixture, for example, closes a network connection.</description>
+          <long-description>&lt;p&gt;This method is called after a test is executed.&lt;/p&gt;
+</long-description>
+        </docblock>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" line="53" package="Default">
+        <name>testGetStdin</name>
+        <docblock>
+          <description/>
+          <long-description>
+</long-description>
+          <tag line="50" name="todo" description="Implement testGetStdin()."/>
+        </docblock>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" line="62" package="Default">
+        <name>testGetStdout</name>
+        <docblock>
+          <description/>
+          <long-description>
+</long-description>
+          <tag line="59" name="todo" description="Implement testGetStdout()."/>
+        </docblock>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" line="71" package="Default">
+        <name>testGetStderr</name>
+        <docblock>
+          <description/>
+          <long-description>
+</long-description>
+          <tag line="68" name="todo" description="Implement testGetStderr()."/>
+        </docblock>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" line="80" package="Default">
+        <name>testOut</name>
+        <docblock>
+          <description/>
+          <long-description>
+</long-description>
+          <tag line="77" name="todo" description="Implement testOut()."/>
+        </docblock>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" line="92" package="Default">
+        <name>testOutln</name>
+        <docblock>
+          <description/>
+          <long-description>
+</long-description>
+          <tag line="89" name="todo" description="Implement testOutln()."/>
+        </docblock>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" line="104" package="Default">
+        <name>testErr</name>
+        <docblock>
+          <description/>
+          <long-description>
+</long-description>
+          <tag line="101" name="todo" description="Implement testErr()."/>
+        </docblock>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" line="116" package="Default">
+        <name>testErrln</name>
+        <docblock>
+          <description/>
+          <long-description>
+</long-description>
+          <tag line="113" name="todo" description="Implement testErrln()."/>
+        </docblock>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" line="125" package="Default">
+        <name>testInln</name>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" line="134" package="Default">
+        <name>testIn</name>
+      </method>
+    </class>
+  </file>
+  <file path="tests/ContextTest.php" hash="aa6628753b29b6c8e680e56f81b87f34" package="Default">
+    <parse_markers>
+      <error line="1">No DocBlock was found for File tests/ContextTest.php</error>
+      <critical line="9">No short description for property $object</critical>
+      <error line="99">No DocBlock was found for Method testGetArgv</error>
+      <error line="107">No DocBlock was found for Method testShiftArgv</error>
+    </parse_markers>
+    <class final="false" abstract="false" line="7" namespace="Aura\Cli" package="Default">
+      <name>ContextTest</name>
+      <extends>\PHPUnit_Framework_TestCase</extends>
+      <full_name>\Aura\Cli\ContextTest</full_name>
+      <docblock>
+        <description>Test class for Context.</description>
+        <long-description>
+</long-description>
+      </docblock>
+      <property final="false" static="false" visibility="protected" line="12" package="Default">
+        <name>$object</name>
+        <default/>
+        <docblock>
+          <description/>
+          <long-description>
+</long-description>
+          <tag line="9" name="var" description="" type="\Aura\Cli\Context">
+            <type by_reference="false">\Aura\Cli\Context</type>
+          </tag>
+        </docblock>
+      </property>
+      <method final="false" abstract="false" static="false" visibility="protected" line="18" package="Default">
+        <name>setUp</name>
+        <docblock>
+          <description>Sets up the fixture, for example, opens a network connection.</description>
+          <long-description>&lt;p&gt;This method is called before a test is executed.&lt;/p&gt;
+</long-description>
+        </docblock>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="protected" line="28" package="Default">
+        <name>tearDown</name>
+        <docblock>
+          <description>Tears down the fixture, for example, closes a network connection.</description>
+          <long-description>&lt;p&gt;This method is called after a test is executed.&lt;/p&gt;
+</long-description>
+        </docblock>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" line="39" package="Default">
+        <name>testGetEnv</name>
+        <docblock>
+          <description>Test -- Retrieves an **unfiltered** value by key from the [[$env]]
+property, or an alternate default value if that key does not exist.</description>
+          <long-description>
+</long-description>
+        </docblock>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" line="72" package="Default">
+        <name>testGetServer</name>
+        <docblock>
+          <description>Test -- Retrieves an **unfiltered** value by key from the [[$server]]
+property, or an alternate default value if that key does not exist.</description>
+          <long-description>
+</long-description>
+        </docblock>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" line="99" package="Default">
+        <name>testGetArgv</name>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" line="107" package="Default">
+        <name>testShiftArgv</name>
+      </method>
+    </class>
+  </file>
+  <file path="tests/CommandTest.php" hash="8b95f59d991fc22456a7081cc417b784" package="Default">
+    <parse_markers>
+      <error line="1">No DocBlock was found for File tests/CommandTest.php</error>
+      <error line="13">No DocBlock was found for Method newMockCommand</error>
+      <error line="33">No DocBlock was found for Method testExec</error>
+      <error line="44">No DocBlock was found for Method testExec_hooks</error>
+      <error line="52">No DocBlock was found for Method testExec_skipAction</error>
+    </parse_markers>
+    <namespace-alias name="Manager">Aura\Signal\Manager</namespace-alias>
+    <namespace-alias name="HandlerFactory">Aura\Signal\HandlerFactory</namespace-alias>
+    <namespace-alias name="ResultFactory">Aura\Signal\ResultFactory</namespace-alias>
+    <namespace-alias name="ResultCollection">Aura\Signal\ResultCollection</namespace-alias>
+    <class final="false" abstract="false" line="11" namespace="Aura\Cli" package="Default">
+      <name>CommandTest</name>
+      <extends>\PHPUnit_Framework_TestCase</extends>
+      <full_name>\Aura\Cli\CommandTest</full_name>
+      <docblock>
+        <description>Test class for Command.</description>
+        <long-description>
+</long-description>
+      </docblock>
+      <method final="false" abstract="false" static="false" visibility="protected" line="13" package="Default">
+        <name>newMockCommand</name>
+        <argument line="13">
+          <name>$argv</name>
+          <default>array()</default>
+          <type/>
+        </argument>
+        <argument line="13">
+          <name>$class</name>
+          <default>'Aura\Cli\MockCommand'</default>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" line="33" package="Default">
+        <name>testExec</name>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" line="44" package="Default">
+        <name>testExec_hooks</name>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" line="52" package="Default">
+        <name>testExec_skipAction</name>
+      </method>
+    </class>
+  </file>
+  <file path="tests/MockCommandWrong.php" hash="5ece14e394918e65c309f426bfb54368" package="Default">
+    <parse_markers>
+      <error line="1">No DocBlock was found for File tests/MockCommandWrong.php</error>
+      <error line="5">No DocBlock was found for Class MockCommandWrong</error>
+      <error line="7">No DocBlock was found for Method __construct</error>
+    </parse_markers>
+    <namespace-alias name="Stdio">Aura\Cli\Stdio</namespace-alias>
+    <namespace-alias name="Getopt">Aura\Cli\Getopt</namespace-alias>
+    <class final="false" abstract="false" line="5" namespace="Aura\Cli" package="Default">
+      <name>MockCommandWrong</name>
+      <extends>\Aura\Cli\MockCommand</extends>
+      <full_name>\Aura\Cli\MockCommandWrong</full_name>
+      <method final="false" abstract="false" static="false" visibility="public" line="7" package="Default">
+        <name>__construct</name>
+        <argument line="8">
+          <name>$stdio</name>
+          <default/>
+          <type>Stdio</type>
+        </argument>
+        <argument line="9">
+          <name>$getopt</name>
+          <default/>
+          <type>Getopt</type>
+        </argument>
+      </method>
+    </class>
+  </file>
+  <file path="tests/MockCommand.php" hash="067e37c9fb101c56ec25c3ed6d8d025c" package="Default">
+    <parse_markers>
+      <error line="1">No DocBlock was found for File tests/MockCommand.php</error>
+      <error line="5">No DocBlock was found for Class MockCommand</error>
+      <error line="7">No DocBlock was found for Property $_action</error>
+      <error line="9">No DocBlock was found for Property $_pre_action</error>
+      <error line="11">No DocBlock was found for Property $_post_action</error>
+      <error line="13">No DocBlock was found for Property $options</error>
+      <error line="17">No DocBlock was found for Method __get</error>
+      <error line="22">No DocBlock was found for Method preAction</error>
+      <error line="28">No DocBlock was found for Method postAction</error>
+      <error line="34">No DocBlock was found for Method action</error>
+    </parse_markers>
+    <namespace-alias name="Command">Aura\Cli\Command</namespace-alias>
+    <class final="false" abstract="false" line="5" namespace="Aura\Cli" package="Default">
+      <name>MockCommand</name>
+      <extends>\Aura\Cli\Command</extends>
+      <full_name>\Aura\Cli\MockCommand</full_name>
+      <property final="false" static="false" visibility="private" line="7" package="Default">
+        <name>$_action</name>
+        <default/>
+      </property>
+      <property final="false" static="false" visibility="private" line="9" package="Default">
+        <name>$_pre_action</name>
+        <default>false</default>
+      </property>
+      <property final="false" static="false" visibility="private" line="11" package="Default">
+        <name>$_post_action</name>
+        <default>false</default>
+      </property>
+      <property final="false" static="false" visibility="protected" line="13" package="Default">
+        <name>$options</name>
+        <default>array(
+        'option' =&gt; array()</default>
+      </property>
+      <method final="false" abstract="false" static="false" visibility="public" line="17" package="Default">
+        <name>__get</name>
+        <argument line="17">
+          <name>$key</name>
+          <default/>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" line="22" package="Default">
+        <name>preAction</name>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" line="28" package="Default">
+        <name>postAction</name>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" line="34" package="Default">
+        <name>action</name>
+      </method>
+    </class>
+  </file>
+  <file path="tests/CommandFactoryTest.php" hash="5cba03b3f964479572673146aefd5fcb" package="Default">
+    <parse_markers>
+      <error line="1">No DocBlock was found for File tests/CommandFactoryTest.php</error>
+      <critical line="62">No short description for method testNewInstance</critical>
+      <error line="75">No DocBlock was found for Method testNewInstance_notFound</error>
+      <critical line="85">No short description for method testNewInstance_notFoundAndNoDefault</critical>
+      <error line="96">No DocBlock was found for Method testMap</error>
+    </parse_markers>
+    <namespace-alias name="Forge">Aura\Di\Forge</namespace-alias>
+    <namespace-alias name="Config">Aura\Di\Config</namespace-alias>
+    <namespace-alias name="Manager">Aura\Signal\Manager</namespace-alias>
+    <namespace-alias name="HandlerFactory">Aura\Signal\HandlerFactory</namespace-alias>
+    <namespace-alias name="ResultFactory">Aura\Signal\ResultFactory</namespace-alias>
+    <namespace-alias name="ResultCollection">Aura\Signal\ResultCollection</namespace-alias>
+    <class final="false" abstract="false" line="13" namespace="Aura\Cli" package="Default">
+      <name>CommandFactoryTest</name>
+      <extends>\PHPUnit_Framework_TestCase</extends>
+      <full_name>\Aura\Cli\CommandFactoryTest</full_name>
+      <docblock>
+        <description>Test class for Dispatcher.</description>
+        <long-description>
+</long-description>
+      </docblock>
+      <method final="false" abstract="false" static="false" visibility="protected" line="19" package="Default">
+        <name>setUp</name>
+        <docblock>
+          <description>Sets up the fixture, for example, opens a network connection.</description>
+          <long-description>&lt;p&gt;This method is called before a test is executed.&lt;/p&gt;
+</long-description>
+        </docblock>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="protected" line="57" package="Default">
+        <name>tearDown</name>
+        <docblock>
+          <description>Tears down the fixture, for example, closes a network connection.</description>
+          <long-description>&lt;p&gt;This method is called after a test is executed.&lt;/p&gt;
+</long-description>
+        </docblock>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" line="65" package="Default">
+        <name>testNewInstance</name>
+        <docblock>
+          <description/>
+          <long-description>
+</long-description>
+          <tag line="62" name="todo" description="Implement testNewInstance()."/>
+        </docblock>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" line="75" package="Default">
+        <name>testNewInstance_notFound</name>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" line="88" package="Default">
+        <name>testNewInstance_notFoundAndNoDefault</name>
+        <docblock>
+          <description/>
+          <long-description>
+</long-description>
+          <tag line="85" name="expectedException" description="\Aura\Cli\Exception"/>
+        </docblock>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" line="96" package="Default">
+        <name>testMap</name>
+      </method>
+    </class>
+  </file>
+  <file path="tests/GetoptTest.php" hash="b9497fbd996ef3963d0654d7466bb9e8" package="Default">
+    <parse_markers>
+      <error line="1">No DocBlock was found for File tests/GetoptTest.php</error>
+      <critical line="12">No short description for property $getopt</critical>
+      <error line="17">No DocBlock was found for Property $option_factory</error>
+      <error line="41">No DocBlock was found for Method testInit</error>
+      <critical line="61">No short description for method testInit_alreadyInitialized</critical>
+      <critical line="81">No short description for method testInit_unexpected</critical>
+      <error line="94">No DocBlock was found for Method testGetOptions</error>
+      <error line="117">No DocBlock was found for Method testGetOption</error>
+      <critical line="132">No short description for method testGetOption_optionNotDefined</critical>
+      <error line="141">No DocBlock was found for Method testGetOption_optionNotDefined_nonStrict</error>
+      <error line="148">No DocBlock was found for Method testGetLongOption</error>
+      <critical line="163">No short description for method testGetLongOption_optionNotDefined</critical>
+      <error line="172">No DocBlock was found for Method testGetLongOption_optionNotDefined_nonStrict</error>
+      <error line="179">No DocBlock was found for Method testGetShortOption</error>
+      <critical line="194">No short description for method testGetShortOption_optionNotDefined</critical>
+      <error line="203">No DocBlock was found for Method testGetShortOption_optionNotDefined_nonStrict</error>
+      <error line="210">No DocBlock was found for Method testLoad_noOptions</error>
+      <error line="237">No DocBlock was found for Method testLoad_longOptions</error>
+      <error line="275">No DocBlock was found for Method testLoad_longOptions_nonStrict</error>
+      <error line="289">No DocBlock was found for Method testLoad_shortOptions</error>
+      <error line="328">No DocBlock was found for Method testLoad_shortOptions_nonStrict</error>
+      <error line="342">No DocBlock was found for Method testLoad_mixedOptionsAndParams</error>
+      <error line="389">No DocBlock was found for Method testLoad_optionalParamsAsFlags</error>
+      <critical line="424">No short description for method testLoad_longOptionParamRequired</critical>
+      <critical line="446">No short description for method testLoad_longOptionParamRejected</critical>
+      <critical line="468">No short description for method testLoad_shortOptionParamRequired</critical>
+      <error line="490">No DocBlock was found for Method testLoad_shortOptionParamRejected</error>
+      <error line="512">No DocBlock was found for Method testLoad_shortOptionCluster</error>
+      <error line="545">No DocBlock was found for Method testLoad_shortOptionCluster_nonStrict</error>
+      <critical line="560">No short description for method testLoad_shortOptionClusterRequired</critical>
+      <error line="587">No DocBlock was found for Method testMagicGet</error>
+      <error line="609">No DocBlock was found for Method testMagicGetNonStrict</error>
+    </parse_markers>
+    <namespace-alias name="Config">Aura\Di\Config</namespace-alias>
+    <namespace-alias name="Builder">Aura\Di\Builder</namespace-alias>
+    <namespace-alias name="Forge">Aura\Di\Forge</namespace-alias>
+    <class final="false" abstract="false" line="10" namespace="Aura\Cli" package="Default">
+      <name>GetoptTest</name>
+      <extends>\PHPUnit_Framework_TestCase</extends>
+      <full_name>\Aura\Cli\GetoptTest</full_name>
+      <docblock>
+        <description>Test class for Getopt.</description>
+        <long-description>
+</long-description>
+      </docblock>
+      <property final="false" static="false" visibility="protected" line="15" package="Default">
+        <name>$getopt</name>
+        <default/>
+        <docblock>
+          <description/>
+          <long-description>
+</long-description>
+          <tag line="12" name="var" description="" type="\Aura\Cli\Getopt">
+            <type by_reference="false">\Aura\Cli\Getopt</type>
+          </tag>
+        </docblock>
+      </property>
+      <property final="false" static="false" visibility="protected" line="17" package="Default">
+        <name>$option_factory</name>
+        <default/>
+      </property>
+      <method final="false" abstract="false" static="false" visibility="protected" line="23" package="Default">
+        <name>setUp</name>
+        <docblock>
+          <description>Sets up the fixture, for example, opens a network connection.</description>
+          <long-description>&lt;p&gt;This method is called before a test is executed.&lt;/p&gt;
+</long-description>
+        </docblock>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="protected" line="36" package="Default">
+        <name>tearDown</name>
+        <docblock>
+          <description>Tears down the fixture, for example, closes a network connection.</description>
+          <long-description>&lt;p&gt;This method is called after a test is executed.&lt;/p&gt;
+</long-description>
+        </docblock>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" line="41" package="Default">
+        <name>testInit</name>
+        <argument line="41">
+          <name>$strict</name>
+          <default>Getopt::STRICT</default>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" line="64" package="Default">
+        <name>testInit_alreadyInitialized</name>
+        <docblock>
+          <description/>
+          <long-description>
+</long-description>
+          <tag line="61" name="expectedException" description="Aura\Cli\Exception"/>
+        </docblock>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" line="84" package="Default">
+        <name>testInit_unexpected</name>
+        <docblock>
+          <description/>
+          <long-description>
+</long-description>
+          <tag line="81" name="expectedException" description="\UnexpectedValueException"/>
+        </docblock>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" line="94" package="Default">
+        <name>testGetOptions</name>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" line="117" package="Default">
+        <name>testGetOption</name>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" line="135" package="Default">
+        <name>testGetOption_optionNotDefined</name>
+        <docblock>
+          <description/>
+          <long-description>
+</long-description>
+          <tag line="132" name="expectedException" description="Aura\Cli\Exception\OptionNotDefined"/>
+        </docblock>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" line="141" package="Default">
+        <name>testGetOption_optionNotDefined_nonStrict</name>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" line="148" package="Default">
+        <name>testGetLongOption</name>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" line="166" package="Default">
+        <name>testGetLongOption_optionNotDefined</name>
+        <docblock>
+          <description/>
+          <long-description>
+</long-description>
+          <tag line="163" name="expectedException" description="Aura\Cli\Exception\OptionNotDefined"/>
+        </docblock>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" line="172" package="Default">
+        <name>testGetLongOption_optionNotDefined_nonStrict</name>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" line="179" package="Default">
+        <name>testGetShortOption</name>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" line="197" package="Default">
+        <name>testGetShortOption_optionNotDefined</name>
+        <docblock>
+          <description/>
+          <long-description>
+</long-description>
+          <tag line="194" name="expectedException" description="Aura\Cli\Exception\OptionNotDefined"/>
+        </docblock>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" line="203" package="Default">
+        <name>testGetShortOption_optionNotDefined_nonStrict</name>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" line="210" package="Default">
+        <name>testLoad_noOptions</name>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" line="237" package="Default">
+        <name>testLoad_longOptions</name>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" line="275" package="Default">
+        <name>testLoad_longOptions_nonStrict</name>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" line="289" package="Default">
+        <name>testLoad_shortOptions</name>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" line="328" package="Default">
+        <name>testLoad_shortOptions_nonStrict</name>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" line="342" package="Default">
+        <name>testLoad_mixedOptionsAndParams</name>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" line="389" package="Default">
+        <name>testLoad_optionalParamsAsFlags</name>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" line="427" package="Default">
+        <name>testLoad_longOptionParamRequired</name>
+        <docblock>
+          <description/>
+          <long-description>
+</long-description>
+          <tag line="424" name="expectedException" description="Aura\Cli\Exception\OptionParamRequired"/>
+        </docblock>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" line="449" package="Default">
+        <name>testLoad_longOptionParamRejected</name>
+        <docblock>
+          <description/>
+          <long-description>
+</long-description>
+          <tag line="446" name="expectedException" description="Aura\Cli\Exception\OptionParamRejected"/>
+        </docblock>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" line="471" package="Default">
+        <name>testLoad_shortOptionParamRequired</name>
+        <docblock>
+          <description/>
+          <long-description>
+</long-description>
+          <tag line="468" name="expectedException" description="Aura\Cli\Exception\OptionParamRequired"/>
+        </docblock>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" line="490" package="Default">
+        <name>testLoad_shortOptionParamRejected</name>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" line="512" package="Default">
+        <name>testLoad_shortOptionCluster</name>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" line="545" package="Default">
+        <name>testLoad_shortOptionCluster_nonStrict</name>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" line="563" package="Default">
+        <name>testLoad_shortOptionClusterRequired</name>
+        <docblock>
+          <description/>
+          <long-description>
+</long-description>
+          <tag line="560" name="expectedException" description="Aura\Cli\Exception\OptionParamRequired"/>
+        </docblock>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" line="587" package="Default">
+        <name>testMagicGet</name>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" line="609" package="Default">
+        <name>testMagicGetNonStrict</name>
+      </method>
+    </class>
+  </file>
+  <file path="tests/Vt100Test.php" hash="42c901f035d396792ec161d542637e25" package="Default">
+    <parse_markers>
+      <error line="1">No DocBlock was found for File tests/Vt100Test.php</error>
+      <critical line="9">No short description for property $vt100</critical>
+      <critical line="33">No short description for method testFormat</critical>
+      <error line="44">No DocBlock was found for Method testStrip</error>
+      <error line="52">No DocBlock was found for Method test_setAndGetPosix</error>
+      <error line="61">No DocBlock was found for Method testWrite</error>
+      <error line="75">No DocBlock was found for Method testWriteln</error>
+      <error line="89">No DocBlock was found for Method testWrite_posix</error>
+      <error line="106">No DocBlock was found for Method testWriteln_posix</error>
+    </parse_markers>
+    <class final="false" abstract="false" line="7" namespace="Aura\Cli" package="Default">
+      <name>Vt100Test</name>
+      <extends>\PHPUnit_Framework_TestCase</extends>
+      <full_name>\Aura\Cli\Vt100Test</full_name>
+      <docblock>
+        <description>Test class for Vt100.</description>
+        <long-description>
+</long-description>
+      </docblock>
+      <property final="false" static="false" visibility="protected" line="12" package="Default">
+        <name>$vt100</name>
+        <default/>
+        <docblock>
+          <description/>
+          <long-description>
+</long-description>
+          <tag line="9" name="var" description="" type="\Aura\Cli\Vt100">
+            <type by_reference="false">\Aura\Cli\Vt100</type>
+          </tag>
+        </docblock>
+      </property>
+      <method final="false" abstract="false" static="false" visibility="protected" line="18" package="Default">
+        <name>setUp</name>
+        <docblock>
+          <description>Sets up the fixture, for example, opens a network connection.</description>
+          <long-description>&lt;p&gt;This method is called before a test is executed.&lt;/p&gt;
+</long-description>
+        </docblock>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="protected" line="28" package="Default">
+        <name>tearDown</name>
+        <docblock>
+          <description>Tears down the fixture, for example, closes a network connection.</description>
+          <long-description>&lt;p&gt;This method is called after a test is executed.&lt;/p&gt;
+</long-description>
+        </docblock>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" line="35" package="Default">
+        <name>testFormat</name>
+        <docblock>
+          <description/>
+          <long-description>
+</long-description>
+        </docblock>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" line="44" package="Default">
+        <name>testStrip</name>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" line="52" package="Default">
+        <name>test_setAndGetPosix</name>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" line="61" package="Default">
+        <name>testWrite</name>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" line="75" package="Default">
+        <name>testWriteln</name>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" line="89" package="Default">
+        <name>testWrite_posix</name>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" line="106" package="Default">
+        <name>testWriteln_posix</name>
+      </method>
+    </class>
+  </file>
+  <file path="src/Getopt.php" hash="fc43a1c353ddab3ed87bbc72d7a73e37" package="Default">
+    <docblock>
+      <description>This file is part of the Aura project for PHP.</description>
+      <long-description>
+</long-description>
+      <tag line="2" name="license" description="http://opensource.org/licenses/bsd-license.php BSD"/>
+    </docblock>
+    <parse_markers>
+      <error line="2">No Page-level DocBlock was found in file src/Getopt.php</error>
+      <notice line="154">Argument $prop is missing from the function Docblock</notice>
+      <notice line="219">Argument $long is missing from the function Docblock</notice>
+      <notice line="241">Argument $char is missing from the function Docblock</notice>
+      <notice line="362">Name of argument $spec does not match with function Docblock</notice>
+    </parse_markers>
+    <class final="false" abstract="false" line="18" namespace="Aura\Cli" package="Aura\Cli">
       <name>Getopt</name>
       <extends/>
       <full_name>\Aura\Cli\Getopt</full_name>
@@ -9,81 +922,81 @@
         <description>Retrieves and validates command-line options and parameter values.</description>
         <long-description>
 </long-description>
-        <tag name="package" description="Aura.Cli" line="11"/>
+        <tag line="11" name="package" description="Aura.Cli"/>
       </docblock>
-      <constant namespace="Aura\Cli" line="27">
+      <constant namespace="Aura\Cli" line="27" package="Default">
         <name>STRICT</name>
         <value>true</value>
         <docblock>
           <description>If an option is passed that is not defined, throw an exception.</description>
           <long-description>
 </long-description>
-          <tag name="const" description="bool" line="20"/>
+          <tag line="20" name="const" description="bool"/>
         </docblock>
       </constant>
-      <constant namespace="Aura\Cli" line="36">
+      <constant namespace="Aura\Cli" line="36" package="Default">
         <name>NON_STRICT</name>
         <value>false</value>
         <docblock>
           <description>Do not throw exceptions when undefined options are passed.</description>
           <long-description>
 </long-description>
-          <tag name="const" description="bool" line="29"/>
+          <tag line="29" name="const" description="bool"/>
         </docblock>
       </constant>
-      <property final="false" static="false" visibility="protected" line="45">
+      <property final="false" static="false" visibility="protected" line="45" package="Default">
         <name>$option_factory</name>
         <default/>
         <docblock>
           <description>A factory to create Option objects.</description>
           <long-description>
 </long-description>
-          <tag name="var" description="" type="\Aura\Cli\OptionFactory" line="38">
+          <tag line="38" name="var" description="" type="\Aura\Cli\OptionFactory">
             <type by_reference="false">\Aura\Cli\OptionFactory</type>
           </tag>
         </docblock>
       </property>
-      <property final="false" static="false" visibility="protected" line="54">
+      <property final="false" static="false" visibility="protected" line="54" package="Default">
         <name>$options</name>
-        <default>array</default>
+        <default>array()</default>
         <docblock>
           <description>Definitions for recognized options.</description>
           <long-description>
 </long-description>
-          <tag name="var" description="" type="array" line="47">
-            <type by_reference="false">array</type>
+          <tag line="47" name="var" description="" type="array">
+            <type by_reference="false">\Aura\Cli\array</type>
           </tag>
         </docblock>
       </property>
-      <property final="false" static="false" visibility="protected" line="63">
+      <property final="false" static="false" visibility="protected" line="63" package="Default">
         <name>$params</name>
-        <default>array</default>
+        <default>array()</default>
         <docblock>
           <description>Remaining non-option params after loading option values.</description>
           <long-description>
 </long-description>
-          <tag name="var" description="" type="array" line="56">
-            <type by_reference="false">array</type>
+          <tag line="56" name="var" description="" type="array">
+            <type by_reference="false">\Aura\Cli\array</type>
           </tag>
         </docblock>
       </property>
-      <property final="false" static="false" visibility="protected" line="72">
+      <property final="false" static="false" visibility="protected" line="72" package="Default">
         <name>$argv</name>
-        <default>array</default>
+        <default>array()</default>
         <docblock>
           <description>The incoming arguments, typically from $_SERVER['argv'].</description>
           <long-description>
 </long-description>
-          <tag name="param" description="array" type="" variable="" line="65"/>
+          <tag line="65" name="param" description="array" type="" variable=""/>
         </docblock>
       </property>
-      <method final="false" abstract="false" static="false" visibility="public" line="81">
+      <method final="false" abstract="false" static="false" visibility="public" line="81" package="Default">
         <name>__construct</name>
         <docblock>
           <description>Constructor.</description>
           <long-description>
 </long-description>
-          <tag name="param" description="A factory for Option objects." type="\Aura\Cli\OptionFactory" variable="$option_factory" line="74">
+          <tag line="74" name="param" description="A factory for Option objects." type="\Aura\Cli\OptionFactory" variable="$option_factory">
             <type by_reference="false">\Aura\Cli\OptionFactory</type>
           </tag>
         </docblock>
@@ -93,17 +1006,17 @@
           <type>OptionFactory</type>
         </argument>
       </method>
-      <method final="false" abstract="false" static="false" visibility="public" line="95">
+      <method final="false" abstract="false" static="false" visibility="public" line="95" package="Default">
         <name>__get</name>
         <docblock>
           <description>Make Option values available as magic readonly properties.</description>
           <long-description>
 </long-description>
-          <tag name="param" description="The option name." type="string" variable="$key" line="86">
-            <type by_reference="false">string</type>
+          <tag line="86" name="param" description="The option name." type="string" variable="$key">
+            <type by_reference="false">\Aura\Cli\string</type>
           </tag>
-          <tag name="return" description="The option value." type="mixed" line="86">
-            <type by_reference="false">mixed</type>
+          <tag line="86" name="return" description="The option value." type="mixed">
+            <type by_reference="false">\Aura\Cli\mixed</type>
           </tag>
         </docblock>
         <argument line="95">
@@ -112,20 +1025,20 @@
           <type/>
         </argument>
       </method>
-      <method final="false" abstract="false" static="false" visibility="public" line="116">
+      <method final="false" abstract="false" static="false" visibility="public" line="116" package="Default">
         <name>init</name>
         <docblock>
           <description>Initializes the instance with option definitions.</description>
           <long-description>
 </long-description>
-          <tag name="param" description="An array of key-value pairs where the key is the option name and the value is the option spec." type="array" variable="$opts" line="103">
-            <type by_reference="false">array</type>
+          <tag line="103" name="param" description="An array of key-value pairs where the key is the option name and the value is the option spec." type="array" variable="$opts">
+            <type by_reference="false">\Aura\Cli\array</type>
           </tag>
-          <tag name="param" description="Initialize in strict (true) or non-strict (false) mode?" type="bool" variable="$strict" line="103">
-            <type by_reference="false">bool</type>
+          <tag line="103" name="param" description="Initialize in strict (true) or non-strict (false) mode?" type="bool" variable="$strict">
+            <type by_reference="false">\Aura\Cli\bool</type>
           </tag>
-          <tag name="return" description="" type="void" line="103">
-            <type by_reference="false">void</type>
+          <tag line="103" name="return" description="" type="void">
+            <type by_reference="false">\Aura\Cli\void</type>
           </tag>
         </docblock>
         <argument line="116">
@@ -135,31 +1048,31 @@
         </argument>
         <argument line="116">
           <name>$strict</name>
-          <default>self</default>
+          <default>self::STRICT</default>
           <type/>
         </argument>
       </method>
-      <method final="false" abstract="false" static="false" visibility="public" line="140">
+      <method final="false" abstract="false" static="false" visibility="public" line="140" package="Default">
         <name>getOptions</name>
         <docblock>
           <description>Returns all the Option definition objects.</description>
           <long-description>
 </long-description>
-          <tag name="return" description="An array of Option objects." type="array" line="133">
-            <type by_reference="false">array</type>
+          <tag line="133" name="return" description="An array of Option objects." type="array">
+            <type by_reference="false">\Aura\Cli\array</type>
           </tag>
         </docblock>
       </method>
-      <method final="false" abstract="false" static="false" visibility="public" line="154">
+      <method final="false" abstract="false" static="false" visibility="public" line="154" package="Default">
         <name>getOption</name>
         <docblock>
           <description>Returns a single Option definition object by its property name.</description>
           <long-description>
 </long-description>
-          <tag name="var" description="The property name of the option." type="string" line="145">
-            <type by_reference="false">string</type>
+          <tag line="145" name="var" description="The property name of the option." type="string">
+            <type by_reference="false">\Aura\Cli\string</type>
           </tag>
-          <tag name="return" description="" type="\Aura\Cli\Option" line="145">
+          <tag line="145" name="return" description="" type="\Aura\Cli\Option">
             <type by_reference="false">\Aura\Cli\Option</type>
           </tag>
         </docblock>
@@ -169,28 +1082,28 @@
           <type/>
         </argument>
       </method>
-      <method final="false" abstract="false" static="false" visibility="public" line="172">
+      <method final="false" abstract="false" static="false" visibility="public" line="172" package="Default">
         <name>getOptionValues</name>
         <docblock>
           <description>Returns an array of all Option names and their values.</description>
           <long-description>
 </long-description>
-          <tag name="return" description="" type="array" line="165">
-            <type by_reference="false">array</type>
+          <tag line="165" name="return" description="" type="array">
+            <type by_reference="false">\Aura\Cli\array</type>
           </tag>
         </docblock>
       </method>
-      <method final="false" abstract="false" static="false" visibility="public" line="190">
+      <method final="false" abstract="false" static="false" visibility="public" line="190" package="Default">
         <name>getOptionValue</name>
         <docblock>
           <description>Returns the value of a single Option by name.</description>
           <long-description>
 </long-description>
-          <tag name="param" description="The option name to get a value for." type="string" variable="$name" line="181">
-            <type by_reference="false">string</type>
+          <tag line="181" name="param" description="The option name to get a value for." type="string" variable="$name">
+            <type by_reference="false">\Aura\Cli\string</type>
           </tag>
-          <tag name="return" description="" type="mixed" line="181">
-            <type by_reference="false">mixed</type>
+          <tag line="181" name="return" description="" type="mixed">
+            <type by_reference="false">\Aura\Cli\mixed</type>
           </tag>
         </docblock>
         <argument line="190">
@@ -199,27 +1112,27 @@
           <type/>
         </argument>
       </method>
-      <method final="false" abstract="false" static="false" visibility="public" line="205">
+      <method final="false" abstract="false" static="false" visibility="public" line="205" package="Default">
         <name>getParams</name>
         <docblock>
           <description>Returns an array of all numeric parameters.</description>
           <long-description>
 </long-description>
-          <tag name="return" description="" type="array" line="198">
-            <type by_reference="false">array</type>
+          <tag line="198" name="return" description="" type="array">
+            <type by_reference="false">\Aura\Cli\array</type>
           </tag>
         </docblock>
       </method>
-      <method final="false" abstract="false" static="false" visibility="public" line="219">
+      <method final="false" abstract="false" static="false" visibility="public" line="219" package="Default">
         <name>getLongOption</name>
         <docblock>
           <description>Returns a single Option definition object by its long-format name.</description>
           <long-description>
 </long-description>
-          <tag name="var" description="The long-format name of the option." type="string" line="210">
-            <type by_reference="false">string</type>
+          <tag line="210" name="var" description="The long-format name of the option." type="string">
+            <type by_reference="false">\Aura\Cli\string</type>
           </tag>
-          <tag name="return" description="" type="\Aura\Cli\Option" line="210">
+          <tag line="210" name="return" description="" type="\Aura\Cli\Option">
             <type by_reference="false">\Aura\Cli\Option</type>
           </tag>
         </docblock>
@@ -229,16 +1142,16 @@
           <type/>
         </argument>
       </method>
-      <method final="false" abstract="false" static="false" visibility="public" line="241">
+      <method final="false" abstract="false" static="false" visibility="public" line="241" package="Default">
         <name>getShortOption</name>
         <docblock>
           <description>Returns a single Option definition object by its short-format name.</description>
           <long-description>
 </long-description>
-          <tag name="var" description="The long-format name of the option." type="string" line="232">
-            <type by_reference="false">string</type>
+          <tag line="232" name="var" description="The long-format name of the option." type="string">
+            <type by_reference="false">\Aura\Cli\string</type>
           </tag>
-          <tag name="return" description="" type="\Aura\Cli\Option" line="232">
+          <tag line="232" name="return" description="" type="\Aura\Cli\Option">
             <type by_reference="false">\Aura\Cli\Option</type>
           </tag>
         </docblock>
@@ -248,7 +1161,7 @@
           <type/>
         </argument>
       </method>
-      <method final="false" abstract="false" static="false" visibility="public" line="265">
+      <method final="false" abstract="false" static="false" visibility="public" line="265" package="Default">
         <name>load</name>
         <docblock>
           <description>Loads Option values from an argument array, placing option values
@@ -256,11 +1169,11 @@ in the defined Option objects and placing non-option params in a
 `$params` variable.</description>
           <long-description>
 </long-description>
-          <tag name="param" description="An argument array, typically from $_SERVER['argv']." type="array" variable="$argv" line="254">
-            <type by_reference="false">array</type>
+          <tag line="254" name="param" description="An argument array, typically from $_SERVER['argv']." type="array" variable="$argv">
+            <type by_reference="false">\Aura\Cli\array</type>
           </tag>
-          <tag name="return" description="" type="void" line="254">
-            <type by_reference="false">void</type>
+          <tag line="254" name="return" description="" type="void">
+            <type by_reference="false">\Aura\Cli\void</type>
           </tag>
         </docblock>
         <argument line="265">
@@ -269,17 +1182,17 @@ in the defined Option objects and placing non-option params in a
           <type>array</type>
         </argument>
       </method>
-      <method final="false" abstract="false" static="false" visibility="protected" line="314">
+      <method final="false" abstract="false" static="false" visibility="protected" line="314" package="Default">
         <name>loadLong</name>
         <docblock>
           <description>Parses a long-form option.</description>
           <long-description>
 </long-description>
-          <tag name="param" description="The `$argv` element, e.g. &quot;--foo&quot; or &quot;--bar=baz&quot;." type="string" variable="$spec" line="305">
-            <type by_reference="false">string</type>
+          <tag line="305" name="param" description="The `$argv` element, e.g. &quot;--foo&quot; or &quot;--bar=baz&quot;." type="string" variable="$spec">
+            <type by_reference="false">\Aura\Cli\string</type>
           </tag>
-          <tag name="return" description="" type="void" line="305">
-            <type by_reference="false">void</type>
+          <tag line="305" name="return" description="" type="void">
+            <type by_reference="false">\Aura\Cli\void</type>
           </tag>
         </docblock>
         <argument line="314">
@@ -288,17 +1201,17 @@ in the defined Option objects and placing non-option params in a
           <type/>
         </argument>
       </method>
-      <method final="false" abstract="false" static="false" visibility="protected" line="362">
+      <method final="false" abstract="false" static="false" visibility="protected" line="362" package="Default">
         <name>loadShort</name>
         <docblock>
           <description>Parses a short-form option (or cluster of options).</description>
           <long-description>
 </long-description>
-          <tag name="param" description="The `$argv` element, e.g. &quot;-f&quot; or &quot;-fbz&quot;." type="string" variable="$arg" line="353">
-            <type by_reference="false">string</type>
+          <tag line="353" name="param" description="The `$argv` element, e.g. &quot;-f&quot; or &quot;-fbz&quot;." type="string" variable="$arg">
+            <type by_reference="false">\Aura\Cli\string</type>
           </tag>
-          <tag name="return" description="" type="void" line="353">
-            <type by_reference="false">void</type>
+          <tag line="353" name="return" description="" type="void">
+            <type by_reference="false">\Aura\Cli\void</type>
           </tag>
         </docblock>
         <argument line="362">
@@ -307,17 +1220,17 @@ in the defined Option objects and placing non-option params in a
           <type/>
         </argument>
       </method>
-      <method final="false" abstract="false" static="false" visibility="protected" line="422">
+      <method final="false" abstract="false" static="false" visibility="protected" line="422" package="Default">
         <name>loadShortCluster</name>
         <docblock>
           <description>Parses a cluster of short options.</description>
           <long-description>
 </long-description>
-          <tag name="param" description="The short-option cluster (e.g. &quot;-abcd&quot;)." type="string" variable="$spec" line="413">
-            <type by_reference="false">string</type>
+          <tag line="413" name="param" description="The short-option cluster (e.g. &quot;-abcd&quot;)." type="string" variable="$spec">
+            <type by_reference="false">\Aura\Cli\string</type>
           </tag>
-          <tag name="return" description="" type="void" line="413">
-            <type by_reference="false">void</type>
+          <tag line="413" name="return" description="" type="void">
+            <type by_reference="false">\Aura\Cli\void</type>
           </tag>
         </docblock>
         <argument line="422">
@@ -328,8 +1241,17 @@ in the defined Option objects and placing non-option params in a
       </method>
     </class>
   </file>
-  <file path="src/Exception/OptionParamRejected.php" hash="7aa37df0f38f25ffa6196373d5ed3fb7">
-    <class final="false" abstract="false" line="18" namespace="Aura\Cli\Exception">
+  <file path="src/Exception/OptionParamRejected.php" hash="7aa37df0f38f25ffa6196373d5ed3fb7" package="Default">
+    <docblock>
+      <description>This file is part of the Aura project for PHP.</description>
+      <long-description>
+</long-description>
+      <tag line="2" name="license" description="http://opensource.org/licenses/bsd-license.php BSD"/>
+    </docblock>
+    <parse_markers>
+      <error line="2">No Page-level DocBlock was found in file src/Exception/OptionParamRejected.php</error>
+    </parse_markers>
+    <class final="false" abstract="false" line="18" namespace="Aura\Cli\Exception" package="Aura\Cli">
       <name>OptionParamRejected</name>
       <extends>\Aura\Cli\Exception</extends>
       <full_name>\Aura\Cli\Exception\OptionParamRejected</full_name>
@@ -337,12 +1259,21 @@ in the defined Option objects and placing non-option params in a
         <description>The option requires that no parameter be present.</description>
         <long-description>
 </long-description>
-        <tag name="package" description="Aura.Cli" line="11"/>
+        <tag line="11" name="package" description="Aura.Cli"/>
       </docblock>
     </class>
   </file>
-  <file path="src/Exception/OptionNotDefined.php" hash="1a58e08aae160caf18bd001b0cbfd520">
-    <class final="false" abstract="false" line="18" namespace="Aura\Cli\Exception">
+  <file path="src/Exception/OptionNotDefined.php" hash="1a58e08aae160caf18bd001b0cbfd520" package="Default">
+    <docblock>
+      <description>This file is part of the Aura project for PHP.</description>
+      <long-description>
+</long-description>
+      <tag line="2" name="license" description="http://opensource.org/licenses/bsd-license.php BSD"/>
+    </docblock>
+    <parse_markers>
+      <error line="2">No Page-level DocBlock was found in file src/Exception/OptionNotDefined.php</error>
+    </parse_markers>
+    <class final="false" abstract="false" line="18" namespace="Aura\Cli\Exception" package="Aura\Cli">
       <name>OptionNotDefined</name>
       <extends>\Aura\Cli\Exception</extends>
       <full_name>\Aura\Cli\Exception\OptionNotDefined</full_name>
@@ -350,12 +1281,21 @@ in the defined Option objects and placing non-option params in a
         <description>Asked for an option that is not defined.</description>
         <long-description>
 </long-description>
-        <tag name="package" description="Aura.Cli" line="11"/>
+        <tag line="11" name="package" description="Aura.Cli"/>
       </docblock>
     </class>
   </file>
-  <file path="src/Exception/OptionName.php" hash="e1bae6ed494a950c57478bf5190d1dff">
-    <class final="false" abstract="false" line="18" namespace="Aura\Cli\Exception">
+  <file path="src/Exception/OptionName.php" hash="e1bae6ed494a950c57478bf5190d1dff" package="Default">
+    <docblock>
+      <description>This file is part of the Aura project for PHP.</description>
+      <long-description>
+</long-description>
+      <tag line="2" name="license" description="http://opensource.org/licenses/bsd-license.php BSD"/>
+    </docblock>
+    <parse_markers>
+      <error line="2">No Page-level DocBlock was found in file src/Exception/OptionName.php</error>
+    </parse_markers>
+    <class final="false" abstract="false" line="18" namespace="Aura\Cli\Exception" package="Aura\Cli">
       <name>OptionName</name>
       <extends>\Aura\Cli\Exception</extends>
       <full_name>\Aura\Cli\Exception\OptionName</full_name>
@@ -363,12 +1303,21 @@ in the defined Option objects and placing non-option params in a
         <description>Option objects need to be initialized with a name.</description>
         <long-description>
 </long-description>
-        <tag name="package" description="Aura.Cli" line="11"/>
+        <tag line="11" name="package" description="Aura.Cli"/>
       </docblock>
     </class>
   </file>
-  <file path="src/Exception/CommandFactory.php" hash="cd93aef974cf65f860bf3cbd27223fab">
-    <class final="false" abstract="false" line="18" namespace="Aura\Cli\Exception">
+  <file path="src/Exception/CommandFactory.php" hash="cd93aef974cf65f860bf3cbd27223fab" package="Default">
+    <docblock>
+      <description>This file is part of the Aura project for PHP.</description>
+      <long-description>
+</long-description>
+      <tag line="2" name="license" description="http://opensource.org/licenses/bsd-license.php BSD"/>
+    </docblock>
+    <parse_markers>
+      <error line="2">No Page-level DocBlock was found in file src/Exception/CommandFactory.php</error>
+    </parse_markers>
+    <class final="false" abstract="false" line="18" namespace="Aura\Cli\Exception" package="Aura\Cli">
       <name>CommandFactory</name>
       <extends>\Aura\Cli\Exception</extends>
       <full_name>\Aura\Cli\Exception\CommandFactory</full_name>
@@ -376,12 +1325,21 @@ in the defined Option objects and placing non-option params in a
         <description>Generic CommandFactory exception.</description>
         <long-description>
 </long-description>
-        <tag name="package" description="Aura.Cli" line="11"/>
+        <tag line="11" name="package" description="Aura.Cli"/>
       </docblock>
     </class>
   </file>
-  <file path="src/Exception/OptionParamRequired.php" hash="d5675290c9c8eee3b967112a6771c0d4">
-    <class final="false" abstract="false" line="18" namespace="Aura\Cli\Exception">
+  <file path="src/Exception/OptionParamRequired.php" hash="d5675290c9c8eee3b967112a6771c0d4" package="Default">
+    <docblock>
+      <description>This file is part of the Aura project for PHP.</description>
+      <long-description>
+</long-description>
+      <tag line="2" name="license" description="http://opensource.org/licenses/bsd-license.php BSD"/>
+    </docblock>
+    <parse_markers>
+      <error line="2">No Page-level DocBlock was found in file src/Exception/OptionParamRequired.php</error>
+    </parse_markers>
+    <class final="false" abstract="false" line="18" namespace="Aura\Cli\Exception" package="Aura\Cli">
       <name>OptionParamRequired</name>
       <extends>\Aura\Cli\Exception</extends>
       <full_name>\Aura\Cli\Exception\OptionParamRequired</full_name>
@@ -389,12 +1347,21 @@ in the defined Option objects and placing non-option params in a
         <description>The option requires a non-blank parameter.</description>
         <long-description>
 </long-description>
-        <tag name="package" description="Aura.Cli" line="11"/>
+        <tag line="11" name="package" description="Aura.Cli"/>
       </docblock>
     </class>
   </file>
-  <file path="src/Exception/OptionParam.php" hash="bce28cd00e7d16802bff5d084e99e12b">
-    <class final="false" abstract="false" line="18" namespace="Aura\Cli\Exception">
+  <file path="src/Exception/OptionParam.php" hash="bce28cd00e7d16802bff5d084e99e12b" package="Default">
+    <docblock>
+      <description>This file is part of the Aura project for PHP.</description>
+      <long-description>
+</long-description>
+      <tag line="2" name="license" description="http://opensource.org/licenses/bsd-license.php BSD"/>
+    </docblock>
+    <parse_markers>
+      <error line="2">No Page-level DocBlock was found in file src/Exception/OptionParam.php</error>
+    </parse_markers>
+    <class final="false" abstract="false" line="18" namespace="Aura\Cli\Exception" package="Aura\Cli">
       <name>OptionParam</name>
       <extends>\Aura\Cli\Exception</extends>
       <full_name>\Aura\Cli\Exception\OptionParam</full_name>
@@ -402,12 +1369,21 @@ in the defined Option objects and placing non-option params in a
         <description>The option 'param' value needs a boolean or a null.</description>
         <long-description>
 </long-description>
-        <tag name="package" description="Aura.Cli" line="11"/>
+        <tag line="11" name="package" description="Aura.Cli"/>
       </docblock>
     </class>
   </file>
-  <file path="src/Exception/OptionNotMulti.php" hash="79cadc0afd13eae5f8450f504f8b0fc4">
-    <class final="false" abstract="false" line="18" namespace="Aura\Cli\Exception">
+  <file path="src/Exception/OptionNotMulti.php" hash="79cadc0afd13eae5f8450f504f8b0fc4" package="Default">
+    <docblock>
+      <description>This file is part of the Aura project for PHP.</description>
+      <long-description>
+</long-description>
+      <tag line="2" name="license" description="http://opensource.org/licenses/bsd-license.php BSD"/>
+    </docblock>
+    <parse_markers>
+      <error line="2">No Page-level DocBlock was found in file src/Exception/OptionNotMulti.php</error>
+    </parse_markers>
+    <class final="false" abstract="false" line="18" namespace="Aura\Cli\Exception" package="Aura\Cli">
       <name>OptionNotMulti</name>
       <extends>\Aura\Cli\Exception</extends>
       <full_name>\Aura\Cli\Exception\OptionNotMulti</full_name>
@@ -415,13 +1391,22 @@ in the defined Option objects and placing non-option params in a
         <description>The option does not allow multiple values.</description>
         <long-description>
 </long-description>
-        <tag name="package" description="Aura.Cli" line="11"/>
+        <tag line="11" name="package" description="Aura.Cli"/>
       </docblock>
     </class>
   </file>
-  <file path="src/Command.php" hash="0ede86b69f5240b21fa39f8ed8ad94be">
+  <file path="src/Command.php" hash="0ede86b69f5240b21fa39f8ed8ad94be" package="Default">
+    <docblock>
+      <description>This file is part of the Aura project for PHP.</description>
+      <long-description>
+</long-description>
+      <tag line="2" name="license" description="http://opensource.org/licenses/bsd-license.php BSD"/>
+    </docblock>
+    <parse_markers>
+      <error line="2">No Page-level DocBlock was found in file src/Command.php</error>
+    </parse_markers>
     <namespace-alias name="SignalManager">Aura\Signal\Manager</namespace-alias>
-    <class final="false" abstract="true" line="19" namespace="Aura\Cli">
+    <class final="false" abstract="true" line="19" namespace="Aura\Cli" package="Aura\Cli">
       <name>Command</name>
       <extends/>
       <full_name>\Aura\Cli\Command</full_name>
@@ -429,9 +1414,9 @@ in the defined Option objects and placing non-option params in a
         <description>The CLI equivalent of a page-controller to perform a single action.</description>
         <long-description>
 </long-description>
-        <tag name="package" description="Aura.Cli" line="12"/>
+        <tag line="12" name="package" description="Aura.Cli"/>
       </docblock>
-      <property final="false" static="false" visibility="protected" line="29">
+      <property final="false" static="false" visibility="protected" line="29" package="Default">
         <name>$getopt</name>
         <default/>
         <docblock>
@@ -439,50 +1424,50 @@ in the defined Option objects and placing non-option params in a
 passed at the command line.</description>
           <long-description>
 </long-description>
-          <tag name="var" description="" type="\Aura\Cli\Getopt" line="21">
+          <tag line="21" name="var" description="" type="\Aura\Cli\Getopt">
             <type by_reference="false">\Aura\Cli\Getopt</type>
           </tag>
         </docblock>
       </property>
-      <property final="false" static="false" visibility="protected" line="38">
+      <property final="false" static="false" visibility="protected" line="38" package="Default">
         <name>$options</name>
-        <default>array</default>
+        <default>array()</default>
         <docblock>
           <description>The option definitions for the Getopt object.</description>
           <long-description>
 </long-description>
-          <tag name="var" description="" type="array" line="31">
-            <type by_reference="false">array</type>
+          <tag line="31" name="var" description="" type="array">
+            <type by_reference="false">\Aura\Cli\array</type>
           </tag>
         </docblock>
       </property>
-      <property final="false" static="false" visibility="protected" line="49">
+      <property final="false" static="false" visibility="protected" line="49" package="Default">
         <name>$options_strict</name>
-        <default>Getopt</default>
+        <default>Getopt::STRICT</default>
         <docblock>
           <description>Should Getopt be strict about how options are processed?  In strict
 mode, passing an undefined option will throw an exception; in
 non-strict, it will not.</description>
           <long-description>
 </long-description>
-          <tag name="var" description="" type="bool" line="40">
-            <type by_reference="false">bool</type>
+          <tag line="40" name="var" description="" type="bool">
+            <type by_reference="false">\Aura\Cli\bool</type>
           </tag>
         </docblock>
       </property>
-      <property final="false" static="false" visibility="protected" line="58">
+      <property final="false" static="false" visibility="protected" line="58" package="Default">
         <name>$params</name>
-        <default>array</default>
+        <default>array()</default>
         <docblock>
           <description>The positional (numeric) arguments passed at the command line.</description>
           <long-description>
 </long-description>
-          <tag name="var" description="" type="array" line="51">
-            <type by_reference="false">array</type>
+          <tag line="51" name="var" description="" type="array">
+            <type by_reference="false">\Aura\Cli\array</type>
           </tag>
         </docblock>
       </property>
-      <property final="false" static="false" visibility="protected" line="68">
+      <property final="false" static="false" visibility="protected" line="68" package="Default">
         <name>$skip_action</name>
         <default>false</default>
         <docblock>
@@ -490,27 +1475,27 @@ non-strict, it will not.</description>
 be called after all.</description>
           <long-description>
 </long-description>
-          <tag name="var" description="" type="bool" line="60">
-            <type by_reference="false">bool</type>
+          <tag line="60" name="var" description="" type="bool">
+            <type by_reference="false">\Aura\Cli\bool</type>
           </tag>
         </docblock>
       </property>
-      <method final="false" abstract="false" static="false" visibility="public" line="83">
+      <method final="false" abstract="false" static="false" visibility="public" line="83" package="Default">
         <name>__construct</name>
         <docblock>
           <description>Constructor.</description>
           <long-description>
 </long-description>
-          <tag name="param" description="The command-line context." type="\Aura\Cli\Context" variable="$context" line="70">
+          <tag line="70" name="param" description="The command-line context." type="\Aura\Cli\Context" variable="$context">
             <type by_reference="false">\Aura\Cli\Context</type>
           </tag>
-          <tag name="param" description="Standard input/output streams." type="\Aura\Cli\Stdio" variable="$stdio" line="70">
+          <tag line="70" name="param" description="Standard input/output streams." type="\Aura\Cli\Stdio" variable="$stdio">
             <type by_reference="false">\Aura\Cli\Stdio</type>
           </tag>
-          <tag name="param" description="An options processor and reader." type="\Aura\Cli\Getopt" variable="$getopt" line="70">
+          <tag line="70" name="param" description="An options processor and reader." type="\Aura\Cli\Getopt" variable="$getopt">
             <type by_reference="false">\Aura\Cli\Getopt</type>
           </tag>
-          <tag name="param" description="A signal manager to send signals to." type="\Aura\Signal\Manager" variable="$signal" line="70">
+          <tag line="70" name="param" description="A signal manager to send signals to." type="\Aura\Signal\Manager" variable="$signal">
             <type by_reference="false">\Aura\Signal\Manager</type>
           </tag>
         </docblock>
@@ -535,19 +1520,19 @@ be called after all.</description>
           <type>SignalManager</type>
         </argument>
       </method>
-      <method final="false" abstract="false" static="false" visibility="protected" line="113">
+      <method final="false" abstract="false" static="false" visibility="protected" line="113" package="Default">
         <name>loadGetoptParams</name>
         <docblock>
           <description>Passes the Context arguments to `$getopt` and retains the numeric
 parameters in `$params`.</description>
           <long-description>
 </long-description>
-          <tag name="return" description="" type="void" line="105">
-            <type by_reference="false">void</type>
+          <tag line="105" name="return" description="" type="void">
+            <type by_reference="false">\Aura\Cli\void</type>
           </tag>
         </docblock>
       </method>
-      <method final="false" abstract="false" static="false" visibility="public" line="148">
+      <method final="false" abstract="false" static="false" visibility="public" line="148" package="Default">
         <name>exec</name>
         <docblock>
           <description>Executes the Command.  In order, it does these things:</description>
@@ -560,97 +1545,106 @@ parameters in `$params`.</description>
 &lt;li&gt;&lt;p&gt;resets the terminal to normal colors&lt;/p&gt;&lt;/li&gt;
 &lt;/ul&gt;
 </long-description>
-          <tag name="signal" description="'pre_exec'" line="120"/>
-          <tag name="signal" description="'pre_action'" line="120"/>
-          <tag name="signal" description="'post_action'" line="120"/>
-          <tag name="signal" description="'post_exec'" line="120"/>
-          <tag name="see" description="\Aura\Cli\action()" refers="\Aura\Cli\action()" line="120"/>
-          <tag name="return" description="" type="void" line="120">
-            <type by_reference="false">void</type>
+          <tag line="120" name="signal" description="'pre_exec'"/>
+          <tag line="120" name="signal" description="'pre_action'"/>
+          <tag line="120" name="signal" description="'post_action'"/>
+          <tag line="120" name="signal" description="'post_exec'"/>
+          <tag line="120" name="see" description="\Aura\Cli\action()" refers="\Aura\Cli\action()"/>
+          <tag line="120" name="return" description="" type="void">
+            <type by_reference="false">\Aura\Cli\void</type>
           </tag>
         </docblock>
       </method>
-      <method final="false" abstract="false" static="false" visibility="public" line="170">
+      <method final="false" abstract="false" static="false" visibility="public" line="170" package="Default">
         <name>skipAction</name>
         <docblock>
           <description>Stops `exec()` from calling `action()` if it has not already done so.</description>
           <long-description>
 </long-description>
-          <tag name="return" description="" type="void" line="163">
-            <type by_reference="false">void</type>
+          <tag line="163" name="return" description="" type="void">
+            <type by_reference="false">\Aura\Cli\void</type>
           </tag>
         </docblock>
       </method>
-      <method final="false" abstract="false" static="false" visibility="public" line="182">
+      <method final="false" abstract="false" static="false" visibility="public" line="182" package="Default">
         <name>isSkipAction</name>
         <docblock>
           <description>Should the call to `action()` be skipped?</description>
           <long-description>
 </long-description>
-          <tag name="return" description="" type="bool" line="175">
-            <type by_reference="false">bool</type>
+          <tag line="175" name="return" description="" type="bool">
+            <type by_reference="false">\Aura\Cli\bool</type>
           </tag>
         </docblock>
       </method>
-      <method final="false" abstract="false" static="false" visibility="public" line="194">
+      <method final="false" abstract="false" static="false" visibility="public" line="194" package="Default">
         <name>preExec</name>
         <docblock>
           <description>Runs before `action()` as part of the `'pre_exec'` signal.</description>
           <long-description>
 </long-description>
-          <tag name="return" description="" type="mixed" line="187">
-            <type by_reference="false">mixed</type>
+          <tag line="187" name="return" description="" type="mixed">
+            <type by_reference="false">\Aura\Cli\mixed</type>
           </tag>
         </docblock>
       </method>
-      <method final="false" abstract="false" static="false" visibility="public" line="205">
+      <method final="false" abstract="false" static="false" visibility="public" line="205" package="Default">
         <name>preAction</name>
         <docblock>
           <description>Runs before `action()` as part of the `'pre_action'` signal.</description>
           <long-description>
 </long-description>
-          <tag name="return" description="" type="mixed" line="198">
-            <type by_reference="false">mixed</type>
+          <tag line="198" name="return" description="" type="mixed">
+            <type by_reference="false">\Aura\Cli\mixed</type>
           </tag>
         </docblock>
       </method>
-      <method final="false" abstract="true" static="false" visibility="public" line="216">
+      <method final="false" abstract="true" static="false" visibility="public" line="216" package="Default">
         <name>action</name>
         <docblock>
           <description>The main logic for the Command.</description>
           <long-description>
 </long-description>
-          <tag name="return" description="" type="void" line="209">
-            <type by_reference="false">void</type>
+          <tag line="209" name="return" description="" type="void">
+            <type by_reference="false">\Aura\Cli\void</type>
           </tag>
         </docblock>
       </method>
-      <method final="false" abstract="false" static="false" visibility="public" line="225">
+      <method final="false" abstract="false" static="false" visibility="public" line="225" package="Default">
         <name>postAction</name>
         <docblock>
           <description>Runs after `action()` as part of the `'post_action'` signal.</description>
           <long-description>
 </long-description>
-          <tag name="return" description="" type="mixed" line="218">
-            <type by_reference="false">mixed</type>
+          <tag line="218" name="return" description="" type="mixed">
+            <type by_reference="false">\Aura\Cli\mixed</type>
           </tag>
         </docblock>
       </method>
-      <method final="false" abstract="false" static="false" visibility="public" line="236">
+      <method final="false" abstract="false" static="false" visibility="public" line="236" package="Default">
         <name>postExec</name>
         <docblock>
           <description>Runs after `action()` as part of the `'post_exec'` signal.</description>
           <long-description>
 </long-description>
-          <tag name="return" description="" type="mixed" line="229">
-            <type by_reference="false">mixed</type>
+          <tag line="229" name="return" description="" type="mixed">
+            <type by_reference="false">\Aura\Cli\mixed</type>
           </tag>
         </docblock>
       </method>
     </class>
   </file>
-  <file path="src/OptionFactory.php" hash="a454e839009a36d2bfe359f1c7ae6c07">
-    <class final="false" abstract="false" line="18" namespace="Aura\Cli">
+  <file path="src/OptionFactory.php" hash="a454e839009a36d2bfe359f1c7ae6c07" package="Default">
+    <docblock>
+      <description>This file is part of the Aura project for PHP.</description>
+      <long-description>
+</long-description>
+      <tag line="2" name="license" description="http://opensource.org/licenses/bsd-license.php BSD"/>
+    </docblock>
+    <parse_markers>
+      <error line="2">No Page-level DocBlock was found in file src/OptionFactory.php</error>
+    </parse_markers>
+    <class final="false" abstract="false" line="18" namespace="Aura\Cli" package="Aura\Cli">
       <name>OptionFactory</name>
       <extends/>
       <full_name>\Aura\Cli\OptionFactory</full_name>
@@ -658,30 +1652,31 @@ parameters in `$params`.</description>
         <description>A factory to create Option objects.</description>
         <long-description>
 </long-description>
-        <tag name="package" description="Aura.Cli" line="11"/>
+        <tag line="11" name="package" description="Aura.Cli"/>
       </docblock>
-      <property final="false" static="false" visibility="protected" line="27">
+      <property final="false" static="false" visibility="protected" line="27" package="Default">
         <name>$params</name>
-        <default>array</default>
+        <default>array(
+        'name'    =&gt; null</default>
         <docblock>
           <description>An array of default parameters for Option objects.</description>
           <long-description>
 </long-description>
-          <tag name="var" description="" type="array" line="20">
-            <type by_reference="false">array</type>
+          <tag line="20" name="var" description="" type="array">
+            <type by_reference="false">\Aura\Cli\array</type>
           </tag>
         </docblock>
       </property>
-      <method final="false" abstract="false" static="false" visibility="public" line="46">
+      <method final="false" abstract="false" static="false" visibility="public" line="46" package="Default">
         <name>newInstance</name>
         <docblock>
           <description>Creates and returns a new Option object.</description>
           <long-description>
 </long-description>
-          <tag name="param" description="An array of key-value pairs corresponding to Option constructor params." type="array" variable="$params" line="36">
-            <type by_reference="false">array</type>
+          <tag line="36" name="param" description="An array of key-value pairs corresponding to Option constructor params." type="array" variable="$params">
+            <type by_reference="false">\Aura\Cli\array</type>
           </tag>
-          <tag name="return" description="" type="\Aura\Cli\Option" line="36">
+          <tag line="36" name="return" description="" type="\Aura\Cli\Option">
             <type by_reference="false">\Aura\Cli\Option</type>
           </tag>
         </docblock>
@@ -693,8 +1688,23 @@ parameters in `$params`.</description>
       </method>
     </class>
   </file>
-  <file path="src/Option.php" hash="be4ea719caa218bc3483de090a62b354">
-    <class final="false" abstract="false" line="18" namespace="Aura\Cli">
+  <file path="src/Option.php" hash="be4ea719caa218bc3483de090a62b354" package="Default">
+    <docblock>
+      <description>This file is part of the Aura project for PHP.</description>
+      <long-description>
+</long-description>
+      <tag line="2" name="license" description="http://opensource.org/licenses/bsd-license.php BSD"/>
+    </docblock>
+    <parse_markers>
+      <error line="2">No Page-level DocBlock was found in file src/Option.php</error>
+      <notice line="121">Name of argument $name does not match with function Docblock</notice>
+      <notice line="122">Argument $long is missing from the function Docblock</notice>
+      <notice line="123">Argument $short is missing from the function Docblock</notice>
+      <notice line="124">Argument $param is missing from the function Docblock</notice>
+      <notice line="125">Argument $multi is missing from the function Docblock</notice>
+      <notice line="126">Argument $default is missing from the function Docblock</notice>
+    </parse_markers>
+    <class final="false" abstract="false" line="18" namespace="Aura\Cli" package="Aura\Cli">
       <name>Option</name>
       <extends/>
       <full_name>\Aura\Cli\Option</full_name>
@@ -702,134 +1712,134 @@ parameters in `$params`.</description>
         <description>Defines a single command-line option.</description>
         <long-description>
 </long-description>
-        <tag name="package" description="Aura.Cli" line="11"/>
+        <tag line="11" name="package" description="Aura.Cli"/>
       </docblock>
-      <constant namespace="Aura\Cli" line="27">
+      <constant namespace="Aura\Cli" line="27" package="Default">
         <name>PARAM_REQUIRED</name>
-        <value>required</value>
+        <value>'required'</value>
         <docblock>
           <description>A parameter value is required to be present for this option.</description>
           <long-description>
 </long-description>
-          <tag name="const" description="string" line="20"/>
+          <tag line="20" name="const" description="string"/>
         </docblock>
       </constant>
-      <constant namespace="Aura\Cli" line="36">
+      <constant namespace="Aura\Cli" line="36" package="Default">
         <name>PARAM_REJECTED</name>
-        <value>rejected</value>
+        <value>'rejected'</value>
         <docblock>
           <description>Any parameter value on this option will be rejected.</description>
           <long-description>
 </long-description>
-          <tag name="const" description="string" line="29"/>
+          <tag line="29" name="const" description="string"/>
         </docblock>
       </constant>
-      <constant namespace="Aura\Cli" line="45">
+      <constant namespace="Aura\Cli" line="45" package="Default">
         <name>PARAM_OPTIONAL</name>
-        <value>optional</value>
+        <value>'optional'</value>
         <docblock>
           <description>A parameter value may or may not be present on this option.</description>
           <long-description>
 </long-description>
-          <tag name="const" description="string" line="38"/>
+          <tag line="38" name="const" description="string"/>
         </docblock>
       </constant>
-      <property final="false" static="false" visibility="protected" line="54">
+      <property final="false" static="false" visibility="protected" line="54" package="Default">
         <name>$name</name>
         <default>null</default>
         <docblock>
           <description>The property name of the option.</description>
           <long-description>
 </long-description>
-          <tag name="var" description="" type="string" line="47">
-            <type by_reference="false">string</type>
+          <tag line="47" name="var" description="" type="string">
+            <type by_reference="false">\Aura\Cli\string</type>
           </tag>
         </docblock>
       </property>
-      <property final="false" static="false" visibility="protected" line="63">
+      <property final="false" static="false" visibility="protected" line="63" package="Default">
         <name>$long</name>
         <default>null</default>
         <docblock>
           <description>The long name of the option.</description>
           <long-description>
 </long-description>
-          <tag name="var" description="" type="string" line="56">
-            <type by_reference="false">string</type>
+          <tag line="56" name="var" description="" type="string">
+            <type by_reference="false">\Aura\Cli\string</type>
           </tag>
         </docblock>
       </property>
-      <property final="false" static="false" visibility="protected" line="72">
+      <property final="false" static="false" visibility="protected" line="72" package="Default">
         <name>$short</name>
         <default>null</default>
         <docblock>
           <description>The short name of the option.</description>
           <long-description>
 </long-description>
-          <tag name="var" description="" type="string" line="65">
-            <type by_reference="false">string</type>
+          <tag line="65" name="var" description="" type="string">
+            <type by_reference="false">\Aura\Cli\string</type>
           </tag>
         </docblock>
       </property>
-      <property final="false" static="false" visibility="protected" line="82">
+      <property final="false" static="false" visibility="protected" line="82" package="Default">
         <name>$param</name>
-        <default>self</default>
+        <default>self::PARAM_OPTIONAL</default>
         <docblock>
           <description>When the option is present, will a be parameter required, optional, or
 rejected (i.e., no param allowed) ?</description>
           <long-description>
 </long-description>
-          <tag name="var" description="" type="string" line="74">
-            <type by_reference="false">string</type>
+          <tag line="74" name="var" description="" type="string">
+            <type by_reference="false">\Aura\Cli\string</type>
           </tag>
         </docblock>
       </property>
-      <property final="false" static="false" visibility="protected" line="91">
+      <property final="false" static="false" visibility="protected" line="91" package="Default">
         <name>$multi</name>
         <default>null</default>
         <docblock>
           <description>Can the option be specified multiple times?</description>
           <long-description>
 </long-description>
-          <tag name="var" description="" type="bool" line="84">
-            <type by_reference="false">bool</type>
+          <tag line="84" name="var" description="" type="bool">
+            <type by_reference="false">\Aura\Cli\bool</type>
           </tag>
         </docblock>
       </property>
-      <property final="false" static="false" visibility="protected" line="100">
+      <property final="false" static="false" visibility="protected" line="100" package="Default">
         <name>$default</name>
         <default>null</default>
         <docblock>
           <description>The default value for the option param.</description>
           <long-description>
 </long-description>
-          <tag name="var" description="" type="string" line="93">
-            <type by_reference="false">string</type>
+          <tag line="93" name="var" description="" type="string">
+            <type by_reference="false">\Aura\Cli\string</type>
           </tag>
         </docblock>
       </property>
-      <property final="false" static="false" visibility="protected" line="109">
+      <property final="false" static="false" visibility="protected" line="109" package="Default">
         <name>$value</name>
         <default>null</default>
         <docblock>
           <description>The option value as set from the command line.</description>
           <long-description>
 </long-description>
-          <tag name="var" description="" type="string" line="102">
-            <type by_reference="false">string</type>
+          <tag line="102" name="var" description="" type="string">
+            <type by_reference="false">\Aura\Cli\string</type>
           </tag>
         </docblock>
       </property>
-      <method final="false" abstract="false" static="false" visibility="public" line="120">
+      <method final="false" abstract="false" static="false" visibility="public" line="120" package="Default">
         <name>__construct</name>
         <docblock>
           <description>Initialized the object with an option definition array.</description>
           <long-description>
 </long-description>
-          <tag name="param" description="The option definition." type="array" variable="$data" line="111">
-            <type by_reference="false">array</type>
+          <tag line="111" name="param" description="The option definition." type="array" variable="$data">
+            <type by_reference="false">\Aura\Cli\array</type>
           </tag>
-          <tag name="return" description="" type="void" line="111">
-            <type by_reference="false">void</type>
+          <tag line="111" name="return" description="" type="void">
+            <type by_reference="false">\Aura\Cli\void</type>
           </tag>
         </docblock>
         <argument line="121">
@@ -863,17 +1873,17 @@ rejected (i.e., no param allowed) ?</description>
           <type/>
         </argument>
       </method>
-      <method final="false" abstract="false" static="false" visibility="public" line="173">
+      <method final="false" abstract="false" static="false" visibility="public" line="173" package="Default">
         <name>setValue</name>
         <docblock>
           <description>Sets the option value.</description>
           <long-description>
 </long-description>
-          <tag name="param" description="The value to set." type="mixed" variable="$value" line="164">
-            <type by_reference="false">mixed</type>
+          <tag line="164" name="param" description="The value to set." type="mixed" variable="$value">
+            <type by_reference="false">\Aura\Cli\mixed</type>
           </tag>
-          <tag name="return" description="" type="void" line="164">
-            <type by_reference="false">void</type>
+          <tag line="164" name="return" description="" type="void">
+            <type by_reference="false">\Aura\Cli\void</type>
           </tag>
         </docblock>
         <argument line="173">
@@ -882,109 +1892,118 @@ rejected (i.e., no param allowed) ?</description>
           <type/>
         </argument>
       </method>
-      <method final="false" abstract="false" static="false" visibility="public" line="199">
+      <method final="false" abstract="false" static="false" visibility="public" line="199" package="Default">
         <name>getValue</name>
         <docblock>
           <description>Gets the option value.</description>
           <long-description>
 </long-description>
-          <tag name="return" description="The value as set from the command line, or the default value if not set from the command line." type="mixed" line="191">
-            <type by_reference="false">mixed</type>
+          <tag line="191" name="return" description="The value as set from the command line, or the default value if not set from the command line." type="mixed">
+            <type by_reference="false">\Aura\Cli\mixed</type>
           </tag>
         </docblock>
       </method>
-      <method final="false" abstract="false" static="false" visibility="public" line="215">
+      <method final="false" abstract="false" static="false" visibility="public" line="215" package="Default">
         <name>getLong</name>
         <docblock>
           <description>Gets the long name for this option.</description>
           <long-description>
 </long-description>
-          <tag name="return" description="" type="string" line="208">
-            <type by_reference="false">string</type>
+          <tag line="208" name="return" description="" type="string">
+            <type by_reference="false">\Aura\Cli\string</type>
           </tag>
         </docblock>
       </method>
-      <method final="false" abstract="false" static="false" visibility="public" line="227">
+      <method final="false" abstract="false" static="false" visibility="public" line="227" package="Default">
         <name>getShort</name>
         <docblock>
           <description>Gets the short name for this option.</description>
           <long-description>
 </long-description>
-          <tag name="return" description="" type="string" line="220">
-            <type by_reference="false">string</type>
+          <tag line="220" name="return" description="" type="string">
+            <type by_reference="false">\Aura\Cli\string</type>
           </tag>
         </docblock>
       </method>
-      <method final="false" abstract="false" static="false" visibility="public" line="239">
+      <method final="false" abstract="false" static="false" visibility="public" line="239" package="Default">
         <name>getName</name>
         <docblock>
           <description>Gets the property name for this option.</description>
           <long-description>
 </long-description>
-          <tag name="return" description="" type="string" line="232">
-            <type by_reference="false">string</type>
+          <tag line="232" name="return" description="" type="string">
+            <type by_reference="false">\Aura\Cli\string</type>
           </tag>
         </docblock>
       </method>
-      <method final="false" abstract="false" static="false" visibility="public" line="251">
+      <method final="false" abstract="false" static="false" visibility="public" line="251" package="Default">
         <name>getDefault</name>
         <docblock>
           <description>Gets the default value of this option.</description>
           <long-description>
 </long-description>
-          <tag name="return" description="" type="mixed" line="244">
-            <type by_reference="false">mixed</type>
+          <tag line="244" name="return" description="" type="mixed">
+            <type by_reference="false">\Aura\Cli\mixed</type>
           </tag>
         </docblock>
       </method>
-      <method final="false" abstract="false" static="false" visibility="public" line="263">
+      <method final="false" abstract="false" static="false" visibility="public" line="263" package="Default">
         <name>isMulti</name>
         <docblock>
           <description>Can this option be present multiple times?</description>
           <long-description>
 </long-description>
-          <tag name="return" description="" type="bool" line="256">
-            <type by_reference="false">bool</type>
+          <tag line="256" name="return" description="" type="bool">
+            <type by_reference="false">\Aura\Cli\bool</type>
           </tag>
         </docblock>
       </method>
-      <method final="false" abstract="false" static="false" visibility="public" line="275">
+      <method final="false" abstract="false" static="false" visibility="public" line="275" package="Default">
         <name>isParamRequired</name>
         <docblock>
           <description>Is a param value required to be present on this option?</description>
           <long-description>
 </long-description>
-          <tag name="return" description="" type="bool" line="268">
-            <type by_reference="false">bool</type>
+          <tag line="268" name="return" description="" type="bool">
+            <type by_reference="false">\Aura\Cli\bool</type>
           </tag>
         </docblock>
       </method>
-      <method final="false" abstract="false" static="false" visibility="public" line="287">
+      <method final="false" abstract="false" static="false" visibility="public" line="287" package="Default">
         <name>isParamRejected</name>
         <docblock>
           <description>Is a param value required *not* to be present on this option?</description>
           <long-description>
 </long-description>
-          <tag name="return" description="" type="bool" line="280">
-            <type by_reference="false">bool</type>
+          <tag line="280" name="return" description="" type="bool">
+            <type by_reference="false">\Aura\Cli\bool</type>
           </tag>
         </docblock>
       </method>
-      <method final="false" abstract="false" static="false" visibility="public" line="299">
+      <method final="false" abstract="false" static="false" visibility="public" line="299" package="Default">
         <name>isParamOptional</name>
         <docblock>
           <description>Is a param value optional on this option?</description>
           <long-description>
 </long-description>
-          <tag name="return" description="" type="bool" line="292">
-            <type by_reference="false">bool</type>
+          <tag line="292" name="return" description="" type="bool">
+            <type by_reference="false">\Aura\Cli\bool</type>
           </tag>
         </docblock>
       </method>
     </class>
   </file>
-  <file path="src/Vt100.php" hash="ff9f2278d86dfc7606c2697b91330b36">
-    <class final="false" abstract="false" line="24" namespace="Aura\Cli">
+  <file path="src/Vt100.php" hash="ff9f2278d86dfc7606c2697b91330b36" package="Default">
+    <docblock>
+      <description>This file is part of the Aura project for PHP.</description>
+      <long-description>
+</long-description>
+      <tag line="2" name="license" description="http://opensource.org/licenses/bsd-license.php BSD"/>
+    </docblock>
+    <parse_markers>
+      <error line="2">No Page-level DocBlock was found in file src/Vt100.php</error>
+    </parse_markers>
+    <class final="false" abstract="false" line="24" namespace="Aura\Cli" package="Aura\Cli">
       <name>Vt100</name>
       <extends/>
       <full_name>\Aura\Cli\Vt100</full_name>
@@ -992,14 +2011,17 @@ rejected (i.e., no param allowed) ?</description>
         <description>Text formatting for VT100 terminals.</description>
         <long-description>
 </long-description>
-        <tag name="package" description="Aura.Cli" line="11"/>
-        <tag name="author" description="Clay Loveless &lt;clay@killersoft.com&gt;" line="11"/>
-        <tag name="author" description="Paul M. Jones &lt;pmjones@paul-m-jones.com&gt;" line="11"/>
-        <tag name="license" description="http://opensource.org/licenses/bsd-license.php BSD" line="11"/>
+        <tag line="11" name="package" description="Aura.Cli"/>
+        <tag line="11" name="author" description="Clay Loveless &lt;clay@killersoft.com&gt;"/>
+        <tag line="11" name="author" description="Paul M. Jones &lt;pmjones@paul-m-jones.com&gt;"/>
+        <tag line="11" name="license" description="http://opensource.org/licenses/bsd-license.php BSD"/>
       </docblock>
-      <property final="false" static="false" visibility="protected" line="39">
+      <property final="false" static="false" visibility="protected" line="39" package="Default">
         <name>$format</name>
-        <default>array</default>
+        <default>array(
+        
+        // literal percent sign
+        '%%'    =&gt; '%'</default>
         <docblock>
           <description>Array of format conversions for use on a variety of pre-set console
 style combinations.</description>
@@ -1008,37 +2030,37 @@ style combinations.</description>
 &lt;a href="http://www.termsys.demon.co.uk/vtansi.htm"&gt;ANSI/VT100 Terminal Control reference&lt;/a&gt;.
 Inspired by &lt;a href="http://pear.php.net/Console_Color"&gt;PEAR Console_Color&lt;/a&gt;.&lt;/p&gt;
 </long-description>
-          <tag name="var" description="" type="array" line="26">
-            <type by_reference="false">array</type>
+          <tag line="26" name="var" description="" type="array">
+            <type by_reference="false">\Aura\Cli\array</type>
           </tag>
         </docblock>
       </property>
-      <property final="false" static="false" visibility="protected" line="98">
+      <property final="false" static="false" visibility="protected" line="98" package="Default">
         <name>$posix</name>
         <default>null</default>
         <docblock>
           <description>The POSIX terminal flag.</description>
           <long-description>
 </long-description>
-          <tag name="var" description="" type="bool" line="87">
-            <type by_reference="false">bool</type>
+          <tag line="87" name="var" description="" type="bool">
+            <type by_reference="false">\Aura\Cli\bool</type>
           </tag>
-          <tag name="see" description="\Aura\Cli\setPosix()" refers="\Aura\Cli\setPosix()" line="87"/>
-          <tag name="see" description="\Aura\Cli\getPosix()" refers="\Aura\Cli\getPosix()" line="87"/>
+          <tag line="87" name="see" description="\Aura\Cli\setPosix()" refers="\Aura\Cli\setPosix()"/>
+          <tag line="87" name="see" description="\Aura\Cli\getPosix()" refers="\Aura\Cli\getPosix()"/>
         </docblock>
       </property>
-      <method final="false" abstract="false" static="false" visibility="public" line="111">
+      <method final="false" abstract="false" static="false" visibility="public" line="111" package="Default">
         <name>setPosix</name>
         <docblock>
           <description>Forces output to format for POSIX terminals, or to strip for non-POSIX
 terminals; when null, will auto-determine if the terminal is POSIX.</description>
           <long-description>
 </long-description>
-          <tag name="param" description="True to force formatting, false to force stripping, or null to auto-determine." type="bool" variable="$flag" line="100">
-            <type by_reference="false">bool</type>
+          <tag line="100" name="param" description="True to force formatting, false to force stripping, or null to auto-determine." type="bool" variable="$flag">
+            <type by_reference="false">\Aura\Cli\bool</type>
           </tag>
-          <tag name="return" description="" type="void" line="100">
-            <type by_reference="false">void</type>
+          <tag line="100" name="return" description="" type="void">
+            <type by_reference="false">\Aura\Cli\void</type>
           </tag>
         </docblock>
         <argument line="111">
@@ -1047,28 +2069,28 @@ terminals; when null, will auto-determine if the terminal is POSIX.</description
           <type/>
         </argument>
       </method>
-      <method final="false" abstract="false" static="false" visibility="public" line="128">
+      <method final="false" abstract="false" static="false" visibility="public" line="128" package="Default">
         <name>getPosix</name>
         <docblock>
           <description>Gets the value of the POSIX terminal flag.</description>
           <long-description>
 </long-description>
-          <tag name="param" description="True to force formatting, false to force stripping, or null to auto-determine." type="mixed" variable="$flag" line="120">
-            <type by_reference="false">mixed</type>
+          <tag line="120" name="param" description="True to force formatting, false to force stripping, or null to auto-determine." type="mixed" variable="$flag">
+            <type by_reference="false">\Aura\Cli\mixed</type>
           </tag>
         </docblock>
       </method>
-      <method final="false" abstract="false" static="false" visibility="public" line="142">
+      <method final="false" abstract="false" static="false" visibility="public" line="142" package="Default">
         <name>format</name>
         <docblock>
           <description>Converts VT100 %-markup in text to control codes.</description>
           <long-description>
 </long-description>
-          <tag name="param" description="The text to format." type="string" variable="$text" line="133">
-            <type by_reference="false">string</type>
+          <tag line="133" name="param" description="The text to format." type="string" variable="$text">
+            <type by_reference="false">\Aura\Cli\string</type>
           </tag>
-          <tag name="return" description="The formatted text." type="string" line="133">
-            <type by_reference="false">string</type>
+          <tag line="133" name="return" description="The formatted text." type="string">
+            <type by_reference="false">\Aura\Cli\string</type>
           </tag>
         </docblock>
         <argument line="142">
@@ -1077,17 +2099,17 @@ terminals; when null, will auto-determine if the terminal is POSIX.</description
           <type/>
         </argument>
       </method>
-      <method final="false" abstract="false" static="false" visibility="public" line="156">
+      <method final="false" abstract="false" static="false" visibility="public" line="156" package="Default">
         <name>strip</name>
         <docblock>
           <description>Strips VT100 %-markup from text.</description>
           <long-description>
 </long-description>
-          <tag name="param" description="The text to strip %-markup from." type="string" variable="$text" line="147">
-            <type by_reference="false">string</type>
+          <tag line="147" name="param" description="The text to strip %-markup from." type="string" variable="$text">
+            <type by_reference="false">\Aura\Cli\string</type>
           </tag>
-          <tag name="return" description="The plain text." type="string" line="147">
-            <type by_reference="false">string</type>
+          <tag line="147" name="return" description="The plain text." type="string">
+            <type by_reference="false">\Aura\Cli\string</type>
           </tag>
         </docblock>
         <argument line="156">
@@ -1096,23 +2118,23 @@ terminals; when null, will auto-determine if the terminal is POSIX.</description
           <type/>
         </argument>
       </method>
-      <method final="false" abstract="false" static="false" visibility="public" line="184">
+      <method final="false" abstract="false" static="false" visibility="public" line="184" package="Default">
         <name>write</name>
         <docblock>
           <description>Writes text to a file handle, converting to control codes if the handle
 is a posix TTY, or to plain text if not.</description>
           <long-description>
 </long-description>
-          <tag name="param" description="The file handle." type="resource" variable="$handle" line="169">
-            <type by_reference="false">resource</type>
+          <tag line="169" name="param" description="The file handle." type="resource" variable="$handle">
+            <type by_reference="false">\Aura\Cli\resource</type>
           </tag>
-          <tag name="param" description="The text to write to the file handle, converting %-markup if the handle is a posix TTY, or stripping markup if not." type="string" variable="$text" line="169">
-            <type by_reference="false">string</type>
+          <tag line="169" name="param" description="The text to write to the file handle, converting %-markup if the handle is a posix TTY, or stripping markup if not." type="string" variable="$text">
+            <type by_reference="false">\Aura\Cli\string</type>
           </tag>
-          <tag name="return" description="" type="void" line="169">
-            <type by_reference="false">void</type>
+          <tag line="169" name="return" description="" type="void">
+            <type by_reference="false">\Aura\Cli\void</type>
           </tag>
-          <tag name="see" description="\Aura\Cli\writeln()" refers="\Aura\Cli\writeln()" line="169"/>
+          <tag line="169" name="see" description="\Aura\Cli\writeln()" refers="\Aura\Cli\writeln()"/>
         </docblock>
         <argument line="184">
           <name>$handle</name>
@@ -1125,23 +2147,23 @@ is a posix TTY, or to plain text if not.</description>
           <type/>
         </argument>
       </method>
-      <method final="false" abstract="false" static="false" visibility="public" line="210">
+      <method final="false" abstract="false" static="false" visibility="public" line="210" package="Default">
         <name>writeln</name>
         <docblock>
           <description>Writes text to a file handle, converting to control codes if the handle
 is a posix TTY, or to plain text if not, and then appends a newline.</description>
           <long-description>
 </long-description>
-          <tag name="param" description="The file handle." type="resource" variable="$handle" line="195">
-            <type by_reference="false">resource</type>
+          <tag line="195" name="param" description="The file handle." type="resource" variable="$handle">
+            <type by_reference="false">\Aura\Cli\resource</type>
           </tag>
-          <tag name="param" description="The text to write to the file handle, converting %-markup if the handle is a posix TTY, or stripping markup if not." type="string" variable="$text" line="195">
-            <type by_reference="false">string</type>
+          <tag line="195" name="param" description="The text to write to the file handle, converting %-markup if the handle is a posix TTY, or stripping markup if not." type="string" variable="$text">
+            <type by_reference="false">\Aura\Cli\string</type>
           </tag>
-          <tag name="return" description="" type="void" line="195">
-            <type by_reference="false">void</type>
+          <tag line="195" name="return" description="" type="void">
+            <type by_reference="false">\Aura\Cli\void</type>
           </tag>
-          <tag name="see" description="\Aura\Cli\write()" refers="\Aura\Cli\write()" line="195"/>
+          <tag line="195" name="see" description="\Aura\Cli\write()" refers="\Aura\Cli\write()"/>
         </docblock>
         <argument line="210">
           <name>$handle</name>
@@ -1154,17 +2176,17 @@ is a posix TTY, or to plain text if not, and then appends a newline.</descriptio
           <type/>
         </argument>
       </method>
-      <method final="false" abstract="false" static="false" visibility="protected" line="225">
+      <method final="false" abstract="false" static="false" visibility="protected" line="225" package="Default">
         <name>isPosix</name>
         <docblock>
           <description>Determines if a stream handle should be treated as a POSIX terminal.</description>
           <long-description>
 </long-description>
-          <tag name="param" description="The stream handle." type="resource" variable="$handle" line="216">
-            <type by_reference="false">resource</type>
+          <tag line="216" name="param" description="The stream handle." type="resource" variable="$handle">
+            <type by_reference="false">\Aura\Cli\resource</type>
           </tag>
-          <tag name="return" description="" type="bool" line="216">
-            <type by_reference="false">bool</type>
+          <tag line="216" name="return" description="" type="bool">
+            <type by_reference="false">\Aura\Cli\bool</type>
           </tag>
         </docblock>
         <argument line="225">
@@ -1175,8 +2197,19 @@ is a posix TTY, or to plain text if not, and then appends a newline.</descriptio
       </method>
     </class>
   </file>
-  <file path="src/Stdio.php" hash="982031e3d0f4cbeda84d2e826fee39de">
-    <class final="false" abstract="false" line="18" namespace="Aura\Cli">
+  <file path="src/Stdio.php" hash="982031e3d0f4cbeda84d2e826fee39de" package="Default">
+    <docblock>
+      <description>This file is part of the Aura project for PHP.</description>
+      <long-description>
+</long-description>
+      <tag line="2" name="license" description="http://opensource.org/licenses/bsd-license.php BSD"/>
+    </docblock>
+    <parse_markers>
+      <error line="2">No Page-level DocBlock was found in file src/Stdio.php</error>
+      <notice line="71">Argument $vt100 is missing from the function Docblock</notice>
+      <error line="128">No DocBlock was found for Method inln</error>
+    </parse_markers>
+    <class final="false" abstract="false" line="18" namespace="Aura\Cli" package="Aura\Cli">
       <name>Stdio</name>
       <extends/>
       <full_name>\Aura\Cli\Stdio</full_name>
@@ -1184,70 +2217,70 @@ is a posix TTY, or to plain text if not, and then appends a newline.</descriptio
         <description>Provides a wrapper for standard input/output handles.</description>
         <long-description>
 </long-description>
-        <tag name="package" description="Aura.Cli" line="11"/>
+        <tag line="11" name="package" description="Aura.Cli"/>
       </docblock>
-      <property final="false" static="false" visibility="protected" line="27">
+      <property final="false" static="false" visibility="protected" line="27" package="Default">
         <name>$stdin</name>
         <default/>
         <docblock>
           <description>A handle for standard input.</description>
           <long-description>
 </long-description>
-          <tag name="var" description="" type="resource" line="20">
-            <type by_reference="false">resource</type>
+          <tag line="20" name="var" description="" type="resource">
+            <type by_reference="false">\Aura\Cli\resource</type>
           </tag>
         </docblock>
       </property>
-      <property final="false" static="false" visibility="protected" line="36">
+      <property final="false" static="false" visibility="protected" line="36" package="Default">
         <name>$stdout</name>
         <default/>
         <docblock>
           <description>A handle for standard output.</description>
           <long-description>
 </long-description>
-          <tag name="var" description="" type="resource" line="29">
-            <type by_reference="false">resource</type>
+          <tag line="29" name="var" description="" type="resource">
+            <type by_reference="false">\Aura\Cli\resource</type>
           </tag>
         </docblock>
       </property>
-      <property final="false" static="false" visibility="protected" line="45">
+      <property final="false" static="false" visibility="protected" line="45" package="Default">
         <name>$stderr</name>
         <default/>
         <docblock>
           <description>A handle for standard error.</description>
           <long-description>
 </long-description>
-          <tag name="var" description="" type="resource" line="38">
-            <type by_reference="false">resource</type>
+          <tag line="38" name="var" description="" type="resource">
+            <type by_reference="false">\Aura\Cli\resource</type>
           </tag>
         </docblock>
       </property>
-      <property final="false" static="false" visibility="protected" line="54">
+      <property final="false" static="false" visibility="protected" line="54" package="Default">
         <name>$vt100</name>
         <default/>
         <docblock>
           <description>A Vt100 object to format output.</description>
           <long-description>
 </long-description>
-          <tag name="var" description="" type="\Aura\Cli\Vt100" line="47">
+          <tag line="47" name="var" description="" type="\Aura\Cli\Vt100">
             <type by_reference="false">\Aura\Cli\Vt100</type>
           </tag>
         </docblock>
       </property>
-      <method final="false" abstract="false" static="false" visibility="public" line="67">
+      <method final="false" abstract="false" static="false" visibility="public" line="67" package="Default">
         <name>__construct</name>
         <docblock>
           <description>Constructor.</description>
           <long-description>
 </long-description>
-          <tag name="param" description="A handle for standard input." type="resource" variable="$stdin" line="56">
-            <type by_reference="false">resource</type>
+          <tag line="56" name="param" description="A handle for standard input." type="resource" variable="$stdin">
+            <type by_reference="false">\Aura\Cli\resource</type>
           </tag>
-          <tag name="param" description="A handle for standard output." type="resource" variable="$stdout" line="56">
-            <type by_reference="false">resource</type>
+          <tag line="56" name="param" description="A handle for standard output." type="resource" variable="$stdout">
+            <type by_reference="false">\Aura\Cli\resource</type>
           </tag>
-          <tag name="param" description="A handle for standard error." type="resource" variable="$stderr" line="56">
-            <type by_reference="false">resource</type>
+          <tag line="56" name="param" description="A handle for standard error." type="resource" variable="$stderr">
+            <type by_reference="false">\Aura\Cli\resource</type>
           </tag>
         </docblock>
         <argument line="68">
@@ -1271,66 +2304,66 @@ is a posix TTY, or to plain text if not, and then appends a newline.</descriptio
           <type>Vt100</type>
         </argument>
       </method>
-      <method final="false" abstract="false" static="false" visibility="public" line="86">
+      <method final="false" abstract="false" static="false" visibility="public" line="86" package="Default">
         <name>getStdin</name>
         <docblock>
           <description>Returns the standard input handle.</description>
           <long-description>
 </long-description>
-          <tag name="return" description="" type="resource" line="79">
-            <type by_reference="false">resource</type>
+          <tag line="79" name="return" description="" type="resource">
+            <type by_reference="false">\Aura\Cli\resource</type>
           </tag>
         </docblock>
       </method>
-      <method final="false" abstract="false" static="false" visibility="public" line="98">
+      <method final="false" abstract="false" static="false" visibility="public" line="98" package="Default">
         <name>getStdout</name>
         <docblock>
           <description>Returns the standard output handle.</description>
           <long-description>
 </long-description>
-          <tag name="return" description="" type="resource" line="91">
-            <type by_reference="false">resource</type>
+          <tag line="91" name="return" description="" type="resource">
+            <type by_reference="false">\Aura\Cli\resource</type>
           </tag>
         </docblock>
       </method>
-      <method final="false" abstract="false" static="false" visibility="public" line="110">
+      <method final="false" abstract="false" static="false" visibility="public" line="110" package="Default">
         <name>getStderr</name>
         <docblock>
           <description>Returns the standard error handle.</description>
           <long-description>
 </long-description>
-          <tag name="return" description="" type="resource" line="103">
-            <type by_reference="false">resource</type>
+          <tag line="103" name="return" description="" type="resource">
+            <type by_reference="false">\Aura\Cli\resource</type>
           </tag>
         </docblock>
       </method>
-      <method final="false" abstract="false" static="false" visibility="public" line="123">
+      <method final="false" abstract="false" static="false" visibility="public" line="123" package="Default">
         <name>in</name>
         <docblock>
           <description>Gets user input from the command line, optionally after sending a
 prompt to standard output.</description>
           <long-description>
 </long-description>
-          <tag name="return" description="" type="void" line="115">
-            <type by_reference="false">void</type>
+          <tag line="115" name="return" description="" type="void">
+            <type by_reference="false">\Aura\Cli\void</type>
           </tag>
         </docblock>
       </method>
-      <method final="false" abstract="false" static="false" visibility="public" line="128">
+      <method final="false" abstract="false" static="false" visibility="public" line="128" package="Default">
         <name>inln</name>
       </method>
-      <method final="false" abstract="false" static="false" visibility="public" line="143">
+      <method final="false" abstract="false" static="false" visibility="public" line="143" package="Default">
         <name>out</name>
         <docblock>
           <description>Prints text to standard output via the Vt100 formatter **without**
 a trailing newline.</description>
           <long-description>
 </long-description>
-          <tag name="param" description="The text to print to standard output." type="string" variable="$string" line="133">
-            <type by_reference="false">string</type>
+          <tag line="133" name="param" description="The text to print to standard output." type="string" variable="$string">
+            <type by_reference="false">\Aura\Cli\string</type>
           </tag>
-          <tag name="return" description="" type="void" line="133">
-            <type by_reference="false">void</type>
+          <tag line="133" name="return" description="" type="void">
+            <type by_reference="false">\Aura\Cli\void</type>
           </tag>
         </docblock>
         <argument line="143">
@@ -1339,18 +2372,18 @@ a trailing newline.</description>
           <type/>
         </argument>
       </method>
-      <method final="false" abstract="false" static="false" visibility="public" line="158">
+      <method final="false" abstract="false" static="false" visibility="public" line="158" package="Default">
         <name>outln</name>
         <docblock>
           <description>Prints text to standard output via the Vt100 formatter **with**
 a trailing newline.</description>
           <long-description>
 </long-description>
-          <tag name="param" description="The text to print to standard output." type="string" variable="$string" line="148">
-            <type by_reference="false">string</type>
+          <tag line="148" name="param" description="The text to print to standard output." type="string" variable="$string">
+            <type by_reference="false">\Aura\Cli\string</type>
           </tag>
-          <tag name="return" description="" type="void" line="148">
-            <type by_reference="false">void</type>
+          <tag line="148" name="return" description="" type="void">
+            <type by_reference="false">\Aura\Cli\void</type>
           </tag>
         </docblock>
         <argument line="158">
@@ -1359,18 +2392,18 @@ a trailing newline.</description>
           <type/>
         </argument>
       </method>
-      <method final="false" abstract="false" static="false" visibility="public" line="173">
+      <method final="false" abstract="false" static="false" visibility="public" line="173" package="Default">
         <name>err</name>
         <docblock>
           <description>Prints text to standard error via the Vt100 formatter **without**
 a trailing newline.</description>
           <long-description>
 </long-description>
-          <tag name="param" description="The text to print to standard error." type="string" variable="$string" line="163">
-            <type by_reference="false">string</type>
+          <tag line="163" name="param" description="The text to print to standard error." type="string" variable="$string">
+            <type by_reference="false">\Aura\Cli\string</type>
           </tag>
-          <tag name="return" description="" type="void" line="163">
-            <type by_reference="false">void</type>
+          <tag line="163" name="return" description="" type="void">
+            <type by_reference="false">\Aura\Cli\void</type>
           </tag>
         </docblock>
         <argument line="173">
@@ -1379,18 +2412,18 @@ a trailing newline.</description>
           <type/>
         </argument>
       </method>
-      <method final="false" abstract="false" static="false" visibility="public" line="188">
+      <method final="false" abstract="false" static="false" visibility="public" line="188" package="Default">
         <name>errln</name>
         <docblock>
           <description>Prints text to standard error via the Vt100 formatter **without**
 a trailing newline.</description>
           <long-description>
 </long-description>
-          <tag name="param" description="The text to print to standard error." type="string" variable="$string" line="178">
-            <type by_reference="false">string</type>
+          <tag line="178" name="param" description="The text to print to standard error." type="string" variable="$string">
+            <type by_reference="false">\Aura\Cli\string</type>
           </tag>
-          <tag name="return" description="" type="void" line="178">
-            <type by_reference="false">void</type>
+          <tag line="178" name="return" description="" type="void">
+            <type by_reference="false">\Aura\Cli\void</type>
           </tag>
         </docblock>
         <argument line="188">
@@ -1401,9 +2434,19 @@ a trailing newline.</description>
       </method>
     </class>
   </file>
-  <file path="src/CommandFactory.php" hash="d6748f93fbcf788c999478260f17fdf8">
+  <file path="src/CommandFactory.php" hash="d6748f93fbcf788c999478260f17fdf8" package="Default">
+    <docblock>
+      <description>This file is part of the Aura project for PHP.</description>
+      <long-description>
+</long-description>
+      <tag line="2" name="license" description="http://opensource.org/licenses/bsd-license.php BSD"/>
+    </docblock>
+    <parse_markers>
+      <error line="2">No Page-level DocBlock was found in file src/CommandFactory.php</error>
+      <error line="97">No DocBlock was found for Method map</error>
+    </parse_markers>
     <namespace-alias name="ForgeInterface">Aura\Di\ForgeInterface</namespace-alias>
-    <class final="false" abstract="false" line="19" namespace="Aura\Cli">
+    <class final="false" abstract="false" line="19" namespace="Aura\Cli" package="Aura\Cli">
       <name>CommandFactory</name>
       <extends/>
       <full_name>\Aura\Cli\CommandFactory</full_name>
@@ -1411,59 +2454,59 @@ a trailing newline.</description>
         <description>A factory to create Command objects.</description>
         <long-description>
 </long-description>
-        <tag name="package" description="Aura.Cli" line="12"/>
+        <tag line="12" name="package" description="Aura.Cli"/>
       </docblock>
-      <property final="false" static="false" visibility="protected" line="28">
+      <property final="false" static="false" visibility="protected" line="28" package="Default">
         <name>$forge</name>
         <default/>
         <docblock>
           <description>A Forge to create objects.</description>
           <long-description>
 </long-description>
-          <tag name="var" description="" type="\Aura\Di\ForgeInterface" line="21">
+          <tag line="21" name="var" description="" type="\Aura\Di\ForgeInterface">
             <type by_reference="false">\Aura\Di\ForgeInterface</type>
           </tag>
         </docblock>
       </property>
-      <property final="false" static="false" visibility="protected" line="38">
+      <property final="false" static="false" visibility="protected" line="38" package="Default">
         <name>$map</name>
-        <default>array</default>
+        <default>array()</default>
         <docblock>
           <description>A map of names (called at the command line) to their corresponding
 Command classes.</description>
           <long-description>
 </long-description>
-          <tag name="var" description="" type="array" line="30">
-            <type by_reference="false">array</type>
+          <tag line="30" name="var" description="" type="array">
+            <type by_reference="false">\Aura\Cli\array</type>
           </tag>
         </docblock>
       </property>
-      <property final="false" static="false" visibility="protected" line="47">
+      <property final="false" static="false" visibility="protected" line="47" package="Default">
         <name>$not_found</name>
         <default>null</default>
         <docblock>
           <description>A Command class to use when no class exists for a mapped name.</description>
           <long-description>
 </long-description>
-          <tag name="var" description="" type="string" line="40">
-            <type by_reference="false">string</type>
+          <tag line="40" name="var" description="" type="string">
+            <type by_reference="false">\Aura\Cli\string</type>
           </tag>
         </docblock>
       </property>
-      <method final="false" abstract="false" static="false" visibility="public" line="61">
+      <method final="false" abstract="false" static="false" visibility="public" line="61" package="Default">
         <name>__construct</name>
         <docblock>
           <description>A Command class to use when no class exists for a mapped name.</description>
           <long-description>
 </long-description>
-          <tag name="param" description="A Forge to create objects." type="\Aura\Di\ForgeInterface" variable="$forge" line="49">
+          <tag line="49" name="param" description="A Forge to create objects." type="\Aura\Di\ForgeInterface" variable="$forge">
             <type by_reference="false">\Aura\Di\ForgeInterface</type>
           </tag>
-          <tag name="param" description="A map of command names to Command classes." type="array" variable="$map" line="49">
-            <type by_reference="false">array</type>
+          <tag line="49" name="param" description="A map of command names to Command classes." type="array" variable="$map">
+            <type by_reference="false">\Aura\Cli\array</type>
           </tag>
-          <tag name="param" description="A Command class to use when no class can be found for a mapped name." type="string" variable="$not_found" line="49">
-            <type by_reference="false">string</type>
+          <tag line="49" name="param" description="A Command class to use when no class can be found for a mapped name." type="string" variable="$not_found">
+            <type by_reference="false">\Aura\Cli\string</type>
           </tag>
         </docblock>
         <argument line="62">
@@ -1482,19 +2525,19 @@ Command classes.</description>
           <type/>
         </argument>
       </method>
-      <method final="false" abstract="false" static="false" visibility="public" line="84">
+      <method final="false" abstract="false" static="false" visibility="public" line="84" package="Default">
         <name>newInstance</name>
         <docblock>
           <description>Creates and returns a Command class based on a command name.</description>
           <long-description>
 </long-description>
-          <tag name="param" description="A command name that maps to a Command class; if this name is not found in the map, use the `$not_found` class." type="string" variable="$name" line="71">
-            <type by_reference="false">string</type>
+          <tag line="71" name="param" description="A command name that maps to a Command class; if this name is not found in the map, use the `$not_found` class." type="string" variable="$name">
+            <type by_reference="false">\Aura\Cli\string</type>
           </tag>
-          <tag name="return" description="" type="\Aura\Cli\Command" line="71">
+          <tag line="71" name="return" description="" type="\Aura\Cli\Command">
             <type by_reference="false">\Aura\Cli\Command</type>
           </tag>
-          <tag name="throws" description="when no mapped class can be found and no `$not_found` class is specified." type="\Exception\CommandFactory" line="71">
+          <tag line="71" name="throws" description="when no mapped class can be found and no `$not_found` class is specified." type="\Exception\CommandFactory">
             <type by_reference="false">\Exception\CommandFactory</type>
           </tag>
         </docblock>
@@ -1504,7 +2547,7 @@ Command classes.</description>
           <type/>
         </argument>
       </method>
-      <method final="false" abstract="false" static="false" visibility="public" line="97">
+      <method final="false" abstract="false" static="false" visibility="public" line="97" package="Default">
         <name>map</name>
         <argument line="97">
           <name>$name</name>
@@ -1519,8 +2562,17 @@ Command classes.</description>
       </method>
     </class>
   </file>
-  <file path="src/Context.php" hash="f8d4674ca76e78eccefeedbb4be2887f">
-    <class final="false" abstract="false" line="18" namespace="Aura\Cli">
+  <file path="src/Context.php" hash="f8d4674ca76e78eccefeedbb4be2887f" package="Default">
+    <docblock>
+      <description>This file is part of the Aura project for PHP.</description>
+      <long-description>
+</long-description>
+      <tag line="2" name="license" description="http://opensource.org/licenses/bsd-license.php BSD"/>
+    </docblock>
+    <parse_markers>
+      <error line="2">No Page-level DocBlock was found in file src/Context.php</error>
+    </parse_markers>
+    <class final="false" abstract="false" line="18" namespace="Aura\Cli" package="Aura\Cli">
       <name>Context</name>
       <extends/>
       <full_name>\Aura\Cli\Context</full_name>
@@ -1528,70 +2580,70 @@ Command classes.</description>
         <description>Collection point for information about the command-line execution context.</description>
         <long-description>
 </long-description>
-        <tag name="package" description="Aura.Cli" line="11"/>
+        <tag line="11" name="package" description="Aura.Cli"/>
       </docblock>
-      <property final="false" static="false" visibility="protected" line="27">
+      <property final="false" static="false" visibility="protected" line="27" package="Default">
         <name>$argv</name>
         <default/>
         <docblock>
           <description>Values taken from $_SERVER['argv'].</description>
           <long-description>
 </long-description>
-          <tag name="var" description="" type="array" line="20">
-            <type by_reference="false">array</type>
+          <tag line="20" name="var" description="" type="array">
+            <type by_reference="false">\Aura\Cli\array</type>
           </tag>
         </docblock>
       </property>
-      <property final="false" static="false" visibility="protected" line="36">
+      <property final="false" static="false" visibility="protected" line="36" package="Default">
         <name>$env</name>
         <default/>
         <docblock>
           <description>Imported $_ENV values.</description>
           <long-description>
 </long-description>
-          <tag name="var" description="" type="array" line="29">
-            <type by_reference="false">array</type>
+          <tag line="29" name="var" description="" type="array">
+            <type by_reference="false">\Aura\Cli\array</type>
           </tag>
         </docblock>
       </property>
-      <property final="false" static="false" visibility="protected" line="45">
+      <property final="false" static="false" visibility="protected" line="45" package="Default">
         <name>$server</name>
         <default/>
         <docblock>
           <description>Imported $_SERVER values.</description>
           <long-description>
 </long-description>
-          <tag name="var" description="" type="array" line="38">
-            <type by_reference="false">array</type>
+          <tag line="38" name="var" description="" type="array">
+            <type by_reference="false">\Aura\Cli\array</type>
           </tag>
         </docblock>
       </property>
-      <method final="false" abstract="false" static="false" visibility="public" line="54">
+      <method final="false" abstract="false" static="false" visibility="public" line="54" package="Default">
         <name>__construct</name>
         <docblock>
           <description>Constructor.</description>
           <long-description>
 </long-description>
-          <tag name="return" description="" type="void" line="47">
-            <type by_reference="false">void</type>
+          <tag line="47" name="return" description="" type="void">
+            <type by_reference="false">\Aura\Cli\void</type>
           </tag>
         </docblock>
       </method>
-      <method final="false" abstract="false" static="false" visibility="public" line="81">
+      <method final="false" abstract="false" static="false" visibility="public" line="81" package="Default">
         <name>getEnv</name>
         <docblock>
           <description>Retrieves an **unfiltered** value by key from the $env property, or an
 alternate default value if that key does not exist.</description>
           <long-description>
 </long-description>
-          <tag name="param" description="The $env key to retrieve the value of." type="string" variable="$key" line="68">
-            <type by_reference="false">string</type>
+          <tag line="68" name="param" description="The $env key to retrieve the value of." type="string" variable="$key">
+            <type by_reference="false">\Aura\Cli\string</type>
           </tag>
-          <tag name="param" description="The value to return if the key does not exist." type="string" variable="$alt" line="68">
-            <type by_reference="false">string</type>
+          <tag line="68" name="param" description="The value to return if the key does not exist." type="string" variable="$alt">
+            <type by_reference="false">\Aura\Cli\string</type>
           </tag>
-          <tag name="return" description="The value of $env[$key], or the alternate default value." type="mixed" line="68">
-            <type by_reference="false">mixed</type>
+          <tag line="68" name="return" description="The value of $env[$key], or the alternate default value." type="mixed">
+            <type by_reference="false">\Aura\Cli\mixed</type>
           </tag>
         </docblock>
         <argument line="81">
@@ -1605,21 +2657,21 @@ alternate default value if that key does not exist.</description>
           <type/>
         </argument>
       </method>
-      <method final="false" abstract="false" static="false" visibility="public" line="99">
+      <method final="false" abstract="false" static="false" visibility="public" line="99" package="Default">
         <name>getServer</name>
         <docblock>
           <description>Retrieves an **unfiltered** value by key from the $server property, or
 an alternate default value if that key does not exist.</description>
           <long-description>
 </long-description>
-          <tag name="param" description="The $server key to retrieve the value of." type="string" variable="$key" line="86">
-            <type by_reference="false">string</type>
+          <tag line="86" name="param" description="The $server key to retrieve the value of." type="string" variable="$key">
+            <type by_reference="false">\Aura\Cli\string</type>
           </tag>
-          <tag name="param" description="The value to return if the key does not exist." type="string" variable="$alt" line="86">
-            <type by_reference="false">string</type>
+          <tag line="86" name="param" description="The value to return if the key does not exist." type="string" variable="$alt">
+            <type by_reference="false">\Aura\Cli\string</type>
           </tag>
-          <tag name="return" description="The value of $server[$key], or the alternate default value." type="mixed" line="86">
-            <type by_reference="false">mixed</type>
+          <tag line="86" name="return" description="The value of $server[$key], or the alternate default value." type="mixed">
+            <type by_reference="false">\Aura\Cli\mixed</type>
           </tag>
         </docblock>
         <argument line="99">
@@ -1633,7 +2685,7 @@ an alternate default value if that key does not exist.</description>
           <type/>
         </argument>
       </method>
-      <method final="false" abstract="false" static="false" visibility="public" line="118">
+      <method final="false" abstract="false" static="false" visibility="public" line="118" package="Default">
         <name>getArgv</name>
         <docblock>
           <description>Retrieves an **unfiltered** value by position from the `$argv`
@@ -1641,14 +2693,14 @@ property, or an alternate default value if that position does not
 exist.</description>
           <long-description>
 </long-description>
-          <tag name="param" description="The `$argv` positional key to retrieve the value of." type="int" variable="$key" line="104">
-            <type by_reference="false">int</type>
+          <tag line="104" name="param" description="The `$argv` positional key to retrieve the value of." type="int" variable="$key">
+            <type by_reference="false">\Aura\Cli\int</type>
           </tag>
-          <tag name="param" description="The value to return if the key does not exist." type="string" variable="$alt" line="104">
-            <type by_reference="false">string</type>
+          <tag line="104" name="param" description="The value to return if the key does not exist." type="string" variable="$alt">
+            <type by_reference="false">\Aura\Cli\string</type>
           </tag>
-          <tag name="return" description="The value of $server[$key], or the alternate default value." type="mixed" line="104">
-            <type by_reference="false">mixed</type>
+          <tag line="104" name="return" description="The value of $server[$key], or the alternate default value." type="mixed">
+            <type by_reference="false">\Aura\Cli\mixed</type>
           </tag>
         </docblock>
         <argument line="118">
@@ -1662,7 +2714,7 @@ exist.</description>
           <type/>
         </argument>
       </method>
-      <method final="false" abstract="false" static="false" visibility="public" line="133">
+      <method final="false" abstract="false" static="false" visibility="public" line="133" package="Default">
         <name>shiftArgv</name>
         <docblock>
           <description>Shifts the first value off the `$argv` property and returns it. Note
@@ -1670,22 +2722,22 @@ that this modifies the `$argv` property; if you need the original,
 unmodified arguments, call `server('argv')`.</description>
           <long-description>
 </long-description>
-          <tag name="return" description="The value shifted off the beginning of the `$argv` property." type="mixed" line="123">
-            <type by_reference="false">mixed</type>
+          <tag line="123" name="return" description="The value shifted off the beginning of the `$argv` property." type="mixed">
+            <type by_reference="false">\Aura\Cli\mixed</type>
           </tag>
         </docblock>
       </method>
-      <method final="false" abstract="false" static="false" visibility="protected" line="147">
+      <method final="false" abstract="false" static="false" visibility="protected" line="147" package="Default">
         <name>setArgv</name>
         <docblock>
           <description>Sets the `$argv` property.</description>
           <long-description>
 </long-description>
-          <tag name="param" description="The new value of `$argv`." type="array" variable="$argv" line="138">
-            <type by_reference="false">array</type>
+          <tag line="138" name="param" description="The new value of `$argv`." type="array" variable="$argv">
+            <type by_reference="false">\Aura\Cli\array</type>
           </tag>
-          <tag name="return" description="" type="void" line="138">
-            <type by_reference="false">void</type>
+          <tag line="138" name="return" description="" type="void">
+            <type by_reference="false">\Aura\Cli\void</type>
           </tag>
         </docblock>
         <argument line="147">
@@ -1694,23 +2746,23 @@ unmodified arguments, call `server('argv')`.</description>
           <type>array</type>
         </argument>
       </method>
-      <method final="false" abstract="false" static="false" visibility="protected" line="169">
+      <method final="false" abstract="false" static="false" visibility="protected" line="169" package="Default">
         <name>getValue</name>
         <docblock>
           <description>Common method to get a property value and return it.</description>
           <long-description>
 </long-description>
-          <tag name="param" description="The property variable to fetch from: get, post, etc." type="string" variable="$var" line="152">
-            <type by_reference="false">string</type>
+          <tag line="152" name="param" description="The property variable to fetch from: get, post, etc." type="string" variable="$var">
+            <type by_reference="false">\Aura\Cli\string</type>
           </tag>
-          <tag name="param" description="The array key in that property, if any, to get the value of." type="string" variable="$key" line="152">
-            <type by_reference="false">string</type>
+          <tag line="152" name="param" description="The array key in that property, if any, to get the value of." type="string" variable="$key">
+            <type by_reference="false">\Aura\Cli\string</type>
           </tag>
-          <tag name="param" description="The alternative default value to return if the requested key does not exist." type="string" variable="$alt" line="152">
-            <type by_reference="false">string</type>
+          <tag line="152" name="param" description="The alternative default value to return if the requested key does not exist." type="string" variable="$alt">
+            <type by_reference="false">\Aura\Cli\string</type>
           </tag>
-          <tag name="return" description="The requested value, or the alternative default value." type="mixed" line="152">
-            <type by_reference="false">mixed</type>
+          <tag line="152" name="return" description="The requested value, or the alternative default value." type="mixed">
+            <type by_reference="false">\Aura\Cli\mixed</type>
           </tag>
         </docblock>
         <argument line="169">
@@ -1731,8 +2783,17 @@ unmodified arguments, call `server('argv')`.</description>
       </method>
     </class>
   </file>
-  <file path="src/Exception.php" hash="4de9a8b9a240b55fa6090483bd65518a">
-    <class final="false" abstract="false" line="18" namespace="Aura\Cli">
+  <file path="src/Exception.php" hash="4de9a8b9a240b55fa6090483bd65518a" package="Default">
+    <docblock>
+      <description>This file is part of the Aura project for PHP.</description>
+      <long-description>
+</long-description>
+      <tag line="2" name="license" description="http://opensource.org/licenses/bsd-license.php BSD"/>
+    </docblock>
+    <parse_markers>
+      <error line="2">No Page-level DocBlock was found in file src/Exception.php</error>
+    </parse_markers>
+    <class final="false" abstract="false" line="18" namespace="Aura\Cli" package="Aura\Cli">
       <name>Exception</name>
       <extends>\Exception</extends>
       <full_name>\Aura\Cli\Exception</full_name>
@@ -1740,11 +2801,38 @@ unmodified arguments, call `server('argv')`.</description>
         <description>Generic package exception.</description>
         <long-description>
 </long-description>
-        <tag name="package" description="Aura.Cli" line="11"/>
+        <tag line="11" name="package" description="Aura.Cli"/>
       </docblock>
     </class>
   </file>
-  <file path="src.php" hash="47db0bef3d5c90299442b8d54981c556">
+  <file path="config/test.php" hash="8cd1036105983ad7ebd64b6fff1bc215" package="Default">
+    <docblock>
+      <description>Package prefix for autoloader.</description>
+      <long-description>
+</long-description>
+    </docblock>
+    <parse_markers>
+      <error line="2">No Page-level DocBlock was found in file config/test.php</error>
+    </parse_markers>
+  </file>
+  <file path="config/default.php" hash="e743b2d34af597f06edfe5acc9f28e7e" package="Default">
+    <docblock>
+      <description>Package prefix for autoloader.</description>
+      <long-description>
+</long-description>
+    </docblock>
+    <parse_markers>
+      <error line="2">No Page-level DocBlock was found in file config/default.php</error>
+    </parse_markers>
+    <function namespace="default" line="37" package="Default">
+      <name>Closure</name>
+      <type>closure</type>
+    </function>
+  </file>
+  <file path="src.php" hash="47db0bef3d5c90299442b8d54981c556" package="Default">
+    <parse_markers>
+      <error line="1">No DocBlock was found for File src.php</error>
+    </parse_markers>
     <include type="Require Once" line="2">
       <name>/src/Command.php</name>
     </include>
@@ -1794,13 +2882,16 @@ unmodified arguments, call `server('argv')`.</description>
       <name>/src/Vt100.php</name>
     </include>
   </file>
-  <package name=""/>
-  <package name="Aura.Cli"/>
+  <package name="Aura">
+    <package name="Cli"/>
+  </package>
+  <package name="Default"/>
   <namespace name="Aura">
     <namespace name="Cli">
       <namespace name="Exception"/>
     </namespace>
   </namespace>
+  <namespace name="default"/>
   <marker>todo</marker>
   <marker>fixme</marker>
 </project>

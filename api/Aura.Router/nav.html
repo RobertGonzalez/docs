@@ -1,4 +1,4 @@
-<html xmlns="http://www.w3.org/1999/xhtml"><head><title>Aura Project for PHP: Aura.Router</title><meta http-equiv="Content-Type" content="text/html; charset=utf-8"></meta><link rel="stylesheet" href="css/black-tie/jquery-ui-1.8.2.custom.css" type="text/css"></link><link rel="stylesheet" href="css/jquery.treeview.css" type="text/css"></link><link rel="stylesheet" href="css/theme.css" type="text/css"></link><script type="text/javascript" src="js/jquery-1.4.2.min.js"></script><script type="text/javascript" src="js/jquery-ui-1.8.2.custom.min.js"></script><script type="text/javascript" src="js/jquery.cookie.js"></script><script type="text/javascript" src="js/jquery.treeview.js"></script><script type="text/javascript">
+<html xmlns="http://www.w3.org/1999/xhtml"><head><title>Aura Project for PHP: Aura.Router</title><meta http-equiv="Content-Type" content="text/html; charset=utf-8"></meta><link rel="stylesheet" href="css/jquery-ui.css" type="text/css"></link><link rel="stylesheet" href="css/docblox/jquery-ui-1.8.16.custom.css" type="text/css"></link><link rel="stylesheet" href="css/jquery.treeview.css" type="text/css"></link><link rel="stylesheet" href="css/theme.css" type="text/css"></link><script type="text/javascript" src="js/jquery-1.4.2.min.js"></script><script type="text/javascript" src="js/jquery-ui-1.8.2.custom.min.js"></script><script type="text/javascript" src="js/jquery.tools.min.js"></script><script type="text/javascript" src="js/jquery.cookie.js"></script><script type="text/javascript" src="js/jquery.treeview.js"></script><script type="text/javascript">
             $(document).ready(function() {
                 $(".filetree").treeview({
                     collapsed: true,
@@ -13,27 +13,33 @@
 
                 $(".tabs").tabs();
             });
-        </script></head><body><div xmlns="" id="accordion">
-<h1><a href="#">Namespaces</a></h1>
-<div style="padding: 0px;"><ul id="namespaces-" class="filetree"><li class="closed">
-<span class="folder">Aura</span><ul><li class="closed">
-<span class="folder">Router</span><ul>
-<li><span class="class"><a href="db_src_Exception.html#%5CAura%5CRouter%5CException" target="content">Exception</a></span></li>
-<li><span class="class"><a href="db_src_Map.html#%5CAura%5CRouter%5CMap" target="content">Map</a></span></li>
-<li><span class="class"><a href="db_src_Route.html#%5CAura%5CRouter%5CRoute" target="content">Route</a></span></li>
-<li><span class="class"><a href="db_src_RouteFactory.html#%5CAura%5CRouter%5CRouteFactory" target="content">RouteFactory</a></span></li>
-</ul>
-</li></ul>
-</li></ul></div>
-<h1><a href="#">Packages</a></h1>
-<div style="padding: 0px;"><ul id="packages-" class="deadtree"><li class="closed"><ul id="packages_Aura.Router" class="filetree">
-<li class="closed"><span class="class"><a href="db_src_Exception.html#%5CAura%5CRouter%5CException" target="content">Exception</a></span></li>
-<li class="closed"><span class="class"><a href="db_src_Map.html#%5CAura%5CRouter%5CMap" target="content">Map</a></span></li>
-<li class="closed"><span class="class"><a href="db_src_Route.html#%5CAura%5CRouter%5CRoute" target="content">Route</a></span></li>
-<li class="closed"><span class="class"><a href="db_src_RouteFactory.html#%5CAura%5CRouter%5CRouteFactory" target="content">RouteFactory</a></span></li>
-</ul></li></ul></div>
-<h1><a href="#">Files</a></h1>
-<div style="padding: 0px;"><ul id="files-" class="filetree">
+        </script></head><body><script xmlns="" type="text/javascript" src="js/sidebar.js"></script><div xmlns="" id="sidebar">
+<div id="sidebar-header">
+<h1>Aura Project for PHP: Aura.Router</h1>
+<div style="clear: both"></div>
+</div>
+<div id="sidebar-nav">
+<h3 id="sidebar-dashboard">
+<img class="icon" src="css/docblox/images/icons/dashboard.png" alt="Dashboard"><a href="content.html" class="link" target="content">Dashboard</a>
+</h3>
+<div style="display: none"></div>
+<h3 id="sidebar-files">
+<img src="css/docblox/images/icons/files.png" alt="Files"><a href="#files">Files</a>
+</h3>
+<div class="sidebar-section">
+<div class="search-bar">
+<a href="#" onclick="$(this).parent().next().find('.collapsable-hitarea').click(); return false;"><img src="images/collapse_all.png" title="Collapse all" alt="Collapse all"></a><a href="#" onclick="$(this).parent().next().find('.expandable-hitarea').click(); return false;"><img src="images/expand_all.png" title="Expand all" alt="Expand all"></a><div><input type="text" onkeyup="tree_search(this);"></div>
+</div>
+<ul class="sidebar-nav-tree">
+<li class="closed">
+<span class="file"><a href="db_config_default.html" target="content">config/default.php</a></span><ul id="files_3e50bb499e6c7484c65ce0524599d433" class="filetree"><li><span class="function"><a href="db_config_default.html#::Closure()" target="content">Closure<br></a></span></li></ul>
+</li>
+<li class="closed">
+<span class="file"><a href="db_config_test.html" target="content">config/test.php</a></span><ul id="files_b333711ff1d600ed7d261fed45c571e8" class="filetree"></ul>
+</li>
+<li class="closed">
+<span class="file"><a href="db_scripts_instance.html" target="content">scripts/instance.php</a></span><ul id="files_7ceef5dfda928ee8f7836150670a487a" class="filetree"></ul>
+</li>
 <li class="closed">
 <span class="file"><a href="db_src.html" target="content">src.php</a></span><ul id="files_5f8f1f5cf600f96b73ff2a7b6d20473e" class="filetree"></ul>
 </li>
@@ -49,5 +55,80 @@
 <li class="closed">
 <span class="file"><a href="db_src_RouteFactory.html" target="content">src/RouteFactory.php</a></span><ul id="files_8c0d275c59be48a3eaa3c3c76a0a1b7c" class="filetree"><li><span class="class"><a href="db_src_RouteFactory.html#%5CAura%5CRouter%5CRouteFactory" target="content">RouteFactory<br></a></span></li></ul>
 </li>
+<li class="closed">
+<span class="file"><a href="db_tests_MapTest.html" target="content">tests/MapTest.php</a></span><ul id="files_f2997a5266c66f5099c6c37e24faae4a" class="filetree"><li><span class="class"><a href="db_tests_MapTest.html#%5CAura%5CRouter%5CMapTest" target="content">MapTest<br></a></span></li></ul>
+</li>
+<li class="closed">
+<span class="file"><a href="db_tests_RouteTest.html" target="content">tests/RouteTest.php</a></span><ul id="files_6978ee8c52d5b2ffcd3d797d97ec3f81" class="filetree"><li><span class="class"><a href="db_tests_RouteTest.html#%5CAura%5CRouter%5CRouteTest" target="content">RouteTest<br></a></span></li></ul>
+</li>
+</ul>
+</div>
+<h3 id="sidebar-packages">
+<img src="css/docblox/images/icons/packages.png" alt="Packages"><a href="#packages">Packages</a>
+</h3>
+<div class="sidebar-section sidebar-tree">
+<div class="search-bar">
+<a href="#" onclick="$(this).parent().next().find('.collapsable-hitarea').click(); return false;"><img src="images/collapse_all.png" title="Collapse all" alt="Collapse all"></a><a href="#" onclick="$(this).parent().next().find('.expandable-hitarea').click(); return false;"><img src="images/expand_all.png" title="Expand all" alt="Expand all"></a><div><input type="text" onkeyup="tree_search(this);"></div>
+</div>
+<ul class="sidebar-nav-tree">
+<li class="closed">
+<span class="folder">Aura</span><ul><li class="closed">
+<span class="folder">Router</span><ul>
+<li><span class="class"><a href="db_src_Exception.html#%5CAura%5CRouter%5CException" target="content">Exception</a></span></li>
+<li><span class="class"><a href="db_src_Map.html#%5CAura%5CRouter%5CMap" target="content">Map</a></span></li>
+<li><span class="class"><a href="db_src_Route.html#%5CAura%5CRouter%5CRoute" target="content">Route</a></span></li>
+<li><span class="class"><a href="db_src_RouteFactory.html#%5CAura%5CRouter%5CRouteFactory" target="content">RouteFactory</a></span></li>
+</ul>
+</li></ul>
+</li>
+<li class="closed">
+<span class="folder">Default</span><ul>
+<li><span class="function"><a href="db_config_default.html#::Closure()" target="content">Closure</a></span></li>
+<li><span class="class"><a href="db_tests_MapTest.html#%5CAura%5CRouter%5CMapTest" target="content">MapTest</a></span></li>
+<li><span class="class"><a href="db_tests_RouteTest.html#%5CAura%5CRouter%5CRouteTest" target="content">RouteTest</a></span></li>
+</ul>
+</li>
+</ul>
+</div>
+<h3 id="sidebar-namespaces">
+<img src="css/docblox/images/icons/namespaces.png" alt="Namespaces"><a href="#namespaces">Namespaces</a>
+</h3>
+<div class="sidebar-section sidebar-tree">
+<div class="search-bar">
+<a href="#" onclick="$(this).parent().next().find('.collapsable-hitarea').click(); return false;"><img src="images/collapse_all.png" title="Collapse all" alt="Collapse all"></a><a href="#" onclick="$(this).parent().next().find('.expandable-hitarea').click(); return false;"><img src="images/expand_all.png" title="Expand all" alt="Expand all"></a><div><input type="text" onkeyup="tree_search(this);"></div>
+</div>
+<ul class="sidebar-nav-tree">
+<li class="closed">
+<span class="folder">Aura</span><ul><li class="closed">
+<span class="folder">Router</span><ul>
+<li><span class="class"><a href="db_src_Exception.html#%5CAura%5CRouter%5CException" target="content">Exception</a></span></li>
+<li><span class="class"><a href="db_src_Map.html#%5CAura%5CRouter%5CMap" target="content">Map</a></span></li>
+<li><span class="class"><a href="db_tests_MapTest.html#%5CAura%5CRouter%5CMapTest" target="content">MapTest</a></span></li>
+<li><span class="class"><a href="db_src_Route.html#%5CAura%5CRouter%5CRoute" target="content">Route</a></span></li>
+<li><span class="class"><a href="db_src_RouteFactory.html#%5CAura%5CRouter%5CRouteFactory" target="content">RouteFactory</a></span></li>
+<li><span class="class"><a href="db_tests_RouteTest.html#%5CAura%5CRouter%5CRouteTest" target="content">RouteTest</a></span></li>
+</ul>
+</li></ul>
+</li>
+<li class="closed">
+<span class="folder">default</span><ul><li><span class="function"><a href="db_config_default.html#::Closure()" target="content">Closure</a></span></li></ul>
+</li>
+</ul>
+</div>
+<h3 id="sidebar-charts">
+<img src="css/docblox/images/icons/chart.png" alt="Charts"><a href="#charts">Charts</a>
+</h3>
+<div class="sidebar-section"><ul style="list-style-image: url('css/docblox/images/icons/chart15x12.png');"><li><a href="graph.html" target="content">Class Inheritance Diagram</a></li></ul></div>
+<h3 id="sidebar-reports">
+<img src="css/docblox/images/icons/reports.png" alt="Reports"><a href="#reports">Reports</a>
+</h3>
+<div class="sidebar-section"><ul style="list-style-image: url('css/docblox/images/icons/reports9x12.png');">
+<li><a href="report_markers.html" target="content">Markers (TODO/FIXME)</a></li>
+<li><a href="report_parse_markers.html" target="content">Parsing errors</a></li>
+<li><a href="report_deprecated.html" target="content">Deprecated elements</a></li>
 </ul></div>
+</div>
+<div id="sidebar-footer">
+        Documentation is generated by <a href="http://docblox-project.org" target="_top"><img src="images/icon48x48.png" height="12" align="top" alt="Logo"> DocBlox 0.16.0</a>, images courtesy of <a href="http://glyphish.com/" target="_top">Glyphish</a>
+</div>
 </div></body></html>

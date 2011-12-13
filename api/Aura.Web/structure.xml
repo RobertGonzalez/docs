@@ -1,903 +1,6 @@
 <?xml version="1.0"?>
 <project version="0.16.0" title="Aura Project for PHP: Aura.Web">
-  <file path="scripts/instance.php" hash="5d3ec99ac860234eb26f93bb55e1c0ea" package="Default">
-    <docblock>
-      <description>This file is part of the Aura project for PHP.</description>
-      <long-description>
-</long-description>
-      <tag line="2" name="license" description="http://opensource.org/licenses/bsd-license.php BSD"/>
-    </docblock>
-    <parse_markers>
-      <error line="2">No Page-level DocBlock was found in file scripts/instance.php</error>
-    </parse_markers>
-    <include type="Require" line="10">
-      <name>Unknown</name>
-    </include>
-  </file>
-  <file path="tests/ResponseTransferTest.php" hash="e7c189debeeb6391a7b7175cf40fa0d1" package="Default">
-    <parse_markers>
-      <error line="1">No DocBlock was found for File tests/ResponseTransferTest.php</error>
-      <critical line="10">No short description for property $response</critical>
-      <critical line="34">No short description for method test__get</critical>
-      <error line="46">No DocBlock was found for Method test__getNoSuchKey</error>
-      <critical line="52">No short description for method testSetAndGetCache</critical>
-      <critical line="86">No short description for method testSetAndGetContent</critical>
-      <critical line="97">No short description for method testSetAndGetContentType</critical>
-      <critical line="114">No short description for method testSetAndGetCookie</critical>
-      <critical line="136">No short description for method testGetCookies</critical>
-      <critical line="169">No short description for method testSetCookiesHttponly</critical>
-      <critical line="193">No short description for method testSetHeader</critical>
-      <critical line="211">No short description for method testAddHeader</critical>
-      <critical line="229">No short description for method testGetHeader</critical>
-      <critical line="250">No short description for method testGetHeaders</critical>
-      <critical line="271">No short description for method testRedirect</critical>
-      <critical line="291">No short description for method testRedirectAfterPost</critical>
-      <critical line="318">No short description for method testSetAndGetStatusCode</critical>
-      <error line="329">No DocBlock was found for Method testSetStatusCodeWrong</error>
-      <critical line="335">No short description for method testSetAndGetStatusText</critical>
-      <critical line="346">No short description for method testSetAndGetVersion</critical>
-      <error line="357">No DocBlock was found for Method testVersionWrong</error>
-      <critical line="363">No short description for method testSetAndGetView</critical>
-      <critical line="374">No short description for method testSetAndGetViewData</critical>
-      <error line="387">No DocBlock was found for Method testAddAndGetViewStack</error>
-      <critical line="397">No short description for method testSetAndGetLayout</critical>
-      <critical line="408">No short description for method testSetAndGetLayoutData</critical>
-      <error line="421">No DocBlock was found for Method testAddAndGetLayoutStack</error>
-      <error line="431">No DocBlock was found for Method testSetAndGetLayoutContentVar</error>
-      <critical line="439">No short description for method testSetAndGetFormat</critical>
-      <critical line="450">No short description for method testNegotiateContentType_alreadySet</critical>
-      <error line="461">No DocBlock was found for Method testNegotiateContentType_byFormat</error>
-      <error line="469">No DocBlock was found for Method testNegotiateContentType_byView</error>
-      <error line="487">No DocBlock was found for Method testNegotiateContentType_byLayout</error>
-      <error line="505">No DocBlock was found for Method testNegotiateContentType_noAcceptableType</error>
-      <critical line="526">No short description for method testMatchView_null</critical>
-      <error line="534">No DocBlock was found for Method testMatchView_string</error>
-      <error line="542">No DocBlock was found for Method testMatchView_closure</error>
-      <error line="552">No DocBlock was found for Method testMatchView_arrayString</error>
-      <error line="567">No DocBlock was found for Method testMatchView_arrayClosure</error>
-      <error line="585">No DocBlock was found for Method testMatchView_noAcceptableView</error>
-      <critical line="600">No short description for method testMatchLayout_null</critical>
-      <error line="608">No DocBlock was found for Method testMatchLayout_string</error>
-      <error line="616">No DocBlock was found for Method testMatchLayout_closure</error>
-      <error line="626">No DocBlock was found for Method testMatchLayout_arrayString</error>
-      <error line="641">No DocBlock was found for Method testMatchLayout_arrayClosure</error>
-      <error line="659">No DocBlock was found for Method testMatchLayout_noAcceptableLayout</error>
-    </parse_markers>
-    <class final="false" abstract="false" line="8" namespace="Aura\Web" package="Default">
-      <name>ResponseTransferTest</name>
-      <extends>\PHPUnit_Framework_TestCase</extends>
-      <full_name>\Aura\Web\ResponseTransferTest</full_name>
-      <docblock>
-        <description>Test class for ResponseTransfer.</description>
-        <long-description>&lt;p&gt;Generated by PHPUnit on 2011-05-02 at 10:30:39.&lt;/p&gt;
-</long-description>
-      </docblock>
-      <property final="false" static="false" visibility="protected" line="13" package="Default">
-        <name>$response</name>
-        <default/>
-        <docblock>
-          <description/>
-          <long-description>
-</long-description>
-          <tag line="10" name="var" description="" type="\Aura\Web\ResponseTransfer">
-            <type by_reference="false">\Aura\Web\ResponseTransfer</type>
-          </tag>
-        </docblock>
-      </property>
-      <method final="false" abstract="false" static="false" visibility="protected" line="19" package="Default">
-        <name>setUp</name>
-        <docblock>
-          <description>Sets up the fixture, for example, opens a network connection.</description>
-          <long-description>&lt;p&gt;This method is called before a test is executed.&lt;/p&gt;
-</long-description>
-        </docblock>
-      </method>
-      <method final="false" abstract="false" static="false" visibility="protected" line="29" package="Default">
-        <name>tearDown</name>
-        <docblock>
-          <description>Tears down the fixture, for example, closes a network connection.</description>
-          <long-description>&lt;p&gt;This method is called after a test is executed.&lt;/p&gt;
-</long-description>
-        </docblock>
-      </method>
-      <method final="false" abstract="false" static="false" visibility="public" line="37" package="Default">
-        <name>test__get</name>
-        <docblock>
-          <description/>
-          <long-description>
-</long-description>
-          <tag line="34" name="todo" description="Implement test__get()."/>
-        </docblock>
-      </method>
-      <method final="false" abstract="false" static="false" visibility="public" line="46" package="Default">
-        <name>test__getNoSuchKey</name>
-      </method>
-      <method final="false" abstract="false" static="false" visibility="public" line="55" package="Default">
-        <name>testSetAndGetCache</name>
-        <docblock>
-          <description/>
-          <long-description>
-</long-description>
-          <tag line="52" name="todo" description="Implement testSetCache()."/>
-        </docblock>
-      </method>
-      <method final="false" abstract="false" static="false" visibility="public" line="89" package="Default">
-        <name>testSetAndGetContent</name>
-        <docblock>
-          <description/>
-          <long-description>
-</long-description>
-          <tag line="86" name="todo" description="Implement testSetContent()."/>
-        </docblock>
-      </method>
-      <method final="false" abstract="false" static="false" visibility="public" line="100" package="Default">
-        <name>testSetAndGetContentType</name>
-        <docblock>
-          <description/>
-          <long-description>
-</long-description>
-          <tag line="97" name="todo" description="Implement testSetContentType()."/>
-        </docblock>
-      </method>
-      <method final="false" abstract="false" static="false" visibility="public" line="117" package="Default">
-        <name>testSetAndGetCookie</name>
-        <docblock>
-          <description/>
-          <long-description>
-</long-description>
-          <tag line="114" name="todo" description="Implement testSetCookie()."/>
-        </docblock>
-      </method>
-      <method final="false" abstract="false" static="false" visibility="public" line="139" package="Default">
-        <name>testGetCookies</name>
-        <docblock>
-          <description/>
-          <long-description>
-</long-description>
-          <tag line="136" name="todo" description="Implement testGetCookies()."/>
-        </docblock>
-      </method>
-      <method final="false" abstract="false" static="false" visibility="public" line="172" package="Default">
-        <name>testSetCookiesHttponly</name>
-        <docblock>
-          <description/>
-          <long-description>
-</long-description>
-          <tag line="169" name="todo" description="Implement testSetCookiesHttponly()."/>
-        </docblock>
-      </method>
-      <method final="false" abstract="false" static="false" visibility="public" line="196" package="Default">
-        <name>testSetHeader</name>
-        <docblock>
-          <description/>
-          <long-description>
-</long-description>
-          <tag line="193" name="todo" description="Implement testSetHeader()."/>
-        </docblock>
-      </method>
-      <method final="false" abstract="false" static="false" visibility="public" line="214" package="Default">
-        <name>testAddHeader</name>
-        <docblock>
-          <description/>
-          <long-description>
-</long-description>
-          <tag line="211" name="todo" description="Implement testAddHeader()."/>
-        </docblock>
-      </method>
-      <method final="false" abstract="false" static="false" visibility="public" line="232" package="Default">
-        <name>testGetHeader</name>
-        <docblock>
-          <description/>
-          <long-description>
-</long-description>
-          <tag line="229" name="todo" description="Implement testGetHeader()."/>
-        </docblock>
-      </method>
-      <method final="false" abstract="false" static="false" visibility="public" line="253" package="Default">
-        <name>testGetHeaders</name>
-        <docblock>
-          <description/>
-          <long-description>
-</long-description>
-          <tag line="250" name="todo" description="Implement testGetHeaders()."/>
-        </docblock>
-      </method>
-      <method final="false" abstract="false" static="false" visibility="public" line="274" package="Default">
-        <name>testRedirect</name>
-        <docblock>
-          <description/>
-          <long-description>
-</long-description>
-          <tag line="271" name="todo" description="Implement testSetRedirect()."/>
-        </docblock>
-      </method>
-      <method final="false" abstract="false" static="false" visibility="public" line="294" package="Default">
-        <name>testRedirectAfterPost</name>
-        <docblock>
-          <description/>
-          <long-description>
-</long-description>
-          <tag line="291" name="todo" description="Implement testSetRedirectAfterPost()."/>
-        </docblock>
-      </method>
-      <method final="false" abstract="false" static="false" visibility="public" line="321" package="Default">
-        <name>testSetAndGetStatusCode</name>
-        <docblock>
-          <description/>
-          <long-description>
-</long-description>
-          <tag line="318" name="todo" description="Implement testSetStatusCode()."/>
-        </docblock>
-      </method>
-      <method final="false" abstract="false" static="false" visibility="public" line="329" package="Default">
-        <name>testSetStatusCodeWrong</name>
-      </method>
-      <method final="false" abstract="false" static="false" visibility="public" line="338" package="Default">
-        <name>testSetAndGetStatusText</name>
-        <docblock>
-          <description/>
-          <long-description>
-</long-description>
-          <tag line="335" name="todo" description="Implement testSetStatusText()."/>
-        </docblock>
-      </method>
-      <method final="false" abstract="false" static="false" visibility="public" line="349" package="Default">
-        <name>testSetAndGetVersion</name>
-        <docblock>
-          <description/>
-          <long-description>
-</long-description>
-          <tag line="346" name="todo" description="Implement testSetVersion()."/>
-        </docblock>
-      </method>
-      <method final="false" abstract="false" static="false" visibility="public" line="357" package="Default">
-        <name>testVersionWrong</name>
-      </method>
-      <method final="false" abstract="false" static="false" visibility="public" line="366" package="Default">
-        <name>testSetAndGetView</name>
-        <docblock>
-          <description/>
-          <long-description>
-</long-description>
-          <tag line="363" name="todo" description="Implement testSetView()."/>
-        </docblock>
-      </method>
-      <method final="false" abstract="false" static="false" visibility="public" line="377" package="Default">
-        <name>testSetAndGetViewData</name>
-        <docblock>
-          <description/>
-          <long-description>
-</long-description>
-          <tag line="374" name="todo" description="Implement testSetViewData()."/>
-        </docblock>
-      </method>
-      <method final="false" abstract="false" static="false" visibility="public" line="387" package="Default">
-        <name>testAddAndGetViewStack</name>
-      </method>
-      <method final="false" abstract="false" static="false" visibility="public" line="400" package="Default">
-        <name>testSetAndGetLayout</name>
-        <docblock>
-          <description/>
-          <long-description>
-</long-description>
-          <tag line="397" name="todo" description="Implement testSetLayout()."/>
-        </docblock>
-      </method>
-      <method final="false" abstract="false" static="false" visibility="public" line="411" package="Default">
-        <name>testSetAndGetLayoutData</name>
-        <docblock>
-          <description/>
-          <long-description>
-</long-description>
-          <tag line="408" name="todo" description="Implement testSetLayoutData()."/>
-        </docblock>
-      </method>
-      <method final="false" abstract="false" static="false" visibility="public" line="421" package="Default">
-        <name>testAddAndGetLayoutStack</name>
-      </method>
-      <method final="false" abstract="false" static="false" visibility="public" line="431" package="Default">
-        <name>testSetAndGetLayoutContentVar</name>
-      </method>
-      <method final="false" abstract="false" static="false" visibility="public" line="442" package="Default">
-        <name>testSetAndGetFormat</name>
-        <docblock>
-          <description/>
-          <long-description>
-</long-description>
-          <tag line="439" name="todo" description="Implement testSetFormat()."/>
-        </docblock>
-      </method>
-      <method final="false" abstract="false" static="false" visibility="public" line="453" package="Default">
-        <name>testNegotiateContentType_alreadySet</name>
-        <docblock>
-          <description/>
-          <long-description>
-</long-description>
-          <tag line="450" name="todo" description="Implement testNegotiateContentType()."/>
-        </docblock>
-      </method>
-      <method final="false" abstract="false" static="false" visibility="public" line="461" package="Default">
-        <name>testNegotiateContentType_byFormat</name>
-      </method>
-      <method final="false" abstract="false" static="false" visibility="public" line="469" package="Default">
-        <name>testNegotiateContentType_byView</name>
-      </method>
-      <method final="false" abstract="false" static="false" visibility="public" line="487" package="Default">
-        <name>testNegotiateContentType_byLayout</name>
-      </method>
-      <method final="false" abstract="false" static="false" visibility="public" line="505" package="Default">
-        <name>testNegotiateContentType_noAcceptableType</name>
-      </method>
-      <method final="false" abstract="false" static="false" visibility="public" line="529" package="Default">
-        <name>testMatchView_null</name>
-        <docblock>
-          <description/>
-          <long-description>
-</long-description>
-          <tag line="526" name="todo" description="Implement testMatchView()."/>
-        </docblock>
-      </method>
-      <method final="false" abstract="false" static="false" visibility="public" line="534" package="Default">
-        <name>testMatchView_string</name>
-      </method>
-      <method final="false" abstract="false" static="false" visibility="public" line="542" package="Default">
-        <name>testMatchView_closure</name>
-      </method>
-      <method final="false" abstract="false" static="false" visibility="public" line="552" package="Default">
-        <name>testMatchView_arrayString</name>
-      </method>
-      <method final="false" abstract="false" static="false" visibility="public" line="567" package="Default">
-        <name>testMatchView_arrayClosure</name>
-      </method>
-      <method final="false" abstract="false" static="false" visibility="public" line="585" package="Default">
-        <name>testMatchView_noAcceptableView</name>
-      </method>
-      <method final="false" abstract="false" static="false" visibility="public" line="603" package="Default">
-        <name>testMatchLayout_null</name>
-        <docblock>
-          <description/>
-          <long-description>
-</long-description>
-          <tag line="600" name="todo" description="Implement testMatchLayout()."/>
-        </docblock>
-      </method>
-      <method final="false" abstract="false" static="false" visibility="public" line="608" package="Default">
-        <name>testMatchLayout_string</name>
-      </method>
-      <method final="false" abstract="false" static="false" visibility="public" line="616" package="Default">
-        <name>testMatchLayout_closure</name>
-      </method>
-      <method final="false" abstract="false" static="false" visibility="public" line="626" package="Default">
-        <name>testMatchLayout_arrayString</name>
-      </method>
-      <method final="false" abstract="false" static="false" visibility="public" line="641" package="Default">
-        <name>testMatchLayout_arrayClosure</name>
-      </method>
-      <method final="false" abstract="false" static="false" visibility="public" line="659" package="Default">
-        <name>testMatchLayout_noAcceptableLayout</name>
-      </method>
-    </class>
-  </file>
-  <file path="tests/PageTest.php" hash="ec383ff30283bfc22a26d97614e77311" package="Default">
-    <parse_markers>
-      <error line="1">No DocBlock was found for File tests/PageTest.php</error>
-      <critical line="14">No short description for property $page</critical>
-      <error line="28">No DocBlock was found for Method newPage</error>
-      <critical line="47">No short description for method testExecAndHooks</critical>
-      <critical line="62">No short description for method testExecNoMethodForAction</critical>
-      <critical line="71">No short description for method testSkipAction</critical>
-      <error line="87">No DocBlock was found for Method testExecAndParams</error>
-    </parse_markers>
-    <namespace-alias name="SignalManager">Aura\Signal\Manager</namespace-alias>
-    <namespace-alias name="HandlerFactory">Aura\Signal\HandlerFactory</namespace-alias>
-    <namespace-alias name="ResultFactory">Aura\Signal\ResultFactory</namespace-alias>
-    <namespace-alias name="ResultCollection">Aura\Signal\ResultCollection</namespace-alias>
-    <class final="false" abstract="false" line="12" namespace="Aura\Web" package="Default">
-      <name>PageTest</name>
-      <extends>\PHPUnit_Framework_TestCase</extends>
-      <full_name>\Aura\Web\PageTest</full_name>
-      <docblock>
-        <description>Test class for Page.</description>
-        <long-description>&lt;p&gt;Generated by PHPUnit on 2011-03-19 at 15:00:21.&lt;/p&gt;
-</long-description>
-      </docblock>
-      <property final="false" static="false" visibility="protected" line="17" package="Default">
-        <name>$page</name>
-        <default/>
-        <docblock>
-          <description/>
-          <long-description>
-</long-description>
-          <tag line="14" name="var" description="" type="\Aura\Web\Page">
-            <type by_reference="false">\Aura\Web\Page</type>
-          </tag>
-        </docblock>
-      </property>
-      <method final="false" abstract="false" static="false" visibility="protected" line="23" package="Default">
-        <name>setUp</name>
-        <docblock>
-          <description>Sets up the fixture, for example, opens a network connection.</description>
-          <long-description>&lt;p&gt;This method is called before a test is executed.&lt;/p&gt;
-</long-description>
-        </docblock>
-      </method>
-      <method final="false" abstract="false" static="false" visibility="protected" line="28" package="Default">
-        <name>newPage</name>
-        <argument line="28">
-          <name>$params</name>
-          <default>null</default>
-          <type/>
-        </argument>
-      </method>
-      <method final="false" abstract="false" static="false" visibility="protected" line="42" package="Default">
-        <name>tearDown</name>
-        <docblock>
-          <description>Tears down the fixture, for example, closes a network connection.</description>
-          <long-description>&lt;p&gt;This method is called after a test is executed.&lt;/p&gt;
-</long-description>
-        </docblock>
-      </method>
-      <method final="false" abstract="false" static="false" visibility="public" line="50" package="Default">
-        <name>testExecAndHooks</name>
-        <docblock>
-          <description/>
-          <long-description>
-</long-description>
-          <tag line="47" name="todo" description="Implement testExec()."/>
-        </docblock>
-      </method>
-      <method final="false" abstract="false" static="false" visibility="public" line="65" package="Default">
-        <name>testExecNoMethodForAction</name>
-        <docblock>
-          <description/>
-          <long-description>
-</long-description>
-          <tag line="62" name="expectedException" description="\Aura\Web\Exception\NoMethodForAction"/>
-        </docblock>
-      </method>
-      <method final="false" abstract="false" static="false" visibility="public" line="74" package="Default">
-        <name>testSkipAction</name>
-        <docblock>
-          <description/>
-          <long-description>
-</long-description>
-          <tag line="71" name="todo" description="Implement testSkipAction()."/>
-        </docblock>
-      </method>
-      <method final="false" abstract="false" static="false" visibility="public" line="87" package="Default">
-        <name>testExecAndParams</name>
-      </method>
-    </class>
-  </file>
-  <file path="tests/ContextTest.php" hash="fc6c2dbf6e82c6a3a2409ac1f237465e" package="Default">
-    <parse_markers>
-      <error line="1">No DocBlock was found for File tests/ContextTest.php</error>
-      <error line="7">No DocBlock was found for Class ContextTest</error>
-      <error line="9">No DocBlock was found for Method newContext</error>
-      <error line="14">No DocBlock was found for Method newCsrf</error>
-      <error line="19">No DocBlock was found for Method reset</error>
-      <error line="29">No DocBlock was found for Method testHttpMethodOverload</error>
-      <error line="49">No DocBlock was found for Method test__get</error>
-      <error line="68">No DocBlock was found for Method testIsGet</error>
-      <error line="87">No DocBlock was found for Method testIsPost</error>
-      <error line="106">No DocBlock was found for Method testIsPut</error>
-      <error line="125">No DocBlock was found for Method testIsDelete</error>
-      <error line="144">No DocBlock was found for Method testIsHead</error>
-      <error line="163">No DocBlock was found for Method testIsOptions</error>
-      <error line="182">No DocBlock was found for Method testIsXhr</error>
-      <error line="201">No DocBlock was found for Method testIsCsrf</error>
-      <error line="219">No DocBlock was found for Method testIsSsl</error>
-      <error line="238">No DocBlock was found for Method testIsMobile</error>
-      <error line="294">No DocBlock was found for Method testIsCrawler</error>
-      <error line="353">No DocBlock was found for Method testGetQuery</error>
-      <error line="374">No DocBlock was found for Method testGetRawRequestBody</error>
-      <error line="398">No DocBlock was found for Method testPost</error>
-      <error line="419">No DocBlock was found for Method testGetCookie</error>
-      <error line="440">No DocBlock was found for Method testGetEnv</error>
-      <error line="461">No DocBlock was found for Method testGetServer</error>
-      <error line="482">No DocBlock was found for Method testFiles</error>
-      <error line="552">No DocBlock was found for Method testGetInput</error>
-      <error line="582">No DocBlock was found for Method testgetInputWithPostAndFile</error>
-      <error line="600">No DocBlock was found for Method testgetInputWithMultiplePostsAndFile</error>
-      <error line="623">No DocBlock was found for Method testgetInputWithPostAndMultipleFiles</error>
-      <error line="671">No DocBlock was found for Method testgetInputWithMultiplePostsAndMultipleFiles</error>
-      <error line="729">No DocBlock was found for Method testGetHeader</error>
-      <error line="745">No DocBlock was found for Method testGetAccept</error>
-      <error line="782">No DocBlock was found for Method testXJsonIsRemoved</error>
-      <error line="795">No DocBlock was found for Method testConstructorAgents</error>
-    </parse_markers>
-    <include type="Require Once" line="5">
-      <name>PhpStream.php</name>
-    </include>
-    <class final="false" abstract="false" line="7" namespace="Aura\Web" package="Default">
-      <name>ContextTest</name>
-      <extends>\PHPUnit_Framework_TestCase</extends>
-      <full_name>\Aura\Web\ContextTest</full_name>
-      <method final="false" abstract="false" static="false" visibility="protected" line="9" package="Default">
-        <name>newContext</name>
-        <argument line="9">
-          <name>$csrf</name>
-          <default>null</default>
-          <type/>
-        </argument>
-        <argument line="9">
-          <name>$agents</name>
-          <default>null</default>
-          <type/>
-        </argument>
-      </method>
-      <method final="false" abstract="false" static="false" visibility="protected" line="14" package="Default">
-        <name>newCsrf</name>
-      </method>
-      <method final="false" abstract="false" static="false" visibility="protected" line="19" package="Default">
-        <name>reset</name>
-      </method>
-      <method final="false" abstract="false" static="false" visibility="public" line="29" package="Default">
-        <name>testHttpMethodOverload</name>
-      </method>
-      <method final="false" abstract="false" static="false" visibility="public" line="49" package="Default">
-        <name>test__get</name>
-      </method>
-      <method final="false" abstract="false" static="false" visibility="public" line="68" package="Default">
-        <name>testIsGet</name>
-      </method>
-      <method final="false" abstract="false" static="false" visibility="public" line="87" package="Default">
-        <name>testIsPost</name>
-      </method>
-      <method final="false" abstract="false" static="false" visibility="public" line="106" package="Default">
-        <name>testIsPut</name>
-      </method>
-      <method final="false" abstract="false" static="false" visibility="public" line="125" package="Default">
-        <name>testIsDelete</name>
-      </method>
-      <method final="false" abstract="false" static="false" visibility="public" line="144" package="Default">
-        <name>testIsHead</name>
-      </method>
-      <method final="false" abstract="false" static="false" visibility="public" line="163" package="Default">
-        <name>testIsOptions</name>
-      </method>
-      <method final="false" abstract="false" static="false" visibility="public" line="182" package="Default">
-        <name>testIsXhr</name>
-      </method>
-      <method final="false" abstract="false" static="false" visibility="public" line="201" package="Default">
-        <name>testIsCsrf</name>
-      </method>
-      <method final="false" abstract="false" static="false" visibility="public" line="219" package="Default">
-        <name>testIsSsl</name>
-      </method>
-      <method final="false" abstract="false" static="false" visibility="public" line="238" package="Default">
-        <name>testIsMobile</name>
-      </method>
-      <method final="false" abstract="false" static="false" visibility="public" line="294" package="Default">
-        <name>testIsCrawler</name>
-      </method>
-      <method final="false" abstract="false" static="false" visibility="public" line="353" package="Default">
-        <name>testGetQuery</name>
-      </method>
-      <method final="false" abstract="false" static="false" visibility="public" line="374" package="Default">
-        <name>testGetRawRequestBody</name>
-      </method>
-      <method final="false" abstract="false" static="false" visibility="public" line="398" package="Default">
-        <name>testPost</name>
-      </method>
-      <method final="false" abstract="false" static="false" visibility="public" line="419" package="Default">
-        <name>testGetCookie</name>
-      </method>
-      <method final="false" abstract="false" static="false" visibility="public" line="440" package="Default">
-        <name>testGetEnv</name>
-      </method>
-      <method final="false" abstract="false" static="false" visibility="public" line="461" package="Default">
-        <name>testGetServer</name>
-      </method>
-      <method final="false" abstract="false" static="false" visibility="public" line="482" package="Default">
-        <name>testFiles</name>
-      </method>
-      <method final="false" abstract="false" static="false" visibility="public" line="552" package="Default">
-        <name>testGetInput</name>
-      </method>
-      <method final="false" abstract="false" static="false" visibility="public" line="582" package="Default">
-        <name>testgetInputWithPostAndFile</name>
-      </method>
-      <method final="false" abstract="false" static="false" visibility="public" line="600" package="Default">
-        <name>testgetInputWithMultiplePostsAndFile</name>
-      </method>
-      <method final="false" abstract="false" static="false" visibility="public" line="623" package="Default">
-        <name>testgetInputWithPostAndMultipleFiles</name>
-      </method>
-      <method final="false" abstract="false" static="false" visibility="public" line="671" package="Default">
-        <name>testgetInputWithMultiplePostsAndMultipleFiles</name>
-      </method>
-      <method final="false" abstract="false" static="false" visibility="public" line="729" package="Default">
-        <name>testGetHeader</name>
-      </method>
-      <method final="false" abstract="false" static="false" visibility="public" line="745" package="Default">
-        <name>testGetAccept</name>
-      </method>
-      <method final="false" abstract="false" static="false" visibility="public" line="782" package="Default">
-        <name>testXJsonIsRemoved</name>
-      </method>
-      <method final="false" abstract="false" static="false" visibility="public" line="795" package="Default">
-        <name>testConstructorAgents</name>
-      </method>
-    </class>
-  </file>
-  <file path="tests/MockController.php" hash="abac3f82d2ee17c26cae0610a718d347" package="Default">
-    <parse_markers>
-      <error line="1">No DocBlock was found for File tests/MockController.php</error>
-      <error line="3">No DocBlock was found for Class MockController</error>
-      <error line="4">No DocBlock was found for Method __construct</error>
-    </parse_markers>
-    <class final="false" abstract="false" line="3" namespace="Aura\Web" package="Default">
-      <name>MockController</name>
-      <extends/>
-      <full_name>\Aura\Web\MockController</full_name>
-      <method final="false" abstract="false" static="false" visibility="public" line="4" package="Default">
-        <name>__construct</name>
-      </method>
-    </class>
-  </file>
-  <file path="tests/MockPage.php" hash="6766d29272b7bddba18dd30d42bf3fea" package="Default">
-    <parse_markers>
-      <error line="1">No DocBlock was found for File tests/MockPage.php</error>
-      <error line="3">No DocBlock was found for Class MockPage</error>
-      <error line="5">No DocBlock was found for Property $_pre_action</error>
-      <error line="7">No DocBlock was found for Property $_pre_exec</error>
-      <error line="9">No DocBlock was found for Property $_post_action</error>
-      <error line="11">No DocBlock was found for Property $_post_exec</error>
-      <error line="13">No DocBlock was found for Method __get</error>
-      <error line="18">No DocBlock was found for Method preExec</error>
-      <error line="24">No DocBlock was found for Method preAction</error>
-      <error line="30">No DocBlock was found for Method postAction</error>
-      <error line="36">No DocBlock was found for Method postExec</error>
-      <error line="42">No DocBlock was found for Method actionIndex</error>
-      <error line="47">No DocBlock was found for Method actionParams</error>
-    </parse_markers>
-    <class final="false" abstract="false" line="3" namespace="Aura\Web" package="Default">
-      <name>MockPage</name>
-      <extends>\Aura\Web\Page</extends>
-      <full_name>\Aura\Web\MockPage</full_name>
-      <property final="false" static="false" visibility="private" line="5" package="Default">
-        <name>$_pre_action</name>
-        <default>false</default>
-      </property>
-      <property final="false" static="false" visibility="private" line="7" package="Default">
-        <name>$_pre_exec</name>
-        <default>false</default>
-      </property>
-      <property final="false" static="false" visibility="private" line="9" package="Default">
-        <name>$_post_action</name>
-        <default>false</default>
-      </property>
-      <property final="false" static="false" visibility="private" line="11" package="Default">
-        <name>$_post_exec</name>
-        <default>false</default>
-      </property>
-      <method final="false" abstract="false" static="false" visibility="public" line="13" package="Default">
-        <name>__get</name>
-        <argument line="13">
-          <name>$key</name>
-          <default/>
-          <type/>
-        </argument>
-      </method>
-      <method final="false" abstract="false" static="false" visibility="public" line="18" package="Default">
-        <name>preExec</name>
-      </method>
-      <method final="false" abstract="false" static="false" visibility="public" line="24" package="Default">
-        <name>preAction</name>
-      </method>
-      <method final="false" abstract="false" static="false" visibility="public" line="30" package="Default">
-        <name>postAction</name>
-      </method>
-      <method final="false" abstract="false" static="false" visibility="public" line="36" package="Default">
-        <name>postExec</name>
-      </method>
-      <method final="false" abstract="false" static="false" visibility="public" line="42" package="Default">
-        <name>actionIndex</name>
-      </method>
-      <method final="false" abstract="false" static="false" visibility="public" line="47" package="Default">
-        <name>actionParams</name>
-        <argument line="47">
-          <name>$foo</name>
-          <default/>
-          <type/>
-        </argument>
-        <argument line="47">
-          <name>$bar</name>
-          <default/>
-          <type/>
-        </argument>
-        <argument line="47">
-          <name>$baz</name>
-          <default>'dib'</default>
-          <type/>
-        </argument>
-      </method>
-    </class>
-  </file>
-  <file path="tests/PhpStream.php" hash="d8c44f2f470e492c1fd7d1e4ab819211" package="Default">
-    <parse_markers>
-      <error line="1">No DocBlock was found for File tests/PhpStream.php</error>
-      <error line="4">No DocBlock was found for Class PhpStream</error>
-      <error line="6">No DocBlock was found for Property $pos</error>
-      <error line="8">No DocBlock was found for Method stream_open</error>
-      <error line="13">No DocBlock was found for Method stream_read</error>
-      <error line="21">No DocBlock was found for Method stream_eof</error>
-      <error line="26">No DocBlock was found for Method stream_stat</error>
-    </parse_markers>
-    <class final="false" abstract="false" line="4" namespace="Aura\Web" package="Default">
-      <name>PhpStream</name>
-      <extends/>
-      <full_name>\Aura\Web\PhpStream</full_name>
-      <property final="false" static="false" visibility="protected" line="6" package="Default">
-        <name>$pos</name>
-        <default>0</default>
-      </property>
-      <method final="false" abstract="false" static="false" visibility="public" line="8" package="Default">
-        <name>stream_open</name>
-        <argument line="8">
-          <name>$path</name>
-          <default/>
-          <type/>
-        </argument>
-        <argument line="8">
-          <name>$mode</name>
-          <default/>
-          <type/>
-        </argument>
-        <argument line="8">
-          <name>$options</name>
-          <default/>
-          <type/>
-        </argument>
-        <argument line="8">
-          <name>$opened_path</name>
-          <default/>
-          <type/>
-        </argument>
-      </method>
-      <method final="false" abstract="false" static="false" visibility="public" line="13" package="Default">
-        <name>stream_read</name>
-        <argument line="13">
-          <name>$count</name>
-          <default/>
-          <type/>
-        </argument>
-      </method>
-      <method final="false" abstract="false" static="false" visibility="public" line="21" package="Default">
-        <name>stream_eof</name>
-      </method>
-      <method final="false" abstract="false" static="false" visibility="public" line="26" package="Default">
-        <name>stream_stat</name>
-      </method>
-    </class>
-  </file>
-  <file path="tests/ControllerFactoryTest.php" hash="d4de29e9b28f4f0dd22794c40d5a2ba4" package="Default">
-    <parse_markers>
-      <error line="1">No DocBlock was found for File tests/ControllerFactoryTest.php</error>
-      <critical line="12">No short description for property $factory</critical>
-      <error line="26">No DocBlock was found for Method newFactory</error>
-      <critical line="43">No short description for method testNewInstance</critical>
-      <error line="55">No DocBlock was found for Method testNewInstanceNotFound</error>
-      <critical line="64">No short description for method testNewInstanceException</critical>
-    </parse_markers>
-    <namespace-alias name="Config">Aura\Di\Config</namespace-alias>
-    <namespace-alias name="Forge">Aura\Di\Forge</namespace-alias>
-    <class final="false" abstract="false" line="10" namespace="Aura\Web" package="Default">
-      <name>ControllerFactoryTest</name>
-      <extends>\PHPUnit_Framework_TestCase</extends>
-      <full_name>\Aura\Web\ControllerFactoryTest</full_name>
-      <docblock>
-        <description>Test class for ControllerFactory.</description>
-        <long-description>&lt;p&gt;Generated by PHPUnit on 2011-03-19 at 15:01:06.&lt;/p&gt;
-</long-description>
-      </docblock>
-      <property final="false" static="false" visibility="protected" line="15" package="Default">
-        <name>$factory</name>
-        <default/>
-        <docblock>
-          <description/>
-          <long-description>
-</long-description>
-          <tag line="12" name="var" description="" type="\Aura\Web\ControllerFactory">
-            <type by_reference="false">\Aura\Web\ControllerFactory</type>
-          </tag>
-        </docblock>
-      </property>
-      <method final="false" abstract="false" static="false" visibility="protected" line="21" package="Default">
-        <name>setUp</name>
-        <docblock>
-          <description>Sets up the fixture, for example, opens a network connection.</description>
-          <long-description>&lt;p&gt;This method is called before a test is executed.&lt;/p&gt;
-</long-description>
-        </docblock>
-      </method>
-      <method final="false" abstract="false" static="false" visibility="protected" line="26" package="Default">
-        <name>newFactory</name>
-        <argument line="26">
-          <name>$map</name>
-          <default>null</default>
-          <type/>
-        </argument>
-        <argument line="26">
-          <name>$not_found</name>
-          <default>null</default>
-          <type/>
-        </argument>
-      </method>
-      <method final="false" abstract="false" static="false" visibility="protected" line="38" package="Default">
-        <name>tearDown</name>
-        <docblock>
-          <description>Tears down the fixture, for example, closes a network connection.</description>
-          <long-description>&lt;p&gt;This method is called after a test is executed.&lt;/p&gt;
-</long-description>
-        </docblock>
-      </method>
-      <method final="false" abstract="false" static="false" visibility="public" line="46" package="Default">
-        <name>testNewInstance</name>
-        <docblock>
-          <description/>
-          <long-description>
-</long-description>
-          <tag line="43" name="todo" description="Implement testNewInstance()."/>
-        </docblock>
-      </method>
-      <method final="false" abstract="false" static="false" visibility="public" line="55" package="Default">
-        <name>testNewInstanceNotFound</name>
-      </method>
-      <method final="false" abstract="false" static="false" visibility="public" line="67" package="Default">
-        <name>testNewInstanceException</name>
-        <docblock>
-          <description/>
-          <long-description>
-</long-description>
-          <tag line="64" name="expectedException" description="\Aura\Web\Exception\NoClassForController"/>
-        </docblock>
-      </method>
-    </class>
-  </file>
-  <file path="tests/CsrfTest.php" hash="9010a36b135dcfe4aa661a9afec20df4" package="Default">
-    <parse_markers>
-      <error line="1">No DocBlock was found for File tests/CsrfTest.php</error>
-      <error line="6">No DocBlock was found for Class CsrfTest</error>
-      <error line="8">No DocBlock was found for Property $secret</error>
-      <error line="9">No DocBlock was found for Property $user</error>
-      <error line="11">No DocBlock was found for Method newCsrf</error>
-      <error line="16">No DocBlock was found for Method test__set</error>
-      <error line="36">No DocBlock was found for Method test__get</error>
-      <error line="49">No DocBlock was found for Method testGenerateToken</error>
-      <error line="64">No DocBlock was found for Method testIsValidToken</error>
-    </parse_markers>
-    <class final="false" abstract="false" line="6" namespace="Aura\Web" package="Default">
-      <name>CsrfTest</name>
-      <extends>\PHPUnit_Framework_TestCase</extends>
-      <full_name>\Aura\Web\CsrfTest</full_name>
-      <property final="false" static="false" visibility="protected" line="8" package="Default">
-        <name>$secret</name>
-        <default>'a-secret-key'</default>
-      </property>
-      <property final="false" static="false" visibility="protected" line="9" package="Default">
-        <name>$user</name>
-        <default>'foo-user'</default>
-      </property>
-      <method final="false" abstract="false" static="false" visibility="protected" line="11" package="Default">
-        <name>newCsrf</name>
-      </method>
-      <method final="false" abstract="false" static="false" visibility="public" line="16" package="Default">
-        <name>test__set</name>
-      </method>
-      <method final="false" abstract="false" static="false" visibility="public" line="36" package="Default">
-        <name>test__get</name>
-      </method>
-      <method final="false" abstract="false" static="false" visibility="public" line="49" package="Default">
-        <name>testGenerateToken</name>
-      </method>
-      <method final="false" abstract="false" static="false" visibility="public" line="64" package="Default">
-        <name>testIsValidToken</name>
-      </method>
-    </class>
-  </file>
-  <file path="src/Exception/NoClassForController.php" hash="d286a3af5ce381e9d4c7113bf7dfa82c" package="Default">
+  <file path="src/Aura/Web/Exception/NoMethodForAction.php" hash="1b71fa88dc334b3eb3346bc0c99d8250" package="Default">
     <docblock>
       <description>This file is part of the Aura Project for PHP.</description>
       <long-description>
@@ -905,24 +8,7 @@
       <tag line="2" name="license" description="http://opensource.org/licenses/bsd-license.php BSD"/>
     </docblock>
     <parse_markers>
-      <error line="2">No Page-level DocBlock was found in file src/Exception/NoClassForController.php</error>
-      <error line="10">No DocBlock was found for Class NoClassForController</error>
-    </parse_markers>
-    <class final="false" abstract="false" line="10" namespace="Aura\Web\Exception" package="Default">
-      <name>NoClassForController</name>
-      <extends>\Aura\Web\Exception</extends>
-      <full_name>\Aura\Web\Exception\NoClassForController</full_name>
-    </class>
-  </file>
-  <file path="src/Exception/NoMethodForAction.php" hash="1b71fa88dc334b3eb3346bc0c99d8250" package="Default">
-    <docblock>
-      <description>This file is part of the Aura Project for PHP.</description>
-      <long-description>
-</long-description>
-      <tag line="2" name="license" description="http://opensource.org/licenses/bsd-license.php BSD"/>
-    </docblock>
-    <parse_markers>
-      <error line="2">No Page-level DocBlock was found in file src/Exception/NoMethodForAction.php</error>
+      <error line="2">No Page-level DocBlock was found in file src/Aura/Web/Exception/NoMethodForAction.php</error>
       <error line="10">No DocBlock was found for Class NoMethodForAction</error>
     </parse_markers>
     <class final="false" abstract="false" line="10" namespace="Aura\Web\Exception" package="Default">
@@ -931,7 +17,7 @@
       <full_name>\Aura\Web\Exception\NoMethodForAction</full_name>
     </class>
   </file>
-  <file path="src/Exception/NoAcceptableLayout.php" hash="fad04d363bcf7383192f13228bf90f85" package="Default">
+  <file path="src/Aura/Web/Exception/NoAcceptableLayout.php" hash="fad04d363bcf7383192f13228bf90f85" package="Default">
     <docblock>
       <description>This file is part of the Aura Project for PHP.</description>
       <long-description>
@@ -939,7 +25,7 @@
       <tag line="2" name="license" description="http://opensource.org/licenses/bsd-license.php BSD"/>
     </docblock>
     <parse_markers>
-      <error line="2">No Page-level DocBlock was found in file src/Exception/NoAcceptableLayout.php</error>
+      <error line="2">No Page-level DocBlock was found in file src/Aura/Web/Exception/NoAcceptableLayout.php</error>
       <error line="10">No DocBlock was found for Class NoAcceptableLayout</error>
     </parse_markers>
     <class final="false" abstract="false" line="10" namespace="Aura\Web\Exception" package="Default">
@@ -948,7 +34,7 @@
       <full_name>\Aura\Web\Exception\NoAcceptableLayout</full_name>
     </class>
   </file>
-  <file path="src/Exception/MalformedToken.php" hash="dc081c29dcd38cd79d839b20fed4a1be" package="Default">
+  <file path="src/Aura/Web/Exception/MalformedToken.php" hash="dc081c29dcd38cd79d839b20fed4a1be" package="Default">
     <docblock>
       <description>This file is part of the Aura Project for PHP.</description>
       <long-description>
@@ -956,7 +42,7 @@
       <tag line="2" name="license" description="http://opensource.org/licenses/bsd-license.php BSD"/>
     </docblock>
     <parse_markers>
-      <error line="2">No Page-level DocBlock was found in file src/Exception/MalformedToken.php</error>
+      <error line="2">No Page-level DocBlock was found in file src/Aura/Web/Exception/MalformedToken.php</error>
       <error line="10">No DocBlock was found for Class MalformedToken</error>
       <error line="12">No DocBlock was found for Method __construct</error>
     </parse_markers>
@@ -969,7 +55,7 @@
       </method>
     </class>
   </file>
-  <file path="src/Exception/NoAcceptableView.php" hash="d68fd117d1a5a6407e5dd85e2c539278" package="Default">
+  <file path="src/Aura/Web/Exception/NoAcceptableView.php" hash="d68fd117d1a5a6407e5dd85e2c539278" package="Default">
     <docblock>
       <description>This file is part of the Aura Project for PHP.</description>
       <long-description>
@@ -977,7 +63,7 @@
       <tag line="2" name="license" description="http://opensource.org/licenses/bsd-license.php BSD"/>
     </docblock>
     <parse_markers>
-      <error line="2">No Page-level DocBlock was found in file src/Exception/NoAcceptableView.php</error>
+      <error line="2">No Page-level DocBlock was found in file src/Aura/Web/Exception/NoAcceptableView.php</error>
       <error line="10">No DocBlock was found for Class NoAcceptableView</error>
     </parse_markers>
     <class final="false" abstract="false" line="10" namespace="Aura\Web\Exception" package="Default">
@@ -986,7 +72,7 @@
       <full_name>\Aura\Web\Exception\NoAcceptableView</full_name>
     </class>
   </file>
-  <file path="src/Exception/Context.php" hash="2f99172e74771cf46b937b409779dd44" package="Default">
+  <file path="src/Aura/Web/Exception/Context.php" hash="2f99172e74771cf46b937b409779dd44" package="Default">
     <docblock>
       <description>This file is part of the Aura Project for PHP.</description>
       <long-description>
@@ -994,7 +80,7 @@
       <tag line="2" name="license" description="http://opensource.org/licenses/bsd-license.php BSD"/>
     </docblock>
     <parse_markers>
-      <error line="2">No Page-level DocBlock was found in file src/Exception/Context.php</error>
+      <error line="2">No Page-level DocBlock was found in file src/Aura/Web/Exception/Context.php</error>
       <error line="10">No DocBlock was found for Class Context</error>
     </parse_markers>
     <class final="false" abstract="false" line="10" namespace="Aura\Web\Exception" package="Default">
@@ -1003,7 +89,7 @@
       <full_name>\Aura\Web\Exception\Context</full_name>
     </class>
   </file>
-  <file path="src/ControllerFactory.php" hash="8faade9a6d5ce56701a78b0d5b3f9a4a" package="Default">
+  <file path="src/Aura/Web/ResponseTransfer.php" hash="aab32fa2228e67b42260a162e05a3438" package="Default">
     <docblock>
       <description>This file is part of the Aura project for PHP.</description>
       <long-description>
@@ -1011,126 +97,7 @@
       <tag line="2" name="license" description="http://opensource.org/licenses/bsd-license.php BSD"/>
     </docblock>
     <parse_markers>
-      <error line="2">No Page-level DocBlock was found in file src/ControllerFactory.php</error>
-    </parse_markers>
-    <namespace-alias name="ForgeInterface">Aura\Di\ForgeInterface</namespace-alias>
-    <class final="false" abstract="false" line="20" namespace="Aura\Web" package="Aura\Web">
-      <name>ControllerFactory</name>
-      <extends/>
-      <full_name>\Aura\Web\ControllerFactory</full_name>
-      <docblock>
-        <description>A factory to create controller objects; these need not be only Page
-controllers, but (e.g.) Resource or App controllers.</description>
-        <long-description>
-</long-description>
-        <tag line="12" name="package" description="Aura.Web"/>
-      </docblock>
-      <property final="false" static="false" visibility="protected" line="29" package="Default">
-        <name>$forge</name>
-        <default/>
-        <docblock>
-          <description>An object-creation Forge.</description>
-          <long-description>
-</long-description>
-          <tag line="22" name="var" description="" type="\Aura\Di\ForgeInterface">
-            <type by_reference="false">\Aura\Di\ForgeInterface</type>
-          </tag>
-        </docblock>
-      </property>
-      <property final="false" static="false" visibility="protected" line="38" package="Default">
-        <name>$map</name>
-        <default>array()</default>
-        <docblock>
-          <description>A map of controller names to controller classes.</description>
-          <long-description>
-</long-description>
-          <tag line="31" name="var" description="" type="\Aura\Di\ForgeInterface">
-            <type by_reference="false">\Aura\Di\ForgeInterface</type>
-          </tag>
-        </docblock>
-      </property>
-      <property final="false" static="false" visibility="protected" line="47" package="Default">
-        <name>$not_found</name>
-        <default>null</default>
-        <docblock>
-          <description>The controller class to instantiate when no mapping is found.</description>
-          <long-description>
-</long-description>
-          <tag line="40" name="var" description="" type="\Aura\Di\ForgeInterface">
-            <type by_reference="false">\Aura\Di\ForgeInterface</type>
-          </tag>
-        </docblock>
-      </property>
-      <method final="false" abstract="false" static="false" visibility="public" line="61" package="Default">
-        <name>__construct</name>
-        <docblock>
-          <description>Constructor.</description>
-          <long-description>
-</long-description>
-          <tag line="49" name="param" description="An object-creation Forge." type="\Aura\Di\ForgeInterface" variable="$forge">
-            <type by_reference="false">\Aura\Di\ForgeInterface</type>
-          </tag>
-          <tag line="49" name="param" description="A map of controller names to controller classes." type="array" variable="$map">
-            <type by_reference="false">\Aura\Web\array</type>
-          </tag>
-          <tag line="49" name="param" description="The controller class to instantiate when no mapping is found." type="string" variable="$not_found">
-            <type by_reference="false">\Aura\Web\string</type>
-          </tag>
-        </docblock>
-        <argument line="61">
-          <name>$forge</name>
-          <default/>
-          <type>ForgeInterface</type>
-        </argument>
-        <argument line="61">
-          <name>$map</name>
-          <default>null</default>
-          <type>array</type>
-        </argument>
-        <argument line="61">
-          <name>$not_found</name>
-          <default>null</default>
-          <type/>
-        </argument>
-      </method>
-      <method final="false" abstract="false" static="false" visibility="public" line="79" package="Default">
-        <name>newInstance</name>
-        <docblock>
-          <description>Creates and returns a controller class based on a controller name.</description>
-          <long-description>
-</long-description>
-          <tag line="68" name="param" description="The controller name." type="string" variable="$name">
-            <type by_reference="false">\Aura\Web\string</type>
-          </tag>
-          <tag line="68" name="param" description="Params to pass to the controller." type="array" variable="$params">
-            <type by_reference="false">\Aura\Web\array</type>
-          </tag>
-          <tag line="68" name="return" description="A controller instance." type="\Aura\Web\Page">
-            <type by_reference="false">\Aura\Web\Page</type>
-          </tag>
-        </docblock>
-        <argument line="79">
-          <name>$name</name>
-          <default/>
-          <type/>
-        </argument>
-        <argument line="79">
-          <name>$params</name>
-          <default/>
-          <type/>
-        </argument>
-      </method>
-    </class>
-  </file>
-  <file path="src/ResponseTransfer.php" hash="aab32fa2228e67b42260a162e05a3438" package="Default">
-    <docblock>
-      <description>This file is part of the Aura project for PHP.</description>
-      <long-description>
-</long-description>
-      <tag line="2" name="license" description="http://opensource.org/licenses/bsd-license.php BSD"/>
-    </docblock>
-    <parse_markers>
-      <error line="2">No Page-level DocBlock was found in file src/ResponseTransfer.php</error>
+      <error line="2">No Page-level DocBlock was found in file src/Aura/Web/ResponseTransfer.php</error>
       <notice line="531">Argument $replace is missing from the function Docblock</notice>
       <notice line="829">Name of argument $spec does not match with function Docblock</notice>
       <notice line="829">Argument $subdir is missing from the function Docblock</notice>
@@ -2252,7 +1219,7 @@ matching layout specification.</description>
       </method>
     </class>
   </file>
-  <file path="src/Page.php" hash="50f4fc846f5748e3d6f9491fd83b9a03" package="Default">
+  <file path="src/Aura/Web/Page.php" hash="0898ec3c89ae4890c00ecc88fbb8cc33" package="Default">
     <docblock>
       <description>This file is part of the Aura project for PHP.</description>
       <long-description>
@@ -2260,13 +1227,11 @@ matching layout specification.</description>
       <tag line="2" name="license" description="http://opensource.org/licenses/bsd-license.php BSD"/>
     </docblock>
     <parse_markers>
-      <error line="2">No Page-level DocBlock was found in file src/Page.php</error>
-      <notice line="110">Argument $signal is missing from the function Docblock</notice>
-      <notice line="111">Argument $response is missing from the function Docblock</notice>
-      <notice line="112">Argument $params is missing from the function Docblock</notice>
+      <error line="2">No Page-level DocBlock was found in file src/Aura/Web/Page.php</error>
+      <notice line="81">Argument $response is missing from the function Docblock</notice>
+      <notice line="82">Argument $params is missing from the function Docblock</notice>
     </parse_markers>
-    <namespace-alias name="SignalManager">Aura\Signal\Manager</namespace-alias>
-    <class final="false" abstract="true" line="35" namespace="Aura\Web" package="Aura\Web">
+    <class final="false" abstract="true" line="34" namespace="Aura\Web" package="Aura\Web">
       <name>Page</name>
       <extends/>
       <full_name>\Aura\Web\Page</full_name>
@@ -2289,245 +1254,201 @@ matching layout specification.</description>
  }
 &lt;/code&gt;&lt;/pre&gt;
 </long-description>
-        <tag line="12" name="package" description="Aura.Web"/>
+        <tag line="11" name="package" description="Aura.Web"/>
       </docblock>
-      <property final="false" static="false" visibility="protected" line="44" package="Default">
+      <property final="false" static="false" visibility="protected" line="43" package="Default">
         <name>$context</name>
         <default/>
         <docblock>
           <description>The context of the request environment.</description>
           <long-description>
 </long-description>
-          <tag line="37" name="var" description="" type="\Aura\Web\Context">
+          <tag line="36" name="var" description="" type="\Aura\Web\Context">
             <type by_reference="false">\Aura\Web\Context</type>
           </tag>
         </docblock>
       </property>
-      <property final="false" static="false" visibility="protected" line="53" package="Default">
-        <name>$router</name>
-        <default/>
-        <docblock>
-          <description>A router for generating URIs.</description>
-          <long-description>
-</long-description>
-          <tag line="46" name="var" description="" type="object">
-            <type by_reference="false">\Aura\Web\object</type>
-          </tag>
-        </docblock>
-      </property>
-      <property final="false" static="false" visibility="protected" line="62" package="Default">
+      <property final="false" static="false" visibility="protected" line="52" package="Default">
         <name>$response</name>
         <default/>
         <docblock>
           <description>A data transfer object for the eventual HTTP response.</description>
           <long-description>
 </long-description>
-          <tag line="55" name="var" description="" type="\Aura\Web\ResponseTransfer">
+          <tag line="45" name="var" description="" type="\Aura\Web\ResponseTransfer">
             <type by_reference="false">\Aura\Web\ResponseTransfer</type>
           </tag>
         </docblock>
       </property>
-      <property final="false" static="false" visibility="protected" line="71" package="Default">
-        <name>$signal</name>
-        <default/>
-        <docblock>
-          <description>A signal manager.</description>
-          <long-description>
-</long-description>
-          <tag line="64" name="var" description="" type="\Aura\Signal\Manager">
-            <type by_reference="false">\Aura\Signal\Manager</type>
-          </tag>
-        </docblock>
-      </property>
-      <property final="false" static="false" visibility="protected" line="80" package="Default">
+      <property final="false" static="false" visibility="protected" line="61" package="Default">
         <name>$params</name>
         <default/>
         <docblock>
-          <description>Path-info parameters from the route.</description>
+          <description>Path-info parameters, typically from the route.</description>
           <long-description>
 </long-description>
-          <tag line="73" name="var" description="" type="\ArrayObject">
-            <type by_reference="false">\ArrayObject</type>
+          <tag line="54" name="var" description="" type="array">
+            <type by_reference="false">\Aura\Web\array</type>
           </tag>
         </docblock>
       </property>
-      <property final="false" static="false" visibility="protected" line="89" package="Default">
+      <property final="false" static="false" visibility="protected" line="70" package="Default">
         <name>$action</name>
         <default/>
         <docblock>
           <description>The action to perform.</description>
           <long-description>
 </long-description>
-          <tag line="82" name="var" description="" type="string">
+          <tag line="63" name="var" description="" type="string">
             <type by_reference="false">\Aura\Web\string</type>
           </tag>
         </docblock>
       </property>
-      <property final="false" static="false" visibility="protected" line="99" package="Default">
-        <name>$skip_action</name>
-        <default>false</default>
-        <docblock>
-          <description>When set to `true` before `action()` is called, the `action()` will not
-be called after all.</description>
-          <long-description>
-</long-description>
-          <tag line="91" name="var" description="" type="bool">
-            <type by_reference="false">\Aura\Web\bool</type>
-          </tag>
-        </docblock>
-      </property>
-      <method final="false" abstract="false" static="false" visibility="public" line="108" package="Default">
+      <method final="false" abstract="false" static="false" visibility="public" line="79" package="Default">
         <name>__construct</name>
         <docblock>
           <description>Constructor.</description>
           <long-description>
 </long-description>
-          <tag line="101" name="param" description="The request environment." type="\Aura\Web\Context" variable="$context">
+          <tag line="72" name="param" description="The request environment." type="\Aura\Web\Context" variable="$context">
             <type by_reference="false">\Aura\Web\Context</type>
           </tag>
         </docblock>
-        <argument line="109">
+        <argument line="80">
           <name>$context</name>
           <default/>
           <type>Context</type>
         </argument>
-        <argument line="110">
-          <name>$signal</name>
-          <default/>
-          <type>SignalManager</type>
-        </argument>
-        <argument line="111">
+        <argument line="81">
           <name>$response</name>
           <default/>
           <type>ResponseTransfer</type>
         </argument>
-        <argument line="112">
+        <argument line="82">
           <name>$params</name>
           <default>array()</default>
           <type>array</type>
         </argument>
       </method>
-      <method final="false" abstract="false" static="false" visibility="public" line="155" package="Default">
-        <name>setRouter</name>
+      <method final="false" abstract="false" static="false" visibility="protected" line="99" package="Default">
+        <name>initAction</name>
         <docblock>
-          <description>Sets the router object.</description>
+          <description>Initialize the action name from the params.</description>
           <long-description>
 </long-description>
-          <tag line="148" name="param" description="The router object for generating URIs." type="object" variable="$router">
-            <type by_reference="false">\Aura\Web\object</type>
+          <tag line="92" name="return" description="" type="void">
+            <type by_reference="false">\Aura\Web\void</type>
           </tag>
         </docblock>
-        <argument line="155">
-          <name>$router</name>
-          <default/>
-          <type/>
-        </argument>
       </method>
-      <method final="false" abstract="false" static="false" visibility="public" line="187" package="Default">
+      <method final="false" abstract="false" static="false" visibility="protected" line="113" package="Default">
+        <name>initResponseFormat</name>
+        <docblock>
+          <description>Initialize the response format.</description>
+          <long-description>
+</long-description>
+          <tag line="106" name="return" description="" type="void">
+            <type by_reference="false">\Aura\Web\void</type>
+          </tag>
+        </docblock>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="protected" line="128" package="Default">
+        <name>initResponseStacks</name>
+        <docblock>
+          <description>Initialize the response view and layout stacks.</description>
+          <long-description>
+</long-description>
+          <tag line="121" name="return" description="" type="void">
+            <type by_reference="false">\Aura\Web\void</type>
+          </tag>
+        </docblock>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" line="158" package="Default">
         <name>exec</name>
         <docblock>
-          <description>Executes the Page action.  In order, it does these things:</description>
+          <description>Executes the action and pre/post hooks.</description>
           <long-description>&lt;ul&gt;
-&lt;li&gt;&lt;p&gt;signals &lt;code&gt;'pre_exec'&lt;/code&gt;&lt;/p&gt;&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;is the action is not to be skipped ...&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;p&gt;signals &lt;code&gt;'pre_action'&lt;/code&gt;&lt;/p&gt;&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;calls &lt;code&gt;invokeMethod()&lt;/code&gt; to run the action&lt;/p&gt;&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;signals &lt;code&gt;'post_action'&lt;/code&gt;&lt;/p&gt;&lt;/li&gt;
-&lt;/ul&gt;&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;signals &lt;code&gt;'post_exec'&lt;/code&gt;&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;calls &lt;code&gt;preExec()&lt;/code&gt;&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;calls &lt;code&gt;preAction()&lt;/code&gt;&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;calls &lt;code&gt;action()&lt;/code&gt; to find the action method to run, and runs it&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;calls &lt;code&gt;postAction()&lt;/code&gt;&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;calls &lt;code&gt;postExec()&lt;/code&gt;&lt;/p&gt;&lt;/li&gt;
 &lt;/ul&gt;
 </long-description>
-          <tag line="160" name="signal" description="'pre_exec'"/>
-          <tag line="160" name="signal" description="'pre_action'"/>
-          <tag line="160" name="signal" description="'post_action'"/>
-          <tag line="160" name="signal" description="'post_exec'"/>
-          <tag line="160" name="return" description="" type="void">
+          <tag line="141" name="return" description="" type="\Aura\Web\ResponseTransfer">
+            <type by_reference="false">\Aura\Web\ResponseTransfer</type>
+          </tag>
+        </docblock>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" line="175" package="Default">
+        <name>preExec</name>
+        <docblock>
+          <description>Runs at the beginning of `exec()` before `preAction()`.</description>
+          <long-description>
+</long-description>
+          <tag line="168" name="return" description="" type="void">
             <type by_reference="false">\Aura\Web\void</type>
           </tag>
         </docblock>
       </method>
-      <method final="false" abstract="false" static="false" visibility="public" line="212" package="Default">
-        <name>skipAction</name>
+      <method final="false" abstract="false" static="false" visibility="public" line="186" package="Default">
+        <name>preAction</name>
         <docblock>
-          <description>Stops `exec()` from calling `action()` if it has not already done so.</description>
+          <description>Runs after `preExec()` but before `action()`.</description>
           <long-description>
 </long-description>
-          <tag line="205" name="return" description="" type="void">
+          <tag line="179" name="return" description="" type="void">
             <type by_reference="false">\Aura\Web\void</type>
+          </tag>
+        </docblock>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" line="197" package="Default">
+        <name>action</name>
+        <docblock>
+          <description>Determines the action method, then invokes it.</description>
+          <long-description>
+</long-description>
+          <tag line="190" name="return" description="" type="void">
+            <type by_reference="false">\Aura\Web\void</type>
+          </tag>
+        </docblock>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" line="213" package="Default">
+        <name>postAction</name>
+        <docblock>
+          <description>Runs after `action()` but before `postExec()`.</description>
+          <long-description>
+</long-description>
+          <tag line="206" name="return" description="" type="mixed">
+            <type by_reference="false">\Aura\Web\mixed</type>
           </tag>
         </docblock>
       </method>
       <method final="false" abstract="false" static="false" visibility="public" line="224" package="Default">
-        <name>isSkipAction</name>
-        <docblock>
-          <description>Should the call to `action()` be skipped?</description>
-          <long-description>
-</long-description>
-          <tag line="217" name="return" description="" type="bool">
-            <type by_reference="false">\Aura\Web\bool</type>
-          </tag>
-        </docblock>
-      </method>
-      <method final="false" abstract="false" static="false" visibility="public" line="236" package="Default">
-        <name>preExec</name>
-        <docblock>
-          <description>Runs before `action()` as part of the `'pre_exec'` signal.</description>
-          <long-description>
-</long-description>
-          <tag line="229" name="return" description="" type="mixed">
-            <type by_reference="false">\Aura\Web\mixed</type>
-          </tag>
-        </docblock>
-      </method>
-      <method final="false" abstract="false" static="false" visibility="public" line="247" package="Default">
-        <name>preAction</name>
-        <docblock>
-          <description>Runs before `action()` as part of the `'pre_action'` signal.</description>
-          <long-description>
-</long-description>
-          <tag line="240" name="return" description="" type="mixed">
-            <type by_reference="false">\Aura\Web\mixed</type>
-          </tag>
-        </docblock>
-      </method>
-      <method final="false" abstract="false" static="false" visibility="public" line="258" package="Default">
-        <name>postAction</name>
-        <docblock>
-          <description>Runs after `action()` as part of the `'post_action'` signal.</description>
-          <long-description>
-</long-description>
-          <tag line="251" name="return" description="" type="mixed">
-            <type by_reference="false">\Aura\Web\mixed</type>
-          </tag>
-        </docblock>
-      </method>
-      <method final="false" abstract="false" static="false" visibility="public" line="269" package="Default">
         <name>postExec</name>
         <docblock>
-          <description>Runs after `action()` as part of the `'post_exec'` signal.</description>
+          <description>Runs at the end of `exec()` after `postAction()`.</description>
           <long-description>
 </long-description>
-          <tag line="262" name="return" description="" type="mixed">
+          <tag line="217" name="return" description="" type="mixed">
             <type by_reference="false">\Aura\Web\mixed</type>
           </tag>
         </docblock>
       </method>
-      <method final="false" abstract="false" static="false" visibility="protected" line="282" package="Default">
+      <method final="false" abstract="false" static="false" visibility="protected" line="237" package="Default">
         <name>invokeMethod</name>
         <docblock>
           <description>Invokes a method by name, matching method params to `$this-&gt;params`.</description>
           <long-description>
 </long-description>
-          <tag line="273" name="param" description="The method name to execute, typcially an action." type="string" variable="$name">
+          <tag line="228" name="param" description="The method name to execute, typcially an action." type="string" variable="$name">
             <type by_reference="false">\Aura\Web\string</type>
           </tag>
-          <tag line="273" name="return" description="The return from the executed method." type="mixed">
+          <tag line="228" name="return" description="The return from the executed method." type="mixed">
             <type by_reference="false">\Aura\Web\mixed</type>
           </tag>
         </docblock>
-        <argument line="282">
+        <argument line="237">
           <name>$name</name>
           <default/>
           <type/>
@@ -2535,7 +1456,7 @@ be called after all.</description>
       </method>
     </class>
   </file>
-  <file path="src/Context.php" hash="8e3726f49e6a73eaabb6fd0a970e764a" package="Default">
+  <file path="src/Aura/Web/Context.php" hash="ff588e5b0627f84b172149a0dd588998" package="Default">
     <docblock>
       <description>This file is part of the Aura project for PHP.</description>
       <long-description>
@@ -2543,11 +1464,10 @@ be called after all.</description>
       <tag line="2" name="license" description="http://opensource.org/licenses/bsd-license.php BSD"/>
     </docblock>
     <parse_markers>
-      <error line="2">No Page-level DocBlock was found in file src/Context.php</error>
-      <notice line="216">Argument $globals is missing from the function Docblock</notice>
-      <notice line="216">Argument $csrf is missing from the function Docblock</notice>
-      <notice line="216">Argument $agents is missing from the function Docblock</notice>
-      <notice line="650">Name of argument $accept does not match with function Docblock</notice>
+      <error line="2">No Page-level DocBlock was found in file src/Aura/Web/Context.php</error>
+      <notice line="208">Argument $globals is missing from the function Docblock</notice>
+      <notice line="208">Argument $agents is missing from the function Docblock</notice>
+      <notice line="612">Name of argument $accept does not match with function Docblock</notice>
     </parse_markers>
     <class final="false" abstract="false" line="18" namespace="Aura\Web" package="Aura\Web">
       <name>Context</name>
@@ -2669,19 +1589,7 @@ by the quality factor</description>
           </tag>
         </docblock>
       </property>
-      <property final="false" static="false" visibility="protected" line="112" package="Default">
-        <name>$csrf</name>
-        <default/>
-        <docblock>
-          <description>A cross-site request forgery object.</description>
-          <long-description>
-</long-description>
-          <tag line="105" name="var" description="" type="\Aura\Web\Csrf">
-            <type by_reference="false">\Aura\Web\Csrf</type>
-          </tag>
-        </docblock>
-      </property>
-      <property final="false" static="false" visibility="protected" line="125" package="Default">
+      <property final="false" static="false" visibility="protected" line="117" package="Default">
         <name>$agents</name>
         <default>array(
         'mobile'=&gt;array(
@@ -2691,14 +1599,14 @@ by the quality factor</description>
 mobile browsers and crawlers</description>
           <long-description>
 </long-description>
-          <tag line="114" name="see" description="\Aura\Web\isMobile()" refers="\Aura\Web\isMobile()"/>
-          <tag line="114" name="see" description="\Aura\Web\isCrawler()" refers="\Aura\Web\isCrawler()"/>
-          <tag line="114" name="var" description="" type="array">
+          <tag line="105" name="see" description="\Aura\Web\isMobile()" refers="\Aura\Web\isMobile()"/>
+          <tag line="105" name="see" description="\Aura\Web\isCrawler()" refers="\Aura\Web\isCrawler()"/>
+          <tag line="105" name="var" description="" type="array">
             <type by_reference="false">\Aura\Web\array</type>
           </tag>
         </docblock>
       </property>
-      <property final="false" static="false" visibility="protected" line="199" package="Default">
+      <property final="false" static="false" visibility="protected" line="191" package="Default">
         <name>$is_mobile</name>
         <default/>
         <docblock>
@@ -2706,12 +1614,12 @@ mobile browsers and crawlers</description>
 so you don't have to loop through $this-&gt;agents['mobile'] again.</description>
           <long-description>
 </long-description>
-          <tag line="191" name="var" description="" type="mixed">
+          <tag line="183" name="var" description="" type="mixed">
             <type by_reference="false">\Aura\Web\mixed</type>
           </tag>
         </docblock>
       </property>
-      <property final="false" static="false" visibility="protected" line="209" package="Default">
+      <property final="false" static="false" visibility="protected" line="201" package="Default">
         <name>$is_crawler</name>
         <default/>
         <docblock>
@@ -2719,298 +1627,271 @@ so you don't have to loop through $this-&gt;agents['mobile'] again.</description
 so you don't have to loop through $this-&gt;agents['crawler'] again.</description>
           <long-description>
 </long-description>
-          <tag line="201" name="var" description="" type="mixed">
+          <tag line="193" name="var" description="" type="mixed">
             <type by_reference="false">\Aura\Web\mixed</type>
           </tag>
         </docblock>
       </property>
-      <method final="false" abstract="false" static="false" visibility="public" line="216" package="Default">
+      <method final="false" abstract="false" static="false" visibility="public" line="208" package="Default">
         <name>__construct</name>
         <docblock>
           <description>Constructor.</description>
           <long-description>
 </long-description>
         </docblock>
-        <argument line="216">
+        <argument line="208">
           <name>$globals</name>
           <default/>
           <type>array</type>
         </argument>
-        <argument line="216">
-          <name>$csrf</name>
-          <default>null</default>
-          <type>Csrf</type>
-        </argument>
-        <argument line="216">
+        <argument line="208">
           <name>$agents</name>
-          <default>null</default>
+          <default>array()</default>
           <type>array</type>
         </argument>
       </method>
-      <method final="false" abstract="false" static="false" visibility="public" line="244" package="Default">
+      <method final="false" abstract="false" static="false" visibility="public" line="235" package="Default">
         <name>__get</name>
         <docblock>
           <description>Magic get to make properties read-only.</description>
           <long-description>
 </long-description>
-          <tag line="235" name="param" description="The property to read." type="string" variable="$key">
+          <tag line="226" name="param" description="The property to read." type="string" variable="$key">
             <type by_reference="false">\Aura\Web\string</type>
           </tag>
-          <tag line="235" name="return" description="The property value." type="mixed">
+          <tag line="226" name="return" description="The property value." type="mixed">
             <type by_reference="false">\Aura\Web\mixed</type>
           </tag>
         </docblock>
-        <argument line="244">
+        <argument line="235">
           <name>$key</name>
           <default/>
           <type/>
         </argument>
       </method>
-      <method final="false" abstract="false" static="false" visibility="public" line="264" package="Default">
+      <method final="false" abstract="false" static="false" visibility="public" line="255" package="Default">
         <name>isGet</name>
         <docblock>
           <description>Is this a GET request?</description>
           <long-description>
 </long-description>
-          <tag line="257" name="return" description="" type="boolean">
+          <tag line="248" name="return" description="" type="boolean">
             <type by_reference="false">\Aura\Web\boolean</type>
           </tag>
         </docblock>
       </method>
-      <method final="false" abstract="false" static="false" visibility="public" line="276" package="Default">
+      <method final="false" abstract="false" static="false" visibility="public" line="267" package="Default">
         <name>isPost</name>
         <docblock>
           <description>Is this a POST request?</description>
           <long-description>
 </long-description>
-          <tag line="269" name="return" description="" type="boolean">
+          <tag line="260" name="return" description="" type="boolean">
             <type by_reference="false">\Aura\Web\boolean</type>
           </tag>
         </docblock>
       </method>
-      <method final="false" abstract="false" static="false" visibility="public" line="288" package="Default">
+      <method final="false" abstract="false" static="false" visibility="public" line="279" package="Default">
         <name>isPut</name>
         <docblock>
           <description>Is this a PUT request?</description>
           <long-description>
 </long-description>
-          <tag line="281" name="return" description="" type="boolean">
+          <tag line="272" name="return" description="" type="boolean">
             <type by_reference="false">\Aura\Web\boolean</type>
           </tag>
         </docblock>
       </method>
-      <method final="false" abstract="false" static="false" visibility="public" line="300" package="Default">
+      <method final="false" abstract="false" static="false" visibility="public" line="291" package="Default">
         <name>isDelete</name>
         <docblock>
           <description>Is this a DELETE request?</description>
           <long-description>
 </long-description>
-          <tag line="293" name="return" description="" type="boolean">
+          <tag line="284" name="return" description="" type="boolean">
             <type by_reference="false">\Aura\Web\boolean</type>
           </tag>
         </docblock>
       </method>
-      <method final="false" abstract="false" static="false" visibility="public" line="312" package="Default">
+      <method final="false" abstract="false" static="false" visibility="public" line="303" package="Default">
         <name>isHead</name>
         <docblock>
           <description>Is this a HEAD request?</description>
           <long-description>
 </long-description>
-          <tag line="305" name="return" description="" type="boolean">
+          <tag line="296" name="return" description="" type="boolean">
             <type by_reference="false">\Aura\Web\boolean</type>
           </tag>
         </docblock>
       </method>
-      <method final="false" abstract="false" static="false" visibility="public" line="324" package="Default">
+      <method final="false" abstract="false" static="false" visibility="public" line="315" package="Default">
         <name>isOptions</name>
         <docblock>
           <description>Is this an OPTIONS request?</description>
           <long-description>
 </long-description>
-          <tag line="317" name="return" description="" type="boolean">
+          <tag line="308" name="return" description="" type="boolean">
             <type by_reference="false">\Aura\Web\boolean</type>
           </tag>
         </docblock>
       </method>
-      <method final="false" abstract="false" static="false" visibility="public" line="336" package="Default">
+      <method final="false" abstract="false" static="false" visibility="public" line="327" package="Default">
         <name>isXhr</name>
         <docblock>
           <description>Is this an XmlHttpRequest?</description>
           <long-description>
 </long-description>
-          <tag line="329" name="return" description="" type="boolean">
+          <tag line="320" name="return" description="" type="boolean">
             <type by_reference="false">\Aura\Web\boolean</type>
           </tag>
         </docblock>
       </method>
-      <method final="false" abstract="false" static="false" visibility="public" line="348" package="Default">
+      <method final="false" abstract="false" static="false" visibility="public" line="339" package="Default">
         <name>isMobile</name>
         <docblock>
           <description>Is this a mobile device?</description>
           <long-description>
 </long-description>
-          <tag line="341" name="return" description="False if not mobile, or the matched pattern if it is." type="mixed">
+          <tag line="332" name="return" description="False if not mobile, or the matched pattern if it is." type="mixed">
             <type by_reference="false">\Aura\Web\mixed</type>
           </tag>
         </docblock>
       </method>
-      <method final="false" abstract="false" static="false" visibility="public" line="383" package="Default">
+      <method final="false" abstract="false" static="false" visibility="public" line="374" package="Default">
         <name>isCrawler</name>
         <docblock>
           <description>Is this a crawler/bot device?</description>
           <long-description>
 </long-description>
-          <tag line="376" name="return" description="False if not a crawler, or the matched pattern if it is." type="mixed">
+          <tag line="367" name="return" description="False if not a crawler, or the matched pattern if it is." type="mixed">
             <type by_reference="false">\Aura\Web\mixed</type>
           </tag>
         </docblock>
       </method>
-      <method final="false" abstract="false" static="false" visibility="public" line="424" package="Default">
-        <name>isCsrf</name>
-        <docblock>
-          <description>Is the current request a cross-site forgery?</description>
-          <long-description>&lt;p&gt;Note: if the key does not exist this method will return true.&lt;/p&gt;
-</long-description>
-          <tag line="411" name="throws" description="If a CSRF library has not been provided." type="\Aura\Web\Exception\Context">
-            <type by_reference="false">\Aura\Web\Exception\Context</type>
-          </tag>
-          <tag line="411" name="param" description="The name of the $_POST key containing the CSRF token." type="string" variable="$key">
-            <type by_reference="false">\Aura\Web\string</type>
-          </tag>
-          <tag line="411" name="return" description="" type="bool">
-            <type by_reference="false">\Aura\Web\bool</type>
-          </tag>
-        </docblock>
-        <argument line="424">
-          <name>$key</name>
-          <default>'__csrf_token'</default>
-          <type/>
-        </argument>
-      </method>
-      <method final="false" abstract="false" static="false" visibility="public" line="447" package="Default">
+      <method final="false" abstract="false" static="false" visibility="public" line="409" package="Default">
         <name>isSsl</name>
         <docblock>
           <description>Is this an SSL request?</description>
           <long-description>
 </long-description>
-          <tag line="440" name="return" description="" type="boolean">
+          <tag line="402" name="return" description="" type="boolean">
             <type by_reference="false">\Aura\Web\boolean</type>
           </tag>
         </docblock>
       </method>
-      <method final="false" abstract="false" static="false" visibility="public" line="466" package="Default">
+      <method final="false" abstract="false" static="false" visibility="public" line="428" package="Default">
         <name>getQuery</name>
         <docblock>
           <description>Retrieves an **unfiltered** value by key from the `$get` property,
 or an alternate default value if that key does not exist.</description>
           <long-description>
 </long-description>
-          <tag line="453" name="param" description="The $get key to retrieve the value of." type="string" variable="$key">
+          <tag line="415" name="param" description="The $get key to retrieve the value of." type="string" variable="$key">
             <type by_reference="false">\Aura\Web\string</type>
           </tag>
-          <tag line="453" name="param" description="The value to return if the key does not exist." type="string" variable="$alt">
+          <tag line="415" name="param" description="The value to return if the key does not exist." type="string" variable="$alt">
             <type by_reference="false">\Aura\Web\string</type>
           </tag>
-          <tag line="453" name="return" description="The value of $get[$key], or the alternate default value." type="mixed">
+          <tag line="415" name="return" description="The value of $get[$key], or the alternate default value." type="mixed">
             <type by_reference="false">\Aura\Web\mixed</type>
           </tag>
         </docblock>
-        <argument line="466">
+        <argument line="428">
           <name>$key</name>
           <default>null</default>
           <type/>
         </argument>
-        <argument line="466">
+        <argument line="428">
           <name>$alt</name>
           <default>null</default>
           <type/>
         </argument>
       </method>
-      <method final="false" abstract="false" static="false" visibility="public" line="484" package="Default">
+      <method final="false" abstract="false" static="false" visibility="public" line="446" package="Default">
         <name>getCookie</name>
         <docblock>
           <description>Retrieves an **unfiltered** value by key from the `$cookie` property,
 or an alternate default value if that key does not exist.</description>
           <long-description>
 </long-description>
-          <tag line="471" name="param" description="The $cookie key to retrieve the value of." type="string" variable="$key">
+          <tag line="433" name="param" description="The $cookie key to retrieve the value of." type="string" variable="$key">
             <type by_reference="false">\Aura\Web\string</type>
           </tag>
-          <tag line="471" name="param" description="The value to return if the key does not exist." type="string" variable="$alt">
+          <tag line="433" name="param" description="The value to return if the key does not exist." type="string" variable="$alt">
             <type by_reference="false">\Aura\Web\string</type>
           </tag>
-          <tag line="471" name="param" description="The value of $cookie[$key], or the alternate default value." type="bool" variable="">
+          <tag line="433" name="param" description="The value of $cookie[$key], or the alternate default value." type="bool" variable="">
             <type by_reference="false">\Aura\Web\bool</type>
           </tag>
         </docblock>
-        <argument line="484">
+        <argument line="446">
           <name>$key</name>
           <default>null</default>
           <type/>
         </argument>
-        <argument line="484">
+        <argument line="446">
           <name>$alt</name>
           <default>null</default>
           <type/>
         </argument>
       </method>
-      <method final="false" abstract="false" static="false" visibility="public" line="502" package="Default">
+      <method final="false" abstract="false" static="false" visibility="public" line="464" package="Default">
         <name>getEnv</name>
         <docblock>
           <description>Retrieves an **unfiltered** value by key from the `$env` property,
 or an alternate default value if that key does not exist.</description>
           <long-description>
 </long-description>
-          <tag line="489" name="param" description="The $env key to retrieve the value of." type="string" variable="$key">
+          <tag line="451" name="param" description="The $env key to retrieve the value of." type="string" variable="$key">
             <type by_reference="false">\Aura\Web\string</type>
           </tag>
-          <tag line="489" name="param" description="The value to return if the key does not exist." type="string" variable="$alt">
+          <tag line="451" name="param" description="The value to return if the key does not exist." type="string" variable="$alt">
             <type by_reference="false">\Aura\Web\string</type>
           </tag>
-          <tag line="489" name="return" description="The value of $env[$key], or the alternate default value." type="mixed">
+          <tag line="451" name="return" description="The value of $env[$key], or the alternate default value." type="mixed">
             <type by_reference="false">\Aura\Web\mixed</type>
           </tag>
         </docblock>
-        <argument line="502">
+        <argument line="464">
           <name>$key</name>
           <default>null</default>
           <type/>
         </argument>
-        <argument line="502">
+        <argument line="464">
           <name>$alt</name>
           <default>null</default>
           <type/>
         </argument>
       </method>
-      <method final="false" abstract="false" static="false" visibility="public" line="520" package="Default">
+      <method final="false" abstract="false" static="false" visibility="public" line="482" package="Default">
         <name>getServer</name>
         <docblock>
           <description>Retrieves an **unfiltered** value by key from the `$server` property,
 or an alternate default value if that key does not exist.</description>
           <long-description>
 </long-description>
-          <tag line="507" name="param" description="The $server key to retrieve the value of." type="string" variable="$key">
+          <tag line="469" name="param" description="The $server key to retrieve the value of." type="string" variable="$key">
             <type by_reference="false">\Aura\Web\string</type>
           </tag>
-          <tag line="507" name="param" description="The value to return if the key does not exist." type="string" variable="$alt">
+          <tag line="469" name="param" description="The value to return if the key does not exist." type="string" variable="$alt">
             <type by_reference="false">\Aura\Web\string</type>
           </tag>
-          <tag line="507" name="return" description="The value of $server[$key], or the alternate default value." type="mixed">
+          <tag line="469" name="return" description="The value of $server[$key], or the alternate default value." type="mixed">
             <type by_reference="false">\Aura\Web\mixed</type>
           </tag>
         </docblock>
-        <argument line="520">
+        <argument line="482">
           <name>$key</name>
           <default>null</default>
           <type/>
         </argument>
-        <argument line="520">
+        <argument line="482">
           <name>$alt</name>
           <default>null</default>
           <type/>
         </argument>
       </method>
-      <method final="false" abstract="false" static="false" visibility="public" line="546" package="Default">
+      <method final="false" abstract="false" static="false" visibility="public" line="508" package="Default">
         <name>getInput</name>
         <docblock>
           <description>Retrieves an **unfiltered** value from a user input.</description>
@@ -3022,56 +1903,56 @@ Files takes precedence over post.&lt;/p&gt;
 &lt;code&gt;$post&lt;/code&gt; and &lt;code&gt;$files&lt;/code&gt; are empty, the raw data from the request body
 is returned.&lt;/p&gt;
 </long-description>
-          <tag line="525" name="param" description="The $post and $files key to retrieve the value of." type="string" variable="$key">
+          <tag line="487" name="param" description="The $post and $files key to retrieve the value of." type="string" variable="$key">
             <type by_reference="false">\Aura\Web\string</type>
           </tag>
-          <tag line="525" name="param" description="The value to return if the key does not exist in either $post or $files." type="string" variable="$alt">
+          <tag line="487" name="param" description="The value to return if the key does not exist in either $post or $files." type="string" variable="$alt">
             <type by_reference="false">\Aura\Web\string</type>
           </tag>
-          <tag line="525" name="return" description="The value of $post[$key] combined with $files[$key], or the raw request body, or the alternate default value." type="mixed">
+          <tag line="487" name="return" description="The value of $post[$key] combined with $files[$key], or the raw request body, or the alternate default value." type="mixed">
             <type by_reference="false">\Aura\Web\mixed</type>
           </tag>
         </docblock>
-        <argument line="546">
+        <argument line="508">
           <name>$key</name>
           <default>null</default>
           <type/>
         </argument>
-        <argument line="546">
+        <argument line="508">
           <name>$alt</name>
           <default>null</default>
           <type/>
         </argument>
       </method>
-      <method final="false" abstract="false" static="false" visibility="public" line="631" package="Default">
+      <method final="false" abstract="false" static="false" visibility="public" line="593" package="Default">
         <name>getHeader</name>
         <docblock>
           <description>Retrieves an **unfiltered** value by key from the `$header` property,
 or an alternate default value if that key does not exist.</description>
           <long-description>
 </long-description>
-          <tag line="618" name="param" description="The $http key to retrieve the value of." type="string" variable="$key">
+          <tag line="580" name="param" description="The $http key to retrieve the value of." type="string" variable="$key">
             <type by_reference="false">\Aura\Web\string</type>
           </tag>
-          <tag line="618" name="param" description="The value to return if the key does not exist." type="string" variable="$alt">
+          <tag line="580" name="param" description="The value to return if the key does not exist." type="string" variable="$alt">
             <type by_reference="false">\Aura\Web\string</type>
           </tag>
-          <tag line="618" name="return" description="The value of $header[$key], or the alternate default value." type="mixed">
+          <tag line="580" name="return" description="The value of $header[$key], or the alternate default value." type="mixed">
             <type by_reference="false">\Aura\Web\mixed</type>
           </tag>
         </docblock>
-        <argument line="631">
+        <argument line="593">
           <name>$key</name>
           <default>null</default>
           <type/>
         </argument>
-        <argument line="631">
+        <argument line="593">
           <name>$alt</name>
           <default>null</default>
           <type/>
         </argument>
       </method>
-      <method final="false" abstract="false" static="false" visibility="protected" line="650" package="Default">
+      <method final="false" abstract="false" static="false" visibility="protected" line="612" package="Default">
         <name>parseAccept</name>
         <docblock>
           <description>Parse an HTTP `Accept*` header and sort by the quality factor, the
@@ -3079,28 +1960,28 @@ highest being first in the returned array. The returned data is
 unfiltered.</description>
           <long-description>
 </long-description>
-          <tag line="637" name="param" description="The name of the accept header to parse." type="string" variable="$header">
+          <tag line="599" name="param" description="The name of the accept header to parse." type="string" variable="$header">
             <type by_reference="false">\Aura\Web\string</type>
           </tag>
-          <tag line="637" name="param" description="The value to return if the key does not exist." type="mixed" variable="$alt">
+          <tag line="599" name="param" description="The value to return if the key does not exist." type="mixed" variable="$alt">
             <type by_reference="false">\Aura\Web\mixed</type>
           </tag>
-          <tag line="637" name="return" description="" type="array">
+          <tag line="599" name="return" description="" type="array">
             <type by_reference="false">\Aura\Web\array</type>
           </tag>
         </docblock>
-        <argument line="650">
+        <argument line="612">
           <name>$accept</name>
           <default/>
           <type/>
         </argument>
-        <argument line="650">
+        <argument line="612">
           <name>$alt</name>
           <default>null</default>
           <type/>
         </argument>
       </method>
-      <method final="false" abstract="false" static="false" visibility="public" line="685" package="Default">
+      <method final="false" abstract="false" static="false" visibility="public" line="647" package="Default">
         <name>getAccept</name>
         <docblock>
           <description>Gets an `Accept` header.  If you want the content-type, ask for
@@ -3108,107 +1989,107 @@ unfiltered.</description>
 `'language'`.</description>
           <long-description>
 </long-description>
-          <tag line="671" name="param" description="The `$accept` key to return; if null, returns the entire `$accept` property." type="string" variable="$key">
+          <tag line="633" name="param" description="The `$accept` key to return; if null, returns the entire `$accept` property." type="string" variable="$key">
             <type by_reference="false">\Aura\Web\string</type>
           </tag>
-          <tag line="671" name="param" description="The value to return if the key does not exist." type="mixed" variable="$alt">
+          <tag line="633" name="param" description="The value to return if the key does not exist." type="mixed" variable="$alt">
             <type by_reference="false">\Aura\Web\mixed</type>
           </tag>
-          <tag line="671" name="return" description="" type="array">
+          <tag line="633" name="return" description="" type="array">
             <type by_reference="false">\Aura\Web\array</type>
           </tag>
         </docblock>
-        <argument line="685">
+        <argument line="647">
           <name>$key</name>
           <default>null</default>
           <type/>
         </argument>
-        <argument line="685">
+        <argument line="647">
           <name>$alt</name>
           <default>null</default>
           <type/>
         </argument>
       </method>
-      <method final="false" abstract="false" static="false" visibility="protected" line="728" package="Default">
+      <method final="false" abstract="false" static="false" visibility="protected" line="690" package="Default">
         <name>setHeader</name>
         <docblock>
           <description>Set the "fake" `$header` property.</description>
           <long-description>
 </long-description>
-          <tag line="721" name="return" description="" type="void">
+          <tag line="683" name="return" description="" type="void">
             <type by_reference="false">\Aura\Web\void</type>
           </tag>
         </docblock>
       </method>
-      <method final="false" abstract="false" static="false" visibility="protected" line="766" package="Default">
+      <method final="false" abstract="false" static="false" visibility="protected" line="728" package="Default">
         <name>httpMethodOverride</name>
         <docblock>
           <description>Overrides the REQUEST_METHOD with X-HTTP-Method-Override header or
 $_POST value.</description>
           <long-description>
 </long-description>
-          <tag line="758" name="return" description="" type="void">
+          <tag line="720" name="return" description="" type="void">
             <type by_reference="false">\Aura\Web\void</type>
           </tag>
         </docblock>
       </method>
-      <method final="false" abstract="false" static="false" visibility="protected" line="803" package="Default">
+      <method final="false" abstract="false" static="false" visibility="protected" line="765" package="Default">
         <name>rebuildFiles</name>
         <docblock>
           <description>Recursive method to rebuild $_FILES structure to be more like $_POST.</description>
           <long-description>
 </long-description>
-          <tag line="790" name="param" description="The source $_FILES array, perhaps from a sub- element of that array/" type="array" variable="$src">
+          <tag line="752" name="param" description="The source $_FILES array, perhaps from a sub- element of that array/" type="array" variable="$src">
             <type by_reference="false">\Aura\Web\array</type>
           </tag>
-          <tag line="790" name="param" description="&amp;$tgt Where we will store the restructured data when we find it." type="array" variable="$tgt">
+          <tag line="752" name="param" description="&amp;$tgt Where we will store the restructured data when we find it." type="array" variable="$tgt">
             <type by_reference="false">\Aura\Web\array</type>
           </tag>
-          <tag line="790" name="return" description="" type="void">
+          <tag line="752" name="return" description="" type="void">
             <type by_reference="false">\Aura\Web\void</type>
           </tag>
         </docblock>
-        <argument line="803">
+        <argument line="765">
           <name>$src</name>
           <default/>
           <type/>
         </argument>
-        <argument line="803">
+        <argument line="765">
           <name>$tgt</name>
           <default/>
           <type/>
         </argument>
       </method>
-      <method final="false" abstract="false" static="false" visibility="protected" line="858" package="Default">
+      <method final="false" abstract="false" static="false" visibility="protected" line="820" package="Default">
         <name>getValue</name>
         <docblock>
           <description>Common method to get a property value and return it.</description>
           <long-description>
 </long-description>
-          <tag line="842" name="param" description="The property variable to fetch from: get, post, etc." type="string" variable="$var">
+          <tag line="804" name="param" description="The property variable to fetch from: get, post, etc." type="string" variable="$var">
             <type by_reference="false">\Aura\Web\string</type>
           </tag>
-          <tag line="842" name="param" description="The array key, if any, to get the value of." type="string" variable="$key">
+          <tag line="804" name="param" description="The array key, if any, to get the value of." type="string" variable="$key">
             <type by_reference="false">\Aura\Web\string</type>
           </tag>
-          <tag line="842" name="param" description="The alternative default value to return if the requested key does not exist." type="string" variable="$alt">
+          <tag line="804" name="param" description="The alternative default value to return if the requested key does not exist." type="string" variable="$alt">
             <type by_reference="false">\Aura\Web\string</type>
           </tag>
-          <tag line="842" name="return" description="The requested value, or the alternative default value." type="mixed">
+          <tag line="804" name="return" description="The requested value, or the alternative default value." type="mixed">
             <type by_reference="false">\Aura\Web\mixed</type>
           </tag>
         </docblock>
-        <argument line="858">
+        <argument line="820">
           <name>$var</name>
           <default/>
           <type/>
         </argument>
-        <argument line="858">
+        <argument line="820">
           <name>$key</name>
           <default/>
           <type/>
         </argument>
-        <argument line="858">
+        <argument line="820">
           <name>$alt</name>
           <default/>
           <type/>
@@ -3216,7 +2097,7 @@ $_POST value.</description>
       </method>
     </class>
   </file>
-  <file path="src/Exception.php" hash="7bf57799f0bc7fc67cd847f0389f51d3" package="Default">
+  <file path="src/Aura/Web/Exception.php" hash="7bf57799f0bc7fc67cd847f0389f51d3" package="Default">
     <docblock>
       <description>This file is part of the Aura project for PHP.</description>
       <long-description>
@@ -3224,7 +2105,7 @@ $_POST value.</description>
       <tag line="2" name="license" description="http://opensource.org/licenses/bsd-license.php BSD"/>
     </docblock>
     <parse_markers>
-      <error line="2">No Page-level DocBlock was found in file src/Exception.php</error>
+      <error line="2">No Page-level DocBlock was found in file src/Aura/Web/Exception.php</error>
       <error line="10">No DocBlock was found for Class Exception</error>
     </parse_markers>
     <class final="false" abstract="false" line="10" namespace="Aura\Web" package="Default">
@@ -3232,264 +2113,6 @@ $_POST value.</description>
       <extends>\Exception</extends>
       <full_name>\Aura\Web\Exception</full_name>
     </class>
-  </file>
-  <file path="src/Csrf.php" hash="d01de7a2051c30e0dde9eef9a8ce91f4" package="Default">
-    <docblock>
-      <description>This file is part of the Aura project for PHP.</description>
-      <long-description>
-</long-description>
-      <tag line="2" name="license" description="http://opensource.org/licenses/bsd-license.php BSD"/>
-    </docblock>
-    <parse_markers>
-      <error line="2">No Page-level DocBlock was found in file src/Csrf.php</error>
-      <notice line="116">Argument $value is missing from the function Docblock</notice>
-    </parse_markers>
-    <class final="false" abstract="false" line="18" namespace="Aura\Web" package="Aura\Web">
-      <name>Csrf</name>
-      <extends/>
-      <full_name>\Aura\Web\Csrf</full_name>
-      <docblock>
-        <description>Generate and validate CSRF tokens.</description>
-        <long-description>
-</long-description>
-        <tag line="11" name="package" description="Aura.Web"/>
-      </docblock>
-      <property final="false" static="false" visibility="protected" line="27" package="Default">
-        <name>$secret_key</name>
-        <default/>
-        <docblock>
-          <description>Unique key for the project, application, or site.</description>
-          <long-description>
-</long-description>
-          <tag line="20" name="var" description="" type="string">
-            <type by_reference="false">\Aura\Web\string</type>
-          </tag>
-        </docblock>
-      </property>
-      <property final="false" static="false" visibility="protected" line="36" package="Default">
-        <name>$user_key</name>
-        <default/>
-        <docblock>
-          <description>Unique key for the user (not a password!).</description>
-          <long-description>
-</long-description>
-          <tag line="29" name="var" description="" type="string">
-            <type by_reference="false">\Aura\Web\string</type>
-          </tag>
-        </docblock>
-      </property>
-      <property final="false" static="false" visibility="protected" line="45" package="Default">
-        <name>$hash_algo</name>
-        <default/>
-        <docblock>
-          <description>The hash algorithm to use.</description>
-          <long-description>
-</long-description>
-          <tag line="38" name="var" description="" type="string">
-            <type by_reference="false">\Aura\Web\string</type>
-          </tag>
-        </docblock>
-      </property>
-      <property final="false" static="false" visibility="protected" line="54" package="Default">
-        <name>$timeout</name>
-        <default/>
-        <docblock>
-          <description>The time, in seconds, before a token expires.</description>
-          <long-description>
-</long-description>
-          <tag line="47" name="var" description="" type="int">
-            <type by_reference="false">\Aura\Web\int</type>
-          </tag>
-        </docblock>
-      </property>
-      <method final="false" abstract="false" static="false" visibility="public" line="76" package="Default">
-        <name>__construct</name>
-        <docblock>
-          <description>NOTE: Each project should have a unique and random $secret_key.</description>
-          <long-description>&lt;p&gt;The $user_key must be something unique to the user and does not change
-between requests. This allows the token to be linked to one user.
-The $user_key could be an email address or the primary key from the users
-table, anything unique to the user, except for passwords will do.&lt;/p&gt;
-</long-description>
-          <tag line="56" name="param" description="Project unique key." type="string" variable="$secret_key">
-            <type by_reference="false">\Aura\Web\string</type>
-          </tag>
-          <tag line="56" name="param" description="Unique key for a user; e.g., an email address." type="mixed" variable="$user_key">
-            <type by_reference="false">\Aura\Web\mixed</type>
-          </tag>
-          <tag line="56" name="param" description="In seconds. Default is 30 minutes." type="integer" variable="$timeout">
-            <type by_reference="false">\Aura\Web\integer</type>
-          </tag>
-          <tag line="56" name="param" description="Hashing algorithm for hash_hmac()." type="string" variable="$hash_algo">
-            <type by_reference="false">\Aura\Web\string</type>
-          </tag>
-          <tag line="56" name="todo" description="cli script to generate random keys"/>
-        </docblock>
-        <argument line="76">
-          <name>$secret_key</name>
-          <default/>
-          <type/>
-        </argument>
-        <argument line="76">
-          <name>$user_key</name>
-          <default/>
-          <type/>
-        </argument>
-        <argument line="76">
-          <name>$timeout</name>
-          <default>1800</default>
-          <type/>
-        </argument>
-        <argument line="76">
-          <name>$hash_algo</name>
-          <default>'sha1'</default>
-          <type/>
-        </argument>
-      </method>
-      <method final="false" abstract="false" static="false" visibility="public" line="95" package="Default">
-        <name>__get</name>
-        <docblock>
-          <description>Magic get to provide access to the hash_algo and timeout variables.</description>
-          <long-description>
-</long-description>
-          <tag line="84" name="throws" description="" type="\UnexpectedValueException">
-            <type by_reference="false">\UnexpectedValueException</type>
-          </tag>
-          <tag line="84" name="param" description="The property to retrieve: hash_algo &amp; timeout." type="string" variable="$key">
-            <type by_reference="false">\Aura\Web\string</type>
-          </tag>
-          <tag line="84" name="return" description="" type="mixed">
-            <type by_reference="false">\Aura\Web\mixed</type>
-          </tag>
-        </docblock>
-        <argument line="95">
-          <name>$key</name>
-          <default/>
-          <type/>
-        </argument>
-      </method>
-      <method final="false" abstract="false" static="false" visibility="public" line="116" package="Default">
-        <name>__set</name>
-        <docblock>
-          <description>Magic set to provide access to the secret_key, hash_algo and timeout
-variables.</description>
-          <long-description>
-</long-description>
-          <tag line="104" name="throws" description="" type="\UnexpectedValueException">
-            <type by_reference="false">\UnexpectedValueException</type>
-          </tag>
-          <tag line="104" name="param" description="The property to set: secret_key, hash_algo &amp; timeout." type="string" variable="$key">
-            <type by_reference="false">\Aura\Web\string</type>
-          </tag>
-          <tag line="104" name="return" description="" type="void">
-            <type by_reference="false">\Aura\Web\void</type>
-          </tag>
-        </docblock>
-        <argument line="116">
-          <name>$key</name>
-          <default/>
-          <type/>
-        </argument>
-        <argument line="116">
-          <name>$value</name>
-          <default/>
-          <type/>
-        </argument>
-      </method>
-      <method final="false" abstract="false" static="false" visibility="public" line="133" package="Default">
-        <name>generateToken</name>
-        <docblock>
-          <description>Generate a CSRF token.</description>
-          <long-description>
-</long-description>
-          <tag line="126" name="return" description="" type="string">
-            <type by_reference="false">\Aura\Web\string</type>
-          </tag>
-        </docblock>
-      </method>
-      <method final="false" abstract="false" static="false" visibility="public" line="167" package="Default">
-        <name>isValidToken</name>
-        <docblock>
-          <description>Test if a token is valid and has not timed out.</description>
-          <long-description>&lt;p&gt;If the incoming token is not propertly formated the exception
-aura\csrf\Exception\MalformedToken will be thrown.&lt;/p&gt;
-</long-description>
-          <tag line="153" name="throws" description="" type="\Aura\Web\Exception\MalformedToken">
-            <type by_reference="false">\Aura\Web\Exception\MalformedToken</type>
-          </tag>
-          <tag line="153" name="param" description="" type="string" variable="$incoming_token">
-            <type by_reference="false">\Aura\Web\string</type>
-          </tag>
-          <tag line="153" name="return" description="" type="boolean">
-            <type by_reference="false">\Aura\Web\boolean</type>
-          </tag>
-        </docblock>
-        <argument line="167">
-          <name>$incoming_token</name>
-          <default/>
-          <type/>
-        </argument>
-      </method>
-    </class>
-  </file>
-  <file path="config/test.php" hash="a5d95d56aaf09a871935f70c16f12211" package="Default">
-    <docblock>
-      <description>Package prefix for autoloader.</description>
-      <long-description>
-</long-description>
-    </docblock>
-    <parse_markers>
-      <error line="2">No Page-level DocBlock was found in file config/test.php</error>
-    </parse_markers>
-  </file>
-  <file path="config/default.php" hash="51a97561e7b34bc37b8756fc85da1798" package="Default">
-    <docblock>
-      <description>Package prefix for autoloader.</description>
-      <long-description>
-</long-description>
-    </docblock>
-    <parse_markers>
-      <error line="2">No Page-level DocBlock was found in file config/default.php</error>
-    </parse_markers>
-    <function namespace="default" line="39" package="Default">
-      <name>Closure</name>
-      <type>closure</type>
-    </function>
-  </file>
-  <file path="src.php" hash="e01cf7caf0fa4f8f5123a0e60df010fc" package="Default">
-    <parse_markers>
-      <error line="1">No DocBlock was found for File src.php</error>
-    </parse_markers>
-    <include type="Require Once" line="2">
-      <name>/src/Context.php</name>
-    </include>
-    <include type="Require Once" line="3">
-      <name>/src/ControllerFactory.php</name>
-    </include>
-    <include type="Require Once" line="4">
-      <name>/src/Csrf.php</name>
-    </include>
-    <include type="Require Once" line="5">
-      <name>/src/Exception.php</name>
-    </include>
-    <include type="Require Once" line="6">
-      <name>/src/Exception/Context.php</name>
-    </include>
-    <include type="Require Once" line="7">
-      <name>/src/Exception/MalformedToken.php</name>
-    </include>
-    <include type="Require Once" line="8">
-      <name>/src/Exception/NoClassForController.php</name>
-    </include>
-    <include type="Require Once" line="9">
-      <name>/src/Exception/NoMethodForAction.php</name>
-    </include>
-    <include type="Require Once" line="10">
-      <name>/src/Page.php</name>
-    </include>
-    <include type="Require Once" line="11">
-      <name>/src/ResponseTransfer.php</name>
-    </include>
   </file>
   <package name="Aura">
     <package name="Web"/>
@@ -3500,7 +2123,6 @@ aura\csrf\Exception\MalformedToken will be thrown.&lt;/p&gt;
       <namespace name="Exception"/>
     </namespace>
   </namespace>
-  <namespace name="default"/>
   <marker>todo</marker>
   <marker>fixme</marker>
 </project>

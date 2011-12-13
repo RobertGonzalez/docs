@@ -1,371 +1,6 @@
 <?xml version="1.0"?>
 <project version="0.16.0" title="Aura Project for PHP: Aura.Http">
-  <file path="scripts/instance.php" hash="045738b43893e1055ca1bd8c6d431a8e" package="Default">
-    <parse_markers>
-      <error line="1">No DocBlock was found for File scripts/instance.php</error>
-    </parse_markers>
-    <include type="Require" line="3">
-      <name>Unknown</name>
-    </include>
-  </file>
-  <file path="tests/ResponseTest.php" hash="3e2974ec112c13f3aa58fe31f78006f3" package="Default">
-    <parse_markers>
-      <error line="1">No DocBlock was found for File tests/ResponseTest.php</error>
-      <error line="25">No DocBlock was found for Class ResponseTest</error>
-      <error line="27">No DocBlock was found for Property $callback</error>
-      <error line="28">No DocBlock was found for Property $headers_sent</error>
-      <error line="29">No DocBlock was found for Property $header_expect</error>
-      <error line="30">No DocBlock was found for Property $cookie_expect</error>
-      <error line="32">No DocBlock was found for Property $response</error>
-      <error line="34">No DocBlock was found for Method setUp</error>
-      <error line="43">No DocBlock was found for Method newResponse</error>
-      <error line="53">No DocBlock was found for Method test__get</error>
-      <error line="60">No DocBlock was found for Method test__getNoSuchProperty</error>
-      <error line="67">No DocBlock was found for Method testSetVersion</error>
-      <error line="75">No DocBlock was found for Method testSetVersionExceptionOnInvalidVersion</error>
-      <error line="82">No DocBlock was found for Method testGetVersion</error>
-      <error line="89">No DocBlock was found for Method testSetStatusCode</error>
-      <error line="97">No DocBlock was found for Method testSetStatusCodeNoDefaultText</error>
-      <error line="107">No DocBlock was found for Method testSetStatusCodeExceptionLessThan100</error>
-      <error line="114">No DocBlock was found for Method testSetStatusCodeExceptionGreaterThan599</error>
-      <error line="121">No DocBlock was found for Method testSetStatusText</error>
-      <error line="129">No DocBlock was found for Method testGetStatusCode</error>
-      <error line="136">No DocBlock was found for Method testGetStatusText</error>
-      <error line="147">No DocBlock was found for Method testSetAndGetHeaders</error>
-      <error line="156">No DocBlock was found for Method testSetContent</error>
-      <error line="164">No DocBlock was found for Method testGetContent</error>
-      <error line="175">No DocBlock was found for Method testSetAndGetCookies</error>
-      <error line="184">No DocBlock was found for Method testSendHeaders</error>
-      <error line="209">No DocBlock was found for Method testSendHeadersAlreadySent</error>
-      <error line="217">No DocBlock was found for Method testSend</error>
-      <error line="230">No DocBlock was found for Method testSend_resource</error>
-    </parse_markers>
-    <class final="false" abstract="false" line="25" namespace="Aura\Http" package="Default">
-      <name>ResponseTest</name>
-      <extends>\PHPUnit_Framework_TestCase</extends>
-      <full_name>\Aura\Http\ResponseTest</full_name>
-      <property final="false" static="true" visibility="public" line="27" package="Default">
-        <name>$callback</name>
-        <default/>
-      </property>
-      <property final="false" static="true" visibility="public" line="28" package="Default">
-        <name>$headers_sent</name>
-        <default>false</default>
-      </property>
-      <property final="false" static="false" visibility="protected" line="29" package="Default">
-        <name>$header_expect</name>
-        <default>array()</default>
-      </property>
-      <property final="false" static="false" visibility="protected" line="30" package="Default">
-        <name>$cookie_expect</name>
-        <default>array()</default>
-      </property>
-      <property final="false" static="false" visibility="protected" line="32" package="Default">
-        <name>$response</name>
-        <default/>
-      </property>
-      <method final="false" abstract="false" static="false" visibility="protected" line="34" package="Default">
-        <name>setUp</name>
-      </method>
-      <method final="false" abstract="false" static="false" visibility="protected" line="43" package="Default">
-        <name>newResponse</name>
-      </method>
-      <method final="false" abstract="false" static="false" visibility="public" line="53" package="Default">
-        <name>test__get</name>
-      </method>
-      <method final="false" abstract="false" static="false" visibility="public" line="60" package="Default">
-        <name>test__getNoSuchProperty</name>
-      </method>
-      <method final="false" abstract="false" static="false" visibility="public" line="67" package="Default">
-        <name>testSetVersion</name>
-      </method>
-      <method final="false" abstract="false" static="false" visibility="public" line="75" package="Default">
-        <name>testSetVersionExceptionOnInvalidVersion</name>
-      </method>
-      <method final="false" abstract="false" static="false" visibility="public" line="82" package="Default">
-        <name>testGetVersion</name>
-      </method>
-      <method final="false" abstract="false" static="false" visibility="public" line="89" package="Default">
-        <name>testSetStatusCode</name>
-      </method>
-      <method final="false" abstract="false" static="false" visibility="public" line="97" package="Default">
-        <name>testSetStatusCodeNoDefaultText</name>
-      </method>
-      <method final="false" abstract="false" static="false" visibility="public" line="107" package="Default">
-        <name>testSetStatusCodeExceptionLessThan100</name>
-      </method>
-      <method final="false" abstract="false" static="false" visibility="public" line="114" package="Default">
-        <name>testSetStatusCodeExceptionGreaterThan599</name>
-      </method>
-      <method final="false" abstract="false" static="false" visibility="public" line="121" package="Default">
-        <name>testSetStatusText</name>
-      </method>
-      <method final="false" abstract="false" static="false" visibility="public" line="129" package="Default">
-        <name>testGetStatusCode</name>
-      </method>
-      <method final="false" abstract="false" static="false" visibility="public" line="136" package="Default">
-        <name>testGetStatusText</name>
-      </method>
-      <method final="false" abstract="false" static="false" visibility="public" line="147" package="Default">
-        <name>testSetAndGetHeaders</name>
-      </method>
-      <method final="false" abstract="false" static="false" visibility="public" line="156" package="Default">
-        <name>testSetContent</name>
-      </method>
-      <method final="false" abstract="false" static="false" visibility="public" line="164" package="Default">
-        <name>testGetContent</name>
-      </method>
-      <method final="false" abstract="false" static="false" visibility="public" line="175" package="Default">
-        <name>testSetAndGetCookies</name>
-      </method>
-      <method final="false" abstract="false" static="false" visibility="public" line="184" package="Default">
-        <name>testSendHeaders</name>
-      </method>
-      <method final="false" abstract="false" static="false" visibility="public" line="209" package="Default">
-        <name>testSendHeadersAlreadySent</name>
-      </method>
-      <method final="false" abstract="false" static="false" visibility="public" line="217" package="Default">
-        <name>testSend</name>
-      </method>
-      <method final="false" abstract="false" static="false" visibility="public" line="230" package="Default">
-        <name>testSend_resource</name>
-      </method>
-    </class>
-  </file>
-  <file path="tests/CookiesTest.php" hash="65ee60dc63344035e2542cbf57162901" package="Default">
-    <parse_markers>
-      <error line="1">No DocBlock was found for File tests/CookiesTest.php</error>
-      <critical line="10">No short description for property $cookies</critical>
-      <critical line="35">No short description for method testSetAndGetAll</critical>
-      <critical line="73">No short description for method testSend</critical>
-    </parse_markers>
-    <class final="false" abstract="false" line="8" namespace="Aura\Http" package="Default">
-      <name>CookiesTest</name>
-      <extends>\PHPUnit_Framework_TestCase</extends>
-      <full_name>\Aura\Http\CookiesTest</full_name>
-      <docblock>
-        <description>Test class for Cookies.</description>
-        <long-description>&lt;p&gt;Generated by PHPUnit on 2011-05-10 at 11:16:02.&lt;/p&gt;
-</long-description>
-      </docblock>
-      <property final="false" static="false" visibility="protected" line="13" package="Default">
-        <name>$cookies</name>
-        <default/>
-        <docblock>
-          <description/>
-          <long-description>
-</long-description>
-          <tag line="10" name="var" description="" type="\Aura\Http\Cookies">
-            <type by_reference="false">\Aura\Http\Cookies</type>
-          </tag>
-        </docblock>
-      </property>
-      <method final="false" abstract="false" static="false" visibility="protected" line="19" package="Default">
-        <name>setUp</name>
-        <docblock>
-          <description>Sets up the fixture, for example, opens a network connection.</description>
-          <long-description>&lt;p&gt;This method is called before a test is executed.&lt;/p&gt;
-</long-description>
-        </docblock>
-      </method>
-      <method final="false" abstract="false" static="false" visibility="protected" line="30" package="Default">
-        <name>tearDown</name>
-        <docblock>
-          <description>Tears down the fixture, for example, closes a network connection.</description>
-          <long-description>&lt;p&gt;This method is called after a test is executed.&lt;/p&gt;
-</long-description>
-        </docblock>
-      </method>
-      <method final="false" abstract="false" static="false" visibility="public" line="38" package="Default">
-        <name>testSetAndGetAll</name>
-        <docblock>
-          <description/>
-          <long-description>
-</long-description>
-          <tag line="35" name="todo" description="Implement testGetAll()."/>
-        </docblock>
-      </method>
-      <method final="false" abstract="false" static="false" visibility="public" line="76" package="Default">
-        <name>testSend</name>
-        <docblock>
-          <description/>
-          <long-description>
-</long-description>
-          <tag line="73" name="todo" description="Implement testSend()."/>
-        </docblock>
-      </method>
-    </class>
-  </file>
-  <file path="tests/HeadersTest.php" hash="eabc6ecf4e1e4bfac30a5e2bae675275" package="Default">
-    <parse_markers>
-      <error line="1">No DocBlock was found for File tests/HeadersTest.php</error>
-      <critical line="10">No short description for property $headers</critical>
-      <critical line="35">No short description for method testSetAndAdd</critical>
-      <critical line="58">No short description for method testSetAndGetAll</critical>
-      <critical line="83">No short description for method testSend</critical>
-    </parse_markers>
-    <class final="false" abstract="false" line="8" namespace="Aura\Http" package="Default">
-      <name>HeadersTest</name>
-      <extends>\PHPUnit_Framework_TestCase</extends>
-      <full_name>\Aura\Http\HeadersTest</full_name>
-      <docblock>
-        <description>Test class for Headers.</description>
-        <long-description>&lt;p&gt;Generated by PHPUnit on 2011-05-10 at 11:16:06.&lt;/p&gt;
-</long-description>
-      </docblock>
-      <property final="false" static="false" visibility="protected" line="13" package="Default">
-        <name>$headers</name>
-        <default/>
-        <docblock>
-          <description/>
-          <long-description>
-</long-description>
-          <tag line="10" name="var" description="" type="\Aura\Http\Headers">
-            <type by_reference="false">\Aura\Http\Headers</type>
-          </tag>
-        </docblock>
-      </property>
-      <method final="false" abstract="false" static="false" visibility="protected" line="19" package="Default">
-        <name>setUp</name>
-        <docblock>
-          <description>Sets up the fixture, for example, opens a network connection.</description>
-          <long-description>&lt;p&gt;This method is called before a test is executed.&lt;/p&gt;
-</long-description>
-        </docblock>
-      </method>
-      <method final="false" abstract="false" static="false" visibility="protected" line="30" package="Default">
-        <name>tearDown</name>
-        <docblock>
-          <description>Tears down the fixture, for example, closes a network connection.</description>
-          <long-description>&lt;p&gt;This method is called after a test is executed.&lt;/p&gt;
-</long-description>
-        </docblock>
-      </method>
-      <method final="false" abstract="false" static="false" visibility="public" line="38" package="Default">
-        <name>testSetAndAdd</name>
-        <docblock>
-          <description/>
-          <long-description>
-</long-description>
-          <tag line="35" name="todo" description="Implement testSet()."/>
-        </docblock>
-      </method>
-      <method final="false" abstract="false" static="false" visibility="public" line="61" package="Default">
-        <name>testSetAndGetAll</name>
-        <docblock>
-          <description/>
-          <long-description>
-</long-description>
-          <tag line="58" name="todo" description="Implement testGetAll()."/>
-        </docblock>
-      </method>
-      <method final="false" abstract="false" static="false" visibility="public" line="86" package="Default">
-        <name>testSend</name>
-        <docblock>
-          <description/>
-          <long-description>
-</long-description>
-          <tag line="83" name="todo" description="Implement testSend()."/>
-        </docblock>
-      </method>
-    </class>
-  </file>
-  <file path="tests/MockHttp.php" hash="0745ad6d1b644947f4835c0a2f5ca517" package="Default">
-    <parse_markers>
-      <error line="1">No DocBlock was found for File tests/MockHttp.php</error>
-      <error line="5">No DocBlock was found for Function header</error>
-      <error line="12">No DocBlock was found for Function headers_sent</error>
-      <error line="24">No DocBlock was found for Function setcookie</error>
-      <error line="39">No DocBlock was found for Class MockHttp</error>
-      <error line="41">No DocBlock was found for Property $headers</error>
-      <error line="42">No DocBlock was found for Property $cookies</error>
-      <error line="43">No DocBlock was found for Property $headers_sent</error>
-      <error line="44">No DocBlock was found for Method reset</error>
-    </parse_markers>
-    <function namespace="Aura\Http" line="5" package="Default">
-      <name>header</name>
-      <type>function</type>
-      <argument line="5">
-        <name>$string</name>
-        <default/>
-        <type/>
-      </argument>
-    </function>
-    <function namespace="Aura\Http" line="12" package="Default">
-      <name>headers_sent</name>
-      <type>function</type>
-      <argument line="12">
-        <name>$file</name>
-        <default/>
-        <type/>
-      </argument>
-      <argument line="12">
-        <name>$line</name>
-        <default/>
-        <type/>
-      </argument>
-    </function>
-    <function namespace="Aura\Http" line="24" package="Default">
-      <name>setcookie</name>
-      <type>function</type>
-      <argument line="24">
-        <name>$name</name>
-        <default/>
-        <type/>
-      </argument>
-      <argument line="24">
-        <name>$value</name>
-        <default/>
-        <type/>
-      </argument>
-      <argument line="24">
-        <name>$expire</name>
-        <default>0</default>
-        <type/>
-      </argument>
-      <argument line="24">
-        <name>$path</name>
-        <default>null</default>
-        <type/>
-      </argument>
-      <argument line="25">
-        <name>$domain</name>
-        <default>null</default>
-        <type/>
-      </argument>
-      <argument line="25">
-        <name>$secure</name>
-        <default>false</default>
-        <type/>
-      </argument>
-      <argument line="25">
-        <name>$httponly</name>
-        <default>false</default>
-        <type/>
-      </argument>
-    </function>
-    <class final="false" abstract="false" line="39" namespace="Aura\Http" package="Default">
-      <name>MockHttp</name>
-      <extends/>
-      <full_name>\Aura\Http\MockHttp</full_name>
-      <property final="false" static="true" visibility="public" line="41" package="Default">
-        <name>$headers</name>
-        <default>array()</default>
-      </property>
-      <property final="false" static="true" visibility="public" line="42" package="Default">
-        <name>$cookies</name>
-        <default>array()</default>
-      </property>
-      <property final="false" static="true" visibility="public" line="43" package="Default">
-        <name>$headers_sent</name>
-        <default>false</default>
-      </property>
-      <method final="false" abstract="false" static="true" visibility="public" line="44" package="Default">
-        <name>reset</name>
-      </method>
-    </class>
-  </file>
-  <file path="src/Headers.php" hash="7881bb8d762ed32e335fcef6092ae60f" package="Default">
+  <file path="src/Aura/Http/Headers.php" hash="7881bb8d762ed32e335fcef6092ae60f" package="Default">
     <docblock>
       <description>This file is part of the Aura Project for PHP.</description>
       <long-description>
@@ -373,7 +8,7 @@
       <tag line="2" name="license" description="http://opensource.org/licenses/bsd-license.php BSD"/>
     </docblock>
     <parse_markers>
-      <error line="2">No Page-level DocBlock was found in file src/Headers.php</error>
+      <error line="2">No Page-level DocBlock was found in file src/Aura/Http/Headers.php</error>
       <error line="20">No DocBlock was found for Property $list</error>
       <error line="22">No DocBlock was found for Method add</error>
       <error line="28">No DocBlock was found for Method set</error>
@@ -458,9 +93,9 @@
       </method>
     </class>
   </file>
-  <file path="src/Exception/HeadersSent.php" hash="6a3651147370f87bfda5591af3d8c389" package="Default">
+  <file path="src/Aura/Http/Exception/HeadersSent.php" hash="6a3651147370f87bfda5591af3d8c389" package="Default">
     <parse_markers>
-      <error line="1">No DocBlock was found for File src/Exception/HeadersSent.php</error>
+      <error line="1">No DocBlock was found for File src/Aura/Http/Exception/HeadersSent.php</error>
       <error line="5">No DocBlock was found for Class HeadersSent</error>
       <error line="7">No DocBlock was found for Method __construct</error>
     </parse_markers>
@@ -483,9 +118,9 @@
       </method>
     </class>
   </file>
-  <file path="src/Response.php" hash="6235ec9c9b80b1747d1090d1749415f7" package="Default">
+  <file path="src/Aura/Http/Response.php" hash="6235ec9c9b80b1747d1090d1749415f7" package="Default">
     <parse_markers>
-      <error line="1">No DocBlock was found for File src/Response.php</error>
+      <error line="1">No DocBlock was found for File src/Aura/Http/Response.php</error>
       <error line="3">No DocBlock was found for Class Response</error>
       <error line="5">No DocBlock was found for Property $cookies</error>
       <error line="7">No DocBlock was found for Property $content</error>
@@ -730,7 +365,7 @@
       </method>
     </class>
   </file>
-  <file path="src/Cookies.php" hash="46d6bc3990e451a2e7b5f6f5a188d17a" package="Default">
+  <file path="src/Aura/Http/Cookies.php" hash="46d6bc3990e451a2e7b5f6f5a188d17a" package="Default">
     <docblock>
       <description>This file is part of the Aura Project for PHP.</description>
       <long-description>
@@ -738,7 +373,7 @@
       <tag line="2" name="license" description="http://opensource.org/licenses/bsd-license.php BSD"/>
     </docblock>
     <parse_markers>
-      <error line="2">No Page-level DocBlock was found in file src/Cookies.php</error>
+      <error line="2">No Page-level DocBlock was found in file src/Aura/Http/Cookies.php</error>
       <error line="20">No DocBlock was found for Property $list</error>
       <error line="23">No DocBlock was found for Property $base</error>
       <error line="32">No DocBlock was found for Method set</error>
@@ -794,9 +429,9 @@
       </method>
     </class>
   </file>
-  <file path="src/Exception.php" hash="62e33aa65c754a672914499b6c21ac85" package="Default">
+  <file path="src/Aura/Http/Exception.php" hash="62e33aa65c754a672914499b6c21ac85" package="Default">
     <parse_markers>
-      <error line="1">No DocBlock was found for File src/Exception.php</error>
+      <error line="1">No DocBlock was found for File src/Aura/Http/Exception.php</error>
       <error line="6">No DocBlock was found for Class Exception</error>
     </parse_markers>
     <class final="false" abstract="false" line="6" namespace="Aura\Http" package="Default">
@@ -804,55 +439,6 @@
       <extends>\Exception</extends>
       <full_name>\Aura\Http\Exception</full_name>
     </class>
-  </file>
-  <file path="config/test.php" hash="8435b209576f9216da04e6d3567e9bed" package="Default">
-    <docblock>
-      <description>Package prefix for autoloader.</description>
-      <long-description>
-</long-description>
-    </docblock>
-    <parse_markers>
-      <error line="2">No Page-level DocBlock was found in file config/test.php</error>
-    </parse_markers>
-  </file>
-  <file path="config/default.php" hash="37452811dfb337e2d19528426c1f3674" package="Default">
-    <docblock>
-      <description>Package prefix for autoloader.</description>
-      <long-description>
-</long-description>
-    </docblock>
-    <parse_markers>
-      <error line="2">No Page-level DocBlock was found in file config/default.php</error>
-    </parse_markers>
-    <function namespace="default" line="18" package="Default">
-      <name>Closure</name>
-      <type>closure</type>
-      <docblock>
-        <description>Dependency services.</description>
-        <long-description>
-</long-description>
-      </docblock>
-    </function>
-  </file>
-  <file path="src.php" hash="621283324fd17d91dcdcab4b61512e9d" package="Default">
-    <parse_markers>
-      <error line="1">No DocBlock was found for File src.php</error>
-    </parse_markers>
-    <include type="Require Once" line="2">
-      <name>/src/Cookies.php</name>
-    </include>
-    <include type="Require Once" line="3">
-      <name>/src/Exception.php</name>
-    </include>
-    <include type="Require Once" line="4">
-      <name>/src/Exception/HeadersSent.php</name>
-    </include>
-    <include type="Require Once" line="5">
-      <name>/src/Headers.php</name>
-    </include>
-    <include type="Require Once" line="6">
-      <name>/src/Response.php</name>
-    </include>
   </file>
   <package name="Aura">
     <package name="Http"/>
@@ -863,7 +449,6 @@
       <namespace name="Exception"/>
     </namespace>
   </namespace>
-  <namespace name="default"/>
   <marker>todo</marker>
   <marker>fixme</marker>
 </project>

@@ -1,483 +1,6 @@
 <?xml version="1.0"?>
 <project version="0.16.0" title="Aura Project for PHP: Aura.Di">
-  <file path="scripts/instance.php" hash="78441c0e3df2bf52e8bb2d6e843c8cf2" package="Default">
-    <parse_markers>
-      <error line="1">No DocBlock was found for File scripts/instance.php</error>
-    </parse_markers>
-    <include type="Require Once" line="3">
-      <name>/src.php</name>
-    </include>
-  </file>
-  <file path="tests/ConfigTest.php" hash="8a6b3660e9e84adb3d4aefe8e4e6a2a7" package="Default">
-    <parse_markers>
-      <error line="1">No DocBlock was found for File tests/ConfigTest.php</error>
-      <error line="9">No DocBlock was found for Property $config</error>
-      <error line="11">No DocBlock was found for Method setUp</error>
-      <error line="17">No DocBlock was found for Method testFetchReadsConstructorDefaults</error>
-      <error line="34">No DocBlock was found for Method testFetchCapturesParentParams</error>
-      <error line="45">No DocBlock was found for Method testFetchCapturesExplicitParams</error>
-      <error line="56">No DocBlock was found for Method testFetchHonorsExplicitParentParams</error>
-      <error line="74">No DocBlock was found for Method testGetReflection</error>
-      <error line="82">No DocBlock was found for Method testFetchCapturesParentSetter</error>
-      <error line="93">No DocBlock was found for Method testFetchCapturesOverrideSetter</error>
-      <error line="104">No DocBlock was found for Method testClone</error>
-    </parse_markers>
-    <class final="false" abstract="false" line="7" namespace="Aura\Di" package="Default">
-      <name>ConfigTest</name>
-      <extends>\PHPUnit_Framework_TestCase</extends>
-      <full_name>\Aura\Di\ConfigTest</full_name>
-      <docblock>
-        <description>Test class for Config.</description>
-        <long-description>
-</long-description>
-      </docblock>
-      <property final="false" static="false" visibility="protected" line="9" package="Default">
-        <name>$config</name>
-        <default/>
-      </property>
-      <method final="false" abstract="false" static="false" visibility="protected" line="11" package="Default">
-        <name>setUp</name>
-      </method>
-      <method final="false" abstract="false" static="false" visibility="public" line="17" package="Default">
-        <name>testFetchReadsConstructorDefaults</name>
-      </method>
-      <method final="false" abstract="false" static="false" visibility="public" line="27" package="Default">
-        <name>testFetchTwiceForMerge</name>
-        <docblock>
-          <description>coverage for the "merged already" portion of the fetch() method</description>
-          <long-description>
-</long-description>
-        </docblock>
-      </method>
-      <method final="false" abstract="false" static="false" visibility="public" line="34" package="Default">
-        <name>testFetchCapturesParentParams</name>
-      </method>
-      <method final="false" abstract="false" static="false" visibility="public" line="45" package="Default">
-        <name>testFetchCapturesExplicitParams</name>
-      </method>
-      <method final="false" abstract="false" static="false" visibility="public" line="56" package="Default">
-        <name>testFetchHonorsExplicitParentParams</name>
-      </method>
-      <method final="false" abstract="false" static="false" visibility="public" line="74" package="Default">
-        <name>testGetReflection</name>
-      </method>
-      <method final="false" abstract="false" static="false" visibility="public" line="82" package="Default">
-        <name>testFetchCapturesParentSetter</name>
-      </method>
-      <method final="false" abstract="false" static="false" visibility="public" line="93" package="Default">
-        <name>testFetchCapturesOverrideSetter</name>
-      </method>
-      <method final="false" abstract="false" static="false" visibility="public" line="104" package="Default">
-        <name>testClone</name>
-      </method>
-    </class>
-  </file>
-  <file path="tests/ContainerTest.php" hash="be4f9a99046391b58329c044f1eb2ce6" package="Default">
-    <parse_markers>
-      <error line="1">No DocBlock was found for File tests/ContainerTest.php</error>
-      <critical line="9">No short description for property $container</critical>
-      <error line="14">No DocBlock was found for Property $config</error>
-      <error line="16">No DocBlock was found for Property $forge</error>
-      <critical line="39">No short description for method testHasGet</critical>
-      <critical line="54">No short description for method testInitInvalidService</critical>
-      <critical line="62">No short description for method testGetNoSuchService</critical>
-      <error line="70">No DocBlock was found for Method testGetServiceInsideClosure</error>
-      <critical line="81">No short description for method testGetDefsAndServices</critical>
-      <error line="100">No DocBlock was found for Method testLazyGet</error>
-      <error line="115">No DocBlock was found for Method testMagicGet</error>
-      <critical line="121">No short description for method testMagicGetNoSuchProperty</critical>
-      <critical line="129">No short description for method testNewInstanceWithDefaults</critical>
-      <error line="140">No DocBlock was found for Method testNewInstanceWithOverride</error>
-      <error line="154">No DocBlock was found for Method testLazyNew</error>
-      <error line="162">No DocBlock was found for Method testClone</error>
-      <critical line="168">No short description for method testLockedConfig</critical>
-      <critical line="177">No short description for method testLockedSet</critical>
-    </parse_markers>
-    <class final="false" abstract="false" line="7" namespace="Aura\Di" package="Default">
-      <name>ContainerTest</name>
-      <extends>\PHPUnit_Framework_TestCase</extends>
-      <full_name>\Aura\Di\ContainerTest</full_name>
-      <docblock>
-        <description>Test class for Dependency.</description>
-        <long-description>
-</long-description>
-      </docblock>
-      <property final="false" static="false" visibility="protected" line="12" package="Default">
-        <name>$container</name>
-        <default/>
-        <docblock>
-          <description/>
-          <long-description>
-</long-description>
-          <tag line="9" name="var" description="" type="\Aura\Di\Container">
-            <type by_reference="false">\Aura\Di\Container</type>
-          </tag>
-        </docblock>
-      </property>
-      <property final="false" static="false" visibility="protected" line="14" package="Default">
-        <name>$config</name>
-        <default/>
-      </property>
-      <property final="false" static="false" visibility="protected" line="16" package="Default">
-        <name>$forge</name>
-        <default/>
-      </property>
-      <method final="false" abstract="false" static="false" visibility="protected" line="22" package="Default">
-        <name>setUp</name>
-        <docblock>
-          <description>Sets up the fixture, for example, opens a network connection.</description>
-          <long-description>&lt;p&gt;This method is called before a test is executed.&lt;/p&gt;
-</long-description>
-        </docblock>
-      </method>
-      <method final="false" abstract="false" static="false" visibility="protected" line="34" package="Default">
-        <name>tearDown</name>
-        <docblock>
-          <description>Tears down the fixture, for example, closes a network connection.</description>
-          <long-description>&lt;p&gt;This method is called after a test is executed.&lt;/p&gt;
-</long-description>
-        </docblock>
-      </method>
-      <method final="false" abstract="false" static="false" visibility="public" line="42" package="Default">
-        <name>testHasGet</name>
-        <docblock>
-          <description/>
-          <long-description>
-</long-description>
-          <tag line="39" name="todo" description="Implement testHas()."/>
-        </docblock>
-      </method>
-      <method final="false" abstract="false" static="false" visibility="public" line="57" package="Default">
-        <name>testInitInvalidService</name>
-        <docblock>
-          <description/>
-          <long-description>
-</long-description>
-          <tag line="54" name="expectedException" description="Aura\Di\Exception\ServiceInvalid"/>
-        </docblock>
-      </method>
-      <method final="false" abstract="false" static="false" visibility="public" line="65" package="Default">
-        <name>testGetNoSuchService</name>
-        <docblock>
-          <description/>
-          <long-description>
-</long-description>
-          <tag line="62" name="expectedException" description="Aura\Di\Exception\ServiceNotFound"/>
-        </docblock>
-      </method>
-      <method final="false" abstract="false" static="false" visibility="public" line="70" package="Default">
-        <name>testGetServiceInsideClosure</name>
-      </method>
-      <method final="false" abstract="false" static="false" visibility="public" line="84" package="Default">
-        <name>testGetDefsAndServices</name>
-        <docblock>
-          <description/>
-          <long-description>
-</long-description>
-          <tag line="81" name="todo" description="Implement testGetServices()."/>
-        </docblock>
-      </method>
-      <method final="false" abstract="false" static="false" visibility="public" line="100" package="Default">
-        <name>testLazyGet</name>
-      </method>
-      <method final="false" abstract="false" static="false" visibility="public" line="115" package="Default">
-        <name>testMagicGet</name>
-      </method>
-      <method final="false" abstract="false" static="false" visibility="public" line="124" package="Default">
-        <name>testMagicGetNoSuchProperty</name>
-        <docblock>
-          <description/>
-          <long-description>
-</long-description>
-          <tag line="121" name="expectedException" description="\UnexpectedValueException"/>
-        </docblock>
-      </method>
-      <method final="false" abstract="false" static="false" visibility="public" line="132" package="Default">
-        <name>testNewInstanceWithDefaults</name>
-        <docblock>
-          <description/>
-          <long-description>
-</long-description>
-          <tag line="129" name="todo" description="Implement testNewInstance()."/>
-        </docblock>
-      </method>
-      <method final="false" abstract="false" static="false" visibility="public" line="140" package="Default">
-        <name>testNewInstanceWithOverride</name>
-      </method>
-      <method final="false" abstract="false" static="false" visibility="public" line="154" package="Default">
-        <name>testLazyNew</name>
-      </method>
-      <method final="false" abstract="false" static="false" visibility="public" line="162" package="Default">
-        <name>testClone</name>
-      </method>
-      <method final="false" abstract="false" static="false" visibility="public" line="171" package="Default">
-        <name>testLockedConfig</name>
-        <docblock>
-          <description/>
-          <long-description>
-</long-description>
-          <tag line="168" name="expectedException" description="Aura\Di\Exception\ContainerLocked"/>
-        </docblock>
-      </method>
-      <method final="false" abstract="false" static="false" visibility="public" line="180" package="Default">
-        <name>testLockedSet</name>
-        <docblock>
-          <description/>
-          <long-description>
-</long-description>
-          <tag line="177" name="expectedException" description="Aura\Di\Exception\ContainerLocked"/>
-        </docblock>
-      </method>
-    </class>
-  </file>
-  <file path="tests/MockOtherClass.php" hash="25174cf88be412846f71dda2415b0d9d" package="Default">
-    <parse_markers>
-      <error line="1">No DocBlock was found for File tests/MockOtherClass.php</error>
-      <error line="3">No DocBlock was found for Class MockOtherClass</error>
-    </parse_markers>
-    <class final="false" abstract="false" line="3" namespace="Aura\Di" package="Default">
-      <name>MockOtherClass</name>
-      <extends/>
-      <full_name>\Aura\Di\MockOtherClass</full_name>
-    </class>
-  </file>
-  <file path="tests/ManagerTest.php" hash="ec8785d8b120bb3ce45e7ca398528574" package="Default">
-    <parse_markers>
-      <error line="1">No DocBlock was found for File tests/ManagerTest.php</error>
-      <error line="4">No DocBlock was found for Class ManagerTest</error>
-      <error line="6">No DocBlock was found for Property $config</error>
-      <error line="8">No DocBlock was found for Property $forge</error>
-      <error line="10">No DocBlock was found for Property $manager</error>
-      <error line="12">No DocBlock was found for Method setUp</error>
-      <error line="20">No DocBlock was found for Method tearDown</error>
-      <error line="25">No DocBlock was found for Method testNewAndGetContainer</error>
-      <critical line="43">No short description for method testNewContainerExists</critical>
-      <critical line="52">No short description for method testGetContainerNotFound</critical>
-      <error line="60">No DocBlock was found for Method testLock</error>
-      <error line="71">No DocBlock was found for Method testCloneContainer</error>
-      <error line="84">No DocBlock was found for Method testLazyCloneContainer</error>
-      <error line="97">No DocBlock was found for Method testSubContainer</error>
-    </parse_markers>
-    <class final="false" abstract="false" line="4" namespace="Aura\Di" package="Default">
-      <name>ManagerTest</name>
-      <extends>\PHPUnit_Framework_TestCase</extends>
-      <full_name>\Aura\Di\ManagerTest</full_name>
-      <property final="false" static="false" visibility="protected" line="6" package="Default">
-        <name>$config</name>
-        <default/>
-      </property>
-      <property final="false" static="false" visibility="protected" line="8" package="Default">
-        <name>$forge</name>
-        <default/>
-      </property>
-      <property final="false" static="false" visibility="protected" line="10" package="Default">
-        <name>$manager</name>
-        <default/>
-      </property>
-      <method final="false" abstract="false" static="false" visibility="protected" line="12" package="Default">
-        <name>setUp</name>
-      </method>
-      <method final="false" abstract="false" static="false" visibility="protected" line="20" package="Default">
-        <name>tearDown</name>
-      </method>
-      <method final="false" abstract="false" static="false" visibility="public" line="25" package="Default">
-        <name>testNewAndGetContainer</name>
-      </method>
-      <method final="false" abstract="false" static="false" visibility="public" line="46" package="Default">
-        <name>testNewContainerExists</name>
-        <docblock>
-          <description/>
-          <long-description>
-</long-description>
-          <tag line="43" name="expectedException" description="Aura\Di\Exception\ContainerExists"/>
-        </docblock>
-      </method>
-      <method final="false" abstract="false" static="false" visibility="public" line="55" package="Default">
-        <name>testGetContainerNotFound</name>
-        <docblock>
-          <description/>
-          <long-description>
-</long-description>
-          <tag line="52" name="expectedException" description="Aura\Di\Exception\ContainerNotFound"/>
-        </docblock>
-      </method>
-      <method final="false" abstract="false" static="false" visibility="public" line="60" package="Default">
-        <name>testLock</name>
-      </method>
-      <method final="false" abstract="false" static="false" visibility="public" line="71" package="Default">
-        <name>testCloneContainer</name>
-      </method>
-      <method final="false" abstract="false" static="false" visibility="public" line="84" package="Default">
-        <name>testLazyCloneContainer</name>
-      </method>
-      <method final="false" abstract="false" static="false" visibility="public" line="97" package="Default">
-        <name>testSubContainer</name>
-      </method>
-    </class>
-  </file>
-  <file path="tests/MockChildClass.php" hash="e63ae35108760b0d85939674549bfa8d" package="Default">
-    <parse_markers>
-      <error line="1">No DocBlock was found for File tests/MockChildClass.php</error>
-      <error line="3">No DocBlock was found for Class MockChildClass</error>
-      <error line="5">No DocBlock was found for Property $zim</error>
-      <error line="7">No DocBlock was found for Property $fake</error>
-      <error line="9">No DocBlock was found for Method __construct</error>
-      <error line="15">No DocBlock was found for Method setFake</error>
-      <error line="20">No DocBlock was found for Method getFake</error>
-    </parse_markers>
-    <class final="false" abstract="false" line="3" namespace="Aura\Di" package="Default">
-      <name>MockChildClass</name>
-      <extends>\Aura\Di\MockParentClass</extends>
-      <full_name>\Aura\Di\MockChildClass</full_name>
-      <property final="false" static="false" visibility="protected" line="5" package="Default">
-        <name>$zim</name>
-        <default/>
-      </property>
-      <property final="false" static="false" visibility="protected" line="7" package="Default">
-        <name>$fake</name>
-        <default/>
-      </property>
-      <method final="false" abstract="false" static="false" visibility="public" line="9" package="Default">
-        <name>__construct</name>
-        <argument line="9">
-          <name>$foo</name>
-          <default/>
-          <type/>
-        </argument>
-        <argument line="9">
-          <name>$zim</name>
-          <default/>
-          <type>MockOtherClass</type>
-        </argument>
-      </method>
-      <method final="false" abstract="false" static="false" visibility="public" line="15" package="Default">
-        <name>setFake</name>
-        <argument line="15">
-          <name>$fake</name>
-          <default/>
-          <type/>
-        </argument>
-      </method>
-      <method final="false" abstract="false" static="false" visibility="public" line="20" package="Default">
-        <name>getFake</name>
-      </method>
-    </class>
-  </file>
-  <file path="tests/ForgeTest.php" hash="3f5196ff0caf8d36ca48dcf14241b668" package="Default">
-    <parse_markers>
-      <error line="1">No DocBlock was found for File tests/ForgeTest.php</error>
-      <critical line="9">No short description for property $forge</critical>
-      <error line="14">No DocBlock was found for Property $config</error>
-      <critical line="36">No short description for method testGetConfig</critical>
-      <critical line="44">No short description for method testNewInstance</critical>
-      <error line="53">No DocBlock was found for Method testNewInstanceWithLazyParam</error>
-      <error line="69">No DocBlock was found for Method testNewInstanceWithSetter</error>
-      <error line="83">No DocBlock was found for Method testnewInstanceWithLazySetter</error>
-      <error line="101">No DocBlock was found for Method testClone</error>
-    </parse_markers>
-    <class final="false" abstract="false" line="7" namespace="Aura\Di" package="Default">
-      <name>ForgeTest</name>
-      <extends>\PHPUnit_Framework_TestCase</extends>
-      <full_name>\Aura\Di\ForgeTest</full_name>
-      <docblock>
-        <description>Test class for Forge.</description>
-        <long-description>
-</long-description>
-      </docblock>
-      <property final="false" static="false" visibility="protected" line="12" package="Default">
-        <name>$forge</name>
-        <default/>
-        <docblock>
-          <description/>
-          <long-description>
-</long-description>
-          <tag line="9" name="var" description="" type="\Aura\Di\Forge">
-            <type by_reference="false">\Aura\Di\Forge</type>
-          </tag>
-        </docblock>
-      </property>
-      <property final="false" static="false" visibility="protected" line="14" package="Default">
-        <name>$config</name>
-        <default/>
-      </property>
-      <method final="false" abstract="false" static="false" visibility="protected" line="20" package="Default">
-        <name>setUp</name>
-        <docblock>
-          <description>Sets up the fixture, for example, opens a network connection.</description>
-          <long-description>&lt;p&gt;This method is called before a test is executed.&lt;/p&gt;
-</long-description>
-        </docblock>
-      </method>
-      <method final="false" abstract="false" static="false" visibility="protected" line="31" package="Default">
-        <name>tearDown</name>
-        <docblock>
-          <description>Tears down the fixture, for example, closes a network connection.</description>
-          <long-description>&lt;p&gt;This method is called after a test is executed.&lt;/p&gt;
-</long-description>
-        </docblock>
-      </method>
-      <method final="false" abstract="false" static="false" visibility="public" line="39" package="Default">
-        <name>testGetConfig</name>
-        <docblock>
-          <description/>
-          <long-description>
-</long-description>
-          <tag line="36" name="todo" description="Implement testGetConfig()."/>
-        </docblock>
-      </method>
-      <method final="false" abstract="false" static="false" visibility="public" line="47" package="Default">
-        <name>testNewInstance</name>
-        <docblock>
-          <description/>
-          <long-description>
-</long-description>
-          <tag line="44" name="todo" description="Implement testNewInstance()."/>
-        </docblock>
-      </method>
-      <method final="false" abstract="false" static="false" visibility="public" line="53" package="Default">
-        <name>testNewInstanceWithLazyParam</name>
-      </method>
-      <method final="false" abstract="false" static="false" visibility="public" line="69" package="Default">
-        <name>testNewInstanceWithSetter</name>
-      </method>
-      <method final="false" abstract="false" static="false" visibility="public" line="83" package="Default">
-        <name>testnewInstanceWithLazySetter</name>
-      </method>
-      <method final="false" abstract="false" static="false" visibility="public" line="101" package="Default">
-        <name>testClone</name>
-      </method>
-    </class>
-  </file>
-  <file path="tests/MockParentClass.php" hash="46b14fcb2b9c6c04acaa21a73442beb4" package="Default">
-    <parse_markers>
-      <error line="1">No DocBlock was found for File tests/MockParentClass.php</error>
-      <error line="3">No DocBlock was found for Class MockParentClass</error>
-      <error line="5">No DocBlock was found for Property $foo</error>
-      <error line="7">No DocBlock was found for Method __construct</error>
-      <error line="12">No DocBlock was found for Method getFoo</error>
-    </parse_markers>
-    <class final="false" abstract="false" line="3" namespace="Aura\Di" package="Default">
-      <name>MockParentClass</name>
-      <extends/>
-      <full_name>\Aura\Di\MockParentClass</full_name>
-      <property final="false" static="false" visibility="protected" line="5" package="Default">
-        <name>$foo</name>
-        <default/>
-      </property>
-      <method final="false" abstract="false" static="false" visibility="public" line="7" package="Default">
-        <name>__construct</name>
-        <argument line="7">
-          <name>$foo</name>
-          <default>'bar'</default>
-          <type/>
-        </argument>
-      </method>
-      <method final="false" abstract="false" static="false" visibility="public" line="12" package="Default">
-        <name>getFoo</name>
-      </method>
-    </class>
-  </file>
-  <file path="src/Manager.php" hash="b09c72e3d2e281d989b9996f9d2d46de" package="Default">
+  <file path="src/Aura/Di/Manager.php" hash="b09c72e3d2e281d989b9996f9d2d46de" package="Default">
     <docblock>
       <description>This file is part of the Aura Project for PHP.</description>
       <long-description>
@@ -485,7 +8,7 @@
       <tag line="2" name="license" description="http://opensource.org/licenses/bsd-license.php BSD"/>
     </docblock>
     <parse_markers>
-      <error line="2">No Page-level DocBlock was found in file src/Manager.php</error>
+      <error line="2">No Page-level DocBlock was found in file src/Aura/Di/Manager.php</error>
     </parse_markers>
     <class final="false" abstract="false" line="19" namespace="Aura\Di" package="Aura\Di">
       <name>Manager</name>
@@ -638,7 +161,7 @@ container services.</description>
       </method>
     </class>
   </file>
-  <file path="src/ForgeInterface.php" hash="b6ad6e095469460bc9f88057e524cc06" package="Default">
+  <file path="src/Aura/Di/ForgeInterface.php" hash="b6ad6e095469460bc9f88057e524cc06" package="Default">
     <docblock>
       <description>This file is part of the Aura Project for PHP.</description>
       <long-description>
@@ -646,7 +169,7 @@ container services.</description>
       <tag line="2" name="license" description="http://opensource.org/licenses/bsd-license.php BSD"/>
     </docblock>
     <parse_markers>
-      <error line="2">No Page-level DocBlock was found in file src/ForgeInterface.php</error>
+      <error line="2">No Page-level DocBlock was found in file src/Aura/Di/ForgeInterface.php</error>
     </parse_markers>
     <interface namespace="Aura\Di" line="18" package="Aura\Di">
       <name>ForgeInterface</name>
@@ -699,7 +222,7 @@ the configuration parameters, optionally with overriding params.</description>
       </method>
     </interface>
   </file>
-  <file path="src/Exception/ContainerExists.php" hash="d18f2d692bcb7840a08b0a264194e1da" package="Default">
+  <file path="src/Aura/Di/Exception/ContainerExists.php" hash="d18f2d692bcb7840a08b0a264194e1da" package="Default">
     <docblock>
       <description>This file is part of the Aura Project for PHP.</description>
       <long-description>
@@ -707,7 +230,7 @@ the configuration parameters, optionally with overriding params.</description>
       <tag line="2" name="license" description="http://opensource.org/licenses/bsd-license.php BSD"/>
     </docblock>
     <parse_markers>
-      <error line="2">No Page-level DocBlock was found in file src/Exception/ContainerExists.php</error>
+      <error line="2">No Page-level DocBlock was found in file src/Aura/Di/Exception/ContainerExists.php</error>
     </parse_markers>
     <class final="false" abstract="false" line="18" namespace="Aura\Di\Exception" package="Aura\Di">
       <name>ContainerExists</name>
@@ -721,7 +244,7 @@ the configuration parameters, optionally with overriding params.</description>
       </docblock>
     </class>
   </file>
-  <file path="src/Exception/ServiceInvalid.php" hash="37fcf894112097e555abd355a13af41f" package="Default">
+  <file path="src/Aura/Di/Exception/ServiceInvalid.php" hash="37fcf894112097e555abd355a13af41f" package="Default">
     <docblock>
       <description>This file is part of the Aura Project for PHP.</description>
       <long-description>
@@ -729,7 +252,7 @@ the configuration parameters, optionally with overriding params.</description>
       <tag line="2" name="license" description="http://opensource.org/licenses/bsd-license.php BSD"/>
     </docblock>
     <parse_markers>
-      <error line="2">No Page-level DocBlock was found in file src/Exception/ServiceInvalid.php</error>
+      <error line="2">No Page-level DocBlock was found in file src/Aura/Di/Exception/ServiceInvalid.php</error>
     </parse_markers>
     <class final="false" abstract="false" line="18" namespace="Aura\Di\Exception" package="Aura\Di">
       <name>ServiceInvalid</name>
@@ -743,7 +266,7 @@ the configuration parameters, optionally with overriding params.</description>
       </docblock>
     </class>
   </file>
-  <file path="src/Exception/ServiceNotFound.php" hash="ab4706328870e2443f5b32eb739e648f" package="Default">
+  <file path="src/Aura/Di/Exception/ServiceNotFound.php" hash="ab4706328870e2443f5b32eb739e648f" package="Default">
     <docblock>
       <description>This file is part of the Aura Project for PHP.</description>
       <long-description>
@@ -751,7 +274,7 @@ the configuration parameters, optionally with overriding params.</description>
       <tag line="2" name="license" description="http://opensource.org/licenses/bsd-license.php BSD"/>
     </docblock>
     <parse_markers>
-      <error line="2">No Page-level DocBlock was found in file src/Exception/ServiceNotFound.php</error>
+      <error line="2">No Page-level DocBlock was found in file src/Aura/Di/Exception/ServiceNotFound.php</error>
     </parse_markers>
     <class final="false" abstract="false" line="18" namespace="Aura\Di\Exception" package="Aura\Di">
       <name>ServiceNotFound</name>
@@ -765,7 +288,7 @@ the configuration parameters, optionally with overriding params.</description>
       </docblock>
     </class>
   </file>
-  <file path="src/Exception/ContainerNotFound.php" hash="a71b599fe7ff140db5347b8e70124481" package="Default">
+  <file path="src/Aura/Di/Exception/ContainerNotFound.php" hash="a71b599fe7ff140db5347b8e70124481" package="Default">
     <docblock>
       <description>This file is part of the Aura Project for PHP.</description>
       <long-description>
@@ -773,7 +296,7 @@ the configuration parameters, optionally with overriding params.</description>
       <tag line="2" name="license" description="http://opensource.org/licenses/bsd-license.php BSD"/>
     </docblock>
     <parse_markers>
-      <error line="2">No Page-level DocBlock was found in file src/Exception/ContainerNotFound.php</error>
+      <error line="2">No Page-level DocBlock was found in file src/Aura/Di/Exception/ContainerNotFound.php</error>
     </parse_markers>
     <class final="false" abstract="false" line="18" namespace="Aura\Di\Exception" package="Aura\Di">
       <name>ContainerNotFound</name>
@@ -787,7 +310,7 @@ the configuration parameters, optionally with overriding params.</description>
       </docblock>
     </class>
   </file>
-  <file path="src/Exception/ContainerLocked.php" hash="6fe74feaa472f23278f8fffb79bf980d" package="Default">
+  <file path="src/Aura/Di/Exception/ContainerLocked.php" hash="6fe74feaa472f23278f8fffb79bf980d" package="Default">
     <docblock>
       <description>This file is part of the Aura Project for PHP.</description>
       <long-description>
@@ -795,7 +318,7 @@ the configuration parameters, optionally with overriding params.</description>
       <tag line="2" name="license" description="http://opensource.org/licenses/bsd-license.php BSD"/>
     </docblock>
     <parse_markers>
-      <error line="2">No Page-level DocBlock was found in file src/Exception/ContainerLocked.php</error>
+      <error line="2">No Page-level DocBlock was found in file src/Aura/Di/Exception/ContainerLocked.php</error>
     </parse_markers>
     <class final="false" abstract="false" line="18" namespace="Aura\Di\Exception" package="Aura\Di">
       <name>ContainerLocked</name>
@@ -809,7 +332,7 @@ the configuration parameters, optionally with overriding params.</description>
       </docblock>
     </class>
   </file>
-  <file path="src/Lazy.php" hash="aa549b85056ae68a9be7fafff91a394a" package="Default">
+  <file path="src/Aura/Di/Lazy.php" hash="aa549b85056ae68a9be7fafff91a394a" package="Default">
     <docblock>
       <description>This file is part of the Aura Project for PHP.</description>
       <long-description>
@@ -817,7 +340,7 @@ the configuration parameters, optionally with overriding params.</description>
       <tag line="2" name="license" description="http://opensource.org/licenses/bsd-license.php BSD"/>
     </docblock>
     <parse_markers>
-      <error line="2">No Page-level DocBlock was found in file src/Lazy.php</error>
+      <error line="2">No Page-level DocBlock was found in file src/Aura/Di/Lazy.php</error>
     </parse_markers>
     <class final="false" abstract="false" line="18" namespace="Aura\Di" package="Aura\Di">
       <name>Lazy</name>
@@ -873,7 +396,7 @@ the configuration parameters, optionally with overriding params.</description>
       </method>
     </class>
   </file>
-  <file path="src/ContainerInterface.php" hash="179baabb1e4b48bb0b559a1e139e81fe" package="Default">
+  <file path="src/Aura/Di/ContainerInterface.php" hash="179baabb1e4b48bb0b559a1e139e81fe" package="Default">
     <docblock>
       <description>This file is part of the Aura Project for PHP.</description>
       <long-description>
@@ -881,7 +404,7 @@ the configuration parameters, optionally with overriding params.</description>
       <tag line="2" name="license" description="http://opensource.org/licenses/bsd-license.php BSD"/>
     </docblock>
     <parse_markers>
-      <error line="2">No Page-level DocBlock was found in file src/ContainerInterface.php</error>
+      <error line="2">No Page-level DocBlock was found in file src/Aura/Di/ContainerInterface.php</error>
     </parse_markers>
     <interface namespace="Aura\Di" line="18" package="Aura\Di">
       <name>ContainerInterface</name>
@@ -1090,7 +613,7 @@ with additional override parameters.</description>
       </method>
     </interface>
   </file>
-  <file path="src/Config.php" hash="1623ee94192c3c955e9b6eada09e6174" package="Default">
+  <file path="src/Aura/Di/Config.php" hash="1623ee94192c3c955e9b6eada09e6174" package="Default">
     <docblock>
       <description>This file is part of the Aura Project for PHP.</description>
       <long-description>
@@ -1098,7 +621,7 @@ with additional override parameters.</description>
       <tag line="2" name="license" description="http://opensource.org/licenses/bsd-license.php BSD"/>
     </docblock>
     <parse_markers>
-      <error line="2">No Page-level DocBlock was found in file src/Config.php</error>
+      <error line="2">No Page-level DocBlock was found in file src/Aura/Di/Config.php</error>
     </parse_markers>
     <class final="false" abstract="false" line="18" namespace="Aura\Di" package="Aura\Di">
       <name>Config</name>
@@ -1255,7 +778,7 @@ leave the reflection values in place).</description>
       </method>
     </class>
   </file>
-  <file path="src/Container.php" hash="5f003e64d2491cbafe6ecdf1abec6f7a" package="Default">
+  <file path="src/Aura/Di/Container.php" hash="5f003e64d2491cbafe6ecdf1abec6f7a" package="Default">
     <docblock>
       <description>This file is part of the Aura Project for PHP.</description>
       <long-description>
@@ -1263,7 +786,7 @@ leave the reflection values in place).</description>
       <tag line="2" name="license" description="http://opensource.org/licenses/bsd-license.php BSD"/>
     </docblock>
     <parse_markers>
-      <error line="2">No Page-level DocBlock was found in file src/Container.php</error>
+      <error line="2">No Page-level DocBlock was found in file src/Aura/Di/Container.php</error>
     </parse_markers>
     <class final="false" abstract="false" line="18" namespace="Aura\Di" package="Aura\Di">
       <name>Container</name>
@@ -1621,7 +1144,7 @@ the following idiom:</description>
       </method>
     </class>
   </file>
-  <file path="src/ConfigInterface.php" hash="8577698ffdc7bd321ade266897f69b21" package="Default">
+  <file path="src/Aura/Di/ConfigInterface.php" hash="8577698ffdc7bd321ade266897f69b21" package="Default">
     <docblock>
       <description>This file is part of the Aura Project for PHP.</description>
       <long-description>
@@ -1629,7 +1152,7 @@ the following idiom:</description>
       <tag line="2" name="license" description="http://opensource.org/licenses/bsd-license.php BSD"/>
     </docblock>
     <parse_markers>
-      <error line="2">No Page-level DocBlock was found in file src/ConfigInterface.php</error>
+      <error line="2">No Page-level DocBlock was found in file src/Aura/Di/ConfigInterface.php</error>
     </parse_markers>
     <interface namespace="Aura\Di" line="18" package="Aura\Di">
       <name>ConfigInterface</name>
@@ -1704,7 +1227,7 @@ retains one before returning it.</description>
       </method>
     </interface>
   </file>
-  <file path="src/Forge.php" hash="14d7d9fbb10cd16f5f219d73f1eee37f" package="Default">
+  <file path="src/Aura/Di/Forge.php" hash="14d7d9fbb10cd16f5f219d73f1eee37f" package="Default">
     <docblock>
       <description>This file is part of the Aura Project for PHP.</description>
       <long-description>
@@ -1712,7 +1235,7 @@ retains one before returning it.</description>
       <tag line="2" name="license" description="http://opensource.org/licenses/bsd-license.php BSD"/>
     </docblock>
     <parse_markers>
-      <error line="2">No Page-level DocBlock was found in file src/Forge.php</error>
+      <error line="2">No Page-level DocBlock was found in file src/Aura/Di/Forge.php</error>
     </parse_markers>
     <class final="false" abstract="false" line="18" namespace="Aura\Di" package="Aura\Di">
       <name>Forge</name>
@@ -1806,7 +1329,7 @@ the configuration parameters, optionally with overriding params.</description>
       </method>
     </class>
   </file>
-  <file path="src/Exception.php" hash="397bbd58b7a9876e5ba540290d5f696f" package="Default">
+  <file path="src/Aura/Di/Exception.php" hash="397bbd58b7a9876e5ba540290d5f696f" package="Default">
     <docblock>
       <description>This file is part of the Aura Project for PHP.</description>
       <long-description>
@@ -1814,7 +1337,7 @@ the configuration parameters, optionally with overriding params.</description>
       <tag line="2" name="license" description="http://opensource.org/licenses/bsd-license.php BSD"/>
     </docblock>
     <parse_markers>
-      <error line="2">No Page-level DocBlock was found in file src/Exception.php</error>
+      <error line="2">No Page-level DocBlock was found in file src/Aura/Di/Exception.php</error>
     </parse_markers>
     <class final="false" abstract="false" line="18" namespace="Aura\Di" package="Aura\Di">
       <name>Exception</name>
@@ -1827,64 +1350,6 @@ the configuration parameters, optionally with overriding params.</description>
         <tag line="11" name="package" description="Aura.Di"/>
       </docblock>
     </class>
-  </file>
-  <file path="config/test.php" hash="01930f5a0695fff483a39a14b589e8f8" package="Default">
-    <docblock>
-      <description>Package prefix for autoloader.</description>
-      <long-description>
-</long-description>
-    </docblock>
-    <parse_markers>
-      <error line="2">No Page-level DocBlock was found in file config/test.php</error>
-    </parse_markers>
-  </file>
-  <file path="config/default.php" hash="66f17533a1b89b542ec0aab3587306da" package="Default">
-    <docblock>
-      <description>Package prefix for autoloader.</description>
-      <long-description>
-</long-description>
-    </docblock>
-    <parse_markers>
-      <error line="2">No Page-level DocBlock was found in file config/default.php</error>
-    </parse_markers>
-  </file>
-  <file path="src.php" hash="653504751579243e98515d3588e15765" package="Default">
-    <parse_markers>
-      <error line="1">No DocBlock was found for File src.php</error>
-    </parse_markers>
-    <include type="Require Once" line="2">
-      <name>/src/ConfigInterface.php</name>
-    </include>
-    <include type="Require Once" line="3">
-      <name>/src/Config.php</name>
-    </include>
-    <include type="Require Once" line="4">
-      <name>/src/ContainerInterface.php</name>
-    </include>
-    <include type="Require Once" line="5">
-      <name>/src/Container.php</name>
-    </include>
-    <include type="Require Once" line="6">
-      <name>/src/Exception.php</name>
-    </include>
-    <include type="Require Once" line="7">
-      <name>/src/Exception/ServiceInvalid.php</name>
-    </include>
-    <include type="Require Once" line="8">
-      <name>/src/Exception/ServiceNotFound.php</name>
-    </include>
-    <include type="Require Once" line="9">
-      <name>/src/ForgeInterface.php</name>
-    </include>
-    <include type="Require Once" line="10">
-      <name>/src/Forge.php</name>
-    </include>
-    <include type="Require Once" line="11">
-      <name>/src/Lazy.php</name>
-    </include>
-    <include type="Require Once" line="12">
-      <name>/src/Manager.php</name>
-    </include>
   </file>
   <package name="Aura">
     <package name="Di"/>

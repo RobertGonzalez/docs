@@ -1,280 +1,6 @@
 <?xml version="1.0"?>
 <project version="0.16.0" title="Aura Project for PHP: Aura.Router">
-  <file path="scripts/instance.php" hash="7ceef5dfda928ee8f7836150670a487a" package="Default">
-    <parse_markers>
-      <error line="1">No DocBlock was found for File scripts/instance.php</error>
-    </parse_markers>
-    <include type="Require Once" line="3">
-      <name>/src.php</name>
-    </include>
-  </file>
-  <file path="tests/MapTest.php" hash="f2997a5266c66f5099c6c37e24faae4a" package="Default">
-    <parse_markers>
-      <error line="1">No DocBlock was found for File tests/MapTest.php</error>
-      <critical line="9">No short description for property $map</critical>
-      <error line="34">No DocBlock was found for Method testAddUnnamedRoute</error>
-      <error line="42">No DocBlock was found for Method testAddNamedRoute</error>
-      <error line="51">No DocBlock was found for Method testAddComplexRoute</error>
-      <critical line="72">No short description for method testAttachWithoutRoutes</critical>
-      <critical line="80">No short description for method testAttachWithBadRouteSpec</critical>
-      <error line="94">No DocBlock was found for Method testAttachRoutesWithoutPathPrefix</error>
-      <error line="164">No DocBlock was found for Method testAttachNamedRoutes</error>
-      <error line="254">No DocBlock was found for Method testAttachUnnamedLongFormRoutes</error>
-      <error line="324">No DocBlock was found for Method testAttachNamedRoutesWithPrefixes</error>
-      <error line="419">No DocBlock was found for Method testAttachNamedRestRoutesWithPrefixes</error>
-      <critical line="515">No short description for method testGenerate</critical>
-      <error line="561">No DocBlock was found for Method testGenerateWhenMissing</error>
-      <error line="587">No DocBlock was found for Method testAttachAtConstructionTime</error>
-      <error line="687">No DocBlock was found for Method testRunOutOfAttachedRoutesToMatch</error>
-      <error line="719">No DocBlock was found for Method testGetAndSetRoutes</error>
-    </parse_markers>
-    <class final="false" abstract="false" line="7" namespace="Aura\Router" package="Default">
-      <name>MapTest</name>
-      <extends>\PHPUnit_Framework_TestCase</extends>
-      <full_name>\Aura\Router\MapTest</full_name>
-      <docblock>
-        <description>Test class for Map.</description>
-        <long-description>
-</long-description>
-      </docblock>
-      <property final="false" static="false" visibility="protected" line="12" package="Default">
-        <name>$map</name>
-        <default/>
-        <docblock>
-          <description/>
-          <long-description>
-</long-description>
-          <tag line="9" name="var" description="" type="\Aura\Router\Map">
-            <type by_reference="false">\Aura\Router\Map</type>
-          </tag>
-        </docblock>
-      </property>
-      <method final="false" abstract="false" static="false" visibility="protected" line="18" package="Default">
-        <name>setUp</name>
-        <docblock>
-          <description>Sets up the fixture, for example, opens a network connection.</description>
-          <long-description>&lt;p&gt;This method is called before a test is executed.&lt;/p&gt;
-</long-description>
-        </docblock>
-      </method>
-      <method final="false" abstract="false" static="false" visibility="protected" line="29" package="Default">
-        <name>tearDown</name>
-        <docblock>
-          <description>Tears down the fixture, for example, closes a network connection.</description>
-          <long-description>&lt;p&gt;This method is called after a test is executed.&lt;/p&gt;
-</long-description>
-        </docblock>
-      </method>
-      <method final="false" abstract="false" static="false" visibility="public" line="34" package="Default">
-        <name>testAddUnnamedRoute</name>
-      </method>
-      <method final="false" abstract="false" static="false" visibility="public" line="42" package="Default">
-        <name>testAddNamedRoute</name>
-      </method>
-      <method final="false" abstract="false" static="false" visibility="public" line="51" package="Default">
-        <name>testAddComplexRoute</name>
-      </method>
-      <method final="false" abstract="false" static="false" visibility="public" line="75" package="Default">
-        <name>testAttachWithoutRoutes</name>
-        <docblock>
-          <description/>
-          <long-description>
-</long-description>
-          <tag line="72" name="expectedException" description="\Aura\Router\Exception"/>
-        </docblock>
-      </method>
-      <method final="false" abstract="false" static="false" visibility="public" line="83" package="Default">
-        <name>testAttachWithBadRouteSpec</name>
-        <docblock>
-          <description/>
-          <long-description>
-</long-description>
-          <tag line="80" name="expectedException" description="\Aura\Router\Exception"/>
-        </docblock>
-      </method>
-      <method final="false" abstract="false" static="false" visibility="public" line="94" package="Default">
-        <name>testAttachRoutesWithoutPathPrefix</name>
-      </method>
-      <method final="false" abstract="false" static="false" visibility="public" line="164" package="Default">
-        <name>testAttachNamedRoutes</name>
-      </method>
-      <method final="false" abstract="false" static="false" visibility="public" line="254" package="Default">
-        <name>testAttachUnnamedLongFormRoutes</name>
-      </method>
-      <method final="false" abstract="false" static="false" visibility="public" line="324" package="Default">
-        <name>testAttachNamedRoutesWithPrefixes</name>
-      </method>
-      <method final="false" abstract="false" static="false" visibility="public" line="419" package="Default">
-        <name>testAttachNamedRestRoutesWithPrefixes</name>
-      </method>
-      <method final="false" abstract="false" static="false" visibility="public" line="518" package="Default">
-        <name>testGenerate</name>
-        <docblock>
-          <description/>
-          <long-description>
-</long-description>
-          <tag line="515" name="todo" description="Implement testGenerate()."/>
-        </docblock>
-      </method>
-      <method final="false" abstract="false" static="false" visibility="public" line="561" package="Default">
-        <name>testGenerateWhenMissing</name>
-      </method>
-      <method final="false" abstract="false" static="false" visibility="public" line="587" package="Default">
-        <name>testAttachAtConstructionTime</name>
-      </method>
-      <method final="false" abstract="false" static="false" visibility="public" line="687" package="Default">
-        <name>testRunOutOfAttachedRoutesToMatch</name>
-      </method>
-      <method final="false" abstract="false" static="false" visibility="public" line="719" package="Default">
-        <name>testGetAndSetRoutes</name>
-      </method>
-    </class>
-  </file>
-  <file path="tests/RouteTest.php" hash="6978ee8c52d5b2ffcd3d797d97ec3f81" package="Default">
-    <parse_markers>
-      <error line="1">No DocBlock was found for File tests/RouteTest.php</error>
-      <critical line="9">No short description for property $factory</critical>
-      <error line="34">No DocBlock was found for Method testIsMatchOnStaticPath</error>
-      <error line="54">No DocBlock was found for Method testIsMatchOnDynamicPath</error>
-      <error line="80">No DocBlock was found for Method testIsMethodMatch</error>
-      <error line="142">No DocBlock was found for Method testIsSecureMatch</error>
-      <error line="193">No DocBlock was found for Method testIsCustomMatchWithClosure</error>
-      <error line="220">No DocBlock was found for Method testIsCustomMatchWithCallback</error>
-      <error line="242">No DocBlock was found for Method callbackForIsMatchTrue</error>
-      <error line="248">No DocBlock was found for Method callbackForIsMatchFalse</error>
-      <critical line="253">No short description for method testBadSubpattern</critical>
-      <error line="267">No DocBlock was found for Method testGenerate</error>
-      <error line="280">No DocBlock was found for Method testGenerateWithClosure</error>
-      <error line="297">No DocBlock was found for Method testGenerateWithCallback</error>
-      <error line="311">No DocBlock was found for Method callbackForGenerate</error>
-      <error line="317">No DocBlock was found for Method testIsMatchOnDefaultAndInlineSubpatterns</error>
-      <error line="333">No DocBlock was found for Method testIsNotRoutable</error>
-      <error line="352">No DocBlock was found for Method testGenerateOnFullUri</error>
-    </parse_markers>
-    <class final="false" abstract="false" line="7" namespace="Aura\Router" package="Default">
-      <name>RouteTest</name>
-      <extends>\PHPUnit_Framework_TestCase</extends>
-      <full_name>\Aura\Router\RouteTest</full_name>
-      <docblock>
-        <description>Test class for Route.</description>
-        <long-description>
-</long-description>
-      </docblock>
-      <property final="false" static="false" visibility="protected" line="12" package="Default">
-        <name>$factory</name>
-        <default/>
-        <docblock>
-          <description/>
-          <long-description>
-</long-description>
-          <tag line="9" name="var" description="" type="\Aura\Router\RouteFactory">
-            <type by_reference="false">\Aura\Router\RouteFactory</type>
-          </tag>
-        </docblock>
-      </property>
-      <method final="false" abstract="false" static="false" visibility="protected" line="18" package="Default">
-        <name>setUp</name>
-        <docblock>
-          <description>Sets up the fixture, for example, opens a network connection.</description>
-          <long-description>&lt;p&gt;This method is called before a test is executed.&lt;/p&gt;
-</long-description>
-        </docblock>
-      </method>
-      <method final="false" abstract="false" static="false" visibility="protected" line="29" package="Default">
-        <name>tearDown</name>
-        <docblock>
-          <description>Tears down the fixture, for example, closes a network connection.</description>
-          <long-description>&lt;p&gt;This method is called after a test is executed.&lt;/p&gt;
-</long-description>
-        </docblock>
-      </method>
-      <method final="false" abstract="false" static="false" visibility="public" line="34" package="Default">
-        <name>testIsMatchOnStaticPath</name>
-      </method>
-      <method final="false" abstract="false" static="false" visibility="public" line="54" package="Default">
-        <name>testIsMatchOnDynamicPath</name>
-      </method>
-      <method final="false" abstract="false" static="false" visibility="public" line="80" package="Default">
-        <name>testIsMethodMatch</name>
-      </method>
-      <method final="false" abstract="false" static="false" visibility="public" line="142" package="Default">
-        <name>testIsSecureMatch</name>
-      </method>
-      <method final="false" abstract="false" static="false" visibility="public" line="193" package="Default">
-        <name>testIsCustomMatchWithClosure</name>
-      </method>
-      <method final="false" abstract="false" static="false" visibility="public" line="220" package="Default">
-        <name>testIsCustomMatchWithCallback</name>
-      </method>
-      <method final="false" abstract="false" static="false" visibility="public" line="242" package="Default">
-        <name>callbackForIsMatchTrue</name>
-        <argument line="242">
-          <name>$server</name>
-          <default/>
-          <type>array</type>
-        </argument>
-        <argument line="242">
-          <name>$matches</name>
-          <default/>
-          <type>ArrayObject</type>
-        </argument>
-      </method>
-      <method final="false" abstract="false" static="false" visibility="public" line="248" package="Default">
-        <name>callbackForIsMatchFalse</name>
-        <argument line="248">
-          <name>$server</name>
-          <default/>
-          <type>array</type>
-        </argument>
-        <argument line="248">
-          <name>$matches</name>
-          <default/>
-          <type>ArrayObject</type>
-        </argument>
-      </method>
-      <method final="false" abstract="false" static="false" visibility="public" line="256" package="Default">
-        <name>testBadSubpattern</name>
-        <docblock>
-          <description/>
-          <long-description>
-</long-description>
-          <tag line="253" name="expectedException" description="\Aura\Router\Exception"/>
-        </docblock>
-      </method>
-      <method final="false" abstract="false" static="false" visibility="public" line="267" package="Default">
-        <name>testGenerate</name>
-      </method>
-      <method final="false" abstract="false" static="false" visibility="public" line="280" package="Default">
-        <name>testGenerateWithClosure</name>
-      </method>
-      <method final="false" abstract="false" static="false" visibility="public" line="297" package="Default">
-        <name>testGenerateWithCallback</name>
-      </method>
-      <method final="false" abstract="false" static="false" visibility="public" line="311" package="Default">
-        <name>callbackForGenerate</name>
-        <argument line="311">
-          <name>$route</name>
-          <default/>
-          <type>Route</type>
-        </argument>
-        <argument line="311">
-          <name>$data</name>
-          <default/>
-          <type>array</type>
-        </argument>
-      </method>
-      <method final="false" abstract="false" static="false" visibility="public" line="317" package="Default">
-        <name>testIsMatchOnDefaultAndInlineSubpatterns</name>
-      </method>
-      <method final="false" abstract="false" static="false" visibility="public" line="333" package="Default">
-        <name>testIsNotRoutable</name>
-      </method>
-      <method final="false" abstract="false" static="false" visibility="public" line="352" package="Default">
-        <name>testGenerateOnFullUri</name>
-      </method>
-    </class>
-  </file>
-  <file path="src/RouteFactory.php" hash="8c0d275c59be48a3eaa3c3c76a0a1b7c" package="Default">
+  <file path="src/Aura/Router/RouteFactory.php" hash="8c0d275c59be48a3eaa3c3c76a0a1b7c" package="Default">
     <docblock>
       <description>This file is part of the Aura Project for PHP.</description>
       <long-description>
@@ -282,7 +8,7 @@
       <tag line="2" name="license" description="http://opensource.org/licenses/bsd-license.php BSD"/>
     </docblock>
     <parse_markers>
-      <error line="2">No Page-level DocBlock was found in file src/RouteFactory.php</error>
+      <error line="2">No Page-level DocBlock was found in file src/Aura/Router/RouteFactory.php</error>
     </parse_markers>
     <class final="false" abstract="false" line="18" namespace="Aura\Router" package="Aura\Router">
       <name>RouteFactory</name>
@@ -328,7 +54,7 @@
       </method>
     </class>
   </file>
-  <file path="src/Route.php" hash="3e042ab5e139de7c1711e70b5473e382" package="Default">
+  <file path="src/Aura/Router/Route.php" hash="3e042ab5e139de7c1711e70b5473e382" package="Default">
     <docblock>
       <description>This file is part of the Aura Project for PHP.</description>
       <long-description>
@@ -336,7 +62,7 @@
       <tag line="2" name="license" description="http://opensource.org/licenses/bsd-license.php BSD"/>
     </docblock>
     <parse_markers>
-      <error line="2">No Page-level DocBlock was found in file src/Route.php</error>
+      <error line="2">No Page-level DocBlock was found in file src/Aura/Router/Route.php</error>
     </parse_markers>
     <class final="false" abstract="false" line="21" namespace="Aura\Router" package="Aura\Router">
       <name>Route</name>
@@ -764,7 +490,7 @@ the server values.</description>
       </method>
     </class>
   </file>
-  <file path="src/Map.php" hash="6d283176ef88c8625b1fcd7a0bc8f422" package="Default">
+  <file path="src/Aura/Router/Map.php" hash="6d283176ef88c8625b1fcd7a0bc8f422" package="Default">
     <docblock>
       <description>This file is part of the Aura Project for PHP.</description>
       <long-description>
@@ -772,7 +498,7 @@ the server values.</description>
       <tag line="2" name="license" description="http://opensource.org/licenses/bsd-license.php BSD"/>
     </docblock>
     <parse_markers>
-      <error line="2">No Page-level DocBlock was found in file src/Map.php</error>
+      <error line="2">No Page-level DocBlock was found in file src/Aura/Router/Map.php</error>
     </parse_markers>
     <class final="false" abstract="false" line="18" namespace="Aura\Router" package="Aura\Router">
       <name>Map</name>
@@ -1055,7 +781,7 @@ Route objects as needed.</description>
       </method>
     </class>
   </file>
-  <file path="src/Exception.php" hash="7298603471092fb7b04720ccd8608e2d" package="Default">
+  <file path="src/Aura/Router/Exception.php" hash="7298603471092fb7b04720ccd8608e2d" package="Default">
     <docblock>
       <description>This file is part of the Aura Project for PHP.</description>
       <long-description>
@@ -1063,7 +789,7 @@ Route objects as needed.</description>
       <tag line="2" name="license" description="http://opensource.org/licenses/bsd-license.php BSD"/>
     </docblock>
     <parse_markers>
-      <error line="2">No Page-level DocBlock was found in file src/Exception.php</error>
+      <error line="2">No Page-level DocBlock was found in file src/Aura/Router/Exception.php</error>
     </parse_markers>
     <class final="false" abstract="false" line="18" namespace="Aura\Router" package="Aura\Router">
       <name>Exception</name>
@@ -1077,47 +803,6 @@ Route objects as needed.</description>
       </docblock>
     </class>
   </file>
-  <file path="config/test.php" hash="b333711ff1d600ed7d261fed45c571e8" package="Default">
-    <docblock>
-      <description>Package prefix for autoloader.</description>
-      <long-description>
-</long-description>
-    </docblock>
-    <parse_markers>
-      <error line="2">No Page-level DocBlock was found in file config/test.php</error>
-    </parse_markers>
-  </file>
-  <file path="config/default.php" hash="3e50bb499e6c7484c65ce0524599d433" package="Default">
-    <docblock>
-      <description>Package prefix for autoloader.</description>
-      <long-description>
-</long-description>
-    </docblock>
-    <parse_markers>
-      <error line="2">No Page-level DocBlock was found in file config/default.php</error>
-    </parse_markers>
-    <function namespace="default" line="12" package="Default">
-      <name>Closure</name>
-      <type>closure</type>
-    </function>
-  </file>
-  <file path="src.php" hash="5f8f1f5cf600f96b73ff2a7b6d20473e" package="Default">
-    <parse_markers>
-      <error line="1">No DocBlock was found for File src.php</error>
-    </parse_markers>
-    <include type="Require" line="2">
-      <name>/src/Exception.php</name>
-    </include>
-    <include type="Require" line="3">
-      <name>/src/Map.php</name>
-    </include>
-    <include type="Require" line="4">
-      <name>/src/Route.php</name>
-    </include>
-    <include type="Require" line="5">
-      <name>/src/RouteFactory.php</name>
-    </include>
-  </file>
   <package name="Aura">
     <package name="Router"/>
   </package>
@@ -1125,7 +810,6 @@ Route objects as needed.</description>
   <namespace name="Aura">
     <namespace name="Router"/>
   </namespace>
-  <namespace name="default"/>
   <marker>todo</marker>
   <marker>fixme</marker>
 </project>

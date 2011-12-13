@@ -1,13 +1,29 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<!--
-  This config file will automatically be merged with the docblox.config.xml in the DocBlox root.
-  You can use this config by invoking DocBloc with the -c option, i.e.: php ./bin/parse.php -c example_config.xml
-  Please note that this file does not replace the keys in the 'master' config file that have not been defined here.
--->
 <docblox>
-  <ignore>
-    <item>*/config/*</item>
-    <item>*/scripts/*</item>
-    <item>*/tests/*</item>
-  </ignore>
+    <title>The aura project for PHP 5.3</title>
+    <parser>
+        <target>repositories</target>
+        <markers>
+            <item>TODO</item>
+            <item>FIXME</item>
+        </markers>
+        <extensions>
+            <extension>php</extension>
+        </extensions>
+        <visibility></visibility>
+    </parser>
+    <transformer>
+        <target>api</target>
+    </transformer>
+    <transformations>
+        <template name="default" />
+    </transformations>
+    <files>
+        <directory>src</directory>
+        <ignore>scripts/*</ignore>
+        <ignore>config/*</ignore>
+        <ignore>tests/*</ignore>
+        <ignore>hold/*</ignore>
+        <ignore>src.php</ignore>
+    </files>
 </docblox>

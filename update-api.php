@@ -40,24 +40,6 @@ if (! file_exists($base_repo_path)) {
 }
 
 // foreach repository: if it exists locally: pull, if not: clone
-<<<<<<< HEAD
-/*
-foreach($repositories as $name => $repo)
-{
-  echo '        Retrieving: ' . $name . PHP_EOL;
-
-  $command = file_exists($base_repo_path . DIRECTORY_SEPARATOR . $name)
-    ? 'pull origin master'
-    : "clone $repo $base_repo_path/$name";
-  exec("git $command 2>&1", $output, $error);
-  if ($error != 0)
-  {
-    echo implode(PHP_EOL, $output).PHP_EOL;
-    exit(1);
-  }
-}
- */
-=======
 foreach($repositories as $name => $repo) {
     echo $name . ': ';
     
@@ -79,7 +61,7 @@ foreach($repositories as $name => $repo) {
 }
 
 echo PHP_EOL;
->>>>>>> fa8a0514a038bbcbc2d5b9b4b2049b2763773a05
+
 echo '[3/4] Building API documentation'.PHP_EOL;
 $config_file = __DIR__.DIRECTORY_SEPARATOR.'docblox.config.xml';
 $base_api_path = __DIR__.DIRECTORY_SEPARATOR.'api';

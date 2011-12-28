@@ -1,4 +1,5 @@
-<html xmlns="http://www.w3.org/1999/xhtml"><head><title>Aura Project for PHP: Aura.Marshal</title><meta http-equiv="Content-Type" content="text/html; charset=utf-8"></meta><link rel="stylesheet" href="css/jquery-ui.css" type="text/css"></link><link rel="stylesheet" href="css/docblox/jquery-ui-1.8.16.custom.css" type="text/css"></link><link rel="stylesheet" href="css/jquery.treeview.css" type="text/css"></link><link rel="stylesheet" href="css/theme.css" type="text/css"></link><script type="text/javascript" src="js/jquery-1.4.2.min.js"></script><script type="text/javascript" src="js/jquery-ui-1.8.2.custom.min.js"></script><script type="text/javascript" src="js/jquery.tools.min.js"></script><script type="text/javascript" src="js/jquery.cookie.js"></script><script type="text/javascript" src="js/jquery.treeview.js"></script><script type="text/javascript">
+<html xmlns="http://www.w3.org/1999/xhtml"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Aura Project for PHP: Aura.Marshal</title><link rel="stylesheet" href="css/jquery-ui.css" type="text/css"></link><link rel="stylesheet" href="css/docblox/jquery-ui-1.8.16.custom.css" type="text/css"></link><link rel="stylesheet" href="css/jquery.treeview.css" type="text/css"></link><link rel="stylesheet" href="css/theme.css" type="text/css"></link><script type="text/javascript" src="js/jquery-1.4.2.min.js"></script><script type="text/javascript" src="js/jquery-ui-1.8.2.custom.min.js"></script><script type="text/javascript" src="js/jquery.tools.min.js"></script><script type="text/javascript" src="js/jquery.cookie.js"></script><script type="text/javascript" src="js/jquery.treeview.js"></script><script type="text/javascript">
             $(document).ready(function() {
                 $(".filetree").treeview({
                     collapsed: true,
@@ -95,19 +96,7 @@
               Table of Contents
           </div>
 </div>
-<a xmlns:dbx="http://docblox-project.org/xsl/functions" name="top" class="anchor"></a><div id="file-description">
-<p xmlns:dbx="http://docblox-project.org/xsl/functions" class="short-description">This file is part of the Aura project for PHP.</p>
-<div xmlns:dbx="http://docblox-project.org/xsl/functions" class="long-description">
-</div>
-</div>
-<dl class="file-info">
-<dt xmlns:dbx="http://docblox-project.org/xsl/functions">License</dt>
-<dd xmlns:dbx="http://docblox-project.org/xsl/functions">
-<a href="http://opensource.org/licenses/bsd-license.php">BSD</a>
-         
-    </dd>
-</dl>
-<a name="classes" class="anchor"></a><a xmlns:dbx="http://docblox-project.org/xsl/functions" id="\Aura\Marshal\Type\GenericType" class="anchor"></a><h2 xmlns:dbx="http://docblox-project.org/xsl/functions" class="class">\Aura\Marshal\Type\GenericType<div class="to-top"><a href="#top">jump to top</a></div>
+<a xmlns:dbx="http://docblox-project.org/xsl/functions" name="top" class="anchor"></a><a name="classes" class="anchor"></a><a xmlns:dbx="http://docblox-project.org/xsl/functions" id="\Aura\Marshal\Type\GenericType" class="anchor"></a><h2 xmlns:dbx="http://docblox-project.org/xsl/functions" class="class">\Aura\Marshal\Type\GenericType<div class="to-top"><a href="#top">jump to top</a></div>
 </h2>
 <div xmlns:dbx="http://docblox-project.org/xsl/functions" class="class">
 <small class="package"><b>Package: </b>Aura\Marshal</small><p class="short-description">Describes a particular type within the domain, and retains an IdentityMap
@@ -117,8 +106,7 @@ of records for the type. Converts loaded data to record objects lazily.</p>
 <li><p>the generic record object, where $data represents the record fields; and</p></li>
 <li><p>the generic collection object, where $data represents an array of
 records.</p></li>
-</ul>
-</div>
+</ul></div>
 <dl class="class-info">
 <dt>Parent(s)</dt>
 <dd><a href="db_src_Aura_Marshal_Data.html#%5CAura%5CMarshal%5CData">\Aura\Marshal\Data</a></dd>
@@ -131,11 +119,10 @@ records.</p></li>
                 </code><div class="description">
 <p class="short-description">A builder to create collection objects for this type.</p></div>
 <div class="code-tabs">
-<div class="long-description">
-</div>
+<div class="long-description"></div>
 <strong>Details</strong><dl class="property-info">
 <dt>Type</dt>
-<dd>\Aura\Marshal\Type\object</dd>
+<dd>object</dd>
 </dl>
 </div>
 <div class="clear"></div>
@@ -145,17 +132,16 @@ records.</p></li>
                  <span class="highlight">$data</span>= 'array()'
                 </code><div class="description">
 <span class="attribute">inherited</span><p class="short-description">Key-value pairs of data.</p><small>Inherited from:
-                        <a href="db_src_Aura_Marshal_Data.html#%5CAura%5CMarshal%5CData::%24data">\Aura\Marshal\Data::$data</a></small>
+                        <a href="db_src_Aura_Marshal_Data.html#%5CAura%5CMarshal%5CData::%24%24data">\Aura\Marshal\Data::$$data</a></small>
 </div>
 <div class="code-tabs">
-<div class="long-description">
-</div>
+<div class="long-description"></div>
 <strong>Default value</strong><code>array()</code><strong>Details</strong><dl class="property-info">
 <dt>Type</dt>
-<dd>\Aura\Marshal\array</dd>
+<dd>array</dd>
 <dt>Inherited_from</dt>
 <dd>
-<a href="db_src_Aura_Marshal_Data.html#%5CAura%5CMarshal%5CData::%24data">\Aura\Marshal\Data::$data</a>
+<a href="db_src_Aura_Marshal_Data.html#%5CAura%5CMarshal%5CData::%24%24data">\Aura\Marshal\Data::$$data</a>
          
     </dd>
 </dl>
@@ -169,11 +155,10 @@ records.</p></li>
 <p class="short-description">The record field representing its unique identifier value. The
 IdentityMap will be keyed on these values.</p></div>
 <div class="code-tabs">
-<div class="long-description">
-</div>
+<div class="long-description"></div>
 <strong>Details</strong><dl class="property-info">
 <dt>Type</dt>
-<dd>\Aura\Marshal\Type\string</dd>
+<dd>string</dd>
 </dl>
 </div>
 <div class="clear"></div>
@@ -182,14 +167,48 @@ IdentityMap will be keyed on these values.</p></div>
 <a href="#" class="gripper"><img src="images/icons/arrow_right.png"><img src="images/icons/arrow_down.png" style="display: none;"></a><code><img src="images/icons/property.png" alt="Property"><img src="images/icons/visibility_protected.png" style="margin-right: 5px" alt="protected">array
                  <span class="highlight">$index_fields</span>= 'array()'
                 </code><div class="description">
-<p class="short-description">An array of fields to index on for quicker lookups.  The array format
+<p class="short-description">An array of fields to index on for quicker lookups. The array format
 is:</p></div>
 <div class="code-tabs">
-<div class="long-description"><p>$index_fields[$field_name][$field_value] = (array) $identity_values;</p>
-</div>
+<div class="long-description"><p>$index_fields[$field_name][$field_value] = (array) $offsets;</p>
+
+<p>Note that we always have an array of offsets, and the keys are by
+the field name and the values for that field.</p></div>
 <strong>Default value</strong><code>array()</code><strong>Details</strong><dl class="property-info">
 <dt>Type</dt>
-<dd>\Aura\Marshal\Type\array</dd>
+<dd>array</dd>
+</dl>
+</div>
+<div class="clear"></div>
+</div>
+<a id="\Aura\Marshal\Type\GenericType::$index_identity" class="anchor"></a><div class="property protected">
+<a href="#" class="gripper"><img src="images/icons/arrow_right.png"><img src="images/icons/arrow_down.png" style="display: none;"></a><code><img src="images/icons/property.png" alt="Property"><img src="images/icons/visibility_protected.png" style="margin-right: 5px" alt="protected">array
+                 <span class="highlight">$index_identity</span>= ''
+                </code><div class="description">
+<p class="short-description">An index of records on the identity field. The format is:</p></div>
+<div class="code-tabs">
+<div class="long-description"><p>$index_identity[$identity_value] = $offset;</p>
+
+<p>Note that we always have only one offset, keyed by identity value.</p></div>
+<strong>Details</strong><dl class="property-info">
+<dt>Type</dt>
+<dd>array</dd>
+</dl>
+</div>
+<div class="clear"></div>
+</div>
+<a id="\Aura\Marshal\Type\GenericType::$index_new" class="anchor"></a><div class="property protected">
+<a href="#" class="gripper"><img src="images/icons/arrow_right.png"><img src="images/icons/arrow_down.png" style="display: none;"></a><code><img src="images/icons/property.png" alt="Property"><img src="images/icons/visibility_protected.png" style="margin-right: 5px" alt="protected">array
+                 <span class="highlight">$index_new</span>= ''
+                </code><div class="description">
+<p class="short-description">An index of all records added via newRecord(). The format is:</p></div>
+<div class="code-tabs">
+<div class="long-description"><p>$index_new[] = $offset;</p>
+
+<p>Note that we always have one offset, and the key is merely sequential.</p></div>
+<strong>Details</strong><dl class="property-info">
+<dt>Type</dt>
+<dd>array</dd>
 </dl>
 </div>
 <div class="clear"></div>
@@ -200,11 +219,10 @@ is:</p></div>
                 </code><div class="description">
 <p class="short-description">A builder to create record objects for this type.</p></div>
 <div class="code-tabs">
-<div class="long-description">
-</div>
+<div class="long-description"></div>
 <strong>Details</strong><dl class="property-info">
 <dt>Type</dt>
-<dd>\Aura\Marshal\Type\object</dd>
+<dd>object</dd>
 </dl>
 </div>
 <div class="clear"></div>
@@ -216,11 +234,10 @@ is:</p></div>
 <p class="short-description">The class expected from the record builder. This is used to determine
 if elements in the IdentityMap have been converted to record objects.</p></div>
 <div class="code-tabs">
-<div class="long-description">
-</div>
+<div class="long-description"></div>
 <strong>Details</strong><dl class="property-info">
 <dt>Type</dt>
-<dd>\Aura\Marshal\Type\string</dd>
+<dd>string</dd>
 </dl>
 </div>
 <div class="clear"></div>
@@ -232,11 +249,10 @@ if elements in the IdentityMap have been converted to record objects.</p></div>
 <p class="short-description">An array of relationship descriptions, where the key is a
 field name for the record and the value is a relation object.</p></div>
 <div class="code-tabs">
-<div class="long-description">
-</div>
+<div class="long-description"></div>
 <strong>Default value</strong><code>array()</code><strong>Details</strong><dl class="property-info">
 <dt>Type</dt>
-<dd>\Aura\Marshal\Type\array</dd>
+<dd>array</dd>
 </dl>
 </div>
 <div class="clear"></div>
@@ -246,7 +262,7 @@ field name for the record and the value is a relation object.</p></div>
 <div>
 <a id="\Aura\Marshal\Type\GenericType::__construct()" class="anchor"></a><div class="method public inherited_from ">
 <a href="#" class="gripper"><img src="images/icons/arrow_right.png"><img src="images/icons/arrow_down.png" style="display: none;"></a><code><img src="images/icons/method.png" alt="method"><img src="images/icons/visibility_public.png" style="margin-right: 5px" alt="public"><span class="highlight">__construct</span><span class="nb-faded-text">(
-          \Aura\Marshal\array $data
+          array $data
               =
               array()
           )
@@ -258,8 +274,7 @@ field name for the record and the value is a relation object.</p></div>
                     <a href="db_src_Aura_Marshal_Data.html#%5CAura%5CMarshal%5CData::__construct()">\Aura\Marshal\Data::__construct()</a></small>
 </div>
 <div class="code-tabs">
-<div class="long-description">
-</div>
+<div class="long-description"></div>
 <strong>Parameters</strong><table class="argument-info">
 <thead><tr>
 <th>Name</th>
@@ -268,7 +283,7 @@ field name for the record and the value is a relation object.</p></div>
 </tr></thead>
 <tr>
 <th>$data</th>
-<td>\Aura\Marshal\array</td>
+<td>array</td>
 <td><em><p>The data for this object.</p></em></td>
 </tr>
 </table>
@@ -281,21 +296,43 @@ field name for the record and the value is a relation object.</p></div>
           )
         </span>
         :
-          \Aura\Marshal\int</code><div class="description">
+          int</code><div class="description">
 <span class="attribute">inherited</span><p class="short_description">Countable: how many keys are there?</p>
 <small>Inherited from:
                     <a href="db_src_Aura_Marshal_Data.html#%5CAura%5CMarshal%5CData::count()">\Aura\Marshal\Data::count()</a></small>
 </div>
 <div class="code-tabs">
-<div class="long-description">
-</div>
+<div class="long-description"></div>
 <strong>Returns</strong><table class="argument-info">
 <thead><tr>
 <th>Type</th>
 <th>Description</th>
 </tr></thead>
 <tr>
-<td>\Aura\Marshal\int</td>
+<td>int</td>
+<td></td>
+</tr>
+</table>
+</div>
+<div class="clear"></div>
+</div>
+<a id="\Aura\Marshal\Type\GenericType::getChangedRecords()" class="anchor"></a><div class="method public">
+<a href="#" class="gripper"><img src="images/icons/arrow_right.png"><img src="images/icons/arrow_down.png" style="display: none;"></a><code><img src="images/icons/method.png" alt="method"><img src="images/icons/visibility_public.png" style="margin-right: 5px" alt="public"><span class="highlight">getChangedRecords</span><span class="nb-faded-text">(
+          
+          )
+        </span>
+        :
+          array</code><div class="description"><p class="short_description">Returns an array of all records in the IdentityMap that have been
+modified.</p></div>
+<div class="code-tabs">
+<div class="long-description"></div>
+<strong>Returns</strong><table class="argument-info">
+<thead><tr>
+<th>Type</th>
+<th>Description</th>
+</tr></thead>
+<tr>
+<td>array</td>
 <td></td>
 </tr>
 </table>
@@ -304,16 +341,15 @@ field name for the record and the value is a relation object.</p></div>
 </div>
 <a id="\Aura\Marshal\Type\GenericType::getCollection()" class="anchor"></a><div class="method public">
 <a href="#" class="gripper"><img src="images/icons/arrow_right.png"><img src="images/icons/arrow_down.png" style="display: none;"></a><code><img src="images/icons/method.png" alt="method"><img src="images/icons/visibility_public.png" style="margin-right: 5px" alt="public"><span class="highlight">getCollection</span><span class="nb-faded-text">(
-          \Aura\Marshal\Type\array $identity_values
+          array $identity_values
           )
         </span>
         :
-          \Aura\Marshal\Type\object</code><div class="description"><p class="short_description">Retrieves a collection of elements from the IdentityMap by the values
-of their identity fields; each entity will be converted to a record
+          object</code><div class="description"><p class="short_description">Retrieves a collection of elements from the IdentityMap by the values
+of their identity fields; each element will be converted to a record
 object if it is not already an object of the proper class.</p></div>
 <div class="code-tabs">
-<div class="long-description">
-</div>
+<div class="long-description"></div>
 <strong>Parameters</strong><table class="argument-info">
 <thead><tr>
 <th>Name</th>
@@ -322,7 +358,7 @@ object if it is not already an object of the proper class.</p></div>
 </tr></thead>
 <tr>
 <th>$identity_values</th>
-<td>\Aura\Marshal\Type\array</td>
+<td>array</td>
 <td><em><p>An array of identity values to retrieve.</p></em></td>
 </tr>
 </table>
@@ -332,7 +368,7 @@ object if it is not already an object of the proper class.</p></div>
 <th>Description</th>
 </tr></thead>
 <tr>
-<td>\Aura\Marshal\Type\object</td>
+<td>object</td>
 <td>A collection object via the collection builder.</td>
 </tr>
 </table>
@@ -345,17 +381,16 @@ object if it is not already an object of the proper class.</p></div>
           )
         </span>
         :
-          \Aura\Marshal\Type\object</code><div class="description"><p class="short_description">Returns the builder that creates collection objects.</p></div>
+          object</code><div class="description"><p class="short_description">Returns the builder that creates collection objects.</p></div>
 <div class="code-tabs">
-<div class="long-description">
-</div>
+<div class="long-description"></div>
 <strong>Returns</strong><table class="argument-info">
 <thead><tr>
 <th>Type</th>
 <th>Description</th>
 </tr></thead>
 <tr>
-<td>\Aura\Marshal\Type\object</td>
+<td>object</td>
 <td></td>
 </tr>
 </table>
@@ -364,11 +399,11 @@ object if it is not already an object of the proper class.</p></div>
 </div>
 <a id="\Aura\Marshal\Type\GenericType::getCollectionByField()" class="anchor"></a><div class="method public">
 <a href="#" class="gripper"><img src="images/icons/arrow_right.png"><img src="images/icons/arrow_down.png" style="display: none;"></a><code><img src="images/icons/method.png" alt="method"><img src="images/icons/visibility_public.png" style="margin-right: 5px" alt="public"><span class="highlight">getCollectionByField</span><span class="nb-faded-text">(
-          \Aura\Marshal\Type\string $field, \Aura\Marshal\Type\mixed $values
+          string $field, mixed $values
           )
         </span>
         :
-          \Aura\Marshal\Type\object</code><div class="description"><p class="short_description">Retrieves a collection of objects from the IdentityMap matching the
+          object</code><div class="description"><p class="short_description">Retrieves a collection of objects from the IdentityMap matching the
 value of an arbitrary field; these will be converted to records
 if they are not already objects of the proper class.</p></div>
 <div class="code-tabs">
@@ -382,8 +417,7 @@ IdentityMap.</p>
 
 <p>The fastest results are from the identity field; second fastest, from
 an indexed field; slowest are from non-indexed fields, because it has
-to look through the entire IdentityMap to find matches.</p>
-</div>
+to look through the entire IdentityMap to find matches.</p></div>
 <strong>Parameters</strong><table class="argument-info">
 <thead><tr>
 <th>Name</th>
@@ -392,12 +426,12 @@ to look through the entire IdentityMap to find matches.</p>
 </tr></thead>
 <tr>
 <th>$field</th>
-<td>\Aura\Marshal\Type\string</td>
+<td>string</td>
 <td><em><p>The field to match on.</p></em></td>
 </tr>
 <tr>
 <th>$values</th>
-<td>\Aura\Marshal\Type\mixed</td>
+<td>mixed</td>
 <td><em><p>The value of the field to match on; if an array, any value in the array will be counted as a match.</p></em></td>
 </tr>
 </table>
@@ -407,20 +441,20 @@ to look through the entire IdentityMap to find matches.</p>
 <th>Description</th>
 </tr></thead>
 <tr>
-<td>\Aura\Marshal\Type\object</td>
+<td>object</td>
 <td>A collection object via the collection builder.</td>
 </tr>
 </table>
 </div>
 <div class="clear"></div>
 </div>
-<a id="\Aura\Marshal\Type\GenericType::getCollectionByIndex()" class="anchor"></a><div class="method public">
-<a href="#" class="gripper"><img src="images/icons/arrow_right.png"><img src="images/icons/arrow_down.png" style="display: none;"></a><code><img src="images/icons/method.png" alt="method"><img src="images/icons/visibility_public.png" style="margin-right: 5px" alt="public"><span class="highlight">getCollectionByIndex</span><span class="nb-faded-text">(
-          \Aura\Marshal\Type\string $field, \Aura\Marshal\Type\mixed $values
+<a id="\Aura\Marshal\Type\GenericType::getCollectionByIndex()" class="anchor"></a><div class="method protected">
+<a href="#" class="gripper"><img src="images/icons/arrow_right.png"><img src="images/icons/arrow_down.png" style="display: none;"></a><code><img src="images/icons/method.png" alt="method"><img src="images/icons/visibility_protected.png" style="margin-right: 5px" alt="protected"><span class="highlight">getCollectionByIndex</span><span class="nb-faded-text">(
+          string $field, mixed $values
           )
         </span>
         :
-          \Aura\Marshal\Type\object</code><div class="description"><p class="short_description">Looks through the index for a field to retrieve a collection of
+          object</code><div class="description"><p class="short_description">Looks through the index for a field to retrieve a collection of
 objects from the IdentityMap; these will be converted to records
 if they are not already objects of the proper class.</p></div>
 <div class="code-tabs">
@@ -428,8 +462,7 @@ if they are not already objects of the proper class.</p></div>
 can get many values of the field being matched.</p>
 
 <p>N.b.: The order of the returned collection will match the order of the
-values being searched, not the order of the records in the IdentityMap.</p>
-</div>
+values being searched, not the order of the records in the IdentityMap.</p></div>
 <strong>Parameters</strong><table class="argument-info">
 <thead><tr>
 <th>Name</th>
@@ -438,12 +471,12 @@ values being searched, not the order of the records in the IdentityMap.</p>
 </tr></thead>
 <tr>
 <th>$field</th>
-<td>\Aura\Marshal\Type\string</td>
+<td>string</td>
 <td><em><p>The field to match on.</p></em></td>
 </tr>
 <tr>
 <th>$values</th>
-<td>\Aura\Marshal\Type\mixed</td>
+<td>mixed</td>
 <td><em><p>The value of the field to match on; if an array, any value in the array will be counted as a match.</p></em></td>
 </tr>
 </table>
@@ -453,7 +486,7 @@ values being searched, not the order of the records in the IdentityMap.</p>
 <th>Description</th>
 </tr></thead>
 <tr>
-<td>\Aura\Marshal\Type\object</td>
+<td>object</td>
 <td>A collection object via the collection builder.</td>
 </tr>
 </table>
@@ -462,15 +495,14 @@ values being searched, not the order of the records in the IdentityMap.</p>
 </div>
 <a id="\Aura\Marshal\Type\GenericType::getFieldValues()" class="anchor"></a><div class="method public">
 <a href="#" class="gripper"><img src="images/icons/arrow_right.png"><img src="images/icons/arrow_down.png" style="display: none;"></a><code><img src="images/icons/method.png" alt="method"><img src="images/icons/visibility_public.png" style="margin-right: 5px" alt="public"><span class="highlight">getFieldValues</span><span class="nb-faded-text">(
-          \Aura\Marshal\Type\string $field
+          string $field
           )
         </span>
         :
-          \Aura\Marshal\Type\array</code><div class="description"><p class="short_description">Returns the values for a particular field for all the records in the
+          array</code><div class="description"><p class="short_description">Returns the values for a particular field for all the records in the
 IdentityMap.</p></div>
 <div class="code-tabs">
-<div class="long-description">
-</div>
+<div class="long-description"></div>
 <strong>Parameters</strong><table class="argument-info">
 <thead><tr>
 <th>Name</th>
@@ -479,7 +511,7 @@ IdentityMap.</p></div>
 </tr></thead>
 <tr>
 <th>$field</th>
-<td>\Aura\Marshal\Type\string</td>
+<td>string</td>
 <td><em><p>The field name to get values for.</p></em></td>
 </tr>
 </table>
@@ -489,7 +521,7 @@ IdentityMap.</p></div>
 <th>Description</th>
 </tr></thead>
 <tr>
-<td>\Aura\Marshal\Type\array</td>
+<td>array</td>
 <td>An array of key-value pairs where the key is the identity value and the value is the requested field value.</td>
 </tr>
 </table>
@@ -502,18 +534,17 @@ IdentityMap.</p></div>
           )
         </span>
         :
-          \Aura\Marshal\Type\string</code><div class="description"><p class="short_description">Returns the name of the field that uniquely identifies each record of
+          string</code><div class="description"><p class="short_description">Returns the name of the field that uniquely identifies each record of
 this type.</p></div>
 <div class="code-tabs">
-<div class="long-description">
-</div>
+<div class="long-description"></div>
 <strong>Returns</strong><table class="argument-info">
 <thead><tr>
 <th>Type</th>
 <th>Description</th>
 </tr></thead>
 <tr>
-<td>\Aura\Marshal\Type\string</td>
+<td>string</td>
 <td></td>
 </tr>
 </table>
@@ -526,18 +557,39 @@ this type.</p></div>
           )
         </span>
         :
-          \Aura\Marshal\Type\array</code><div class="description"><p class="short_description">Returns the array keys for the for the records in the IdentityMap;
+          array</code><div class="description"><p class="short_description">Returns the array keys for the for the records in the IdentityMap;
 the keys were generated at load() time from the identity field values.</p></div>
 <div class="code-tabs">
-<div class="long-description">
-</div>
+<div class="long-description"></div>
 <strong>Returns</strong><table class="argument-info">
 <thead><tr>
 <th>Type</th>
 <th>Description</th>
 </tr></thead>
 <tr>
-<td>\Aura\Marshal\Type\array</td>
+<td>array</td>
+<td></td>
+</tr>
+</table>
+</div>
+<div class="clear"></div>
+</div>
+<a id="\Aura\Marshal\Type\GenericType::getIndexFields()" class="anchor"></a><div class="method public">
+<a href="#" class="gripper"><img src="images/icons/arrow_right.png"><img src="images/icons/arrow_down.png" style="display: none;"></a><code><img src="images/icons/method.png" alt="method"><img src="images/icons/visibility_public.png" style="margin-right: 5px" alt="public"><span class="highlight">getIndexFields</span><span class="nb-faded-text">(
+          
+          )
+        </span>
+        :
+          array</code><div class="description"><p class="short_description">Returns the list of indexed field names.</p></div>
+<div class="code-tabs">
+<div class="long-description"></div>
+<strong>Returns</strong><table class="argument-info">
+<thead><tr>
+<th>Type</th>
+<th>Description</th>
+</tr></thead>
+<tr>
+<td>array</td>
 <td></td>
 </tr>
 </table>
@@ -556,8 +608,7 @@ the keys were generated at load() time from the identity field values.</p></div>
                     <a href="db_src_Aura_Marshal_Data.html#%5CAura%5CMarshal%5CData::getIterator()">\Aura\Marshal\Data::getIterator()</a></small>
 </div>
 <div class="code-tabs">
-<div class="long-description">
-</div>
+<div class="long-description"></div>
 <strong>Returns</strong><table class="argument-info">
 <thead><tr>
 <th>Type</th>
@@ -571,17 +622,39 @@ the keys were generated at load() time from the identity field values.</p></div>
 </div>
 <div class="clear"></div>
 </div>
-<a id="\Aura\Marshal\Type\GenericType::getRecord()" class="anchor"></a><div class="method public">
-<a href="#" class="gripper"><img src="images/icons/arrow_right.png"><img src="images/icons/arrow_down.png" style="display: none;"></a><code><img src="images/icons/method.png" alt="method"><img src="images/icons/visibility_public.png" style="margin-right: 5px" alt="public"><span class="highlight">getRecord</span><span class="nb-faded-text">(
-          \Aura\Marshal\Type\int $identity_value
+<a id="\Aura\Marshal\Type\GenericType::getNewRecords()" class="anchor"></a><div class="method public">
+<a href="#" class="gripper"><img src="images/icons/arrow_right.png"><img src="images/icons/arrow_down.png" style="display: none;"></a><code><img src="images/icons/method.png" alt="method"><img src="images/icons/visibility_public.png" style="margin-right: 5px" alt="public"><span class="highlight">getNewRecords</span><span class="nb-faded-text">(
+          
           )
         </span>
         :
-          \Aura\Marshal\Type\object</code><div class="description"><p class="short_description">Retrieves a single record from the IdentityMap by the value of its
+          array</code><div class="description"><p class="short_description">Returns an array of all records in the IdentityMap that were created
+using `newRecord()`.</p></div>
+<div class="code-tabs">
+<div class="long-description"></div>
+<strong>Returns</strong><table class="argument-info">
+<thead><tr>
+<th>Type</th>
+<th>Description</th>
+</tr></thead>
+<tr>
+<td>array</td>
+<td></td>
+</tr>
+</table>
+</div>
+<div class="clear"></div>
+</div>
+<a id="\Aura\Marshal\Type\GenericType::getRecord()" class="anchor"></a><div class="method public">
+<a href="#" class="gripper"><img src="images/icons/arrow_right.png"><img src="images/icons/arrow_down.png" style="display: none;"></a><code><img src="images/icons/method.png" alt="method"><img src="images/icons/visibility_public.png" style="margin-right: 5px" alt="public"><span class="highlight">getRecord</span><span class="nb-faded-text">(
+          int $identity_value
+          )
+        </span>
+        :
+          object</code><div class="description"><p class="short_description">Retrieves a single record from the IdentityMap by the value of its
 identity field, converting it to a $record_class object if needed.</p></div>
 <div class="code-tabs">
-<div class="long-description">
-</div>
+<div class="long-description"></div>
 <strong>Parameters</strong><table class="argument-info">
 <thead><tr>
 <th>Name</th>
@@ -590,7 +663,7 @@ identity field, converting it to a $record_class object if needed.</p></div>
 </tr></thead>
 <tr>
 <th>$identity_value</th>
-<td>\Aura\Marshal\Type\int</td>
+<td>int</td>
 <td><em><p>The identity value of the record to be retrieved.</p></em></td>
 </tr>
 </table>
@@ -600,7 +673,7 @@ identity field, converting it to a $record_class object if needed.</p></div>
 <th>Description</th>
 </tr></thead>
 <tr>
-<td>\Aura\Marshal\Type\object</td>
+<td>object</td>
 <td>A record object via the record builder.</td>
 </tr>
 </table>
@@ -613,17 +686,16 @@ identity field, converting it to a $record_class object if needed.</p></div>
           )
         </span>
         :
-          \Aura\Marshal\Type\object</code><div class="description"><p class="short_description">Returns the builder that creates record objects.</p></div>
+          object</code><div class="description"><p class="short_description">Returns the builder that creates record objects.</p></div>
 <div class="code-tabs">
-<div class="long-description">
-</div>
+<div class="long-description"></div>
 <strong>Returns</strong><table class="argument-info">
 <thead><tr>
 <th>Type</th>
 <th>Description</th>
 </tr></thead>
 <tr>
-<td>\Aura\Marshal\Type\object</td>
+<td>object</td>
 <td></td>
 </tr>
 </table>
@@ -632,17 +704,16 @@ identity field, converting it to a $record_class object if needed.</p></div>
 </div>
 <a id="\Aura\Marshal\Type\GenericType::getRecordByField()" class="anchor"></a><div class="method public">
 <a href="#" class="gripper"><img src="images/icons/arrow_right.png"><img src="images/icons/arrow_down.png" style="display: none;"></a><code><img src="images/icons/method.png" alt="method"><img src="images/icons/visibility_public.png" style="margin-right: 5px" alt="public"><span class="highlight">getRecordByField</span><span class="nb-faded-text">(
-          \Aura\Marshal\Type\string $field, \Aura\Marshal\Type\mixed $value
+          string $field, mixed $value
           )
         </span>
         :
-          \Aura\Marshal\Type\object</code><div class="description"><p class="short_description">Retrieves the first record from the IdentityMap that matches the value
+          object</code><div class="description"><p class="short_description">Retrieves the first record from the IdentityMap that matches the value
 of an arbitrary field; it will be converted to a record object
 if it is not already an object of the proper class.</p></div>
 <div class="code-tabs">
 <div class="long-description"><p>N.b.: This will not be performant for large sets where the field is not
-an identity field and is not indexed.</p>
-</div>
+an identity field and is not indexed.</p></div>
 <strong>Parameters</strong><table class="argument-info">
 <thead><tr>
 <th>Name</th>
@@ -651,12 +722,12 @@ an identity field and is not indexed.</p>
 </tr></thead>
 <tr>
 <th>$field</th>
-<td>\Aura\Marshal\Type\string</td>
+<td>string</td>
 <td><em><p>The field to match on.</p></em></td>
 </tr>
 <tr>
 <th>$value</th>
-<td>\Aura\Marshal\Type\mixed</td>
+<td>mixed</td>
 <td><em><p>The value of the field to match on.</p></em></td>
 </tr>
 </table>
@@ -666,7 +737,83 @@ an identity field and is not indexed.</p>
 <th>Description</th>
 </tr></thead>
 <tr>
-<td>\Aura\Marshal\Type\object</td>
+<td>object</td>
+<td>A record object via the record builder.</td>
+</tr>
+</table>
+</div>
+<div class="clear"></div>
+</div>
+<a id="\Aura\Marshal\Type\GenericType::getRecordByIndex()" class="anchor"></a><div class="method protected">
+<a href="#" class="gripper"><img src="images/icons/arrow_right.png"><img src="images/icons/arrow_down.png" style="display: none;"></a><code><img src="images/icons/method.png" alt="method"><img src="images/icons/visibility_protected.png" style="margin-right: 5px" alt="protected"><span class="highlight">getRecordByIndex</span><span class="nb-faded-text">(
+          string $field, string $value
+          )
+        </span>
+        :
+          object</code><div class="description"><p class="short_description">Retrieves the first record from the IdentityMap matching an index
+lookup, converting it to a $record_class object if needed.</p></div>
+<div class="code-tabs">
+<div class="long-description"></div>
+<strong>Parameters</strong><table class="argument-info">
+<thead><tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+</tr></thead>
+<tr>
+<th>$field</th>
+<td>string</td>
+<td><em><p>The indexed field name.</p></em></td>
+</tr>
+<tr>
+<th>$value</th>
+<td>string</td>
+<td><em><p>The field value to match on.</p></em></td>
+</tr>
+</table>
+<strong>Returns</strong><table class="argument-info">
+<thead><tr>
+<th>Type</th>
+<th>Description</th>
+</tr></thead>
+<tr>
+<td>object</td>
+<td>A record object via the record builder.</td>
+</tr>
+</table>
+</div>
+<div class="clear"></div>
+</div>
+<a id="\Aura\Marshal\Type\GenericType::getRecordByOffset()" class="anchor"></a><div class="method protected">
+<a href="#" class="gripper"><img src="images/icons/arrow_right.png"><img src="images/icons/arrow_down.png" style="display: none;"></a><code><img src="images/icons/method.png" alt="method"><img src="images/icons/visibility_protected.png" style="margin-right: 5px" alt="protected"><span class="highlight">getRecordByOffset</span><span class="nb-faded-text">(
+          int $offset
+          )
+        </span>
+        :
+          object</code><div class="description"><p class="short_description">Retrieves a single record from the IdentityMap by its offset,
+converting it to a $record_class object if needed.</p></div>
+<div class="code-tabs">
+<div class="long-description"></div>
+<strong>Parameters</strong><table class="argument-info">
+<thead><tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+</tr></thead>
+<tr>
+<th>$offset</th>
+<td>int</td>
+<td><em><p>The record offset in the $data array.</p>
+</em></td>
+</tr>
+</table>
+<strong>Returns</strong><table class="argument-info">
+<thead><tr>
+<th>Type</th>
+<th>Description</th>
+</tr></thead>
+<tr>
+<td>object</td>
 <td>A record object via the record builder.</td>
 </tr>
 </table>
@@ -679,17 +826,16 @@ an identity field and is not indexed.</p>
           )
         </span>
         :
-          \Aura\Marshal\Type\string</code><div class="description"><p class="short_description">Returns the name of the expected record class.</p></div>
+          string</code><div class="description"><p class="short_description">Returns the name of the expected record class.</p></div>
 <div class="code-tabs">
-<div class="long-description">
-</div>
+<div class="long-description"></div>
 <strong>Returns</strong><table class="argument-info">
 <thead><tr>
 <th>Type</th>
 <th>Description</th>
 </tr></thead>
 <tr>
-<td>\Aura\Marshal\Type\string</td>
+<td>string</td>
 <td></td>
 </tr>
 </table>
@@ -704,8 +850,7 @@ an identity field and is not indexed.</p>
         :
           \Aura\Marshal\Type\AbstractRelation</code><div class="description"><p class="short_description">Returns a relationship definition object by name.</p></div>
 <div class="code-tabs">
-<div class="long-description">
-</div>
+<div class="long-description"></div>
 <strong>Parameters</strong><table class="argument-info">
 <thead><tr>
 <th>Name</th>
@@ -737,17 +882,16 @@ an identity field and is not indexed.</p>
           )
         </span>
         :
-          \Aura\Marshal\Type\array</code><div class="description"><p class="short_description">Returns all the names of the relationship definition objects.</p></div>
+          array</code><div class="description"><p class="short_description">Returns all the names of the relationship definition objects.</p></div>
 <div class="code-tabs">
-<div class="long-description">
-</div>
+<div class="long-description"></div>
 <strong>Returns</strong><table class="argument-info">
 <thead><tr>
 <th>Type</th>
 <th>Description</th>
 </tr></thead>
 <tr>
-<td>\Aura\Marshal\Type\array</td>
+<td>array</td>
 <td></td>
 </tr>
 </table>
@@ -756,18 +900,18 @@ an identity field and is not indexed.</p>
 </div>
 <a id="\Aura\Marshal\Type\GenericType::load()" class="anchor"></a><div class="method public">
 <a href="#" class="gripper"><img src="images/icons/arrow_right.png"><img src="images/icons/arrow_down.png" style="display: none;"></a><code><img src="images/icons/method.png" alt="method"><img src="images/icons/visibility_public.png" style="margin-right: 5px" alt="public"><span class="highlight">load</span><span class="nb-faded-text">(
-          \Aura\Marshal\Type\array $data
+          array $data
           )
         </span>
         :
-          \Aura\Marshal\Type\array</code><div class="description"><p class="short_description">Loads the IdentityMap for this type with data for record objects.</p></div>
+          array</code><div class="description"><p class="short_description">Loads the IdentityMap for this type with data for record objects.</p></div>
 <div class="code-tabs">
 <div class="long-description"><p>Typically, the $data value is a sequential array of associative arrays.
 As long as the $data value can be iterated over and accessed as an
 array, you can pass in any kind of $data.</p>
 
-<p>The elements from $data will be placed into the IdentityMap; the
-IdentityMap key will be the value of the identity field in the element.</p>
+<p>The elements from $data will be placed into the IdentityMap and indexed
+according to the value of their identity field.</p>
 
 <p>You can call load() multiple times, but records already in the
 IdentityMap will not be overwritten.</p>
@@ -776,8 +920,7 @@ IdentityMap will not be overwritten.</p>
 addressing of elements before and after conversion to record objects.</p>
 
 <p>The loaded elements will be converted to record objects by the
-record builder only as you request them from the IdentityMap.</p>
-</div>
+record builder only as you request them from the IdentityMap.</p></div>
 <strong>Parameters</strong><table class="argument-info">
 <thead><tr>
 <th>Name</th>
@@ -786,7 +929,7 @@ record builder only as you request them from the IdentityMap.</p>
 </tr></thead>
 <tr>
 <th>$data</th>
-<td>\Aura\Marshal\Type\array</td>
+<td>array</td>
 <td><em><p>Record data to load into the IdentityMap.</p></em></td>
 </tr>
 </table>
@@ -796,8 +939,47 @@ record builder only as you request them from the IdentityMap.</p>
 <th>Description</th>
 </tr></thead>
 <tr>
-<td>\Aura\Marshal\Type\array</td>
+<td>array</td>
 <td>The identity values from the data elements, regardless of whether they were loaded or not.</td>
+</tr>
+</table>
+</div>
+<div class="clear"></div>
+</div>
+<a id="\Aura\Marshal\Type\GenericType::newRecord()" class="anchor"></a><div class="method public">
+<a href="#" class="gripper"><img src="images/icons/arrow_right.png"><img src="images/icons/arrow_down.png" style="display: none;"></a><code><img src="images/icons/method.png" alt="method"><img src="images/icons/visibility_public.png" style="margin-right: 5px" alt="public"><span class="highlight">newRecord</span><span class="nb-faded-text">(
+          array $data
+              =
+              array()
+          )
+        </span>
+        :
+          object</code><div class="description"><p class="short_description">Adds a new record to the IdentityMap.</p></div>
+<div class="code-tabs">
+<div class="long-description"><p>This record will not show up in any indexes, whether by field or
+by primary key. You will see it only by iterating through the
+IdentityMap. Typically this is used to add to a collection, or
+to create a new record from user input.</p></div>
+<strong>Parameters</strong><table class="argument-info">
+<thead><tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+</tr></thead>
+<tr>
+<th>$data</th>
+<td>array</td>
+<td><em><p>Data for the new record.</p></em></td>
+</tr>
+</table>
+<strong>Returns</strong><table class="argument-info">
+<thead><tr>
+<th>Type</th>
+<th>Description</th>
+</tr></thead>
+<tr>
+<td>object</td>
+<td></td>
 </tr>
 </table>
 </div>
@@ -805,18 +987,17 @@ record builder only as you request them from the IdentityMap.</p>
 </div>
 <a id="\Aura\Marshal\Type\GenericType::offsetExists()" class="anchor"></a><div class="method public inherited_from ">
 <a href="#" class="gripper"><img src="images/icons/arrow_right.png"><img src="images/icons/arrow_down.png" style="display: none;"></a><code><img src="images/icons/method.png" alt="method"><img src="images/icons/visibility_public.png" style="margin-right: 5px" alt="public"><span class="highlight">offsetExists</span><span class="nb-faded-text">(
-          \Aura\Marshal\int | \Aura\Marshal\string $key
+          int | string $key
           )
         </span>
         :
-          \Aura\Marshal\bool</code><div class="description">
+          bool</code><div class="description">
 <span class="attribute">inherited</span><p class="short_description">ArrayAccess: does the requested key exist?</p>
 <small>Inherited from:
                     <a href="db_src_Aura_Marshal_Data.html#%5CAura%5CMarshal%5CData::offsetExists()">\Aura\Marshal\Data::offsetExists()</a></small>
 </div>
 <div class="code-tabs">
-<div class="long-description">
-</div>
+<div class="long-description"></div>
 <strong>Parameters</strong><table class="argument-info">
 <thead><tr>
 <th>Name</th>
@@ -825,7 +1006,7 @@ record builder only as you request them from the IdentityMap.</p>
 </tr></thead>
 <tr>
 <th>$key</th>
-<td>\Aura\Marshal\int | \Aura\Marshal\string</td>
+<td>int | string</td>
 <td><em><p>The requested key.</p></em></td>
 </tr>
 </table>
@@ -835,7 +1016,7 @@ record builder only as you request them from the IdentityMap.</p>
 <th>Description</th>
 </tr></thead>
 <tr>
-<td>\Aura\Marshal\bool</td>
+<td>bool</td>
 <td></td>
 </tr>
 </table>
@@ -844,18 +1025,17 @@ record builder only as you request them from the IdentityMap.</p>
 </div>
 <a id="\Aura\Marshal\Type\GenericType::offsetGet()" class="anchor"></a><div class="method public inherited_from ">
 <a href="#" class="gripper"><img src="images/icons/arrow_right.png"><img src="images/icons/arrow_down.png" style="display: none;"></a><code><img src="images/icons/method.png" alt="method"><img src="images/icons/visibility_public.png" style="margin-right: 5px" alt="public"><span class="highlight">offsetGet</span><span class="nb-faded-text">(
-          \Aura\Marshal\int | \Aura\Marshal\string $key
+          int | string $key
           )
         </span>
         :
-          \Aura\Marshal\mixed</code><div class="description">
+          mixed</code><div class="description">
 <span class="attribute">inherited</span><p class="short_description">ArrayAccess: get a key value.</p>
 <small>Inherited from:
                     <a href="db_src_Aura_Marshal_Data.html#%5CAura%5CMarshal%5CData::offsetGet()">\Aura\Marshal\Data::offsetGet()</a></small>
 </div>
 <div class="code-tabs">
-<div class="long-description">
-</div>
+<div class="long-description"></div>
 <strong>Parameters</strong><table class="argument-info">
 <thead><tr>
 <th>Name</th>
@@ -864,7 +1044,7 @@ record builder only as you request them from the IdentityMap.</p>
 </tr></thead>
 <tr>
 <th>$key</th>
-<td>\Aura\Marshal\int | \Aura\Marshal\string</td>
+<td>int | string</td>
 <td><em><p>The requested key.</p></em></td>
 </tr>
 </table>
@@ -874,7 +1054,7 @@ record builder only as you request them from the IdentityMap.</p>
 <th>Description</th>
 </tr></thead>
 <tr>
-<td>\Aura\Marshal\mixed</td>
+<td>mixed</td>
 <td></td>
 </tr>
 </table>
@@ -883,18 +1063,17 @@ record builder only as you request them from the IdentityMap.</p>
 </div>
 <a id="\Aura\Marshal\Type\GenericType::offsetSet()" class="anchor"></a><div class="method public inherited_from ">
 <a href="#" class="gripper"><img src="images/icons/arrow_right.png"><img src="images/icons/arrow_down.png" style="display: none;"></a><code><img src="images/icons/method.png" alt="method"><img src="images/icons/visibility_public.png" style="margin-right: 5px" alt="public"><span class="highlight">offsetSet</span><span class="nb-faded-text">(
-          \Aura\Marshal\int | \Aura\Marshal\string $key, \Aura\Marshal\mixed $val
+          int | string $key, mixed $val
           )
         </span>
         :
-          \Aura\Marshal\void</code><div class="description">
+          void</code><div class="description">
 <span class="attribute">inherited</span><p class="short_description">ArrayAccess: set a key value.</p>
 <small>Inherited from:
                     <a href="db_src_Aura_Marshal_Data.html#%5CAura%5CMarshal%5CData::offsetSet()">\Aura\Marshal\Data::offsetSet()</a></small>
 </div>
 <div class="code-tabs">
-<div class="long-description">
-</div>
+<div class="long-description"></div>
 <strong>Parameters</strong><table class="argument-info">
 <thead><tr>
 <th>Name</th>
@@ -903,12 +1082,12 @@ record builder only as you request them from the IdentityMap.</p>
 </tr></thead>
 <tr>
 <th>$key</th>
-<td>\Aura\Marshal\int | \Aura\Marshal\string</td>
+<td>int | string</td>
 <td><em><p>The requested key.</p></em></td>
 </tr>
 <tr>
 <th>$val</th>
-<td>\Aura\Marshal\mixed</td>
+<td>mixed</td>
 <td><em><p>The value to set it to.</p></em></td>
 </tr>
 </table>
@@ -917,18 +1096,17 @@ record builder only as you request them from the IdentityMap.</p>
 </div>
 <a id="\Aura\Marshal\Type\GenericType::offsetUnset()" class="anchor"></a><div class="method public inherited_from ">
 <a href="#" class="gripper"><img src="images/icons/arrow_right.png"><img src="images/icons/arrow_down.png" style="display: none;"></a><code><img src="images/icons/method.png" alt="method"><img src="images/icons/visibility_public.png" style="margin-right: 5px" alt="public"><span class="highlight">offsetUnset</span><span class="nb-faded-text">(
-          \Aura\Marshal\int | \Aura\Marshal\string $key
+          int | string $key
           )
         </span>
         :
-          \Aura\Marshal\void</code><div class="description">
+          void</code><div class="description">
 <span class="attribute">inherited</span><p class="short_description">ArrayAccess: unset a key.</p>
 <small>Inherited from:
                     <a href="db_src_Aura_Marshal_Data.html#%5CAura%5CMarshal%5CData::offsetUnset()">\Aura\Marshal\Data::offsetUnset()</a></small>
 </div>
 <div class="code-tabs">
-<div class="long-description">
-</div>
+<div class="long-description"></div>
 <strong>Parameters</strong><table class="argument-info">
 <thead><tr>
 <th>Name</th>
@@ -937,7 +1115,7 @@ record builder only as you request them from the IdentityMap.</p>
 </tr></thead>
 <tr>
 <th>$key</th>
-<td>\Aura\Marshal\int | \Aura\Marshal\string</td>
+<td>int | string</td>
 <td><em><p>The requested key.</p></em></td>
 </tr>
 </table>
@@ -950,10 +1128,9 @@ record builder only as you request them from the IdentityMap.</p>
           )
         </span>
         :
-          \Aura\Marshal\Type\void</code><div class="description"><p class="short_description">Sets the builder object to create collection objects.</p></div>
+          void</code><div class="description"><p class="short_description">Sets the builder object to create collection objects.</p></div>
 <div class="code-tabs">
-<div class="long-description">
-</div>
+<div class="long-description"></div>
 <strong>Parameters</strong><table class="argument-info">
 <thead><tr>
 <th>Name</th>
@@ -971,15 +1148,14 @@ record builder only as you request them from the IdentityMap.</p>
 </div>
 <a id="\Aura\Marshal\Type\GenericType::setIdentityField()" class="anchor"></a><div class="method public">
 <a href="#" class="gripper"><img src="images/icons/arrow_right.png"><img src="images/icons/arrow_down.png" style="display: none;"></a><code><img src="images/icons/method.png" alt="method"><img src="images/icons/visibility_public.png" style="margin-right: 5px" alt="public"><span class="highlight">setIdentityField</span><span class="nb-faded-text">(
-          \Aura\Marshal\Type\string $identity_field
+          string $identity_field
           )
         </span>
         :
-          \Aura\Marshal\Type\void</code><div class="description"><p class="short_description">Sets the name of the field that uniquely identifies each record for
+          void</code><div class="description"><p class="short_description">Sets the name of the field that uniquely identifies each record for
 this type.</p></div>
 <div class="code-tabs">
-<div class="long-description">
-</div>
+<div class="long-description"></div>
 <strong>Parameters</strong><table class="argument-info">
 <thead><tr>
 <th>Name</th>
@@ -988,7 +1164,7 @@ this type.</p></div>
 </tr></thead>
 <tr>
 <th>$identity_field</th>
-<td>\Aura\Marshal\Type\string</td>
+<td>string</td>
 <td><em><p>The identity field name.</p></em></td>
 </tr>
 </table>
@@ -997,17 +1173,16 @@ this type.</p></div>
 </div>
 <a id="\Aura\Marshal\Type\GenericType::setIndexFields()" class="anchor"></a><div class="method public">
 <a href="#" class="gripper"><img src="images/icons/arrow_right.png"><img src="images/icons/arrow_down.png" style="display: none;"></a><code><img src="images/icons/method.png" alt="method"><img src="images/icons/visibility_public.png" style="margin-right: 5px" alt="public"><span class="highlight">setIndexFields</span><span class="nb-faded-text">(
-          \Aura\Marshal\Type\array $fields
+          array $fields
               =
               array()
           )
         </span>
         :
-          \Aura\Marshal\Type\void</code><div class="description"><p class="short_description">Sets the fields that should be indexed at load() time; removes all
-previous indexes.</p></div>
+          void</code><div class="description"><p class="short_description">Sets the fields that should be indexed at load() time; removes all
+previous field indexes.</p></div>
 <div class="code-tabs">
-<div class="long-description">
-</div>
+<div class="long-description"></div>
 <strong>Parameters</strong><table class="argument-info">
 <thead><tr>
 <th>Name</th>
@@ -1016,7 +1191,7 @@ previous indexes.</p></div>
 </tr></thead>
 <tr>
 <th>$fields</th>
-<td>\Aura\Marshal\Type\array</td>
+<td>array</td>
 <td><em><p>The fields to be indexed.</p></em></td>
 </tr>
 </table>
@@ -1029,10 +1204,9 @@ previous indexes.</p></div>
           )
         </span>
         :
-          \Aura\Marshal\Type\void</code><div class="description"><p class="short_description">Sets the builder object to create record objects.</p></div>
+          void</code><div class="description"><p class="short_description">Sets the builder object to create record objects.</p></div>
 <div class="code-tabs">
-<div class="long-description">
-</div>
+<div class="long-description"></div>
 <strong>Parameters</strong><table class="argument-info">
 <thead><tr>
 <th>Name</th>
@@ -1050,15 +1224,14 @@ previous indexes.</p></div>
 </div>
 <a id="\Aura\Marshal\Type\GenericType::setRecordClass()" class="anchor"></a><div class="method public">
 <a href="#" class="gripper"><img src="images/icons/arrow_right.png"><img src="images/icons/arrow_down.png" style="display: none;"></a><code><img src="images/icons/method.png" alt="method"><img src="images/icons/visibility_public.png" style="margin-right: 5px" alt="public"><span class="highlight">setRecordClass</span><span class="nb-faded-text">(
-          \Aura\Marshal\Type\string $record_class
+          string $record_class
           )
         </span>
         :
-          \Aura\Marshal\Type\void</code><div class="description"><p class="short_description">Sets the name of the expected record class; this is used to determine
+          void</code><div class="description"><p class="short_description">Sets the name of the expected record class; this is used to determine
 if elements in the IdentityMap have been converted to record objects.</p></div>
 <div class="code-tabs">
-<div class="long-description">
-</div>
+<div class="long-description"></div>
 <strong>Parameters</strong><table class="argument-info">
 <thead><tr>
 <th>Name</th>
@@ -1067,7 +1240,7 @@ if elements in the IdentityMap have been converted to record objects.</p></div>
 </tr></thead>
 <tr>
 <th>$record_class</th>
-<td>\Aura\Marshal\Type\string</td>
+<td>string</td>
 <td><em><p>The identity field name.</p></em></td>
 </tr>
 </table>
@@ -1076,15 +1249,14 @@ if elements in the IdentityMap have been converted to record objects.</p></div>
 </div>
 <a id="\Aura\Marshal\Type\GenericType::setRelation()" class="anchor"></a><div class="method public">
 <a href="#" class="gripper"><img src="images/icons/arrow_right.png"><img src="images/icons/arrow_down.png" style="display: none;"></a><code><img src="images/icons/method.png" alt="method"><img src="images/icons/visibility_public.png" style="margin-right: 5px" alt="public"><span class="highlight">setRelation</span><span class="nb-faded-text">(
-          \Aura\Marshal\Type\string $name, <a href="db_src_Aura_Marshal_Relation_RelationInterface.html#%5CAura%5CMarshal%5CRelation%5CRelationInterface">\Aura\Marshal\Relation\RelationInterface</a> $relation
+          string $name, <a href="db_src_Aura_Marshal_Relation_RelationInterface.html#%5CAura%5CMarshal%5CRelation%5CRelationInterface">\Aura\Marshal\Relation\RelationInterface</a> $relation
           )
         </span>
         :
-          \Aura\Marshal\Type\void</code><div class="description"><p class="short_description">Sets a relationship to another type, assigning it to a field
+          void</code><div class="description"><p class="short_description">Sets a relationship to another type, assigning it to a field
 name to be used in record objects.</p></div>
 <div class="code-tabs">
-<div class="long-description">
-</div>
+<div class="long-description"></div>
 <strong>Parameters</strong><table class="argument-info">
 <thead><tr>
 <th>Name</th>
@@ -1093,7 +1265,7 @@ name to be used in record objects.</p></div>
 </tr></thead>
 <tr>
 <th>$name</th>
-<td>\Aura\Marshal\Type\string</td>
+<td>string</td>
 <td><em><p>The field name to use for the related record or collection.</p></em></td>
 </tr>
 <tr>
@@ -1108,5 +1280,5 @@ name to be used in record objects.</p></div>
 </div>
 </div>
 </div>
-<small xmlns="" class="footer">Documentation was generated by <a href="http://docblox-project.org">DocBlox 0.16.0</a>.
+<small xmlns="" class="footer">Documentation was generated by <a href="http://docblox-project.org">DocBlox 0.17.2</a>.
     </small></body></html>

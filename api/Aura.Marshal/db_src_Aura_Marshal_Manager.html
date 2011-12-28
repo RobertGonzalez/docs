@@ -1,4 +1,5 @@
-<html xmlns="http://www.w3.org/1999/xhtml"><head><title>Aura Project for PHP: Aura.Marshal</title><meta http-equiv="Content-Type" content="text/html; charset=utf-8"></meta><link rel="stylesheet" href="css/jquery-ui.css" type="text/css"></link><link rel="stylesheet" href="css/docblox/jquery-ui-1.8.16.custom.css" type="text/css"></link><link rel="stylesheet" href="css/jquery.treeview.css" type="text/css"></link><link rel="stylesheet" href="css/theme.css" type="text/css"></link><script type="text/javascript" src="js/jquery-1.4.2.min.js"></script><script type="text/javascript" src="js/jquery-ui-1.8.2.custom.min.js"></script><script type="text/javascript" src="js/jquery.tools.min.js"></script><script type="text/javascript" src="js/jquery.cookie.js"></script><script type="text/javascript" src="js/jquery.treeview.js"></script><script type="text/javascript">
+<html xmlns="http://www.w3.org/1999/xhtml"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Aura Project for PHP: Aura.Marshal</title><link rel="stylesheet" href="css/jquery-ui.css" type="text/css"></link><link rel="stylesheet" href="css/docblox/jquery-ui-1.8.16.custom.css" type="text/css"></link><link rel="stylesheet" href="css/jquery.treeview.css" type="text/css"></link><link rel="stylesheet" href="css/theme.css" type="text/css"></link><script type="text/javascript" src="js/jquery-1.4.2.min.js"></script><script type="text/javascript" src="js/jquery-ui-1.8.2.custom.min.js"></script><script type="text/javascript" src="js/jquery.tools.min.js"></script><script type="text/javascript" src="js/jquery.cookie.js"></script><script type="text/javascript" src="js/jquery.treeview.js"></script><script type="text/javascript">
             $(document).ready(function() {
                 $(".filetree").treeview({
                     collapsed: true,
@@ -95,24 +96,11 @@
               Table of Contents
           </div>
 </div>
-<a xmlns:dbx="http://docblox-project.org/xsl/functions" name="top" class="anchor"></a><div id="file-description">
-<p xmlns:dbx="http://docblox-project.org/xsl/functions" class="short-description">This file is part of the Aura project for PHP.</p>
-<div xmlns:dbx="http://docblox-project.org/xsl/functions" class="long-description">
-</div>
-</div>
-<dl class="file-info">
-<dt xmlns:dbx="http://docblox-project.org/xsl/functions">License</dt>
-<dd xmlns:dbx="http://docblox-project.org/xsl/functions">
-<a href="http://opensource.org/licenses/bsd-license.php">BSD</a>
-         
-    </dd>
-</dl>
-<a name="classes" class="anchor"></a><a xmlns:dbx="http://docblox-project.org/xsl/functions" id="\Aura\Marshal\Manager" class="anchor"></a><h2 xmlns:dbx="http://docblox-project.org/xsl/functions" class="class">\Aura\Marshal\Manager<div class="to-top"><a href="#top">jump to top</a></div>
+<a xmlns:dbx="http://docblox-project.org/xsl/functions" name="top" class="anchor"></a><a name="classes" class="anchor"></a><a xmlns:dbx="http://docblox-project.org/xsl/functions" id="\Aura\Marshal\Manager" class="anchor"></a><h2 xmlns:dbx="http://docblox-project.org/xsl/functions" class="class">\Aura\Marshal\Manager<div class="to-top"><a href="#top">jump to top</a></div>
 </h2>
 <div xmlns:dbx="http://docblox-project.org/xsl/functions" class="class">
 <small class="package"><b>Package: </b>Aura\Marshal</small><p class="short-description">A manager for the types in the domain model.</p>
-<div class="long-description">
-</div>
+<div class="long-description"></div>
 <dl class="class-info"></dl>
 <h3>Properties</h3>
 <div>
@@ -122,8 +110,7 @@
                 </code><div class="description">
 <p class="short-description">A builder for relation objects.</p></div>
 <div class="code-tabs">
-<div class="long-description">
-</div>
+<div class="long-description"></div>
 <strong>Details</strong><dl class="property-info">
 <dt>Type</dt>
 <dd><a href="db_src_Aura_Marshal_Relation_Builder.html#%5CAura%5CMarshal%5CRelation%5CBuilder">\Aura\Marshal\Relation\Builder</a></dd>
@@ -137,8 +124,7 @@
                 </code><div class="description">
 <p class="short-description">A builder for type objects.</p></div>
 <div class="code-tabs">
-<div class="long-description">
-</div>
+<div class="long-description"></div>
 <strong>Details</strong><dl class="property-info">
 <dt>Type</dt>
 <dd><a href="db_src_Aura_Marshal_Type_Builder.html#%5CAura%5CMarshal%5CType%5CBuilder">\Aura\Marshal\Type\Builder</a></dd>
@@ -153,11 +139,10 @@
 <p class="short-description">An array of type definition arrays, which are converted to type
 objects as you request them.</p></div>
 <div class="code-tabs">
-<div class="long-description">
-</div>
+<div class="long-description"></div>
 <strong>Details</strong><dl class="property-info">
 <dt>Type</dt>
-<dd>\Aura\Marshal\array</dd>
+<dd>array</dd>
 </dl>
 </div>
 <div class="clear"></div>
@@ -167,7 +152,7 @@ objects as you request them.</p></div>
 <div>
 <a id="\Aura\Marshal\Manager::__construct()" class="anchor"></a><div class="method public">
 <a href="#" class="gripper"><img src="images/icons/arrow_right.png"><img src="images/icons/arrow_down.png" style="display: none;"></a><code><img src="images/icons/method.png" alt="method"><img src="images/icons/visibility_public.png" style="margin-right: 5px" alt="public"><span class="highlight">__construct</span><span class="nb-faded-text">(
-          <a href="db_src_Aura_Marshal_Type_Builder.html#%5CAura%5CMarshal%5CType%5CBuilder">\Aura\Marshal\Type\Builder</a> $type_builder, <a href="db_src_Aura_Marshal_Relation_Builder.html#%5CAura%5CMarshal%5CRelation%5CBuilder">\Aura\Marshal\Relation\Builder</a> $relation_builder, \Aura\Marshal\array $types
+          <a href="db_src_Aura_Marshal_Type_Builder.html#%5CAura%5CMarshal%5CType%5CBuilder">\Aura\Marshal\Type\Builder</a> $type_builder, <a href="db_src_Aura_Marshal_Relation_Builder.html#%5CAura%5CMarshal%5CRelation%5CBuilder">\Aura\Marshal\Relation\Builder</a> $relation_builder, array $types
               =
               array()
           )
@@ -258,8 +243,7 @@ objects as you request them.</p></div>
 
      // ...
  );
-</code></pre>
-</div>
+</code></pre></div>
 <strong>Parameters</strong><table class="argument-info">
 <thead><tr>
 <th>Name</th>
@@ -278,7 +262,7 @@ objects as you request them.</p></div>
 </tr>
 <tr>
 <th>$types</th>
-<td>\Aura\Marshal\array</td>
+<td>array</td>
 <td><em><p>Type definitions.</p></em></td>
 </tr>
 </table>
@@ -287,14 +271,13 @@ objects as you request them.</p></div>
 </div>
 <a id="\Aura\Marshal\Manager::__get()" class="anchor"></a><div class="method public">
 <a href="#" class="gripper"><img src="images/icons/arrow_right.png"><img src="images/icons/arrow_down.png" style="display: none;"></a><code><img src="images/icons/method.png" alt="method"><img src="images/icons/visibility_public.png" style="margin-right: 5px" alt="public"><span class="highlight">__get</span><span class="nb-faded-text">(
-          \Aura\Marshal\string $name
+          string $name
           )
         </span>
         :
           <a href="db_src_Aura_Marshal_Type_GenericType.html#%5CAura%5CMarshal%5CType%5CGenericType">\Aura\Marshal\Type\GenericType</a></code><div class="description"><p class="short_description">Gets a type by name, creating a type object for it as needed.</p></div>
 <div class="code-tabs">
-<div class="long-description">
-</div>
+<div class="long-description"></div>
 <strong>Parameters</strong><table class="argument-info">
 <thead><tr>
 <th>Name</th>
@@ -303,7 +286,7 @@ objects as you request them.</p></div>
 </tr></thead>
 <tr>
 <th>$name</th>
-<td>\Aura\Marshal\string</td>
+<td>string</td>
 <td><em><p>The type name to retrieve.</p></em></td>
 </tr>
 </table>
@@ -322,7 +305,7 @@ objects as you request them.</p></div>
 </div>
 <a id="\Aura\Marshal\Manager::buildType()" class="anchor"></a><div class="method protected">
 <a href="#" class="gripper"><img src="images/icons/arrow_right.png"><img src="images/icons/arrow_down.png" style="display: none;"></a><code><img src="images/icons/method.png" alt="method"><img src="images/icons/visibility_protected.png" style="margin-right: 5px" alt="protected"><span class="highlight">buildType</span><span class="nb-faded-text">(
-          \Aura\Marshal\string $name
+          string $name
           )
         </span>
         :
@@ -337,8 +320,7 @@ objects as you request them.</p></div>
 
 <p>The two-stage process helps avoid race conditions where a type may
 have relationships to other type object that might not be in the
-manager yet.</p>
-</div>
+manager yet.</p></div>
 <strong>Parameters</strong><table class="argument-info">
 <thead><tr>
 <th>Name</th>
@@ -347,7 +329,7 @@ manager yet.</p>
 </tr></thead>
 <tr>
 <th>$name</th>
-<td>\Aura\Marshal\string</td>
+<td>string</td>
 <td><em><p>The type name to build.</p></em></td>
 </tr>
 </table>
@@ -370,17 +352,16 @@ manager yet.</p>
           )
         </span>
         :
-          \Aura\Marshal\array</code><div class="description"><p class="short_description">Returns the names of all types in the manager.</p></div>
+          array</code><div class="description"><p class="short_description">Returns the names of all types in the manager.</p></div>
 <div class="code-tabs">
-<div class="long-description">
-</div>
+<div class="long-description"></div>
 <strong>Returns</strong><table class="argument-info">
 <thead><tr>
 <th>Type</th>
 <th>Description</th>
 </tr></thead>
 <tr>
-<td>\Aura\Marshal\array</td>
+<td>array</td>
 <td></td>
 </tr>
 </table>
@@ -389,12 +370,13 @@ manager yet.</p>
 </div>
 <a id="\Aura\Marshal\Manager::setRelation()" class="anchor"></a><div class="method public">
 <a href="#" class="gripper"><img src="images/icons/arrow_right.png"><img src="images/icons/arrow_down.png" style="display: none;"></a><code><img src="images/icons/method.png" alt="method"><img src="images/icons/visibility_public.png" style="margin-right: 5px" alt="public"><span class="highlight">setRelation</span><span class="nb-faded-text">(
-           $type,  $name,  $info
+          string $type, string $name, array $info
           )
         </span>
         :
-          void</code><div class="description"><p class="short_description"></p></div>
+          void</code><div class="description"><p class="short_description">Sets a one relation for a type in the manager.</p></div>
 <div class="code-tabs">
+<div class="long-description"></div>
 <strong>Parameters</strong><table class="argument-info">
 <thead><tr>
 <th>Name</th>
@@ -403,18 +385,18 @@ manager yet.</p>
 </tr></thead>
 <tr>
 <th>$type</th>
-<td></td>
-<td><em></em></td>
+<td>string</td>
+<td><em><p>The type to set the relation on.</p></em></td>
 </tr>
 <tr>
 <th>$name</th>
-<td></td>
-<td><em></em></td>
+<td>string</td>
+<td><em><p>The name for the relation.</p></em></td>
 </tr>
 <tr>
 <th>$info</th>
-<td></td>
-<td><em></em></td>
+<td>array</td>
+<td><em><p>The relation information.</p></em></td>
 </tr>
 </table>
 </div>
@@ -422,14 +404,13 @@ manager yet.</p>
 </div>
 <a id="\Aura\Marshal\Manager::setType()" class="anchor"></a><div class="method public">
 <a href="#" class="gripper"><img src="images/icons/arrow_right.png"><img src="images/icons/arrow_down.png" style="display: none;"></a><code><img src="images/icons/method.png" alt="method"><img src="images/icons/visibility_public.png" style="margin-right: 5px" alt="public"><span class="highlight">setType</span><span class="nb-faded-text">(
-          \Aura\Marshal\string $name, \Aura\Marshal\array $info
+          string $name, array $info
           )
         </span>
         :
-          \Aura\Marshal\void</code><div class="description"><p class="short_description">Sets one type in the manager.</p></div>
+          void</code><div class="description"><p class="short_description">Sets one type in the manager.</p></div>
 <div class="code-tabs">
-<div class="long-description">
-</div>
+<div class="long-description"></div>
 <strong>Parameters</strong><table class="argument-info">
 <thead><tr>
 <th>Name</th>
@@ -438,12 +419,12 @@ manager yet.</p>
 </tr></thead>
 <tr>
 <th>$name</th>
-<td>\Aura\Marshal\string</td>
+<td>string</td>
 <td><em><p>The name to use for the type.</p></em></td>
 </tr>
 <tr>
 <th>$info</th>
-<td>\Aura\Marshal\array</td>
+<td>array</td>
 <td><em><p>An array of type definition information.</p></em></td>
 </tr>
 </table>
@@ -453,5 +434,5 @@ manager yet.</p>
 </div>
 </div>
 </div>
-<small xmlns="" class="footer">Documentation was generated by <a href="http://docblox-project.org">DocBlox 0.16.0</a>.
+<small xmlns="" class="footer">Documentation was generated by <a href="http://docblox-project.org">DocBlox 0.17.2</a>.
     </small></body></html>

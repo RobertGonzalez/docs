@@ -1,23 +1,4 @@
 <?xml version="1.0"?>
-<<<<<<< HEAD
-<project version="0.16.0" title="Aura Project for PHP: Aura.Http">
-  <file path="src/Aura/Http/Headers.php" hash="7881bb8d762ed32e335fcef6092ae60f" package="Default">
-    <docblock>
-      <description>This file is part of the Aura Project for PHP.</description>
-      <long-description>
-</long-description>
-      <tag line="2" name="license" description="http://opensource.org/licenses/bsd-license.php BSD"/>
-    </docblock>
-    <parse_markers>
-      <error line="2">No Page-level DocBlock was found in file src/Aura/Http/Headers.php</error>
-      <error line="20">No DocBlock was found for Property $list</error>
-      <error line="22">No DocBlock was found for Method add</error>
-      <error line="28">No DocBlock was found for Method set</error>
-      <error line="34">No DocBlock was found for Method getAll</error>
-      <error line="39">No DocBlock was found for Method setAll</error>
-      <error line="49">No DocBlock was found for Method send</error>
-    </parse_markers>
-=======
 <project version="0.17.2" title="Aura Project for PHP: Aura.Http">
   <file path="src/Aura/Http/Cookies.php" hash="4020ba8a713dc43e85243bc120952ce7" package="Default">
     <class final="false" abstract="false" line="18" namespace="Aura\Http" package="Aura\Http">
@@ -164,7 +145,6 @@
     </class>
   </file>
   <file path="src/Aura/Http/Headers.php" hash="113c7020c1ff9c804c9a3b30cbdfe6b9" package="Default">
->>>>>>> fa8a0514a038bbcbc2d5b9b4b2049b2763773a05
     <class final="false" abstract="false" line="18" namespace="Aura\Http" package="Aura\Http">
       <name>Headers</name>
       <extends/>
@@ -299,54 +279,8 @@ than one, it will append the new value.</description>
       </method>
     </class>
   </file>
-<<<<<<< HEAD
-  <file path="src/Aura/Http/Exception/HeadersSent.php" hash="6a3651147370f87bfda5591af3d8c389" package="Default">
-    <parse_markers>
-      <error line="1">No DocBlock was found for File src/Aura/Http/Exception/HeadersSent.php</error>
-      <error line="5">No DocBlock was found for Class HeadersSent</error>
-      <error line="7">No DocBlock was found for Method __construct</error>
-    </parse_markers>
-    <class final="false" abstract="false" line="5" namespace="Aura\Http\Exception" package="Default">
-      <name>HeadersSent</name>
-      <extends>\Aura\Http\Exception</extends>
-      <full_name>\Aura\Http\Exception\HeadersSent</full_name>
-      <method final="false" abstract="false" static="false" visibility="public" line="7" package="Default">
-        <name>__construct</name>
-        <argument line="7">
-          <name>$file</name>
-          <default/>
-          <type/>
-        </argument>
-        <argument line="7">
-          <name>$line</name>
-          <default/>
-          <type/>
-        </argument>
-      </method>
-    </class>
-  </file>
-  <file path="src/Aura/Http/Response.php" hash="6235ec9c9b80b1747d1090d1749415f7" package="Default">
-    <parse_markers>
-      <error line="1">No DocBlock was found for File src/Aura/Http/Response.php</error>
-      <error line="3">No DocBlock was found for Class Response</error>
-      <error line="5">No DocBlock was found for Property $cookies</error>
-      <error line="7">No DocBlock was found for Property $content</error>
-      <error line="9">No DocBlock was found for Property $headers</error>
-      <error line="11">No DocBlock was found for Property $status_code</error>
-      <error line="13">No DocBlock was found for Property $status_text</error>
-      <error line="69">No DocBlock was found for Property $version</error>
-      <error line="71">No DocBlock was found for Method __construct</error>
-      <error line="81">No DocBlock was found for Method __get</error>
-      <error line="94">No DocBlock was found for Method send</error>
-      <error line="108">No DocBlock was found for Method sendHeaders</error>
-      <error line="127">No DocBlock was found for Method setCookies</error>
-      <error line="132">No DocBlock was found for Method getCookies</error>
-    </parse_markers>
-    <class final="false" abstract="false" line="3" namespace="Aura\Http" package="Default">
-=======
   <file path="src/Aura/Http/Response.php" hash="ca6a75f864947020b615441f804d5f25" package="Default">
     <class final="false" abstract="false" line="18" namespace="Aura\Http" package="Aura\Http">
->>>>>>> fa8a0514a038bbcbc2d5b9b4b2049b2763773a05
       <name>Response</name>
       <extends/>
       <full_name>\Aura\Http\Response</full_name>
@@ -662,84 +596,6 @@ status text to the default for that code, if any.</description>
       </method>
     </class>
   </file>
-<<<<<<< HEAD
-  <file path="src/Aura/Http/Cookies.php" hash="46d6bc3990e451a2e7b5f6f5a188d17a" package="Default">
-    <docblock>
-      <description>This file is part of the Aura Project for PHP.</description>
-      <long-description>
-</long-description>
-      <tag line="2" name="license" description="http://opensource.org/licenses/bsd-license.php BSD"/>
-    </docblock>
-    <parse_markers>
-      <error line="2">No Page-level DocBlock was found in file src/Aura/Http/Cookies.php</error>
-      <error line="20">No DocBlock was found for Property $list</error>
-      <error line="23">No DocBlock was found for Property $base</error>
-      <error line="32">No DocBlock was found for Method set</error>
-      <error line="41">No DocBlock was found for Method getAll</error>
-      <error line="46">No DocBlock was found for Method setAll</error>
-      <error line="54">No DocBlock was found for Method send</error>
-    </parse_markers>
-    <class final="false" abstract="false" line="18" namespace="Aura\Http" package="Aura\Http">
-      <name>Cookies</name>
-      <extends/>
-      <full_name>\Aura\Http\Cookies</full_name>
-      <docblock>
-        <description>Collection of non-cookie HTTP headers.</description>
-        <long-description>
-</long-description>
-        <tag line="11" name="package" description="Aura.Http"/>
-      </docblock>
-      <property final="false" static="false" visibility="protected" line="20" package="Default">
-        <name>$list</name>
-        <default>array()</default>
-      </property>
-      <property final="false" static="false" visibility="protected" line="23" package="Default">
-        <name>$base</name>
-        <default>array(
-        'value'    =&gt; null</default>
-      </property>
-      <method final="false" abstract="false" static="false" visibility="public" line="32" package="Default">
-        <name>set</name>
-        <argument line="32">
-          <name>$name</name>
-          <default/>
-          <type/>
-        </argument>
-        <argument line="32">
-          <name>$info</name>
-          <default>array()</default>
-          <type>array</type>
-        </argument>
-      </method>
-      <method final="false" abstract="false" static="false" visibility="public" line="41" package="Default">
-        <name>getAll</name>
-      </method>
-      <method final="false" abstract="false" static="false" visibility="public" line="46" package="Default">
-        <name>setAll</name>
-        <argument line="46">
-          <name>$cookies</name>
-          <default>array()</default>
-          <type>array</type>
-        </argument>
-      </method>
-      <method final="false" abstract="false" static="false" visibility="public" line="54" package="Default">
-        <name>send</name>
-      </method>
-    </class>
-  </file>
-  <file path="src/Aura/Http/Exception.php" hash="62e33aa65c754a672914499b6c21ac85" package="Default">
-    <parse_markers>
-      <error line="1">No DocBlock was found for File src/Aura/Http/Exception.php</error>
-      <error line="6">No DocBlock was found for Class Exception</error>
-    </parse_markers>
-    <class final="false" abstract="false" line="6" namespace="Aura\Http" package="Default">
-      <name>Exception</name>
-      <extends>\Exception</extends>
-      <full_name>\Aura\Http\Exception</full_name>
-    </class>
-  </file>
-=======
->>>>>>> fa8a0514a038bbcbc2d5b9b4b2049b2763773a05
   <package name="Aura">
     <package name="Http"/>
   </package>

@@ -1,4 +1,5 @@
-<html xmlns="http://www.w3.org/1999/xhtml"><head><title>Aura Project for PHP: Aura.View</title><meta http-equiv="Content-Type" content="text/html; charset=utf-8"></meta><link rel="stylesheet" href="css/jquery-ui.css" type="text/css"></link><link rel="stylesheet" href="css/docblox/jquery-ui-1.8.16.custom.css" type="text/css"></link><link rel="stylesheet" href="css/jquery.treeview.css" type="text/css"></link><link rel="stylesheet" href="css/theme.css" type="text/css"></link><script type="text/javascript" src="js/jquery-1.4.2.min.js"></script><script type="text/javascript" src="js/jquery-ui-1.8.2.custom.min.js"></script><script type="text/javascript" src="js/jquery.tools.min.js"></script><script type="text/javascript" src="js/jquery.cookie.js"></script><script type="text/javascript" src="js/jquery.treeview.js"></script><script type="text/javascript">
+<html xmlns="http://www.w3.org/1999/xhtml"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Aura Project for PHP: Aura.View</title><link rel="stylesheet" href="css/jquery-ui.css" type="text/css"></link><link rel="stylesheet" href="css/docblox/jquery-ui-1.8.16.custom.css" type="text/css"></link><link rel="stylesheet" href="css/jquery.treeview.css" type="text/css"></link><link rel="stylesheet" href="css/theme.css" type="text/css"></link><script type="text/javascript" src="js/jquery-1.4.2.min.js"></script><script type="text/javascript" src="js/jquery-ui-1.8.2.custom.min.js"></script><script type="text/javascript" src="js/jquery.tools.min.js"></script><script type="text/javascript" src="js/jquery.cookie.js"></script><script type="text/javascript" src="js/jquery.treeview.js"></script><script type="text/javascript">
             $(document).ready(function() {
                 $(".filetree").treeview({
                     collapsed: true,
@@ -95,26 +96,13 @@
               Table of Contents
           </div>
 </div>
-<a xmlns:dbx="http://docblox-project.org/xsl/functions" name="top" class="anchor"></a><div id="file-description">
-<p xmlns:dbx="http://docblox-project.org/xsl/functions" class="short-description">This file is part of the Aura Project for PHP.</p>
-<div xmlns:dbx="http://docblox-project.org/xsl/functions" class="long-description">
-</div>
-</div>
-<dl class="file-info">
-<dt xmlns:dbx="http://docblox-project.org/xsl/functions">License</dt>
-<dd xmlns:dbx="http://docblox-project.org/xsl/functions">
-<a href="http://opensource.org/licenses/bsd-license.php">BSD</a>
-         
-    </dd>
-</dl>
-<a name="classes" class="anchor"></a><a xmlns:dbx="http://docblox-project.org/xsl/functions" id="\Aura\View\AbstractTemplate" class="anchor"></a><h2 xmlns:dbx="http://docblox-project.org/xsl/functions" class="class">\Aura\View\AbstractTemplate<div class="to-top"><a href="#top">jump to top</a></div>
+<a xmlns:dbx="http://docblox-project.org/xsl/functions" name="top" class="anchor"></a><a name="classes" class="anchor"></a><a xmlns:dbx="http://docblox-project.org/xsl/functions" id="\Aura\View\AbstractTemplate" class="anchor"></a><h2 xmlns:dbx="http://docblox-project.org/xsl/functions" class="class">\Aura\View\AbstractTemplate<div class="to-top"><a href="#top">jump to top</a></div>
 </h2>
 <div xmlns:dbx="http://docblox-project.org/xsl/functions" class="class">
 <small class="package"><b>Package: </b>Aura\View</small><p class="short-description">Provides an abstract TemplateView pattern implementation. We use an
 abstract so that the extended "real" Template class does not have access
 to the private support properties herein.</p>
-<div class="long-description">
-</div>
+<div class="long-description"></div>
 <dl class="class-info">
 <dt>Children</dt>
 <dd><a href="db_src_Aura_View_Template.html#%5CAura%5CView%5CTemplate">\Aura\View\Template</a></dd>
@@ -127,26 +115,10 @@ to the private support properties herein.</p>
                 </code><div class="description">
 <p class="short-description">Data assigned to the template.</p></div>
 <div class="code-tabs">
-<div class="long-description">
-</div>
+<div class="long-description"></div>
 <strong>Default value</strong><code>array()</code><strong>Details</strong><dl class="property-info">
 <dt>Type</dt>
-<dd>\Aura\View\array</dd>
-</dl>
-</div>
-<div class="clear"></div>
-</div>
-<a id="\Aura\View\AbstractTemplate::$_finder" class="anchor"></a><div class="property private">
-<a href="#" class="gripper"><img src="images/icons/arrow_right.png"><img src="images/icons/arrow_down.png" style="display: none;"></a><code><img src="images/icons/property.png" alt="Property"><img src="images/icons/visibility_private.png" style="margin-right: 5px" alt="private">\Aura\View\Finder
-                 <span class="highlight">$_finder</span>= ''
-                </code><div class="description">
-<p class="short-description">View "finder" (to find views in a path stack).</p></div>
-<div class="code-tabs">
-<div class="long-description">
-</div>
-<strong>Details</strong><dl class="property-info">
-<dt>Type</dt>
-<dd><a href="db_src_Aura_View_Finder.html#%5CAura%5CView%5CFinder">\Aura\View\Finder</a></dd>
+<dd>array</dd>
 </dl>
 </div>
 <div class="clear"></div>
@@ -158,11 +130,24 @@ to the private support properties herein.</p>
 <p class="short-description">A ServiceLocator for helper objects, so that repeated calls to the same
 helper use the same object.</p></div>
 <div class="code-tabs">
-<div class="long-description">
-</div>
+<div class="long-description"></div>
 <strong>Details</strong><dl class="property-info">
 <dt>Type</dt>
 <dd><a href="db_src_Aura_View_HelperLocator.html#%5CAura%5CView%5CHelperLocator">\Aura\View\HelperLocator</a></dd>
+</dl>
+</div>
+<div class="clear"></div>
+</div>
+<a id="\Aura\View\AbstractTemplate::$_template_finder" class="anchor"></a><div class="property private">
+<a href="#" class="gripper"><img src="images/icons/arrow_right.png"><img src="images/icons/arrow_down.png" style="display: none;"></a><code><img src="images/icons/property.png" alt="Property"><img src="images/icons/visibility_private.png" style="margin-right: 5px" alt="private">\Aura\View\TemplateFinder
+                 <span class="highlight">$_template_finder</span>= ''
+                </code><div class="description">
+<p class="short-description">View "finder" (to find views in a path stack).</p></div>
+<div class="code-tabs">
+<div class="long-description"></div>
+<strong>Details</strong><dl class="property-info">
+<dt>Type</dt>
+<dd><a href="db_src_Aura_View_TemplateFinder.html#%5CAura%5CView%5CTemplateFinder">\Aura\View\TemplateFinder</a></dd>
 </dl>
 </div>
 <div class="clear"></div>
@@ -172,14 +157,13 @@ helper use the same object.</p></div>
 <div>
 <a id="\Aura\View\AbstractTemplate::__call()" class="anchor"></a><div class="method public">
 <a href="#" class="gripper"><img src="images/icons/arrow_right.png"><img src="images/icons/arrow_down.png" style="display: none;"></a><code><img src="images/icons/method.png" alt="method"><img src="images/icons/visibility_public.png" style="margin-right: 5px" alt="public"><span class="highlight">__call</span><span class="nb-faded-text">(
-          \Aura\View\string $name, \Aura\View\array $args
+          string $name, array $args
           )
         </span>
         :
-          \Aura\View\void</code><div class="description"><p class="short_description">Magic call to provide shared helpers as template methods.</p></div>
+          void</code><div class="description"><p class="short_description">Magic call to provide shared helpers as template methods.</p></div>
 <div class="code-tabs">
-<div class="long-description">
-</div>
+<div class="long-description"></div>
 <strong>Parameters</strong><table class="argument-info">
 <thead><tr>
 <th>Name</th>
@@ -188,12 +172,12 @@ helper use the same object.</p></div>
 </tr></thead>
 <tr>
 <th>$name</th>
-<td>\Aura\View\string</td>
+<td>string</td>
 <td><em><p>The helper name.</p></em></td>
 </tr>
 <tr>
 <th>$args</th>
-<td>\Aura\View\array</td>
+<td>array</td>
 <td><em><p>The arguments to pass to the helper.</p></em></td>
 </tr>
 </table>
@@ -202,14 +186,13 @@ helper use the same object.</p></div>
 </div>
 <a id="\Aura\View\AbstractTemplate::__construct()" class="anchor"></a><div class="method public">
 <a href="#" class="gripper"><img src="images/icons/arrow_right.png"><img src="images/icons/arrow_down.png" style="display: none;"></a><code><img src="images/icons/method.png" alt="method"><img src="images/icons/visibility_public.png" style="margin-right: 5px" alt="public"><span class="highlight">__construct</span><span class="nb-faded-text">(
-          <a href="db_src_Aura_View_Finder.html#%5CAura%5CView%5CFinder">\Aura\View\Finder</a> $finder, <a href="db_src_Aura_View_HelperLocator.html#%5CAura%5CView%5CHelperLocator">\Aura\View\HelperLocator</a> $helper_locator
+           $template_finder, <a href="db_src_Aura_View_HelperLocator.html#%5CAura%5CView%5CHelperLocator">\Aura\View\HelperLocator</a> $helper_locator
           )
         </span>
         :
           void</code><div class="description"><p class="short_description">Constructor.</p></div>
 <div class="code-tabs">
-<div class="long-description">
-</div>
+<div class="long-description"></div>
 <strong>Parameters</strong><table class="argument-info">
 <thead><tr>
 <th>Name</th>
@@ -217,9 +200,9 @@ helper use the same object.</p></div>
 <th>Description</th>
 </tr></thead>
 <tr>
-<th>$finder</th>
-<td><a href="db_src_Aura_View_Finder.html#%5CAura%5CView%5CFinder">\Aura\View\Finder</a></td>
-<td><em><p>A template finder.</p></em></td>
+<th>$template_finder</th>
+<td></td>
+<td><em></em></td>
 </tr>
 <tr>
 <th>$helper_locator</th>
@@ -232,14 +215,13 @@ helper use the same object.</p></div>
 </div>
 <a id="\Aura\View\AbstractTemplate::__get()" class="anchor"></a><div class="method public">
 <a href="#" class="gripper"><img src="images/icons/arrow_right.png"><img src="images/icons/arrow_down.png" style="display: none;"></a><code><img src="images/icons/method.png" alt="method"><img src="images/icons/visibility_public.png" style="margin-right: 5px" alt="public"><span class="highlight">__get</span><span class="nb-faded-text">(
-          \Aura\View\string $key
+          string $key
           )
         </span>
         :
-          \Aura\View\mixed</code><div class="description"><p class="short_description">Magic read access to template data.</p></div>
+          mixed</code><div class="description"><p class="short_description">Magic read access to template data.</p></div>
 <div class="code-tabs">
-<div class="long-description">
-</div>
+<div class="long-description"></div>
 <strong>Parameters</strong><table class="argument-info">
 <thead><tr>
 <th>Name</th>
@@ -248,7 +230,7 @@ helper use the same object.</p></div>
 </tr></thead>
 <tr>
 <th>$key</th>
-<td>\Aura\View\string</td>
+<td>string</td>
 <td><em><p>The template variable name.</p></em></td>
 </tr>
 </table>
@@ -258,7 +240,7 @@ helper use the same object.</p></div>
 <th>Description</th>
 </tr></thead>
 <tr>
-<td>\Aura\View\mixed</td>
+<td>mixed</td>
 <td></td>
 </tr>
 </table>
@@ -267,14 +249,13 @@ helper use the same object.</p></div>
 </div>
 <a id="\Aura\View\AbstractTemplate::__isset()" class="anchor"></a><div class="method public">
 <a href="#" class="gripper"><img src="images/icons/arrow_right.png"><img src="images/icons/arrow_down.png" style="display: none;"></a><code><img src="images/icons/method.png" alt="method"><img src="images/icons/visibility_public.png" style="margin-right: 5px" alt="public"><span class="highlight">__isset</span><span class="nb-faded-text">(
-          \Aura\View\string $key
+          string $key
           )
         </span>
         :
-          \Aura\View\bool</code><div class="description"><p class="short_description">Magic isset() checks on template data.</p></div>
+          bool</code><div class="description"><p class="short_description">Magic isset() checks on template data.</p></div>
 <div class="code-tabs">
-<div class="long-description">
-</div>
+<div class="long-description"></div>
 <strong>Parameters</strong><table class="argument-info">
 <thead><tr>
 <th>Name</th>
@@ -283,7 +264,7 @@ helper use the same object.</p></div>
 </tr></thead>
 <tr>
 <th>$key</th>
-<td>\Aura\View\string</td>
+<td>string</td>
 <td><em><p>The template variable name.</p></em></td>
 </tr>
 </table>
@@ -293,7 +274,7 @@ helper use the same object.</p></div>
 <th>Description</th>
 </tr></thead>
 <tr>
-<td>\Aura\View\bool</td>
+<td>bool</td>
 <td></td>
 </tr>
 </table>
@@ -302,14 +283,13 @@ helper use the same object.</p></div>
 </div>
 <a id="\Aura\View\AbstractTemplate::__set()" class="anchor"></a><div class="method public">
 <a href="#" class="gripper"><img src="images/icons/arrow_right.png"><img src="images/icons/arrow_down.png" style="display: none;"></a><code><img src="images/icons/method.png" alt="method"><img src="images/icons/visibility_public.png" style="margin-right: 5px" alt="public"><span class="highlight">__set</span><span class="nb-faded-text">(
-          \Aura\View\string $key, \Aura\View\string $val
+          string $key, string $val
           )
         </span>
         :
-          \Aura\View\mixed</code><div class="description"><p class="short_description">Magic write access to template data.</p></div>
+          mixed</code><div class="description"><p class="short_description">Magic write access to template data.</p></div>
 <div class="code-tabs">
-<div class="long-description">
-</div>
+<div class="long-description"></div>
 <strong>Parameters</strong><table class="argument-info">
 <thead><tr>
 <th>Name</th>
@@ -318,12 +298,12 @@ helper use the same object.</p></div>
 </tr></thead>
 <tr>
 <th>$key</th>
-<td>\Aura\View\string</td>
+<td>string</td>
 <td><em><p>The template variable name.</p></em></td>
 </tr>
 <tr>
 <th>$val</th>
-<td>\Aura\View\string</td>
+<td>string</td>
 <td><em><p>The template variable value.</p></em></td>
 </tr>
 </table>
@@ -333,7 +313,7 @@ helper use the same object.</p></div>
 <th>Description</th>
 </tr></thead>
 <tr>
-<td>\Aura\View\mixed</td>
+<td>mixed</td>
 <td></td>
 </tr>
 </table>
@@ -342,14 +322,13 @@ helper use the same object.</p></div>
 </div>
 <a id="\Aura\View\AbstractTemplate::__unset()" class="anchor"></a><div class="method public">
 <a href="#" class="gripper"><img src="images/icons/arrow_right.png"><img src="images/icons/arrow_down.png" style="display: none;"></a><code><img src="images/icons/method.png" alt="method"><img src="images/icons/visibility_public.png" style="margin-right: 5px" alt="public"><span class="highlight">__unset</span><span class="nb-faded-text">(
-          \Aura\View\string $key
+          string $key
           )
         </span>
         :
-          \Aura\View\void</code><div class="description"><p class="short_description">Magic unset() for template data.</p></div>
+          void</code><div class="description"><p class="short_description">Magic unset() for template data.</p></div>
 <div class="code-tabs">
-<div class="long-description">
-</div>
+<div class="long-description"></div>
 <strong>Parameters</strong><table class="argument-info">
 <thead><tr>
 <th>Name</th>
@@ -358,7 +337,7 @@ helper use the same object.</p></div>
 </tr></thead>
 <tr>
 <th>$key</th>
-<td>\Aura\View\string</td>
+<td>string</td>
 <td><em><p>The template variable name.</p></em></td>
 </tr>
 </table>
@@ -367,16 +346,15 @@ helper use the same object.</p></div>
 </div>
 <a id="\Aura\View\AbstractTemplate::addData()" class="anchor"></a><div class="method public">
 <a href="#" class="gripper"><img src="images/icons/arrow_right.png"><img src="images/icons/arrow_down.png" style="display: none;"></a><code><img src="images/icons/method.png" alt="method"><img src="images/icons/visibility_public.png" style="margin-right: 5px" alt="public"><span class="highlight">addData</span><span class="nb-faded-text">(
-          \Aura\View\array $data
+          array $data
               =
               array()
           )
         </span>
         :
-          \Aura\View\void</code><div class="description"><p class="short_description">Merges new data with the existing template data.</p></div>
+          void</code><div class="description"><p class="short_description">Merges new data with the existing template data.</p></div>
 <div class="code-tabs">
-<div class="long-description">
-</div>
+<div class="long-description"></div>
 <strong>Parameters</strong><table class="argument-info">
 <thead><tr>
 <th>Name</th>
@@ -385,7 +363,7 @@ helper use the same object.</p></div>
 </tr></thead>
 <tr>
 <th>$data</th>
-<td>\Aura\View\array</td>
+<td>array</td>
 <td><em><p>An array of key-value pairs where the keys are template variable names, and the values are the variable values.</p>
 </em></td>
 </tr>
@@ -395,18 +373,17 @@ helper use the same object.</p></div>
 </div>
 <a id="\Aura\View\AbstractTemplate::fetch()" class="anchor"></a><div class="method public">
 <a href="#" class="gripper"><img src="images/icons/arrow_right.png"><img src="images/icons/arrow_down.png" style="display: none;"></a><code><img src="images/icons/method.png" alt="method"><img src="images/icons/visibility_public.png" style="margin-right: 5px" alt="public"><span class="highlight">fetch</span><span class="nb-faded-text">(
-          \Aura\View\string $name, \Aura\View\array $vars
+          string $name, array $vars
               =
               array()
           )
         </span>
         :
-          \Aura\View\string</code><div class="description">
+          string</code><div class="description">
 <span class="attribute">abstract</span><p class="short_description">Fetches the output from a template.</p>
 </div>
 <div class="code-tabs">
-<div class="long-description">
-</div>
+<div class="long-description"></div>
 <strong>Parameters</strong><table class="argument-info">
 <thead><tr>
 <th>Name</th>
@@ -415,12 +392,12 @@ helper use the same object.</p></div>
 </tr></thead>
 <tr>
 <th>$name</th>
-<td>\Aura\View\string</td>
+<td>string</td>
 <td><em><p>The template name to use.</p></em></td>
 </tr>
 <tr>
 <th>$vars</th>
-<td>\Aura\View\array</td>
+<td>array</td>
 <td><em><p>Variables to extract into the local scope.</p></em></td>
 </tr>
 </table>
@@ -430,7 +407,7 @@ helper use the same object.</p></div>
 <th>Description</th>
 </tr></thead>
 <tr>
-<td>\Aura\View\string</td>
+<td>string</td>
 <td></td>
 </tr>
 </table>
@@ -439,15 +416,14 @@ helper use the same object.</p></div>
 </div>
 <a id="\Aura\View\AbstractTemplate::find()" class="anchor"></a><div class="method public">
 <a href="#" class="gripper"><img src="images/icons/arrow_right.png"><img src="images/icons/arrow_down.png" style="display: none;"></a><code><img src="images/icons/method.png" alt="method"><img src="images/icons/visibility_public.png" style="margin-right: 5px" alt="public"><span class="highlight">find</span><span class="nb-faded-text">(
-          \Aura\View\string $name
+          string $name
           )
         </span>
         :
-          \Aura\View\string</code><div class="description"><p class="short_description">Returns the path to the requested template script; searches through
+          string</code><div class="description"><p class="short_description">Returns the path to the requested template script; searches through
 $this->paths to find the first matching template.</p></div>
 <div class="code-tabs">
-<div class="long-description">
-</div>
+<div class="long-description"></div>
 <strong>Parameters</strong><table class="argument-info">
 <thead><tr>
 <th>Name</th>
@@ -456,7 +432,7 @@ $this->paths to find the first matching template.</p></div>
 </tr></thead>
 <tr>
 <th>$name</th>
-<td>\Aura\View\string</td>
+<td>string</td>
 <td><em><p>The template name to look for in the template path.</p></em></td>
 </tr>
 </table>
@@ -466,7 +442,7 @@ $this->paths to find the first matching template.</p></div>
 <th>Description</th>
 </tr></thead>
 <tr>
-<td>\Aura\View\string</td>
+<td>string</td>
 <td>The full path to the template script.</td>
 </tr>
 </table>
@@ -479,41 +455,17 @@ $this->paths to find the first matching template.</p></div>
           )
         </span>
         :
-          \Aura\View\array</code><div class="description"><p class="short_description">Gets all template variables.</p></div>
+          array</code><div class="description"><p class="short_description">Gets all template variables.</p></div>
 <div class="code-tabs">
-<div class="long-description">
-</div>
+<div class="long-description"></div>
 <strong>Returns</strong><table class="argument-info">
 <thead><tr>
 <th>Type</th>
 <th>Description</th>
 </tr></thead>
 <tr>
-<td>\Aura\View\array</td>
+<td>array</td>
 <td>An array of key-value pairs where the keys are template variable names, and the values are the variable values.</td>
-</tr>
-</table>
-</div>
-<div class="clear"></div>
-</div>
-<a id="\Aura\View\AbstractTemplate::getFinder()" class="anchor"></a><div class="method public">
-<a href="#" class="gripper"><img src="images/icons/arrow_right.png"><img src="images/icons/arrow_down.png" style="display: none;"></a><code><img src="images/icons/method.png" alt="method"><img src="images/icons/visibility_public.png" style="margin-right: 5px" alt="public"><span class="highlight">getFinder</span><span class="nb-faded-text">(
-          
-          )
-        </span>
-        :
-          <a href="db_src_Aura_View_Finder.html#%5CAura%5CView%5CFinder">\Aura\View\Finder</a></code><div class="description"><p class="short_description">Returns the Finder object.</p></div>
-<div class="code-tabs">
-<div class="long-description">
-</div>
-<strong>Returns</strong><table class="argument-info">
-<thead><tr>
-<th>Type</th>
-<th>Description</th>
-</tr></thead>
-<tr>
-<td><a href="db_src_Aura_View_Finder.html#%5CAura%5CView%5CFinder">\Aura\View\Finder</a></td>
-<td></td>
 </tr>
 </table>
 </div>
@@ -521,14 +473,13 @@ $this->paths to find the first matching template.</p></div>
 </div>
 <a id="\Aura\View\AbstractTemplate::getHelper()" class="anchor"></a><div class="method public">
 <a href="#" class="gripper"><img src="images/icons/arrow_right.png"><img src="images/icons/arrow_down.png" style="display: none;"></a><code><img src="images/icons/method.png" alt="method"><img src="images/icons/visibility_public.png" style="margin-right: 5px" alt="public"><span class="highlight">getHelper</span><span class="nb-faded-text">(
-          \Aura\View\string $name
+          string $name
           )
         </span>
         :
-          \Aura\View\mixed</code><div class="description"><p class="short_description">Retrieves a shared helper from the helper container.</p></div>
+          mixed</code><div class="description"><p class="short_description">Retrieves a shared helper from the helper container.</p></div>
 <div class="code-tabs">
-<div class="long-description">
-</div>
+<div class="long-description"></div>
 <strong>Parameters</strong><table class="argument-info">
 <thead><tr>
 <th>Name</th>
@@ -537,7 +488,7 @@ $this->paths to find the first matching template.</p></div>
 </tr></thead>
 <tr>
 <th>$name</th>
-<td>\Aura\View\string</td>
+<td>string</td>
 <td><em><p>The helper to retrieve.</p></em></td>
 </tr>
 </table>
@@ -547,7 +498,7 @@ $this->paths to find the first matching template.</p></div>
 <th>Description</th>
 </tr></thead>
 <tr>
-<td>\Aura\View\mixed</td>
+<td>mixed</td>
 <td></td>
 </tr>
 </table>
@@ -562,8 +513,7 @@ $this->paths to find the first matching template.</p></div>
         :
           <a href="db_src_Aura_View_HelperLocator.html#%5CAura%5CView%5CHelperLocator">\Aura\View\HelperLocator</a></code><div class="description"><p class="short_description">Returns the helper locator object.</p></div>
 <div class="code-tabs">
-<div class="long-description">
-</div>
+<div class="long-description"></div>
 <strong>Returns</strong><table class="argument-info">
 <thead><tr>
 <th>Type</th>
@@ -577,19 +527,40 @@ $this->paths to find the first matching template.</p></div>
 </div>
 <div class="clear"></div>
 </div>
+<a id="\Aura\View\AbstractTemplate::getTemplateFinder()" class="anchor"></a><div class="method public">
+<a href="#" class="gripper"><img src="images/icons/arrow_right.png"><img src="images/icons/arrow_down.png" style="display: none;"></a><code><img src="images/icons/method.png" alt="method"><img src="images/icons/visibility_public.png" style="margin-right: 5px" alt="public"><span class="highlight">getTemplateFinder</span><span class="nb-faded-text">(
+          
+          )
+        </span>
+        :
+          <a href="db_src_Aura_View_TemplateFinder.html#%5CAura%5CView%5CTemplateFinder">\Aura\View\TemplateFinder</a></code><div class="description"><p class="short_description">Returns the TemplateFinder object.</p></div>
+<div class="code-tabs">
+<div class="long-description"></div>
+<strong>Returns</strong><table class="argument-info">
+<thead><tr>
+<th>Type</th>
+<th>Description</th>
+</tr></thead>
+<tr>
+<td><a href="db_src_Aura_View_TemplateFinder.html#%5CAura%5CView%5CTemplateFinder">\Aura\View\TemplateFinder</a></td>
+<td></td>
+</tr>
+</table>
+</div>
+<div class="clear"></div>
+</div>
 <a id="\Aura\View\AbstractTemplate::setData()" class="anchor"></a><div class="method public">
 <a href="#" class="gripper"><img src="images/icons/arrow_right.png"><img src="images/icons/arrow_down.png" style="display: none;"></a><code><img src="images/icons/method.png" alt="method"><img src="images/icons/visibility_public.png" style="margin-right: 5px" alt="public"><span class="highlight">setData</span><span class="nb-faded-text">(
-          \Aura\View\array $data
+          array $data
               =
               array()
           )
         </span>
         :
-          \Aura\View\void</code><div class="description"><p class="short_description">Replaces all template data at once; this will remove all previous
+          void</code><div class="description"><p class="short_description">Replaces all template data at once; this will remove all previous
 data.</p></div>
 <div class="code-tabs">
-<div class="long-description">
-</div>
+<div class="long-description"></div>
 <strong>Parameters</strong><table class="argument-info">
 <thead><tr>
 <th>Name</th>
@@ -598,7 +569,7 @@ data.</p></div>
 </tr></thead>
 <tr>
 <th>$data</th>
-<td>\Aura\View\array</td>
+<td>array</td>
 <td><em><p>An array of key-value pairs where the keys are template variable names, and the values are the variable values.</p>
 </em></td>
 </tr>
@@ -608,16 +579,15 @@ data.</p></div>
 </div>
 <a id="\Aura\View\AbstractTemplate::setPaths()" class="anchor"></a><div class="method public">
 <a href="#" class="gripper"><img src="images/icons/arrow_right.png"><img src="images/icons/arrow_down.png" style="display: none;"></a><code><img src="images/icons/method.png" alt="method"><img src="images/icons/visibility_public.png" style="margin-right: 5px" alt="public"><span class="highlight">setPaths</span><span class="nb-faded-text">(
-          \Aura\View\array $paths
+          array $paths
               =
               array()
           )
         </span>
         :
-          \Aura\View\void</code><div class="description"><p class="short_description">Sets the search paths for templates; paths are searched in FIFO order.</p></div>
+          void</code><div class="description"><p class="short_description">Sets the search paths for templates; paths are searched in FIFO order.</p></div>
 <div class="code-tabs">
-<div class="long-description">
-</div>
+<div class="long-description"></div>
 <strong>Parameters</strong><table class="argument-info">
 <thead><tr>
 <th>Name</th>
@@ -626,7 +596,7 @@ data.</p></div>
 </tr></thead>
 <tr>
 <th>$paths</th>
-<td>\Aura\View\array</td>
+<td>array</td>
 <td><em><p>An array of directory paths where templates are.</p></em></td>
 </tr>
 </table>
@@ -636,5 +606,5 @@ data.</p></div>
 </div>
 </div>
 </div>
-<small xmlns="" class="footer">Documentation was generated by <a href="http://docblox-project.org">DocBlox 0.16.0</a>.
+<small xmlns="" class="footer">Documentation was generated by <a href="http://docblox-project.org">DocBlox 0.17.2</a>.
     </small></body></html>

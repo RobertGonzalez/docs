@@ -1,4 +1,5 @@
-<html xmlns="http://www.w3.org/1999/xhtml"><head><title>Aura Project for PHP: Aura.Cli</title><meta http-equiv="Content-Type" content="text/html; charset=utf-8"></meta><link rel="stylesheet" href="css/jquery-ui.css" type="text/css"></link><link rel="stylesheet" href="css/docblox/jquery-ui-1.8.16.custom.css" type="text/css"></link><link rel="stylesheet" href="css/jquery.treeview.css" type="text/css"></link><link rel="stylesheet" href="css/theme.css" type="text/css"></link><script type="text/javascript" src="js/jquery-1.4.2.min.js"></script><script type="text/javascript" src="js/jquery-ui-1.8.2.custom.min.js"></script><script type="text/javascript" src="js/jquery.tools.min.js"></script><script type="text/javascript" src="js/jquery.cookie.js"></script><script type="text/javascript" src="js/jquery.treeview.js"></script><script type="text/javascript">
+<html xmlns="http://www.w3.org/1999/xhtml"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Aura Project for PHP: Aura.Cli</title><link rel="stylesheet" href="css/jquery-ui.css" type="text/css"></link><link rel="stylesheet" href="css/docblox/jquery-ui-1.8.16.custom.css" type="text/css"></link><link rel="stylesheet" href="css/jquery.treeview.css" type="text/css"></link><link rel="stylesheet" href="css/theme.css" type="text/css"></link><script type="text/javascript" src="js/jquery-1.4.2.min.js"></script><script type="text/javascript" src="js/jquery-ui-1.8.2.custom.min.js"></script><script type="text/javascript" src="js/jquery.tools.min.js"></script><script type="text/javascript" src="js/jquery.cookie.js"></script><script type="text/javascript" src="js/jquery.treeview.js"></script><script type="text/javascript">
             $(document).ready(function() {
                 $(".filetree").treeview({
                     collapsed: true,
@@ -95,24 +96,11 @@
               Table of Contents
           </div>
 </div>
-<a xmlns:dbx="http://docblox-project.org/xsl/functions" name="top" class="anchor"></a><div id="file-description">
-<p xmlns:dbx="http://docblox-project.org/xsl/functions" class="short-description">This file is part of the Aura project for PHP.</p>
-<div xmlns:dbx="http://docblox-project.org/xsl/functions" class="long-description">
-</div>
-</div>
-<dl class="file-info">
-<dt xmlns:dbx="http://docblox-project.org/xsl/functions">License</dt>
-<dd xmlns:dbx="http://docblox-project.org/xsl/functions">
-<a href="http://opensource.org/licenses/bsd-license.php">BSD</a>
-         
-    </dd>
-</dl>
-<a name="classes" class="anchor"></a><a xmlns:dbx="http://docblox-project.org/xsl/functions" id="\Aura\Cli\Option" class="anchor"></a><h2 xmlns:dbx="http://docblox-project.org/xsl/functions" class="class">\Aura\Cli\Option<div class="to-top"><a href="#top">jump to top</a></div>
+<a xmlns:dbx="http://docblox-project.org/xsl/functions" name="top" class="anchor"></a><a name="classes" class="anchor"></a><a xmlns:dbx="http://docblox-project.org/xsl/functions" id="\Aura\Cli\Option" class="anchor"></a><h2 xmlns:dbx="http://docblox-project.org/xsl/functions" class="class">\Aura\Cli\Option<div class="to-top"><a href="#top">jump to top</a></div>
 </h2>
 <div xmlns:dbx="http://docblox-project.org/xsl/functions" class="class">
 <small class="package"><b>Package: </b>Aura\Cli</small><p class="short-description">Defines a single command-line option.</p>
-<div class="long-description">
-</div>
+<div class="long-description"></div>
 <dl class="class-info"></dl>
 <h3>Constants</h3>
 <div>
@@ -121,8 +109,7 @@
                 <span class="highlight">PARAM_REQUIRED</span>
                 = 'required'</code><div class="description"><p class="short-description">A parameter value is required to be present for this option.</p></div>
 <div class="code-tabs">
-<div class="long-description">
-</div>
+<div class="long-description"></div>
 <dl class="constant-info">
 <dt>Const</dt>
 <dd>string
@@ -137,8 +124,7 @@
                 <span class="highlight">PARAM_REJECTED</span>
                 = 'rejected'</code><div class="description"><p class="short-description">Any parameter value on this option will be rejected.</p></div>
 <div class="code-tabs">
-<div class="long-description">
-</div>
+<div class="long-description"></div>
 <dl class="constant-info">
 <dt>Const</dt>
 <dd>string
@@ -153,8 +139,7 @@
                 <span class="highlight">PARAM_OPTIONAL</span>
                 = 'optional'</code><div class="description"><p class="short-description">A parameter value may or may not be present on this option.</p></div>
 <div class="code-tabs">
-<div class="long-description">
-</div>
+<div class="long-description"></div>
 <dl class="constant-info">
 <dt>Const</dt>
 <dd>string
@@ -173,11 +158,10 @@
                 </code><div class="description">
 <p class="short-description">The default value for the option param.</p></div>
 <div class="code-tabs">
-<div class="long-description">
-</div>
+<div class="long-description"></div>
 <strong>Default value</strong><code>null</code><strong>Details</strong><dl class="property-info">
 <dt>Type</dt>
-<dd>\Aura\Cli\string</dd>
+<dd>string</dd>
 </dl>
 </div>
 <div class="clear"></div>
@@ -188,11 +172,10 @@
                 </code><div class="description">
 <p class="short-description">The long name of the option.</p></div>
 <div class="code-tabs">
-<div class="long-description">
-</div>
+<div class="long-description"></div>
 <strong>Default value</strong><code>null</code><strong>Details</strong><dl class="property-info">
 <dt>Type</dt>
-<dd>\Aura\Cli\string</dd>
+<dd>string</dd>
 </dl>
 </div>
 <div class="clear"></div>
@@ -203,11 +186,10 @@
                 </code><div class="description">
 <p class="short-description">Can the option be specified multiple times?</p></div>
 <div class="code-tabs">
-<div class="long-description">
-</div>
+<div class="long-description"></div>
 <strong>Default value</strong><code>null</code><strong>Details</strong><dl class="property-info">
 <dt>Type</dt>
-<dd>\Aura\Cli\bool</dd>
+<dd>bool</dd>
 </dl>
 </div>
 <div class="clear"></div>
@@ -218,11 +200,10 @@
                 </code><div class="description">
 <p class="short-description">The property name of the option.</p></div>
 <div class="code-tabs">
-<div class="long-description">
-</div>
+<div class="long-description"></div>
 <strong>Default value</strong><code>null</code><strong>Details</strong><dl class="property-info">
 <dt>Type</dt>
-<dd>\Aura\Cli\string</dd>
+<dd>string</dd>
 </dl>
 </div>
 <div class="clear"></div>
@@ -234,11 +215,10 @@
 <p class="short-description">When the option is present, will a be parameter required, optional, or
 rejected (i.e., no param allowed) ?</p></div>
 <div class="code-tabs">
-<div class="long-description">
-</div>
+<div class="long-description"></div>
 <strong>Default value</strong><code>self::PARAM_OPTIONAL</code><strong>Details</strong><dl class="property-info">
 <dt>Type</dt>
-<dd>\Aura\Cli\string</dd>
+<dd>string</dd>
 </dl>
 </div>
 <div class="clear"></div>
@@ -249,11 +229,10 @@ rejected (i.e., no param allowed) ?</p></div>
                 </code><div class="description">
 <p class="short-description">The short name of the option.</p></div>
 <div class="code-tabs">
-<div class="long-description">
-</div>
+<div class="long-description"></div>
 <strong>Default value</strong><code>null</code><strong>Details</strong><dl class="property-info">
 <dt>Type</dt>
-<dd>\Aura\Cli\string</dd>
+<dd>string</dd>
 </dl>
 </div>
 <div class="clear"></div>
@@ -264,11 +243,10 @@ rejected (i.e., no param allowed) ?</p></div>
                 </code><div class="description">
 <p class="short-description">The option value as set from the command line.</p></div>
 <div class="code-tabs">
-<div class="long-description">
-</div>
+<div class="long-description"></div>
 <strong>Default value</strong><code>null</code><strong>Details</strong><dl class="property-info">
 <dt>Type</dt>
-<dd>\Aura\Cli\string</dd>
+<dd>string</dd>
 </dl>
 </div>
 <div class="clear"></div>
@@ -294,10 +272,9 @@ rejected (i.e., no param allowed) ?</p></div>
           )
         </span>
         :
-          \Aura\Cli\void</code><div class="description"><p class="short_description">Initialized the object with an option definition array.</p></div>
+          void</code><div class="description"><p class="short_description">Initialized the object with an option definition array.</p></div>
 <div class="code-tabs">
-<div class="long-description">
-</div>
+<div class="long-description"></div>
 <strong>Parameters</strong><table class="argument-info">
 <thead><tr>
 <th>Name</th>
@@ -344,17 +321,16 @@ rejected (i.e., no param allowed) ?</p></div>
           )
         </span>
         :
-          \Aura\Cli\mixed</code><div class="description"><p class="short_description">Gets the default value of this option.</p></div>
+          mixed</code><div class="description"><p class="short_description">Gets the default value of this option.</p></div>
 <div class="code-tabs">
-<div class="long-description">
-</div>
+<div class="long-description"></div>
 <strong>Returns</strong><table class="argument-info">
 <thead><tr>
 <th>Type</th>
 <th>Description</th>
 </tr></thead>
 <tr>
-<td>\Aura\Cli\mixed</td>
+<td>mixed</td>
 <td></td>
 </tr>
 </table>
@@ -367,17 +343,16 @@ rejected (i.e., no param allowed) ?</p></div>
           )
         </span>
         :
-          \Aura\Cli\string</code><div class="description"><p class="short_description">Gets the long name for this option.</p></div>
+          string</code><div class="description"><p class="short_description">Gets the long name for this option.</p></div>
 <div class="code-tabs">
-<div class="long-description">
-</div>
+<div class="long-description"></div>
 <strong>Returns</strong><table class="argument-info">
 <thead><tr>
 <th>Type</th>
 <th>Description</th>
 </tr></thead>
 <tr>
-<td>\Aura\Cli\string</td>
+<td>string</td>
 <td></td>
 </tr>
 </table>
@@ -390,17 +365,16 @@ rejected (i.e., no param allowed) ?</p></div>
           )
         </span>
         :
-          \Aura\Cli\string</code><div class="description"><p class="short_description">Gets the property name for this option.</p></div>
+          string</code><div class="description"><p class="short_description">Gets the property name for this option.</p></div>
 <div class="code-tabs">
-<div class="long-description">
-</div>
+<div class="long-description"></div>
 <strong>Returns</strong><table class="argument-info">
 <thead><tr>
 <th>Type</th>
 <th>Description</th>
 </tr></thead>
 <tr>
-<td>\Aura\Cli\string</td>
+<td>string</td>
 <td></td>
 </tr>
 </table>
@@ -413,17 +387,16 @@ rejected (i.e., no param allowed) ?</p></div>
           )
         </span>
         :
-          \Aura\Cli\string</code><div class="description"><p class="short_description">Gets the short name for this option.</p></div>
+          string</code><div class="description"><p class="short_description">Gets the short name for this option.</p></div>
 <div class="code-tabs">
-<div class="long-description">
-</div>
+<div class="long-description"></div>
 <strong>Returns</strong><table class="argument-info">
 <thead><tr>
 <th>Type</th>
 <th>Description</th>
 </tr></thead>
 <tr>
-<td>\Aura\Cli\string</td>
+<td>string</td>
 <td></td>
 </tr>
 </table>
@@ -436,17 +409,16 @@ rejected (i.e., no param allowed) ?</p></div>
           )
         </span>
         :
-          \Aura\Cli\mixed</code><div class="description"><p class="short_description">Gets the option value.</p></div>
+          mixed</code><div class="description"><p class="short_description">Gets the option value.</p></div>
 <div class="code-tabs">
-<div class="long-description">
-</div>
+<div class="long-description"></div>
 <strong>Returns</strong><table class="argument-info">
 <thead><tr>
 <th>Type</th>
 <th>Description</th>
 </tr></thead>
 <tr>
-<td>\Aura\Cli\mixed</td>
+<td>mixed</td>
 <td>The value as set from the command line, or the default value if not set from the command line.</td>
 </tr>
 </table>
@@ -459,17 +431,16 @@ rejected (i.e., no param allowed) ?</p></div>
           )
         </span>
         :
-          \Aura\Cli\bool</code><div class="description"><p class="short_description">Can this option be present multiple times?</p></div>
+          bool</code><div class="description"><p class="short_description">Can this option be present multiple times?</p></div>
 <div class="code-tabs">
-<div class="long-description">
-</div>
+<div class="long-description"></div>
 <strong>Returns</strong><table class="argument-info">
 <thead><tr>
 <th>Type</th>
 <th>Description</th>
 </tr></thead>
 <tr>
-<td>\Aura\Cli\bool</td>
+<td>bool</td>
 <td></td>
 </tr>
 </table>
@@ -482,17 +453,16 @@ rejected (i.e., no param allowed) ?</p></div>
           )
         </span>
         :
-          \Aura\Cli\bool</code><div class="description"><p class="short_description">Is a param value optional on this option?</p></div>
+          bool</code><div class="description"><p class="short_description">Is a param value optional on this option?</p></div>
 <div class="code-tabs">
-<div class="long-description">
-</div>
+<div class="long-description"></div>
 <strong>Returns</strong><table class="argument-info">
 <thead><tr>
 <th>Type</th>
 <th>Description</th>
 </tr></thead>
 <tr>
-<td>\Aura\Cli\bool</td>
+<td>bool</td>
 <td></td>
 </tr>
 </table>
@@ -505,17 +475,16 @@ rejected (i.e., no param allowed) ?</p></div>
           )
         </span>
         :
-          \Aura\Cli\bool</code><div class="description"><p class="short_description">Is a param value required *not* to be present on this option?</p></div>
+          bool</code><div class="description"><p class="short_description">Is a param value required *not* to be present on this option?</p></div>
 <div class="code-tabs">
-<div class="long-description">
-</div>
+<div class="long-description"></div>
 <strong>Returns</strong><table class="argument-info">
 <thead><tr>
 <th>Type</th>
 <th>Description</th>
 </tr></thead>
 <tr>
-<td>\Aura\Cli\bool</td>
+<td>bool</td>
 <td></td>
 </tr>
 </table>
@@ -528,17 +497,16 @@ rejected (i.e., no param allowed) ?</p></div>
           )
         </span>
         :
-          \Aura\Cli\bool</code><div class="description"><p class="short_description">Is a param value required to be present on this option?</p></div>
+          bool</code><div class="description"><p class="short_description">Is a param value required to be present on this option?</p></div>
 <div class="code-tabs">
-<div class="long-description">
-</div>
+<div class="long-description"></div>
 <strong>Returns</strong><table class="argument-info">
 <thead><tr>
 <th>Type</th>
 <th>Description</th>
 </tr></thead>
 <tr>
-<td>\Aura\Cli\bool</td>
+<td>bool</td>
 <td></td>
 </tr>
 </table>
@@ -547,14 +515,13 @@ rejected (i.e., no param allowed) ?</p></div>
 </div>
 <a id="\Aura\Cli\Option::setValue()" class="anchor"></a><div class="method public">
 <a href="#" class="gripper"><img src="images/icons/arrow_right.png"><img src="images/icons/arrow_down.png" style="display: none;"></a><code><img src="images/icons/method.png" alt="method"><img src="images/icons/visibility_public.png" style="margin-right: 5px" alt="public"><span class="highlight">setValue</span><span class="nb-faded-text">(
-          \Aura\Cli\mixed $value
+          mixed $value
           )
         </span>
         :
-          \Aura\Cli\void</code><div class="description"><p class="short_description">Sets the option value.</p></div>
+          void</code><div class="description"><p class="short_description">Sets the option value.</p></div>
 <div class="code-tabs">
-<div class="long-description">
-</div>
+<div class="long-description"></div>
 <strong>Parameters</strong><table class="argument-info">
 <thead><tr>
 <th>Name</th>
@@ -563,7 +530,7 @@ rejected (i.e., no param allowed) ?</p></div>
 </tr></thead>
 <tr>
 <th>$value</th>
-<td>\Aura\Cli\mixed</td>
+<td>mixed</td>
 <td><em><p>The value to set.</p></em></td>
 </tr>
 </table>
@@ -573,5 +540,5 @@ rejected (i.e., no param allowed) ?</p></div>
 </div>
 </div>
 </div>
-<small xmlns="" class="footer">Documentation was generated by <a href="http://docblox-project.org">DocBlox 0.16.0</a>.
+<small xmlns="" class="footer">Documentation was generated by <a href="http://docblox-project.org">DocBlox 0.17.2</a>.
     </small></body></html>

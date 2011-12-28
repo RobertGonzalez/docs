@@ -1,4 +1,5 @@
-<html xmlns="http://www.w3.org/1999/xhtml"><head><title>Aura Project for PHP: Aura.Marshal</title><meta http-equiv="Content-Type" content="text/html; charset=utf-8"></meta><link rel="stylesheet" href="css/jquery-ui.css" type="text/css"></link><link rel="stylesheet" href="css/docblox/jquery-ui-1.8.16.custom.css" type="text/css"></link><link rel="stylesheet" href="css/jquery.treeview.css" type="text/css"></link><link rel="stylesheet" href="css/theme.css" type="text/css"></link><script type="text/javascript" src="js/jquery-1.4.2.min.js"></script><script type="text/javascript" src="js/jquery-ui-1.8.2.custom.min.js"></script><script type="text/javascript" src="js/jquery.tools.min.js"></script><script type="text/javascript" src="js/jquery.cookie.js"></script><script type="text/javascript" src="js/jquery.treeview.js"></script><script type="text/javascript">
+<html xmlns="http://www.w3.org/1999/xhtml"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Aura Project for PHP: Aura.Marshal</title><link rel="stylesheet" href="css/jquery-ui.css" type="text/css"></link><link rel="stylesheet" href="css/docblox/jquery-ui-1.8.16.custom.css" type="text/css"></link><link rel="stylesheet" href="css/jquery.treeview.css" type="text/css"></link><link rel="stylesheet" href="css/theme.css" type="text/css"></link><script type="text/javascript" src="js/jquery-1.4.2.min.js"></script><script type="text/javascript" src="js/jquery-ui-1.8.2.custom.min.js"></script><script type="text/javascript" src="js/jquery.tools.min.js"></script><script type="text/javascript" src="js/jquery.cookie.js"></script><script type="text/javascript" src="js/jquery.treeview.js"></script><script type="text/javascript">
             $(document).ready(function() {
                 $(".filetree").treeview({
                     collapsed: true,
@@ -95,19 +96,7 @@
               Table of Contents
           </div>
 </div>
-<a xmlns:dbx="http://docblox-project.org/xsl/functions" name="top" class="anchor"></a><div id="file-description">
-<p xmlns:dbx="http://docblox-project.org/xsl/functions" class="short-description">This file is part of the Aura project for PHP.</p>
-<div xmlns:dbx="http://docblox-project.org/xsl/functions" class="long-description">
-</div>
-</div>
-<dl class="file-info">
-<dt xmlns:dbx="http://docblox-project.org/xsl/functions">License</dt>
-<dd xmlns:dbx="http://docblox-project.org/xsl/functions">
-<a href="http://opensource.org/licenses/bsd-license.php">BSD</a>
-         
-    </dd>
-</dl>
-<a name="classes" class="anchor"></a><a xmlns:dbx="http://docblox-project.org/xsl/functions" id="\Aura\Marshal\Data" class="anchor"></a><h2 xmlns:dbx="http://docblox-project.org/xsl/functions" class="class">\Aura\Marshal\Data<div class="to-top"><a href="#top">jump to top</a></div>
+<a xmlns:dbx="http://docblox-project.org/xsl/functions" name="top" class="anchor"></a><a name="classes" class="anchor"></a><a xmlns:dbx="http://docblox-project.org/xsl/functions" id="\Aura\Marshal\Data" class="anchor"></a><h2 xmlns:dbx="http://docblox-project.org/xsl/functions" class="class">\Aura\Marshal\Data<div class="to-top"><a href="#top">jump to top</a></div>
 </h2>
 <div xmlns:dbx="http://docblox-project.org/xsl/functions" class="class">
 <small class="package"><b>Package: </b>Aura\Marshal</small><p class="short-description">Represents a data set. This is similar to the SPL ArrayObject, but allows
@@ -118,8 +107,7 @@ base for ...</p>
 <li><p>the generic record object, where $data represents the record fields; and</p></li>
 <li><p>the generic collection object, where $data represents an array of
 records.</p></li>
-</ul>
-</div>
+</ul></div>
 <dl class="class-info">
 <dt>Implements</dt>
 <dd></dd>
@@ -138,11 +126,10 @@ records.</p></li>
                 </code><div class="description">
 <p class="short-description">Key-value pairs of data.</p></div>
 <div class="code-tabs">
-<div class="long-description">
-</div>
+<div class="long-description"></div>
 <strong>Default value</strong><code>array()</code><strong>Details</strong><dl class="property-info">
 <dt>Type</dt>
-<dd>\Aura\Marshal\array</dd>
+<dd>array</dd>
 </dl>
 </div>
 <div class="clear"></div>
@@ -152,7 +139,7 @@ records.</p></li>
 <div>
 <a id="\Aura\Marshal\Data::__construct()" class="anchor"></a><div class="method public">
 <a href="#" class="gripper"><img src="images/icons/arrow_right.png"><img src="images/icons/arrow_down.png" style="display: none;"></a><code><img src="images/icons/method.png" alt="method"><img src="images/icons/visibility_public.png" style="margin-right: 5px" alt="public"><span class="highlight">__construct</span><span class="nb-faded-text">(
-          \Aura\Marshal\array $data
+          array $data
               =
               array()
           )
@@ -160,8 +147,7 @@ records.</p></li>
         :
           void</code><div class="description"><p class="short_description">Constructor.</p></div>
 <div class="code-tabs">
-<div class="long-description">
-</div>
+<div class="long-description"></div>
 <strong>Parameters</strong><table class="argument-info">
 <thead><tr>
 <th>Name</th>
@@ -170,7 +156,7 @@ records.</p></li>
 </tr></thead>
 <tr>
 <th>$data</th>
-<td>\Aura\Marshal\array</td>
+<td>array</td>
 <td><em><p>The data for this object.</p></em></td>
 </tr>
 </table>
@@ -183,17 +169,16 @@ records.</p></li>
           )
         </span>
         :
-          \Aura\Marshal\int</code><div class="description"><p class="short_description">Countable: how many keys are there?</p></div>
+          int</code><div class="description"><p class="short_description">Countable: how many keys are there?</p></div>
 <div class="code-tabs">
-<div class="long-description">
-</div>
+<div class="long-description"></div>
 <strong>Returns</strong><table class="argument-info">
 <thead><tr>
 <th>Type</th>
 <th>Description</th>
 </tr></thead>
 <tr>
-<td>\Aura\Marshal\int</td>
+<td>int</td>
 <td></td>
 </tr>
 </table>
@@ -208,8 +193,7 @@ records.</p></li>
         :
           <a href="db_src_Aura_Marshal_DataIterator.html#%5CAura%5CMarshal%5CDataIterator">\Aura\Marshal\DataIterator</a></code><div class="description"><p class="short_description">IteratorAggregate: returns an external iterator for this struct.</p></div>
 <div class="code-tabs">
-<div class="long-description">
-</div>
+<div class="long-description"></div>
 <strong>Returns</strong><table class="argument-info">
 <thead><tr>
 <th>Type</th>
@@ -225,14 +209,13 @@ records.</p></li>
 </div>
 <a id="\Aura\Marshal\Data::offsetExists()" class="anchor"></a><div class="method public">
 <a href="#" class="gripper"><img src="images/icons/arrow_right.png"><img src="images/icons/arrow_down.png" style="display: none;"></a><code><img src="images/icons/method.png" alt="method"><img src="images/icons/visibility_public.png" style="margin-right: 5px" alt="public"><span class="highlight">offsetExists</span><span class="nb-faded-text">(
-          \Aura\Marshal\int | \Aura\Marshal\string $key
+          int | string $key
           )
         </span>
         :
-          \Aura\Marshal\bool</code><div class="description"><p class="short_description">ArrayAccess: does the requested key exist?</p></div>
+          bool</code><div class="description"><p class="short_description">ArrayAccess: does the requested key exist?</p></div>
 <div class="code-tabs">
-<div class="long-description">
-</div>
+<div class="long-description"></div>
 <strong>Parameters</strong><table class="argument-info">
 <thead><tr>
 <th>Name</th>
@@ -241,7 +224,7 @@ records.</p></li>
 </tr></thead>
 <tr>
 <th>$key</th>
-<td>\Aura\Marshal\int | \Aura\Marshal\string</td>
+<td>int | string</td>
 <td><em><p>The requested key.</p></em></td>
 </tr>
 </table>
@@ -251,7 +234,7 @@ records.</p></li>
 <th>Description</th>
 </tr></thead>
 <tr>
-<td>\Aura\Marshal\bool</td>
+<td>bool</td>
 <td></td>
 </tr>
 </table>
@@ -260,14 +243,13 @@ records.</p></li>
 </div>
 <a id="\Aura\Marshal\Data::offsetGet()" class="anchor"></a><div class="method public">
 <a href="#" class="gripper"><img src="images/icons/arrow_right.png"><img src="images/icons/arrow_down.png" style="display: none;"></a><code><img src="images/icons/method.png" alt="method"><img src="images/icons/visibility_public.png" style="margin-right: 5px" alt="public"><span class="highlight">offsetGet</span><span class="nb-faded-text">(
-          \Aura\Marshal\int | \Aura\Marshal\string $key
+          int | string $key
           )
         </span>
         :
-          \Aura\Marshal\mixed</code><div class="description"><p class="short_description">ArrayAccess: get a key value.</p></div>
+          mixed</code><div class="description"><p class="short_description">ArrayAccess: get a key value.</p></div>
 <div class="code-tabs">
-<div class="long-description">
-</div>
+<div class="long-description"></div>
 <strong>Parameters</strong><table class="argument-info">
 <thead><tr>
 <th>Name</th>
@@ -276,7 +258,7 @@ records.</p></li>
 </tr></thead>
 <tr>
 <th>$key</th>
-<td>\Aura\Marshal\int | \Aura\Marshal\string</td>
+<td>int | string</td>
 <td><em><p>The requested key.</p></em></td>
 </tr>
 </table>
@@ -286,7 +268,7 @@ records.</p></li>
 <th>Description</th>
 </tr></thead>
 <tr>
-<td>\Aura\Marshal\mixed</td>
+<td>mixed</td>
 <td></td>
 </tr>
 </table>
@@ -295,14 +277,13 @@ records.</p></li>
 </div>
 <a id="\Aura\Marshal\Data::offsetSet()" class="anchor"></a><div class="method public">
 <a href="#" class="gripper"><img src="images/icons/arrow_right.png"><img src="images/icons/arrow_down.png" style="display: none;"></a><code><img src="images/icons/method.png" alt="method"><img src="images/icons/visibility_public.png" style="margin-right: 5px" alt="public"><span class="highlight">offsetSet</span><span class="nb-faded-text">(
-          \Aura\Marshal\int | \Aura\Marshal\string $key, \Aura\Marshal\mixed $val
+          int | string $key, mixed $val
           )
         </span>
         :
-          \Aura\Marshal\void</code><div class="description"><p class="short_description">ArrayAccess: set a key value.</p></div>
+          void</code><div class="description"><p class="short_description">ArrayAccess: set a key value.</p></div>
 <div class="code-tabs">
-<div class="long-description">
-</div>
+<div class="long-description"></div>
 <strong>Parameters</strong><table class="argument-info">
 <thead><tr>
 <th>Name</th>
@@ -311,12 +292,12 @@ records.</p></li>
 </tr></thead>
 <tr>
 <th>$key</th>
-<td>\Aura\Marshal\int | \Aura\Marshal\string</td>
+<td>int | string</td>
 <td><em><p>The requested key.</p></em></td>
 </tr>
 <tr>
 <th>$val</th>
-<td>\Aura\Marshal\mixed</td>
+<td>mixed</td>
 <td><em><p>The value to set it to.</p></em></td>
 </tr>
 </table>
@@ -325,14 +306,13 @@ records.</p></li>
 </div>
 <a id="\Aura\Marshal\Data::offsetUnset()" class="anchor"></a><div class="method public">
 <a href="#" class="gripper"><img src="images/icons/arrow_right.png"><img src="images/icons/arrow_down.png" style="display: none;"></a><code><img src="images/icons/method.png" alt="method"><img src="images/icons/visibility_public.png" style="margin-right: 5px" alt="public"><span class="highlight">offsetUnset</span><span class="nb-faded-text">(
-          \Aura\Marshal\int | \Aura\Marshal\string $key
+          int | string $key
           )
         </span>
         :
-          \Aura\Marshal\void</code><div class="description"><p class="short_description">ArrayAccess: unset a key.</p></div>
+          void</code><div class="description"><p class="short_description">ArrayAccess: unset a key.</p></div>
 <div class="code-tabs">
-<div class="long-description">
-</div>
+<div class="long-description"></div>
 <strong>Parameters</strong><table class="argument-info">
 <thead><tr>
 <th>Name</th>
@@ -341,7 +321,7 @@ records.</p></li>
 </tr></thead>
 <tr>
 <th>$key</th>
-<td>\Aura\Marshal\int | \Aura\Marshal\string</td>
+<td>int | string</td>
 <td><em><p>The requested key.</p></em></td>
 </tr>
 </table>
@@ -351,5 +331,5 @@ records.</p></li>
 </div>
 </div>
 </div>
-<small xmlns="" class="footer">Documentation was generated by <a href="http://docblox-project.org">DocBlox 0.16.0</a>.
+<small xmlns="" class="footer">Documentation was generated by <a href="http://docblox-project.org">DocBlox 0.17.2</a>.
     </small></body></html>

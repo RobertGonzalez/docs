@@ -1,157 +1,4 @@
 <?xml version="1.0"?>
-<<<<<<< HEAD
-<project version="0.16.0" title="Aura Project for PHP: Aura.Sql">
-  <file path="src/Aura/Sql/ConnectionFactory.php" hash="3d6233623b34a0f12904e0fb73ca46fc" package="Default">
-    <parse_markers>
-      <error line="1">No DocBlock was found for File src/Aura/Sql/ConnectionFactory.php</error>
-      <error line="5">No DocBlock was found for Class ConnectionFactory</error>
-      <notice line="59">Argument $params is missing from the function Docblock</notice>
-    </parse_markers>
-    <namespace-alias name="ForgeInterface">Aura\Di\ForgeInterface</namespace-alias>
-    <class final="false" abstract="false" line="5" namespace="Aura\Sql" package="Default">
-      <name>ConnectionFactory</name>
-      <extends/>
-      <full_name>\Aura\Sql\ConnectionFactory</full_name>
-      <property final="false" static="false" visibility="protected" line="14" package="Default">
-        <name>$forge</name>
-        <default/>
-        <docblock>
-          <description>A Forge to create objects.</description>
-          <long-description>
-</long-description>
-          <tag line="7" name="var" description="" type="\Aura\Di\ForgeInterface">
-            <type by_reference="false">\Aura\Di\ForgeInterface</type>
-          </tag>
-        </docblock>
-      </property>
-      <property final="false" static="false" visibility="protected" line="24" package="Default">
-        <name>$map</name>
-        <default>array()</default>
-        <docblock>
-          <description>A map of names (called at the command line) to their corresponding
-Connection classes.</description>
-          <long-description>
-</long-description>
-          <tag line="16" name="var" description="" type="array">
-            <type by_reference="false">\Aura\Sql\array</type>
-          </tag>
-        </docblock>
-      </property>
-      <method final="false" abstract="false" static="false" visibility="public" line="38" package="Default">
-        <name>__construct</name>
-        <docblock>
-          <description>A Connection class to use when no class exists for a mapped name.</description>
-          <long-description>
-</long-description>
-          <tag line="26" name="param" description="A Forge to create objects." type="\Aura\Di\ForgeInterface" variable="$forge">
-            <type by_reference="false">\Aura\Di\ForgeInterface</type>
-          </tag>
-          <tag line="26" name="param" description="A map of PDO types to Connection classes." type="array" variable="$map">
-            <type by_reference="false">\Aura\Sql\array</type>
-          </tag>
-          <tag line="26" name="param" description="A Connection class to use when no class can be found for a mapped name." type="string" variable="$not_found">
-            <type by_reference="false">\Aura\Sql\string</type>
-          </tag>
-        </docblock>
-        <argument line="39">
-          <name>$forge</name>
-          <default/>
-          <type>ForgeInterface</type>
-        </argument>
-        <argument line="40">
-          <name>$map</name>
-          <default>array()</default>
-          <type>array</type>
-        </argument>
-      </method>
-      <method final="false" abstract="false" static="false" visibility="public" line="57" package="Default">
-        <name>newInstance</name>
-        <docblock>
-          <description>Creates and returns a Connection class based on a PDO type.</description>
-          <long-description>
-</long-description>
-          <tag line="46" name="param" description="A PDO type that maps to a Connection class." type="string" variable="$name">
-            <type by_reference="false">\Aura\Sql\string</type>
-          </tag>
-          <tag line="46" name="return" description="" type="\Aura\Sql\Connection">
-            <type by_reference="false">\Aura\Sql\Connection</type>
-          </tag>
-          <tag line="46" name="throws" description="when no mapped class can be found." type="\Exception\ConnectionFactory">
-            <type by_reference="false">\Exception\ConnectionFactory</type>
-          </tag>
-        </docblock>
-        <argument line="58">
-          <name>$name</name>
-          <default/>
-          <type/>
-        </argument>
-        <argument line="59">
-          <name>$params</name>
-          <default>array()</default>
-          <type>array</type>
-        </argument>
-      </method>
-    </class>
-  </file>
-  <file path="src/Aura/Sql/Exception/ConnectionFactory.php" hash="28d82ec4a5bea80568e590f6c5c89eb9" package="Default">
-    <parse_markers>
-      <error line="1">No DocBlock was found for File src/Aura/Sql/Exception/ConnectionFactory.php</error>
-      <error line="3">No DocBlock was found for Class ConnectionFactory</error>
-    </parse_markers>
-    <class final="false" abstract="false" line="3" namespace="Aura\Sql\Exception" package="Default">
-      <name>ConnectionFactory</name>
-      <extends>\Aura\Sql\Exception</extends>
-      <full_name>\Aura\Sql\Exception\ConnectionFactory</full_name>
-    </class>
-  </file>
-  <file path="src/Aura/Sql/Exception/NoSuchMaster.php" hash="3eb85acfc4741cfafd53de723708276e" package="Default">
-    <parse_markers>
-      <error line="1">No DocBlock was found for File src/Aura/Sql/Exception/NoSuchMaster.php</error>
-      <error line="3">No DocBlock was found for Class NoSuchMaster</error>
-    </parse_markers>
-    <class final="false" abstract="false" line="3" namespace="Aura\Sql\Exception" package="Default">
-      <name>NoSuchMaster</name>
-      <extends>\Aura\Sql\Exception</extends>
-      <full_name>\Aura\Sql\Exception\NoSuchMaster</full_name>
-    </class>
-  </file>
-  <file path="src/Aura/Sql/Exception/NoSuchSlave.php" hash="a69c8c153617eb89908b1c3da903914b" package="Default">
-    <parse_markers>
-      <error line="1">No DocBlock was found for File src/Aura/Sql/Exception/NoSuchSlave.php</error>
-      <error line="3">No DocBlock was found for Class NoSuchSlave</error>
-    </parse_markers>
-    <class final="false" abstract="false" line="3" namespace="Aura\Sql\Exception" package="Default">
-      <name>NoSuchSlave</name>
-      <extends>\Aura\Sql\Exception</extends>
-      <full_name>\Aura\Sql\Exception\NoSuchSlave</full_name>
-    </class>
-  </file>
-  <file path="src/Aura/Sql/Select.php" hash="c16c4f81cff96ddd1dba39558ebd7e70" package="Default">
-    <parse_markers>
-      <error line="1">No DocBlock was found for File src/Aura/Sql/Select.php</error>
-      <error line="3">No DocBlock was found for Class Select</error>
-      <error line="5">No DocBlock was found for Property $distinct</error>
-      <error line="6">No DocBlock was found for Property $cols</error>
-      <error line="7">No DocBlock was found for Property $from</error>
-      <error line="8">No DocBlock was found for Property $join</error>
-      <error line="9">No DocBlock was found for Property $where</error>
-      <error line="10">No DocBlock was found for Property $group</error>
-      <error line="11">No DocBlock was found for Property $having</error>
-      <error line="12">No DocBlock was found for Property $order</error>
-      <error line="13">No DocBlock was found for Property $limit</error>
-      <error line="14">No DocBlock was found for Property $offset</error>
-      <error line="16">No DocBlock was found for Method __get</error>
-      <error line="21">No DocBlock was found for Method __set</error>
-      <error line="26">No DocBlock was found for Method __construct</error>
-      <error line="37">No DocBlock was found for Method distinct</error>
-      <error line="42">No DocBlock was found for Method cols</error>
-      <error line="47">No DocBlock was found for Method __toString</error>
-      <error line="117">No DocBlock was found for Method clearOrder</error>
-      <error line="122">No DocBlock was found for Method getOrderString</error>
-    </parse_markers>
-    <class final="false" abstract="false" line="3" namespace="Aura\Sql" package="Default">
-      <name>Select</name>
-=======
 <project version="0.17.2" title="Aura Project for PHP: Aura.Sql">
   <file path="src/Aura/Sql/Column.php" hash="4bee5068b4eb36e6fccbfbd409094114" package="Default">
     <parse_markers>
@@ -168,7 +15,6 @@ Connection classes.</description>
     </parse_markers>
     <class final="false" abstract="false" line="18" namespace="Aura\Sql" package="Aura\Sql">
       <name>Column</name>
->>>>>>> fa8a0514a038bbcbc2d5b9b4b2049b2763773a05
       <extends/>
       <full_name>\Aura\Sql\Column</full_name>
       <docblock>
@@ -229,128 +75,6 @@ Connection classes.</description>
           <type/>
         </argument>
       </method>
-<<<<<<< HEAD
-      <method final="false" abstract="false" static="false" visibility="public" line="26" package="Default">
-        <name>__construct</name>
-      </method>
-      <method final="false" abstract="false" static="false" visibility="public" line="37" package="Default">
-        <name>distinct</name>
-        <argument line="37">
-          <name>$flag</name>
-          <default>true</default>
-          <type/>
-        </argument>
-      </method>
-      <method final="false" abstract="false" static="false" visibility="public" line="42" package="Default">
-        <name>cols</name>
-        <argument line="42">
-          <name>$spec</name>
-          <default/>
-          <type/>
-        </argument>
-      </method>
-      <method final="false" abstract="false" static="false" visibility="public" line="47" package="Default">
-        <name>__toString</name>
-      </method>
-      <method final="false" abstract="false" static="false" visibility="public" line="117" package="Default">
-        <name>clearOrder</name>
-      </method>
-      <method final="false" abstract="false" static="false" visibility="public" line="122" package="Default">
-        <name>getOrderString</name>
-      </method>
-    </class>
-  </file>
-  <file path="src/Aura/Sql/Connection/Sqlsrv.php" hash="4491a40757772e03f81ed0e68143f8c7" package="Default">
-    <parse_markers>
-      <error line="1">No DocBlock was found for File src/Aura/Sql/Connection/Sqlsrv.php</error>
-      <error line="4">No DocBlock was found for Class Sqlsrv</error>
-      <error line="6">No DocBlock was found for Property $dsn_prefix</error>
-      <error line="8">No DocBlock was found for Property $dsn</error>
-      <error line="13">No DocBlock was found for Property $ident_quote_prefix</error>
-      <error line="15">No DocBlock was found for Property $ident_quote_suffix</error>
-      <error line="30">No DocBlock was found for Method fetchTableCols</error>
-      <error line="70">No DocBlock was found for Method convertSelect</error>
-      <error line="90">No DocBlock was found for Method convertSelectStrategy</error>
-    </parse_markers>
-    <namespace-alias name="Select">Aura\Sql\Select</namespace-alias>
-    <class final="false" abstract="false" line="4" namespace="Aura\Sql\Connection" package="Default">
-      <name>Sqlsrv</name>
-      <extends>\Aura\Sql\Connection\AbstractConnection</extends>
-      <full_name>\Aura\Sql\Connection\Sqlsrv</full_name>
-      <property final="false" static="false" visibility="protected" line="6" package="Default">
-        <name>$dsn_prefix</name>
-        <default>'sqlsrv'</default>
-      </property>
-      <property final="false" static="false" visibility="protected" line="8" package="Default">
-        <name>$dsn</name>
-        <default>array(
-        'Server' =&gt; null</default>
-      </property>
-      <property final="false" static="false" visibility="protected" line="13" package="Default">
-        <name>$ident_quote_prefix</name>
-        <default>'['</default>
-      </property>
-      <property final="false" static="false" visibility="protected" line="15" package="Default">
-        <name>$ident_quote_suffix</name>
-        <default>']'</default>
-      </property>
-      <method final="false" abstract="false" static="false" visibility="public" line="24" package="Default">
-        <name>fetchTableList</name>
-        <docblock>
-          <description>Returns a list of database tables.</description>
-          <long-description>
-</long-description>
-          <tag line="17" name="return" description="The list of tables in the database." type="array">
-            <type by_reference="false">\Aura\Sql\Connection\array</type>
-          </tag>
-        </docblock>
-      </method>
-      <method final="false" abstract="false" static="false" visibility="public" line="30" package="Default">
-        <name>fetchTableCols</name>
-        <argument line="30">
-          <name>$table</name>
-          <default/>
-          <type/>
-        </argument>
-      </method>
-      <method final="false" abstract="false" static="false" visibility="public" line="70" package="Default">
-        <name>convertSelect</name>
-        <argument line="70">
-          <name>$select</name>
-          <default/>
-          <type>Select</type>
-        </argument>
-      </method>
-      <method final="false" abstract="false" static="false" visibility="protected" line="90" package="Default">
-        <name>convertSelectStrategy</name>
-        <argument line="90">
-          <name>$select</name>
-          <default/>
-          <type>Select</type>
-        </argument>
-      </method>
-    </class>
-  </file>
-  <file path="src/Aura/Sql/Connection/AbstractConnection.php" hash="03e1fbd8258369f21260d67da1dd1925" package="Default">
-    <parse_markers>
-      <error line="1">No DocBlock was found for File src/Aura/Sql/Connection/AbstractConnection.php</error>
-      <error line="7">No DocBlock was found for Class AbstractConnection</error>
-      <error line="9">No DocBlock was found for Property $dsn_prefix</error>
-      <error line="11">No DocBlock was found for Property $dsn</error>
-      <error line="13">No DocBlock was found for Property $ident_quote_prefix</error>
-      <error line="15">No DocBlock was found for Property $ident_quote_suffix</error>
-      <error line="17">No DocBlock was found for Property $username</error>
-      <error line="19">No DocBlock was found for Property $password</error>
-      <error line="21">No DocBlock was found for Property $options</error>
-      <error line="23">No DocBlock was found for Property $pdo</error>
-      <error line="25">No DocBlock was found for Property $signal</error>
-      <error line="27">No DocBlock was found for Method __construct</error>
-      <error line="41">No DocBlock was found for Method getDsnString</error>
-      <error line="52">No DocBlock was found for Method connect</error>
-      <error line="67">No DocBlock was found for Method query</error>
-      <error line="747">No DocBlock was found for Method convertSelect</error>
-      <error line="815">No DocBlock was found for Method fetchTableCols</error>
-=======
     </class>
   </file>
   <file path="src/Aura/Sql/Connection/AbstractConnection.php" hash="785f56275443c98099d30508c88e2eeb" package="Default">
@@ -371,7 +95,6 @@ Connection classes.</description>
       <error line="82">No DocBlock was found for Method query</error>
       <error line="762">No DocBlock was found for Method convertSelect</error>
       <error line="830">No DocBlock was found for Method fetchTableCols</error>
->>>>>>> fa8a0514a038bbcbc2d5b9b4b2049b2763773a05
     </parse_markers>
     <namespace-alias name="SignalManager">Aura\Signal\Manager</namespace-alias>
     <namespace-alias name="Select">Aura\Sql\Select</namespace-alias>
@@ -1116,18 +839,10 @@ decimal scope.</description>
       </method>
     </class>
   </file>
-<<<<<<< HEAD
-  <file path="src/Aura/Sql/Connection/SqlsrvDenali.php" hash="dbd3f2c9fac8a15a998d8b3720b8fe06" package="Default">
-    <parse_markers>
-      <error line="1">No DocBlock was found for File src/Aura/Sql/Connection/SqlsrvDenali.php</error>
-      <error line="4">No DocBlock was found for Class SqlsrvDenali</error>
-      <error line="9">No DocBlock was found for Method convertSelectStrategy</error>
-=======
   <file path="src/Aura/Sql/Connection/SqlsrvDenali.php" hash="d42da2170db17d21d273419100703d5f" package="Default">
     <parse_markers>
       <error line="19">No DocBlock was found for Class SqlsrvDenali</error>
       <error line="24">No DocBlock was found for Method convertSelectStrategy</error>
->>>>>>> fa8a0514a038bbcbc2d5b9b4b2049b2763773a05
     </parse_markers>
     <namespace-alias name="Select">Aura\Sql\Select</namespace-alias>
     <class final="false" abstract="false" line="19" namespace="Aura\Sql\Connection" package="Default">
@@ -1144,23 +859,10 @@ decimal scope.</description>
       </method>
     </class>
   </file>
-<<<<<<< HEAD
-  <file path="src/Aura/Sql/Connection/Mysql.php" hash="9b697ff1e7f613373cc62ad07b6ecaab" package="Default">
-    <parse_markers>
-      <error line="1">No DocBlock was found for File src/Aura/Sql/Connection/Mysql.php</error>
-      <error line="4">No DocBlock was found for Class Mysql</error>
-      <error line="6">No DocBlock was found for Property $dsn_prefix</error>
-      <error line="8">No DocBlock was found for Property $dsn</error>
-      <error line="16">No DocBlock was found for Property $ident_quote_prefix</error>
-      <error line="18">No DocBlock was found for Property $ident_quote_suffix</error>
-      <error line="20">No DocBlock was found for Method fetchTableList</error>
-      <error line="29">No DocBlock was found for Method fetchTableCols</error>
-=======
   <file path="src/Aura/Sql/ConnectionFactory.php" hash="5446f904fe54ea3e318837f5f65eced4" package="Default">
     <parse_markers>
       <error line="20">No DocBlock was found for Class ConnectionFactory</error>
       <notice line="74">Argument $params is missing from the function Docblock</notice>
->>>>>>> fa8a0514a038bbcbc2d5b9b4b2049b2763773a05
     </parse_markers>
     <namespace-alias name="ForgeInterface">Aura\Di\ForgeInterface</namespace-alias>
     <class final="false" abstract="false" line="20" namespace="Aura\Sql" package="Default">
@@ -1244,25 +946,6 @@ Connection classes.</description>
       </method>
     </class>
   </file>
-<<<<<<< HEAD
-  <file path="src/Aura/Sql/ConnectionManager.php" hash="ac9432d7971234796f0b7eede81b90d6" package="Default">
-    <parse_markers>
-      <error line="1">No DocBlock was found for File src/Aura/Sql/ConnectionManager.php</error>
-      <error line="6">No DocBlock was found for Class ConnectionManager</error>
-      <error line="8">No DocBlock was found for Property $default</error>
-      <error line="16">No DocBlock was found for Property $masters</error>
-      <error line="18">No DocBlock was found for Property $slaves</error>
-      <error line="20">No DocBlock was found for Property $factory</error>
-      <error line="22">No DocBlock was found for Property $conn</error>
-      <error line="28">No DocBlock was found for Method __construct</error>
-      <error line="41">No DocBlock was found for Method getRead</error>
-      <error line="53">No DocBlock was found for Method getWrite</error>
-      <error line="63">No DocBlock was found for Method getDefault</error>
-      <error line="73">No DocBlock was found for Method getMaster</error>
-      <error line="93">No DocBlock was found for Method getSlave</error>
-      <error line="112">No DocBlock was found for Method mergeAdapterParams</error>
-      <error line="125">No DocBlock was found for Method merge</error>
-=======
   <file path="src/Aura/Sql/ConnectionManager.php" hash="8b787fff1c91b0ff55a2dd889037fb6d" package="Default">
     <parse_markers>
       <error line="21">No DocBlock was found for Class ConnectionManager</error>
@@ -1279,7 +962,6 @@ Connection classes.</description>
       <error line="108">No DocBlock was found for Method getSlave</error>
       <error line="127">No DocBlock was found for Method mergeAdapterParams</error>
       <error line="140">No DocBlock was found for Method merge</error>
->>>>>>> fa8a0514a038bbcbc2d5b9b4b2049b2763773a05
     </parse_markers>
     <namespace-alias name="NoSuchMasterException">Aura\Sql\Exception\NoSuchMaster</namespace-alias>
     <namespace-alias name="NoSuchSlaveException">Aura\Sql\Exception\NoSuchSlave</namespace-alias>
@@ -1380,88 +1062,6 @@ Connection classes.</description>
       </method>
     </class>
   </file>
-<<<<<<< HEAD
-  <file path="src/Aura/Sql/Column.php" hash="c150f12f332a753c9ff76d0b9c43cc61" package="Default">
-    <parse_markers>
-      <error line="1">No DocBlock was found for File src/Aura/Sql/Column.php</error>
-      <error line="4">No DocBlock was found for Class Column</error>
-      <error line="6">No DocBlock was found for Property $name</error>
-      <error line="7">No DocBlock was found for Property $type</error>
-      <error line="8">No DocBlock was found for Property $size</error>
-      <error line="9">No DocBlock was found for Property $scope</error>
-      <error line="10">No DocBlock was found for Property $default</error>
-      <error line="11">No DocBlock was found for Property $require</error>
-      <error line="12">No DocBlock was found for Property $primary</error>
-      <error line="13">No DocBlock was found for Property $autoinc</error>
-      <error line="15">No DocBlock was found for Method __get</error>
-      <error line="20">No DocBlock was found for Method __set</error>
-    </parse_markers>
-    <class final="false" abstract="false" line="4" namespace="Aura\Sql" package="Default">
-      <name>Column</name>
-      <extends/>
-      <full_name>\Aura\Sql\Column</full_name>
-      <property final="false" static="false" visibility="protected" line="6" package="Default">
-        <name>$name</name>
-        <default/>
-      </property>
-      <property final="false" static="false" visibility="protected" line="7" package="Default">
-        <name>$type</name>
-        <default/>
-      </property>
-      <property final="false" static="false" visibility="protected" line="8" package="Default">
-        <name>$size</name>
-        <default/>
-      </property>
-      <property final="false" static="false" visibility="protected" line="9" package="Default">
-        <name>$scope</name>
-        <default/>
-      </property>
-      <property final="false" static="false" visibility="protected" line="10" package="Default">
-        <name>$default</name>
-        <default/>
-      </property>
-      <property final="false" static="false" visibility="protected" line="11" package="Default">
-        <name>$require</name>
-        <default/>
-      </property>
-      <property final="false" static="false" visibility="protected" line="12" package="Default">
-        <name>$primary</name>
-        <default/>
-      </property>
-      <property final="false" static="false" visibility="protected" line="13" package="Default">
-        <name>$autoinc</name>
-        <default/>
-      </property>
-      <method final="false" abstract="false" static="false" visibility="public" line="15" package="Default">
-        <name>__get</name>
-        <argument line="15">
-          <name>$key</name>
-          <default/>
-          <type/>
-        </argument>
-      </method>
-      <method final="false" abstract="false" static="false" visibility="public" line="20" package="Default">
-        <name>__set</name>
-        <argument line="20">
-          <name>$key</name>
-          <default/>
-          <type/>
-        </argument>
-        <argument line="20">
-          <name>$val</name>
-          <default/>
-          <type/>
-        </argument>
-      </method>
-    </class>
-  </file>
-  <file path="src/Aura/Sql/Exception.php" hash="994eee077d2e2bbf2e8a750e476be280" package="Default">
-    <parse_markers>
-      <error line="1">No DocBlock was found for File src/Aura/Sql/Exception.php</error>
-      <error line="3">No DocBlock was found for Class Exception</error>
-    </parse_markers>
-    <class final="false" abstract="false" line="3" namespace="Aura\Sql" package="Default">
-=======
   <file path="src/Aura/Sql/Exception/ConnectionFactory.php" hash="a6ed3c92639ee33ab9dd0709435fc0c5" package="Default">
     <class final="false" abstract="false" line="18" namespace="Aura\Sql\Exception" package="Aura\Sql">
       <name>ConnectionFactory</name>
@@ -1500,7 +1100,6 @@ Connection classes.</description>
   </file>
   <file path="src/Aura/Sql/Exception.php" hash="18dbb2fab60dee30ce9024b060e38ec7" package="Default">
     <class final="false" abstract="false" line="18" namespace="Aura\Sql" package="Aura\Sql">
->>>>>>> fa8a0514a038bbcbc2d5b9b4b2049b2763773a05
       <name>Exception</name>
       <extends>\Exception</extends>
       <full_name>\Aura\Sql\Exception</full_name>
@@ -1511,8 +1110,6 @@ Connection classes.</description>
       </docblock>
     </class>
   </file>
-<<<<<<< HEAD
-=======
   <file path="src/Aura/Sql/Select.php" hash="5f5f8fcaa98ff3e42269aa513ffd01aa" package="Default">
     <parse_markers>
       <error line="20">No DocBlock was found for Property $distinct</error>
@@ -1637,7 +1234,6 @@ Connection classes.</description>
   <package name="Aura">
     <package name="Sql"/>
   </package>
->>>>>>> fa8a0514a038bbcbc2d5b9b4b2049b2763773a05
   <package name="Default"/>
   <namespace name="Aura">
     <namespace name="Sql">

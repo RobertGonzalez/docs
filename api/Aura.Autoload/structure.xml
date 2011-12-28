@@ -1,20 +1,6 @@
 <?xml version="1.0"?>
-<<<<<<< HEAD
-<project version="0.16.0" title="Aura Project for PHP: Aura.Autoload">
-  <file path="src/Aura/Autoload/Exception/AlreadyLoaded.php" hash="7e3cab95b603b3c2af2c0fcc9759aa48" package="Default">
-    <docblock>
-      <description>This file is part of the Aura project for PHP.</description>
-      <long-description>
-</long-description>
-      <tag line="2" name="license" description="http://opensource.org/licenses/bsd-license.php BSD"/>
-    </docblock>
-    <parse_markers>
-      <error line="2">No Page-level DocBlock was found in file src/Aura/Autoload/Exception/AlreadyLoaded.php</error>
-    </parse_markers>
-=======
 <project version="0.17.2" title="Aura Project for PHP: Aura.Autoload">
   <file path="src/Aura/Autoload/Exception/AlreadyLoaded.php" hash="7e3cab95b603b3c2af2c0fcc9759aa48" package="Default">
->>>>>>> fa8a0514a038bbcbc2d5b9b4b2049b2763773a05
     <class final="false" abstract="false" line="18" namespace="Aura\Autoload\Exception" package="Aura\Autoload">
       <name>AlreadyLoaded</name>
       <extends>\Aura\Autoload\Exception</extends>
@@ -27,18 +13,6 @@
     </class>
   </file>
   <file path="src/Aura/Autoload/Exception/NotFound.php" hash="721d933ab441ac8683fe52dd87d9f6a1" package="Default">
-<<<<<<< HEAD
-    <docblock>
-      <description>This file is part of the Aura project for PHP.</description>
-      <long-description>
-</long-description>
-      <tag line="2" name="license" description="http://opensource.org/licenses/bsd-license.php BSD"/>
-    </docblock>
-    <parse_markers>
-      <error line="2">No Page-level DocBlock was found in file src/Aura/Autoload/Exception/NotFound.php</error>
-    </parse_markers>
-=======
->>>>>>> fa8a0514a038bbcbc2d5b9b4b2049b2763773a05
     <class final="false" abstract="false" line="18" namespace="Aura\Autoload\Exception" package="Aura\Autoload">
       <name>NotFound</name>
       <extends>\Aura\Autoload\Exception</extends>
@@ -50,21 +24,7 @@
       </docblock>
     </class>
   </file>
-<<<<<<< HEAD
-  <file path="src/Aura/Autoload/Loader.php" hash="8497fbd85c288d6e60ee5c98517706e4" package="Default">
-    <docblock>
-      <description>This file is part of the Aura project for PHP.</description>
-      <long-description>
-</long-description>
-      <tag line="2" name="license" description="http://opensource.org/licenses/bsd-license.php BSD"/>
-    </docblock>
-    <parse_markers>
-      <error line="2">No Page-level DocBlock was found in file src/Aura/Autoload/Loader.php</error>
-      <error line="260">No DocBlock was found for Method findDir</error>
-    </parse_markers>
-=======
   <file path="src/Aura/Autoload/Exception.php" hash="eb49f0026d17f9266c6d255329b881a4" package="Default">
->>>>>>> fa8a0514a038bbcbc2d5b9b4b2049b2763773a05
     <class final="false" abstract="false" line="18" namespace="Aura\Autoload" package="Aura\Autoload">
       <name>Exception</name>
       <extends>\Exception</extends>
@@ -119,47 +79,6 @@ name and the value is the file name.</description>
           </tag>
         </docblock>
       </property>
-<<<<<<< HEAD
-      <method final="false" abstract="false" static="false" visibility="public" line="64" package="Default">
-        <name>register</name>
-        <docblock>
-          <description>Registers this autoloader with SPL.</description>
-          <long-description>
-</long-description>
-          <tag line="57" name="return" description="" type="void">
-            <type by_reference="false">\Aura\Autoload\void</type>
-          </tag>
-        </docblock>
-      </method>
-      <method final="false" abstract="false" static="false" visibility="public" line="76" package="Default">
-        <name>unregister</name>
-        <docblock>
-          <description>Unregisters this autoloader from SPL.</description>
-          <long-description>
-</long-description>
-          <tag line="69" name="return" description="" type="void">
-            <type by_reference="false">\Aura\Autoload\void</type>
-          </tag>
-        </docblock>
-      </method>
-      <method final="false" abstract="false" static="false" visibility="public" line="96" package="Default">
-        <name>addPrefix</name>
-        <docblock>
-          <description>Adds a directory path for a class name prefix.</description>
-          <long-description>
-</long-description>
-          <tag line="81" name="param" description="The class name prefix, e.g. 'Aura\Framework\\' or 'Zend_'." type="string" variable="$name">
-            <type by_reference="false">\Aura\Autoload\string</type>
-          </tag>
-          <tag line="81" name="param" description="The absolute path leading to the classes for that prefix, e.g. `'/path/to/system/package/Aura.Framework-dev/src'`. Note that the classes must thereafter be in subdirectories of their own, e.g. `'/Aura/Framework/'." type="string" variable="$path">
-            <type by_reference="false">\Aura\Autoload\string</type>
-          </tag>
-          <tag line="81" name="return" description="" type="void">
-            <type by_reference="false">\Aura\Autoload\void</type>
-          </tag>
-        </docblock>
-        <argument line="96">
-=======
       <method final="false" abstract="false" static="false" visibility="public" line="55" package="Default">
         <name>register</name>
         <docblock>
@@ -197,52 +116,16 @@ name and the value is the file name.</description>
           </tag>
         </docblock>
         <argument line="87">
->>>>>>> fa8a0514a038bbcbc2d5b9b4b2049b2763773a05
           <name>$name</name>
           <default/>
           <type/>
         </argument>
-<<<<<<< HEAD
-        <argument line="96">
-          <name>$path</name>
-=======
         <argument line="87">
           <name>$paths</name>
->>>>>>> fa8a0514a038bbcbc2d5b9b4b2049b2763773a05
           <default/>
           <type/>
         </argument>
       </method>
-<<<<<<< HEAD
-      <method final="false" abstract="false" static="false" visibility="public" line="108" package="Default">
-        <name>getPrefixes</name>
-        <docblock>
-          <description>Returns the list of all class name prefixes and their paths.</description>
-          <long-description>
-</long-description>
-          <tag line="101" name="return" description="" type="array">
-            <type by_reference="false">\Aura\Autoload\array</type>
-          </tag>
-        </docblock>
-      </method>
-      <method final="false" abstract="false" static="false" visibility="public" line="124" package="Default">
-        <name>setClass</name>
-        <docblock>
-          <description>Sets the file path for an exact class name.</description>
-          <long-description>
-</long-description>
-          <tag line="113" name="param" description="The exact class name." type="string" variable="$name">
-            <type by_reference="false">\Aura\Autoload\string</type>
-          </tag>
-          <tag line="113" name="param" description="The file path to that class." type="string" variable="$path">
-            <type by_reference="false">\Aura\Autoload\string</type>
-          </tag>
-          <tag line="113" name="return" description="" type="void">
-            <type by_reference="false">\Aura\Autoload\void</type>
-          </tag>
-        </docblock>
-        <argument line="124">
-=======
       <method final="false" abstract="false" static="false" visibility="public" line="118" package="Default">
         <name>addPrefixes</name>
         <docblock>
@@ -300,37 +183,16 @@ name and the value is the file name.</description>
           </tag>
         </docblock>
         <argument line="148">
->>>>>>> fa8a0514a038bbcbc2d5b9b4b2049b2763773a05
           <name>$name</name>
           <default/>
           <type/>
         </argument>
-<<<<<<< HEAD
-        <argument line="124">
-=======
         <argument line="148">
->>>>>>> fa8a0514a038bbcbc2d5b9b4b2049b2763773a05
           <name>$path</name>
           <default/>
           <type/>
         </argument>
       </method>
-<<<<<<< HEAD
-      <method final="false" abstract="false" static="false" visibility="public" line="139" package="Default">
-        <name>setClasses</name>
-        <docblock>
-          <description>Sets all file paths for all class names.</description>
-          <long-description>
-</long-description>
-          <tag line="129" name="param" description="An array of class-to-file mappings where the key is the class name and the value is the file path." type="array" variable="$classes">
-            <type by_reference="false">\Aura\Autoload\array</type>
-          </tag>
-          <tag line="129" name="return" description="" type="void">
-            <type by_reference="false">\Aura\Autoload\void</type>
-          </tag>
-        </docblock>
-        <argument line="139">
-=======
       <method final="false" abstract="false" static="false" visibility="public" line="163" package="Default">
         <name>setClasses</name>
         <docblock>
@@ -344,37 +206,11 @@ name and the value is the file name.</description>
           </tag>
         </docblock>
         <argument line="163">
->>>>>>> fa8a0514a038bbcbc2d5b9b4b2049b2763773a05
           <name>$classes</name>
           <default/>
           <type>array</type>
         </argument>
       </method>
-<<<<<<< HEAD
-      <method final="false" abstract="false" static="false" visibility="public" line="151" package="Default">
-        <name>getClasses</name>
-        <docblock>
-          <description>Returns the list of exact class names and their paths.</description>
-          <long-description>
-</long-description>
-          <tag line="144" name="return" description="" type="array">
-            <type by_reference="false">\Aura\Autoload\array</type>
-          </tag>
-        </docblock>
-      </method>
-      <method final="false" abstract="false" static="false" visibility="public" line="164" package="Default">
-        <name>getLoaded</name>
-        <docblock>
-          <description>Returns the list of classes and interfaces loaded by the autoloader.</description>
-          <long-description>
-</long-description>
-          <tag line="156" name="return" description="An array of key-value pairs where the key is the class or interface name and the value is the file name." type="array">
-            <type by_reference="false">\Aura\Autoload\array</type>
-          </tag>
-        </docblock>
-      </method>
-      <method final="false" abstract="false" static="false" visibility="public" line="182" package="Default">
-=======
       <method final="false" abstract="false" static="false" visibility="public" line="175" package="Default">
         <name>getClasses</name>
         <docblock>
@@ -396,26 +232,10 @@ name and the value is the file name.</description>
         </docblock>
       </method>
       <method final="false" abstract="false" static="false" visibility="public" line="206" package="Default">
->>>>>>> fa8a0514a038bbcbc2d5b9b4b2049b2763773a05
         <name>load</name>
         <docblock>
           <description>Loads a class or interface using the class name prefix and path,
 falling back to the include-path if not found.</description>
-<<<<<<< HEAD
-          <long-description>
-</long-description>
-          <tag line="169" name="param" description="The class or interface to load." type="string" variable="$class">
-            <type by_reference="false">\Aura\Autoload\string</type>
-          </tag>
-          <tag line="169" name="return" description="" type="void">
-            <type by_reference="false">\Aura\Autoload\void</type>
-          </tag>
-          <tag line="169" name="throws" description="when the file for the class or interface is not found." type="\Exception\NotFound">
-            <type by_reference="false">\Exception\NotFound</type>
-          </tag>
-        </docblock>
-        <argument line="182">
-=======
           <long-description/>
           <tag line="193" name="param" description="The class or interface to load." type="string" variable="$class">
             <type by_reference="false">string</type>
@@ -428,33 +248,16 @@ falling back to the include-path if not found.</description>
           </tag>
         </docblock>
         <argument line="206">
->>>>>>> fa8a0514a038bbcbc2d5b9b4b2049b2763773a05
           <name>$class</name>
           <default/>
           <type/>
         </argument>
       </method>
-<<<<<<< HEAD
-      <method final="false" abstract="false" static="false" visibility="public" line="206" package="Default">
-=======
       <method final="false" abstract="false" static="false" visibility="public" line="230" package="Default">
->>>>>>> fa8a0514a038bbcbc2d5b9b4b2049b2763773a05
         <name>find</name>
         <docblock>
           <description>Finds the path to a class or interface using the prefixes and
 include-path.</description>
-<<<<<<< HEAD
-          <long-description>
-</long-description>
-          <tag line="196" name="param" description="The class or interface to find." type="string" variable="$class">
-            <type by_reference="false">\Aura\Autoload\string</type>
-          </tag>
-          <tag line="196" name="return" description="absolute path to the class or interface." type="\Aura\Autoload\The">
-            <type by_reference="false">\Aura\Autoload\The</type>
-          </tag>
-        </docblock>
-        <argument line="206">
-=======
           <long-description/>
           <tag line="220" name="param" description="The class or interface to find." type="string" variable="$class">
             <type by_reference="false">string</type>
@@ -464,36 +267,11 @@ include-path.</description>
           </tag>
         </docblock>
         <argument line="230">
->>>>>>> fa8a0514a038bbcbc2d5b9b4b2049b2763773a05
           <name>$class</name>
           <default/>
           <type/>
         </argument>
       </method>
-<<<<<<< HEAD
-      <method final="false" abstract="false" static="false" visibility="public" line="260" package="Default">
-        <name>findDir</name>
-        <argument line="260">
-          <name>$spec</name>
-          <default/>
-          <type/>
-        </argument>
-      </method>
-      <method final="false" abstract="false" static="false" visibility="public" line="327" package="Default">
-        <name>classToFile</name>
-        <docblock>
-          <description>PSR-0 compliant class-to-file inflector.</description>
-          <long-description>
-</long-description>
-          <tag line="318" name="param" description="The name of the class or interface to load." type="string" variable="$spec">
-            <type by_reference="false">\Aura\Autoload\string</type>
-          </tag>
-          <tag line="318" name="return" description="The filename version of the class or interface." type="string">
-            <type by_reference="false">\Aura\Autoload\string</type>
-          </tag>
-        </docblock>
-        <argument line="327">
-=======
       <method final="false" abstract="false" static="false" visibility="public" line="288" package="Default">
         <name>classToFile</name>
         <docblock>
@@ -507,7 +285,6 @@ include-path.</description>
           </tag>
         </docblock>
         <argument line="288">
->>>>>>> fa8a0514a038bbcbc2d5b9b4b2049b2763773a05
           <name>$spec</name>
           <default/>
           <type/>
@@ -515,31 +292,6 @@ include-path.</description>
       </method>
     </class>
   </file>
-<<<<<<< HEAD
-  <file path="src/Aura/Autoload/Exception.php" hash="eb49f0026d17f9266c6d255329b881a4" package="Default">
-    <docblock>
-      <description>This file is part of the Aura project for PHP.</description>
-      <long-description>
-</long-description>
-      <tag line="2" name="license" description="http://opensource.org/licenses/bsd-license.php BSD"/>
-    </docblock>
-    <parse_markers>
-      <error line="2">No Page-level DocBlock was found in file src/Aura/Autoload/Exception.php</error>
-    </parse_markers>
-    <class final="false" abstract="false" line="18" namespace="Aura\Autoload" package="Aura\Autoload">
-      <name>Exception</name>
-      <extends>\Exception</extends>
-      <full_name>\Aura\Autoload\Exception</full_name>
-      <docblock>
-        <description>Generic package exception.</description>
-        <long-description>
-</long-description>
-        <tag line="11" name="package" description="Aura.Autoload"/>
-      </docblock>
-    </class>
-  </file>
-=======
->>>>>>> fa8a0514a038bbcbc2d5b9b4b2049b2763773a05
   <package name="Aura">
     <package name="Autoload"/>
   </package>

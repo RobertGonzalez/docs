@@ -1,31 +1,4 @@
 <?xml version="1.0"?>
-<<<<<<< HEAD
-<project version="0.16.0" title="Aura Project for PHP: Aura.Router">
-  <file path="src/Aura/Router/RouteFactory.php" hash="8c0d275c59be48a3eaa3c3c76a0a1b7c" package="Default">
-    <docblock>
-      <description>This file is part of the Aura Project for PHP.</description>
-      <long-description>
-</long-description>
-      <tag line="2" name="license" description="http://opensource.org/licenses/bsd-license.php BSD"/>
-    </docblock>
-    <parse_markers>
-      <error line="2">No Page-level DocBlock was found in file src/Aura/Router/RouteFactory.php</error>
-    </parse_markers>
-    <class final="false" abstract="false" line="18" namespace="Aura\Router" package="Aura\Router">
-      <name>RouteFactory</name>
-      <extends/>
-      <full_name>\Aura\Router\RouteFactory</full_name>
-      <docblock>
-        <description>A factory to create Route objects.</description>
-        <long-description>
-</long-description>
-        <tag line="11" name="package" description="Aura.Router"/>
-      </docblock>
-      <property final="false" static="false" visibility="protected" line="27" package="Default">
-        <name>$params</name>
-        <default>array(
-        'name'        =&gt; null</default>
-=======
 <project version="0.17.2" title="Aura Project for PHP: Aura.Router">
   <file path="src/Aura/Router/Exception.php" hash="7298603471092fb7b04720ccd8608e2d" package="Default">
     <class final="false" abstract="false" line="18" namespace="Aura\Router" package="Aura\Router">
@@ -273,7 +246,6 @@ re-setting via `setRoutes()`.</description>
       </method>
       <method final="false" abstract="false" static="false" visibility="protected" line="254" package="Default">
         <name>createNextRoute</name>
->>>>>>> fa8a0514a038bbcbc2d5b9b4b2049b2763773a05
         <docblock>
           <description>Gets the next Route object in the stack, converting definitions to
 Route objects as needed.</description>
@@ -307,18 +279,6 @@ Route objects as needed.</description>
     </class>
   </file>
   <file path="src/Aura/Router/Route.php" hash="3e042ab5e139de7c1711e70b5473e382" package="Default">
-<<<<<<< HEAD
-    <docblock>
-      <description>This file is part of the Aura Project for PHP.</description>
-      <long-description>
-</long-description>
-      <tag line="2" name="license" description="http://opensource.org/licenses/bsd-license.php BSD"/>
-    </docblock>
-    <parse_markers>
-      <error line="2">No Page-level DocBlock was found in file src/Aura/Router/Route.php</error>
-    </parse_markers>
-=======
->>>>>>> fa8a0514a038bbcbc2d5b9b4b2049b2763773a05
     <class final="false" abstract="false" line="21" namespace="Aura\Router" package="Aura\Router">
       <name>Route</name>
       <extends/>
@@ -723,20 +683,7 @@ the server values.</description>
       </method>
     </class>
   </file>
-<<<<<<< HEAD
-  <file path="src/Aura/Router/Map.php" hash="6d283176ef88c8625b1fcd7a0bc8f422" package="Default">
-    <docblock>
-      <description>This file is part of the Aura Project for PHP.</description>
-      <long-description>
-</long-description>
-      <tag line="2" name="license" description="http://opensource.org/licenses/bsd-license.php BSD"/>
-    </docblock>
-    <parse_markers>
-      <error line="2">No Page-level DocBlock was found in file src/Aura/Router/Map.php</error>
-    </parse_markers>
-=======
   <file path="src/Aura/Router/RouteFactory.php" hash="8c0d275c59be48a3eaa3c3c76a0a1b7c" package="Default">
->>>>>>> fa8a0514a038bbcbc2d5b9b4b2049b2763773a05
     <class final="false" abstract="false" line="18" namespace="Aura\Router" package="Aura\Router">
       <name>RouteFactory</name>
       <extends/>
@@ -778,31 +725,6 @@ the server values.</description>
       </method>
     </class>
   </file>
-<<<<<<< HEAD
-  <file path="src/Aura/Router/Exception.php" hash="7298603471092fb7b04720ccd8608e2d" package="Default">
-    <docblock>
-      <description>This file is part of the Aura Project for PHP.</description>
-      <long-description>
-</long-description>
-      <tag line="2" name="license" description="http://opensource.org/licenses/bsd-license.php BSD"/>
-    </docblock>
-    <parse_markers>
-      <error line="2">No Page-level DocBlock was found in file src/Aura/Router/Exception.php</error>
-    </parse_markers>
-    <class final="false" abstract="false" line="18" namespace="Aura\Router" package="Aura\Router">
-      <name>Exception</name>
-      <extends>\Exception</extends>
-      <full_name>\Aura\Router\Exception</full_name>
-      <docblock>
-        <description>Package-specific exception.</description>
-        <long-description>
-</long-description>
-        <tag line="11" name="package" description="Aura.Router"/>
-      </docblock>
-    </class>
-  </file>
-=======
->>>>>>> fa8a0514a038bbcbc2d5b9b4b2049b2763773a05
   <package name="Aura">
     <package name="Router"/>
   </package>

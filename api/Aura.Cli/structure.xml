@@ -1,21 +1,4 @@
 <?xml version="1.0"?>
-<<<<<<< HEAD
-<project version="0.16.0" title="Aura Project for PHP: Aura.Cli">
-  <file path="src/Aura/Cli/Getopt.php" hash="fc43a1c353ddab3ed87bbc72d7a73e37" package="Default">
-    <docblock>
-      <description>This file is part of the Aura project for PHP.</description>
-      <long-description>
-</long-description>
-      <tag line="2" name="license" description="http://opensource.org/licenses/bsd-license.php BSD"/>
-    </docblock>
-    <parse_markers>
-      <error line="2">No Page-level DocBlock was found in file src/Aura/Cli/Getopt.php</error>
-      <notice line="154">Argument $prop is missing from the function Docblock</notice>
-      <notice line="219">Argument $long is missing from the function Docblock</notice>
-      <notice line="241">Argument $char is missing from the function Docblock</notice>
-      <notice line="362">Name of argument $spec does not match with function Docblock</notice>
-    </parse_markers>
-=======
 <project version="0.17.2" title="Aura Project for PHP: Aura.Cli">
   <file path="src/Aura/Cli/Command.php" hash="4c1d0e547fc527daf207f34a8bf36dee" package="Default">
     <class final="false" abstract="true" line="18" namespace="Aura\Cli" package="Aura\Cli">
@@ -195,7 +178,6 @@ non-strict, it will not.</description>
     </class>
   </file>
   <file path="src/Aura/Cli/Context.php" hash="f8d4674ca76e78eccefeedbb4be2887f" package="Default">
->>>>>>> fa8a0514a038bbcbc2d5b9b4b2049b2763773a05
     <class final="false" abstract="false" line="18" namespace="Aura\Cli" package="Aura\Cli">
       <name>Context</name>
       <extends/>
@@ -396,20 +378,7 @@ unmodified arguments, call `server('argv')`.</description>
       </method>
     </class>
   </file>
-<<<<<<< HEAD
-  <file path="src/Aura/Cli/Exception/OptionParamRejected.php" hash="7aa37df0f38f25ffa6196373d5ed3fb7" package="Default">
-    <docblock>
-      <description>This file is part of the Aura project for PHP.</description>
-      <long-description>
-</long-description>
-      <tag line="2" name="license" description="http://opensource.org/licenses/bsd-license.php BSD"/>
-    </docblock>
-    <parse_markers>
-      <error line="2">No Page-level DocBlock was found in file src/Aura/Cli/Exception/OptionParamRejected.php</error>
-    </parse_markers>
-=======
   <file path="src/Aura/Cli/Exception/OptionName.php" hash="e1bae6ed494a950c57478bf5190d1dff" package="Default">
->>>>>>> fa8a0514a038bbcbc2d5b9b4b2049b2763773a05
     <class final="false" abstract="false" line="18" namespace="Aura\Cli\Exception" package="Aura\Cli">
       <name>OptionName</name>
       <extends>\Aura\Cli\Exception</extends>
@@ -422,18 +391,6 @@ unmodified arguments, call `server('argv')`.</description>
     </class>
   </file>
   <file path="src/Aura/Cli/Exception/OptionNotDefined.php" hash="1a58e08aae160caf18bd001b0cbfd520" package="Default">
-<<<<<<< HEAD
-    <docblock>
-      <description>This file is part of the Aura project for PHP.</description>
-      <long-description>
-</long-description>
-      <tag line="2" name="license" description="http://opensource.org/licenses/bsd-license.php BSD"/>
-    </docblock>
-    <parse_markers>
-      <error line="2">No Page-level DocBlock was found in file src/Aura/Cli/Exception/OptionNotDefined.php</error>
-    </parse_markers>
-=======
->>>>>>> fa8a0514a038bbcbc2d5b9b4b2049b2763773a05
     <class final="false" abstract="false" line="18" namespace="Aura\Cli\Exception" package="Aura\Cli">
       <name>OptionNotDefined</name>
       <extends>\Aura\Cli\Exception</extends>
@@ -445,20 +402,7 @@ unmodified arguments, call `server('argv')`.</description>
       </docblock>
     </class>
   </file>
-<<<<<<< HEAD
-  <file path="src/Aura/Cli/Exception/OptionName.php" hash="e1bae6ed494a950c57478bf5190d1dff" package="Default">
-    <docblock>
-      <description>This file is part of the Aura project for PHP.</description>
-      <long-description>
-</long-description>
-      <tag line="2" name="license" description="http://opensource.org/licenses/bsd-license.php BSD"/>
-    </docblock>
-    <parse_markers>
-      <error line="2">No Page-level DocBlock was found in file src/Aura/Cli/Exception/OptionName.php</error>
-    </parse_markers>
-=======
   <file path="src/Aura/Cli/Exception/OptionNotMulti.php" hash="79cadc0afd13eae5f8450f504f8b0fc4" package="Default">
->>>>>>> fa8a0514a038bbcbc2d5b9b4b2049b2763773a05
     <class final="false" abstract="false" line="18" namespace="Aura\Cli\Exception" package="Aura\Cli">
       <name>OptionNotMulti</name>
       <extends>\Aura\Cli\Exception</extends>
@@ -470,18 +414,6 @@ unmodified arguments, call `server('argv')`.</description>
       </docblock>
     </class>
   </file>
-<<<<<<< HEAD
-  <file path="src/Aura/Cli/Exception/OptionParamRequired.php" hash="d5675290c9c8eee3b967112a6771c0d4" package="Default">
-    <docblock>
-      <description>This file is part of the Aura project for PHP.</description>
-      <long-description>
-</long-description>
-      <tag line="2" name="license" description="http://opensource.org/licenses/bsd-license.php BSD"/>
-    </docblock>
-    <parse_markers>
-      <error line="2">No Page-level DocBlock was found in file src/Aura/Cli/Exception/OptionParamRequired.php</error>
-    </parse_markers>
-=======
   <file path="src/Aura/Cli/Exception/OptionParam.php" hash="bce28cd00e7d16802bff5d084e99e12b" package="Default">
     <class final="false" abstract="false" line="18" namespace="Aura\Cli\Exception" package="Aura\Cli">
       <name>OptionParam</name>
@@ -495,7 +427,6 @@ unmodified arguments, call `server('argv')`.</description>
     </class>
   </file>
   <file path="src/Aura/Cli/Exception/OptionParamRejected.php" hash="7aa37df0f38f25ffa6196373d5ed3fb7" package="Default">
->>>>>>> fa8a0514a038bbcbc2d5b9b4b2049b2763773a05
     <class final="false" abstract="false" line="18" namespace="Aura\Cli\Exception" package="Aura\Cli">
       <name>OptionParamRejected</name>
       <extends>\Aura\Cli\Exception</extends>
@@ -507,20 +438,7 @@ unmodified arguments, call `server('argv')`.</description>
       </docblock>
     </class>
   </file>
-<<<<<<< HEAD
-  <file path="src/Aura/Cli/Exception/OptionParam.php" hash="bce28cd00e7d16802bff5d084e99e12b" package="Default">
-    <docblock>
-      <description>This file is part of the Aura project for PHP.</description>
-      <long-description>
-</long-description>
-      <tag line="2" name="license" description="http://opensource.org/licenses/bsd-license.php BSD"/>
-    </docblock>
-    <parse_markers>
-      <error line="2">No Page-level DocBlock was found in file src/Aura/Cli/Exception/OptionParam.php</error>
-    </parse_markers>
-=======
   <file path="src/Aura/Cli/Exception/OptionParamRequired.php" hash="d5675290c9c8eee3b967112a6771c0d4" package="Default">
->>>>>>> fa8a0514a038bbcbc2d5b9b4b2049b2763773a05
     <class final="false" abstract="false" line="18" namespace="Aura\Cli\Exception" package="Aura\Cli">
       <name>OptionParamRequired</name>
       <extends>\Aura\Cli\Exception</extends>
@@ -532,28 +450,11 @@ unmodified arguments, call `server('argv')`.</description>
       </docblock>
     </class>
   </file>
-<<<<<<< HEAD
-  <file path="src/Aura/Cli/Exception/OptionNotMulti.php" hash="79cadc0afd13eae5f8450f504f8b0fc4" package="Default">
-    <docblock>
-      <description>This file is part of the Aura project for PHP.</description>
-      <long-description>
-</long-description>
-      <tag line="2" name="license" description="http://opensource.org/licenses/bsd-license.php BSD"/>
-    </docblock>
-    <parse_markers>
-      <error line="2">No Page-level DocBlock was found in file src/Aura/Cli/Exception/OptionNotMulti.php</error>
-    </parse_markers>
-    <class final="false" abstract="false" line="18" namespace="Aura\Cli\Exception" package="Aura\Cli">
-      <name>OptionNotMulti</name>
-      <extends>\Aura\Cli\Exception</extends>
-      <full_name>\Aura\Cli\Exception\OptionNotMulti</full_name>
-=======
   <file path="src/Aura/Cli/Exception.php" hash="4de9a8b9a240b55fa6090483bd65518a" package="Default">
     <class final="false" abstract="false" line="18" namespace="Aura\Cli" package="Aura\Cli">
       <name>Exception</name>
       <extends>\Exception</extends>
       <full_name>\Aura\Cli\Exception</full_name>
->>>>>>> fa8a0514a038bbcbc2d5b9b4b2049b2763773a05
       <docblock>
         <description>Generic package exception.</description>
         <long-description/>
@@ -561,20 +462,6 @@ unmodified arguments, call `server('argv')`.</description>
       </docblock>
     </class>
   </file>
-<<<<<<< HEAD
-  <file path="src/Aura/Cli/Command.php" hash="4c1d0e547fc527daf207f34a8bf36dee" package="Default">
-    <docblock>
-      <description>This file is part of the Aura project for PHP.</description>
-      <long-description>
-</long-description>
-      <tag line="2" name="license" description="http://opensource.org/licenses/bsd-license.php BSD"/>
-    </docblock>
-    <parse_markers>
-      <error line="2">No Page-level DocBlock was found in file src/Aura/Cli/Command.php</error>
-    </parse_markers>
-    <class final="false" abstract="true" line="18" namespace="Aura\Cli" package="Aura\Cli">
-      <name>Command</name>
-=======
   <file path="src/Aura/Cli/Getopt.php" hash="fc43a1c353ddab3ed87bbc72d7a73e37" package="Default">
     <parse_markers>
       <notice line="154">Argument $prop is missing from the function Docblock</notice>
@@ -584,86 +471,9 @@ unmodified arguments, call `server('argv')`.</description>
     </parse_markers>
     <class final="false" abstract="false" line="18" namespace="Aura\Cli" package="Aura\Cli">
       <name>Getopt</name>
->>>>>>> fa8a0514a038bbcbc2d5b9b4b2049b2763773a05
       <extends/>
       <full_name>\Aura\Cli\Getopt</full_name>
       <docblock>
-<<<<<<< HEAD
-        <description>The CLI equivalent of a page-controller to perform a single action.</description>
-        <long-description>
-</long-description>
-        <tag line="11" name="package" description="Aura.Cli"/>
-      </docblock>
-      <property final="false" static="false" visibility="protected" line="28" package="Default">
-        <name>$getopt</name>
-        <default/>
-        <docblock>
-          <description>A Getopt object for the Command; retains the short and long options
-passed at the command line.</description>
-          <long-description>
-</long-description>
-          <tag line="20" name="var" description="" type="\Aura\Cli\Getopt">
-            <type by_reference="false">\Aura\Cli\Getopt</type>
-          </tag>
-        </docblock>
-      </property>
-      <property final="false" static="false" visibility="protected" line="37" package="Default">
-        <name>$options</name>
-        <default>array()</default>
-        <docblock>
-          <description>The option definitions for the Getopt object.</description>
-          <long-description>
-</long-description>
-          <tag line="30" name="var" description="" type="array">
-            <type by_reference="false">\Aura\Cli\array</type>
-          </tag>
-        </docblock>
-      </property>
-      <property final="false" static="false" visibility="protected" line="48" package="Default">
-        <name>$options_strict</name>
-        <default>Getopt::STRICT</default>
-        <docblock>
-          <description>Should Getopt be strict about how options are processed?  In strict
-mode, passing an undefined option will throw an exception; in
-non-strict, it will not.</description>
-          <long-description>
-</long-description>
-          <tag line="39" name="var" description="" type="bool">
-            <type by_reference="false">\Aura\Cli\bool</type>
-          </tag>
-        </docblock>
-      </property>
-      <property final="false" static="false" visibility="protected" line="57" package="Default">
-        <name>$params</name>
-        <default>array()</default>
-        <docblock>
-          <description>The positional (numeric) arguments passed at the command line.</description>
-          <long-description>
-</long-description>
-          <tag line="50" name="var" description="" type="array">
-            <type by_reference="false">\Aura\Cli\array</type>
-          </tag>
-        </docblock>
-      </property>
-      <method final="false" abstract="false" static="false" visibility="public" line="70" package="Default">
-        <name>__construct</name>
-        <docblock>
-          <description>Constructor.</description>
-          <long-description>
-</long-description>
-          <tag line="59" name="param" description="The command-line context." type="\Aura\Cli\Context" variable="$context">
-            <type by_reference="false">\Aura\Cli\Context</type>
-          </tag>
-          <tag line="59" name="param" description="Standard input/output streams." type="\Aura\Cli\Stdio" variable="$stdio">
-            <type by_reference="false">\Aura\Cli\Stdio</type>
-          </tag>
-          <tag line="59" name="param" description="An options processor and reader." type="\Aura\Cli\Getopt" variable="$getopt">
-            <type by_reference="false">\Aura\Cli\Getopt</type>
-          </tag>
-        </docblock>
-        <argument line="71">
-          <name>$context</name>
-=======
         <description>Retrieves and validates command-line options and parameter values.</description>
         <long-description/>
         <tag line="11" name="package" description="Aura.Cli"/>
@@ -739,14 +549,9 @@ non-strict, it will not.</description>
         </docblock>
         <argument line="81">
           <name>$option_factory</name>
->>>>>>> fa8a0514a038bbcbc2d5b9b4b2049b2763773a05
           <default/>
           <type>OptionFactory</type>
         </argument>
-<<<<<<< HEAD
-        <argument line="72">
-          <name>$stdio</name>
-=======
       </method>
       <method final="false" abstract="false" static="false" visibility="public" line="95" package="Default">
         <name>__get</name>
@@ -762,14 +567,9 @@ non-strict, it will not.</description>
         </docblock>
         <argument line="95">
           <name>$key</name>
->>>>>>> fa8a0514a038bbcbc2d5b9b4b2049b2763773a05
           <default/>
           <type/>
         </argument>
-<<<<<<< HEAD
-        <argument line="73">
-          <name>$getopt</name>
-=======
       </method>
       <method final="false" abstract="false" static="false" visibility="public" line="116" package="Default">
         <name>init</name>
@@ -788,21 +588,9 @@ non-strict, it will not.</description>
         </docblock>
         <argument line="116">
           <name>$opts</name>
->>>>>>> fa8a0514a038bbcbc2d5b9b4b2049b2763773a05
           <default/>
           <type>array</type>
         </argument>
-<<<<<<< HEAD
-      </method>
-      <method final="false" abstract="false" static="false" visibility="protected" line="89" package="Default">
-        <name>initGetopt</name>
-        <docblock>
-          <description>Passes the Context arguments to `$getopt`.</description>
-          <long-description>
-</long-description>
-          <tag line="82" name="return" description="" type="void">
-            <type by_reference="false">\Aura\Cli\void</type>
-=======
         <argument line="116">
           <name>$strict</name>
           <default>self::STRICT</default>
@@ -829,7 +617,6 @@ non-strict, it will not.</description>
           </tag>
           <tag line="145" name="return" description="" type="\Aura\Cli\Option">
             <type by_reference="false">\Aura\Cli\Option</type>
->>>>>>> fa8a0514a038bbcbc2d5b9b4b2049b2763773a05
           </tag>
         </docblock>
         <argument line="154">
@@ -838,34 +625,6 @@ non-strict, it will not.</description>
           <type/>
         </argument>
       </method>
-<<<<<<< HEAD
-      <method final="false" abstract="false" static="false" visibility="protected" line="102" package="Default">
-        <name>initParams</name>
-        <docblock>
-          <description>Loads `$params` from `$getopt`.</description>
-          <long-description>
-</long-description>
-          <tag line="95" name="return" description="" type="void">
-            <type by_reference="false">\Aura\Cli\void</type>
-          </tag>
-        </docblock>
-      </method>
-      <method final="false" abstract="false" static="false" visibility="public" line="126" package="Default">
-        <name>exec</name>
-        <docblock>
-          <description>Executes the Command.  In order, it does these things:</description>
-          <long-description>&lt;ul&gt;
-&lt;li&gt;&lt;p&gt;calls &lt;code&gt;preExec()&lt;/code&gt;&lt;/p&gt;&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;calls &lt;code&gt;preAction()&lt;/code&gt;&lt;/p&gt;&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;calles &lt;code&gt;action()&lt;/code&gt;&lt;/p&gt;&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;calls &lt;code&gt;postAction()&lt;/code&gt;&lt;/p&gt;&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;calls &lt;code&gt;postExec()&lt;/code&gt;&lt;/p&gt;&lt;/li&gt;
-&lt;/ul&gt;
-</long-description>
-          <tag line="107" name="see" description="\Aura\Cli\action()" refers="\Aura\Cli\action()"/>
-          <tag line="107" name="return" description="" type="void">
-            <type by_reference="false">\Aura\Cli\void</type>
-=======
       <method final="false" abstract="false" static="false" visibility="public" line="172" package="Default">
         <name>getOptionValues</name>
         <docblock>
@@ -886,7 +645,6 @@ non-strict, it will not.</description>
           </tag>
           <tag line="181" name="return" description="" type="mixed">
             <type by_reference="false">mixed</type>
->>>>>>> fa8a0514a038bbcbc2d5b9b4b2049b2763773a05
           </tag>
         </docblock>
         <argument line="190">
@@ -895,27 +653,6 @@ non-strict, it will not.</description>
           <type/>
         </argument>
       </method>
-<<<<<<< HEAD
-      <method final="false" abstract="false" static="false" visibility="public" line="146" package="Default">
-        <name>preExec</name>
-        <docblock>
-          <description>Runs at the beginning of `exec()` before `preAction()`.</description>
-          <long-description>
-</long-description>
-          <tag line="139" name="return" description="" type="void">
-            <type by_reference="false">\Aura\Cli\void</type>
-          </tag>
-        </docblock>
-      </method>
-      <method final="false" abstract="false" static="false" visibility="public" line="157" package="Default">
-        <name>preAction</name>
-        <docblock>
-          <description>Runs before `action()` but after `preExec()`.</description>
-          <long-description>
-</long-description>
-          <tag line="150" name="return" description="" type="mixed">
-            <type by_reference="false">\Aura\Cli\mixed</type>
-=======
       <method final="false" abstract="false" static="false" visibility="public" line="205" package="Default">
         <name>getParams</name>
         <docblock>
@@ -936,7 +673,6 @@ non-strict, it will not.</description>
           </tag>
           <tag line="210" name="return" description="" type="\Aura\Cli\Option">
             <type by_reference="false">\Aura\Cli\Option</type>
->>>>>>> fa8a0514a038bbcbc2d5b9b4b2049b2763773a05
           </tag>
         </docblock>
         <argument line="219">
@@ -945,16 +681,6 @@ non-strict, it will not.</description>
           <type/>
         </argument>
       </method>
-<<<<<<< HEAD
-      <method final="false" abstract="true" static="false" visibility="protected" line="168" package="Default">
-        <name>action</name>
-        <docblock>
-          <description>The main logic for the Command.</description>
-          <long-description>
-</long-description>
-          <tag line="161" name="return" description="" type="void">
-            <type by_reference="false">\Aura\Cli\void</type>
-=======
       <method final="false" abstract="false" static="false" visibility="public" line="241" package="Default">
         <name>getShortOption</name>
         <docblock>
@@ -965,7 +691,6 @@ non-strict, it will not.</description>
           </tag>
           <tag line="232" name="return" description="" type="\Aura\Cli\Option">
             <type by_reference="false">\Aura\Cli\Option</type>
->>>>>>> fa8a0514a038bbcbc2d5b9b4b2049b2763773a05
           </tag>
         </docblock>
         <argument line="241">
@@ -974,16 +699,6 @@ non-strict, it will not.</description>
           <type/>
         </argument>
       </method>
-<<<<<<< HEAD
-      <method final="false" abstract="false" static="false" visibility="public" line="177" package="Default">
-        <name>postAction</name>
-        <docblock>
-          <description>Runs after `action()` but before `postExec()`.</description>
-          <long-description>
-</long-description>
-          <tag line="170" name="return" description="" type="mixed">
-            <type by_reference="false">\Aura\Cli\mixed</type>
-=======
       <method final="false" abstract="false" static="false" visibility="public" line="265" package="Default">
         <name>load</name>
         <docblock>
@@ -996,7 +711,6 @@ in the defined Option objects and placing non-option params in a
           </tag>
           <tag line="254" name="return" description="" type="void">
             <type by_reference="false">void</type>
->>>>>>> fa8a0514a038bbcbc2d5b9b4b2049b2763773a05
           </tag>
         </docblock>
         <argument line="265">
@@ -1005,16 +719,6 @@ in the defined Option objects and placing non-option params in a
           <type>array</type>
         </argument>
       </method>
-<<<<<<< HEAD
-      <method final="false" abstract="false" static="false" visibility="public" line="188" package="Default">
-        <name>postExec</name>
-        <docblock>
-          <description>Runs at the end of `exec()` after `postAction()`.</description>
-          <long-description>
-</long-description>
-          <tag line="181" name="return" description="" type="mixed">
-            <type by_reference="false">\Aura\Cli\mixed</type>
-=======
       <method final="false" abstract="false" static="false" visibility="protected" line="314" package="Default">
         <name>loadLong</name>
         <docblock>
@@ -1025,7 +729,6 @@ in the defined Option objects and placing non-option params in a
           </tag>
           <tag line="305" name="return" description="" type="void">
             <type by_reference="false">void</type>
->>>>>>> fa8a0514a038bbcbc2d5b9b4b2049b2763773a05
           </tag>
         </docblock>
         <argument line="314">
@@ -1034,37 +737,8 @@ in the defined Option objects and placing non-option params in a
           <type/>
         </argument>
       </method>
-<<<<<<< HEAD
-    </class>
-  </file>
-  <file path="src/Aura/Cli/OptionFactory.php" hash="a454e839009a36d2bfe359f1c7ae6c07" package="Default">
-    <docblock>
-      <description>This file is part of the Aura project for PHP.</description>
-      <long-description>
-</long-description>
-      <tag line="2" name="license" description="http://opensource.org/licenses/bsd-license.php BSD"/>
-    </docblock>
-    <parse_markers>
-      <error line="2">No Page-level DocBlock was found in file src/Aura/Cli/OptionFactory.php</error>
-    </parse_markers>
-    <class final="false" abstract="false" line="18" namespace="Aura\Cli" package="Aura\Cli">
-      <name>OptionFactory</name>
-      <extends/>
-      <full_name>\Aura\Cli\OptionFactory</full_name>
-      <docblock>
-        <description>A factory to create Option objects.</description>
-        <long-description>
-</long-description>
-        <tag line="11" name="package" description="Aura.Cli"/>
-      </docblock>
-      <property final="false" static="false" visibility="protected" line="27" package="Default">
-        <name>$params</name>
-        <default>array(
-        'name'    =&gt; null</default>
-=======
       <method final="false" abstract="false" static="false" visibility="protected" line="362" package="Default">
         <name>loadShort</name>
->>>>>>> fa8a0514a038bbcbc2d5b9b4b2049b2763773a05
         <docblock>
           <description>Parses a short-form option (or cluster of options).</description>
           <long-description/>
@@ -1102,18 +776,7 @@ in the defined Option objects and placing non-option params in a
     </class>
   </file>
   <file path="src/Aura/Cli/Option.php" hash="be4ea719caa218bc3483de090a62b354" package="Default">
-<<<<<<< HEAD
-    <docblock>
-      <description>This file is part of the Aura project for PHP.</description>
-      <long-description>
-</long-description>
-      <tag line="2" name="license" description="http://opensource.org/licenses/bsd-license.php BSD"/>
-    </docblock>
     <parse_markers>
-      <error line="2">No Page-level DocBlock was found in file src/Aura/Cli/Option.php</error>
-=======
-    <parse_markers>
->>>>>>> fa8a0514a038bbcbc2d5b9b4b2049b2763773a05
       <notice line="121">Name of argument $name does not match with function Docblock</notice>
       <notice line="122">Argument $long is missing from the function Docblock</notice>
       <notice line="123">Argument $short is missing from the function Docblock</notice>
@@ -1388,24 +1051,9 @@ rejected (i.e., no param allowed) ?</description>
       </method>
     </class>
   </file>
-<<<<<<< HEAD
-  <file path="src/Aura/Cli/Vt100.php" hash="ff9f2278d86dfc7606c2697b91330b36" package="Default">
-    <docblock>
-      <description>This file is part of the Aura project for PHP.</description>
-      <long-description>
-</long-description>
-      <tag line="2" name="license" description="http://opensource.org/licenses/bsd-license.php BSD"/>
-    </docblock>
-    <parse_markers>
-      <error line="2">No Page-level DocBlock was found in file src/Aura/Cli/Vt100.php</error>
-    </parse_markers>
-    <class final="false" abstract="false" line="24" namespace="Aura\Cli" package="Aura\Cli">
-      <name>Vt100</name>
-=======
   <file path="src/Aura/Cli/OptionFactory.php" hash="a454e839009a36d2bfe359f1c7ae6c07" package="Default">
     <class final="false" abstract="false" line="18" namespace="Aura\Cli" package="Aura\Cli">
       <name>OptionFactory</name>
->>>>>>> fa8a0514a038bbcbc2d5b9b4b2049b2763773a05
       <extends/>
       <full_name>\Aura\Cli\OptionFactory</full_name>
       <docblock>
@@ -1445,20 +1093,8 @@ rejected (i.e., no param allowed) ?</description>
       </method>
     </class>
   </file>
-<<<<<<< HEAD
-  <file path="src/Aura/Cli/Stdio.php" hash="982031e3d0f4cbeda84d2e826fee39de" package="Default">
-    <docblock>
-      <description>This file is part of the Aura project for PHP.</description>
-      <long-description>
-</long-description>
-      <tag line="2" name="license" description="http://opensource.org/licenses/bsd-license.php BSD"/>
-    </docblock>
-    <parse_markers>
-      <error line="2">No Page-level DocBlock was found in file src/Aura/Cli/Stdio.php</error>
-=======
   <file path="src/Aura/Cli/Stdio.php" hash="4ae2f4fbea7207d00025530e542adb50" package="Default">
     <parse_markers>
->>>>>>> fa8a0514a038bbcbc2d5b9b4b2049b2763773a05
       <notice line="71">Argument $vt100 is missing from the function Docblock</notice>
     </parse_markers>
     <class final="false" abstract="false" line="18" namespace="Aura\Cli" package="Aura\Cli">
@@ -1679,66 +1315,6 @@ a trailing newline.</description>
       </method>
     </class>
   </file>
-<<<<<<< HEAD
-  <file path="src/Aura/Cli/Context.php" hash="f8d4674ca76e78eccefeedbb4be2887f" package="Default">
-    <docblock>
-      <description>This file is part of the Aura project for PHP.</description>
-      <long-description>
-</long-description>
-      <tag line="2" name="license" description="http://opensource.org/licenses/bsd-license.php BSD"/>
-    </docblock>
-    <parse_markers>
-      <error line="2">No Page-level DocBlock was found in file src/Aura/Cli/Context.php</error>
-    </parse_markers>
-    <class final="false" abstract="false" line="18" namespace="Aura\Cli" package="Aura\Cli">
-      <name>Context</name>
-      <extends/>
-      <full_name>\Aura\Cli\Context</full_name>
-      <docblock>
-        <description>Collection point for information about the command-line execution context.</description>
-        <long-description>
-</long-description>
-        <tag line="11" name="package" description="Aura.Cli"/>
-      </docblock>
-      <property final="false" static="false" visibility="protected" line="27" package="Default">
-        <name>$argv</name>
-        <default/>
-        <docblock>
-          <description>Values taken from $_SERVER['argv'].</description>
-          <long-description>
-</long-description>
-          <tag line="20" name="var" description="" type="array">
-            <type by_reference="false">\Aura\Cli\array</type>
-          </tag>
-        </docblock>
-      </property>
-      <property final="false" static="false" visibility="protected" line="36" package="Default">
-        <name>$env</name>
-        <default/>
-        <docblock>
-          <description>Imported $_ENV values.</description>
-          <long-description>
-</long-description>
-          <tag line="29" name="var" description="" type="array">
-            <type by_reference="false">\Aura\Cli\array</type>
-          </tag>
-        </docblock>
-      </property>
-      <property final="false" static="false" visibility="protected" line="45" package="Default">
-        <name>$server</name>
-        <default/>
-        <docblock>
-          <description>Imported $_SERVER values.</description>
-          <long-description>
-</long-description>
-          <tag line="38" name="var" description="" type="array">
-            <type by_reference="false">\Aura\Cli\array</type>
-          </tag>
-        </docblock>
-      </property>
-      <method final="false" abstract="false" static="false" visibility="public" line="54" package="Default">
-        <name>__construct</name>
-=======
   <file path="src/Aura/Cli/Vt100.php" hash="dc15ec49d0214e6d34b12381379314a5" package="Default">
     <class final="false" abstract="false" line="24" namespace="Aura\Cli" package="Aura\Cli">
       <name>Vt100</name>
@@ -1843,7 +1419,6 @@ terminals; when null, will auto-determine if the terminal is POSIX.</description
       </method>
       <method final="false" abstract="false" static="false" visibility="public" line="163" package="Default">
         <name>getPhpOs</name>
->>>>>>> fa8a0514a038bbcbc2d5b9b4b2049b2763773a05
         <docblock>
           <description>Gets the `$php_os` value.</description>
           <long-description/>
@@ -1964,31 +1539,6 @@ is a posix TTY, or to plain text if not, and then appends a newline.</descriptio
       </method>
     </class>
   </file>
-<<<<<<< HEAD
-  <file path="src/Aura/Cli/Exception.php" hash="4de9a8b9a240b55fa6090483bd65518a" package="Default">
-    <docblock>
-      <description>This file is part of the Aura project for PHP.</description>
-      <long-description>
-</long-description>
-      <tag line="2" name="license" description="http://opensource.org/licenses/bsd-license.php BSD"/>
-    </docblock>
-    <parse_markers>
-      <error line="2">No Page-level DocBlock was found in file src/Aura/Cli/Exception.php</error>
-    </parse_markers>
-    <class final="false" abstract="false" line="18" namespace="Aura\Cli" package="Aura\Cli">
-      <name>Exception</name>
-      <extends>\Exception</extends>
-      <full_name>\Aura\Cli\Exception</full_name>
-      <docblock>
-        <description>Generic package exception.</description>
-        <long-description>
-</long-description>
-        <tag line="11" name="package" description="Aura.Cli"/>
-      </docblock>
-    </class>
-  </file>
-=======
->>>>>>> fa8a0514a038bbcbc2d5b9b4b2049b2763773a05
   <package name="Aura">
     <package name="Cli"/>
   </package>

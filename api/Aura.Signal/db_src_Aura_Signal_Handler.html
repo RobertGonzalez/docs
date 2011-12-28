@@ -1,4 +1,5 @@
-<html xmlns="http://www.w3.org/1999/xhtml"><head><title>Aura Project for PHP: Aura.Signal</title><meta http-equiv="Content-Type" content="text/html; charset=utf-8"></meta><link rel="stylesheet" href="css/jquery-ui.css" type="text/css"></link><link rel="stylesheet" href="css/docblox/jquery-ui-1.8.16.custom.css" type="text/css"></link><link rel="stylesheet" href="css/jquery.treeview.css" type="text/css"></link><link rel="stylesheet" href="css/theme.css" type="text/css"></link><script type="text/javascript" src="js/jquery-1.4.2.min.js"></script><script type="text/javascript" src="js/jquery-ui-1.8.2.custom.min.js"></script><script type="text/javascript" src="js/jquery.tools.min.js"></script><script type="text/javascript" src="js/jquery.cookie.js"></script><script type="text/javascript" src="js/jquery.treeview.js"></script><script type="text/javascript">
+<html xmlns="http://www.w3.org/1999/xhtml"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Aura Project for PHP: Aura.Signal</title><link rel="stylesheet" href="css/jquery-ui.css" type="text/css"></link><link rel="stylesheet" href="css/docblox/jquery-ui-1.8.16.custom.css" type="text/css"></link><link rel="stylesheet" href="css/jquery.treeview.css" type="text/css"></link><link rel="stylesheet" href="css/theme.css" type="text/css"></link><script type="text/javascript" src="js/jquery-1.4.2.min.js"></script><script type="text/javascript" src="js/jquery-ui-1.8.2.custom.min.js"></script><script type="text/javascript" src="js/jquery.tools.min.js"></script><script type="text/javascript" src="js/jquery.cookie.js"></script><script type="text/javascript" src="js/jquery.treeview.js"></script><script type="text/javascript">
             $(document).ready(function() {
                 $(".filetree").treeview({
                     collapsed: true,
@@ -95,24 +96,11 @@
               Table of Contents
           </div>
 </div>
-<a xmlns:dbx="http://docblox-project.org/xsl/functions" name="top" class="anchor"></a><div id="file-description">
-<p xmlns:dbx="http://docblox-project.org/xsl/functions" class="short-description">This file is part of the Aura Project for PHP.</p>
-<div xmlns:dbx="http://docblox-project.org/xsl/functions" class="long-description">
-</div>
-</div>
-<dl class="file-info">
-<dt xmlns:dbx="http://docblox-project.org/xsl/functions">License</dt>
-<dd xmlns:dbx="http://docblox-project.org/xsl/functions">
-<a href="http://opensource.org/licenses/bsd-license.php">BSD</a>
-         
-    </dd>
-</dl>
-<a name="classes" class="anchor"></a><a xmlns:dbx="http://docblox-project.org/xsl/functions" id="\Aura\Signal\Handler" class="anchor"></a><h2 xmlns:dbx="http://docblox-project.org/xsl/functions" class="class">\Aura\Signal\Handler<div class="to-top"><a href="#top">jump to top</a></div>
+<a xmlns:dbx="http://docblox-project.org/xsl/functions" name="top" class="anchor"></a><a name="classes" class="anchor"></a><a xmlns:dbx="http://docblox-project.org/xsl/functions" id="\Aura\Signal\Handler" class="anchor"></a><h2 xmlns:dbx="http://docblox-project.org/xsl/functions" class="class">\Aura\Signal\Handler<div class="to-top"><a href="#top">jump to top</a></div>
 </h2>
 <div xmlns:dbx="http://docblox-project.org/xsl/functions" class="class">
 <small class="package"><b>Package: </b>Aura\Signal</small><p class="short-description">A signal Handler definition.</p>
-<div class="long-description">
-</div>
+<div class="long-description"></div>
 <dl class="class-info"></dl>
 <h3>Properties</h3>
 <div>
@@ -122,11 +110,10 @@
                 </code><div class="description">
 <p class="short-description">Use this callback to handle the signal.</p></div>
 <div class="code-tabs">
-<div class="long-description">
-</div>
+<div class="long-description"></div>
 <strong>Details</strong><dl class="property-info">
 <dt>Type</dt>
-<dd>\Aura\Signal\callback</dd>
+<dd>callback</dd>
 </dl>
 </div>
 <div class="clear"></div>
@@ -140,11 +127,10 @@ the Handler will match only signals from that object, or a class name,
 in which case the Handler will match signals from any instance of that
 class.</p></div>
 <div class="code-tabs">
-<div class="long-description">
-</div>
+<div class="long-description"></div>
 <strong>Details</strong><dl class="property-info">
 <dt>Type</dt>
-<dd>\Aura\Signal\object | \Aura\Signal\string</dd>
+<dd>object | string</dd>
 </dl>
 </div>
 <div class="clear"></div>
@@ -155,11 +141,10 @@ class.</p></div>
                 </code><div class="description">
 <p class="short-description">Handle this signal from the sender.</p></div>
 <div class="code-tabs">
-<div class="long-description">
-</div>
+<div class="long-description"></div>
 <strong>Details</strong><dl class="property-info">
 <dt>Type</dt>
-<dd>\Aura\Signal\string</dd>
+<dd>string</dd>
 </dl>
 </div>
 <div class="clear"></div>
@@ -169,14 +154,13 @@ class.</p></div>
 <div>
 <a id="\Aura\Signal\Handler::__construct()" class="anchor"></a><div class="method public">
 <a href="#" class="gripper"><img src="images/icons/arrow_right.png"><img src="images/icons/arrow_down.png" style="display: none;"></a><code><img src="images/icons/method.png" alt="method"><img src="images/icons/visibility_public.png" style="margin-right: 5px" alt="public"><span class="highlight">__construct</span><span class="nb-faded-text">(
-          \Aura\Signal\object | \Aura\Signal\string $sender, \Aura\Signal\string $signal, \Aura\Signal\callback $callback
+          object | string $sender, string $signal, callback $callback
           )
         </span>
         :
           void</code><div class="description"><p class="short_description">Constructor.</p></div>
 <div class="code-tabs">
-<div class="long-description">
-</div>
+<div class="long-description"></div>
 <strong>Parameters</strong><table class="argument-info">
 <thead><tr>
 <th>Name</th>
@@ -185,17 +169,17 @@ class.</p></div>
 </tr></thead>
 <tr>
 <th>$sender</th>
-<td>\Aura\Signal\object | \Aura\Signal\string</td>
+<td>object | string</td>
 <td><em><p>Handle signals from this sender.</p></em></td>
 </tr>
 <tr>
 <th>$signal</th>
-<td>\Aura\Signal\string</td>
+<td>string</td>
 <td><em><p>Handle this specific signal.</p></em></td>
 </tr>
 <tr>
 <th>$callback</th>
-<td>\Aura\Signal\callback</td>
+<td>callback</td>
 <td><em><p>Use this callback to handle the signal.</p></em></td>
 </tr>
 </table>
@@ -204,14 +188,13 @@ class.</p></div>
 </div>
 <a id="\Aura\Signal\Handler::__get()" class="anchor"></a><div class="method public">
 <a href="#" class="gripper"><img src="images/icons/arrow_right.png"><img src="images/icons/arrow_down.png" style="display: none;"></a><code><img src="images/icons/method.png" alt="method"><img src="images/icons/visibility_public.png" style="margin-right: 5px" alt="public"><span class="highlight">__get</span><span class="nb-faded-text">(
-          \Aura\Signal\string $key
+          string $key
           )
         </span>
         :
-          \Aura\Signal\mixed</code><div class="description"><p class="short_description">Make properties available as magic read-only.</p></div>
+          mixed</code><div class="description"><p class="short_description">Make properties available as magic read-only.</p></div>
 <div class="code-tabs">
-<div class="long-description">
-</div>
+<div class="long-description"></div>
 <strong>Parameters</strong><table class="argument-info">
 <thead><tr>
 <th>Name</th>
@@ -220,7 +203,7 @@ class.</p></div>
 </tr></thead>
 <tr>
 <th>$key</th>
-<td>\Aura\Signal\string</td>
+<td>string</td>
 <td><em><p>The property name.</p></em></td>
 </tr>
 </table>
@@ -230,7 +213,7 @@ class.</p></div>
 <th>Description</th>
 </tr></thead>
 <tr>
-<td>\Aura\Signal\mixed</td>
+<td>mixed</td>
 <td></td>
 </tr>
 </table>
@@ -239,16 +222,15 @@ class.</p></div>
 </div>
 <a id="\Aura\Signal\Handler::exec()" class="anchor"></a><div class="method public">
 <a href="#" class="gripper"><img src="images/icons/arrow_right.png"><img src="images/icons/arrow_down.png" style="display: none;"></a><code><img src="images/icons/method.png" alt="method"><img src="images/icons/visibility_public.png" style="margin-right: 5px" alt="public"><span class="highlight">exec</span><span class="nb-faded-text">(
-          \Aura\Signal\object $origin, \Aura\Signal\string $signal, \Aura\Signal\array $args
+          object $origin, string $signal, array $args
           )
         </span>
         :
-          \Aura\Signal\null | \Aura\Signal\array</code><div class="description"><p class="short_description">Execute the handler: if the originating object matches the required
+          null | array</code><div class="description"><p class="short_description">Execute the handler: if the originating object matches the required
 sender, and the signal matches the required signal, then run the
 callback and return the results.</p></div>
 <div class="code-tabs">
-<div class="long-description">
-</div>
+<div class="long-description"></div>
 <strong>Parameters</strong><table class="argument-info">
 <thead><tr>
 <th>Name</th>
@@ -257,17 +239,17 @@ callback and return the results.</p></div>
 </tr></thead>
 <tr>
 <th>$origin</th>
-<td>\Aura\Signal\object</td>
+<td>object</td>
 <td><em><p>The originating object that sent the signal.</p></em></td>
 </tr>
 <tr>
 <th>$signal</th>
-<td>\Aura\Signal\string</td>
+<td>string</td>
 <td><em><p>The signal sent by the originating object.</p></em></td>
 </tr>
 <tr>
 <th>$args</th>
-<td>\Aura\Signal\array</td>
+<td>array</td>
 <td><em><p>Arguments for the callback, which will be invoked if the sender and signal match this Handler.</p></em></td>
 </tr>
 </table>
@@ -277,7 +259,7 @@ callback and return the results.</p></div>
 <th>Description</th>
 </tr></thead>
 <tr>
-<td>\Aura\Signal\null | \Aura\Signal\array</td>
+<td>null | array</td>
 <td>An array of parameters suitable for creating a Result object, or null if the origin and signal did not match this Handler.</td>
 </tr>
 </table>
@@ -287,5 +269,5 @@ callback and return the results.</p></div>
 </div>
 </div>
 </div>
-<small xmlns="" class="footer">Documentation was generated by <a href="http://docblox-project.org">DocBlox 0.16.0</a>.
+<small xmlns="" class="footer">Documentation was generated by <a href="http://docblox-project.org">DocBlox 0.17.2</a>.
     </small></body></html>

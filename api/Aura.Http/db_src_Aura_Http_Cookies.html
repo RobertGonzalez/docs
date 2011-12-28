@@ -1,4 +1,5 @@
-<html xmlns="http://www.w3.org/1999/xhtml"><head><title>Aura Project for PHP: Aura.Http</title><meta http-equiv="Content-Type" content="text/html; charset=utf-8"></meta><link rel="stylesheet" href="css/jquery-ui.css" type="text/css"></link><link rel="stylesheet" href="css/docblox/jquery-ui-1.8.16.custom.css" type="text/css"></link><link rel="stylesheet" href="css/jquery.treeview.css" type="text/css"></link><link rel="stylesheet" href="css/theme.css" type="text/css"></link><script type="text/javascript" src="js/jquery-1.4.2.min.js"></script><script type="text/javascript" src="js/jquery-ui-1.8.2.custom.min.js"></script><script type="text/javascript" src="js/jquery.tools.min.js"></script><script type="text/javascript" src="js/jquery.cookie.js"></script><script type="text/javascript" src="js/jquery.treeview.js"></script><script type="text/javascript">
+<html xmlns="http://www.w3.org/1999/xhtml"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Aura Project for PHP: Aura.Http</title><link rel="stylesheet" href="css/jquery-ui.css" type="text/css"></link><link rel="stylesheet" href="css/docblox/jquery-ui-1.8.16.custom.css" type="text/css"></link><link rel="stylesheet" href="css/jquery.treeview.css" type="text/css"></link><link rel="stylesheet" href="css/theme.css" type="text/css"></link><script type="text/javascript" src="js/jquery-1.4.2.min.js"></script><script type="text/javascript" src="js/jquery-ui-1.8.2.custom.min.js"></script><script type="text/javascript" src="js/jquery.tools.min.js"></script><script type="text/javascript" src="js/jquery.cookie.js"></script><script type="text/javascript" src="js/jquery.treeview.js"></script><script type="text/javascript">
             $(document).ready(function() {
                 $(".filetree").treeview({
                     collapsed: true,
@@ -95,49 +96,44 @@
               Table of Contents
           </div>
 </div>
-<a xmlns:dbx="http://docblox-project.org/xsl/functions" name="top" class="anchor"></a><div id="file-description">
-<p xmlns:dbx="http://docblox-project.org/xsl/functions" class="short-description">This file is part of the Aura Project for PHP.</p>
-<div xmlns:dbx="http://docblox-project.org/xsl/functions" class="long-description">
-</div>
-</div>
-<dl class="file-info">
-<dt xmlns:dbx="http://docblox-project.org/xsl/functions">License</dt>
-<dd xmlns:dbx="http://docblox-project.org/xsl/functions">
-<a href="http://opensource.org/licenses/bsd-license.php">BSD</a>
-         
-    </dd>
-</dl>
-<a name="classes" class="anchor"></a><a xmlns:dbx="http://docblox-project.org/xsl/functions" id="\Aura\Http\Cookies" class="anchor"></a><h2 xmlns:dbx="http://docblox-project.org/xsl/functions" class="class">\Aura\Http\Cookies<div class="to-top"><a href="#top">jump to top</a></div>
+<a xmlns:dbx="http://docblox-project.org/xsl/functions" name="top" class="anchor"></a><a name="classes" class="anchor"></a><a xmlns:dbx="http://docblox-project.org/xsl/functions" id="\Aura\Http\Cookies" class="anchor"></a><h2 xmlns:dbx="http://docblox-project.org/xsl/functions" class="class">\Aura\Http\Cookies<div class="to-top"><a href="#top">jump to top</a></div>
 </h2>
 <div xmlns:dbx="http://docblox-project.org/xsl/functions" class="class">
 <small class="package"><b>Package: </b>Aura\Http</small><p class="short-description">Collection of non-cookie HTTP headers.</p>
-<div class="long-description">
-</div>
+<div class="long-description"></div>
 <dl class="class-info"></dl>
 <h3>Properties</h3>
 <div>
 <a id="\Aura\Http\Cookies::$base" class="anchor"></a><div class="property protected">
-<a href="#" class="gripper"><img src="images/icons/arrow_right.png"><img src="images/icons/arrow_down.png" style="display: none;"></a><code><img src="images/icons/property.png" alt="Property"><img src="images/icons/visibility_protected.png" style="margin-right: 5px" alt="protected">
+<a href="#" class="gripper"><img src="images/icons/arrow_right.png"><img src="images/icons/arrow_down.png" style="display: none;"></a><code><img src="images/icons/property.png" alt="Property"><img src="images/icons/visibility_protected.png" style="margin-right: 5px" alt="protected">array
                  <span class="highlight">$base</span>= 'array(
         'value'    =&gt; null'
-                </code><div class="description"></div>
+                </code><div class="description">
+<p class="short-description">Base values for a single cookie.</p></div>
 <div class="code-tabs">
+<div class="long-description"></div>
 <strong>Default value</strong><code>array(
         'value'    =&gt; null</code><strong>Details</strong><dl class="property-info">
 <dt>Type</dt>
-<dd>n/a</dd>
+<dd>array</dd>
+<dt>Todo</dt>
+<dd>Extract to a Cookie struct, and probably a CookieFactory.
+         
+    </dd>
 </dl>
 </div>
 <div class="clear"></div>
 </div>
 <a id="\Aura\Http\Cookies::$list" class="anchor"></a><div class="property protected">
-<a href="#" class="gripper"><img src="images/icons/arrow_right.png"><img src="images/icons/arrow_down.png" style="display: none;"></a><code><img src="images/icons/property.png" alt="Property"><img src="images/icons/visibility_protected.png" style="margin-right: 5px" alt="protected">
+<a href="#" class="gripper"><img src="images/icons/arrow_right.png"><img src="images/icons/arrow_down.png" style="display: none;"></a><code><img src="images/icons/property.png" alt="Property"><img src="images/icons/visibility_protected.png" style="margin-right: 5px" alt="protected">array
                  <span class="highlight">$list</span>= 'array()'
-                </code><div class="description"></div>
+                </code><div class="description">
+<p class="short-description">The list of all cookies.</p></div>
 <div class="code-tabs">
+<div class="long-description"></div>
 <strong>Default value</strong><code>array()</code><strong>Details</strong><dl class="property-info">
 <dt>Type</dt>
-<dd>n/a</dd>
+<dd>array</dd>
 </dl>
 </div>
 <div class="clear"></div>
@@ -151,8 +147,20 @@
           )
         </span>
         :
-          void</code><div class="description"><p class="short_description"></p></div>
-<div class="code-tabs"></div>
+          array</code><div class="description"><p class="short_description">Gets all cookies.</p></div>
+<div class="code-tabs">
+<div class="long-description"></div>
+<strong>Returns</strong><table class="argument-info">
+<thead><tr>
+<th>Type</th>
+<th>Description</th>
+</tr></thead>
+<tr>
+<td>array</td>
+<td></td>
+</tr>
+</table>
+</div>
 <div class="clear"></div>
 </div>
 <a id="\Aura\Http\Cookies::send()" class="anchor"></a><div class="method public">
@@ -161,20 +169,21 @@
           )
         </span>
         :
-          void</code><div class="description"><p class="short_description"></p></div>
-<div class="code-tabs"></div>
+          void</code><div class="description"><p class="short_description">Sends the cookies using `setcookie()`.</p></div>
+<div class="code-tabs"><div class="long-description"></div></div>
 <div class="clear"></div>
 </div>
 <a id="\Aura\Http\Cookies::set()" class="anchor"></a><div class="method public">
 <a href="#" class="gripper"><img src="images/icons/arrow_right.png"><img src="images/icons/arrow_down.png" style="display: none;"></a><code><img src="images/icons/method.png" alt="method"><img src="images/icons/visibility_public.png" style="margin-right: 5px" alt="public"><span class="highlight">set</span><span class="nb-faded-text">(
-           $name,  $info
+          string $name, array $info
               =
               array()
           )
         </span>
         :
-          void</code><div class="description"><p class="short_description"></p></div>
+          void</code><div class="description"><p class="short_description">Sets a single cookie by name.</p></div>
 <div class="code-tabs">
+<div class="long-description"></div>
 <strong>Parameters</strong><table class="argument-info">
 <thead><tr>
 <th>Name</th>
@@ -183,13 +192,13 @@
 </tr></thead>
 <tr>
 <th>$name</th>
-<td></td>
-<td><em></em></td>
+<td>string</td>
+<td><em><p>The cookie name.</p></em></td>
 </tr>
 <tr>
 <th>$info</th>
-<td></td>
-<td><em></em></td>
+<td>array</td>
+<td><em><p>The cookie info.</p></em></td>
 </tr>
 </table>
 </div>
@@ -197,14 +206,15 @@
 </div>
 <a id="\Aura\Http\Cookies::setAll()" class="anchor"></a><div class="method public">
 <a href="#" class="gripper"><img src="images/icons/arrow_right.png"><img src="images/icons/arrow_down.png" style="display: none;"></a><code><img src="images/icons/method.png" alt="method"><img src="images/icons/visibility_public.png" style="margin-right: 5px" alt="public"><span class="highlight">setAll</span><span class="nb-faded-text">(
-           $cookies
+          array $cookies
               =
               array()
           )
         </span>
         :
-          void</code><div class="description"><p class="short_description"></p></div>
+          void</code><div class="description"><p class="short_description">Sets all cookies at once.</p></div>
 <div class="code-tabs">
+<div class="long-description"></div>
 <strong>Parameters</strong><table class="argument-info">
 <thead><tr>
 <th>Name</th>
@@ -213,8 +223,8 @@
 </tr></thead>
 <tr>
 <th>$cookies</th>
-<td></td>
-<td><em></em></td>
+<td>array</td>
+<td><em><p>The array of all cookies where the key is the name and the value is the array of cookie info.</p></em></td>
 </tr>
 </table>
 </div>
@@ -223,5 +233,5 @@
 </div>
 </div>
 </div>
-<small xmlns="" class="footer">Documentation was generated by <a href="http://docblox-project.org">DocBlox 0.16.0</a>.
+<small xmlns="" class="footer">Documentation was generated by <a href="http://docblox-project.org">DocBlox 0.17.2</a>.
     </small></body></html>

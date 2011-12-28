@@ -1,4 +1,5 @@
-<html xmlns="http://www.w3.org/1999/xhtml"><head><title>Aura Project for PHP: Aura.Cli</title><meta http-equiv="Content-Type" content="text/html; charset=utf-8"></meta><link rel="stylesheet" href="css/jquery-ui.css" type="text/css"></link><link rel="stylesheet" href="css/docblox/jquery-ui-1.8.16.custom.css" type="text/css"></link><link rel="stylesheet" href="css/jquery.treeview.css" type="text/css"></link><link rel="stylesheet" href="css/theme.css" type="text/css"></link><script type="text/javascript" src="js/jquery-1.4.2.min.js"></script><script type="text/javascript" src="js/jquery-ui-1.8.2.custom.min.js"></script><script type="text/javascript" src="js/jquery.tools.min.js"></script><script type="text/javascript" src="js/jquery.cookie.js"></script><script type="text/javascript" src="js/jquery.treeview.js"></script><script type="text/javascript">
+<html xmlns="http://www.w3.org/1999/xhtml"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Aura Project for PHP: Aura.Cli</title><link rel="stylesheet" href="css/jquery-ui.css" type="text/css"></link><link rel="stylesheet" href="css/docblox/jquery-ui-1.8.16.custom.css" type="text/css"></link><link rel="stylesheet" href="css/jquery.treeview.css" type="text/css"></link><link rel="stylesheet" href="css/theme.css" type="text/css"></link><script type="text/javascript" src="js/jquery-1.4.2.min.js"></script><script type="text/javascript" src="js/jquery-ui-1.8.2.custom.min.js"></script><script type="text/javascript" src="js/jquery.tools.min.js"></script><script type="text/javascript" src="js/jquery.cookie.js"></script><script type="text/javascript" src="js/jquery.treeview.js"></script><script type="text/javascript">
             $(document).ready(function() {
                 $(".filetree").treeview({
                     collapsed: true,
@@ -95,24 +96,11 @@
               Table of Contents
           </div>
 </div>
-<a xmlns:dbx="http://docblox-project.org/xsl/functions" name="top" class="anchor"></a><div id="file-description">
-<p xmlns:dbx="http://docblox-project.org/xsl/functions" class="short-description">This file is part of the Aura project for PHP.</p>
-<div xmlns:dbx="http://docblox-project.org/xsl/functions" class="long-description">
-</div>
-</div>
-<dl class="file-info">
-<dt xmlns:dbx="http://docblox-project.org/xsl/functions">License</dt>
-<dd xmlns:dbx="http://docblox-project.org/xsl/functions">
-<a href="http://opensource.org/licenses/bsd-license.php">BSD</a>
-         
-    </dd>
-</dl>
-<a name="classes" class="anchor"></a><a xmlns:dbx="http://docblox-project.org/xsl/functions" id="\Aura\Cli\Vt100" class="anchor"></a><h2 xmlns:dbx="http://docblox-project.org/xsl/functions" class="class">\Aura\Cli\Vt100<div class="to-top"><a href="#top">jump to top</a></div>
+<a xmlns:dbx="http://docblox-project.org/xsl/functions" name="top" class="anchor"></a><a name="classes" class="anchor"></a><a xmlns:dbx="http://docblox-project.org/xsl/functions" id="\Aura\Cli\Vt100" class="anchor"></a><h2 xmlns:dbx="http://docblox-project.org/xsl/functions" class="class">\Aura\Cli\Vt100<div class="to-top"><a href="#top">jump to top</a></div>
 </h2>
 <div xmlns:dbx="http://docblox-project.org/xsl/functions" class="class">
 <small class="package"><b>Package: </b>Aura\Cli</small><p class="short-description">Text formatting for VT100 terminals.</p>
-<div class="long-description">
-</div>
+<div class="long-description"></div>
 <dl class="class-info">
 <dt>Author</dt>
 <dd>
@@ -145,14 +133,27 @@ style combinations.</p></div>
 <div class="long-description"><p>Based on <code>ANSI VT100 Color/Style Codes</code> according to the
 <a href="http://vt100.net/docs/vt100-ug">VT100 User Guide</a> and the
 <a href="http://www.termsys.demon.co.uk/vtansi.htm">ANSI/VT100 Terminal Control reference</a>.
-Inspired by <a href="http://pear.php.net/Console_Color">PEAR Console_Color</a>.</p>
-</div>
+Inspired by <a href="http://pear.php.net/Console_Color">PEAR Console_Color</a>.</p></div>
 <strong>Default value</strong><code>array(
         
         // literal percent sign
         '%%'    =&gt; '%'</code><strong>Details</strong><dl class="property-info">
 <dt>Type</dt>
-<dd>\Aura\Cli\array</dd>
+<dd>array</dd>
+</dl>
+</div>
+<div class="clear"></div>
+</div>
+<a id="\Aura\Cli\Vt100::$php_os" class="anchor"></a><div class="property protected">
+<a href="#" class="gripper"><img src="images/icons/arrow_right.png"><img src="images/icons/arrow_down.png" style="display: none;"></a><code><img src="images/icons/property.png" alt="Property"><img src="images/icons/visibility_protected.png" style="margin-right: 5px" alt="protected">string
+                 <span class="highlight">$php_os</span>= 'PHP_OS'
+                </code><div class="description">
+<p class="short-description">The PHP_OS value. Provided so we can fake the OS as needed.</p></div>
+<div class="code-tabs">
+<div class="long-description"></div>
+<strong>Default value</strong><code>PHP_OS</code><strong>Details</strong><dl class="property-info">
+<dt>Type</dt>
+<dd>string</dd>
 </dl>
 </div>
 <div class="clear"></div>
@@ -163,11 +164,10 @@ Inspired by <a href="http://pear.php.net/Console_Color">PEAR Console_Color</a>.<
                 </code><div class="description">
 <p class="short-description">The POSIX terminal flag.</p></div>
 <div class="code-tabs">
-<div class="long-description">
-</div>
+<div class="long-description"></div>
 <strong>Default value</strong><code>null</code><strong>Details</strong><dl class="property-info">
 <dt>Type</dt>
-<dd>\Aura\Cli\bool</dd>
+<dd>bool</dd>
 <dt>See</dt>
 <dd>\Aura\Cli\setPosix()
          
@@ -185,14 +185,13 @@ Inspired by <a href="http://pear.php.net/Console_Color">PEAR Console_Color</a>.<
 <div>
 <a id="\Aura\Cli\Vt100::format()" class="anchor"></a><div class="method public">
 <a href="#" class="gripper"><img src="images/icons/arrow_right.png"><img src="images/icons/arrow_down.png" style="display: none;"></a><code><img src="images/icons/method.png" alt="method"><img src="images/icons/visibility_public.png" style="margin-right: 5px" alt="public"><span class="highlight">format</span><span class="nb-faded-text">(
-          \Aura\Cli\string $text
+          string $text
           )
         </span>
         :
-          \Aura\Cli\string</code><div class="description"><p class="short_description">Converts VT100 %-markup in text to control codes.</p></div>
+          string</code><div class="description"><p class="short_description">Converts VT100 %-markup in text to control codes.</p></div>
 <div class="code-tabs">
-<div class="long-description">
-</div>
+<div class="long-description"></div>
 <strong>Parameters</strong><table class="argument-info">
 <thead><tr>
 <th>Name</th>
@@ -201,7 +200,7 @@ Inspired by <a href="http://pear.php.net/Console_Color">PEAR Console_Color</a>.<
 </tr></thead>
 <tr>
 <th>$text</th>
-<td>\Aura\Cli\string</td>
+<td>string</td>
 <td><em><p>The text to format.</p></em></td>
 </tr>
 </table>
@@ -211,8 +210,30 @@ Inspired by <a href="http://pear.php.net/Console_Color">PEAR Console_Color</a>.<
 <th>Description</th>
 </tr></thead>
 <tr>
-<td>\Aura\Cli\string</td>
+<td>string</td>
 <td>The formatted text.</td>
+</tr>
+</table>
+</div>
+<div class="clear"></div>
+</div>
+<a id="\Aura\Cli\Vt100::getPhpOs()" class="anchor"></a><div class="method public">
+<a href="#" class="gripper"><img src="images/icons/arrow_right.png"><img src="images/icons/arrow_down.png" style="display: none;"></a><code><img src="images/icons/method.png" alt="method"><img src="images/icons/visibility_public.png" style="margin-right: 5px" alt="public"><span class="highlight">getPhpOs</span><span class="nb-faded-text">(
+          
+          )
+        </span>
+        :
+          string</code><div class="description"><p class="short_description">Gets the `$php_os` value.</p></div>
+<div class="code-tabs">
+<div class="long-description"></div>
+<strong>Returns</strong><table class="argument-info">
+<thead><tr>
+<th>Type</th>
+<th>Description</th>
+</tr></thead>
+<tr>
+<td>string</td>
+<td></td>
 </tr>
 </table>
 </div>
@@ -225,20 +246,18 @@ Inspired by <a href="http://pear.php.net/Console_Color">PEAR Console_Color</a>.<
         </span>
         :
           void</code><div class="description"><p class="short_description">Gets the value of the POSIX terminal flag.</p></div>
-<div class="code-tabs"><div class="long-description">
-</div></div>
+<div class="code-tabs"><div class="long-description"></div></div>
 <div class="clear"></div>
 </div>
 <a id="\Aura\Cli\Vt100::isPosix()" class="anchor"></a><div class="method protected">
 <a href="#" class="gripper"><img src="images/icons/arrow_right.png"><img src="images/icons/arrow_down.png" style="display: none;"></a><code><img src="images/icons/method.png" alt="method"><img src="images/icons/visibility_protected.png" style="margin-right: 5px" alt="protected"><span class="highlight">isPosix</span><span class="nb-faded-text">(
-          \Aura\Cli\resource $handle
+          resource $handle
           )
         </span>
         :
-          \Aura\Cli\bool</code><div class="description"><p class="short_description">Determines if a stream handle should be treated as a POSIX terminal.</p></div>
+          bool</code><div class="description"><p class="short_description">Determines if a stream handle should be treated as a POSIX terminal.</p></div>
 <div class="code-tabs">
-<div class="long-description">
-</div>
+<div class="long-description"></div>
 <strong>Parameters</strong><table class="argument-info">
 <thead><tr>
 <th>Name</th>
@@ -247,7 +266,7 @@ Inspired by <a href="http://pear.php.net/Console_Color">PEAR Console_Color</a>.<
 </tr></thead>
 <tr>
 <th>$handle</th>
-<td>\Aura\Cli\resource</td>
+<td>resource</td>
 <td><em><p>The stream handle.</p></em></td>
 </tr>
 </table>
@@ -257,8 +276,32 @@ Inspired by <a href="http://pear.php.net/Console_Color">PEAR Console_Color</a>.<
 <th>Description</th>
 </tr></thead>
 <tr>
-<td>\Aura\Cli\bool</td>
+<td>bool</td>
 <td></td>
+</tr>
+</table>
+</div>
+<div class="clear"></div>
+</div>
+<a id="\Aura\Cli\Vt100::setPhpOs()" class="anchor"></a><div class="method public">
+<a href="#" class="gripper"><img src="images/icons/arrow_right.png"><img src="images/icons/arrow_down.png" style="display: none;"></a><code><img src="images/icons/method.png" alt="method"><img src="images/icons/visibility_public.png" style="margin-right: 5px" alt="public"><span class="highlight">setPhpOs</span><span class="nb-faded-text">(
+          string $php_os
+          )
+        </span>
+        :
+          void</code><div class="description"><p class="short_description">Sets the `$php_os` value.</p></div>
+<div class="code-tabs">
+<div class="long-description"></div>
+<strong>Parameters</strong><table class="argument-info">
+<thead><tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+</tr></thead>
+<tr>
+<th>$php_os</th>
+<td>string</td>
+<td><em><p>The new PHP OS value.</p></em></td>
 </tr>
 </table>
 </div>
@@ -266,15 +309,14 @@ Inspired by <a href="http://pear.php.net/Console_Color">PEAR Console_Color</a>.<
 </div>
 <a id="\Aura\Cli\Vt100::setPosix()" class="anchor"></a><div class="method public">
 <a href="#" class="gripper"><img src="images/icons/arrow_right.png"><img src="images/icons/arrow_down.png" style="display: none;"></a><code><img src="images/icons/method.png" alt="method"><img src="images/icons/visibility_public.png" style="margin-right: 5px" alt="public"><span class="highlight">setPosix</span><span class="nb-faded-text">(
-          \Aura\Cli\bool $flag
+          bool $flag
           )
         </span>
         :
-          \Aura\Cli\void</code><div class="description"><p class="short_description">Forces output to format for POSIX terminals, or to strip for non-POSIX
+          void</code><div class="description"><p class="short_description">Forces output to format for POSIX terminals, or to strip for non-POSIX
 terminals; when null, will auto-determine if the terminal is POSIX.</p></div>
 <div class="code-tabs">
-<div class="long-description">
-</div>
+<div class="long-description"></div>
 <strong>Parameters</strong><table class="argument-info">
 <thead><tr>
 <th>Name</th>
@@ -283,7 +325,7 @@ terminals; when null, will auto-determine if the terminal is POSIX.</p></div>
 </tr></thead>
 <tr>
 <th>$flag</th>
-<td>\Aura\Cli\bool</td>
+<td>bool</td>
 <td><em><p>True to force formatting, false to force stripping, or null to auto-determine.</p>
 </em></td>
 </tr>
@@ -293,14 +335,13 @@ terminals; when null, will auto-determine if the terminal is POSIX.</p></div>
 </div>
 <a id="\Aura\Cli\Vt100::strip()" class="anchor"></a><div class="method public">
 <a href="#" class="gripper"><img src="images/icons/arrow_right.png"><img src="images/icons/arrow_down.png" style="display: none;"></a><code><img src="images/icons/method.png" alt="method"><img src="images/icons/visibility_public.png" style="margin-right: 5px" alt="public"><span class="highlight">strip</span><span class="nb-faded-text">(
-          \Aura\Cli\string $text
+          string $text
           )
         </span>
         :
-          \Aura\Cli\string</code><div class="description"><p class="short_description">Strips VT100 %-markup from text.</p></div>
+          string</code><div class="description"><p class="short_description">Strips VT100 %-markup from text.</p></div>
 <div class="code-tabs">
-<div class="long-description">
-</div>
+<div class="long-description"></div>
 <strong>Parameters</strong><table class="argument-info">
 <thead><tr>
 <th>Name</th>
@@ -309,7 +350,7 @@ terminals; when null, will auto-determine if the terminal is POSIX.</p></div>
 </tr></thead>
 <tr>
 <th>$text</th>
-<td>\Aura\Cli\string</td>
+<td>string</td>
 <td><em><p>The text to strip %-markup from.</p>
 </em></td>
 </tr>
@@ -320,7 +361,7 @@ terminals; when null, will auto-determine if the terminal is POSIX.</p></div>
 <th>Description</th>
 </tr></thead>
 <tr>
-<td>\Aura\Cli\string</td>
+<td>string</td>
 <td>The plain text.</td>
 </tr>
 </table>
@@ -329,15 +370,14 @@ terminals; when null, will auto-determine if the terminal is POSIX.</p></div>
 </div>
 <a id="\Aura\Cli\Vt100::write()" class="anchor"></a><div class="method public">
 <a href="#" class="gripper"><img src="images/icons/arrow_right.png"><img src="images/icons/arrow_down.png" style="display: none;"></a><code><img src="images/icons/method.png" alt="method"><img src="images/icons/visibility_public.png" style="margin-right: 5px" alt="public"><span class="highlight">write</span><span class="nb-faded-text">(
-          \Aura\Cli\resource $handle, \Aura\Cli\string $text
+          resource $handle, string $text
           )
         </span>
         :
-          \Aura\Cli\void</code><div class="description"><p class="short_description">Writes text to a file handle, converting to control codes if the handle
+          void</code><div class="description"><p class="short_description">Writes text to a file handle, converting to control codes if the handle
 is a posix TTY, or to plain text if not.</p></div>
 <div class="code-tabs">
-<div class="long-description">
-</div>
+<div class="long-description"></div>
 <strong>Parameters</strong><table class="argument-info">
 <thead><tr>
 <th>Name</th>
@@ -346,12 +386,12 @@ is a posix TTY, or to plain text if not.</p></div>
 </tr></thead>
 <tr>
 <th>$handle</th>
-<td>\Aura\Cli\resource</td>
+<td>resource</td>
 <td><em><p>The file handle.</p></em></td>
 </tr>
 <tr>
 <th>$text</th>
-<td>\Aura\Cli\string</td>
+<td>string</td>
 <td><em><p>The text to write to the file handle, converting %-markup if the handle is a posix TTY, or stripping markup if not.</p>
 </em></td>
 </tr>
@@ -367,15 +407,14 @@ is a posix TTY, or to plain text if not.</p></div>
 </div>
 <a id="\Aura\Cli\Vt100::writeln()" class="anchor"></a><div class="method public">
 <a href="#" class="gripper"><img src="images/icons/arrow_right.png"><img src="images/icons/arrow_down.png" style="display: none;"></a><code><img src="images/icons/method.png" alt="method"><img src="images/icons/visibility_public.png" style="margin-right: 5px" alt="public"><span class="highlight">writeln</span><span class="nb-faded-text">(
-          \Aura\Cli\resource $handle, \Aura\Cli\string $text
+          resource $handle, string $text
           )
         </span>
         :
-          \Aura\Cli\void</code><div class="description"><p class="short_description">Writes text to a file handle, converting to control codes if the handle
+          void</code><div class="description"><p class="short_description">Writes text to a file handle, converting to control codes if the handle
 is a posix TTY, or to plain text if not, and then appends a newline.</p></div>
 <div class="code-tabs">
-<div class="long-description">
-</div>
+<div class="long-description"></div>
 <strong>Parameters</strong><table class="argument-info">
 <thead><tr>
 <th>Name</th>
@@ -384,12 +423,12 @@ is a posix TTY, or to plain text if not, and then appends a newline.</p></div>
 </tr></thead>
 <tr>
 <th>$handle</th>
-<td>\Aura\Cli\resource</td>
+<td>resource</td>
 <td><em><p>The file handle.</p></em></td>
 </tr>
 <tr>
 <th>$text</th>
-<td>\Aura\Cli\string</td>
+<td>string</td>
 <td><em><p>The text to write to the file handle, converting %-markup if the handle is a posix TTY, or stripping markup if not.</p>
 </em></td>
 </tr>
@@ -406,5 +445,5 @@ is a posix TTY, or to plain text if not, and then appends a newline.</p></div>
 </div>
 </div>
 </div>
-<small xmlns="" class="footer">Documentation was generated by <a href="http://docblox-project.org">DocBlox 0.16.0</a>.
+<small xmlns="" class="footer">Documentation was generated by <a href="http://docblox-project.org">DocBlox 0.17.2</a>.
     </small></body></html>

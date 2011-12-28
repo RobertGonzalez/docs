@@ -1,4 +1,5 @@
-<html xmlns="http://www.w3.org/1999/xhtml"><head><title>Aura Project for PHP: Aura.Http</title><meta http-equiv="Content-Type" content="text/html; charset=utf-8"></meta><link rel="stylesheet" href="css/jquery-ui.css" type="text/css"></link><link rel="stylesheet" href="css/docblox/jquery-ui-1.8.16.custom.css" type="text/css"></link><link rel="stylesheet" href="css/jquery.treeview.css" type="text/css"></link><link rel="stylesheet" href="css/theme.css" type="text/css"></link><script type="text/javascript" src="js/jquery-1.4.2.min.js"></script><script type="text/javascript" src="js/jquery-ui-1.8.2.custom.min.js"></script><script type="text/javascript" src="js/jquery.tools.min.js"></script><script type="text/javascript" src="js/jquery.cookie.js"></script><script type="text/javascript" src="js/jquery.treeview.js"></script><script type="text/javascript">
+<html xmlns="http://www.w3.org/1999/xhtml"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Aura Project for PHP: Aura.Http</title><link rel="stylesheet" href="css/jquery-ui.css" type="text/css"></link><link rel="stylesheet" href="css/docblox/jquery-ui-1.8.16.custom.css" type="text/css"></link><link rel="stylesheet" href="css/jquery.treeview.css" type="text/css"></link><link rel="stylesheet" href="css/theme.css" type="text/css"></link><script type="text/javascript" src="js/jquery-1.4.2.min.js"></script><script type="text/javascript" src="js/jquery-ui-1.8.2.custom.min.js"></script><script type="text/javascript" src="js/jquery.tools.min.js"></script><script type="text/javascript" src="js/jquery.cookie.js"></script><script type="text/javascript" src="js/jquery.treeview.js"></script><script type="text/javascript">
             $(document).ready(function() {
                 $(".filetree").treeview({
                     collapsed: true,
@@ -95,35 +96,24 @@
               Table of Contents
           </div>
 </div>
-<a xmlns:dbx="http://docblox-project.org/xsl/functions" name="top" class="anchor"></a><div id="file-description">
-<p xmlns:dbx="http://docblox-project.org/xsl/functions" class="short-description">This file is part of the Aura Project for PHP.</p>
-<div xmlns:dbx="http://docblox-project.org/xsl/functions" class="long-description">
-</div>
-</div>
-<dl class="file-info">
-<dt xmlns:dbx="http://docblox-project.org/xsl/functions">License</dt>
-<dd xmlns:dbx="http://docblox-project.org/xsl/functions">
-<a href="http://opensource.org/licenses/bsd-license.php">BSD</a>
-         
-    </dd>
-</dl>
-<a name="classes" class="anchor"></a><a xmlns:dbx="http://docblox-project.org/xsl/functions" id="\Aura\Http\Headers" class="anchor"></a><h2 xmlns:dbx="http://docblox-project.org/xsl/functions" class="class">\Aura\Http\Headers<div class="to-top"><a href="#top">jump to top</a></div>
+<a xmlns:dbx="http://docblox-project.org/xsl/functions" name="top" class="anchor"></a><a name="classes" class="anchor"></a><a xmlns:dbx="http://docblox-project.org/xsl/functions" id="\Aura\Http\Headers" class="anchor"></a><h2 xmlns:dbx="http://docblox-project.org/xsl/functions" class="class">\Aura\Http\Headers<div class="to-top"><a href="#top">jump to top</a></div>
 </h2>
 <div xmlns:dbx="http://docblox-project.org/xsl/functions" class="class">
 <small class="package"><b>Package: </b>Aura\Http</small><p class="short-description">Collection of non-cookie HTTP headers.</p>
-<div class="long-description">
-</div>
+<div class="long-description"></div>
 <dl class="class-info"></dl>
 <h3>Properties</h3>
 <div>
 <a id="\Aura\Http\Headers::$list" class="anchor"></a><div class="property protected">
-<a href="#" class="gripper"><img src="images/icons/arrow_right.png"><img src="images/icons/arrow_down.png" style="display: none;"></a><code><img src="images/icons/property.png" alt="Property"><img src="images/icons/visibility_protected.png" style="margin-right: 5px" alt="protected">
+<a href="#" class="gripper"><img src="images/icons/arrow_right.png"><img src="images/icons/arrow_down.png" style="display: none;"></a><code><img src="images/icons/property.png" alt="Property"><img src="images/icons/visibility_protected.png" style="margin-right: 5px" alt="protected">array
                  <span class="highlight">$list</span>= 'array()'
-                </code><div class="description"></div>
+                </code><div class="description">
+<p class="short-description">The list of all headers.</p></div>
 <div class="code-tabs">
+<div class="long-description"></div>
 <strong>Default value</strong><code>array()</code><strong>Details</strong><dl class="property-info">
 <dt>Type</dt>
-<dd>n/a</dd>
+<dd>array</dd>
 </dl>
 </div>
 <div class="clear"></div>
@@ -133,12 +123,14 @@
 <div>
 <a id="\Aura\Http\Headers::add()" class="anchor"></a><div class="method public">
 <a href="#" class="gripper"><img src="images/icons/arrow_right.png"><img src="images/icons/arrow_down.png" style="display: none;"></a><code><img src="images/icons/method.png" alt="method"><img src="images/icons/visibility_public.png" style="margin-right: 5px" alt="public"><span class="highlight">add</span><span class="nb-faded-text">(
-           $label,  $value
+          string $label, string $value
           )
         </span>
         :
-          void</code><div class="description"><p class="short_description"></p></div>
+          void</code><div class="description"><p class="short_description">Adds a header value to an existing header label; if there is more
+than one, it will append the new value.</p></div>
 <div class="code-tabs">
+<div class="long-description"></div>
 <strong>Parameters</strong><table class="argument-info">
 <thead><tr>
 <th>Name</th>
@@ -147,13 +139,13 @@
 </tr></thead>
 <tr>
 <th>$label</th>
-<td></td>
-<td><em></em></td>
+<td>string</td>
+<td><em><p>The header label.</p></em></td>
 </tr>
 <tr>
 <th>$value</th>
-<td></td>
-<td><em></em></td>
+<td>string</td>
+<td><em><p>The header value.</p></em></td>
 </tr>
 </table>
 </div>
@@ -165,22 +157,34 @@
           )
         </span>
         :
-          void</code><div class="description"><p class="short_description"></p></div>
-<div class="code-tabs"></div>
+          array</code><div class="description"><p class="short_description">Returns all the headers.</p></div>
+<div class="code-tabs">
+<div class="long-description"></div>
+<strong>Returns</strong><table class="argument-info">
+<thead><tr>
+<th>Type</th>
+<th>Description</th>
+</tr></thead>
+<tr>
+<td>array</td>
+<td></td>
+</tr>
+</table>
+</div>
 <div class="clear"></div>
 </div>
 <a id="\Aura\Http\Headers::sanitizeLabel()" class="anchor"></a><div class="method protected">
 <a href="#" class="gripper"><img src="images/icons/arrow_right.png"><img src="images/icons/arrow_down.png" style="display: none;"></a><code><img src="images/icons/method.png" alt="method"><img src="images/icons/visibility_protected.png" style="margin-right: 5px" alt="protected"><span class="highlight">sanitizeLabel</span><span class="nb-faded-text">(
-          \Aura\Http\string $label
+          string $label
           )
         </span>
         :
-          \Aura\Http\string</code><div class="description"><p class="short_description">Sanitizes header labels by removing all characters besides [a-zA-z0-9_-].</p></div>
+          string</code><div class="description"><p class="short_description">Sanitizes header labels by removing all characters besides
+`[a-zA-z0-9_-]`.</p></div>
 <div class="code-tabs">
 <div class="long-description"><p>Underscores are converted to dashes, and word case is normalized.</p>
 
-<p>Converts "foo \r bar_ baz-dib \n 9" to "Foobar-Baz-Dib9".</p>
-</div>
+<p>Converts "foo \r bar_ baz-dib \n 9" to "Foobar-Baz-Dib9".</p></div>
 <strong>Parameters</strong><table class="argument-info">
 <thead><tr>
 <th>Name</th>
@@ -189,7 +193,7 @@
 </tr></thead>
 <tr>
 <th>$label</th>
-<td>\Aura\Http\string</td>
+<td>string</td>
 <td><em><p>The header label to sanitize.</p></em></td>
 </tr>
 </table>
@@ -199,7 +203,7 @@
 <th>Description</th>
 </tr></thead>
 <tr>
-<td>\Aura\Http\string</td>
+<td>string</td>
 <td>The sanitized header label.</td>
 </tr>
 </table>
@@ -212,18 +216,19 @@
           )
         </span>
         :
-          void</code><div class="description"><p class="short_description"></p></div>
-<div class="code-tabs"></div>
+          void</code><div class="description"><p class="short_description">Sends all the headers using `header()`.</p></div>
+<div class="code-tabs"><div class="long-description"></div></div>
 <div class="clear"></div>
 </div>
 <a id="\Aura\Http\Headers::set()" class="anchor"></a><div class="method public">
 <a href="#" class="gripper"><img src="images/icons/arrow_right.png"><img src="images/icons/arrow_down.png" style="display: none;"></a><code><img src="images/icons/method.png" alt="method"><img src="images/icons/visibility_public.png" style="margin-right: 5px" alt="public"><span class="highlight">set</span><span class="nb-faded-text">(
-           $label,  $value
+          string $label, string $value
           )
         </span>
         :
-          void</code><div class="description"><p class="short_description"></p></div>
+          void</code><div class="description"><p class="short_description">Sets a header value, overwriting previous values.</p></div>
 <div class="code-tabs">
+<div class="long-description"></div>
 <strong>Parameters</strong><table class="argument-info">
 <thead><tr>
 <th>Name</th>
@@ -232,13 +237,13 @@
 </tr></thead>
 <tr>
 <th>$label</th>
-<td></td>
-<td><em></em></td>
+<td>string</td>
+<td><em><p>The header label.</p></em></td>
 </tr>
 <tr>
 <th>$value</th>
-<td></td>
-<td><em></em></td>
+<td>string</td>
+<td><em><p>The header value.</p></em></td>
 </tr>
 </table>
 </div>
@@ -246,14 +251,15 @@
 </div>
 <a id="\Aura\Http\Headers::setAll()" class="anchor"></a><div class="method public">
 <a href="#" class="gripper"><img src="images/icons/arrow_right.png"><img src="images/icons/arrow_down.png" style="display: none;"></a><code><img src="images/icons/method.png" alt="method"><img src="images/icons/visibility_public.png" style="margin-right: 5px" alt="public"><span class="highlight">setAll</span><span class="nb-faded-text">(
-           $headers
+          array $headers
               =
               array()
           )
         </span>
         :
-          void</code><div class="description"><p class="short_description"></p></div>
+          void</code><div class="description"><p class="short_description">Sets all the headers at once; replaces all previously existing headers.</p></div>
 <div class="code-tabs">
+<div class="long-description"></div>
 <strong>Parameters</strong><table class="argument-info">
 <thead><tr>
 <th>Name</th>
@@ -262,8 +268,9 @@
 </tr></thead>
 <tr>
 <th>$headers</th>
-<td></td>
-<td><em></em></td>
+<td>array</td>
+<td><em><p>An array of headers where the key is the header label, and the value is the header value (multiple values are allowed).</p>
+</em></td>
 </tr>
 </table>
 </div>
@@ -272,5 +279,5 @@
 </div>
 </div>
 </div>
-<small xmlns="" class="footer">Documentation was generated by <a href="http://docblox-project.org">DocBlox 0.16.0</a>.
+<small xmlns="" class="footer">Documentation was generated by <a href="http://docblox-project.org">DocBlox 0.17.2</a>.
     </small></body></html>

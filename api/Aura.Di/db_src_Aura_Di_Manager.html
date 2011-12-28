@@ -1,4 +1,5 @@
-<html xmlns="http://www.w3.org/1999/xhtml"><head><title>Aura Project for PHP: Aura.Di</title><meta http-equiv="Content-Type" content="text/html; charset=utf-8"></meta><link rel="stylesheet" href="css/jquery-ui.css" type="text/css"></link><link rel="stylesheet" href="css/docblox/jquery-ui-1.8.16.custom.css" type="text/css"></link><link rel="stylesheet" href="css/jquery.treeview.css" type="text/css"></link><link rel="stylesheet" href="css/theme.css" type="text/css"></link><script type="text/javascript" src="js/jquery-1.4.2.min.js"></script><script type="text/javascript" src="js/jquery-ui-1.8.2.custom.min.js"></script><script type="text/javascript" src="js/jquery.tools.min.js"></script><script type="text/javascript" src="js/jquery.cookie.js"></script><script type="text/javascript" src="js/jquery.treeview.js"></script><script type="text/javascript">
+<html xmlns="http://www.w3.org/1999/xhtml"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Aura Project for PHP: Aura.Di</title><link rel="stylesheet" href="css/jquery-ui.css" type="text/css"></link><link rel="stylesheet" href="css/docblox/jquery-ui-1.8.16.custom.css" type="text/css"></link><link rel="stylesheet" href="css/jquery.treeview.css" type="text/css"></link><link rel="stylesheet" href="css/theme.css" type="text/css"></link><script type="text/javascript" src="js/jquery-1.4.2.min.js"></script><script type="text/javascript" src="js/jquery-ui-1.8.2.custom.min.js"></script><script type="text/javascript" src="js/jquery.tools.min.js"></script><script type="text/javascript" src="js/jquery.cookie.js"></script><script type="text/javascript" src="js/jquery.treeview.js"></script><script type="text/javascript">
             $(document).ready(function() {
                 $(".filetree").treeview({
                     collapsed: true,
@@ -95,25 +96,12 @@
               Table of Contents
           </div>
 </div>
-<a xmlns:dbx="http://docblox-project.org/xsl/functions" name="top" class="anchor"></a><div id="file-description">
-<p xmlns:dbx="http://docblox-project.org/xsl/functions" class="short-description">This file is part of the Aura Project for PHP.</p>
-<div xmlns:dbx="http://docblox-project.org/xsl/functions" class="long-description">
-</div>
-</div>
-<dl class="file-info">
-<dt xmlns:dbx="http://docblox-project.org/xsl/functions">License</dt>
-<dd xmlns:dbx="http://docblox-project.org/xsl/functions">
-<a href="http://opensource.org/licenses/bsd-license.php">BSD</a>
-         
-    </dd>
-</dl>
-<a name="classes" class="anchor"></a><a xmlns:dbx="http://docblox-project.org/xsl/functions" id="\Aura\Di\Manager" class="anchor"></a><h2 xmlns:dbx="http://docblox-project.org/xsl/functions" class="class">\Aura\Di\Manager<div class="to-top"><a href="#top">jump to top</a></div>
+<a xmlns:dbx="http://docblox-project.org/xsl/functions" name="top" class="anchor"></a><a name="classes" class="anchor"></a><a xmlns:dbx="http://docblox-project.org/xsl/functions" id="\Aura\Di\Manager" class="anchor"></a><h2 xmlns:dbx="http://docblox-project.org/xsl/functions" class="class">\Aura\Di\Manager<div class="to-top"><a href="#top">jump to top</a></div>
 </h2>
 <div xmlns:dbx="http://docblox-project.org/xsl/functions" class="class">
 <small class="package"><b>Package: </b>Aura\Di</small><p class="short-description">Manager for multiple DI containers; the Manager is itself the main
 container, and it provides access to sub-containers.</p>
-<div class="long-description">
-</div>
+<div class="long-description"></div>
 <dl class="class-info">
 <dt>Parent(s)</dt>
 <dd><a href="db_src_Aura_Di_Container.html#%5CAura%5CDi%5CContainer">\Aura\Di\Container</a></dd>
@@ -126,11 +114,10 @@ container, and it provides access to sub-containers.</p>
                 </code><div class="description">
 <p class="short-description">Sub-container definitions.</p></div>
 <div class="code-tabs">
-<div class="long-description">
-</div>
+<div class="long-description"></div>
 <strong>Default value</strong><code>array()</code><strong>Details</strong><dl class="property-info">
 <dt>Type</dt>
-<dd>\Aura\Di\array</dd>
+<dd>array</dd>
 </dl>
 </div>
 <div class="clear"></div>
@@ -140,17 +127,16 @@ container, and it provides access to sub-containers.</p>
                  <span class="highlight">$defs</span>= 'array()'
                 </code><div class="description">
 <span class="attribute">inherited</span><p class="short-description">Retains named service definitions.</p><small>Inherited from:
-                        <a href="db_src_Aura_Di_Container.html#%5CAura%5CDi%5CContainer::%24defs">\Aura\Di\Container::$defs</a></small>
+                        <a href="db_src_Aura_Di_Container.html#%5CAura%5CDi%5CContainer::%24%24defs">\Aura\Di\Container::$$defs</a></small>
 </div>
 <div class="code-tabs">
-<div class="long-description">
-</div>
+<div class="long-description"></div>
 <strong>Default value</strong><code>array()</code><strong>Details</strong><dl class="property-info">
 <dt>Type</dt>
-<dd>\Aura\Di\array</dd>
+<dd>array</dd>
 <dt>Inherited_from</dt>
 <dd>
-<a href="db_src_Aura_Di_Container.html#%5CAura%5CDi%5CContainer::%24defs">\Aura\Di\Container::$defs</a>
+<a href="db_src_Aura_Di_Container.html#%5CAura%5CDi%5CContainer::%24%24defs">\Aura\Di\Container::$$defs</a>
          
     </dd>
 </dl>
@@ -162,17 +148,16 @@ container, and it provides access to sub-containers.</p>
                  <span class="highlight">$forge</span>= ''
                 </code><div class="description">
 <span class="attribute">inherited</span><p class="short-description">A Forge object to create classes through reflection.</p><small>Inherited from:
-                        <a href="db_src_Aura_Di_Container.html#%5CAura%5CDi%5CContainer::%24forge">\Aura\Di\Container::$forge</a></small>
+                        <a href="db_src_Aura_Di_Container.html#%5CAura%5CDi%5CContainer::%24%24forge">\Aura\Di\Container::$$forge</a></small>
 </div>
 <div class="code-tabs">
-<div class="long-description">
-</div>
+<div class="long-description"></div>
 <strong>Details</strong><dl class="property-info">
 <dt>Type</dt>
-<dd>\Aura\Di\array</dd>
+<dd>array</dd>
 <dt>Inherited_from</dt>
 <dd>
-<a href="db_src_Aura_Di_Container.html#%5CAura%5CDi%5CContainer::%24forge">\Aura\Di\Container::$forge</a>
+<a href="db_src_Aura_Di_Container.html#%5CAura%5CDi%5CContainer::%24%24forge">\Aura\Di\Container::$$forge</a>
          
     </dd>
 </dl>
@@ -185,17 +170,16 @@ container, and it provides access to sub-containers.</p>
                 </code><div class="description">
 <span class="attribute">inherited</span><p class="short-description">Is the Container locked?  (When locked, you cannot access configuration
 properties from outside the object, and cannot set services.)</p><small>Inherited from:
-                        <a href="db_src_Aura_Di_Container.html#%5CAura%5CDi%5CContainer::%24locked">\Aura\Di\Container::$locked</a></small>
+                        <a href="db_src_Aura_Di_Container.html#%5CAura%5CDi%5CContainer::%24%24locked">\Aura\Di\Container::$$locked</a></small>
 </div>
 <div class="code-tabs">
-<div class="long-description">
-</div>
+<div class="long-description"></div>
 <strong>Default value</strong><code>false</code><strong>Details</strong><dl class="property-info">
 <dt>Type</dt>
-<dd>\Aura\Di\bool</dd>
+<dd>bool</dd>
 <dt>Inherited_from</dt>
 <dd>
-<a href="db_src_Aura_Di_Container.html#%5CAura%5CDi%5CContainer::%24locked">\Aura\Di\Container::$locked</a>
+<a href="db_src_Aura_Di_Container.html#%5CAura%5CDi%5CContainer::%24%24locked">\Aura\Di\Container::$$locked</a>
          
     </dd>
 <dt>See</dt>
@@ -216,17 +200,16 @@ properties from outside the object, and cannot set services.)</p><small>Inherite
                 </code><div class="description">
 <span class="attribute">inherited</span><p class="short-description">A convenient reference to the Config::$params object, which itself
 is contained by the Forge object.</p><small>Inherited from:
-                        <a href="db_src_Aura_Di_Container.html#%5CAura%5CDi%5CContainer::%24params">\Aura\Di\Container::$params</a></small>
+                        <a href="db_src_Aura_Di_Container.html#%5CAura%5CDi%5CContainer::%24%24params">\Aura\Di\Container::$$params</a></small>
 </div>
 <div class="code-tabs">
-<div class="long-description">
-</div>
+<div class="long-description"></div>
 <strong>Details</strong><dl class="property-info">
 <dt>Type</dt>
 <dd><a href="http://php.net/manual/en/class.arrayobject.php">\ArrayObject</a></dd>
 <dt>Inherited_from</dt>
 <dd>
-<a href="db_src_Aura_Di_Container.html#%5CAura%5CDi%5CContainer::%24params">\Aura\Di\Container::$params</a>
+<a href="db_src_Aura_Di_Container.html#%5CAura%5CDi%5CContainer::%24%24params">\Aura\Di\Container::$$params</a>
          
     </dd>
 </dl>
@@ -238,17 +221,16 @@ is contained by the Forge object.</p><small>Inherited from:
                  <span class="highlight">$services</span>= 'array()'
                 </code><div class="description">
 <span class="attribute">inherited</span><p class="short-description">Retains the actual service objects.</p><small>Inherited from:
-                        <a href="db_src_Aura_Di_Container.html#%5CAura%5CDi%5CContainer::%24services">\Aura\Di\Container::$services</a></small>
+                        <a href="db_src_Aura_Di_Container.html#%5CAura%5CDi%5CContainer::%24%24services">\Aura\Di\Container::$$services</a></small>
 </div>
 <div class="code-tabs">
-<div class="long-description">
-</div>
+<div class="long-description"></div>
 <strong>Default value</strong><code>array()</code><strong>Details</strong><dl class="property-info">
 <dt>Type</dt>
-<dd>\Aura\Di\array</dd>
+<dd>array</dd>
 <dt>Inherited_from</dt>
 <dd>
-<a href="db_src_Aura_Di_Container.html#%5CAura%5CDi%5CContainer::%24services">\Aura\Di\Container::$services</a>
+<a href="db_src_Aura_Di_Container.html#%5CAura%5CDi%5CContainer::%24%24services">\Aura\Di\Container::$$services</a>
          
     </dd>
 </dl>
@@ -261,17 +243,16 @@ is contained by the Forge object.</p><small>Inherited from:
                 </code><div class="description">
 <span class="attribute">inherited</span><p class="short-description">A convenient reference to the Config::$setter object, which itself
 is contained by the Forge object.</p><small>Inherited from:
-                        <a href="db_src_Aura_Di_Container.html#%5CAura%5CDi%5CContainer::%24setter">\Aura\Di\Container::$setter</a></small>
+                        <a href="db_src_Aura_Di_Container.html#%5CAura%5CDi%5CContainer::%24%24setter">\Aura\Di\Container::$$setter</a></small>
 </div>
 <div class="code-tabs">
-<div class="long-description">
-</div>
+<div class="long-description"></div>
 <strong>Details</strong><dl class="property-info">
 <dt>Type</dt>
 <dd><a href="http://php.net/manual/en/class.arrayobject.php">\ArrayObject</a></dd>
 <dt>Inherited_from</dt>
 <dd>
-<a href="db_src_Aura_Di_Container.html#%5CAura%5CDi%5CContainer::%24setter">\Aura\Di\Container::$setter</a>
+<a href="db_src_Aura_Di_Container.html#%5CAura%5CDi%5CContainer::%24%24setter">\Aura\Di\Container::$$setter</a>
          
     </dd>
 </dl>
@@ -287,14 +268,13 @@ is contained by the Forge object.</p><small>Inherited from:
           )
         </span>
         :
-          \Aura\Di\void</code><div class="description">
+          void</code><div class="description">
 <span class="attribute">inherited</span><p class="short_description">When cloning this Container, *do not* make a copy of the service
 objects.  Leave the configuration and definitions intact.</p>
 <small>Inherited from:
                     <a href="db_src_Aura_Di_Container.html#%5CAura%5CDi%5CContainer::__clone()">\Aura\Di\Container::__clone()</a></small>
 </div>
-<div class="code-tabs"><div class="long-description">
-</div></div>
+<div class="code-tabs"><div class="long-description"></div></div>
 <div class="clear"></div>
 </div>
 <a id="\Aura\Di\Manager::__construct()" class="anchor"></a><div class="method public inherited_from ">
@@ -309,8 +289,7 @@ objects.  Leave the configuration and definitions intact.</p>
                     <a href="db_src_Aura_Di_Container.html#%5CAura%5CDi%5CContainer::__construct()">\Aura\Di\Container::__construct()</a></small>
 </div>
 <div class="code-tabs">
-<div class="long-description">
-</div>
+<div class="long-description"></div>
 <strong>Parameters</strong><table class="argument-info">
 <thead><tr>
 <th>Name</th>
@@ -328,19 +307,18 @@ objects.  Leave the configuration and definitions intact.</p>
 </div>
 <a id="\Aura\Di\Manager::__get()" class="anchor"></a><div class="method public inherited_from ">
 <a href="#" class="gripper"><img src="images/icons/arrow_right.png"><img src="images/icons/arrow_down.png" style="display: none;"></a><code><img src="images/icons/method.png" alt="method"><img src="images/icons/visibility_public.png" style="margin-right: 5px" alt="public"><span class="highlight">__get</span><span class="nb-faded-text">(
-          \Aura\Di\string $key
+          string $key
           )
         </span>
         :
-          \Aura\Di\mixed</code><div class="description">
+          mixed</code><div class="description">
 <span class="attribute">inherited</span><p class="short_description">Magic get to provide access to the Config::$params and $setter
 objects.</p>
 <small>Inherited from:
                     <a href="db_src_Aura_Di_Container.html#%5CAura%5CDi%5CContainer::__get()">\Aura\Di\Container::__get()</a></small>
 </div>
 <div class="code-tabs">
-<div class="long-description">
-</div>
+<div class="long-description"></div>
 <strong>Parameters</strong><table class="argument-info">
 <thead><tr>
 <th>Name</th>
@@ -349,7 +327,7 @@ objects.</p>
 </tr></thead>
 <tr>
 <th>$key</th>
-<td>\Aura\Di\string</td>
+<td>string</td>
 <td><em><p>The property to retrieve ('params' or 'setter').</p>
 </em></td>
 </tr>
@@ -360,7 +338,7 @@ objects.</p>
 <th>Description</th>
 </tr></thead>
 <tr>
-<td>\Aura\Di\mixed</td>
+<td>mixed</td>
 <td></td>
 </tr>
 </table>
@@ -369,7 +347,7 @@ objects.</p>
 </div>
 <a id="\Aura\Di\Manager::cloneContainer()" class="anchor"></a><div class="method public">
 <a href="#" class="gripper"><img src="images/icons/arrow_right.png"><img src="images/icons/arrow_down.png" style="display: none;"></a><code><img src="images/icons/method.png" alt="method"><img src="images/icons/visibility_public.png" style="margin-right: 5px" alt="public"><span class="highlight">cloneContainer</span><span class="nb-faded-text">(
-          \Aura\Di\string $name
+          string $name
           )
         </span>
         :
@@ -379,8 +357,7 @@ will not have any of the service objects.  Calling get() will create
 new services that are independent and separate from the origin
 container services.</p></div>
 <div class="code-tabs">
-<div class="long-description">
-</div>
+<div class="long-description"></div>
 <strong>Parameters</strong><table class="argument-info">
 <thead><tr>
 <th>Name</th>
@@ -389,7 +366,7 @@ container services.</p></div>
 </tr></thead>
 <tr>
 <th>$name</th>
-<td>\Aura\Di\string</td>
+<td>string</td>
 <td><em><p>The sub-container name.</p>
 </em></td>
 </tr>
@@ -409,18 +386,17 @@ container services.</p></div>
 </div>
 <a id="\Aura\Di\Manager::get()" class="anchor"></a><div class="method public inherited_from ">
 <a href="#" class="gripper"><img src="images/icons/arrow_right.png"><img src="images/icons/arrow_down.png" style="display: none;"></a><code><img src="images/icons/method.png" alt="method"><img src="images/icons/visibility_public.png" style="margin-right: 5px" alt="public"><span class="highlight">get</span><span class="nb-faded-text">(
-          \Aura\Di\string $key
+          string $key
           )
         </span>
         :
-          \Aura\Di\object</code><div class="description">
+          object</code><div class="description">
 <span class="attribute">inherited</span><p class="short_description">Gets a service object by key, lazy-loading it as needed.</p>
 <small>Inherited from:
                     <a href="db_src_Aura_Di_Container.html#%5CAura%5CDi%5CContainer::get()">\Aura\Di\Container::get()</a></small>
 </div>
 <div class="code-tabs">
-<div class="long-description">
-</div>
+<div class="long-description"></div>
 <strong>Parameters</strong><table class="argument-info">
 <thead><tr>
 <th>Name</th>
@@ -429,7 +405,7 @@ container services.</p></div>
 </tr></thead>
 <tr>
 <th>$key</th>
-<td>\Aura\Di\string</td>
+<td>string</td>
 <td><em><p>The service to get.</p></em></td>
 </tr>
 </table>
@@ -439,7 +415,7 @@ container services.</p></div>
 <th>Description</th>
 </tr></thead>
 <tr>
-<td>\Aura\Di\object</td>
+<td>object</td>
 <td></td>
 </tr>
 </table>
@@ -458,15 +434,14 @@ container services.</p></div>
 </div>
 <a id="\Aura\Di\Manager::getContainer()" class="anchor"></a><div class="method public">
 <a href="#" class="gripper"><img src="images/icons/arrow_right.png"><img src="images/icons/arrow_down.png" style="display: none;"></a><code><img src="images/icons/method.png" alt="method"><img src="images/icons/visibility_public.png" style="margin-right: 5px" alt="public"><span class="highlight">getContainer</span><span class="nb-faded-text">(
-          \Aura\Di\string $name
+          string $name
           )
         </span>
         :
           <a href="db_src_Aura_Di_Container.html#%5CAura%5CDi%5CContainer">\Aura\Di\Container</a></code><div class="description"><p class="short_description">Gets a sub-container by name, throwing an exception if it does not
 exist.</p></div>
 <div class="code-tabs">
-<div class="long-description">
-</div>
+<div class="long-description"></div>
 <strong>Parameters</strong><table class="argument-info">
 <thead><tr>
 <th>Name</th>
@@ -475,7 +450,7 @@ exist.</p></div>
 </tr></thead>
 <tr>
 <th>$name</th>
-<td>\Aura\Di\string</td>
+<td>string</td>
 <td><em><p>The sub-container name.</p>
 </em></td>
 </tr>
@@ -499,17 +474,16 @@ exist.</p></div>
           )
         </span>
         :
-          \Aura\Di\array</code><div class="description"><p class="short_description">Gets the names of all sub-containers.</p></div>
+          array</code><div class="description"><p class="short_description">Gets the names of all sub-containers.</p></div>
 <div class="code-tabs">
-<div class="long-description">
-</div>
+<div class="long-description"></div>
 <strong>Returns</strong><table class="argument-info">
 <thead><tr>
 <th>Type</th>
 <th>Description</th>
 </tr></thead>
 <tr>
-<td>\Aura\Di\array</td>
+<td>array</td>
 <td>The names of all sub-containers.</td>
 </tr>
 </table>
@@ -522,21 +496,20 @@ exist.</p></div>
           )
         </span>
         :
-          \Aura\Di\array</code><div class="description">
+          array</code><div class="description">
 <span class="attribute">inherited</span><p class="short_description">Gets the list of service definitions.</p>
 <small>Inherited from:
                     <a href="db_src_Aura_Di_Container.html#%5CAura%5CDi%5CContainer::getDefs()">\Aura\Di\Container::getDefs()</a></small>
 </div>
 <div class="code-tabs">
-<div class="long-description">
-</div>
+<div class="long-description"></div>
 <strong>Returns</strong><table class="argument-info">
 <thead><tr>
 <th>Type</th>
 <th>Description</th>
 </tr></thead>
 <tr>
-<td>\Aura\Di\array</td>
+<td>array</td>
 <td></td>
 </tr>
 </table>
@@ -549,21 +522,20 @@ exist.</p></div>
           )
         </span>
         :
-          \Aura\Di\array</code><div class="description">
+          array</code><div class="description">
 <span class="attribute">inherited</span><p class="short_description">Gets the Forge object used for creating new instances.</p>
 <small>Inherited from:
                     <a href="db_src_Aura_Di_Container.html#%5CAura%5CDi%5CContainer::getForge()">\Aura\Di\Container::getForge()</a></small>
 </div>
 <div class="code-tabs">
-<div class="long-description">
-</div>
+<div class="long-description"></div>
 <strong>Returns</strong><table class="argument-info">
 <thead><tr>
 <th>Type</th>
 <th>Description</th>
 </tr></thead>
 <tr>
-<td>\Aura\Di\array</td>
+<td>array</td>
 <td></td>
 </tr>
 </table>
@@ -576,21 +548,20 @@ exist.</p></div>
           )
         </span>
         :
-          \Aura\Di\array</code><div class="description">
+          array</code><div class="description">
 <span class="attribute">inherited</span><p class="short_description">Gets the list of instantiated services.</p>
 <small>Inherited from:
                     <a href="db_src_Aura_Di_Container.html#%5CAura%5CDi%5CContainer::getServices()">\Aura\Di\Container::getServices()</a></small>
 </div>
 <div class="code-tabs">
-<div class="long-description">
-</div>
+<div class="long-description"></div>
 <strong>Returns</strong><table class="argument-info">
 <thead><tr>
 <th>Type</th>
 <th>Description</th>
 </tr></thead>
 <tr>
-<td>\Aura\Di\array</td>
+<td>array</td>
 <td></td>
 </tr>
 </table>
@@ -599,18 +570,17 @@ exist.</p></div>
 </div>
 <a id="\Aura\Di\Manager::has()" class="anchor"></a><div class="method public inherited_from ">
 <a href="#" class="gripper"><img src="images/icons/arrow_right.png"><img src="images/icons/arrow_down.png" style="display: none;"></a><code><img src="images/icons/method.png" alt="method"><img src="images/icons/visibility_public.png" style="margin-right: 5px" alt="public"><span class="highlight">has</span><span class="nb-faded-text">(
-          \Aura\Di\string $key
+          string $key
           )
         </span>
         :
-          \Aura\Di\bool</code><div class="description">
+          bool</code><div class="description">
 <span class="attribute">inherited</span><p class="short_description">Does a particular service definition exist?</p>
 <small>Inherited from:
                     <a href="db_src_Aura_Di_Container.html#%5CAura%5CDi%5CContainer::has()">\Aura\Di\Container::has()</a></small>
 </div>
 <div class="code-tabs">
-<div class="long-description">
-</div>
+<div class="long-description"></div>
 <strong>Parameters</strong><table class="argument-info">
 <thead><tr>
 <th>Name</th>
@@ -619,7 +589,7 @@ exist.</p></div>
 </tr></thead>
 <tr>
 <th>$key</th>
-<td>\Aura\Di\string</td>
+<td>string</td>
 <td><em><p>The service key to look up.</p></em></td>
 </tr>
 </table>
@@ -629,7 +599,7 @@ exist.</p></div>
 <th>Description</th>
 </tr></thead>
 <tr>
-<td>\Aura\Di\bool</td>
+<td>bool</td>
 <td></td>
 </tr>
 </table>
@@ -642,21 +612,20 @@ exist.</p></div>
           )
         </span>
         :
-          \Aura\Di\bool</code><div class="description">
+          bool</code><div class="description">
 <span class="attribute">inherited</span><p class="short_description">Is the Container locked?</p>
 <small>Inherited from:
                     <a href="db_src_Aura_Di_Container.html#%5CAura%5CDi%5CContainer::isLocked()">\Aura\Di\Container::isLocked()</a></small>
 </div>
 <div class="code-tabs">
-<div class="long-description">
-</div>
+<div class="long-description"></div>
 <strong>Returns</strong><table class="argument-info">
 <thead><tr>
 <th>Type</th>
 <th>Description</th>
 </tr></thead>
 <tr>
-<td>\Aura\Di\bool</td>
+<td>bool</td>
 <td></td>
 </tr>
 </table>
@@ -665,14 +634,13 @@ exist.</p></div>
 </div>
 <a id="\Aura\Di\Manager::lazyCloneContainer()" class="anchor"></a><div class="method public">
 <a href="#" class="gripper"><img src="images/icons/arrow_right.png"><img src="images/icons/arrow_down.png" style="display: none;"></a><code><img src="images/icons/method.png" alt="method"><img src="images/icons/visibility_public.png" style="margin-right: 5px" alt="public"><span class="highlight">lazyCloneContainer</span><span class="nb-faded-text">(
-          \Aura\Di\string $name
+          string $name
           )
         </span>
         :
           <a href="db_src_Aura_Di_Lazy.html#%5CAura%5CDi%5CLazy">\Aura\Di\Lazy</a></code><div class="description"><p class="short_description">Returns a Lazy that, when invoked, will return a sub-container clone.</p></div>
 <div class="code-tabs">
-<div class="long-description">
-</div>
+<div class="long-description"></div>
 <strong>Parameters</strong><table class="argument-info">
 <thead><tr>
 <th>Name</th>
@@ -681,7 +649,7 @@ exist.</p></div>
 </tr></thead>
 <tr>
 <th>$name</th>
-<td>\Aura\Di\string</td>
+<td>string</td>
 <td><em><p>The sub-container name.</p>
 </em></td>
 </tr>
@@ -701,7 +669,7 @@ exist.</p></div>
 </div>
 <a id="\Aura\Di\Manager::lazyGet()" class="anchor"></a><div class="method public inherited_from ">
 <a href="#" class="gripper"><img src="images/icons/arrow_right.png"><img src="images/icons/arrow_down.png" style="display: none;"></a><code><img src="images/icons/method.png" alt="method"><img src="images/icons/visibility_public.png" style="margin-right: 5px" alt="public"><span class="highlight">lazyGet</span><span class="nb-faded-text">(
-          \Aura\Di\string $key
+          string $key
           )
         </span>
         :
@@ -719,8 +687,7 @@ following idiom ...</p>
 <p>... with the following:</p>
 
 <pre><code> $di-&gt;params['ClassName']['param_name'] = $di-&gt;lazyGet('service');
-</code></pre>
-</div>
+</code></pre></div>
 <strong>Parameters</strong><table class="argument-info">
 <thead><tr>
 <th>Name</th>
@@ -729,7 +696,7 @@ following idiom ...</p>
 </tr></thead>
 <tr>
 <th>$key</th>
-<td>\Aura\Di\string</td>
+<td>string</td>
 <td><em><p>The service name; it does not need to exist yet.</p></em></td>
 </tr>
 </table>
@@ -748,7 +715,7 @@ following idiom ...</p>
 </div>
 <a id="\Aura\Di\Manager::lazyNew()" class="anchor"></a><div class="method public inherited_from ">
 <a href="#" class="gripper"><img src="images/icons/arrow_right.png"><img src="images/icons/arrow_down.png" style="display: none;"></a><code><img src="images/icons/method.png" alt="method"><img src="images/icons/visibility_public.png" style="margin-right: 5px" alt="public"><span class="highlight">lazyNew</span><span class="nb-faded-text">(
-          \Aura\Di\string $class, \Aura\Di\array $params
+          string $class, array $params
               =
               null
           )
@@ -768,8 +735,7 @@ the following idiom:</p>
 <p>... with the following:</p>
 
 <pre><code> $di-&gt;params['ClassName']['param_name'] = $di-&gt;lazyNew('OtherClass', array(...));
-</code></pre>
-</div>
+</code></pre></div>
 <strong>Parameters</strong><table class="argument-info">
 <thead><tr>
 <th>Name</th>
@@ -778,12 +744,12 @@ the following idiom:</p>
 </tr></thead>
 <tr>
 <th>$class</th>
-<td>\Aura\Di\string</td>
+<td>string</td>
 <td><em><p>The type of class of instantiate.</p></em></td>
 </tr>
 <tr>
 <th>$params</th>
-<td>\Aura\Di\array</td>
+<td>array</td>
 <td><em><p>Override parameters for the instance.</p></em></td>
 </tr>
 </table>
@@ -806,15 +772,14 @@ the following idiom:</p>
           )
         </span>
         :
-          \Aura\Di\void</code><div class="description"><p class="short_description">Locks the main container and all sub-containers; once locked, they
+          void</code><div class="description"><p class="short_description">Locks the main container and all sub-containers; once locked, they
 cannot be unlocked.</p></div>
-<div class="code-tabs"><div class="long-description">
-</div></div>
+<div class="code-tabs"><div class="long-description"></div></div>
 <div class="clear"></div>
 </div>
 <a id="\Aura\Di\Manager::newContainer()" class="anchor"></a><div class="method public">
 <a href="#" class="gripper"><img src="images/icons/arrow_right.png"><img src="images/icons/arrow_down.png" style="display: none;"></a><code><img src="images/icons/method.png" alt="method"><img src="images/icons/visibility_public.png" style="margin-right: 5px" alt="public"><span class="highlight">newContainer</span><span class="nb-faded-text">(
-          \Aura\Di\string $name
+          string $name
           )
         </span>
         :
@@ -822,8 +787,7 @@ cannot be unlocked.</p></div>
 inherit configuration from the main container in any way; you will have
 to add params, setters, etc. on the new container.</p></div>
 <div class="code-tabs">
-<div class="long-description">
-</div>
+<div class="long-description"></div>
 <strong>Parameters</strong><table class="argument-info">
 <thead><tr>
 <th>Name</th>
@@ -832,7 +796,7 @@ to add params, setters, etc. on the new container.</p></div>
 </tr></thead>
 <tr>
 <th>$name</th>
-<td>\Aura\Di\string</td>
+<td>string</td>
 <td><em><p>The sub-container name.</p>
 </em></td>
 </tr>
@@ -852,21 +816,20 @@ to add params, setters, etc. on the new container.</p></div>
 </div>
 <a id="\Aura\Di\Manager::newInstance()" class="anchor"></a><div class="method public inherited_from ">
 <a href="#" class="gripper"><img src="images/icons/arrow_right.png"><img src="images/icons/arrow_down.png" style="display: none;"></a><code><img src="images/icons/method.png" alt="method"><img src="images/icons/visibility_public.png" style="margin-right: 5px" alt="public"><span class="highlight">newInstance</span><span class="nb-faded-text">(
-          \Aura\Di\string $class, \Aura\Di\array $params
+          string $class, array $params
               =
               null
           )
         </span>
         :
-          \Aura\Di\object</code><div class="description">
+          object</code><div class="description">
 <span class="attribute">inherited</span><p class="short_description">Returns a new instance of the specified class, optionally
 with additional override parameters.</p>
 <small>Inherited from:
                     <a href="db_src_Aura_Di_Container.html#%5CAura%5CDi%5CContainer::newInstance()">\Aura\Di\Container::newInstance()</a></small>
 </div>
 <div class="code-tabs">
-<div class="long-description">
-</div>
+<div class="long-description"></div>
 <strong>Parameters</strong><table class="argument-info">
 <thead><tr>
 <th>Name</th>
@@ -875,12 +838,12 @@ with additional override parameters.</p>
 </tr></thead>
 <tr>
 <th>$class</th>
-<td>\Aura\Di\string</td>
+<td>string</td>
 <td><em><p>The type of class of instantiate.</p></em></td>
 </tr>
 <tr>
 <th>$params</th>
-<td>\Aura\Di\array</td>
+<td>array</td>
 <td><em><p>Override parameters for the instance.</p></em></td>
 </tr>
 </table>
@@ -890,7 +853,7 @@ with additional override parameters.</p>
 <th>Description</th>
 </tr></thead>
 <tr>
-<td>\Aura\Di\object</td>
+<td>object</td>
 <td>An instance of the requested class.</td>
 </tr>
 </table>
@@ -899,7 +862,7 @@ with additional override parameters.</p>
 </div>
 <a id="\Aura\Di\Manager::set()" class="anchor"></a><div class="method public inherited_from ">
 <a href="#" class="gripper"><img src="images/icons/arrow_right.png"><img src="images/icons/arrow_down.png" style="display: none;"></a><code><img src="images/icons/method.png" alt="method"><img src="images/icons/visibility_public.png" style="margin-right: 5px" alt="public"><span class="highlight">set</span><span class="nb-faded-text">(
-          \Aura\Di\string $key, \Aura\Di\object $val
+          string $key, object $val
           )
         </span>
         :
@@ -910,8 +873,7 @@ with additional override parameters.</p>
 </div>
 <div class="code-tabs">
 <div class="long-description"><p>If you set a service as a closure, it is automatically treated as a
-Lazy.</p>
-</div>
+Lazy.</p></div>
 <strong>Parameters</strong><table class="argument-info">
 <thead><tr>
 <th>Name</th>
@@ -920,12 +882,12 @@ Lazy.</p>
 </tr></thead>
 <tr>
 <th>$key</th>
-<td>\Aura\Di\string</td>
+<td>string</td>
 <td><em><p>The service key.</p></em></td>
 </tr>
 <tr>
 <th>$val</th>
-<td>\Aura\Di\object</td>
+<td>object</td>
 <td><em><p>The service object; if a Closure, is treated as a Lazy.</p></em></td>
 </tr>
 </table>
@@ -948,15 +910,14 @@ Lazy.</p>
 </div>
 <a id="\Aura\Di\Manager::subContainer()" class="anchor"></a><div class="method public">
 <a href="#" class="gripper"><img src="images/icons/arrow_right.png"><img src="images/icons/arrow_down.png" style="display: none;"></a><code><img src="images/icons/method.png" alt="method"><img src="images/icons/visibility_public.png" style="margin-right: 5px" alt="public"><span class="highlight">subContainer</span><span class="nb-faded-text">(
-          \Aura\Di\string $name
+          string $name
           )
         </span>
         :
           <a href="db_src_Aura_Di_Container.html#%5CAura%5CDi%5CContainer">\Aura\Di\Container</a></code><div class="description"><p class="short_description">Gets a sub-container by name if it exists, or creates a new one under
 that name if it does not.</p></div>
 <div class="code-tabs">
-<div class="long-description">
-</div>
+<div class="long-description"></div>
 <strong>Parameters</strong><table class="argument-info">
 <thead><tr>
 <th>Name</th>
@@ -965,7 +926,7 @@ that name if it does not.</p></div>
 </tr></thead>
 <tr>
 <th>$name</th>
-<td>\Aura\Di\string</td>
+<td>string</td>
 <td><em><p>The sub-container name.</p>
 </em></td>
 </tr>
@@ -986,5 +947,5 @@ that name if it does not.</p></div>
 </div>
 </div>
 </div>
-<small xmlns="" class="footer">Documentation was generated by <a href="http://docblox-project.org">DocBlox 0.16.0</a>.
+<small xmlns="" class="footer">Documentation was generated by <a href="http://docblox-project.org">DocBlox 0.17.2</a>.
     </small></body></html>

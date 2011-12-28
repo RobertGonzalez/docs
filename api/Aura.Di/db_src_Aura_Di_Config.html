@@ -1,4 +1,5 @@
-<html xmlns="http://www.w3.org/1999/xhtml"><head><title>Aura Project for PHP: Aura.Di</title><meta http-equiv="Content-Type" content="text/html; charset=utf-8"></meta><link rel="stylesheet" href="css/jquery-ui.css" type="text/css"></link><link rel="stylesheet" href="css/docblox/jquery-ui-1.8.16.custom.css" type="text/css"></link><link rel="stylesheet" href="css/jquery.treeview.css" type="text/css"></link><link rel="stylesheet" href="css/theme.css" type="text/css"></link><script type="text/javascript" src="js/jquery-1.4.2.min.js"></script><script type="text/javascript" src="js/jquery-ui-1.8.2.custom.min.js"></script><script type="text/javascript" src="js/jquery.tools.min.js"></script><script type="text/javascript" src="js/jquery.cookie.js"></script><script type="text/javascript" src="js/jquery.treeview.js"></script><script type="text/javascript">
+<html xmlns="http://www.w3.org/1999/xhtml"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Aura Project for PHP: Aura.Di</title><link rel="stylesheet" href="css/jquery-ui.css" type="text/css"></link><link rel="stylesheet" href="css/docblox/jquery-ui-1.8.16.custom.css" type="text/css"></link><link rel="stylesheet" href="css/jquery.treeview.css" type="text/css"></link><link rel="stylesheet" href="css/theme.css" type="text/css"></link><script type="text/javascript" src="js/jquery-1.4.2.min.js"></script><script type="text/javascript" src="js/jquery-ui-1.8.2.custom.min.js"></script><script type="text/javascript" src="js/jquery.tools.min.js"></script><script type="text/javascript" src="js/jquery.cookie.js"></script><script type="text/javascript" src="js/jquery.treeview.js"></script><script type="text/javascript">
             $(document).ready(function() {
                 $(".filetree").treeview({
                     collapsed: true,
@@ -95,24 +96,11 @@
               Table of Contents
           </div>
 </div>
-<a xmlns:dbx="http://docblox-project.org/xsl/functions" name="top" class="anchor"></a><div id="file-description">
-<p xmlns:dbx="http://docblox-project.org/xsl/functions" class="short-description">This file is part of the Aura Project for PHP.</p>
-<div xmlns:dbx="http://docblox-project.org/xsl/functions" class="long-description">
-</div>
-</div>
-<dl class="file-info">
-<dt xmlns:dbx="http://docblox-project.org/xsl/functions">License</dt>
-<dd xmlns:dbx="http://docblox-project.org/xsl/functions">
-<a href="http://opensource.org/licenses/bsd-license.php">BSD</a>
-         
-    </dd>
-</dl>
-<a name="classes" class="anchor"></a><a xmlns:dbx="http://docblox-project.org/xsl/functions" id="\Aura\Di\Config" class="anchor"></a><h2 xmlns:dbx="http://docblox-project.org/xsl/functions" class="class">\Aura\Di\Config<div class="to-top"><a href="#top">jump to top</a></div>
+<a xmlns:dbx="http://docblox-project.org/xsl/functions" name="top" class="anchor"></a><a name="classes" class="anchor"></a><a xmlns:dbx="http://docblox-project.org/xsl/functions" id="\Aura\Di\Config" class="anchor"></a><h2 xmlns:dbx="http://docblox-project.org/xsl/functions" class="class">\Aura\Di\Config<div class="to-top"><a href="#top">jump to top</a></div>
 </h2>
 <div xmlns:dbx="http://docblox-project.org/xsl/functions" class="class">
 <small class="package"><b>Package: </b>Aura\Di</small><p class="short-description">Retains and unifies class configurations.</p>
-<div class="long-description">
-</div>
+<div class="long-description"></div>
 <dl class="class-info">
 <dt>Implements</dt>
 <dd><a href="db_src_Aura_Di_ConfigInterface.html#%5CAura%5CDi%5CConfigInterface">\Aura\Di\ConfigInterface</a></dd>
@@ -126,8 +114,7 @@
 <p class="short-description">Constructor params from external configuration in the form
 `$params[$class][$name] = $value`.</p></div>
 <div class="code-tabs">
-<div class="long-description">
-</div>
+<div class="long-description"></div>
 <strong>Details</strong><dl class="property-info">
 <dt>Type</dt>
 <dd><a href="http://php.net/manual/en/class.arrayobject.php">\ArrayObject</a></dd>
@@ -142,11 +129,10 @@
 <p class="short-description">An array of retained ReflectionClass instances; this is as much for
 the Forge as it is for Config.</p></div>
 <div class="code-tabs">
-<div class="long-description">
-</div>
+<div class="long-description"></div>
 <strong>Default value</strong><code>array()</code><strong>Details</strong><dl class="property-info">
 <dt>Type</dt>
-<dd>\Aura\Di\array</dd>
+<dd>array</dd>
 </dl>
 </div>
 <div class="clear"></div>
@@ -157,8 +143,7 @@ the Forge as it is for Config.</p></div>
                 </code><div class="description">
 <p class="short-description">Setter definitions in the form of `$setter[$class][$method] = $value`.</p></div>
 <div class="code-tabs">
-<div class="long-description">
-</div>
+<div class="long-description"></div>
 <strong>Details</strong><dl class="property-info">
 <dt>Type</dt>
 <dd><a href="http://php.net/manual/en/class.arrayobject.php">\ArrayObject</a></dd>
@@ -173,11 +158,10 @@ the Forge as it is for Config.</p></div>
 <p class="short-description">Constructor params and setter definitions, unified across class
 defaults, inheritance hierarchies, and external configurations.</p></div>
 <div class="code-tabs">
-<div class="long-description">
-</div>
+<div class="long-description"></div>
 <strong>Default value</strong><code>array()</code><strong>Details</strong><dl class="property-info">
 <dt>Type</dt>
-<dd>\Aura\Di\array</dd>
+<dd>array</dd>
 </dl>
 </div>
 <div class="clear"></div>
@@ -191,10 +175,9 @@ defaults, inheritance hierarchies, and external configurations.</p></div>
           )
         </span>
         :
-          \Aura\Di\void</code><div class="description"><p class="short_description">When cloning this object, reset the params and setter values (but
+          void</code><div class="description"><p class="short_description">When cloning this object, reset the params and setter values (but
 leave the reflection values in place).</p></div>
-<div class="code-tabs"><div class="long-description">
-</div></div>
+<div class="code-tabs"><div class="long-description"></div></div>
 <div class="clear"></div>
 </div>
 <a id="\Aura\Di\Config::__construct()" class="anchor"></a><div class="method public">
@@ -204,20 +187,18 @@ leave the reflection values in place).</p></div>
         </span>
         :
           void</code><div class="description"><p class="short_description">Constructor.</p></div>
-<div class="code-tabs"><div class="long-description">
-</div></div>
+<div class="code-tabs"><div class="long-description"></div></div>
 <div class="clear"></div>
 </div>
 <a id="\Aura\Di\Config::fetch()" class="anchor"></a><div class="method public">
 <a href="#" class="gripper"><img src="images/icons/arrow_right.png"><img src="images/icons/arrow_down.png" style="display: none;"></a><code><img src="images/icons/method.png" alt="method"><img src="images/icons/visibility_public.png" style="margin-right: 5px" alt="public"><span class="highlight">fetch</span><span class="nb-faded-text">(
-          \Aura\Di\string $class
+          string $class
           )
         </span>
         :
-          \Aura\Di\array</code><div class="description"><p class="short_description">Fetches the unified constructor params and setter values for a class.</p></div>
+          array</code><div class="description"><p class="short_description">Fetches the unified constructor params and setter values for a class.</p></div>
 <div class="code-tabs">
-<div class="long-description">
-</div>
+<div class="long-description"></div>
 <strong>Parameters</strong><table class="argument-info">
 <thead><tr>
 <th>Name</th>
@@ -226,7 +207,7 @@ leave the reflection values in place).</p></div>
 </tr></thead>
 <tr>
 <th>$class</th>
-<td>\Aura\Di\string</td>
+<td>string</td>
 <td><em><p>The class name to fetch values for.</p></em></td>
 </tr>
 </table>
@@ -236,7 +217,7 @@ leave the reflection values in place).</p></div>
 <th>Description</th>
 </tr></thead>
 <tr>
-<td>\Aura\Di\array</td>
+<td>array</td>
 <td>An array with two elements; 0 is the constructor values for the class, and 1 is the setter methods and values for the class.</td>
 </tr>
 </table>
@@ -251,8 +232,7 @@ leave the reflection values in place).</p></div>
         :
           <a href="http://php.net/manual/en/class.arrayobject.php">\ArrayObject</a></code><div class="description"><p class="short_description">Gets the $params property.</p></div>
 <div class="code-tabs">
-<div class="long-description">
-</div>
+<div class="long-description"></div>
 <strong>Returns</strong><table class="argument-info">
 <thead><tr>
 <th>Type</th>
@@ -268,14 +248,13 @@ leave the reflection values in place).</p></div>
 </div>
 <a id="\Aura\Di\Config::getReflect()" class="anchor"></a><div class="method public">
 <a href="#" class="gripper"><img src="images/icons/arrow_right.png"><img src="images/icons/arrow_down.png" style="display: none;"></a><code><img src="images/icons/method.png" alt="method"><img src="images/icons/visibility_public.png" style="margin-right: 5px" alt="public"><span class="highlight">getReflect</span><span class="nb-faded-text">(
-          \Aura\Di\string $class
+          string $class
           )
         </span>
         :
           <a href="http://php.net/manual/en/class.reflectionclass.php">\ReflectionClass</a></code><div class="description"><p class="short_description">Returns a \ReflectionClass for a named class.</p></div>
 <div class="code-tabs">
-<div class="long-description">
-</div>
+<div class="long-description"></div>
 <strong>Parameters</strong><table class="argument-info">
 <thead><tr>
 <th>Name</th>
@@ -284,7 +263,7 @@ leave the reflection values in place).</p></div>
 </tr></thead>
 <tr>
 <th>$class</th>
-<td>\Aura\Di\string</td>
+<td>string</td>
 <td><em><p>The class to reflect on.</p></em></td>
 </tr>
 </table>
@@ -309,8 +288,7 @@ leave the reflection values in place).</p></div>
         :
           <a href="http://php.net/manual/en/class.arrayobject.php">\ArrayObject</a></code><div class="description"><p class="short_description">Gets the $setter property.</p></div>
 <div class="code-tabs">
-<div class="long-description">
-</div>
+<div class="long-description"></div>
 <strong>Returns</strong><table class="argument-info">
 <thead><tr>
 <th>Type</th>
@@ -330,13 +308,12 @@ leave the reflection values in place).</p></div>
           )
         </span>
         :
-          \Aura\Di\void</code><div class="description"><p class="short_description">Resets the params and setter values.</p></div>
-<div class="code-tabs"><div class="long-description">
-</div></div>
+          void</code><div class="description"><p class="short_description">Resets the params and setter values.</p></div>
+<div class="code-tabs"><div class="long-description"></div></div>
 <div class="clear"></div>
 </div>
 </div>
 </div>
 </div>
-<small xmlns="" class="footer">Documentation was generated by <a href="http://docblox-project.org">DocBlox 0.16.0</a>.
+<small xmlns="" class="footer">Documentation was generated by <a href="http://docblox-project.org">DocBlox 0.17.2</a>.
     </small></body></html>

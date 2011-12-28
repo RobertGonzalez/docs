@@ -1,4 +1,5 @@
-<html xmlns="http://www.w3.org/1999/xhtml"><head><title>Aura Project for PHP: Aura.Di</title><meta http-equiv="Content-Type" content="text/html; charset=utf-8"></meta><link rel="stylesheet" href="css/jquery-ui.css" type="text/css"></link><link rel="stylesheet" href="css/docblox/jquery-ui-1.8.16.custom.css" type="text/css"></link><link rel="stylesheet" href="css/jquery.treeview.css" type="text/css"></link><link rel="stylesheet" href="css/theme.css" type="text/css"></link><script type="text/javascript" src="js/jquery-1.4.2.min.js"></script><script type="text/javascript" src="js/jquery-ui-1.8.2.custom.min.js"></script><script type="text/javascript" src="js/jquery.tools.min.js"></script><script type="text/javascript" src="js/jquery.cookie.js"></script><script type="text/javascript" src="js/jquery.treeview.js"></script><script type="text/javascript">
+<html xmlns="http://www.w3.org/1999/xhtml"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Aura Project for PHP: Aura.Di</title><link rel="stylesheet" href="css/jquery-ui.css" type="text/css"></link><link rel="stylesheet" href="css/docblox/jquery-ui-1.8.16.custom.css" type="text/css"></link><link rel="stylesheet" href="css/jquery.treeview.css" type="text/css"></link><link rel="stylesheet" href="css/theme.css" type="text/css"></link><script type="text/javascript" src="js/jquery-1.4.2.min.js"></script><script type="text/javascript" src="js/jquery-ui-1.8.2.custom.min.js"></script><script type="text/javascript" src="js/jquery.tools.min.js"></script><script type="text/javascript" src="js/jquery.cookie.js"></script><script type="text/javascript" src="js/jquery.treeview.js"></script><script type="text/javascript">
             $(document).ready(function() {
                 $(".filetree").treeview({
                     collapsed: true,
@@ -95,24 +96,11 @@
               Table of Contents
           </div>
 </div>
-<a xmlns:dbx="http://docblox-project.org/xsl/functions" name="top" class="anchor"></a><div id="file-description">
-<p xmlns:dbx="http://docblox-project.org/xsl/functions" class="short-description">This file is part of the Aura Project for PHP.</p>
-<div xmlns:dbx="http://docblox-project.org/xsl/functions" class="long-description">
-</div>
-</div>
-<dl class="file-info">
-<dt xmlns:dbx="http://docblox-project.org/xsl/functions">License</dt>
-<dd xmlns:dbx="http://docblox-project.org/xsl/functions">
-<a href="http://opensource.org/licenses/bsd-license.php">BSD</a>
-         
-    </dd>
-</dl>
-<a name="classes" class="anchor"></a><a xmlns:dbx="http://docblox-project.org/xsl/functions" id="\Aura\Di\Container" class="anchor"></a><h2 xmlns:dbx="http://docblox-project.org/xsl/functions" class="class">\Aura\Di\Container<div class="to-top"><a href="#top">jump to top</a></div>
+<a xmlns:dbx="http://docblox-project.org/xsl/functions" name="top" class="anchor"></a><a name="classes" class="anchor"></a><a xmlns:dbx="http://docblox-project.org/xsl/functions" id="\Aura\Di\Container" class="anchor"></a><h2 xmlns:dbx="http://docblox-project.org/xsl/functions" class="class">\Aura\Di\Container<div class="to-top"><a href="#top">jump to top</a></div>
 </h2>
 <div xmlns:dbx="http://docblox-project.org/xsl/functions" class="class">
 <small class="package"><b>Package: </b>Aura\Di</small><p class="short-description">Dependency injection container.</p>
-<div class="long-description">
-</div>
+<div class="long-description"></div>
 <dl class="class-info">
 <dt>Implements</dt>
 <dd><a href="db_src_Aura_Di_ContainerInterface.html#%5CAura%5CDi%5CContainerInterface">\Aura\Di\ContainerInterface</a></dd>
@@ -127,11 +115,10 @@
                 </code><div class="description">
 <p class="short-description">Retains named service definitions.</p></div>
 <div class="code-tabs">
-<div class="long-description">
-</div>
+<div class="long-description"></div>
 <strong>Default value</strong><code>array()</code><strong>Details</strong><dl class="property-info">
 <dt>Type</dt>
-<dd>\Aura\Di\array</dd>
+<dd>array</dd>
 </dl>
 </div>
 <div class="clear"></div>
@@ -142,11 +129,10 @@
                 </code><div class="description">
 <p class="short-description">A Forge object to create classes through reflection.</p></div>
 <div class="code-tabs">
-<div class="long-description">
-</div>
+<div class="long-description"></div>
 <strong>Details</strong><dl class="property-info">
 <dt>Type</dt>
-<dd>\Aura\Di\array</dd>
+<dd>array</dd>
 </dl>
 </div>
 <div class="clear"></div>
@@ -158,11 +144,10 @@
 <p class="short-description">Is the Container locked?  (When locked, you cannot access configuration
 properties from outside the object, and cannot set services.)</p></div>
 <div class="code-tabs">
-<div class="long-description">
-</div>
+<div class="long-description"></div>
 <strong>Default value</strong><code>false</code><strong>Details</strong><dl class="property-info">
 <dt>Type</dt>
-<dd>\Aura\Di\bool</dd>
+<dd>bool</dd>
 <dt>See</dt>
 <dd>\Aura\Di\__get()
          
@@ -182,8 +167,7 @@ properties from outside the object, and cannot set services.)</p></div>
 <p class="short-description">A convenient reference to the Config::$params object, which itself
 is contained by the Forge object.</p></div>
 <div class="code-tabs">
-<div class="long-description">
-</div>
+<div class="long-description"></div>
 <strong>Details</strong><dl class="property-info">
 <dt>Type</dt>
 <dd><a href="http://php.net/manual/en/class.arrayobject.php">\ArrayObject</a></dd>
@@ -197,11 +181,10 @@ is contained by the Forge object.</p></div>
                 </code><div class="description">
 <p class="short-description">Retains the actual service objects.</p></div>
 <div class="code-tabs">
-<div class="long-description">
-</div>
+<div class="long-description"></div>
 <strong>Default value</strong><code>array()</code><strong>Details</strong><dl class="property-info">
 <dt>Type</dt>
-<dd>\Aura\Di\array</dd>
+<dd>array</dd>
 </dl>
 </div>
 <div class="clear"></div>
@@ -213,8 +196,7 @@ is contained by the Forge object.</p></div>
 <p class="short-description">A convenient reference to the Config::$setter object, which itself
 is contained by the Forge object.</p></div>
 <div class="code-tabs">
-<div class="long-description">
-</div>
+<div class="long-description"></div>
 <strong>Details</strong><dl class="property-info">
 <dt>Type</dt>
 <dd><a href="http://php.net/manual/en/class.arrayobject.php">\ArrayObject</a></dd>
@@ -231,10 +213,9 @@ is contained by the Forge object.</p></div>
           )
         </span>
         :
-          \Aura\Di\void</code><div class="description"><p class="short_description">When cloning this Container, *do not* make a copy of the service
+          void</code><div class="description"><p class="short_description">When cloning this Container, *do not* make a copy of the service
 objects.  Leave the configuration and definitions intact.</p></div>
-<div class="code-tabs"><div class="long-description">
-</div></div>
+<div class="code-tabs"><div class="long-description"></div></div>
 <div class="clear"></div>
 </div>
 <a id="\Aura\Di\Container::__construct()" class="anchor"></a><div class="method public">
@@ -245,8 +226,7 @@ objects.  Leave the configuration and definitions intact.</p></div>
         :
           void</code><div class="description"><p class="short_description">Constructor.</p></div>
 <div class="code-tabs">
-<div class="long-description">
-</div>
+<div class="long-description"></div>
 <strong>Parameters</strong><table class="argument-info">
 <thead><tr>
 <th>Name</th>
@@ -264,15 +244,14 @@ objects.  Leave the configuration and definitions intact.</p></div>
 </div>
 <a id="\Aura\Di\Container::__get()" class="anchor"></a><div class="method public">
 <a href="#" class="gripper"><img src="images/icons/arrow_right.png"><img src="images/icons/arrow_down.png" style="display: none;"></a><code><img src="images/icons/method.png" alt="method"><img src="images/icons/visibility_public.png" style="margin-right: 5px" alt="public"><span class="highlight">__get</span><span class="nb-faded-text">(
-          \Aura\Di\string $key
+          string $key
           )
         </span>
         :
-          \Aura\Di\mixed</code><div class="description"><p class="short_description">Magic get to provide access to the Config::$params and $setter
+          mixed</code><div class="description"><p class="short_description">Magic get to provide access to the Config::$params and $setter
 objects.</p></div>
 <div class="code-tabs">
-<div class="long-description">
-</div>
+<div class="long-description"></div>
 <strong>Parameters</strong><table class="argument-info">
 <thead><tr>
 <th>Name</th>
@@ -281,7 +260,7 @@ objects.</p></div>
 </tr></thead>
 <tr>
 <th>$key</th>
-<td>\Aura\Di\string</td>
+<td>string</td>
 <td><em><p>The property to retrieve ('params' or 'setter').</p>
 </em></td>
 </tr>
@@ -292,7 +271,7 @@ objects.</p></div>
 <th>Description</th>
 </tr></thead>
 <tr>
-<td>\Aura\Di\mixed</td>
+<td>mixed</td>
 <td></td>
 </tr>
 </table>
@@ -301,14 +280,13 @@ objects.</p></div>
 </div>
 <a id="\Aura\Di\Container::get()" class="anchor"></a><div class="method public">
 <a href="#" class="gripper"><img src="images/icons/arrow_right.png"><img src="images/icons/arrow_down.png" style="display: none;"></a><code><img src="images/icons/method.png" alt="method"><img src="images/icons/visibility_public.png" style="margin-right: 5px" alt="public"><span class="highlight">get</span><span class="nb-faded-text">(
-          \Aura\Di\string $key
+          string $key
           )
         </span>
         :
-          \Aura\Di\object</code><div class="description"><p class="short_description">Gets a service object by key, lazy-loading it as needed.</p></div>
+          object</code><div class="description"><p class="short_description">Gets a service object by key, lazy-loading it as needed.</p></div>
 <div class="code-tabs">
-<div class="long-description">
-</div>
+<div class="long-description"></div>
 <strong>Parameters</strong><table class="argument-info">
 <thead><tr>
 <th>Name</th>
@@ -317,7 +295,7 @@ objects.</p></div>
 </tr></thead>
 <tr>
 <th>$key</th>
-<td>\Aura\Di\string</td>
+<td>string</td>
 <td><em><p>The service to get.</p></em></td>
 </tr>
 </table>
@@ -327,7 +305,7 @@ objects.</p></div>
 <th>Description</th>
 </tr></thead>
 <tr>
-<td>\Aura\Di\object</td>
+<td>object</td>
 <td></td>
 </tr>
 </table>
@@ -350,17 +328,16 @@ objects.</p></div>
           )
         </span>
         :
-          \Aura\Di\array</code><div class="description"><p class="short_description">Gets the list of service definitions.</p></div>
+          array</code><div class="description"><p class="short_description">Gets the list of service definitions.</p></div>
 <div class="code-tabs">
-<div class="long-description">
-</div>
+<div class="long-description"></div>
 <strong>Returns</strong><table class="argument-info">
 <thead><tr>
 <th>Type</th>
 <th>Description</th>
 </tr></thead>
 <tr>
-<td>\Aura\Di\array</td>
+<td>array</td>
 <td></td>
 </tr>
 </table>
@@ -373,17 +350,16 @@ objects.</p></div>
           )
         </span>
         :
-          \Aura\Di\array</code><div class="description"><p class="short_description">Gets the Forge object used for creating new instances.</p></div>
+          array</code><div class="description"><p class="short_description">Gets the Forge object used for creating new instances.</p></div>
 <div class="code-tabs">
-<div class="long-description">
-</div>
+<div class="long-description"></div>
 <strong>Returns</strong><table class="argument-info">
 <thead><tr>
 <th>Type</th>
 <th>Description</th>
 </tr></thead>
 <tr>
-<td>\Aura\Di\array</td>
+<td>array</td>
 <td></td>
 </tr>
 </table>
@@ -396,17 +372,16 @@ objects.</p></div>
           )
         </span>
         :
-          \Aura\Di\array</code><div class="description"><p class="short_description">Gets the list of instantiated services.</p></div>
+          array</code><div class="description"><p class="short_description">Gets the list of instantiated services.</p></div>
 <div class="code-tabs">
-<div class="long-description">
-</div>
+<div class="long-description"></div>
 <strong>Returns</strong><table class="argument-info">
 <thead><tr>
 <th>Type</th>
 <th>Description</th>
 </tr></thead>
 <tr>
-<td>\Aura\Di\array</td>
+<td>array</td>
 <td></td>
 </tr>
 </table>
@@ -415,14 +390,13 @@ objects.</p></div>
 </div>
 <a id="\Aura\Di\Container::has()" class="anchor"></a><div class="method public">
 <a href="#" class="gripper"><img src="images/icons/arrow_right.png"><img src="images/icons/arrow_down.png" style="display: none;"></a><code><img src="images/icons/method.png" alt="method"><img src="images/icons/visibility_public.png" style="margin-right: 5px" alt="public"><span class="highlight">has</span><span class="nb-faded-text">(
-          \Aura\Di\string $key
+          string $key
           )
         </span>
         :
-          \Aura\Di\bool</code><div class="description"><p class="short_description">Does a particular service definition exist?</p></div>
+          bool</code><div class="description"><p class="short_description">Does a particular service definition exist?</p></div>
 <div class="code-tabs">
-<div class="long-description">
-</div>
+<div class="long-description"></div>
 <strong>Parameters</strong><table class="argument-info">
 <thead><tr>
 <th>Name</th>
@@ -431,7 +405,7 @@ objects.</p></div>
 </tr></thead>
 <tr>
 <th>$key</th>
-<td>\Aura\Di\string</td>
+<td>string</td>
 <td><em><p>The service key to look up.</p></em></td>
 </tr>
 </table>
@@ -441,7 +415,7 @@ objects.</p></div>
 <th>Description</th>
 </tr></thead>
 <tr>
-<td>\Aura\Di\bool</td>
+<td>bool</td>
 <td></td>
 </tr>
 </table>
@@ -454,17 +428,16 @@ objects.</p></div>
           )
         </span>
         :
-          \Aura\Di\bool</code><div class="description"><p class="short_description">Is the Container locked?</p></div>
+          bool</code><div class="description"><p class="short_description">Is the Container locked?</p></div>
 <div class="code-tabs">
-<div class="long-description">
-</div>
+<div class="long-description"></div>
 <strong>Returns</strong><table class="argument-info">
 <thead><tr>
 <th>Type</th>
 <th>Description</th>
 </tr></thead>
 <tr>
-<td>\Aura\Di\bool</td>
+<td>bool</td>
 <td></td>
 </tr>
 </table>
@@ -473,7 +446,7 @@ objects.</p></div>
 </div>
 <a id="\Aura\Di\Container::lazyGet()" class="anchor"></a><div class="method public">
 <a href="#" class="gripper"><img src="images/icons/arrow_right.png"><img src="images/icons/arrow_down.png" style="display: none;"></a><code><img src="images/icons/method.png" alt="method"><img src="images/icons/visibility_public.png" style="margin-right: 5px" alt="public"><span class="highlight">lazyGet</span><span class="nb-faded-text">(
-          \Aura\Di\string $key
+          string $key
           )
         </span>
         :
@@ -487,8 +460,7 @@ following idiom ...</p></div>
 <p>... with the following:</p>
 
 <pre><code> $di-&gt;params['ClassName']['param_name'] = $di-&gt;lazyGet('service');
-</code></pre>
-</div>
+</code></pre></div>
 <strong>Parameters</strong><table class="argument-info">
 <thead><tr>
 <th>Name</th>
@@ -497,7 +469,7 @@ following idiom ...</p></div>
 </tr></thead>
 <tr>
 <th>$key</th>
-<td>\Aura\Di\string</td>
+<td>string</td>
 <td><em><p>The service name; it does not need to exist yet.</p></em></td>
 </tr>
 </table>
@@ -516,7 +488,7 @@ following idiom ...</p></div>
 </div>
 <a id="\Aura\Di\Container::lazyNew()" class="anchor"></a><div class="method public">
 <a href="#" class="gripper"><img src="images/icons/arrow_right.png"><img src="images/icons/arrow_down.png" style="display: none;"></a><code><img src="images/icons/method.png" alt="method"><img src="images/icons/visibility_public.png" style="margin-right: 5px" alt="public"><span class="highlight">lazyNew</span><span class="nb-faded-text">(
-          \Aura\Di\string $class, \Aura\Di\array $params
+          string $class, array $params
               =
               null
           )
@@ -532,8 +504,7 @@ the following idiom:</p></div>
 <p>... with the following:</p>
 
 <pre><code> $di-&gt;params['ClassName']['param_name'] = $di-&gt;lazyNew('OtherClass', array(...));
-</code></pre>
-</div>
+</code></pre></div>
 <strong>Parameters</strong><table class="argument-info">
 <thead><tr>
 <th>Name</th>
@@ -542,12 +513,12 @@ the following idiom:</p></div>
 </tr></thead>
 <tr>
 <th>$class</th>
-<td>\Aura\Di\string</td>
+<td>string</td>
 <td><em><p>The type of class of instantiate.</p></em></td>
 </tr>
 <tr>
 <th>$params</th>
-<td>\Aura\Di\array</td>
+<td>array</td>
 <td><em><p>Override parameters for the instance.</p></em></td>
 </tr>
 </table>
@@ -570,25 +541,23 @@ the following idiom:</p></div>
           )
         </span>
         :
-          \Aura\Di\void</code><div class="description"><p class="short_description">Lock the Container so that configuration cannot be accessed externally,
+          void</code><div class="description"><p class="short_description">Lock the Container so that configuration cannot be accessed externally,
 and no new service definitions can be added.</p></div>
-<div class="code-tabs"><div class="long-description">
-</div></div>
+<div class="code-tabs"><div class="long-description"></div></div>
 <div class="clear"></div>
 </div>
 <a id="\Aura\Di\Container::newInstance()" class="anchor"></a><div class="method public">
 <a href="#" class="gripper"><img src="images/icons/arrow_right.png"><img src="images/icons/arrow_down.png" style="display: none;"></a><code><img src="images/icons/method.png" alt="method"><img src="images/icons/visibility_public.png" style="margin-right: 5px" alt="public"><span class="highlight">newInstance</span><span class="nb-faded-text">(
-          \Aura\Di\string $class, \Aura\Di\array $params
+          string $class, array $params
               =
               null
           )
         </span>
         :
-          \Aura\Di\object</code><div class="description"><p class="short_description">Returns a new instance of the specified class, optionally
+          object</code><div class="description"><p class="short_description">Returns a new instance of the specified class, optionally
 with additional override parameters.</p></div>
 <div class="code-tabs">
-<div class="long-description">
-</div>
+<div class="long-description"></div>
 <strong>Parameters</strong><table class="argument-info">
 <thead><tr>
 <th>Name</th>
@@ -597,12 +566,12 @@ with additional override parameters.</p></div>
 </tr></thead>
 <tr>
 <th>$class</th>
-<td>\Aura\Di\string</td>
+<td>string</td>
 <td><em><p>The type of class of instantiate.</p></em></td>
 </tr>
 <tr>
 <th>$params</th>
-<td>\Aura\Di\array</td>
+<td>array</td>
 <td><em><p>Override parameters for the instance.</p></em></td>
 </tr>
 </table>
@@ -612,7 +581,7 @@ with additional override parameters.</p></div>
 <th>Description</th>
 </tr></thead>
 <tr>
-<td>\Aura\Di\object</td>
+<td>object</td>
 <td>An instance of the requested class.</td>
 </tr>
 </table>
@@ -621,15 +590,14 @@ with additional override parameters.</p></div>
 </div>
 <a id="\Aura\Di\Container::set()" class="anchor"></a><div class="method public">
 <a href="#" class="gripper"><img src="images/icons/arrow_right.png"><img src="images/icons/arrow_down.png" style="display: none;"></a><code><img src="images/icons/method.png" alt="method"><img src="images/icons/visibility_public.png" style="margin-right: 5px" alt="public"><span class="highlight">set</span><span class="nb-faded-text">(
-          \Aura\Di\string $key, \Aura\Di\object $val
+          string $key, object $val
           )
         </span>
         :
           void</code><div class="description"><p class="short_description">Sets a service definition by name.</p></div>
 <div class="code-tabs">
 <div class="long-description"><p>If you set a service as a closure, it is automatically treated as a
-Lazy.</p>
-</div>
+Lazy.</p></div>
 <strong>Parameters</strong><table class="argument-info">
 <thead><tr>
 <th>Name</th>
@@ -638,12 +606,12 @@ Lazy.</p>
 </tr></thead>
 <tr>
 <th>$key</th>
-<td>\Aura\Di\string</td>
+<td>string</td>
 <td><em><p>The service key.</p></em></td>
 </tr>
 <tr>
 <th>$val</th>
-<td>\Aura\Di\object</td>
+<td>object</td>
 <td><em><p>The service object; if a Closure, is treated as a Lazy.</p></em></td>
 </tr>
 </table>
@@ -667,5 +635,5 @@ Lazy.</p>
 </div>
 </div>
 </div>
-<small xmlns="" class="footer">Documentation was generated by <a href="http://docblox-project.org">DocBlox 0.16.0</a>.
+<small xmlns="" class="footer">Documentation was generated by <a href="http://docblox-project.org">DocBlox 0.17.2</a>.
     </small></body></html>

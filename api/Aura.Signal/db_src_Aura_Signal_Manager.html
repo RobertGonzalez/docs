@@ -1,4 +1,5 @@
-<html xmlns="http://www.w3.org/1999/xhtml"><head><title>Aura Project for PHP: Aura.Signal</title><meta http-equiv="Content-Type" content="text/html; charset=utf-8"></meta><link rel="stylesheet" href="css/jquery-ui.css" type="text/css"></link><link rel="stylesheet" href="css/docblox/jquery-ui-1.8.16.custom.css" type="text/css"></link><link rel="stylesheet" href="css/jquery.treeview.css" type="text/css"></link><link rel="stylesheet" href="css/theme.css" type="text/css"></link><script type="text/javascript" src="js/jquery-1.4.2.min.js"></script><script type="text/javascript" src="js/jquery-ui-1.8.2.custom.min.js"></script><script type="text/javascript" src="js/jquery.tools.min.js"></script><script type="text/javascript" src="js/jquery.cookie.js"></script><script type="text/javascript" src="js/jquery.treeview.js"></script><script type="text/javascript">
+<html xmlns="http://www.w3.org/1999/xhtml"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Aura Project for PHP: Aura.Signal</title><link rel="stylesheet" href="css/jquery-ui.css" type="text/css"></link><link rel="stylesheet" href="css/docblox/jquery-ui-1.8.16.custom.css" type="text/css"></link><link rel="stylesheet" href="css/jquery.treeview.css" type="text/css"></link><link rel="stylesheet" href="css/theme.css" type="text/css"></link><script type="text/javascript" src="js/jquery-1.4.2.min.js"></script><script type="text/javascript" src="js/jquery-ui-1.8.2.custom.min.js"></script><script type="text/javascript" src="js/jquery.tools.min.js"></script><script type="text/javascript" src="js/jquery.cookie.js"></script><script type="text/javascript" src="js/jquery.treeview.js"></script><script type="text/javascript">
             $(document).ready(function() {
                 $(".filetree").treeview({
                     collapsed: true,
@@ -95,24 +96,11 @@
               Table of Contents
           </div>
 </div>
-<a xmlns:dbx="http://docblox-project.org/xsl/functions" name="top" class="anchor"></a><div id="file-description">
-<p xmlns:dbx="http://docblox-project.org/xsl/functions" class="short-description">This file is part of the Aura Project for PHP.</p>
-<div xmlns:dbx="http://docblox-project.org/xsl/functions" class="long-description">
-</div>
-</div>
-<dl class="file-info">
-<dt xmlns:dbx="http://docblox-project.org/xsl/functions">License</dt>
-<dd xmlns:dbx="http://docblox-project.org/xsl/functions">
-<a href="http://opensource.org/licenses/bsd-license.php">BSD</a>
-         
-    </dd>
-</dl>
-<a name="classes" class="anchor"></a><a xmlns:dbx="http://docblox-project.org/xsl/functions" id="\Aura\Signal\Manager" class="anchor"></a><h2 xmlns:dbx="http://docblox-project.org/xsl/functions" class="class">\Aura\Signal\Manager<div class="to-top"><a href="#top">jump to top</a></div>
+<a xmlns:dbx="http://docblox-project.org/xsl/functions" name="top" class="anchor"></a><a name="classes" class="anchor"></a><a xmlns:dbx="http://docblox-project.org/xsl/functions" id="\Aura\Signal\Manager" class="anchor"></a><h2 xmlns:dbx="http://docblox-project.org/xsl/functions" class="class">\Aura\Signal\Manager<div class="to-top"><a href="#top">jump to top</a></div>
 </h2>
 <div xmlns:dbx="http://docblox-project.org/xsl/functions" class="class">
 <small class="package"><b>Package: </b>Aura\Signal</small><p class="short-description">Processes signals through to Handler objects.</p>
-<div class="long-description">
-</div>
+<div class="long-description"></div>
 <dl class="class-info"></dl>
 <h3>Constants</h3>
 <div>
@@ -121,8 +109,7 @@
                 <span class="highlight">STOP</span>
                 = 'Aura\Signal\Manager::STOP'</code><div class="description"><p class="short-description">Indicates that the signal should not call more Handler instances.</p></div>
 <div class="code-tabs">
-<div class="long-description">
-</div>
+<div class="long-description"></div>
 <dl class="constant-info">
 <dt>Const</dt>
 <dd>string
@@ -141,8 +128,7 @@
                 </code><div class="description">
 <p class="short-description">A factory to create Handler objects.</p></div>
 <div class="code-tabs">
-<div class="long-description">
-</div>
+<div class="long-description"></div>
 <strong>Details</strong><dl class="property-info">
 <dt>Type</dt>
 <dd><a href="db_src_Aura_Signal_HandlerFactory.html#%5CAura%5CSignal%5CHandlerFactory">\Aura\Signal\HandlerFactory</a></dd>
@@ -156,11 +142,10 @@
                 </code><div class="description">
 <p class="short-description">An array of Handler instances that respond to class signals.</p></div>
 <div class="code-tabs">
-<div class="long-description">
-</div>
+<div class="long-description"></div>
 <strong>Default value</strong><code>array()</code><strong>Details</strong><dl class="property-info">
 <dt>Type</dt>
-<dd>\Aura\Signal\array</dd>
+<dd>array</dd>
 </dl>
 </div>
 <div class="clear"></div>
@@ -172,8 +157,7 @@
 <p class="short-description">A prototype ResultCollection; this will be cloned by `send()` to retain
 the Result objects from Handler instances.</p></div>
 <div class="code-tabs">
-<div class="long-description">
-</div>
+<div class="long-description"></div>
 <strong>Details</strong><dl class="property-info">
 <dt>Type</dt>
 <dd><a href="db_src_Aura_Signal_ResultCollection.html#%5CAura%5CSignal%5CResultCollection">\Aura\Signal\ResultCollection</a></dd>
@@ -187,8 +171,7 @@ the Result objects from Handler instances.</p></div>
                 </code><div class="description">
 <p class="short-description">A factory to create Result objects.</p></div>
 <div class="code-tabs">
-<div class="long-description">
-</div>
+<div class="long-description"></div>
 <strong>Details</strong><dl class="property-info">
 <dt>Type</dt>
 <dd><a href="db_src_Aura_Signal_ResultFactory.html#%5CAura%5CSignal%5CResultFactory">\Aura\Signal\ResultFactory</a></dd>
@@ -202,8 +185,7 @@ the Result objects from Handler instances.</p></div>
                 </code><div class="description">
 <p class="short-description">A ResultCollection from the last signal sent.</p></div>
 <div class="code-tabs">
-<div class="long-description">
-</div>
+<div class="long-description"></div>
 <strong>Details</strong><dl class="property-info">
 <dt>Type</dt>
 <dd><a href="db_src_Aura_Signal_ResultCollection.html#%5CAura%5CSignal%5CResultCollection">\Aura\Signal\ResultCollection</a></dd>
@@ -217,11 +199,10 @@ the Result objects from Handler instances.</p></div>
                 </code><div class="description">
 <p class="short-description">Have the handlers for a signal been sorted by position?</p></div>
 <div class="code-tabs">
-<div class="long-description">
-</div>
+<div class="long-description"></div>
 <strong>Default value</strong><code>array()</code><strong>Details</strong><dl class="property-info">
 <dt>Type</dt>
-<dd>\Aura\Signal\array</dd>
+<dd>array</dd>
 </dl>
 </div>
 <div class="clear"></div>
@@ -231,7 +212,7 @@ the Result objects from Handler instances.</p></div>
 <div>
 <a id="\Aura\Signal\Manager::__construct()" class="anchor"></a><div class="method public">
 <a href="#" class="gripper"><img src="images/icons/arrow_right.png"><img src="images/icons/arrow_down.png" style="display: none;"></a><code><img src="images/icons/method.png" alt="method"><img src="images/icons/visibility_public.png" style="margin-right: 5px" alt="public"><span class="highlight">__construct</span><span class="nb-faded-text">(
-          <a href="db_src_Aura_Signal_HandlerFactory.html#%5CAura%5CSignal%5CHandlerFactory">\Aura\Signal\HandlerFactory</a> $handler_factory,  $result_factory, <a href="db_src_Aura_Signal_ResultCollection.html#%5CAura%5CSignal%5CResultCollection">\Aura\Signal\ResultCollection</a> $result_collection, \Aura\Signal\array $handlers
+          <a href="db_src_Aura_Signal_HandlerFactory.html#%5CAura%5CSignal%5CHandlerFactory">\Aura\Signal\HandlerFactory</a> $handler_factory,  $result_factory, <a href="db_src_Aura_Signal_ResultCollection.html#%5CAura%5CSignal%5CResultCollection">\Aura\Signal\ResultCollection</a> $result_collection, array $handlers
               =
               array()
           )
@@ -239,8 +220,7 @@ the Result objects from Handler instances.</p></div>
         :
           void</code><div class="description"><p class="short_description">Constructor.</p></div>
 <div class="code-tabs">
-<div class="long-description">
-</div>
+<div class="long-description"></div>
 <strong>Parameters</strong><table class="argument-info">
 <thead><tr>
 <th>Name</th>
@@ -264,7 +244,7 @@ the Result objects from Handler instances.</p></div>
 </tr>
 <tr>
 <th>$handlers</th>
-<td>\Aura\Signal\array</td>
+<td>array</td>
 <td><em><p>An array describing Handler params.</p></em></td>
 </tr>
 </table>
@@ -273,16 +253,15 @@ the Result objects from Handler instances.</p></div>
 </div>
 <a id="\Aura\Signal\Manager::getHandlers()" class="anchor"></a><div class="method public">
 <a href="#" class="gripper"><img src="images/icons/arrow_right.png"><img src="images/icons/arrow_down.png" style="display: none;"></a><code><img src="images/icons/method.png" alt="method"><img src="images/icons/visibility_public.png" style="margin-right: 5px" alt="public"><span class="highlight">getHandlers</span><span class="nb-faded-text">(
-          \Aura\Signal\string $signal
+          string $signal
               =
               null
           )
         </span>
         :
-          \Aura\Signal\array</code><div class="description"><p class="short_description">Gets Handler instances for the Manager.</p></div>
+          array</code><div class="description"><p class="short_description">Gets Handler instances for the Manager.</p></div>
 <div class="code-tabs">
-<div class="long-description">
-</div>
+<div class="long-description"></div>
 <strong>Parameters</strong><table class="argument-info">
 <thead><tr>
 <th>Name</th>
@@ -291,7 +270,7 @@ the Result objects from Handler instances.</p></div>
 </tr></thead>
 <tr>
 <th>$signal</th>
-<td>\Aura\Signal\string</td>
+<td>string</td>
 <td><em><p>Only get Handler instances for this signal; if null, get all Handler instances.</p></em></td>
 </tr>
 </table>
@@ -301,7 +280,7 @@ the Result objects from Handler instances.</p></div>
 <th>Description</th>
 </tr></thead>
 <tr>
-<td>\Aura\Signal\array</td>
+<td>array</td>
 <td></td>
 </tr>
 </table>
@@ -316,8 +295,7 @@ the Result objects from Handler instances.</p></div>
         :
           <a href="db_src_Aura_Signal_ResultCollection.html#%5CAura%5CSignal%5CResultCollection">\Aura\Signal\ResultCollection</a></code><div class="description"><p class="short_description">Returns the ResultCollection from the last signal processing.</p></div>
 <div class="code-tabs">
-<div class="long-description">
-</div>
+<div class="long-description"></div>
 <strong>Returns</strong><table class="argument-info">
 <thead><tr>
 <th>Type</th>
@@ -333,16 +311,15 @@ the Result objects from Handler instances.</p></div>
 </div>
 <a id="\Aura\Signal\Manager::handler()" class="anchor"></a><div class="method public">
 <a href="#" class="gripper"><img src="images/icons/arrow_right.png"><img src="images/icons/arrow_down.png" style="display: none;"></a><code><img src="images/icons/method.png" alt="method"><img src="images/icons/visibility_public.png" style="margin-right: 5px" alt="public"><span class="highlight">handler</span><span class="nb-faded-text">(
-          \Aura\Signal\string | \Aura\Signal\object $sender, \Aura\Signal\string $signal, \Aura\Signal\callback $callback, \Aura\Signal\int $position
+          string | object $sender, string $signal, callback $callback, int $position
               =
               5000
           )
         </span>
         :
-          \Aura\Signal\void</code><div class="description"><p class="short_description">Adds a Handler to respond to a sender signal.</p></div>
+          void</code><div class="description"><p class="short_description">Adds a Handler to respond to a sender signal.</p></div>
 <div class="code-tabs">
-<div class="long-description">
-</div>
+<div class="long-description"></div>
 <strong>Parameters</strong><table class="argument-info">
 <thead><tr>
 <th>Name</th>
@@ -351,23 +328,23 @@ the Result objects from Handler instances.</p></div>
 </tr></thead>
 <tr>
 <th>$sender</th>
-<td>\Aura\Signal\string | \Aura\Signal\object</td>
+<td>string | object</td>
 <td><em><p>The class or object sender of the signal. If a class, inheritance will be honored, and '*' will be interpreted as "any class."</p>
 </em></td>
 </tr>
 <tr>
 <th>$signal</th>
-<td>\Aura\Signal\string</td>
+<td>string</td>
 <td><em><p>The name of the signal for that sender.</p></em></td>
 </tr>
 <tr>
 <th>$callback</th>
-<td>\Aura\Signal\callback</td>
+<td>callback</td>
 <td><em><p>The callback to execute when the signal is received.</p></em></td>
 </tr>
 <tr>
 <th>$position</th>
-<td>\Aura\Signal\int</td>
+<td>int</td>
 <td><em><p>The handler processing position; lower numbers are processed first. Use this to force a handler to be used before or after others.</p></em></td>
 </tr>
 </table>
@@ -376,14 +353,13 @@ the Result objects from Handler instances.</p></div>
 </div>
 <a id="\Aura\Signal\Manager::process()" class="anchor"></a><div class="method protected">
 <a href="#" class="gripper"><img src="images/icons/arrow_right.png"><img src="images/icons/arrow_down.png" style="display: none;"></a><code><img src="images/icons/method.png" alt="method"><img src="images/icons/visibility_protected.png" style="margin-right: 5px" alt="protected"><span class="highlight">process</span><span class="nb-faded-text">(
-          \Aura\Signal\object $origin, \Aura\Signal\string $signal, \Aura\Signal\$args $args
+          object $origin, string $signal, \Aura\Signal\$args $args
           )
         </span>
         :
           <a href="db_src_Aura_Signal_ResultCollection.html#%5CAura%5CSignal%5CResultCollection">\Aura\Signal\ResultCollection</a></code><div class="description"><p class="short_description">Invokes the Handler objects for a sender and signal.</p></div>
 <div class="code-tabs">
-<div class="long-description">
-</div>
+<div class="long-description"></div>
 <strong>Parameters</strong><table class="argument-info">
 <thead><tr>
 <th>Name</th>
@@ -392,12 +368,12 @@ the Result objects from Handler instances.</p></div>
 </tr></thead>
 <tr>
 <th>$origin</th>
-<td>\Aura\Signal\object</td>
+<td>object</td>
 <td><em><p>The object sending the signal. Note that this is always an object, not a class name.</p></em></td>
 </tr>
 <tr>
 <th>$signal</th>
-<td>\Aura\Signal\string</td>
+<td>string</td>
 <td><em><p>The name of the signal from that origin.</p></em></td>
 </tr>
 <tr>
@@ -421,14 +397,13 @@ the Result objects from Handler instances.</p></div>
 </div>
 <a id="\Aura\Signal\Manager::send()" class="anchor"></a><div class="method public">
 <a href="#" class="gripper"><img src="images/icons/arrow_right.png"><img src="images/icons/arrow_down.png" style="display: none;"></a><code><img src="images/icons/method.png" alt="method"><img src="images/icons/visibility_public.png" style="margin-right: 5px" alt="public"><span class="highlight">send</span><span class="nb-faded-text">(
-          \Aura\Signal\object $origin, \Aura\Signal\string $signal
+          object $origin, string $signal
           )
         </span>
         :
           <a href="db_src_Aura_Signal_ResultCollection.html#%5CAura%5CSignal%5CResultCollection">\Aura\Signal\ResultCollection</a></code><div class="description"><p class="short_description">Invokes the Handler objects for a sender and signal.</p></div>
 <div class="code-tabs">
-<div class="long-description">
-</div>
+<div class="long-description"></div>
 <strong>Parameters</strong><table class="argument-info">
 <thead><tr>
 <th>Name</th>
@@ -437,12 +412,12 @@ the Result objects from Handler instances.</p></div>
 </tr></thead>
 <tr>
 <th>$origin</th>
-<td>\Aura\Signal\object</td>
+<td>object</td>
 <td><em><p>The object sending the signal. Note that this is always an object, not a class name.</p></em></td>
 </tr>
 <tr>
 <th>$signal</th>
-<td>\Aura\Signal\string</td>
+<td>string</td>
 <td><em><p>The name of the signal from that origin.</p></em></td>
 </tr>
 </table>
@@ -468,5 +443,5 @@ the Result objects from Handler instances.</p></div>
 </div>
 </div>
 </div>
-<small xmlns="" class="footer">Documentation was generated by <a href="http://docblox-project.org">DocBlox 0.16.0</a>.
+<small xmlns="" class="footer">Documentation was generated by <a href="http://docblox-project.org">DocBlox 0.17.2</a>.
     </small></body></html>

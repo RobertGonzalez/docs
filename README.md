@@ -12,7 +12,7 @@ The following applications are required in order to update the documentation; pl
 
 1. *PHP 5.3+*, Aura is compatible with PHP 5.3 and higher.
 2. *Git*, during the update process every `aura.*` repository will be pulled into a local directory `repositories`.
-3. *DocBlox 0.8.8+*, this application is responsible for creating the API documentation
+3. *DocBlox 0.17.2+*, this application is responsible for creating the API documentation
    (see [http://www.docblox-project.org/documentation/installation/](http://www.docblox-project.org/documentation/installation/) for installation instructions)
 
 ### Usage

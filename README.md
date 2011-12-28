@@ -33,13 +33,15 @@ documentation (see
         $ cd docs
         $ git checkout gh-pages
         
-2. Issue `php update-api.php` to update the documentation in the `/api` folder
+3. Issue `php update-api.php` to update the documentation in the `api/`
+   directory. This will clone/pull the `Aura.*` repos and run `DocBlox` on
+   them.
 
         $ php update-api.php
 
-3. Verify the output of the `update-api` to see if any errors have occurred
+4. Verify the output of the `update-api` to see if any errors have occurred
 
-4. Commit and publish the documentation to GitHub.
+5. Commit and publish the documentation to GitHub.
 
         $ git add .
         $ git commit --message="updated api docs"

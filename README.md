@@ -4,12 +4,11 @@ Manual and API Documentation for Aura
 Located in this repository is the official manual and API documentation, which
 can be found at <http://auraphp.github.com/docs/api>.
 
-Updating the API Docs
----------------------
 
-### Requirements
+Build Requirements
+------------------
 
-The following applications are required in order to update the documentation;
+The following applications are required in order to build the documentation;
 please note that they must be present in your `$PATH` for the update script to
 work.
 
@@ -22,7 +21,9 @@ into a local directory `repositories`.
 documentation (see
 <http://www.docblox-project.org/documentation/installation>).
 
-### Usage
+
+Building and Publishing
+-----------------------
 
 1. Clone the `docs` repository.
 
@@ -47,9 +48,11 @@ documentation (see
         $ git commit --message="updated api docs"
         $ git push
 
-### Output
 
-The `update-api` script generates the following in the `api` directory:
+DocBlock Output
+---------------
+
+The `update-api` script generates the following in the `api/` directory:
 
 1. A sub-folder for each `Aura.*` repository with full API documentation for
    that repository.

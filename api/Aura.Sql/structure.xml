@@ -1,0 +1,1246 @@
+<?xml version="1.0"?>
+<project version="0.17.2" title="Aura Project for PHP: Aura.Sql">
+  <file path="src/Aura/Sql/Column.php" hash="4bee5068b4eb36e6fccbfbd409094114" package="Default">
+    <parse_markers>
+      <error line="20">No DocBlock was found for Property $name</error>
+      <error line="21">No DocBlock was found for Property $type</error>
+      <error line="22">No DocBlock was found for Property $size</error>
+      <error line="23">No DocBlock was found for Property $scope</error>
+      <error line="24">No DocBlock was found for Property $default</error>
+      <error line="25">No DocBlock was found for Property $require</error>
+      <error line="26">No DocBlock was found for Property $primary</error>
+      <error line="27">No DocBlock was found for Property $autoinc</error>
+      <error line="29">No DocBlock was found for Method __get</error>
+      <error line="34">No DocBlock was found for Method __set</error>
+    </parse_markers>
+    <class final="false" abstract="false" line="18" namespace="Aura\Sql" package="Aura\Sql">
+      <name>Column</name>
+      <extends/>
+      <full_name>\Aura\Sql\Column</full_name>
+      <docblock>
+        <description>Columns of table</description>
+        <long-description/>
+        <tag line="11" name="package" description="Aura.Sql"/>
+      </docblock>
+      <property final="false" static="false" visibility="protected" line="20" package="Default">
+        <name>$name</name>
+        <default/>
+      </property>
+      <property final="false" static="false" visibility="protected" line="21" package="Default">
+        <name>$type</name>
+        <default/>
+      </property>
+      <property final="false" static="false" visibility="protected" line="22" package="Default">
+        <name>$size</name>
+        <default/>
+      </property>
+      <property final="false" static="false" visibility="protected" line="23" package="Default">
+        <name>$scope</name>
+        <default/>
+      </property>
+      <property final="false" static="false" visibility="protected" line="24" package="Default">
+        <name>$default</name>
+        <default/>
+      </property>
+      <property final="false" static="false" visibility="protected" line="25" package="Default">
+        <name>$require</name>
+        <default/>
+      </property>
+      <property final="false" static="false" visibility="protected" line="26" package="Default">
+        <name>$primary</name>
+        <default/>
+      </property>
+      <property final="false" static="false" visibility="protected" line="27" package="Default">
+        <name>$autoinc</name>
+        <default/>
+      </property>
+      <method final="false" abstract="false" static="false" visibility="public" line="29" package="Default">
+        <name>__get</name>
+        <argument line="29">
+          <name>$key</name>
+          <default/>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" line="34" package="Default">
+        <name>__set</name>
+        <argument line="34">
+          <name>$key</name>
+          <default/>
+          <type/>
+        </argument>
+        <argument line="34">
+          <name>$val</name>
+          <default/>
+          <type/>
+        </argument>
+      </method>
+    </class>
+  </file>
+  <file path="src/Aura/Sql/Connection/AbstractConnection.php" hash="785f56275443c98099d30508c88e2eeb" package="Default">
+    <parse_markers>
+      <error line="22">No DocBlock was found for Class AbstractConnection</error>
+      <error line="24">No DocBlock was found for Property $dsn_prefix</error>
+      <error line="26">No DocBlock was found for Property $dsn</error>
+      <error line="28">No DocBlock was found for Property $ident_quote_prefix</error>
+      <error line="30">No DocBlock was found for Property $ident_quote_suffix</error>
+      <error line="32">No DocBlock was found for Property $username</error>
+      <error line="34">No DocBlock was found for Property $password</error>
+      <error line="36">No DocBlock was found for Property $options</error>
+      <error line="38">No DocBlock was found for Property $pdo</error>
+      <error line="40">No DocBlock was found for Property $signal</error>
+      <error line="42">No DocBlock was found for Method __construct</error>
+      <error line="56">No DocBlock was found for Method getDsnString</error>
+      <error line="67">No DocBlock was found for Method connect</error>
+      <error line="82">No DocBlock was found for Method query</error>
+      <error line="762">No DocBlock was found for Method convertSelect</error>
+      <error line="830">No DocBlock was found for Method fetchTableCols</error>
+    </parse_markers>
+    <namespace-alias name="SignalManager">Aura\Signal\Manager</namespace-alias>
+    <namespace-alias name="Select">Aura\Sql\Select</namespace-alias>
+    <namespace-alias name="PDO">PDO</namespace-alias>
+    <class final="false" abstract="true" line="22" namespace="Aura\Sql\Connection" package="Default">
+      <name>AbstractConnection</name>
+      <extends/>
+      <full_name>\Aura\Sql\Connection\AbstractConnection</full_name>
+      <property final="false" static="false" visibility="protected" line="24" package="Default">
+        <name>$dsn_prefix</name>
+        <default/>
+      </property>
+      <property final="false" static="false" visibility="protected" line="26" package="Default">
+        <name>$dsn</name>
+        <default>array()</default>
+      </property>
+      <property final="false" static="false" visibility="protected" line="28" package="Default">
+        <name>$ident_quote_prefix</name>
+        <default>null</default>
+      </property>
+      <property final="false" static="false" visibility="protected" line="30" package="Default">
+        <name>$ident_quote_suffix</name>
+        <default>null</default>
+      </property>
+      <property final="false" static="false" visibility="protected" line="32" package="Default">
+        <name>$username</name>
+        <default/>
+      </property>
+      <property final="false" static="false" visibility="protected" line="34" package="Default">
+        <name>$password</name>
+        <default/>
+      </property>
+      <property final="false" static="false" visibility="protected" line="36" package="Default">
+        <name>$options</name>
+        <default>array()</default>
+      </property>
+      <property final="false" static="false" visibility="protected" line="38" package="Default">
+        <name>$pdo</name>
+        <default/>
+      </property>
+      <property final="false" static="false" visibility="protected" line="40" package="Default">
+        <name>$signal</name>
+        <default/>
+      </property>
+      <method final="false" abstract="false" static="false" visibility="public" line="42" package="Default">
+        <name>__construct</name>
+        <argument line="43">
+          <name>$dsn</name>
+          <default/>
+          <type>array</type>
+        </argument>
+        <argument line="44">
+          <name>$username</name>
+          <default/>
+          <type/>
+        </argument>
+        <argument line="45">
+          <name>$password</name>
+          <default/>
+          <type/>
+        </argument>
+        <argument line="46">
+          <name>$options</name>
+          <default/>
+          <type>array</type>
+        </argument>
+        <argument line="47">
+          <name>$signal</name>
+          <default/>
+          <type>SignalManager</type>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" line="56" package="Default">
+        <name>getDsnString</name>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" line="67" package="Default">
+        <name>connect</name>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" line="82" package="Default">
+        <name>query</name>
+        <argument line="82">
+          <name>$spec</name>
+          <default/>
+          <type/>
+        </argument>
+        <argument line="82">
+          <name>$data</name>
+          <default>array()</default>
+          <type>array</type>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" line="109" package="Default">
+        <name>fetchAll</name>
+        <docblock>
+          <description>Fetches all rows from the database using sequential keys.</description>
+          <long-description/>
+          <tag line="97" name="param" description="The SELECT statement." type="string" variable="$spec">
+            <type by_reference="false">string</type>
+          </tag>
+          <tag line="97" name="param" description="An associative array of data to bind into the SELECT statement." type="array" variable="$data">
+            <type by_reference="false">array</type>
+          </tag>
+          <tag line="97" name="return" description="" type="array">
+            <type by_reference="false">array</type>
+          </tag>
+        </docblock>
+        <argument line="109">
+          <name>$spec</name>
+          <default/>
+          <type/>
+        </argument>
+        <argument line="109">
+          <name>$data</name>
+          <default>array()</default>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" line="132" package="Default">
+        <name>fetchAssoc</name>
+        <docblock>
+          <description>Fetches all rows from the database using associative keys (defined by
+the first column).</description>
+          <long-description>&lt;p&gt;N.b.: if multiple rows have the same first column value, the last
+row with that value will override earlier rows.&lt;/p&gt;</long-description>
+          <tag line="115" name="param" description="An array of component parts for a SELECT, or a literal query string." type="array|string" variable="$spec">
+            <type by_reference="false">array</type>
+            <type by_reference="false">string</type>
+          </tag>
+          <tag line="115" name="param" description="An associative array of data to bind into the SELECT statement." type="array" variable="$data">
+            <type by_reference="false">array</type>
+          </tag>
+          <tag line="115" name="return" description="" type="array">
+            <type by_reference="false">array</type>
+          </tag>
+        </docblock>
+        <argument line="132">
+          <name>$spec</name>
+          <default/>
+          <type/>
+        </argument>
+        <argument line="132">
+          <name>$data</name>
+          <default>array()</default>
+          <type>array</type>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" line="156" package="Default">
+        <name>fetchCol</name>
+        <docblock>
+          <description>Fetches the first column of all rows as a sequential array.</description>
+          <long-description/>
+          <tag line="143" name="param" description="An array of component parts for a SELECT, or a literal query string." type="array|string" variable="$spec">
+            <type by_reference="false">array</type>
+            <type by_reference="false">string</type>
+          </tag>
+          <tag line="143" name="param" description="An associative array of data to bind into the SELECT statement." type="array" variable="$data">
+            <type by_reference="false">array</type>
+          </tag>
+          <tag line="143" name="return" description="" type="array">
+            <type by_reference="false">array</type>
+          </tag>
+        </docblock>
+        <argument line="156">
+          <name>$spec</name>
+          <default/>
+          <type/>
+        </argument>
+        <argument line="156">
+          <name>$data</name>
+          <default>array()</default>
+          <type>array</type>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" line="175" package="Default">
+        <name>fetchValue</name>
+        <docblock>
+          <description>Fetches the very first value (i.e., first column of the first row).</description>
+          <long-description/>
+          <tag line="162" name="param" description="An array of component parts for a SELECT, or a literal query string." type="array|string" variable="$spec">
+            <type by_reference="false">array</type>
+            <type by_reference="false">string</type>
+          </tag>
+          <tag line="162" name="param" description="An associative array of data to bind into the SELECT statement." type="array" variable="$data">
+            <type by_reference="false">array</type>
+          </tag>
+          <tag line="162" name="return" description="" type="mixed">
+            <type by_reference="false">mixed</type>
+          </tag>
+        </docblock>
+        <argument line="175">
+          <name>$spec</name>
+          <default/>
+          <type/>
+        </argument>
+        <argument line="175">
+          <name>$data</name>
+          <default>array()</default>
+          <type>array</type>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" line="198" package="Default">
+        <name>fetchPairs</name>
+        <docblock>
+          <description>Fetches an associative array of all rows as key-value pairs (first
+column is the key, second column is the value).</description>
+          <long-description/>
+          <tag line="184" name="param" description="An array of component parts for a SELECT, or a literal query string." type="array|string" variable="$spec">
+            <type by_reference="false">array</type>
+            <type by_reference="false">string</type>
+          </tag>
+          <tag line="184" name="param" description="An associative array of data to bind into the SELECT statement." type="array" variable="$data">
+            <type by_reference="false">array</type>
+          </tag>
+          <tag line="184" name="return" description="" type="array">
+            <type by_reference="false">array</type>
+          </tag>
+        </docblock>
+        <argument line="198">
+          <name>$spec</name>
+          <default/>
+          <type/>
+        </argument>
+        <argument line="198">
+          <name>$data</name>
+          <default>array()</default>
+          <type>array</type>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" line="221" package="Default">
+        <name>fetchOne</name>
+        <docblock>
+          <description>Fetches one row from the database.</description>
+          <long-description/>
+          <tag line="208" name="param" description="An array of component parts for a SELECT, or a literal query string." type="array|string" variable="$spec">
+            <type by_reference="false">array</type>
+            <type by_reference="false">string</type>
+          </tag>
+          <tag line="208" name="param" description="An associative array of data to bind into the SELECT statement." type="array" variable="$data">
+            <type by_reference="false">array</type>
+          </tag>
+          <tag line="208" name="return" description="" type="array">
+            <type by_reference="false">array</type>
+          </tag>
+        </docblock>
+        <argument line="221">
+          <name>$spec</name>
+          <default/>
+          <type/>
+        </argument>
+        <argument line="221">
+          <name>$data</name>
+          <default>array()</default>
+          <type>array</type>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" line="244" package="Default">
+        <name>quote</name>
+        <docblock>
+          <description>Safely quotes a value for an SQL statement.</description>
+          <long-description>&lt;p&gt;If an array is passed as the value, the array values are quoted
+and then returned as a comma-separated string; this is useful
+for generating IN() lists.&lt;/p&gt;</long-description>
+          <tag line="230" name="param" description="The value to quote." type="mixed" variable="$val">
+            <type by_reference="false">mixed</type>
+          </tag>
+          <tag line="230" name="return" description="An SQL-safe quoted value (or a string of separated-and-quoted values)." type="string">
+            <type by_reference="false">string</type>
+          </tag>
+        </docblock>
+        <argument line="244">
+          <name>$val</name>
+          <default/>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" line="274" package="Default">
+        <name>quoteInto</name>
+        <docblock>
+          <description>Quotes a value and places into a piece of text at a placeholder; the
+placeholder is a question-mark.</description>
+          <long-description/>
+          <tag line="259" name="param" description="The text with placeholder(s)." type="string" variable="$text">
+            <type by_reference="false">string</type>
+          </tag>
+          <tag line="259" name="param" description="The data value(s) to quote." type="mixed" variable="$data">
+            <type by_reference="false">mixed</type>
+          </tag>
+          <tag line="259" name="return" description="An SQL-safe quoted value (or string of separated values) placed into the orignal text." type="mixed">
+            <type by_reference="false">mixed</type>
+          </tag>
+          <tag line="259" name="see" description="\Aura\Sql\Connection\quote()" refers="\Aura\Sql\Connection\quote()"/>
+        </docblock>
+        <argument line="274">
+          <name>$text</name>
+          <default/>
+          <type/>
+        </argument>
+        <argument line="274">
+          <name>$data</name>
+          <default/>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" line="356" package="Default">
+        <name>quoteMulti</name>
+        <docblock>
+          <description>Quote multiple text-and-value pieces.</description>
+          <long-description>&lt;p&gt;The placeholder is a question-mark; all placeholders will be replaced
+with the quoted value.   For example ...&lt;/p&gt;
+
+&lt;p&gt;{{code: php
+    $sql = Solar::factory('Solar_Sql');&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;$list = array(
+     "WHERE date &amp;gt; ?"   =&amp;gt; '2005-01-01',
+     "  AND date &amp;lt; ?"   =&amp;gt; '2005-02-01',
+     "  AND type IN(?)" =&amp;gt; array('a', 'b', 'c'),
+);
+$safe = $sql-&amp;gt;quoteMulti($list);
+
+// $safe = "WHERE date &amp;gt; '2005-01-02'
+//          AND date &amp;lt; 2005-02-01
+//          AND type IN('a','b','c')"
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;}}&lt;/p&gt;</long-description>
+          <tag line="322" name="param" description="A series of key-value pairs where the key is the placeholder text and the value is the value to be quoted into it. If the key is an integer, it is assumed that the value is piece of literal text to be used and not quoted." type="array" variable="$list">
+            <type by_reference="false">array</type>
+          </tag>
+          <tag line="322" name="param" description="Return the list pieces separated with this string (for example ' AND '), default null." type="string" variable="$sep">
+            <type by_reference="false">string</type>
+          </tag>
+          <tag line="322" name="return" description="An SQL-safe string composed of the list keys and quoted values." type="string">
+            <type by_reference="false">string</type>
+          </tag>
+        </docblock>
+        <argument line="356">
+          <name>$list</name>
+          <default/>
+          <type/>
+        </argument>
+        <argument line="356">
+          <name>$sep</name>
+          <default>null</default>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" line="397" package="Default">
+        <name>quoteName</name>
+        <docblock>
+          <description>Quotes a single identifier name (table, table alias, table column,
+index, sequence).  Ignores empty values.</description>
+          <long-description>&lt;p&gt;If the name contains ' AS ', this method will separately quote the
+parts before and after the ' AS '.&lt;/p&gt;
+
+&lt;p&gt;If the name contains a space, this method will separately quote the
+parts before and after the space.&lt;/p&gt;
+
+&lt;p&gt;If the name contains a dot, this method will separately quote the
+parts before and after the dot.&lt;/p&gt;</long-description>
+          <tag line="375" name="param" description="The identifier name to quote. If an array, quotes each element in the array as an identifier name." type="string|array" variable="$spec">
+            <type by_reference="false">string</type>
+            <type by_reference="false">array</type>
+          </tag>
+          <tag line="375" name="return" description="The quoted identifier name (or array of names)." type="string|array">
+            <type by_reference="false">string</type>
+            <type by_reference="false">array</type>
+          </tag>
+          <tag line="375" name="see" description="\Aura\Sql\Connection\replaceName()" refers="\Aura\Sql\Connection\replaceName()"/>
+        </docblock>
+        <argument line="397">
+          <name>$spec</name>
+          <default/>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" line="461" package="Default">
+        <name>quoteNamesIn</name>
+        <docblock>
+          <description>Quotes all fully-qualified identifier names ("table.col") in a string,
+typically an SQL snippet for a SELECT clause.</description>
+          <long-description>&lt;p&gt;Does not quote identifier names that are string literals (i.e., inside
+single or double quotes).&lt;/p&gt;
+
+&lt;p&gt;Looks for a trailing ' AS alias' and quotes the alias as well.&lt;/p&gt;</long-description>
+          <tag line="442" name="param" description="The string in which to quote fully-qualified identifier names to quote. If an array, quotes names in each element in the array." type="string|array" variable="$spec">
+            <type by_reference="false">string</type>
+            <type by_reference="false">array</type>
+          </tag>
+          <tag line="442" name="return" description="The string (or array) with names quoted in it." type="string|array">
+            <type by_reference="false">string</type>
+            <type by_reference="false">array</type>
+          </tag>
+          <tag line="442" name="see" description="\Aura\Sql\Connection\replaceNamesIn()" refers="\Aura\Sql\Connection\replaceNamesIn()"/>
+        </docblock>
+        <argument line="461">
+          <name>$spec</name>
+          <default/>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" line="536" package="Default">
+        <name>lastInsertId</name>
+        <docblock>
+          <description>Get the last auto-incremented insert ID from the database.</description>
+          <long-description/>
+          <tag line="525" name="param" description="The table name on which the auto-increment occurred." type="string" variable="$table">
+            <type by_reference="false">string</type>
+          </tag>
+          <tag line="525" name="param" description="The name of the auto-increment column." type="string" variable="$col">
+            <type by_reference="false">string</type>
+          </tag>
+          <tag line="525" name="return" description="The last auto-increment ID value inserted to the database." type="int">
+            <type by_reference="false">int</type>
+          </tag>
+        </docblock>
+        <argument line="536">
+          <name>$table</name>
+          <default>null</default>
+          <type/>
+        </argument>
+        <argument line="536">
+          <name>$col</name>
+          <default>null</default>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" line="554" package="Default">
+        <name>insert</name>
+        <docblock>
+          <description>Inserts a row of data into a table.</description>
+          <long-description/>
+          <tag line="542" name="param" description="The table to insert data into." type="string" variable="$table">
+            <type by_reference="false">string</type>
+          </tag>
+          <tag line="542" name="param" description="An associative array where the key is the column name and the value is the value to insert for that column." type="array" variable="$data">
+            <type by_reference="false">array</type>
+          </tag>
+          <tag line="542" name="return" description="The number of rows affected, typically 1." type="int">
+            <type by_reference="false">int</type>
+          </tag>
+        </docblock>
+        <argument line="554">
+          <name>$table</name>
+          <default/>
+          <type/>
+        </argument>
+        <argument line="554">
+          <name>$data</name>
+          <default/>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" line="595" package="Default">
+        <name>update</name>
+        <docblock>
+          <description>Updates a table with specified data based on a WHERE clause.</description>
+          <long-description/>
+          <tag line="580" name="param" description="The table to udpate." type="string" variable="$table">
+            <type by_reference="false">string</type>
+          </tag>
+          <tag line="580" name="param" description="An associative array where the key is the column name and the value is the value to use for that column." type="array" variable="$data">
+            <type by_reference="false">array</type>
+          </tag>
+          <tag line="580" name="param" description="The SQL WHERE clause to limit which rows are updated." type="string|array" variable="$where">
+            <type by_reference="false">string</type>
+            <type by_reference="false">array</type>
+          </tag>
+          <tag line="580" name="return" description="The number of rows affected." type="int">
+            <type by_reference="false">int</type>
+          </tag>
+        </docblock>
+        <argument line="595">
+          <name>$table</name>
+          <default/>
+          <type/>
+        </argument>
+        <argument line="595">
+          <name>$data</name>
+          <default/>
+          <type/>
+        </argument>
+        <argument line="595">
+          <name>$where</name>
+          <default/>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" line="632" package="Default">
+        <name>delete</name>
+        <docblock>
+          <description>Deletes rows from the table based on a WHERE clause.</description>
+          <long-description/>
+          <tag line="620" name="param" description="The table to delete from." type="string" variable="$table">
+            <type by_reference="false">string</type>
+          </tag>
+          <tag line="620" name="param" description="The SQL WHERE clause to limit which rows are deleted." type="string|array" variable="$where">
+            <type by_reference="false">string</type>
+            <type by_reference="false">array</type>
+          </tag>
+          <tag line="620" name="return" description="The number of rows affected." type="int">
+            <type by_reference="false">int</type>
+          </tag>
+        </docblock>
+        <argument line="632">
+          <name>$table</name>
+          <default/>
+          <type/>
+        </argument>
+        <argument line="632">
+          <name>$where</name>
+          <default/>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="protected" line="658" package="Default">
+        <name>bind</name>
+        <docblock>
+          <description>Binds an array of scalars as values into a prepared PDOStatment.</description>
+          <long-description>&lt;p&gt;Array element values that are themselves arrays will not be bound
+correctly, because PDO expects scalar values only.&lt;/p&gt;</long-description>
+          <tag line="644" name="param" description="The prepared PDOStatement." type="\Aura\Sql\Connection\PDOStatement" variable="$stmt">
+            <type by_reference="false">\Aura\Sql\Connection\PDOStatement</type>
+          </tag>
+          <tag line="644" name="param" description="The scalar values to bind into the PDOStatement." type="array" variable="$data">
+            <type by_reference="false">array</type>
+          </tag>
+          <tag line="644" name="return" description="" type="void">
+            <type by_reference="false">void</type>
+          </tag>
+        </docblock>
+        <argument line="658">
+          <name>$stmt</name>
+          <default/>
+          <type/>
+        </argument>
+        <argument line="658">
+          <name>$data</name>
+          <default/>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="protected" line="715" package="Default">
+        <name>replaceName</name>
+        <docblock>
+          <description>Quotes an identifier name (table, index, etc); ignores empty values and
+values of '*'.</description>
+          <long-description/>
+          <tag line="703" name="param" description="The identifier name to quote." type="string" variable="$name">
+            <type by_reference="false">string</type>
+          </tag>
+          <tag line="703" name="return" description="The quoted identifier name." type="string">
+            <type by_reference="false">string</type>
+          </tag>
+          <tag line="703" name="see" description="\Aura\Sql\Connection\quoteName()" refers="\Aura\Sql\Connection\quoteName()"/>
+        </docblock>
+        <argument line="715">
+          <name>$name</name>
+          <default/>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="protected" line="740" package="Default">
+        <name>replaceNamesIn</name>
+        <docblock>
+          <description>Quotes all fully-qualified identifier names ("table.col") in a string.</description>
+          <long-description/>
+          <tag line="727" name="param" description="The string in which to quote fully-qualified identifier names to quote. If an array, quotes names in each element in the array." type="string|array" variable="$text">
+            <type by_reference="false">string</type>
+            <type by_reference="false">array</type>
+          </tag>
+          <tag line="727" name="return" description="The string (or array) with names quoted in it." type="string|array">
+            <type by_reference="false">string</type>
+            <type by_reference="false">array</type>
+          </tag>
+          <tag line="727" name="see" description="\Aura\Sql\Connection\quoteNamesIn()" refers="\Aura\Sql\Connection\quoteNamesIn()"/>
+        </docblock>
+        <argument line="740">
+          <name>$text</name>
+          <default/>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" line="762" package="Default">
+        <name>convertSelect</name>
+        <argument line="762">
+          <name>$select</name>
+          <default/>
+          <type>Select</type>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="protected" line="790" package="Default">
+        <name>getTypeSizeScope</name>
+        <docblock>
+          <description>Given a column specification, parse into datatype, size, and
+decimal scope.</description>
+          <long-description/>
+          <tag line="779" name="param" description="The column specification; for example, &quot;VARCHAR(255)&quot; or &quot;NUMERIC(10,2)&quot;." type="string" variable="$spec">
+            <type by_reference="false">string</type>
+          </tag>
+          <tag line="779" name="return" description="A sequential array of the column type, size, and scope." type="array">
+            <type by_reference="false">array</type>
+          </tag>
+        </docblock>
+        <argument line="790">
+          <name>$spec</name>
+          <default/>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="true" static="false" visibility="public" line="828" package="Default">
+        <name>fetchTableList</name>
+        <docblock>
+          <description>Returns a list of database tables.</description>
+          <long-description/>
+          <tag line="821" name="return" description="The list of tables in the database." type="array">
+            <type by_reference="false">array</type>
+          </tag>
+        </docblock>
+      </method>
+      <method final="false" abstract="true" static="false" visibility="public" line="830" package="Default">
+        <name>fetchTableCols</name>
+        <argument line="830">
+          <name>$table</name>
+          <default/>
+          <type/>
+        </argument>
+      </method>
+    </class>
+  </file>
+  <file path="src/Aura/Sql/Connection/Mysql.php" hash="16a8391b4bc62a57f064b4d6db83ec3c" package="Default">
+    <parse_markers>
+      <error line="19">No DocBlock was found for Class Mysql</error>
+      <error line="21">No DocBlock was found for Property $dsn_prefix</error>
+      <error line="23">No DocBlock was found for Property $dsn</error>
+      <error line="31">No DocBlock was found for Property $ident_quote_prefix</error>
+      <error line="33">No DocBlock was found for Property $ident_quote_suffix</error>
+      <error line="35">No DocBlock was found for Method fetchTableList</error>
+      <error line="44">No DocBlock was found for Method fetchTableCols</error>
+    </parse_markers>
+    <namespace-alias name="Select">Aura\Sql\Select</namespace-alias>
+    <class final="false" abstract="false" line="19" namespace="Aura\Sql\Connection" package="Default">
+      <name>Mysql</name>
+      <extends>\Aura\Sql\Connection\AbstractConnection</extends>
+      <full_name>\Aura\Sql\Connection\Mysql</full_name>
+      <property final="false" static="false" visibility="protected" line="21" package="Default">
+        <name>$dsn_prefix</name>
+        <default>'mysql'</default>
+      </property>
+      <property final="false" static="false" visibility="protected" line="23" package="Default">
+        <name>$dsn</name>
+        <default>array(
+        'host' =&gt; null</default>
+      </property>
+      <property final="false" static="false" visibility="protected" line="31" package="Default">
+        <name>$ident_quote_prefix</name>
+        <default>'`'</default>
+      </property>
+      <property final="false" static="false" visibility="protected" line="33" package="Default">
+        <name>$ident_quote_suffix</name>
+        <default>'`'</default>
+      </property>
+      <method final="false" abstract="false" static="false" visibility="public" line="35" package="Default">
+        <name>fetchTableList</name>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" line="44" package="Default">
+        <name>fetchTableCols</name>
+        <argument line="44">
+          <name>$table</name>
+          <default/>
+          <type/>
+        </argument>
+      </method>
+    </class>
+  </file>
+  <file path="src/Aura/Sql/Connection/Sqlsrv.php" hash="1fe1bc6903a45246f8e3c9641b9a0cb7" package="Default">
+    <parse_markers>
+      <error line="19">No DocBlock was found for Class Sqlsrv</error>
+      <error line="21">No DocBlock was found for Property $dsn_prefix</error>
+      <error line="23">No DocBlock was found for Property $dsn</error>
+      <error line="28">No DocBlock was found for Property $ident_quote_prefix</error>
+      <error line="30">No DocBlock was found for Property $ident_quote_suffix</error>
+      <error line="45">No DocBlock was found for Method fetchTableCols</error>
+      <error line="85">No DocBlock was found for Method convertSelect</error>
+      <error line="105">No DocBlock was found for Method convertSelectStrategy</error>
+    </parse_markers>
+    <namespace-alias name="Select">Aura\Sql\Select</namespace-alias>
+    <class final="false" abstract="false" line="19" namespace="Aura\Sql\Connection" package="Default">
+      <name>Sqlsrv</name>
+      <extends>\Aura\Sql\Connection\AbstractConnection</extends>
+      <full_name>\Aura\Sql\Connection\Sqlsrv</full_name>
+      <property final="false" static="false" visibility="protected" line="21" package="Default">
+        <name>$dsn_prefix</name>
+        <default>'sqlsrv'</default>
+      </property>
+      <property final="false" static="false" visibility="protected" line="23" package="Default">
+        <name>$dsn</name>
+        <default>array(
+        'Server' =&gt; null</default>
+      </property>
+      <property final="false" static="false" visibility="protected" line="28" package="Default">
+        <name>$ident_quote_prefix</name>
+        <default>'['</default>
+      </property>
+      <property final="false" static="false" visibility="protected" line="30" package="Default">
+        <name>$ident_quote_suffix</name>
+        <default>']'</default>
+      </property>
+      <method final="false" abstract="false" static="false" visibility="public" line="39" package="Default">
+        <name>fetchTableList</name>
+        <docblock>
+          <description>Returns a list of database tables.</description>
+          <long-description/>
+          <tag line="32" name="return" description="The list of tables in the database." type="array">
+            <type by_reference="false">array</type>
+          </tag>
+        </docblock>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" line="45" package="Default">
+        <name>fetchTableCols</name>
+        <argument line="45">
+          <name>$table</name>
+          <default/>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" line="85" package="Default">
+        <name>convertSelect</name>
+        <argument line="85">
+          <name>$select</name>
+          <default/>
+          <type>Select</type>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="protected" line="105" package="Default">
+        <name>convertSelectStrategy</name>
+        <argument line="105">
+          <name>$select</name>
+          <default/>
+          <type>Select</type>
+        </argument>
+      </method>
+    </class>
+  </file>
+  <file path="src/Aura/Sql/Connection/SqlsrvDenali.php" hash="d42da2170db17d21d273419100703d5f" package="Default">
+    <parse_markers>
+      <error line="19">No DocBlock was found for Class SqlsrvDenali</error>
+      <error line="24">No DocBlock was found for Method convertSelectStrategy</error>
+    </parse_markers>
+    <namespace-alias name="Select">Aura\Sql\Select</namespace-alias>
+    <class final="false" abstract="false" line="19" namespace="Aura\Sql\Connection" package="Default">
+      <name>SqlsrvDenali</name>
+      <extends>\Aura\Sql\Connection\Sqlsrv</extends>
+      <full_name>\Aura\Sql\Connection\SqlsrvDenali</full_name>
+      <method final="false" abstract="false" static="false" visibility="protected" line="24" package="Default">
+        <name>convertSelectStrategy</name>
+        <argument line="24">
+          <name>$select</name>
+          <default/>
+          <type>Select</type>
+        </argument>
+      </method>
+    </class>
+  </file>
+  <file path="src/Aura/Sql/ConnectionFactory.php" hash="5446f904fe54ea3e318837f5f65eced4" package="Default">
+    <parse_markers>
+      <error line="20">No DocBlock was found for Class ConnectionFactory</error>
+      <notice line="74">Argument $params is missing from the function Docblock</notice>
+    </parse_markers>
+    <namespace-alias name="ForgeInterface">Aura\Di\ForgeInterface</namespace-alias>
+    <class final="false" abstract="false" line="20" namespace="Aura\Sql" package="Default">
+      <name>ConnectionFactory</name>
+      <extends/>
+      <full_name>\Aura\Sql\ConnectionFactory</full_name>
+      <property final="false" static="false" visibility="protected" line="29" package="Default">
+        <name>$forge</name>
+        <default/>
+        <docblock>
+          <description>A Forge to create objects.</description>
+          <long-description/>
+          <tag line="22" name="var" description="" type="\Aura\Di\ForgeInterface">
+            <type by_reference="false">\Aura\Di\ForgeInterface</type>
+          </tag>
+        </docblock>
+      </property>
+      <property final="false" static="false" visibility="protected" line="39" package="Default">
+        <name>$map</name>
+        <default>array()</default>
+        <docblock>
+          <description>A map of names (called at the command line) to their corresponding
+Connection classes.</description>
+          <long-description/>
+          <tag line="31" name="var" description="" type="array">
+            <type by_reference="false">array</type>
+          </tag>
+        </docblock>
+      </property>
+      <method final="false" abstract="false" static="false" visibility="public" line="53" package="Default">
+        <name>__construct</name>
+        <docblock>
+          <description>A Connection class to use when no class exists for a mapped name.</description>
+          <long-description/>
+          <tag line="41" name="param" description="A Forge to create objects." type="\Aura\Di\ForgeInterface" variable="$forge">
+            <type by_reference="false">\Aura\Di\ForgeInterface</type>
+          </tag>
+          <tag line="41" name="param" description="A map of PDO types to Connection classes." type="array" variable="$map">
+            <type by_reference="false">array</type>
+          </tag>
+          <tag line="41" name="param" description="A Connection class to use when no class can be found for a mapped name." type="string" variable="$not_found">
+            <type by_reference="false">string</type>
+          </tag>
+        </docblock>
+        <argument line="54">
+          <name>$forge</name>
+          <default/>
+          <type>ForgeInterface</type>
+        </argument>
+        <argument line="55">
+          <name>$map</name>
+          <default>array()</default>
+          <type>array</type>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" line="72" package="Default">
+        <name>newInstance</name>
+        <docblock>
+          <description>Creates and returns a Connection class based on a PDO type.</description>
+          <long-description/>
+          <tag line="61" name="param" description="A PDO type that maps to a Connection class." type="string" variable="$name">
+            <type by_reference="false">string</type>
+          </tag>
+          <tag line="61" name="return" description="" type="\Aura\Sql\Connection">
+            <type by_reference="false">\Aura\Sql\Connection</type>
+          </tag>
+          <tag line="61" name="throws" description="when no mapped class can be found." type="\Exception\ConnectionFactory">
+            <type by_reference="false">\Exception\ConnectionFactory</type>
+          </tag>
+        </docblock>
+        <argument line="73">
+          <name>$name</name>
+          <default/>
+          <type/>
+        </argument>
+        <argument line="74">
+          <name>$params</name>
+          <default>array()</default>
+          <type>array</type>
+        </argument>
+      </method>
+    </class>
+  </file>
+  <file path="src/Aura/Sql/ConnectionManager.php" hash="8b787fff1c91b0ff55a2dd889037fb6d" package="Default">
+    <parse_markers>
+      <error line="21">No DocBlock was found for Class ConnectionManager</error>
+      <error line="23">No DocBlock was found for Property $default</error>
+      <error line="31">No DocBlock was found for Property $masters</error>
+      <error line="33">No DocBlock was found for Property $slaves</error>
+      <error line="35">No DocBlock was found for Property $factory</error>
+      <error line="37">No DocBlock was found for Property $conn</error>
+      <error line="43">No DocBlock was found for Method __construct</error>
+      <error line="56">No DocBlock was found for Method getRead</error>
+      <error line="68">No DocBlock was found for Method getWrite</error>
+      <error line="78">No DocBlock was found for Method getDefault</error>
+      <error line="88">No DocBlock was found for Method getMaster</error>
+      <error line="108">No DocBlock was found for Method getSlave</error>
+      <error line="127">No DocBlock was found for Method mergeAdapterParams</error>
+      <error line="140">No DocBlock was found for Method merge</error>
+    </parse_markers>
+    <namespace-alias name="NoSuchMasterException">Aura\Sql\Exception\NoSuchMaster</namespace-alias>
+    <namespace-alias name="NoSuchSlaveException">Aura\Sql\Exception\NoSuchSlave</namespace-alias>
+    <class final="false" abstract="false" line="21" namespace="Aura\Sql" package="Default">
+      <name>ConnectionManager</name>
+      <extends/>
+      <full_name>\Aura\Sql\ConnectionManager</full_name>
+      <property final="false" static="false" visibility="protected" line="23" package="Default">
+        <name>$default</name>
+        <default>array(
+        'adapter'  =&gt; null</default>
+      </property>
+      <property final="false" static="false" visibility="protected" line="31" package="Default">
+        <name>$masters</name>
+        <default>array()</default>
+      </property>
+      <property final="false" static="false" visibility="protected" line="33" package="Default">
+        <name>$slaves</name>
+        <default>array()</default>
+      </property>
+      <property final="false" static="false" visibility="protected" line="35" package="Default">
+        <name>$factory</name>
+        <default/>
+      </property>
+      <property final="false" static="false" visibility="protected" line="37" package="Default">
+        <name>$conn</name>
+        <default>array(
+        'default' =&gt; null</default>
+      </property>
+      <method final="false" abstract="false" static="false" visibility="public" line="43" package="Default">
+        <name>__construct</name>
+        <argument line="44">
+          <name>$factory</name>
+          <default/>
+          <type>ConnectionFactory</type>
+        </argument>
+        <argument line="45">
+          <name>$default</name>
+          <default>array()</default>
+          <type>array</type>
+        </argument>
+        <argument line="46">
+          <name>$masters</name>
+          <default>array()</default>
+          <type>array</type>
+        </argument>
+        <argument line="47">
+          <name>$slaves</name>
+          <default>array()</default>
+          <type>array</type>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" line="56" package="Default">
+        <name>getRead</name>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" line="68" package="Default">
+        <name>getWrite</name>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" line="78" package="Default">
+        <name>getDefault</name>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" line="88" package="Default">
+        <name>getMaster</name>
+        <argument line="88">
+          <name>$key</name>
+          <default>null</default>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" line="108" package="Default">
+        <name>getSlave</name>
+        <argument line="108">
+          <name>$key</name>
+          <default>null</default>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="protected" line="127" package="Default">
+        <name>mergeAdapterParams</name>
+        <argument line="127">
+          <name>$override</name>
+          <default>array()</default>
+          <type>array</type>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="protected" line="140" package="Default">
+        <name>merge</name>
+        <argument line="140">
+          <name>$baseline</name>
+          <default/>
+          <type/>
+        </argument>
+        <argument line="140">
+          <name>$override</name>
+          <default/>
+          <type/>
+        </argument>
+      </method>
+    </class>
+  </file>
+  <file path="src/Aura/Sql/Exception/ConnectionFactory.php" hash="a6ed3c92639ee33ab9dd0709435fc0c5" package="Default">
+    <class final="false" abstract="false" line="18" namespace="Aura\Sql\Exception" package="Aura\Sql">
+      <name>ConnectionFactory</name>
+      <extends>\Aura\Sql\Exception</extends>
+      <full_name>\Aura\Sql\Exception\ConnectionFactory</full_name>
+      <docblock>
+        <description>Connection Factory Exception</description>
+        <long-description/>
+        <tag line="11" name="package" description="Aura.Sql"/>
+      </docblock>
+    </class>
+  </file>
+  <file path="src/Aura/Sql/Exception/NoSuchMaster.php" hash="7e45695cd72acf3fa80c741965985fa5" package="Default">
+    <class final="false" abstract="false" line="18" namespace="Aura\Sql\Exception" package="Aura\Sql">
+      <name>NoSuchMaster</name>
+      <extends>\Aura\Sql\Exception</extends>
+      <full_name>\Aura\Sql\Exception\NoSuchMaster</full_name>
+      <docblock>
+        <description>No such master exception</description>
+        <long-description/>
+        <tag line="11" name="package" description="Aura.Sql"/>
+      </docblock>
+    </class>
+  </file>
+  <file path="src/Aura/Sql/Exception/NoSuchSlave.php" hash="53f1e86cac4aea84e4d267e4e8935563" package="Default">
+    <class final="false" abstract="false" line="18" namespace="Aura\Sql\Exception" package="Aura\Sql">
+      <name>NoSuchSlave</name>
+      <extends>\Aura\Sql\Exception</extends>
+      <full_name>\Aura\Sql\Exception\NoSuchSlave</full_name>
+      <docblock>
+        <description>No such slave exception</description>
+        <long-description/>
+        <tag line="11" name="package" description="Aura.Sql"/>
+      </docblock>
+    </class>
+  </file>
+  <file path="src/Aura/Sql/Exception.php" hash="18dbb2fab60dee30ce9024b060e38ec7" package="Default">
+    <class final="false" abstract="false" line="18" namespace="Aura\Sql" package="Aura\Sql">
+      <name>Exception</name>
+      <extends>\Exception</extends>
+      <full_name>\Aura\Sql\Exception</full_name>
+      <docblock>
+        <description>Base Exception class for Aura Sql</description>
+        <long-description/>
+        <tag line="11" name="package" description="Aura.Sql"/>
+      </docblock>
+    </class>
+  </file>
+  <file path="src/Aura/Sql/Select.php" hash="5f5f8fcaa98ff3e42269aa513ffd01aa" package="Default">
+    <parse_markers>
+      <error line="20">No DocBlock was found for Property $distinct</error>
+      <error line="21">No DocBlock was found for Property $cols</error>
+      <error line="22">No DocBlock was found for Property $from</error>
+      <error line="23">No DocBlock was found for Property $join</error>
+      <error line="24">No DocBlock was found for Property $where</error>
+      <error line="25">No DocBlock was found for Property $group</error>
+      <error line="26">No DocBlock was found for Property $having</error>
+      <error line="27">No DocBlock was found for Property $order</error>
+      <error line="28">No DocBlock was found for Property $limit</error>
+      <error line="29">No DocBlock was found for Property $offset</error>
+      <error line="31">No DocBlock was found for Method __get</error>
+      <error line="36">No DocBlock was found for Method __set</error>
+      <error line="41">No DocBlock was found for Method __construct</error>
+      <error line="52">No DocBlock was found for Method distinct</error>
+      <error line="57">No DocBlock was found for Method cols</error>
+      <error line="62">No DocBlock was found for Method __toString</error>
+      <error line="132">No DocBlock was found for Method clearOrder</error>
+      <error line="137">No DocBlock was found for Method getOrderString</error>
+    </parse_markers>
+    <class final="false" abstract="false" line="18" namespace="Aura\Sql" package="Aura\Sql">
+      <name>Select</name>
+      <extends/>
+      <full_name>\Aura\Sql\Select</full_name>
+      <docblock>
+        <description>Select</description>
+        <long-description/>
+        <tag line="11" name="package" description="Aura.Sql"/>
+      </docblock>
+      <property final="false" static="false" visibility="protected" line="20" package="Default">
+        <name>$distinct</name>
+        <default>null</default>
+      </property>
+      <property final="false" static="false" visibility="protected" line="21" package="Default">
+        <name>$cols</name>
+        <default>array()</default>
+      </property>
+      <property final="false" static="false" visibility="protected" line="22" package="Default">
+        <name>$from</name>
+        <default>array()</default>
+      </property>
+      <property final="false" static="false" visibility="protected" line="23" package="Default">
+        <name>$join</name>
+        <default>array()</default>
+      </property>
+      <property final="false" static="false" visibility="protected" line="24" package="Default">
+        <name>$where</name>
+        <default>array()</default>
+      </property>
+      <property final="false" static="false" visibility="protected" line="25" package="Default">
+        <name>$group</name>
+        <default>array()</default>
+      </property>
+      <property final="false" static="false" visibility="protected" line="26" package="Default">
+        <name>$having</name>
+        <default>array()</default>
+      </property>
+      <property final="false" static="false" visibility="protected" line="27" package="Default">
+        <name>$order</name>
+        <default>array()</default>
+      </property>
+      <property final="false" static="false" visibility="protected" line="28" package="Default">
+        <name>$limit</name>
+        <default>null</default>
+      </property>
+      <property final="false" static="false" visibility="protected" line="29" package="Default">
+        <name>$offset</name>
+        <default>null</default>
+      </property>
+      <method final="false" abstract="false" static="false" visibility="public" line="31" package="Default">
+        <name>__get</name>
+        <argument line="31">
+          <name>$key</name>
+          <default/>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" line="36" package="Default">
+        <name>__set</name>
+        <argument line="36">
+          <name>$key</name>
+          <default/>
+          <type/>
+        </argument>
+        <argument line="36">
+          <name>$val</name>
+          <default/>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" line="41" package="Default">
+        <name>__construct</name>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" line="52" package="Default">
+        <name>distinct</name>
+        <argument line="52">
+          <name>$flag</name>
+          <default>true</default>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" line="57" package="Default">
+        <name>cols</name>
+        <argument line="57">
+          <name>$spec</name>
+          <default/>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" line="62" package="Default">
+        <name>__toString</name>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" line="132" package="Default">
+        <name>clearOrder</name>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" line="137" package="Default">
+        <name>getOrderString</name>
+      </method>
+    </class>
+  </file>
+  <package name="Aura">
+    <package name="Sql"/>
+  </package>
+  <package name="Default"/>
+  <namespace name="Aura">
+    <namespace name="Sql">
+      <namespace name="Connection"/>
+      <namespace name="Exception"/>
+    </namespace>
+  </namespace>
+  <marker>todo</marker>
+  <marker>fixme</marker>
+</project>
